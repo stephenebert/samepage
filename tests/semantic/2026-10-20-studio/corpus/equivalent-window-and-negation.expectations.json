@@ -1,0 +1,93 @@
+{
+  "caseId": "equivalent-window-and-negation",
+  "status": "frozen-agent-derived",
+  "interpretationExpectation": {
+    "alice": "supported",
+    "bob": "supported"
+  },
+  "humanFormulas": {
+    "alice": {
+      "eligible": "age >= 12 AND age <= 17 AND resident = true AND NOT(member = true) AND guardianConsent = true AND registrationTimeUtc >= 2026-11-01T00:00:00Z AND registrationTimeUtc < 2026-12-01T00:00:00Z",
+      "feeIfAdmitted": "First matching rule: scholarship -> USD 0; student -> USD 20; default USD 35",
+      "feeIfDenied": null
+    },
+    "bob": {
+      "eligible": "NOT(age < 12 OR age > 17 OR resident = false OR member = true OR guardianConsent = false OR registrationTimeUtc < 2026-11-01T00:00:00Z OR registrationTimeUtc >= 2026-12-01T00:00:00Z)",
+      "feeIfAdmitted": "First matching rule: scholarship -> USD 0; student -> USD 20; default USD 35",
+      "feeIfDenied": null
+    }
+  },
+  "expectedRelationship": {
+    "admissionEquivalent": true,
+    "feeEquivalentAmongAdmitted": true,
+    "explanation": "Bob states the exact complement of Alice’s required conditions. Ages are integer years, opening is inclusive, closing is exclusive, and scholarship priority is explicit in both."
+  },
+  "scenarios": [
+    {
+      "scenarioId": "opening-instant-youngest",
+      "alice": {
+        "eligible": true,
+        "feeCents": 2000
+      },
+      "bob": {
+        "eligible": true,
+        "feeCents": 2000
+      }
+    },
+    {
+      "scenarioId": "last-second-oldest-scholar",
+      "alice": {
+        "eligible": true,
+        "feeCents": 0
+      },
+      "bob": {
+        "eligible": true,
+        "feeCents": 0
+      }
+    },
+    {
+      "scenarioId": "one-second-before-opening",
+      "alice": {
+        "eligible": false,
+        "feeCents": null
+      },
+      "bob": {
+        "eligible": false,
+        "feeCents": null
+      }
+    },
+    {
+      "scenarioId": "closing-instant",
+      "alice": {
+        "eligible": false,
+        "feeCents": null
+      },
+      "bob": {
+        "eligible": false,
+        "feeCents": null
+      }
+    },
+    {
+      "scenarioId": "existing-member",
+      "alice": {
+        "eligible": false,
+        "feeCents": null
+      },
+      "bob": {
+        "eligible": false,
+        "feeCents": null
+      }
+    },
+    {
+      "scenarioId": "nonresident",
+      "alice": {
+        "eligible": false,
+        "feeCents": null
+      },
+      "bob": {
+        "eligible": false,
+        "feeCents": null
+      }
+    }
+  ]
+}

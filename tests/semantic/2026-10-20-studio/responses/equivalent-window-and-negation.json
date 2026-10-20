@@ -1,0 +1,151 @@
+{
+  "jobId": "studio-review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "This optional origami workshop admits residents aged 12 through 17 inclusive who are not members and who have guardian consent. Registration must occur on or after 2026-11-01T00:00:00Z and strictly before 2026-12-01T00:00:00Z; both timestamps are UTC. All of those admission conditions must hold. The fee is US$35. Use the first matching fee rule: a scholarship makes it US$0; otherwise, student status makes it US$20; otherwise, it remains US$35. No discounts stack. Charge a fee only if the participant is admitted.",
+      "es": "Este taller optativo de origami admite a personas residentes de entre 12 y 17 años, ambos inclusive, que no sean socias y que cuenten con el consentimiento de su tutor. La inscripción debe realizarse en o después de 2026-11-01T00:00:00Z y estrictamente antes de 2026-12-01T00:00:00Z; ambas marcas de tiempo están en UTC. Deben cumplirse todas esas condiciones de admisión. La tarifa es de 35 dólares estadounidenses. Usa la primera regla de tarifa que corresponda: una beca la deja en 0 dólares estadounidenses; de lo contrario, ser estudiante la deja en 20 dólares estadounidenses; de lo contrario, se mantiene en 35 dólares estadounidenses. Los descuentos no se acumulan. Solo se cobra una tarifa si la persona participante es admitida.",
+      "rules": {
+        "eligibility": {
+          "op": "all",
+          "args": [
+            {
+              "op": "age",
+              "cmp": "gte",
+              "value": 12
+            },
+            {
+              "op": "age",
+              "cmp": "lte",
+              "value": 17
+            },
+            {
+              "op": "flag",
+              "field": "resident",
+              "value": true
+            },
+            {
+              "op": "flag",
+              "field": "member",
+              "value": false
+            },
+            {
+              "op": "flag",
+              "field": "guardianConsent",
+              "value": true
+            },
+            {
+              "op": "time",
+              "cmp": "gte",
+              "value": "2026-11-01T00:00:00Z"
+            },
+            {
+              "op": "time",
+              "cmp": "lt",
+              "value": "2026-12-01T00:00:00Z"
+            }
+          ]
+        },
+        "fee": {
+          "currency": "USD",
+          "defaultCents": 3500,
+          "overrides": [
+            {
+              "when": {
+                "op": "flag",
+                "field": "scholarship",
+                "value": true
+              },
+              "cents": 0,
+              "label": "Scholarship fee waiver"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "student",
+                "value": true
+              },
+              "cents": 2000,
+              "label": "Student fee"
+            }
+          ]
+        }
+      },
+      "issues": []
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "This optional origami workshop rejects registration if at least one of these conditions holds: the person is under 12 or over 17; is not a resident; is a member; does not have guardian consent; or the registration time is before 2026-11-01T00:00:00Z or is at or after 2026-12-01T00:00:00Z. Both timestamps are in UTC. If none of those rejection conditions holds, the person is admitted. The fee is 35 US dollars. A scholarship takes priority and makes the fee 0 dollars. Without a scholarship, a student pays 20 dollars; everyone else pays 35 dollars. Discounts do not stack. A fee is charged only if the person is admitted.",
+      "es": "Este taller optativo de origami rechaza la inscripción si se cumple al menos una de estas condiciones: la persona tiene menos de 12 años o más de 17; no es residente; es socia; no tiene consentimiento de su tutor; o el momento de inscripción es anterior a 2026-11-01T00:00:00Z o es igual o posterior a 2026-12-01T00:00:00Z. Ambas marcas de tiempo están en UTC. Si no se cumple ninguna de esas condiciones de rechazo, la persona es admitida. La tarifa es de 35 dólares estadounidenses. Una beca tiene prioridad y deja la tarifa en 0 dólares. Sin beca, una persona estudiante paga 20 dólares; las demás pagan 35 dólares. Los descuentos no se acumulan. Solo se cobra si la persona es admitida.",
+      "rules": {
+        "eligibility": {
+          "op": "all",
+          "args": [
+            {
+              "op": "age",
+              "cmp": "gte",
+              "value": 12
+            },
+            {
+              "op": "age",
+              "cmp": "lte",
+              "value": 17
+            },
+            {
+              "op": "flag",
+              "field": "resident",
+              "value": true
+            },
+            {
+              "op": "flag",
+              "field": "member",
+              "value": false
+            },
+            {
+              "op": "flag",
+              "field": "guardianConsent",
+              "value": true
+            },
+            {
+              "op": "time",
+              "cmp": "gte",
+              "value": "2026-11-01T00:00:00Z"
+            },
+            {
+              "op": "time",
+              "cmp": "lt",
+              "value": "2026-12-01T00:00:00Z"
+            }
+          ]
+        },
+        "fee": {
+          "currency": "USD",
+          "defaultCents": 3500,
+          "overrides": [
+            {
+              "when": {
+                "op": "flag",
+                "field": "scholarship",
+                "value": true
+              },
+              "cents": 0,
+              "label": "Scholarship fee waiver"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "student",
+                "value": true
+              },
+              "cents": 2000,
+              "label": "Student fee"
+            }
+          ]
+        }
+      },
+      "issues": []
+    }
+  ]
+}

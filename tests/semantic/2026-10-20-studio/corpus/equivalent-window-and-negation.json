@@ -1,0 +1,101 @@
+{
+  "caseId": "equivalent-window-and-negation",
+  "title": "Different wording, the same residents-only registration window",
+  "domain": "Synthetic optional origami workshop registration",
+  "authorship": "Independently agent-authored synthetic policy pair and agent-derived expectations; frozen before independent interpretation.",
+  "participantFieldMeaning": {
+    "age": "Integer age in years, 0 through 120.",
+    "resident_student_member_guardianConsent_scholarship": "Boolean flags: true means the named status is present; false means absent.",
+    "registrationTimeUtc": "An explicit UTC timestamp."
+  },
+  "policies": {
+    "alice": {
+      "language": "en",
+      "text": "This optional origami workshop admits residents aged 12 through 17 inclusive who are not members and who have guardian consent. Registration must occur on or after 2026-11-01T00:00:00Z and strictly before 2026-12-01T00:00:00Z; both timestamps are UTC. All of those admission conditions must hold. The fee is US$35. Use the first matching fee rule: a scholarship makes it US$0; otherwise, student status makes it US$20; otherwise, it remains US$35. No discounts stack. Charge a fee only if the participant is admitted."
+    },
+    "bob": {
+      "language": "es",
+      "text": "Este taller optativo de origami rechaza la inscripción si se cumple al menos una de estas condiciones: la persona tiene menos de 12 años o más de 17; no es residente; es socia; no tiene consentimiento de su tutor; o el momento de inscripción es anterior a 2026-11-01T00:00:00Z o es igual o posterior a 2026-12-01T00:00:00Z. Ambas marcas de tiempo están en UTC. Si no se cumple ninguna de esas condiciones de rechazo, la persona es admitida. La tarifa es de 35 dólares estadounidenses. Una beca tiene prioridad y deja la tarifa en 0 dólares. Sin beca, una persona estudiante paga 20 dólares; las demás pagan 35 dólares. Los descuentos no se acumulan. Solo se cobra si la persona es admitida."
+    }
+  },
+  "scenarios": [
+    {
+      "scenarioId": "opening-instant-youngest",
+      "description": "Age 12, resident nonmember with consent and student status, exactly at opening.",
+      "participant": {
+        "age": 12,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-01T00:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "last-second-oldest-scholar",
+      "description": "Age 17 with scholarship and student status, one second before closing.",
+      "participant": {
+        "age": 17,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-30T23:59:59Z"
+      }
+    },
+    {
+      "scenarioId": "one-second-before-opening",
+      "description": "All personal conditions satisfied, one second too early.",
+      "participant": {
+        "age": 14,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-10-31T23:59:59Z"
+      }
+    },
+    {
+      "scenarioId": "closing-instant",
+      "description": "All personal conditions satisfied, exactly at the excluded closing instant.",
+      "participant": {
+        "age": 14,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-12-01T00:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "existing-member",
+      "description": "Otherwise-qualified resident who is already a member.",
+      "participant": {
+        "age": 14,
+        "resident": true,
+        "student": false,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "nonresident",
+      "description": "Otherwise-qualified nonmember who is not a resident.",
+      "participant": {
+        "age": 14,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    }
+  ]
+}

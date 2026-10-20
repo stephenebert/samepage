@@ -1,0 +1,101 @@
+{
+  "caseId": "guardian-exception-scope",
+  "title": "A scholarship waives age, or age and consent",
+  "domain": "Synthetic optional paper-collage workshop registration",
+  "authorship": "Independently agent-authored synthetic policy pair and agent-derived expectations; frozen before independent interpretation.",
+  "participantFieldMeaning": {
+    "age": "Integer age in years, 0 through 120.",
+    "resident_student_member_guardianConsent_scholarship": "Boolean flags: true means the named status is present; false means absent.",
+    "registrationTimeUtc": "An explicit UTC timestamp."
+  },
+  "policies": {
+    "alice": {
+      "language": "en",
+      "text": "For this optional paper-collage workshop, participants normally must be at least 16 years old. A scholarship waives that minimum age requirement. Every participant under 18 must have guardian consent, including participants with a scholarship. Adults do not need guardian consent. Every admitted participant pays US$40, including scholarship recipients. There are no discounts. Charge a fee only if the participant is admitted."
+    },
+    "bob": {
+      "language": "es",
+      "text": "Para este taller optativo de collage de papel, normalmente se exige tener al menos 16 años y, si la persona es menor de 18, contar con el consentimiento de su tutor. Las personas con beca quedan exentas de ambos requisitos: pueden inscribirse a cualquier edad y sin consentimiento del tutor. Las personas adultas sin beca tampoco necesitan ese consentimiento. Cada persona admitida paga 40 dólares estadounidenses, incluidas las que tienen beca. No hay descuentos. Solo se cobra si la persona es admitida."
+    }
+  },
+  "scenarios": [
+    {
+      "scenarioId": "young-scholar-no-consent",
+      "description": "14-year-old scholarship recipient without guardian consent.",
+      "participant": {
+        "age": 14,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "young-scholar-consent",
+      "description": "14-year-old scholarship recipient with guardian consent.",
+      "participant": {
+        "age": 14,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "older-minor-scholar-no-consent",
+      "description": "17-year-old scholarship recipient without guardian consent.",
+      "participant": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "young-no-scholarship-consent",
+      "description": "15-year-old without a scholarship but with guardian consent.",
+      "participant": {
+        "age": 15,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "minimum-age-consent",
+      "description": "16-year-old without a scholarship and with guardian consent.",
+      "participant": {
+        "age": 16,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "adult-no-consent",
+      "description": "24-year-old without scholarship or guardian consent.",
+      "participant": {
+        "age": 24,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    }
+  ]
+}

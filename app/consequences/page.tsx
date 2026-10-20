@@ -234,7 +234,7 @@ export default function ConsequencesPage() {
       <AgentRelay room={room} act={act} requestReview={requestManualReview} working={reviewBusy || manualWorking} hasUnsavedDrafts={hasUnsavedDrafts} />
       <div className="sp3-section-heading"><span><LockKeyhole size={11} style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }} /> Private prototype · synthetic attendees · no emails are sent</span><button className="sp3-btn-quiet" onClick={createRoom} disabled={creating || reviewBusy}><RefreshCw size={10} /> Start a new room</button></div>
     </>}
-    <footer className="sp3-footer"><span>SamePage / a bilingual collaboration experiment<br />AI proposes the interpretation. People confirm it. Code evaluates the agreed rule.</span><span>Age · residency · UTC deadline<br /><a href="/">Open the document collaboration lab</a></span></footer>
+    <footer className="sp3-footer"><span>SamePage / a bilingual collaboration experiment<br />AI proposes the interpretation. People confirm it. Code evaluates the agreed rule.</span><span>Age · residency · UTC deadline<br /><a href="/studio">Open the new policy studio →</a><br /><a href="/">Open the document collaboration lab</a></span></footer>
   </main>;
 }
 

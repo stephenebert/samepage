@@ -1,0 +1,116 @@
+{
+  "jobId": "studio-review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "For our optional screen-printing workshop, participants must be at least 16 years old. Anyone under 18 must also have guardian consent. A scholarship does not change either admission requirement. There are no other admission requirements and no registration deadline. The fee is US$80. A scholarship waives the fee only for participants under 18. There are no other discounts. Charge a fee only if the participant is admitted.",
+      "es": "Para nuestro taller optativo de serigrafía, las personas participantes deben tener al menos 16 años. Toda persona menor de 18 años también debe contar con el consentimiento de su tutor. Una beca no cambia ninguno de los dos requisitos de admisión. No hay otros requisitos de admisión ni fecha límite de inscripción. La tarifa es de 80 dólares estadounidenses. Una beca exime del pago únicamente a las personas participantes menores de 18 años. No hay otros descuentos. Solo se cobra una tarifa si la persona participante es admitida.",
+      "rules": {
+        "eligibility": {
+          "op": "all",
+          "args": [
+            {
+              "op": "age",
+              "cmp": "gte",
+              "value": 16
+            },
+            {
+              "op": "any",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 18
+                },
+                {
+                  "op": "flag",
+                  "field": "guardianConsent",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        "fee": {
+          "currency": "USD",
+          "defaultCents": 8000,
+          "overrides": [
+            {
+              "when": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  },
+                  {
+                    "op": "not",
+                    "arg": {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 18
+                    }
+                  }
+                ]
+              },
+              "cents": 0,
+              "label": "Scholarship fee waiver for participants under 18"
+            }
+          ]
+        }
+      },
+      "issues": []
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "For our optional screen-printing workshop, participants must be at least 16 years old. Those under 18 must also have guardian consent. A scholarship does not change any of these admission requirements. There are no other admission requirements and no registration deadline. The fee is 80 US dollars. Everyone with a scholarship is exempt from payment, regardless of their age. There are no other discounts. A fee is charged only if the person is admitted.",
+      "es": "Para nuestro taller optativo de serigrafía, las personas participantes deben tener al menos 16 años. Quienes sean menores de 18 años también deben contar con el consentimiento de su tutor. Una beca no modifica ninguno de estos requisitos de admisión. No hay otros requisitos de admisión ni fecha límite de inscripción. La tarifa es de 80 dólares estadounidenses. Toda persona con beca queda exenta del pago, sea cual sea su edad. No hay otros descuentos. Solo se cobra si la persona es admitida.",
+      "rules": {
+        "eligibility": {
+          "op": "all",
+          "args": [
+            {
+              "op": "age",
+              "cmp": "gte",
+              "value": 16
+            },
+            {
+              "op": "any",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 18
+                },
+                {
+                  "op": "flag",
+                  "field": "guardianConsent",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        "fee": {
+          "currency": "USD",
+          "defaultCents": 8000,
+          "overrides": [
+            {
+              "when": {
+                "op": "flag",
+                "field": "scholarship",
+                "value": true
+              },
+              "cents": 0,
+              "label": "Scholarship fee waiver"
+            }
+          ]
+        }
+      },
+      "issues": []
+    }
+  ]
+}

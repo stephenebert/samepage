@@ -1,0 +1,103 @@
+{
+  "caseId": "central-demo",
+  "title": "The scholarship sentence changes the adult price",
+  "domain": "Synthetic optional screen-printing workshop registration",
+  "authorship": "Independently agent-authored synthetic policy pair and agent-derived expectations; frozen before independent interpretation.",
+  "participantFieldMeaning": {
+    "age": "Integer age in years, 0 through 120.",
+    "guardianConsent": "true means guardian consent has been given; false means it has not. Adults do not require this consent under these policies.",
+    "scholarship": "true means the participant has a scholarship; false means they do not.",
+    "registrationTimeUtc": "An explicit UTC timestamp; this policy does not restrict registration time.",
+    "resident_student_member": "These flags are supplied for completeness but do not affect either policy."
+  },
+  "policies": {
+    "alice": {
+      "language": "en",
+      "text": "For our optional screen-printing workshop, participants must be at least 16 years old. Anyone under 18 must also have guardian consent. A scholarship does not change either admission requirement. There are no other admission requirements and no registration deadline. The fee is US$80. A scholarship waives the fee only for participants under 18. There are no other discounts. Charge a fee only if the participant is admitted."
+    },
+    "bob": {
+      "language": "es",
+      "text": "Para nuestro taller optativo de serigrafía, las personas participantes deben tener al menos 16 años. Quienes sean menores de 18 años también deben contar con el consentimiento de su tutor. Una beca no modifica ninguno de estos requisitos de admisión. No hay otros requisitos de admisión ni fecha límite de inscripción. La tarifa es de 80 dólares estadounidenses. Toda persona con beca queda exenta del pago, sea cual sea su edad. No hay otros descuentos. Solo se cobra si la persona es admitida."
+    }
+  },
+  "scenarios": [
+    {
+      "scenarioId": "adult-no-scholarship",
+      "description": "Adult without a scholarship; guardianConsent is false.",
+      "participant": {
+        "age": 24,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "adult-scholarship",
+      "description": "Adult with a scholarship; guardianConsent is false. Central price-only disagreement.",
+      "participant": {
+        "age": 24,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "minor-scholarship-consent",
+      "description": "17-year-old with both a scholarship and guardian consent.",
+      "participant": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "minor-full-price-consent",
+      "description": "17-year-old with consent but no scholarship.",
+      "participant": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "minor-scholarship-no-consent",
+      "description": "17-year-old with a scholarship but no guardian consent.",
+      "participant": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    },
+    {
+      "scenarioId": "too-young-scholarship-consent",
+      "description": "15-year-old with both a scholarship and consent; scholarship does not waive the minimum age.",
+      "participant": {
+        "age": 15,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": true,
+        "registrationTimeUtc": "2026-11-15T12:00:00Z"
+      }
+    }
+  ]
+}

@@ -51,7 +51,7 @@ export default function Home() {
   return <main className="shell">
     <header className="masthead">
       <a className="wordmark" href="/" aria-label="SamePage home"><span className="logomark" aria-hidden="true"><span /><span /></span>SamePage</a>
-      <div className="masthead-right"><a className="small-link" href="/consequences">Try the consequences demo <ArrowRight size={12} /></a><span className="masthead-note mono">EXPERIMENT 02</span><span className="simulation-badge"><Users size={11} /> Simulation · two editors</span></div>
+      <div className="masthead-right"><a className="small-link" href="/studio">Try the policy studio <ArrowRight size={12} /></a><span className="masthead-note mono">EXPERIMENT 02</span><span className="simulation-badge"><Users size={11} /> Simulation · two editors</span></div>
     </header>
     <section className="intro">
       <div><p className="eyebrow">A shared document, in your own words</p><h1>Two languages.<br />One <em>shared meaning.</em></h1><p className="intro-desc">Edit in English or Spanish. Keep the parts you agree on.<br className="desktop-break" /> When meaning diverges, find the exact difference—then decide together.</p></div>

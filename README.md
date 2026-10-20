@@ -2,11 +2,14 @@
 
 A bilingual collaboration prototype: two people edit one shared document in English and Spanish, see when their meanings disagree, and resolve the disagreement together.
 
-The current consequences experiment automatically finds an attendee or deadline instant where two policy interpretations disagree. It can find both directions of an age/deadline tradeoff: a younger person accepted only by one rule, and a later applicant accepted only by the other. The user can transfer either discovered attendee into a working registration form, while the published rule stays unchanged until both simulated editors approve the same interpretation.
+The current `/studio` demo finds realistic admission and fee differences between bilingual workshop policies, including scholarship scope, guardian exceptions, and ordered discounts. It leads from a discovered attendee to joint approval and a working form. The earlier `/consequences` experiment automatically finds an attendee or deadline instant where two simpler policy interpretations disagree. It can find both directions of an age/deadline tradeoff: a younger person accepted only by one rule, and a later applicant accepted only by the other. The user can transfer either discovered attendee into a working registration form, while the published rule stays unchanged until both simulated editors approve the same interpretation.
 
 [Project brief and build plan (private Google Doc)](https://docs.google.com/document/d/1SovcRW_BpJU2tisT57L3vq3POAh3rn0wzOC077BCYIY/edit)
 
 ## Current prototype
+
+- **Realistic policy studio at `/studio`:** nested boolean conditions, age ranges, five attendee flags, explicit UTC boundaries, and ordered USD fee overrides. The guided demo replays a clearly labeled recorded interpretation, then computes its witnesses. Fresh wording uses manual agent review; this route makes no provider calls. See [studio evidence and demo runbook](docs/REALISTIC-POLICY-STUDIO.md).
+- **Current verification:** 95 mechanical tests, TypeScript, production build, a frozen five-pair evaluation with separately recorded deadline clarifications, and two simulated browser editors. All 48 executable admission/fee scenario checks passed; two original pairs first abstained because deadlines were omitted. No paid model calls.
 
 - **Automatic model integration at `/consequences`:** **Find consequences** sends both saved policy drafts to a server-side Meta integration, validates the returned bilingual rules, and starts counterexample discovery. The integration is implemented, but Meta API access is not configured yet; no live Meta call or model-quality result has been verified. See [activation, failure handling and verification scope](docs/AUTOMATIC-MODEL.md).
 - **Automatic counterexample discovery at `/consequences`:** bilingual policy drafts become proposed executable rules. SamePage automatically finds a concrete attendee with different outcomes, including exact millisecond deadline boundaries. It exposes both acceptance directions when they exist, and distinguishes equivalent supported rules from unresolved interpretations. See [discovery design, evidence and demo flow](docs/COUNTEREXAMPLE-DISCOVERY.md).
@@ -67,7 +70,7 @@ Agent responses must match the generated schema exactly. Invalid or outdated res
 Run the existing reducer suite without installing application dependencies:
 
 ```sh
-node --experimental-strip-types --test tests/room.test.mjs tests/consequences.test.mjs tests/counterexamples.test.mjs tests/automatic-policy-review.test.mjs
+node --experimental-strip-types --test tests/*.test.mjs
 ```
 
 The 25 reducer tests cover full-document snapshots, atomic holds, exact selected-candidate review, provenance, deletions, stale context, concurrent corrections, legacy job recovery, and draft preservation. They pass for this iteration. TypeScript checking and the production build are separate checks.
@@ -80,20 +83,23 @@ A separate agent authored eight frozen bilingual policy pairs before interpretat
 
 On 20 October, eight fresh independent-agent responses covered seven frozen cases and their joint-vote continuation. All raw responses passed the production parser unchanged, and the tested semantic outcomes matched the expected facts. A separate browser session operated two editor tabs through a compatible merge, a concrete disagreement, matching votes, and a correctly blocked cross-document contradiction. See [evaluation notes](docs/EVALUATION.md) and the [demo runbook](docs/DEMO.md).
 
-The automatic model integration adds **23 passing tests**, bringing the current mechanical total to **76 passing tests**. Controlled provider fixtures cover the HTTP contract, exact source validation, malformed or oversized output, provider errors, timeouts, duplicate requests, CAS retries, expired leases, late responses, draft supersession and manual fallback. Missing credentials return HTTP 503 without room mutation or a provider call. No actual Meta API calls have been made; these tests establish request handling and state transitions, not live model quality, latency or cost. See [automatic model integration](docs/AUTOMATIC-MODEL.md).
+The automatic model integration adds **23 passing tests**, bringing that iteration’s mechanical total to **76 passing tests**. Controlled provider fixtures cover the HTTP contract, exact source validation, malformed or oversized output, provider errors, timeouts, duplicate requests, CAS retries, expired leases, late responses, draft supersession and manual fallback. Missing credentials return HTTP 503 without room mutation or a provider call. No actual Meta API calls have been made; these tests establish request handling and state transitions, not live model quality, latency or cost. See [automatic model integration](docs/AUTOMATIC-MODEL.md).
 
 A subsequent six-pair hard unseen-policy evaluation passed **64 scenario checks**, found four witnesses, correctly recognized a non-obvious equivalent pair, and held two unsupported/ambiguous candidates. Separate author, blind interpreter and auditor agents were used, with no paid provider API calls. Two browser editors then jointly published each side of one disagreement: an identical attendee and timestamp changed from accepted to rejected solely because residency became required. See [the hard-policy evaluation and its limits](docs/HARD-UNSEEN-EVALUATION.md). This used the manual relay and does not change the live-Meta verification gap.
 
 Next build priorities:
 
-1. Obtain Meta Model API access, configure the server secret and redeploy, then verify the complete live-model flow and measure quality, latency, cost and failure recovery on frozen and unseen inputs.
-2. Shorten the interaction into a reliable judge-operated demonstration; preserve the visible explanations and both editors’ agency.
+1. Keep paid provider calls paused. After a specific budget is authorized, adapt the live Meta integration to the richer studio contract and measure quality, latency, cost, and failure recovery.
+2. Evaluate the streamlined `/studio` demonstration with independent bilingual people; preserve visible consequences and both editors’ agency.
 3. Test with independent bilingual people; improve confusing explanations and translations using their feedback.
 4. Add actual editor identity, room membership and permissions before expanding access.
 
 This is a feasibility prototype, not a validated production collaboration system. English and Spanish are the only implemented languages. The experiments do not establish a probability of winning a competition or general bilingual reliability.
 
 ## Source map
+
+- `app/studio/`, `app/api/studio/`, `lib/studio*.ts`: realistic eligibility/fees, recorded demo fixture, manual interpretation, complete bounded comparison, joint approval, and receipts.
+- `tests/studio*.test.mjs`, `tests/semantic/2026-10-20-studio/`: mechanics, original frozen source/expectations, untouched agent outputs, separate clarification rounds, audit, HTTP checks, and two-browser evidence.
 
 - `app/consequences/`, `app/api/consequences/`, `lib/consequences*.ts`: policy interpretation, consequence comparison, joint approval and versioned registration.
 - `lib/automatic-policy-review.ts`: durable model-request leases, explicit retries, stale-response rejection and atomic proposal application.

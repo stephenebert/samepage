@@ -1,0 +1,94 @@
+{
+  "caseId": "central-demo",
+  "status": "frozen-agent-derived",
+  "interpretationExpectation": {
+    "alice": "supported",
+    "bob": "supported"
+  },
+  "humanFormulas": {
+    "alice": {
+      "eligible": "age >= 16 AND (age >= 18 OR guardianConsent = true)",
+      "feeIfAdmitted": "USD 0 if scholarship = true AND age < 18; otherwise USD 80",
+      "feeIfDenied": null
+    },
+    "bob": {
+      "eligible": "age >= 16 AND (age >= 18 OR guardianConsent = true)",
+      "feeIfAdmitted": "USD 0 if scholarship = true; otherwise USD 80",
+      "feeIfDenied": null
+    }
+  },
+  "expectedRelationship": {
+    "admissionEquivalent": true,
+    "feeEquivalentAmongAdmitted": false,
+    "centralWitnessScenarioId": "adult-scholarship",
+    "explanation": "At age 24 with scholarship=true and guardianConsent=false, both admit; Alice charges USD 80 and Bob charges USD 0."
+  },
+  "scenarios": [
+    {
+      "scenarioId": "adult-no-scholarship",
+      "alice": {
+        "eligible": true,
+        "feeCents": 8000
+      },
+      "bob": {
+        "eligible": true,
+        "feeCents": 8000
+      }
+    },
+    {
+      "scenarioId": "adult-scholarship",
+      "alice": {
+        "eligible": true,
+        "feeCents": 8000
+      },
+      "bob": {
+        "eligible": true,
+        "feeCents": 0
+      }
+    },
+    {
+      "scenarioId": "minor-scholarship-consent",
+      "alice": {
+        "eligible": true,
+        "feeCents": 0
+      },
+      "bob": {
+        "eligible": true,
+        "feeCents": 0
+      }
+    },
+    {
+      "scenarioId": "minor-full-price-consent",
+      "alice": {
+        "eligible": true,
+        "feeCents": 8000
+      },
+      "bob": {
+        "eligible": true,
+        "feeCents": 8000
+      }
+    },
+    {
+      "scenarioId": "minor-scholarship-no-consent",
+      "alice": {
+        "eligible": false,
+        "feeCents": null
+      },
+      "bob": {
+        "eligible": false,
+        "feeCents": null
+      }
+    },
+    {
+      "scenarioId": "too-young-scholarship-consent",
+      "alice": {
+        "eligible": false,
+        "feeCents": null
+      },
+      "bob": {
+        "eligible": false,
+        "feeCents": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "jobId": "studio-review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "For this optional bookbinding workshop, you may register only if you are at least 18 years old and fewer than 12 people already have confirmed places at the moment you register. The workshop has a limit of 12 confirmed places. Every admitted participant pays US$60. There are no discounts or exceptions. Charge a fee only if the participant is admitted.",
+      "es": "Para este taller optativo de encuadernación, solo puedes inscribirte si tienes al menos 18 años y menos de 12 personas ya tienen plazas confirmadas en el momento de tu inscripción. El taller tiene un límite de 12 plazas confirmadas. Cada persona participante admitida paga 60 dólares estadounidenses. No hay descuentos ni excepciones. Solo se cobra una tarifa si la persona participante es admitida.",
+      "rules": null,
+      "issues": [
+        "The 12-place capacity limit and the condition requiring fewer than 12 confirmed places depend on a quota and an external confirmed-place count, neither of which is supported by the schema. Can a revised policy be provided that omits those unsupported conditions?",
+        "The policy does not state a registration deadline or explicitly state that there is no deadline. Is there a deadline? If so, provide its exact date, timezone, and inclusive or exclusive boundary; otherwise, explicitly state that there is no deadline."
+      ]
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "For this optional bookbinding workshop, you may register only if you are at least 18 years old and, at the time of your registration, fewer than 12 people have confirmed places. The workshop has a limit of 12 confirmed places. Each admitted person pays 60 US dollars. There are no discounts or exceptions. A fee is charged only if the person is admitted.",
+      "es": "Para este taller optativo de encuadernación, solo puedes inscribirte si tienes al menos 18 años y, en el momento de tu inscripción, hay menos de 12 personas con plaza confirmada. El taller tiene un límite de 12 plazas confirmadas. Cada persona admitida paga 60 dólares estadounidenses. No hay descuentos ni excepciones. Solo se cobra si la persona es admitida.",
+      "rules": null,
+      "issues": [
+        "The 12-place capacity limit and the condition requiring fewer than 12 confirmed places depend on a quota and an external confirmed-place count, neither of which is supported by the schema. Can a revised policy be provided that omits those unsupported conditions?",
+        "The policy does not state a registration deadline or explicitly state that there is no deadline. Is there a deadline? If so, provide its exact date, timezone, and inclusive or exclusive boundary; otherwise, explicitly state that there is no deadline."
+      ]
+    }
+  ]
+}

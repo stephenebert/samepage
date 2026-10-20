@@ -1,0 +1,304 @@
+{
+  "kind": "samepage-studio-v1",
+  "id": "studio-guardian-exception-scope-clarified",
+  "revision": 4,
+  "createdAt": "2026-10-20T12:10:00.000Z",
+  "updatedAt": "2026-10-20T12:01:00.000Z",
+  "mode": "manual-agent-review",
+  "published": {
+    "version": 1,
+    "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+    "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+    "rules": {
+      "eligibility": {
+        "op": "always"
+      },
+      "fee": {
+        "currency": "USD",
+        "defaultCents": 0,
+        "overrides": []
+      }
+    },
+    "publishedAt": "2026-10-20T12:10:00.000Z",
+    "reviewId": null,
+    "candidateId": null
+  },
+  "drafts": {
+    "alice": {
+      "editor": "alice",
+      "language": "en",
+      "version": 2,
+      "text": "For this optional paper-collage workshop, participants normally must be at least 16 years old. A scholarship waives that minimum age requirement. Every participant under 18 must have guardian consent, including participants with a scholarship. Adults do not need guardian consent. Every admitted participant pays US$40, including scholarship recipients. There are no discounts. Charge a fee only if the participant is admitted. There is no registration deadline."
+    },
+    "bob": {
+      "editor": "bob",
+      "language": "es",
+      "version": 2,
+      "text": "Para este taller optativo de collage de papel, normalmente se exige tener al menos 16 años y, si la persona es menor de 18, contar con el consentimiento de su tutor. Las personas con beca quedan exentas de ambos requisitos: pueden inscribirse a cualquier edad y sin consentimiento del tutor. Las personas adultas sin beca tampoco necesitan ese consentimiento. Cada persona admitida paga 40 dólares estadounidenses, incluidas las que tienen beca. No hay descuentos. Solo se cobra si la persona es admitida. No hay fecha límite de inscripción."
+    }
+  },
+  "activeJob": null,
+  "review": {
+    "id": "studio-review-3",
+    "basePolicyVersion": 1,
+    "candidates": [
+      {
+        "id": "studio-review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "For this optional paper-collage workshop, participants normally must be at least 16 years old. A scholarship waives that minimum age requirement. Every participant under 18 must have guardian consent, including participants with a scholarship. Adults do not need guardian consent. Every admitted participant pays US$40, including scholarship recipients. There are no discounts. Charge a fee only if the participant is admitted. There is no registration deadline.",
+        "es": "Para este taller optativo de collage de papel, las personas participantes normalmente deben tener al menos 16 años. Una beca exime de ese requisito de edad mínima. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor, incluidas las personas participantes con beca. Las personas adultas no necesitan el consentimiento de su tutor. Cada persona participante admitida paga 40 dólares estadounidenses, incluidas las personas con beca. No hay descuentos. Solo se cobra una tarifa si la persona participante es admitida. No hay fecha límite de inscripción.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 4000,
+            "overrides": []
+          }
+        },
+        "issues": []
+      },
+      {
+        "id": "studio-review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "For this optional paper-collage workshop, participants are normally required to be at least 16 years old and, if under 18, to have guardian consent. People with a scholarship are exempt from both requirements: they may register at any age and without guardian consent. Adults without a scholarship also do not need that consent. Each admitted person pays 40 US dollars, including those with a scholarship. There are no discounts. A fee is charged only if the person is admitted. There is no registration deadline.",
+        "es": "Para este taller optativo de collage de papel, normalmente se exige tener al menos 16 años y, si la persona es menor de 18, contar con el consentimiento de su tutor. Las personas con beca quedan exentas de ambos requisitos: pueden inscribirse a cualquier edad y sin consentimiento del tutor. Las personas adultas sin beca tampoco necesitan ese consentimiento. Cada persona admitida paga 40 dólares estadounidenses, incluidas las que tienen beca. No hay descuentos. Solo se cobra si la persona es admitida. No hay fecha límite de inscripción.",
+        "rules": {
+          "eligibility": {
+            "op": "any",
+            "args": [
+              {
+                "op": "flag",
+                "field": "scholarship",
+                "value": true
+              },
+              {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 18
+                      },
+                      {
+                        "op": "flag",
+                        "field": "guardianConsent",
+                        "value": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 4000,
+            "overrides": []
+          }
+        },
+        "issues": []
+      }
+    ],
+    "votes": {},
+    "status": "open",
+    "provenance": "manual-agent-review",
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "admission-right",
+          "kind": "admission-right",
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2026-10-26T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null,
+            "feeReason": {
+              "en": "No fee: admission denied.",
+              "es": "Sin tarifa: admisión denegada."
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": false,
+                "en": "((age ≥ 16 OR scholarship) AND (age ≥ 18 OR guardian consent))",
+                "es": "((edad ≥ 16 O beca) Y (edad ≥ 18 O consentimiento del tutor))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "(age ≥ 16 OR scholarship)",
+                "es": "(edad ≥ 16 O beca)"
+              },
+              {
+                "path": "eligibility.0.0",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.0.1",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": false,
+                "en": "(age ≥ 18 OR guardian consent)",
+                "es": "(edad ≥ 18 O consentimiento del tutor)"
+              },
+              {
+                "path": "eligibility.1.0",
+                "passed": false,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.1.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Admission requires ((age ≥ 16 OR scholarship) AND (age ≥ 18 OR guardian consent)).",
+                "es": "La admisión requiere ((edad ≥ 16 O beca) Y (edad ≥ 18 O consentimiento del tutor))."
+              }
+            ]
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 4000,
+            "feeReason": {
+              "en": "Standard fee; no earlier override matched.",
+              "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(scholarship OR (age ≥ 16 AND (age ≥ 18 OR guardian consent)))",
+                "es": "(beca O (edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": false,
+                "en": "(age ≥ 16 AND (age ≥ 18 OR guardian consent))",
+                "es": "(edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor))"
+              },
+              {
+                "path": "eligibility.1.0",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.1.1",
+                "passed": false,
+                "en": "(age ≥ 18 OR guardian consent)",
+                "es": "(edad ≥ 18 O consentimiento del tutor)"
+              },
+              {
+                "path": "eligibility.1.1.0",
+                "passed": false,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.1.1.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "Standard fee; no earlier override matched.",
+                "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+              }
+            ]
+          },
+          "feeDeltaCents": null,
+          "explanation": {
+            "en": "B admits this person; A refuses them.",
+            "es": "B admite a esta persona; A la rechaza."
+          }
+        }
+      ],
+      "checkedCases": 768,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 8,
+        "flagCombinations": 32,
+        "timePartitions": 3,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    "createdAt": "2026-10-20T12:01:00.000Z"
+  },
+  "registrations": []
+}
