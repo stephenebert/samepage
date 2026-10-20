@@ -1,0 +1,16 @@
+{
+  "model": {
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": false,
+      "mode": "unconfigured"
+    }
+  },
+  "roomId": "consequence-f687a90f-bb5c-44bf-a547-a2c3b703c6b2",
+  "unconfiguredStatus": 503,
+  "unconfiguredCode": "MODEL_NOT_CONFIGURED",
+  "noMutation": true,
+  "crossOriginStatus": 403,
+  "invalidBodyStatus": 400
+}

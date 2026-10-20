@@ -157,6 +157,11 @@ export function applyConsequencesAction(before: ConsequencesRoom, value: Consequ
     const room = copy(before);
     room.drafts[action.editor] = { ...previous, version: previous.version + 1, text: action.text };
     room.activeJob = null; room.review = null;
+    if (room.automaticReview?.status === "running") {
+      room.automaticReview.status = "superseded";
+      room.automaticReview.finishedAt = now;
+      room.automaticReview.durationMs = Math.max(0, Date.parse(now) - Date.parse(room.automaticReview.startedAt));
+    }
     return changed(room, now);
   }
   if (action.type === "requestReview") {
@@ -173,6 +178,13 @@ export function applyConsequencesAction(before: ConsequencesRoom, value: Consequ
     const candidates = parseConsequencesReview(action.response, job), room = copy(before);
     room.review = { id: job.id, basePolicyVersion: job.basePolicyVersion, candidates, votes: {}, status: "open", createdAt: now };
     room.activeJob = null;
+    // A manual import can replace a model request. Its later response must never
+    // override the review or approvals established by that import.
+    if (room.automaticReview?.status === "running") {
+      room.automaticReview.status = "superseded";
+      room.automaticReview.finishedAt = now;
+      room.automaticReview.durationMs = Math.max(0, Date.parse(now) - Date.parse(room.automaticReview.startedAt));
+    }
     return changed(room, now);
   }
   if (action.type === "vote") {

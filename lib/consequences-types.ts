@@ -35,15 +35,23 @@ export interface PolicyRegistration extends PolicyAttendee {
   id: string; requestId: string; policyVersion: number; label: string;
   recordedAt: string; decision: PolicyDecision;
 }
+export interface AutomaticPolicyReview {
+  requestId: string; jobId: string; provider: "Meta"; model: string;
+  status: "running" | "completed" | "failed" | "superseded";
+  startedAt: string; leaseExpiresAt: string;
+  finishedAt?: string; durationMs?: number;
+  error?: { code: string; message: string };
+}
 export interface ConsequencesRoom {
   kind: "samepage-consequences-v1";
   id: string; revision: number; createdAt: string; updatedAt: string;
-  mode: "agent-manual-relay";
+  mode: "agent-manual-relay" | "automatic-model";
   published: PublishedPolicy;
   drafts: Record<EditorId, PolicyDraft>;
   activeJob: PolicyReviewJob | null;
   review: PolicyReview | null;
   registrations: PolicyRegistration[];
+  automaticReview?: AutomaticPolicyReview | null;
 }
 export type ConsequencesAction =
   | { type: "draft"; editor: EditorId; baseVersion: number; text: string }

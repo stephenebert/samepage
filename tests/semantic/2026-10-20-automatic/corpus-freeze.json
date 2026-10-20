@@ -1,0 +1,13 @@
+{
+  "frozenAt": "2026-10-20T22:40:10.689873+00:00",
+  "scope": "Fresh six-pair corpus frozen before live provider exposure",
+  "sha256": {
+    "cases.json": "0a1166e9961066c0c430bf98a70bebf8f31bf7d4a749468fe4ce535f08c03d5e",
+    "EXPECTATIONS.md": "d1374693610af1931bce8dcde6b1407f46f2f99d488ce954df8ccad3d01038a1"
+  },
+  "validation": {
+    "pairs": 6,
+    "scenarioOutcomesChecked": 52,
+    "expectedDirectionsChecked": true
+  }
+}

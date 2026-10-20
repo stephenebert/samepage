@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, Check, CheckCircle2, Circle, CircleHelp, Copy, ExternalLink, FileCheck2, GitCompareArrows, Globe2, Link2, LoaderCircle, LockKeyhole, Radio, RefreshCw, Send, ShieldCheck, SlidersHorizontal, UserRound, Users, XCircle } from "lucide-react";
 import { evaluatePolicy, summarizePolicy } from "../../lib/consequences";
 import { discoverCounterexamples } from "../../lib/counterexamples";
@@ -14,6 +14,8 @@ const PEOPLE: Record<EditorId, { name: string; language: "en" | "es"; label: str
 };
 const DEFAULT_TIME = "2026-11-05T17:00";
 type RoomResponse = { room: ConsequencesRoom };
+type ModelConnection = { provider: "Meta"; model: string; ready: boolean; mode: "automatic" | "unconfigured" };
+type AutomaticResponse = Partial<RoomResponse> & { error?: string; automatic?: { status: "running" | "completed" | "failed" | "superseded" | "already-reviewed"; error?: { code: string; message: string } } };
 type Act = (action: ConsequencesAction) => Promise<ConsequencesRoom>;
 type AttendeeFields = { age: string; resident: string; time: string };
 type PreviewSelection = { reviewKey: string; witnessId: string | null; fields: AttendeeFields };
@@ -51,12 +53,44 @@ export default function ConsequencesPage() {
   const [ready, setReady] = useState(false);
   const [creating, setCreating] = useState(false);
   const [working, setWorking] = useState(false);
+  const [manualWorking, setManualWorking] = useState(false);
+  const [model, setModel] = useState<ModelConnection | null>(null);
+  const [modelError, setModelError] = useState("");
+  const [checkingModel, setCheckingModel] = useState(false);
+  const [reviewClock, setReviewClock] = useState(() => Date.now());
+  const [dirtyEditors, setDirtyEditors] = useState<Partial<Record<EditorId, boolean>>>({});
+  const pendingRequest = useRef<string | null>(null);
   const [connected, setConnected] = useState(true);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [preview, setPreview] = useState<PreviewSelection | null>(null);
   const [formTransfer, setFormTransfer] = useState<FormTransfer | null>(null);
   const review = room?.review;
+  const automaticReview = room?.automaticReview;
+  const currentAutomaticJob = Boolean(automaticReview && room?.activeJob?.id === automaticReview.jobId);
+  const automaticExpired = currentAutomaticJob && automaticReview?.status === "running" && Date.parse(automaticReview.leaseExpiresAt) <= reviewClock;
+  const automaticRunning = currentAutomaticJob && automaticReview?.status === "running" && !automaticExpired;
+  const automaticFailed = currentAutomaticJob && (automaticReview?.status === "failed" || automaticExpired);
+  const automaticSuperseded = automaticReview?.status === "superseded" && !review && !room?.activeJob;
+  useEffect(() => {
+    if (!automaticRunning) return;
+    const timer = setInterval(() => setReviewClock(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, [automaticRunning]);
+  const hasUnsavedDrafts = Object.values(dirtyEditors).some(Boolean);
+  const reviewBusy = working || automaticRunning;
+  const setDraftDirty = useCallback((person: EditorId, dirty: boolean) => setDirtyEditors(current => current[person] === dirty ? current : { ...current, [person]: dirty }), []);
+  const refreshModel = useCallback(async () => {
+    setCheckingModel(true);
+    try {
+      const response = await fetch("/api/consequences/model", { cache: "no-store" });
+      if (!response.ok) throw new Error("Unable to check the model connection.");
+      const data = await response.json() as { model: ModelConnection };
+      if (!data.model || typeof data.model.ready !== "boolean") throw new Error("Unable to check the model connection.");
+      setModel(data.model); setModelError("");
+    } catch (e) { setModel(null); setModelError(e instanceof Error ? e.message : "Unable to check the model connection."); }
+    finally { setCheckingModel(false); }
+  }, []);
   const reviewKey = `${room?.id || ""}:${review?.id || "draft"}`;
   const discovery = useMemo(() => review && review.candidates.length === 2 ? discoverCounterexamples(
     review.candidates[0].issues.length ? null : review.candidates[0].rules,
@@ -86,6 +120,12 @@ export default function ConsequencesPage() {
     setReady(true);
   }, []);
   useEffect(() => {
+    void refreshModel();
+    const refreshOnFocus = () => { void refreshModel(); };
+    window.addEventListener("focus", refreshOnFocus);
+    return () => window.removeEventListener("focus", refreshOnFocus);
+  }, [refreshModel]);
+  useEffect(() => {
     if (!roomId) return;
     let cancelled = false;
     let pending = false;
@@ -105,7 +145,7 @@ export default function ConsequencesPage() {
     setCreating(true); setError(""); setNotice("");
     try {
       const data = await request("/api/consequences", {});
-      setRoom(data.room); setRoomId(data.room.id); setEditor(null); setConnected(true); setFormTransfer(null);
+      setRoom(data.room); setRoomId(data.room.id); setEditor(null); setConnected(true); setFormTransfer(null); setDirtyEditors({});
       window.history.replaceState({}, "", `/consequences?room=${encodeURIComponent(data.room.id)}`);
     } catch (e) { setError(e instanceof Error ? e.message : "Unable to create a room."); }
     finally { setCreating(false); }
@@ -118,11 +158,33 @@ export default function ConsequencesPage() {
     catch (e) { setError(e instanceof Error ? e.message : "The action could not be saved."); throw e; }
   }, [roomId, receiveRoom]);
 
-  const requestReview = async () => {
-    setWorking(true); setNotice("");
-    try { await act({ type: "requestReview" }); setNotice("Review prompt is ready. Open Agent relay below to transfer it to a fresh agent, then import the response."); }
+  const requestManualReview = async () => {
+    setManualWorking(true); setNotice("");
+    try { await act({ type: "requestReview" }); setNotice("Manual review prompt is ready in Advanced review tools. Import the fresh response there."); }
     catch { /* The shared error is shown above the workspace. */ }
-    finally { setWorking(false); }
+    finally { setManualWorking(false); }
+  };
+  const requestAutomaticReview = async () => {
+    if (!roomId || pendingRequest.current || reviewBusy || hasUnsavedDrafts || !model?.ready) return;
+    const requestedRoom = roomId;
+    pendingRequest.current = requestedRoom;
+    setWorking(true); setError(""); setNotice("");
+    try {
+      const response = await fetch(`/api/consequences/${encodeURIComponent(requestedRoom)}/review`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ retry: automaticFailed }),
+      });
+      const data = await response.json() as AutomaticResponse;
+      if (data.room) receiveRoom(data.room);
+      if (!response.ok || data.automatic?.status === "failed") {
+        if (!data.room?.automaticReview?.error) throw new Error(data.error || data.automatic?.error?.message || "The model review failed. Retry when you are ready.");
+      } else if (data.automatic?.status === "superseded") {
+        setNotice("A policy changed during the review. That response was discarded. Save the latest drafts, then find consequences again.");
+      } else if (data.automatic?.status === "completed" || data.automatic?.status === "already-reviewed") {
+        document.getElementById("sp3-discovery-lab")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } catch (e) { setError(e instanceof Error ? e.message : "Unable to complete the model review. Retry when you are ready."); }
+    finally { pendingRequest.current = null; setWorking(false); }
   };
   const copyLink = async () => {
     try { await navigator.clipboard.writeText(`${window.location.origin}/consequences?room=${roomId}`); setNotice("Shared room link copied. Both editor tabs use this same room."); }
@@ -136,21 +198,23 @@ export default function ConsequencesPage() {
   return <main className="sp3">
     <header className="sp3-topbar">
       <a href="/" className="sp3-brand" aria-label="SamePage home"><span className="sp3-brand-mark" aria-hidden="true"><i /><i /></span>SamePage</a>
-      <div className="sp3-topbar-right"><span className="sp3-experiment">MEANING → DISCOVERY / 04</span><span className="sp3-badge"><Users size={11} /> Two simulated editors</span></div>
+      <div className="sp3-topbar-right"><span className="sp3-experiment">WORDS → CONSEQUENCES / 05</span><span className="sp3-badge"><Users size={11} /> Two simulated editors</span></div>
     </header>
     <section className="sp3-hero">
       <div><p className="sp3-kicker">The consequence you didn’t think to test.</p><h1>Find the consequence<br /><em>hidden in the words.</em></h1><p className="sp3-hero-copy">Write the policy in two languages. SamePage finds a person or a moment where the interpretations disagree. Decide together, then try the consequence in the working form.</p></div>
       {room && <div className="sp3-room-tools"><span className="sp3-room-code">ROOM {room.id.replace(/^consequence-/, "").slice(0, 8).toUpperCase()} · REV {room.revision}</span><div className="sp3-links"><a className="sp3-link" href={`/consequences?room=${room.id}&editor=alice`} target="_blank" rel="noreferrer">Alice · EN <ExternalLink size={10} /></a><a className="sp3-link" href={`/consequences?room=${room.id}&editor=bob`} target="_blank" rel="noreferrer">Bob · ES <ExternalLink size={10} /></a>{editor ? <a className="sp3-link" href={`/consequences?room=${room.id}`}>Both editors</a> : <button className="sp3-link" onClick={copyLink} aria-label="Copy shared room link"><Link2 size={12} /></button>}</div></div>}
     </section>
     {error && <p className="sp3-error" role="alert">{error}</p>}
-    {notice && (!notice.startsWith("Review prompt is ready") || room?.activeJob) && <p className="sp3-notice" role="status">{notice}</p>}
+    {notice && <p className="sp3-notice" role="status">{notice}</p>}
     {!ready || (roomId && !room && connected) ? <div className="sp3-loading"><LoaderCircle size={17} className="sp3-spin" /> Opening the shared room…</div> : !room ? <section className="sp3-empty">
       <div className="sp3-empty-main"><p className="sp3-kicker">The consequences experiment</p><h2>Translation is only<br />the beginning.</h2><p>Alice and Bob are writing the rules for a neighborhood workshop. SamePage searches the interpreted rules for an attendee who gets different answers—even at a deadline boundary.</p><button className="sp3-btn" onClick={createRoom} disabled={creating}>{creating ? <LoaderCircle className="sp3-spin" size={14} /> : <Users size={14} />}{creating ? "Creating room…" : "Create a consequences room"}<ArrowRight size={14} /></button></div>
-      <div className="sp3-empty-demo"><p className="sp3-example-person">Let SamePage find<br />the attendee you missed.</p><div className="sp3-example-line"><span>16 or older <b>and</b> a resident</span><strong className="sp3-fail-fill">REJECTED</strong></div><div className="sp3-example-line"><span>16 or older <b>or</b> a resident</span><strong className="sp3-pass-fill">ACCEPTED</strong></div><p className="sp3-example-foot">Illustrative difference. In the live room, a fresh agent interprets both drafts; SamePage automatically finds a distinguishing attendee. Both editors must confirm before the working form changes.</p></div>
+      <div className="sp3-empty-demo"><p className="sp3-example-person">Let SamePage find<br />the attendee you missed.</p><div className="sp3-example-line"><span>16 or older <b>and</b> a resident</span><strong className="sp3-fail-fill">REJECTED</strong></div><div className="sp3-example-line"><span>16 or older <b>or</b> a resident</span><strong className="sp3-pass-fill">ACCEPTED</strong></div><p className="sp3-example-foot">Illustrative difference for a 17-year-old nonresident. In the live room, AI interprets both drafts; SamePage automatically finds a distinguishing attendee. Both editors must confirm before the working form changes.</p></div>
     </section> : <>
-      <div className="sp3-status" role="status"><div className="sp3-status-main"><Radio size={14} /><span><strong>{!connected ? "Connection interrupted" : review?.status === "published" ? `Both editors agreed · form now uses version ${room.published.version}` : room.activeJob ? "Review requested · waiting for manual agent relay" : review ? "Two interpretations · a shared decision is needed" : "Shared room is live · propose the next policy"}</strong><span>{!connected ? " · Your unsent text is preserved." : ` · Published policy v${room.published.version}`}</span></span></div><span>Model connection: manual</span></div>
+      <div className="sp3-status" role="status"><div className="sp3-status-main">{reviewBusy ? <LoaderCircle size={14} className="sp3-spin" /> : <Radio size={14} />}<span><strong>{!connected ? "Connection interrupted" : reviewBusy ? "Interpreting both policies · the live form stays unchanged" : review?.status === "published" ? `Both editors agreed · form now uses version ${room.published.version}` : automaticFailed ? "Model review interrupted or failed · retry when you are ready" : review ? "Two interpretations · a shared decision is needed" : room.activeJob ? "Manual review prompt prepared" : "Shared room is live · propose the next policy"}</strong><span>{!connected ? " · Your unsent text is preserved." : ` · Published policy v${room.published.version}`}</span></span></div><span>{model?.ready ? `Meta · ${model.model}` : model ? "Model not configured" : modelError ? "Model connection unavailable" : "Checking model connection"}</span></div>
+      {(!model?.ready || automaticFailed || automaticSuperseded) && <div className={`sp3-model-setup ${model?.ready ? "review-message" : ""}`} role="status"><div><strong>{modelError ? "Model connection could not be checked" : !model ? "Checking the model connection…" : !model.ready ? "Connect Meta to review policies automatically" : automaticFailed ? "This review was not applied" : "The drafts changed during the review"}</strong><p>{modelError || (!model ? "Saved policies and registrations are available while the connection is checked." : !model.ready ? <>Add <code>MODEL_API_KEY</code> in Site Settings → Environment variables, mark it <strong>Secret</strong>, and save it. Redeploy the site to apply the change, then refresh the connection. The key stays on the server. Default model: {model.model}.</> : automaticFailed ? automaticReview?.error?.message || "The request did not finish successfully. Retry the same drafts explicitly, or save a revised policy." : "The stale response was discarded. Find consequences again to review the latest saved drafts.")}</p></div>{!model?.ready && <button className="sp3-btn-secondary" onClick={() => { void refreshModel(); }} disabled={checkingModel}>{checkingModel ? <LoaderCircle size={12} className="sp3-spin" /> : <RefreshCw size={12} />}Refresh connection</button>}</div>}
+      {review && <p className="sp3-model-credit">{automaticReview?.status === "completed" && automaticReview.jobId === review.id ? <>Interpreted by {automaticReview.provider} · {automaticReview.model}{typeof automaticReview.durationMs === "number" ? ` · ${(automaticReview.durationMs / 1000).toFixed(1)}s review request` : ""}. Consequences found by the rule engine.</> : "This review was imported through the manual relay. Consequences were found automatically by the rule engine."}</p>}
 
-      <section className="sp3-lab" aria-label="Consequence comparison">
+      <section className="sp3-lab" id="sp3-discovery-lab" aria-label="Consequence comparison" aria-busy={reviewBusy}>
         <div className="sp3-lab-header"><div><p className="sp3-kicker">01 / Automatic consequence discovery</p><h2>{discovery?.status === "different" ? "SamePage found a disagreement." : discovery?.status === "equivalent" ? "Same outcomes within supported rules." : discovery?.status === "unresolved" ? "Clarify the policy before comparing it." : "What consequence is hiding in your policy?"}</h2><p>{discovery?.status === "different" ? "No attendee was supplied. SamePage searched the proposed rules and found where the answer changes." : discovery?.status === "equivalent" ? "The parsed interpretations make the same decisions in this prototype’s supported domain. This does not prove the original language means the same thing." : discovery?.status === "unresolved" ? "An unresolved condition cannot be treated as an executable rule. Review the clauses below before asking for a fresh interpretation." : "After both drafts are interpreted, SamePage automatically checks age, residency and precise deadline boundaries."}</p></div><span className={`sp3-lab-state ${publishedDecision && !publishedDecision.accepted ? "warn" : ""}`}>{publishedDecision?.accepted ? <CheckCircle2 size={12} /> : <ShieldCheck size={12} />}Live form v{room.published.version}{publishedDecision ? ` · ${publishedDecision.accepted ? "accepts" : "rejects"}` : ""}</span></div>
         {discovery && review && <DiscoveryPanel discovery={discovery} candidates={review.candidates} witness={witness} previewMatchesWitness={previewMatchesWitness} onSelect={selectWitness} />}
         <div className="sp3-attendee"><div className="sp3-attendee-intro"><span className="sp3-person-icon"><UserRound size={18} /></span><div><strong>{witness && previewMatchesWitness ? "The attendee SamePage discovered" : "Explore your own attendee"}</strong><p>Change any detail. This preview saves no registration.</p></div></div><div className="sp3-attendee-fields"><label className="sp3-field"><span>Age</span><input aria-label="Test attendee age" type="number" min="0" max="120" step="1" value={age} onChange={e => editPreview("age", e.target.value)} /></label><label className="sp3-field"><span>Neighborhood resident</span><select aria-label="Test attendee residency" value={resident} onChange={e => editPreview("resident", e.target.value)}><option value="no">No · nonresident</option><option value="yes">Yes · resident</option></select></label><label className="sp3-field"><span>Registration time · UTC</span><input aria-label="Test attendee registration time UTC" type="datetime-local" step="0.001" value={time} onChange={e => editPreview("time", e.target.value)} /></label></div></div>
@@ -159,16 +223,16 @@ export default function ConsequencesPage() {
           <div className="sp3-outcomes">{review.candidates.map((candidate, index) => <Outcome key={candidate.id} candidate={candidate} decision={candidateDecisions[index]} />)}</div>
           <div className="sp3-lab-explainer"><div><CircleHelp size={13} /><span>{hasDifference ? "These proposed rules give this attendee different answers. The working form still uses the last jointly approved policy." : discovery?.status === "equivalent" ? "The parsed rules agree throughout the supported domain. Check the source language before confirming the interpretation." : "These outcomes describe only the attendee shown above. Unresolved conditions cannot be approved or executed."}</span></div><button className="sp3-btn-secondary" onClick={transferAttendee} disabled={!attendee}><ArrowRight size={12} />Test this attendee in the form</button></div>
           {review.status === "open" ? <div className={`sp3-consensus ${editor ? "single" : ""}`}>{participants.map(person => <Voter key={person} editor={person} room={room} act={act} />)}</div> : <div className="sp3-published-banner"><CheckCircle2 size={20} /><div><strong>Both editors confirmed the same meaning.</strong><br />The English policy, Spanish policy, and working form now share version {room.published.version}.</div></div>}
-        </> : <div className="sp3-lab-placeholder"><div><h3>Start with the words.<br />Then make the difference visible.</h3><p>{room.activeJob ? "The review prompt is ready in Agent relay below. Import a fresh response to compare the two proposed meanings." : "Send Alice’s English policy and Bob’s Spanish policy below, then request a fresh review. Existing registrations keep their original policy version."}</p></div><div className="sp3-current-outcome"><span>Published rule · version {room.published.version}</span><strong className={publishedDecision?.accepted ? "sp3-pass" : "sp3-fail"}>{publishedDecision ? publishedDecision.accepted ? "Accepted" : "Rejected" : "Complete attendee details"}</strong><p>{summarizePolicy(room.published.rules)}</p></div></div>}
+        </> : <div className="sp3-lab-placeholder"><div><h3>Start with the words.<br />Then make the difference visible.</h3><p>{reviewBusy ? "Meta is interpreting the saved drafts. SamePage will then search their executable rules for a surprising consequence. You can keep editing; a changed draft invalidates the in-flight review." : model?.ready ? "Save Alice’s English policy and Bob’s Spanish policy below, then choose Find consequences. Existing registrations keep their original policy version." : "Save both policy drafts below. Connect Meta for automatic review, or use the manual fallback in Advanced review tools."}</p></div><div className="sp3-current-outcome"><span>Published rule · version {room.published.version}</span><strong className={publishedDecision?.accepted ? "sp3-pass" : "sp3-fail"}>{publishedDecision ? publishedDecision.accepted ? "Accepted" : "Rejected" : "Complete attendee details"}</strong><p>{summarizePolicy(room.published.rules)}</p></div></div>}
       </section>
 
-      <div className="sp3-bottom-grid"><section><div className="sp3-section-heading"><h2><Globe2 size={13} /> 02 / Write in your language</h2><span>{editor ? `${PEOPLE[editor].name}’s simulated editor` : "Two editors · one room"}</span></div><div className={`sp3-editors ${editor ? "single" : ""}`}>{participants.map(person => <DraftEditor key={`${room.id}-${person}`} editor={person} room={room} act={act} />)}</div><div className="sp3-editor-tools"><p>Only saved drafts enter the review. Changing either draft resets prior votes. Supported: age, residency and a deadline in UTC.</p><button className="sp3-btn-secondary" onClick={requestReview} disabled={working || Boolean(room.activeJob) || Boolean(room.review)}>{working ? <LoaderCircle size={12} className="sp3-spin" /> : <GitCompareArrows size={12} />}{room.activeJob ? "Review prompt ready" : room.review ? "Edit a draft to review again" : "Request a fresh review"}</button></div></section><RegistrationForm key={room.id} room={room} act={act} transfer={formTransfer} /></div>
+      <div className="sp3-bottom-grid"><section><div className="sp3-section-heading"><h2><Globe2 size={13} /> 02 / Write in your language</h2><span>{editor ? `${PEOPLE[editor].name}’s simulated editor` : "Two editors · one room"}</span></div><div className={`sp3-editors ${editor ? "single" : ""}`}>{participants.map(person => <DraftEditor key={`${room.id}-${person}`} editor={person} room={room} act={act} onDirty={setDraftDirty} />)}</div><div className="sp3-editor-tools"><p>{hasUnsavedDrafts ? "Save your local changes before finding consequences." : "Only saved drafts enter the review. Changing either draft resets prior votes."} Supported: age, residency and a deadline in UTC.</p><button className="sp3-btn sp3-discover-button" onClick={requestAutomaticReview} disabled={reviewBusy || manualWorking || !model?.ready || hasUnsavedDrafts || Boolean(room.review)}>{reviewBusy ? <LoaderCircle size={13} className="sp3-spin" /> : <GitCompareArrows size={13} />}{reviewBusy ? "Finding consequences…" : room.review ? "Edit a draft to review again" : automaticFailed ? "Retry model review" : "Find consequences"}</button></div></section><RegistrationForm key={room.id} room={room} act={act} transfer={formTransfer} /></div>
 
       <section aria-label="Published policy in both languages"><div className="sp3-section-heading"><h2><FileCheck2 size={13} /> Published policy</h2><span>Version {room.published.version} · this is what the form enforces</span></div><div className="sp3-published-docs"><article lang="en"><h3>English · agreed</h3><p>{room.published.en}</p></article><article lang="es"><h3>Español · acordado</h3><p>{room.published.es}</p></article></div></section>
 
       <section className="sp3-audit" aria-label="Registration audit"><div className="sp3-section-heading"><h2><ShieldCheck size={13} /> Registration receipts</h2><span>{room.registrations.length} saved · decisions keep their original version</span></div>{room.registrations.length ? <div className="sp3-audit-list">{[...room.registrations].reverse().slice(0, 6).map(registration => <article className="sp3-audit-item" key={registration.id}><div><strong>{registration.label}</strong><span className={registration.decision.accepted ? "sp3-pass" : "sp3-fail"}>{registration.decision.accepted ? "Accepted" : "Rejected"}</span></div><p>{personLabel(registration)}<br />{displayTime(registration.submittedAt)}</p><small>Policy v{registration.policyVersion} · receipt {registration.id}</small></article>)}</div> : <p className="sp3-audit-empty">No registrations yet. Submit the working form to save a versioned result.</p>}</section>
-      <AgentRelay room={room} act={act} requestReview={requestReview} working={working} />
-      <div className="sp3-section-heading"><span><LockKeyhole size={11} style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }} /> Private prototype · synthetic attendees · no emails are sent</span><button className="sp3-btn-quiet" onClick={createRoom} disabled={creating}><RefreshCw size={10} /> Start a new room</button></div>
+      <AgentRelay room={room} act={act} requestReview={requestManualReview} working={reviewBusy || manualWorking} hasUnsavedDrafts={hasUnsavedDrafts} />
+      <div className="sp3-section-heading"><span><LockKeyhole size={11} style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }} /> Private prototype · synthetic attendees · no emails are sent</span><button className="sp3-btn-quiet" onClick={createRoom} disabled={creating || reviewBusy}><RefreshCw size={10} /> Start a new room</button></div>
     </>}
     <footer className="sp3-footer"><span>SamePage / a bilingual collaboration experiment<br />AI proposes the interpretation. People confirm it. Code evaluates the agreed rule.</span><span>Age · residency · UTC deadline<br /><a href="/">Open the document collaboration lab</a></span></footer>
   </main>;
@@ -214,7 +278,7 @@ function Voter({ editor, room, act }: { editor: EditorId; room: ConsequencesRoom
   return <div className="sp3-voter" lang={es ? "es" : "en"}><div className="sp3-voter-title">{PEOPLE[editor].name}{es ? " confirma" : " confirms"}<span>{selected ? es ? "Voto guardado" : "Vote saved" : es ? "Sin confirmar" : "Not confirmed"}</span></div><div className="sp3-vote-options">{review.candidates.map(candidate => <button className={`sp3-vote ${selected === candidate.id ? "selected" : ""}`} key={candidate.id} onClick={() => choose(candidate)} disabled={busy || !candidate.rules || candidate.issues.length > 0} aria-label={`${PEOPLE[editor].name} confirms ${PEOPLE[candidate.editor].name}'s rule`} aria-pressed={selected === candidate.id}>{selected === candidate.id ? <CheckCircle2 size={13} /> : <Circle size={13} />}<span>{es ? "Confirmar regla de " : "Confirm "}{PEOPLE[candidate.editor].name}{es ? "" : "’s rule"}</span></button>)}</div><p className="sp3-vote-state">{selected && review.votes[other] && selected !== review.votes[other] ? es ? "Las elecciones no coinciden. El formulario sigue igual." : "Your choices differ. The live form is unchanged." : selected ? es ? `Falta la misma confirmación de ${PEOPLE[other].name}.` : `Waiting for ${PEOPLE[other].name} to confirm the same rule.` : es ? "Al confirmar, apruebas ambas traducciones y la regla ejecutable." : "Confirmation approves both translations and the executable rule shown above."}</p></div>;
 }
 
-function DraftEditor({ editor, room, act }: { editor: EditorId; room: ConsequencesRoom; act: Act }) {
+function DraftEditor({ editor, room, act, onDirty }: { editor: EditorId; room: ConsequencesRoom; act: Act; onDirty: (editor: EditorId, dirty: boolean) => void }) {
   const draft = room.drafts[editor];
   const [local, setLocal] = useState<{ text: string; baseVersion: number } | null>(null);
   const [busy, setBusy] = useState(false);
@@ -222,6 +286,7 @@ function DraftEditor({ editor, room, act }: { editor: EditorId; room: Consequenc
   const stale = local !== null && local.baseVersion !== draft.version;
   const value = local?.text ?? draft.text;
   const changed = value !== draft.text;
+  useEffect(() => { onDirty(editor, changed || stale); }, [editor, changed, stale, onDirty]);
   const save = async () => {
     if (!local || stale) return;
     const sent = { ...local };
@@ -255,7 +320,7 @@ function RegistrationForm({ room, act, transfer }: { room: ConsequencesRoom; act
   return <section className="sp3-registration" id="sp3-working-form" aria-label="Working registration form"><div className="sp3-registration-head"><div><p className="sp3-registration-kicker">03 / Feel the consequence</p><h2>Workshop registration</h2></div><span className="sp3-live-badge"><span className="sp3-dot" />LIVE · v{room.published.version}</span></div><div className="sp3-registration-body"><p className="sp3-registration-policy">{summarizePolicy(room.published.rules)}</p>{transfer && <p className="sp3-transfer-notice" role="status"><ArrowRight size={12} />Preview attendee loaded. Submit to test the published rule; loading an attendee does not save a registration.</p>}<form onSubmit={submit}><div className="sp3-registration-grid"><label className="sp3-field sp3-span-two"><span>Synthetic attendee label</span><input aria-label="Registration attendee label" value={label} onChange={e => setLabel(e.target.value)} maxLength={80} required autoComplete="off" /></label><label className="sp3-field"><span>Age</span><input aria-label="Registration age" type="number" min="0" max="120" step="1" value={age} onChange={e => editField("age", e.target.value)} required /></label><label className="sp3-field"><span>Neighborhood resident</span><select aria-label="Registration residency" value={resident} onChange={e => editField("resident", e.target.value)}><option value="no">No · nonresident</option><option value="yes">Yes · resident</option></select></label><label className="sp3-field sp3-span-two"><span>Simulated submission time · UTC</span><input aria-label="Registration submission time UTC" type="datetime-local" step="0.001" value={time} onChange={e => editField("time", e.target.value)} required /></label></div><p className="sp3-registration-note">This is a working prototype form. The server saves a synthetic registration and evaluates it using the published policy. No payment or email.</p><button className="sp3-registration-submit" type="submit" disabled={busy || !attendee || !label.trim()}>{busy ? <LoaderCircle size={14} className="sp3-spin" /> : <ArrowRight size={14} />}{busy ? "Checking the agreed policy…" : "Submit registration"}</button></form>{receipt && <div className={`sp3-receipt ${receipt.decision.accepted ? "" : "rejected"}`} role="status">{receipt.decision.accepted ? <CheckCircle2 size={18} /> : <XCircle size={18} />}<div><strong>{receipt.decision.accepted ? "Registration accepted" : "Registration rejected"}</strong><p>Last saved result · {receipt.label}<br />{personLabel(receipt)}<br />{displayTime(receipt.submittedAt)}<br />{receipt.decision.reasons.join(" ")}</p><p>Saved against policy v{receipt.policyVersion}{receipt.policyVersion !== room.published.version ? ` · current form is v${room.published.version}` : ""}<br /><code>Receipt {receipt.id}</code></p></div></div>}</div></section>;
 }
 
-function AgentRelay({ room, act, requestReview, working }: { room: ConsequencesRoom; act: Act; requestReview: () => Promise<void>; working: boolean }) {
+function AgentRelay({ room, act, requestReview, working, hasUnsavedDrafts }: { room: ConsequencesRoom; act: Act; requestReview: () => Promise<void>; working: boolean; hasUnsavedDrafts: boolean }) {
   const [response, setResponse] = useState("");
   const [busy, setBusy] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -271,5 +336,5 @@ function AgentRelay({ room, act, requestReview, working }: { room: ConsequencesR
     try { await navigator.clipboard.writeText(room.activeJob?.prompt || ""); setCopied(true); }
     catch { setNote("Select and copy the review prompt from the text box."); }
   };
-  return <details className="sp3-relay"><summary>Agent relay (manual) · review prompts and responses</summary><div className="sp3-relay-body"><p>A facilitator transfers these saved drafts to a fresh Codex agent and imports its JSON response. There is no automatic model connection. AI proposes bilingual text and structured rules; both simulated editors review and confirm them. Unsupported conditions stay unresolved.</p><div className="sp3-relay-controls"><button className="sp3-btn-secondary" onClick={requestReview} disabled={working || Boolean(room.activeJob) || Boolean(room.review)}>{working ? <LoaderCircle className="sp3-spin" size={12} /> : <SlidersHorizontal size={12} />}{room.activeJob ? "Review prompt ready" : room.review ? "Edit a draft to review again" : "Prepare review prompt"}</button><span>{room.activeJob ? `Review ${room.activeJob.id.slice(0, 8)} · based on policy v${room.activeJob.basePolicyVersion}` : "Save any local draft changes before preparing a review."}</span></div>{room.activeJob && <><label htmlFor="sp3-review-prompt">Fresh agent review prompt</label><textarea id="sp3-review-prompt" aria-label="Fresh agent review prompt" value={room.activeJob.prompt} readOnly /><div className="sp3-relay-actions"><button className="sp3-btn-secondary" onClick={copyPrompt}>{copied ? <Check size={12} /> : <Copy size={12} />}{copied ? "Prompt copied" : "Copy review prompt"}</button></div><label htmlFor="sp3-review-response">Agent JSON response</label><textarea id="sp3-review-response" aria-label="Agent JSON response" value={response} onChange={e => setResponse(e.target.value)} placeholder="Paste the fresh agent’s complete JSON response." /><div className="sp3-relay-actions"><button className="sp3-btn" onClick={importResponse} disabled={busy || !response.trim()}>{busy ? <LoaderCircle className="sp3-spin" size={12} /> : <CheckCircle2 size={12} />}{busy ? "Validating response…" : "Import agent review"}</button></div></>}{note && <p style={{ marginTop: 12 }} role="status">{note}</p>}</div></details>;
+  return <details className="sp3-relay"><summary>Advanced review tools · manual fallback</summary><div className="sp3-relay-body"><p>Use this fallback when the automatic model connection is unavailable. A facilitator transfers the saved drafts to a fresh Codex agent and imports its JSON response. Both editors still review and confirm the translations and rules; unsupported conditions stay unresolved.</p><div className="sp3-relay-controls"><button className="sp3-btn-secondary" onClick={requestReview} disabled={working || hasUnsavedDrafts || Boolean(room.activeJob) || Boolean(room.review)}>{working ? <LoaderCircle className="sp3-spin" size={12} /> : <SlidersHorizontal size={12} />}{room.activeJob ? "Review prompt ready" : room.review ? "Edit a draft to review again" : "Prepare review prompt"}</button><span>{room.activeJob ? `Review ${room.activeJob.id.slice(0, 8)} · based on policy v${room.activeJob.basePolicyVersion}` : "Save any local draft changes before preparing a review."}</span></div>{room.activeJob && <><label htmlFor="sp3-review-prompt">Fresh agent review prompt</label><textarea id="sp3-review-prompt" aria-label="Fresh agent review prompt" value={room.activeJob.prompt} readOnly /><div className="sp3-relay-actions"><button className="sp3-btn-secondary" onClick={copyPrompt}>{copied ? <Check size={12} /> : <Copy size={12} />}{copied ? "Prompt copied" : "Copy review prompt"}</button></div><label htmlFor="sp3-review-response">Agent JSON response</label><textarea id="sp3-review-response" aria-label="Agent JSON response" value={response} onChange={e => setResponse(e.target.value)} placeholder="Paste the fresh agent’s complete JSON response." /><div className="sp3-relay-actions"><button className="sp3-btn" onClick={importResponse} disabled={busy || working || !response.trim()}>{busy ? <LoaderCircle className="sp3-spin" size={12} /> : <CheckCircle2 size={12} />}{busy ? "Validating response…" : "Import agent review"}</button></div></>}{note && <p style={{ marginTop: 12 }} role="status">{note}</p>}</div></details>;
 }
