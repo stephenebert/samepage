@@ -82,6 +82,8 @@ On 20 October, eight fresh independent-agent responses covered seven frozen case
 
 The automatic model integration adds **23 passing tests**, bringing the current mechanical total to **76 passing tests**. Controlled provider fixtures cover the HTTP contract, exact source validation, malformed or oversized output, provider errors, timeouts, duplicate requests, CAS retries, expired leases, late responses, draft supersession and manual fallback. Missing credentials return HTTP 503 without room mutation or a provider call. No actual Meta API calls have been made; these tests establish request handling and state transitions, not live model quality, latency or cost. See [automatic model integration](docs/AUTOMATIC-MODEL.md).
 
+A subsequent six-pair hard unseen-policy evaluation passed **64 scenario checks**, found four witnesses, correctly recognized a non-obvious equivalent pair, and held two unsupported/ambiguous candidates. Separate author, blind interpreter and auditor agents were used, with no paid provider API calls. Two browser editors then jointly published each side of one disagreement: an identical attendee and timestamp changed from accepted to rejected solely because residency became required. See [the hard-policy evaluation and its limits](docs/HARD-UNSEEN-EVALUATION.md). This used the manual relay and does not change the live-Meta verification gap.
+
 Next build priorities:
 
 1. Obtain Meta Model API access, configure the server secret and redeploy, then verify the complete live-model flow and measure quality, latency, cost and failure recovery on frozen and unseen inputs.

@@ -1,0 +1,473 @@
+{
+  "cases": [
+    {
+      "id": "eligibility-credentials-cross",
+      "drafts": {
+        "alice": "Being at least 52 years old is necessary for eligibility, and it is also sufficient. Living in the neighborhood makes no difference. Age means completed whole years when the system records the application. There is no registration deadline and no other condition for acceptance.",
+        "bob": "Ser residente del barrio es una condición necesaria para ser elegible, y también es suficiente. La edad no influye: se admite a residentes de cualquier edad. No hay plazo de inscripción ni ninguna otra condición para la aceptación."
+      },
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": 52,
+            "residentRequired": false,
+            "join": "all",
+            "deadline": null,
+            "deadlineInclusive": true
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": null,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": null,
+            "deadlineInclusive": true
+          }
+        },
+        "comparison": "different",
+        "directions": [
+          "alice-only",
+          "bob-only"
+        ]
+      },
+      "scenarios": [
+        {
+          "age": 52,
+          "resident": false,
+          "submittedAt": "2028-01-10T00:00:00.000Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        },
+        {
+          "age": 51,
+          "resident": true,
+          "submittedAt": "2028-01-10T00:00:00.000Z",
+          "expected": {
+            "alice": false,
+            "bob": true
+          }
+        },
+        {
+          "age": 52,
+          "resident": true,
+          "submittedAt": "2028-01-10T00:00:00.000Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "age": 51,
+          "resident": false,
+          "submittedAt": "2028-01-10T00:00:00.000Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "age": 0,
+          "resident": true,
+          "submittedAt": "2035-12-31T23:59:59.999Z",
+          "expected": {
+            "alice": false,
+            "bob": true
+          }
+        },
+        {
+          "age": 120,
+          "resident": false,
+          "submittedAt": "2035-12-31T23:59:59.999Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "complementary-residence-routes",
+      "drafts": {
+        "alice": "There are two complete routes to eligibility: neighborhood residents qualify once they are at least 22, and people who do not live in the neighborhood qualify once they are at least 22. No one younger than 22 qualifies. Age means completed whole years at the recorded application time. In either route, the application must be recorded on or before 2028-02-29T12:15:00.050Z (UTC). These are the only conditions for acceptance.",
+        "bob": "Para ser elegible es necesario residir en el barrio; también es necesario tener al menos 22 años. Cumplir ambos requisitos es suficiente para ser elegible. La edad se mide en años completos en el instante de inscripción registrado. Además, la solicitud debe registrarse a más tardar el 2028-02-29T12:15:00.050Z (UTC), incluido ese instante. No hay otras condiciones para la aceptación."
+      },
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": 22,
+            "residentRequired": false,
+            "join": "all",
+            "deadline": "2028-02-29T12:15:00.050Z",
+            "deadlineInclusive": true
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": 22,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2028-02-29T12:15:00.050Z",
+            "deadlineInclusive": true
+          }
+        },
+        "comparison": "different",
+        "directions": [
+          "alice-only"
+        ]
+      },
+      "scenarios": [
+        {
+          "age": 22,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.050Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        },
+        {
+          "age": 22,
+          "resident": true,
+          "submittedAt": "2028-02-29T12:15:00.050Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "age": 21,
+          "resident": true,
+          "submittedAt": "2028-02-29T12:15:00.049Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "age": 21,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.049Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "age": 120,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.051Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "whole-day-versus-start",
+      "drafts": {
+        "alice": "Everyone is eligible, regardless of age or neighborhood residency. Registration remains open throughout 30 April 2028 in UTC, including the final millisecond of that day. Applications recorded at any earlier time are also accepted; there is no opening date. Applications recorded on later UTC dates are rejected. There are no other conditions.",
+        "bob": "Toda persona es elegible, sin importar su edad ni si reside en el barrio. Se aceptan las solicitudes registradas en cualquier instante anterior al inicio del 30 de abril de 2028 en UTC, sin fecha de apertura. Desde el primer instante de ese día, incluido ese instante, se rechazan las solicitudes. No hay otras condiciones."
+      },
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": null,
+            "residentRequired": false,
+            "join": "all",
+            "deadline": "2028-04-30T23:59:59.999Z",
+            "deadlineInclusive": true
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": null,
+            "residentRequired": false,
+            "join": "all",
+            "deadline": "2028-04-30T00:00:00.000Z",
+            "deadlineInclusive": false
+          }
+        },
+        "comparison": "different",
+        "directions": [
+          "alice-only"
+        ]
+      },
+      "scenarios": [
+        {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-04-29T23:59:59.999Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-04-30T00:00:00.000Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        },
+        {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2028-04-30T12:00:00.000Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        },
+        {
+          "age": 52,
+          "resident": false,
+          "submittedAt": "2028-04-30T23:59:59.999Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        },
+        {
+          "age": 52,
+          "resident": true,
+          "submittedAt": "2028-05-01T00:00:00.000Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "subsumed-route-and-adjacent-cutoff",
+      "drafts": {
+        "alice": "Applicants are eligible exactly when they are at least 58 years old; residency has no effect. Age means completed whole years at the recorded application time. The last acceptable timestamp is 2028-06-15T19:45:00.624Z (UTC): that millisecond and every earlier timestamp are within the deadline. Acceptance requires eligibility and compliance with this deadline, with no other conditions.",
+        "bob": "Hay dos vías suficientes para ser elegible: tener al menos 58 años, sin importar la residencia, o ser residente del barrio y tener al menos 72 años. Quien no cumpla ninguna de esas vías no es elegible. La edad se mide en años completos en el instante de inscripción registrado. El primer milisegundo fuera de plazo es 2028-06-15T19:45:00.625Z (UTC); se admiten todos los instantes anteriores y ninguno desde ese instante en adelante. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones."
+      },
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": 58,
+            "residentRequired": false,
+            "join": "all",
+            "deadline": "2028-06-15T19:45:00.624Z",
+            "deadlineInclusive": true
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": 58,
+            "residentRequired": false,
+            "join": "all",
+            "deadline": "2028-06-15T19:45:00.625Z",
+            "deadlineInclusive": false
+          }
+        },
+        "comparison": "equivalent",
+        "directions": []
+      },
+      "scenarios": [
+        {
+          "age": 57,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.623Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "age": 58,
+          "resident": false,
+          "submittedAt": "2028-06-15T19:45:00.624Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "age": 71,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.624Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "age": 72,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.624Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "age": 72,
+          "resident": false,
+          "submittedAt": "2028-06-15T19:45:00.625Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.626Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "reverse-conditional-age",
+      "drafts": {
+        "alice": "For neighborhood residents, eligibility requires being at least 36 years old; every resident meeting that age requirement qualifies. People who do not live in the neighborhood qualify at any age. Age means completed whole years at the recorded application time. Everyone must apply on or before 2028-07-08T10:30:00.000Z (UTC), including that instant. Eligibility and the deadline are the only conditions for acceptance.",
+        "bob": "Quienes no residen en el barrio deben tener al menos 36 años para ser elegibles; toda persona no residente que cumpla esa edad es elegible. Las personas residentes son elegibles a cualquier edad. La edad se mide en años completos en el instante de inscripción registrado. Toda persona debe inscribirse a más tardar el 2028-07-08T10:30:00.000Z (UTC), incluido ese instante. La elegibilidad y el plazo son las únicas condiciones para la aceptación."
+      },
+      "expected": {
+        "alice": {
+          "rules": null
+        },
+        "bob": {
+          "rules": {
+            "minAge": 36,
+            "residentRequired": true,
+            "join": "any",
+            "deadline": "2028-07-08T10:30:00.000Z",
+            "deadlineInclusive": true
+          }
+        },
+        "comparison": "unresolved",
+        "directions": []
+      },
+      "scenarios": [
+        {
+          "age": 35,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        },
+        {
+          "age": 35,
+          "resident": true,
+          "submittedAt": "2028-07-08T10:30:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "age": 36,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "age": 36,
+          "resident": true,
+          "submittedAt": "2028-07-08T10:30:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.001Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "not-both-is-not-a-complete-rule",
+      "drafts": {
+        "alice": "You do not have to be both at least 46 years old and a neighborhood resident to be eligible. Age means completed whole years when the system records the application. There is no registration deadline and there are no other eligibility conditions.",
+        "bob": "Basta con tener al menos 46 años o ser residente del barrio para ser elegible; cumplir ambos requisitos también sirve. Quien no cumpla ninguno de los dos requisitos no es elegible. La edad se mide en años completos en el instante de inscripción registrado. No hay plazo de inscripción ni otras condiciones para la aceptación."
+      },
+      "expected": {
+        "alice": {
+          "rules": null
+        },
+        "bob": {
+          "rules": {
+            "minAge": 46,
+            "residentRequired": true,
+            "join": "any",
+            "deadline": null,
+            "deadlineInclusive": true
+          }
+        },
+        "comparison": "unresolved",
+        "directions": []
+      },
+      "scenarios": [
+        {
+          "age": 45,
+          "resident": true,
+          "submittedAt": "2028-08-20T00:00:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "age": 46,
+          "resident": false,
+          "submittedAt": "2028-08-20T00:00:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "age": 45,
+          "resident": false,
+          "submittedAt": "2028-08-20T00:00:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        },
+        {
+          "age": 46,
+          "resident": true,
+          "submittedAt": "2028-08-20T00:00:00.000Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2035-12-31T23:59:59.999Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        }
+      ]
+    }
+  ]
+}

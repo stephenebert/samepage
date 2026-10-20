@@ -1,0 +1,212 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "completeReview",
+    "status": 200,
+    "durationMs": 2061.443334
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "register",
+    "status": 200,
+    "durationMs": 230.33200000000033
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "register",
+    "status": 200,
+    "durationMs": 196.47491700000046
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 198.53079199999956
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 184.25679200000013
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 175.01308299999982
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "register",
+    "status": 200,
+    "durationMs": 246.38629199999923
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "action": "register",
+    "status": 200,
+    "durationMs": 304.7605830000002
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-ea7e9d19-74f5-4de8-ae53-bfc6eafacf4b",
+    "action": "completeReview",
+    "status": 200,
+    "durationMs": 170.67333300000064
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-ea7e9d19-74f5-4de8-ae53-bfc6eafacf4b",
+    "action": "register",
+    "status": 200,
+    "durationMs": 175.62066699999923
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-ea7e9d19-74f5-4de8-ae53-bfc6eafacf4b",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 182.77808300000015
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-ea7e9d19-74f5-4de8-ae53-bfc6eafacf4b",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 185.2430830000012
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-ea7e9d19-74f5-4de8-ae53-bfc6eafacf4b",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 251.81883400000152
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-ea7e9d19-74f5-4de8-ae53-bfc6eafacf4b",
+    "action": "register",
+    "status": 200,
+    "durationMs": 193.1605840000011
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+    "action": "completeReview",
+    "status": 200,
+    "durationMs": 515.7325419999997
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+    "action": "register",
+    "status": 200,
+    "durationMs": 212.54129199999988
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 194.0545000000002
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 787.7768749999996
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 199.93375000000015
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+    "action": "register",
+    "status": 200,
+    "durationMs": 165.86891599999944
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-1c4877fc-50c3-4719-8684-ddb02591ba88",
+    "action": "completeReview",
+    "status": 200,
+    "durationMs": 179.4967919999999
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-1c4877fc-50c3-4719-8684-ddb02591ba88",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 179.02983400000085
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-1c4877fc-50c3-4719-8684-ddb02591ba88",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 236.87587499999972
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-1c4877fc-50c3-4719-8684-ddb02591ba88",
+    "action": "vote",
+    "status": 200,
+    "durationMs": 179.61124999999993
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-64715635-5a45-474d-a28b-811bbc531ed4",
+    "action": "completeReview",
+    "status": 200,
+    "durationMs": 193.7529169999998
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-64715635-5a45-474d-a28b-811bbc531ed4",
+    "action": "vote",
+    "status": 400,
+    "durationMs": 94.5323329999992
+  },
+  {
+    "method": "GET",
+    "path": "/api/consequences/consequence-64715635-5a45-474d-a28b-811bbc531ed4",
+    "action": null,
+    "status": 200,
+    "durationMs": 251.1700409999994
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-8ea99b24-62e0-4254-a1e0-a5c677867ef3",
+    "action": "completeReview",
+    "status": 200,
+    "durationMs": 186.91983299999993
+  },
+  {
+    "method": "POST",
+    "path": "/api/consequences/consequence-8ea99b24-62e0-4254-a1e0-a5c677867ef3",
+    "action": "vote",
+    "status": 400,
+    "durationMs": 123.32875000000058
+  },
+  {
+    "method": "GET",
+    "path": "/api/consequences/consequence-8ea99b24-62e0-4254-a1e0-a5c677867ef3",
+    "action": null,
+    "status": 200,
+    "durationMs": 141.09358299999985
+  }
+]

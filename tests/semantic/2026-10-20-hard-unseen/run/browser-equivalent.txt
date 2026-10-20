@@ -1,0 +1,167 @@
+Browser tab: 1203230973, Title: "SamePage — Find the hidden consequence", URL: "https://samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-1c4877fc-50c3-4719-8684-ddb02591ba88".
+0 AXWebArea SamePage — Find the hidden consequence, URL: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-1c4877fc-50c3-4719-8684-ddb02591ba88
+	1 container
+		2 container
+			3 link Description: SamePage home, Value: samepage-language-lab.ampleboar17.chatgpt.site/
+			4 text WORDS → CONSEQUENCES / 05 Two simulated editors
+		5 container
+			6 text THE CONSEQUENCE YOU DIDN’T THINK TO TEST.
+			7 heading Find the consequence hidden in the words., Value: 1
+				8 text Find the consequence
+				9 text hidden in the words.
+			10 text Write the policy in two languages. SamePage finds a person or a moment where the interpretations disagree. Decide together, then try the consequence in the working form. ROOM  1C4877FC  · REV  7
+			11 link Description: Alice · EN, Value: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-1c4877fc-50c3-4719-8684-ddb02591ba88&editor=alice
+			12 link Description: Bob · ES, Value: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-1c4877fc-50c3-4719-8684-ddb02591ba88&editor=bob
+			13 button Copy shared room link
+		14 container
+			15 text Both editors agreed · form now uses version 2  · Published policy v2 Model not configured
+		16 container
+			17 text Connect Meta to review policies automatically Add 
+			18 text MODEL_API_KEY
+			19 text  in Site Settings → Environment variables, mark it 
+			20 text Secret
+			21 text , and save it. Redeploy the site to apply the change, then refresh the connection. The key stays on the server. Default model:  muse-spark-1.3 .
+			22 button Refresh connection
+		23 text This review was imported through the manual relay. Consequences were found automatically by the rule engine.
+		24 container Description: Consequence comparison, ID: sp3-discovery-lab
+			25 text 01 / AUTOMATIC CONSEQUENCE DISCOVERY
+			26 heading Same outcomes within supported rules., Value: 2
+				27 text Same outcomes within supported rules.
+			28 text The parsed interpretations make the same decisions in this prototype’s supported domain. This does not prove the original language means the same thing.
+			29 text Live form v 2  · rejects
+			30 container Automatic counterexample discovery
+				31 text No counterexample exists between these parsed rules within the supported age, residency and UTC time domain. Human review of both translations is still required.
+				32 button (collapsed) What was searched?, Secondary Actions: Expand
+					33 text What was searched?
+			34 text Explore your own attendee
+			35 text Change any detail. This preview saves no registration.
+			36 container
+				37 text Age
+				38 stepper (settable, integer) Description: Test attendee age, Value: 20
+			39 container
+				40 text Neighborhood resident
+				41 pop up button (collapsed, settable) Description: Test attendee residency, Value: No · nonresident, Secondary Actions: Expand
+					42 menu
+						43 (selected) No · nonresident
+						44 Yes · resident
+			45 container
+				46 text Registration time · UTC
+				47 date field (settable) Description: Test attendee registration time UTC, Value: 2026-11-05T17:00
+					48 container
+						49 stepper
+						50 stepper
+						51 stepper
+						52 stepper
+						53 stepper
+						54 stepper
+						55 stepper
+						56 stepper
+					57 pop up button Show local date and time picker Show local date and time picker
+			58 container Alice proposed outcome
+				59 container
+					60 text Alice ’s interpretation
+				61 text EN → ES  · DRAFT  2
+				62 text Rejected
+				63 content list
+					64 text Must be at least 58 years old.
+				65 text Age  58 +
+				66 text On or before 2028-06-15 · 19:45:00.624 UTC
+				67 button (collapsed) Read both language versions, Secondary Actions: Expand
+					68 text Read both language versions
+			69 container Bob proposed outcome
+				70 container
+					71 text Bob ’s interpretation
+				72 text ES → EN  · DRAFT  2
+				73 text Rejected
+				74 content list
+					75 text Must be at least 58 years old.
+				76 text Age  58 +
+				77 text Before 2028-06-15 · 19:45:00.625 UTC
+				78 button (collapsed) Read both language versions, Secondary Actions: Expand
+					79 text Read both language versions
+			80 text The parsed rules agree throughout the supported domain. Check the source language before confirming the interpretation.
+			81 button Test this attendee in the form
+			82 container
+				83 text Both editors confirmed the same meaning.
+				84 text The English policy, Spanish policy, and working form now share version  2 .
+		85 container
+			86 heading 02 / WRITE IN YOUR LANGUAGE, Value: 2
+				87 text 02 / WRITE IN YOUR LANGUAGE
+			88 text Two editors · one room A
+			89 text Alice
+			90 text Simulated editor
+			91 text English COMPLETE PROPOSED POLICY V 2
+			92 text entry area (settable) Description: Alice policy draft, Value: Applicants are eligible exactly when they are at least 58 years old; residency has no effect. Age means completed whole years at the recorded application time. The last acceptable timestamp is 2028-06-15T19:45:00.624Z (UTC): that millisecond and every earlier timestamp are within the deadline. Acceptance requires eligibility and compliance with this deadline, with no other conditions.
+			93 text Saved draft · ready for review
+			94 button (disabled) Save Alice policy draft
+			95 text B
+			96 text Bob
+			97 text Editor simulado
+			98 text Español PROPUESTA COMPLETA V 2
+			99 text entry area (settable) Description: Bob policy draft, Value: Hay dos vías suficientes para ser elegible: tener al menos 58 años, sin importar la residencia, o ser residente del barrio y tener al menos 72 años. Quien no cumpla ninguna de esas vías no es elegible. La edad se mide en años completos en el instante de inscripción registrado. El primer milisegundo fuera de plazo es 2028-06-15T19:45:00.625Z (UTC); se admiten todos los instantes anteriores y ninguno desde ese instante en adelante. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones.
+			100 text Borrador guardado · listo para revisar
+			101 button (disabled) Save Bob policy draft
+			102 text Only saved drafts enter the review. Changing either draft resets prior votes.  Supported: age, residency and a deadline in UTC.
+			103 button (disabled) Edit a draft to review again
+		104 container Description: Working registration form, ID: sp3-working-form
+			105 text 03 / FEEL THE CONSEQUENCE
+			106 heading Workshop registration, Value: 2
+				107 text Workshop registration
+			108 text LIVE · v 2
+			109 text (age ≥ 58) AND submitted ≤ 2028-06-15T19:45:00.624Z
+			110 container
+				111 text Synthetic attendee label
+				112 text field (settable) Description: Registration attendee label, Value: Attendee 01
+				113 text Age
+				114 stepper (settable, integer) Description: Registration age, Value: 20
+				115 text Neighborhood resident
+				116 pop up button (collapsed, settable) Description: Registration residency, Value: No · nonresident, Secondary Actions: Expand
+					117 menu
+						118 (selected) No · nonresident
+						119 Yes · resident
+				120 text Simulated submission time · UTC
+				121 date field (settable) Description: Registration submission time UTC, Value: 2026-11-05T17:00
+					122 container
+						123 stepper
+						124 stepper
+						125 stepper
+						126 stepper
+						127 stepper
+						128 stepper
+						129 stepper
+						130 stepper
+					131 pop up button Show local date and time picker Show local date and time picker
+				132 text This is a working prototype form. The server saves a synthetic registration and evaluates it using the published policy. No payment or email.
+				133 button Submit registration
+		134 container Published policy in both languages
+			135 heading PUBLISHED POLICY, Value: 2
+				136 text PUBLISHED POLICY
+			137 text Version  2  · this is what the form enforces
+			138 container
+				139 heading ENGLISH · AGREED, Value: 3
+					140 text ENGLISH · AGREED
+				141 text Applicants are eligible exactly when they are at least 58 years old; residency has no effect. Age means completed whole years at the recorded application time. The last acceptable timestamp is 2028-06-15T19:45:00.624Z (UTC): that millisecond and every earlier timestamp are within the deadline. Acceptance requires eligibility and compliance with this deadline, with no other conditions.
+			142 container
+				143 heading ESPAÑOL · ACORDADO, Value: 3
+					144 text ESPAÑOL · ACORDADO
+				145 text Las personas solicitantes son elegibles exactamente cuando tienen al menos 58 años; la residencia no influye. La edad se mide en años completos en el instante registrado de la solicitud. La última marca de tiempo aceptable es 2028-06-15T19:45:00.624Z (UTC): ese milisegundo y todas las marcas de tiempo anteriores están dentro del plazo. La aceptación exige elegibilidad y cumplimiento de este plazo, sin otras condiciones.
+		146 container Registration audit
+			147 heading REGISTRATION RECEIPTS, Value: 2
+				148 text REGISTRATION RECEIPTS
+			149 text 0  saved · decisions keep their original version
+			150 text No registrations yet. Submit the working form to save a versioned result.
+		151 button (collapsed) Advanced review tools · manual fallback, Secondary Actions: Expand
+			152 text Advanced review tools · manual fallback
+		153 text  Private prototype · synthetic attendees · no emails are sent
+		154 button Start a new room
+		155 container
+			156 text SamePage / a bilingual collaboration experiment
+			157 text AI proposes the interpretation. People confirm it. Code evaluates the agreed rule. Age · residency · UTC deadline
+			158 link Description: Open the document collaboration lab, Value: samepage-language-lab.ampleboar17.chatgpt.site/
+		159 container
+			160 container
+				161 link Description: Edit site in ChatGPT, Value: chatgpt.com/sites/appgprj_6acf326d0f9c81918e24863d7a25c308/edit?account_id=personal&codex_thread_id=01a137f4-925c-7ec2-8af8-bd16e5cce1fb&browser_url=https%3A%2F%2Fsamepage-language-lab.ampleboar17.chatgpt.site%2Fconsequences%3Froom%3Dconsequence-1c4877fc-50c3-4719-8684-ddb02591ba88
+				162 button (collapsed) Description: Edit site, Secondary Actions: Expand
+			163 button Hide toolbar
+
+The focused UI element is 0 AXWebArea SamePage — Find the hidden consequence, URL: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-1c4877fc-50c3-4719-8684-ddb02591ba88

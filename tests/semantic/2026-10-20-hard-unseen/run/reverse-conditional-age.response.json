@@ -1,0 +1,29 @@
+{
+  "jobId": "review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "For neighborhood residents, eligibility requires being at least 36 years old; every resident meeting that age requirement qualifies. People who do not live in the neighborhood qualify at any age. Age means completed whole years at the recorded application time. Everyone must apply on or before 2028-07-08T10:30:00.000Z (UTC), including that instant. Eligibility and the deadline are the only conditions for acceptance.",
+      "es": "Para las personas residentes del barrio, la elegibilidad exige tener al menos 36 años; toda persona residente que cumpla ese requisito de edad es elegible. Las personas que no viven en el barrio son elegibles a cualquier edad. La edad se mide en años completos en el instante registrado de la solicitud. Toda persona debe presentar su solicitud a más tardar el 2028-07-08T10:30:00.000Z (UTC), incluido ese instante. La elegibilidad y el plazo son las únicas condiciones para la aceptación.",
+      "rules": null,
+      "issues": [
+        "Eligibility is age >= 36 OR being a nonresident: residents younger than 36 are excluded while nonresidents of the same age qualify. The available residency predicate can represent only being a resident, and residentRequired=false removes that predicate rather than requiring nonresidency. This policy cannot be represented faithfully by the available rules."
+      ]
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "People who do not live in the neighborhood must be at least 36 years old to be eligible; every nonresident who meets that age requirement is eligible. Residents are eligible at any age. Age is measured in completed whole years at the recorded registration time. Everyone must register no later than 2028-07-08T10:30:00.000Z (UTC), including that instant. Eligibility and the deadline are the only conditions for acceptance.",
+      "es": "Quienes no residen en el barrio deben tener al menos 36 años para ser elegibles; toda persona no residente que cumpla esa edad es elegible. Las personas residentes son elegibles a cualquier edad. La edad se mide en años completos en el instante de inscripción registrado. Toda persona debe inscribirse a más tardar el 2028-07-08T10:30:00.000Z (UTC), incluido ese instante. La elegibilidad y el plazo son las únicas condiciones para la aceptación.",
+      "rules": {
+        "minAge": 36,
+        "residentRequired": true,
+        "join": "any",
+        "deadline": "2028-07-08T10:30:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    }
+  ]
+}

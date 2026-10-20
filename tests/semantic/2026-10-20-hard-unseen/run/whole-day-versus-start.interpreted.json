@@ -1,0 +1,78 @@
+{
+  "kind": "samepage-consequences-v1",
+  "id": "consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+  "revision": 4,
+  "createdAt": "2026-10-20T23:01:32.643Z",
+  "updatedAt": "2026-10-20T23:03:11.758Z",
+  "mode": "agent-manual-relay",
+  "published": {
+    "version": 1,
+    "en": "Participants must be at least 16 years old AND live in the neighborhood. Registration must be received on or before 5 November 2026 at 18:00 UTC.",
+    "es": "Para participar, hay que tener al menos 16 años Y residir en el barrio. La inscripción debe recibirse a más tardar el 5 de noviembre de 2026 a las 18:00 UTC.",
+    "rules": {
+      "minAge": 16,
+      "residentRequired": true,
+      "join": "all",
+      "deadline": "2026-11-05T18:00:00.000Z",
+      "deadlineInclusive": true
+    },
+    "publishedAt": "2026-10-20T23:01:32.643Z",
+    "reviewId": null,
+    "candidateId": null
+  },
+  "drafts": {
+    "alice": {
+      "editor": "alice",
+      "language": "en",
+      "version": 2,
+      "text": "Everyone is eligible, regardless of age or neighborhood residency. Registration remains open throughout 30 April 2028 in UTC, including the final millisecond of that day. Applications recorded at any earlier time are also accepted; there is no opening date. Applications recorded on later UTC dates are rejected. There are no other conditions."
+    },
+    "bob": {
+      "editor": "bob",
+      "language": "es",
+      "version": 2,
+      "text": "Toda persona es elegible, sin importar su edad ni si reside en el barrio. Se aceptan las solicitudes registradas en cualquier instante anterior al inicio del 30 de abril de 2028 en UTC, sin fecha de apertura. Desde el primer instante de ese día, incluido ese instante, se rechazan las solicitudes. No hay otras condiciones."
+    }
+  },
+  "activeJob": null,
+  "review": {
+    "id": "review-3",
+    "basePolicyVersion": 1,
+    "candidates": [
+      {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Everyone is eligible, regardless of age or neighborhood residency. Registration remains open throughout 30 April 2028 in UTC, including the final millisecond of that day. Applications recorded at any earlier time are also accepted; there is no opening date. Applications recorded on later UTC dates are rejected. There are no other conditions.",
+        "es": "Toda persona es elegible, sin importar su edad ni si reside en el barrio. La inscripción permanece abierta durante todo el 30 de abril de 2028 en UTC, incluido el último milisegundo de ese día. También se aceptan las solicitudes registradas en cualquier instante anterior; no hay fecha de apertura. Se rechazan las solicitudes registradas en fechas UTC posteriores. No hay otras condiciones.",
+        "rules": {
+          "minAge": null,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2028-04-30T23:59:59.999Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      },
+      {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "Everyone is eligible, regardless of their age or whether they live in the neighborhood. Applications recorded at any instant before the start of 30 April 2028 in UTC are accepted, with no opening date. From the first instant of that day, including that instant, applications are rejected. There are no other conditions.",
+        "es": "Toda persona es elegible, sin importar su edad ni si reside en el barrio. Se aceptan las solicitudes registradas en cualquier instante anterior al inicio del 30 de abril de 2028 en UTC, sin fecha de apertura. Desde el primer instante de ese día, incluido ese instante, se rechazan las solicitudes. No hay otras condiciones.",
+        "rules": {
+          "minAge": null,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2028-04-30T00:00:00.000Z",
+          "deadlineInclusive": false
+        },
+        "issues": []
+      }
+    ],
+    "votes": {},
+    "status": "open",
+    "createdAt": "2026-10-20T23:03:11.758Z"
+  },
+  "registrations": []
+}

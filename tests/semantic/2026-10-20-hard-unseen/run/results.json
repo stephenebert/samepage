@@ -1,0 +1,1353 @@
+[
+  {
+    "id": "eligibility-credentials-cross",
+    "roomId": "consequence-f518441d-e4aa-41df-a5b1-7becf8f26e97",
+    "passed": true,
+    "checks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 52,
+          "resident": false,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 51,
+          "resident": true,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 52,
+          "resident": true,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 51,
+          "resident": false,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 0,
+          "resident": true,
+          "submittedAt": "2035-12-31T23:59:59.999Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 120,
+          "resident": false,
+          "submittedAt": "2035-12-31T23:59:59.999Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 52,
+          "resident": false,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 51,
+          "resident": true,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 52,
+          "resident": true,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 51,
+          "resident": false,
+          "submittedAt": "2028-01-10T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 0,
+          "resident": true,
+          "submittedAt": "2035-12-31T23:59:59.999Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 120,
+          "resident": false,
+          "submittedAt": "2035-12-31T23:59:59.999Z"
+        },
+        "actual": false,
+        "expected": false
+      }
+    ],
+    "registrations": [
+      {
+        "requestId": "before-eligibility-credentials-cross-0",
+        "policyVersion": 1,
+        "label": "Discovered consequence before approval 1",
+        "age": 52,
+        "resident": false,
+        "submittedAt": "2030-01-01T12:00:00.000Z",
+        "id": "registration-5",
+        "recordedAt": "2026-10-20T23:03:09.072Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Must be a neighborhood resident.",
+            "Registration must arrive on or before 2026-11-05T18:00:00.000Z."
+          ],
+          "checks": {
+            "age": true,
+            "residency": false,
+            "deadline": false,
+            "eligibility": false
+          }
+        }
+      },
+      {
+        "requestId": "before-eligibility-credentials-cross-1",
+        "policyVersion": 1,
+        "label": "Discovered consequence before approval 2",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2030-01-01T12:00:00.000Z",
+        "id": "registration-6",
+        "recordedAt": "2026-10-20T23:03:09.307Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Registration must arrive on or before 2026-11-05T18:00:00.000Z."
+          ],
+          "checks": {
+            "age": true,
+            "residency": true,
+            "deadline": false,
+            "eligibility": true
+          }
+        }
+      },
+      {
+        "requestId": "after-eligibility-credentials-cross-0",
+        "policyVersion": 2,
+        "label": "Discovered consequence after approval 1",
+        "age": 52,
+        "resident": false,
+        "submittedAt": "2030-01-01T12:00:00.000Z",
+        "id": "registration-10",
+        "recordedAt": "2026-10-20T23:03:10.041Z",
+        "decision": {
+          "accepted": true,
+          "reasons": [
+            "Meets all requirements of this policy."
+          ],
+          "checks": {
+            "age": true,
+            "residency": null,
+            "deadline": null,
+            "eligibility": true
+          }
+        }
+      },
+      {
+        "requestId": "after-eligibility-credentials-cross-1",
+        "policyVersion": 2,
+        "label": "Discovered consequence after approval 2",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2030-01-01T12:00:00.000Z",
+        "id": "registration-11",
+        "recordedAt": "2026-10-20T23:03:10.314Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Must be at least 52 years old."
+          ],
+          "checks": {
+            "age": false,
+            "residency": null,
+            "deadline": null,
+            "eligibility": false
+          }
+        }
+      }
+    ],
+    "responseSHA256": "1b8b3e4b68c98292f4be399327f15de153a6a406dea77849e782e347fd10fb95",
+    "candidates": {
+      "alice": {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Being at least 52 years old is necessary for eligibility, and it is also sufficient. Living in the neighborhood makes no difference. Age means completed whole years when the system records the application. There is no registration deadline and no other condition for acceptance.",
+        "es": "Tener al menos 52 años es necesario para ser elegible, y también es suficiente. Vivir en el barrio no influye. La edad se mide en años completos en el momento en que el sistema registra la solicitud. No hay plazo de inscripción ni ninguna otra condición para la aceptación.",
+        "rules": {
+          "minAge": 52,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": null,
+          "deadlineInclusive": true
+        },
+        "issues": []
+      },
+      "bob": {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "Being a neighborhood resident is a necessary condition for eligibility, and it is also sufficient. Age has no effect: residents of any age are admitted. There is no registration deadline or any other condition for acceptance.",
+        "es": "Ser residente del barrio es una condición necesaria para ser elegible, y también es suficiente. La edad no influye: se admite a residentes de cualquier edad. No hay plazo de inscripción ni ninguna otra condición para la aceptación.",
+        "rules": {
+          "minAge": null,
+          "residentRequired": true,
+          "join": "all",
+          "deadline": null,
+          "deadlineInclusive": true
+        },
+        "issues": []
+      }
+    },
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "left-only-52-nonresident-1893499200000",
+          "direction": "left-only",
+          "attendee": {
+            "age": 52,
+            "resident": false,
+            "submittedAt": "2030-01-01T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": true,
+              "residency": null,
+              "deadline": null,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": false,
+            "reasons": [
+              "Must be a neighborhood resident."
+            ],
+            "checks": {
+              "age": null,
+              "residency": false,
+              "deadline": null,
+              "eligibility": false
+            }
+          },
+          "explanation": {
+            "en": "A 52-year-old nonresident registers at 2030-01-01T12:00:00.000Z. Rule A accepts; Rule B rejects because the attendee is not a neighborhood resident.",
+            "es": "Una persona de 52 años que no reside en el barrio se inscribe el 2030-01-01T12:00:00.000Z. La regla A acepta; la regla B rechaza porque no reside en el barrio."
+          }
+        },
+        {
+          "id": "right-only-18-resident-1893499200000",
+          "direction": "right-only",
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "submittedAt": "2030-01-01T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "reasons": [
+              "Must be at least 52 years old."
+            ],
+            "checks": {
+              "age": false,
+              "residency": null,
+              "deadline": null,
+              "eligibility": false
+            }
+          },
+          "right": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": null,
+              "residency": true,
+              "deadline": null,
+              "eligibility": true
+            }
+          },
+          "explanation": {
+            "en": "A 18-year-old neighborhood resident registers at 2030-01-01T12:00:00.000Z. Rule B accepts; Rule A rejects because the attendee is under age 52.",
+            "es": "Una persona de 18 años que reside en el barrio se inscribe el 2030-01-01T12:00:00.000Z. La regla B acepta; la regla A rechaza porque no tiene al menos 52 años."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 2,
+        "timePartitions": 1,
+        "residencyValues": 2,
+        "combinations": 4,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Each interpretation accepts someone the other rejects.",
+        "es": "Cada interpretación acepta a alguien que la otra rechaza."
+      }
+    },
+    "singleVoteHeld": true,
+    "mismatchedVotesHeld": true,
+    "jointApprovalPublished": true
+  },
+  {
+    "id": "complementary-residence-routes",
+    "roomId": "consequence-ea7e9d19-74f5-4de8-ae53-bfc6eafacf4b",
+    "passed": true,
+    "checks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 22,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.050Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 22,
+          "resident": true,
+          "submittedAt": "2028-02-29T12:15:00.050Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 21,
+          "resident": true,
+          "submittedAt": "2028-02-29T12:15:00.049Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 21,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.049Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 120,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.051Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 22,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.050Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 22,
+          "resident": true,
+          "submittedAt": "2028-02-29T12:15:00.050Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 21,
+          "resident": true,
+          "submittedAt": "2028-02-29T12:15:00.049Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 21,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.049Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 120,
+          "resident": false,
+          "submittedAt": "2028-02-29T12:15:00.051Z"
+        },
+        "actual": false,
+        "expected": false
+      }
+    ],
+    "registrations": [
+      {
+        "requestId": "before-complementary-residence-routes-0",
+        "policyVersion": 1,
+        "label": "Discovered consequence before approval 1",
+        "age": 22,
+        "resident": false,
+        "submittedAt": "2028-02-29T12:15:00.050Z",
+        "id": "registration-5",
+        "recordedAt": "2026-10-20T23:03:10.766Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Must be a neighborhood resident.",
+            "Registration must arrive on or before 2026-11-05T18:00:00.000Z."
+          ],
+          "checks": {
+            "age": true,
+            "residency": false,
+            "deadline": false,
+            "eligibility": false
+          }
+        }
+      },
+      {
+        "requestId": "after-complementary-residence-routes-0",
+        "policyVersion": 2,
+        "label": "Discovered consequence after approval 1",
+        "age": 22,
+        "resident": false,
+        "submittedAt": "2028-02-29T12:15:00.050Z",
+        "id": "registration-9",
+        "recordedAt": "2026-10-20T23:03:11.574Z",
+        "decision": {
+          "accepted": true,
+          "reasons": [
+            "Meets all requirements of this policy."
+          ],
+          "checks": {
+            "age": true,
+            "residency": null,
+            "deadline": true,
+            "eligibility": true
+          }
+        }
+      }
+    ],
+    "responseSHA256": "b517c7172c49ec19d91e69eb0a6c346c6b6a32a9e88895d41b5e96cb93e69909",
+    "candidates": {
+      "alice": {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "There are two complete routes to eligibility: neighborhood residents qualify once they are at least 22, and people who do not live in the neighborhood qualify once they are at least 22. No one younger than 22 qualifies. Age means completed whole years at the recorded application time. In either route, the application must be recorded on or before 2028-02-29T12:15:00.050Z (UTC). These are the only conditions for acceptance.",
+        "es": "Hay dos vías completas para ser elegible: las personas residentes del barrio cumplen los requisitos una vez que tienen al menos 22 años, y las personas que no viven en el barrio cumplen los requisitos una vez que tienen al menos 22 años. Ninguna persona menor de 22 años cumple los requisitos. La edad se mide en años completos en el instante registrado de la solicitud. En cualquiera de las dos vías, la solicitud debe registrarse a más tardar el 2028-02-29T12:15:00.050Z (UTC), incluido ese instante. Estas son las únicas condiciones para la aceptación.",
+        "rules": {
+          "minAge": 22,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2028-02-29T12:15:00.050Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      },
+      "bob": {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "To be eligible, it is necessary to live in the neighborhood; it is also necessary to be at least 22 years old. Meeting both requirements is sufficient for eligibility. Age is measured in completed whole years at the recorded registration time. In addition, the application must be recorded no later than 2028-02-29T12:15:00.050Z (UTC), including that instant. There are no other conditions for acceptance.",
+        "es": "Para ser elegible es necesario residir en el barrio; también es necesario tener al menos 22 años. Cumplir ambos requisitos es suficiente para ser elegible. La edad se mide en años completos en el instante de inscripción registrado. Además, la solicitud debe registrarse a más tardar el 2028-02-29T12:15:00.050Z (UTC), incluido ese instante. No hay otras condiciones para la aceptación.",
+        "rules": {
+          "minAge": 22,
+          "residentRequired": true,
+          "join": "all",
+          "deadline": "2028-02-29T12:15:00.050Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      }
+    },
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "left-only-22-nonresident-1835439300050",
+          "direction": "left-only",
+          "attendee": {
+            "age": 22,
+            "resident": false,
+            "submittedAt": "2028-02-29T12:15:00.050Z"
+          },
+          "left": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": true,
+              "residency": null,
+              "deadline": true,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": false,
+            "reasons": [
+              "Must be a neighborhood resident."
+            ],
+            "checks": {
+              "age": true,
+              "residency": false,
+              "deadline": true,
+              "eligibility": false
+            }
+          },
+          "explanation": {
+            "en": "A 22-year-old nonresident registers at 2028-02-29T12:15:00.050Z. Rule A accepts; Rule B rejects because the attendee is not a neighborhood resident.",
+            "es": "Una persona de 22 años que no reside en el barrio se inscribe el 2028-02-29T12:15:00.050Z. La regla A acepta; la regla B rechaza porque no reside en el barrio."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 2,
+        "timePartitions": 3,
+        "residencyValues": 2,
+        "combinations": 12,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Found an attendee accepted by one interpretation and rejected by the other.",
+        "es": "Se encontró una persona aceptada por una interpretación y rechazada por la otra."
+      }
+    },
+    "singleVoteHeld": true,
+    "mismatchedVotesHeld": true,
+    "jointApprovalPublished": true
+  },
+  {
+    "id": "whole-day-versus-start",
+    "roomId": "consequence-15b84605-0467-494f-a24f-9cf54f666c45",
+    "passed": true,
+    "checks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-04-29T23:59:59.999Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-04-30T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2028-04-30T12:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 52,
+          "resident": false,
+          "submittedAt": "2028-04-30T23:59:59.999Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 52,
+          "resident": true,
+          "submittedAt": "2028-05-01T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-04-29T23:59:59.999Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-04-30T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2028-04-30T12:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 52,
+          "resident": false,
+          "submittedAt": "2028-04-30T23:59:59.999Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 52,
+          "resident": true,
+          "submittedAt": "2028-05-01T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      }
+    ],
+    "registrations": [
+      {
+        "requestId": "before-whole-day-versus-start-0",
+        "policyVersion": 1,
+        "label": "Discovered consequence before approval 1",
+        "age": 18,
+        "resident": false,
+        "submittedAt": "2028-04-30T00:00:00.000Z",
+        "id": "registration-5",
+        "recordedAt": "2026-10-20T23:03:12.321Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Must be a neighborhood resident.",
+            "Registration must arrive on or before 2026-11-05T18:00:00.000Z."
+          ],
+          "checks": {
+            "age": true,
+            "residency": false,
+            "deadline": false,
+            "eligibility": false
+          }
+        }
+      },
+      {
+        "requestId": "after-whole-day-versus-start-0",
+        "policyVersion": 2,
+        "label": "Discovered consequence after approval 1",
+        "age": 18,
+        "resident": false,
+        "submittedAt": "2028-04-30T00:00:00.000Z",
+        "id": "registration-9",
+        "recordedAt": "2026-10-20T23:03:13.668Z",
+        "decision": {
+          "accepted": true,
+          "reasons": [
+            "Meets all requirements of this policy."
+          ],
+          "checks": {
+            "age": null,
+            "residency": null,
+            "deadline": true,
+            "eligibility": true
+          }
+        }
+      }
+    ],
+    "responseSHA256": "7782dddb9a1b1a9117e36c5bc055188ad21bf10452dc2b4c4c734a46783e05f5",
+    "candidates": {
+      "alice": {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Everyone is eligible, regardless of age or neighborhood residency. Registration remains open throughout 30 April 2028 in UTC, including the final millisecond of that day. Applications recorded at any earlier time are also accepted; there is no opening date. Applications recorded on later UTC dates are rejected. There are no other conditions.",
+        "es": "Toda persona es elegible, sin importar su edad ni si reside en el barrio. La inscripción permanece abierta durante todo el 30 de abril de 2028 en UTC, incluido el último milisegundo de ese día. También se aceptan las solicitudes registradas en cualquier instante anterior; no hay fecha de apertura. Se rechazan las solicitudes registradas en fechas UTC posteriores. No hay otras condiciones.",
+        "rules": {
+          "minAge": null,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2028-04-30T23:59:59.999Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      },
+      "bob": {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "Everyone is eligible, regardless of their age or whether they live in the neighborhood. Applications recorded at any instant before the start of 30 April 2028 in UTC are accepted, with no opening date. From the first instant of that day, including that instant, applications are rejected. There are no other conditions.",
+        "es": "Toda persona es elegible, sin importar su edad ni si reside en el barrio. Se aceptan las solicitudes registradas en cualquier instante anterior al inicio del 30 de abril de 2028 en UTC, sin fecha de apertura. Desde el primer instante de ese día, incluido ese instante, se rechazan las solicitudes. No hay otras condiciones.",
+        "rules": {
+          "minAge": null,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2028-04-30T00:00:00.000Z",
+          "deadlineInclusive": false
+        },
+        "issues": []
+      }
+    },
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "left-only-18-nonresident-1840665600000",
+          "direction": "left-only",
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "submittedAt": "2028-04-30T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": null,
+              "residency": null,
+              "deadline": true,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": false,
+            "reasons": [
+              "Registration must arrive before 2028-04-30T00:00:00.000Z."
+            ],
+            "checks": {
+              "age": null,
+              "residency": null,
+              "deadline": false,
+              "eligibility": true
+            }
+          },
+          "explanation": {
+            "en": "A 18-year-old nonresident registers at 2028-04-30T00:00:00.000Z. Rule A accepts; Rule B rejects because registration did not arrive before 2028-04-30T00:00:00.000Z.",
+            "es": "Una persona de 18 años que no reside en el barrio se inscribe el 2028-04-30T00:00:00.000Z. La regla A acepta; la regla B rechaza porque la inscripción no llegó antes del 2028-04-30T00:00:00.000Z."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 1,
+        "timePartitions": 5,
+        "residencyValues": 2,
+        "combinations": 10,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Found an attendee accepted by one interpretation and rejected by the other.",
+        "es": "Se encontró una persona aceptada por una interpretación y rechazada por la otra."
+      }
+    },
+    "singleVoteHeld": true,
+    "mismatchedVotesHeld": true,
+    "jointApprovalPublished": true
+  },
+  {
+    "id": "subsumed-route-and-adjacent-cutoff",
+    "roomId": "consequence-1c4877fc-50c3-4719-8684-ddb02591ba88",
+    "passed": true,
+    "checks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 57,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.623Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 58,
+          "resident": false,
+          "submittedAt": "2028-06-15T19:45:00.624Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 71,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.624Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 72,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.624Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 72,
+          "resident": false,
+          "submittedAt": "2028-06-15T19:45:00.625Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.626Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 57,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.623Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 58,
+          "resident": false,
+          "submittedAt": "2028-06-15T19:45:00.624Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 71,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.624Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 72,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.624Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 72,
+          "resident": false,
+          "submittedAt": "2028-06-15T19:45:00.625Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2028-06-15T19:45:00.626Z"
+        },
+        "actual": false,
+        "expected": false
+      }
+    ],
+    "registrations": [],
+    "responseSHA256": "d987fffbfce775bd819e5aa9050b160f21cde32543d3653b549a11840f55e875",
+    "candidates": {
+      "alice": {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Applicants are eligible exactly when they are at least 58 years old; residency has no effect. Age means completed whole years at the recorded application time. The last acceptable timestamp is 2028-06-15T19:45:00.624Z (UTC): that millisecond and every earlier timestamp are within the deadline. Acceptance requires eligibility and compliance with this deadline, with no other conditions.",
+        "es": "Las personas solicitantes son elegibles exactamente cuando tienen al menos 58 años; la residencia no influye. La edad se mide en años completos en el instante registrado de la solicitud. La última marca de tiempo aceptable es 2028-06-15T19:45:00.624Z (UTC): ese milisegundo y todas las marcas de tiempo anteriores están dentro del plazo. La aceptación exige elegibilidad y cumplimiento de este plazo, sin otras condiciones.",
+        "rules": {
+          "minAge": 58,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2028-06-15T19:45:00.624Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      },
+      "bob": {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "There are two sufficient routes to eligibility: being at least 58 years old, regardless of residency, or being a neighborhood resident and at least 72 years old. Anyone who meets neither route is not eligible. Age is measured in completed whole years at the recorded registration time. The first millisecond outside the deadline is 2028-06-15T19:45:00.625Z (UTC); all earlier instants are accepted and none from that instant onward. Acceptance requires eligibility and compliance with the deadline. There are no other conditions.",
+        "es": "Hay dos vías suficientes para ser elegible: tener al menos 58 años, sin importar la residencia, o ser residente del barrio y tener al menos 72 años. Quien no cumpla ninguna de esas vías no es elegible. La edad se mide en años completos en el instante de inscripción registrado. El primer milisegundo fuera de plazo es 2028-06-15T19:45:00.625Z (UTC); se admiten todos los instantes anteriores y ninguno desde ese instante en adelante. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones.",
+        "rules": {
+          "minAge": 58,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2028-06-15T19:45:00.625Z",
+          "deadlineInclusive": false
+        },
+        "issues": []
+      }
+    },
+    "discovery": {
+      "status": "equivalent",
+      "witnesses": [],
+      "coverage": {
+        "agePartitions": 2,
+        "timePartitions": 4,
+        "residencyValues": 2,
+        "combinations": 16,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "The executable interpretations make the same acceptance decision throughout the supported input domain. This is not a claim that the original texts mean the same thing.",
+        "es": "Las interpretaciones ejecutables toman la misma decisión de aceptación en todo el dominio admitido. Esto no afirma que los textos originales signifiquen lo mismo."
+      }
+    },
+    "singleVoteHeld": true,
+    "mismatchedVotesHeld": true,
+    "jointApprovalPublished": true
+  },
+  {
+    "id": "reverse-conditional-age",
+    "roomId": "consequence-64715635-5a45-474d-a28b-811bbc531ed4",
+    "passed": true,
+    "checks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 35,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 35,
+          "resident": true,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 36,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 36,
+          "resident": true,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.001Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 35,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 35,
+          "resident": true,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 36,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 36,
+          "resident": true,
+          "submittedAt": "2028-07-08T10:30:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-07-08T10:30:00.001Z"
+        },
+        "actual": false,
+        "expected": false
+      }
+    ],
+    "registrations": [],
+    "responseSHA256": "e9aa7e970194266a5440f4c1b1ca211a566b272544a04dab394a73ecfcc9edbb",
+    "candidates": {
+      "alice": {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "For neighborhood residents, eligibility requires being at least 36 years old; every resident meeting that age requirement qualifies. People who do not live in the neighborhood qualify at any age. Age means completed whole years at the recorded application time. Everyone must apply on or before 2028-07-08T10:30:00.000Z (UTC), including that instant. Eligibility and the deadline are the only conditions for acceptance.",
+        "es": "Para las personas residentes del barrio, la elegibilidad exige tener al menos 36 años; toda persona residente que cumpla ese requisito de edad es elegible. Las personas que no viven en el barrio son elegibles a cualquier edad. La edad se mide en años completos en el instante registrado de la solicitud. Toda persona debe presentar su solicitud a más tardar el 2028-07-08T10:30:00.000Z (UTC), incluido ese instante. La elegibilidad y el plazo son las únicas condiciones para la aceptación.",
+        "rules": null,
+        "issues": [
+          "Eligibility is age >= 36 OR being a nonresident: residents younger than 36 are excluded while nonresidents of the same age qualify. The available residency predicate can represent only being a resident, and residentRequired=false removes that predicate rather than requiring nonresidency. This policy cannot be represented faithfully by the available rules."
+        ]
+      },
+      "bob": {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "People who do not live in the neighborhood must be at least 36 years old to be eligible; every nonresident who meets that age requirement is eligible. Residents are eligible at any age. Age is measured in completed whole years at the recorded registration time. Everyone must register no later than 2028-07-08T10:30:00.000Z (UTC), including that instant. Eligibility and the deadline are the only conditions for acceptance.",
+        "es": "Quienes no residen en el barrio deben tener al menos 36 años para ser elegibles; toda persona no residente que cumpla esa edad es elegible. Las personas residentes son elegibles a cualquier edad. La edad se mide en años completos en el instante de inscripción registrado. Toda persona debe inscribirse a más tardar el 2028-07-08T10:30:00.000Z (UTC), incluido ese instante. La elegibilidad y el plazo son las únicas condiciones para la aceptación.",
+        "rules": {
+          "minAge": 36,
+          "residentRequired": true,
+          "join": "any",
+          "deadline": "2028-07-08T10:30:00.000Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      }
+    },
+    "discovery": {
+      "status": "unresolved",
+      "witnesses": [],
+      "summary": {
+        "en": "Cannot compare until both policies have executable interpretations. No equivalence claim is possible.",
+        "es": "No se pueden comparar hasta que ambas políticas tengan interpretaciones ejecutables. No se puede afirmar que sean equivalentes."
+      },
+      "coverage": {
+        "agePartitions": 0,
+        "timePartitions": 0,
+        "residencyValues": 2,
+        "combinations": 0,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      }
+    },
+    "unresolvedVoteBlocked": true
+  },
+  {
+    "id": "not-both-is-not-a-complete-rule",
+    "roomId": "consequence-8ea99b24-62e0-4254-a1e0-a5c677867ef3",
+    "passed": true,
+    "checks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 45,
+          "resident": true,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 46,
+          "resident": false,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 45,
+          "resident": false,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 46,
+          "resident": true,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2035-12-31T23:59:59.999Z"
+        },
+        "actual": null,
+        "expected": null
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 45,
+          "resident": true,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 46,
+          "resident": false,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 45,
+          "resident": false,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": false,
+        "expected": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 46,
+          "resident": true,
+          "submittedAt": "2028-08-20T00:00:00.000Z"
+        },
+        "actual": true,
+        "expected": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2035-12-31T23:59:59.999Z"
+        },
+        "actual": false,
+        "expected": false
+      }
+    ],
+    "registrations": [],
+    "responseSHA256": "3925d5fa5dc1ff009ac0332c966c6a0d1302f0a94c670a06c05e0345eb9058e2",
+    "candidates": {
+      "alice": {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "You do not have to be both at least 46 years old and a neighborhood resident to be eligible. Age means completed whole years when the system records the application. There is no registration deadline and there are no other eligibility conditions.",
+        "es": "No es necesario tener al menos 46 años y ser residente del barrio a la vez para ser elegible. La edad se mide en años completos en el momento en que el sistema registra la solicitud. No hay plazo de inscripción ni otras condiciones de elegibilidad.",
+        "rules": null,
+        "issues": [
+          "Saying that applicants do not have to meet both requirements does not specify exactly who is eligible. Clarify whether either requirement alone is sufficient, whether people meeting neither qualify, and whether people meeting both qualify. The statement that there are no other eligibility conditions does not resolve these missing eligibility cases."
+        ]
+      },
+      "bob": {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "Being at least 46 years old or being a neighborhood resident is sufficient for eligibility; meeting both requirements also qualifies. Anyone who meets neither requirement is not eligible. Age is measured in completed whole years at the recorded registration time. There is no registration deadline or other condition for acceptance.",
+        "es": "Basta con tener al menos 46 años o ser residente del barrio para ser elegible; cumplir ambos requisitos también sirve. Quien no cumpla ninguno de los dos requisitos no es elegible. La edad se mide en años completos en el instante de inscripción registrado. No hay plazo de inscripción ni otras condiciones para la aceptación.",
+        "rules": {
+          "minAge": 46,
+          "residentRequired": true,
+          "join": "any",
+          "deadline": null,
+          "deadlineInclusive": true
+        },
+        "issues": []
+      }
+    },
+    "discovery": {
+      "status": "unresolved",
+      "witnesses": [],
+      "summary": {
+        "en": "Cannot compare until both policies have executable interpretations. No equivalence claim is possible.",
+        "es": "No se pueden comparar hasta que ambas políticas tengan interpretaciones ejecutables. No se puede afirmar que sean equivalentes."
+      },
+      "coverage": {
+        "agePartitions": 0,
+        "timePartitions": 0,
+        "residencyValues": 2,
+        "combinations": 0,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      }
+    },
+    "unresolvedVoteBlocked": true
+  }
+]

@@ -1,0 +1,186 @@
+Browser tab: 1203230967, Title: "SamePage — Find the hidden consequence", URL: "https://samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9&editor=alice".
+0 AXWebArea SamePage — Find the hidden consequence, URL: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9&editor=alice
+	1 container
+		2 container
+			3 link Description: SamePage home, Value: samepage-language-lab.ampleboar17.chatgpt.site/
+			4 text WORDS → CONSEQUENCES / 05 Two simulated editors
+		5 container
+			6 text THE CONSEQUENCE YOU DIDN’T THINK TO TEST.
+			7 heading Find the consequence hidden in the words., Value: 1
+				8 text Find the consequence
+				9 text hidden in the words.
+			10 text Write the policy in two languages. SamePage finds a person or a moment where the interpretations disagree. Decide together, then try the consequence in the working form. ROOM  0D124FD8  · REV  15
+			11 link Description: Alice · EN, Value: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9&editor=alice
+			12 link Description: Bob · ES, Value: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9&editor=bob
+			13 link Description: Both editors, Value: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9
+		243 text Manual review prompt is ready in Advanced review tools. Import the fresh response there.
+		14 container
+			15 text Both editors agreed · form now uses version 3  · Published policy v3 Model not configured
+		16 container
+			17 text Connect Meta to review policies automatically Add 
+			18 text MODEL_API_KEY
+			19 text  in Site Settings → Environment variables, mark it 
+			20 text Secret
+			21 text , and save it. Redeploy the site to apply the change, then refresh the connection. The key stays on the server. Default model:  muse-spark-1.3 .
+			22 button Refresh connection
+		244 text This review was imported through the manual relay. Consequences were found automatically by the rule engine.
+		23 container Description: Consequence comparison, ID: sp3-discovery-lab
+			24 text 01 / AUTOMATIC CONSEQUENCE DISCOVERY
+			25 heading SamePage found a disagreement., Value: 2
+				26 text SamePage found a disagreement.
+			27 text No attendee was supplied. SamePage searched the proposed rules and found where the answer changes.
+			28 text Live form v 3  · rejects
+			245 container Automatic counterexample discovery
+				246 text FOUND AUTOMATICALLY FROM THIS REVIEW
+				247 heading 22 years old · nonresident, Value: 3
+					248 text 22 years old · nonresident
+				249 container
+					250 text Registers  2028-02-29 · 12:15:00.050 UTC
+				251 text Alice ’s interpretation
+				252 text Accepts
+				253 text Bob ’s interpretation
+				254 text Rejects
+				255 text A 22-year-old nonresident registers at 2028-02-29T12:15:00.050Z. Alice’s interpretation accepts; Bob’s interpretation rejects because the attendee is not a neighborhood resident.
+				256 button (collapsed) What was searched?, Secondary Actions: Expand
+					257 text What was searched?
+			29 text The attendee SamePage discovered
+			30 text Change any detail. This preview saves no registration.
+			31 container
+				32 text Age
+				33 stepper (settable, integer) Description: Test attendee age, Value: 22
+			34 container
+				35 text Neighborhood resident
+				36 pop up button (collapsed, settable) Description: Test attendee residency, Value: No · nonresident, Secondary Actions: Expand
+					37 menu
+						38 (selected) No · nonresident
+						39 Yes · resident
+			40 container
+				41 text Registration time · UTC
+				42 date field (settable) Description: Test attendee registration time UTC, Value: 2028-02-29T12:15:00.05
+					43 container
+						258 stepper
+						259 stepper
+						260 stepper
+						261 stepper
+						262 stepper
+						263 stepper
+						264 stepper
+						265 stepper
+					52 pop up button Show local date and time picker Show local date and time picker
+			266 container Alice proposed outcome
+				267 container
+					268 text Alice ’s interpretation
+				269 text EN → ES  · DRAFT  3
+				270 text Accepted
+				271 content list
+					272 text Meets all requirements of this policy.
+				273 text Age  22 +
+				274 text On or before 2028-02-29 · 12:15:00.050 UTC
+				275 button (collapsed) Read both language versions, Secondary Actions: Expand
+					276 text Read both language versions
+			277 container Bob proposed outcome
+				278 container
+					279 text Bob ’s interpretation
+				280 text ES → EN  · DRAFT  2
+				281 text Rejected
+				282 content list
+					283 text Must be a neighborhood resident.
+				284 text Age  22 + AND Neighborhood resident
+				285 text On or before 2028-02-29 · 12:15:00.050 UTC
+				286 button (collapsed) Read both language versions, Secondary Actions: Expand
+					287 text Read both language versions
+			288 text These proposed rules give this attendee different answers. The working form still uses the last jointly approved policy.
+			289 button Test this attendee in the form
+			290 container
+				291 text Both editors confirmed the same meaning.
+				292 text The English policy, Spanish policy, and working form now share version  3 .
+		60 container
+			61 heading 02 / WRITE IN YOUR LANGUAGE, Value: 2
+				62 text 02 / WRITE IN YOUR LANGUAGE
+			63 text Alice’s simulated editor A
+			64 text Alice
+			65 text Simulated editor
+			66 text English COMPLETE PROPOSED POLICY V 3
+			67 text entry area (settable) Description: Alice policy draft, Value: There are exactly two complete routes to eligibility: neighborhood residents qualify once they are at least 22, and people who do not live in the neighborhood qualify once they are at least 22. No one younger than 22 qualifies. Age means completed whole years at the recorded application time. In either route, the application must be recorded on or before 2028-02-29T12:15:00.050Z (UTC). These are the only conditions for acceptance.
+			68 text Saved draft · ready for review
+			69 button (disabled) Save Alice policy draft
+			70 text Only saved drafts enter the review. Changing either draft resets prior votes.  Supported: age, residency and a deadline in UTC.
+			71 button (disabled) Edit a draft to review again
+		72 container Description: Working registration form, ID: sp3-working-form
+			73 text 03 / FEEL THE CONSEQUENCE
+			74 heading Workshop registration, Value: 2
+				75 text Workshop registration
+			76 text LIVE · v 3
+			77 text (age ≥ 22 AND neighborhood resident) AND submitted ≤ 2028-02-29T12:15:00.050Z
+			197 text Preview attendee loaded. Submit to test the published rule; loading an attendee does not save a registration.
+			78 container
+				79 text Synthetic attendee label
+				80 text field (settable) Description: Registration attendee label, Value: Nonresident discovered by SamePage
+				81 text Age
+				82 stepper (settable, integer) Description: Registration age, Value: 22
+				83 text Neighborhood resident
+				84 pop up button (collapsed, settable) Description: Registration residency, Value: No · nonresident, Secondary Actions: Expand
+					85 menu
+						86 (selected) No · nonresident
+						87 Yes · resident
+				88 text Simulated submission time · UTC
+				89 date field (settable) Description: Registration submission time UTC, Value: 2028-02-29T12:15:00.05
+					90 container
+						198 stepper
+						199 stepper
+						200 stepper
+						201 stepper
+						202 stepper
+						203 stepper
+						204 stepper
+						205 stepper
+					99 pop up button Show local date and time picker Show local date and time picker
+				100 text This is a working prototype form. The server saves a synthetic registration and evaluates it using the published policy. No payment or email.
+				101 button Submit registration
+			206 container
+				207 text Registration rejected Last saved result ·  Nonresident discovered by SamePage
+				208 text 22 years old · nonresident
+				209 text 2028-02-29 · 12:15:00.050 UTC
+				210 text Must be a neighborhood resident. Saved against policy v 3
+				211 container
+					212 text Receipt  registration-15
+		102 container Published policy in both languages
+			103 heading PUBLISHED POLICY, Value: 2
+				104 text PUBLISHED POLICY
+			105 text Version  3  · this is what the form enforces
+			106 container
+				107 heading ENGLISH · AGREED, Value: 3
+					108 text ENGLISH · AGREED
+				109 text To be eligible, it is necessary to live in the neighborhood; it is also necessary to be at least 22 years old. Meeting both requirements is sufficient for eligibility. Age is measured in completed whole years at the recorded registration time. In addition, the application must be recorded no later than 2028-02-29T12:15:00.050Z (UTC), including that instant. There are no other conditions for acceptance.
+			110 container
+				111 heading ESPAÑOL · ACORDADO, Value: 3
+					112 text ESPAÑOL · ACORDADO
+				113 text Para ser elegible es necesario residir en el barrio; también es necesario tener al menos 22 años. Cumplir ambos requisitos es suficiente para ser elegible. La edad se mide en años completos en el instante de inscripción registrado. Además, la solicitud debe registrarse a más tardar el 2028-02-29T12:15:00.050Z (UTC), incluido ese instante. No hay otras condiciones para la aceptación.
+		114 container Registration audit
+			115 heading REGISTRATION RECEIPTS, Value: 2
+				116 text REGISTRATION RECEIPTS
+			117 text 3  saved · decisions keep their original version
+			293 container
+				294 text Nonresident discovered by SamePage Rejected 22 years old · nonresident
+				295 text 2028-02-29 · 12:15:00.050 UTC Policy v 3  · receipt  registration-15
+			219 container
+				220 text Nonresident discovered by SamePage Accepted 22 years old · nonresident
+				221 text 2028-02-29 · 12:15:00.050 UTC Policy v 2  · receipt  registration-9
+			213 container
+				214 text Nonresident discovered by SamePage Rejected 22 years old · nonresident
+				215 text 2028-02-29 · 12:15:00.050 UTC Policy v 1  · receipt  registration-5
+		296 button (collapsed) Advanced review tools · manual fallback, Secondary Actions: Expand
+			297 text Advanced review tools · manual fallback
+		121 text  Private prototype · synthetic attendees · no emails are sent
+		122 button Start a new room
+		123 container
+			124 text SamePage / a bilingual collaboration experiment
+			125 text AI proposes the interpretation. People confirm it. Code evaluates the agreed rule. Age · residency · UTC deadline
+			126 link Description: Open the document collaboration lab, Value: samepage-language-lab.ampleboar17.chatgpt.site/
+		127 container
+			128 container
+				129 link Description: Edit site in ChatGPT, Value: chatgpt.com/sites/appgprj_6acf326d0f9c81918e24863d7a25c308/edit?account_id=personal&codex_thread_id=01a137f4-925c-7ec2-8af8-bd16e5cce1fb&browser_url=https%3A%2F%2Fsamepage-language-lab.ampleboar17.chatgpt.site%2Fconsequences%3Froom%3Dconsequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9%26editor%3Dalice
+				130 button (collapsed) Description: Edit site, Secondary Actions: Expand
+			131 button Hide toolbar
+
+The focused UI element is 0 AXWebArea SamePage — Find the hidden consequence, URL: samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9&editor=alice
