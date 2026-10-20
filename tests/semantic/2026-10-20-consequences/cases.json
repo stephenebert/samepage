@@ -1,0 +1,452 @@
+{
+  "fixtureVersion": 1,
+  "frozenAt": "2026-10-20",
+  "description": "Six independent pairs of full-policy replacements, written before model responses. Alice writes English and Bob Spanish. These are evaluator fixtures, not model answers. Send only baseline and each case input to a responder; never send expected fields or operator titles.",
+  "domain": {
+    "age": "completed whole years, nonnegative integer",
+    "resident": "whether the applicant lives in the named neighborhood",
+    "submittedAt": "an explicit ISO 8601 UTC timestamp",
+    "eligibility": "join combines the age and residency eligibility conditions; the deadline is always ANDed with the combined eligibility result",
+    "unsupported": "If the whole draft cannot be faithfully expressed in the available rule fields, expected rules and all draft outcomes are null. Request clarification instead of inventing a rule or silently dropping a clause.",
+    "deadline": "Drafts replace the complete policy. A missing timezone must not inherit UTC from the baseline. Age thresholds refer to completed whole years. Inclusive means submittedAt <= deadline; exclusive means submittedAt < deadline."
+  },
+  "baseline": {
+    "en": "Applicants must be at least 16 years old and live in the neighborhood. Applications must be received no later than 5 November 2026 at 18:00 UTC; a submission exactly at that instant is accepted.",
+    "es": "Las personas solicitantes deben tener al menos 16 años y vivir en el barrio. Las solicitudes deben recibirse a más tardar el 5 de noviembre de 2026 a las 18:00 UTC; se acepta una solicitud recibida exactamente en ese instante.",
+    "rules": {
+      "minAge": 16,
+      "residentRequired": true,
+      "join": "all",
+      "deadline": "2026-11-05T18:00:00Z",
+      "deadlineInclusive": true
+    }
+  },
+  "cases": [
+    {
+      "id": "C-01",
+      "title": "Fresh threshold and date with AND versus OR",
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": 18,
+            "residentRequired": true,
+            "join": "any",
+            "deadline": "2026-11-12T17:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": 18,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-12T17:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "relationship": "different"
+      },
+      "drafts": {
+        "alice": "Applicants qualify if they are at least 18 years old or live in the neighborhood; meeting either condition is enough. Applications must be received by 12 November 2026 at 17:00 UTC, including a submission exactly at 17:00.",
+        "bob": "Para participar, hay que tener al menos 18 años y vivir en el barrio; es obligatorio cumplir las dos condiciones. Las solicitudes deben recibirse a más tardar el 12 de noviembre de 2026 a las 17:00 UTC, incluida una solicitud recibida exactamente a esa hora."
+      },
+      "scenarios": [
+        {
+          "id": "young-resident",
+          "age": 17,
+          "resident": true,
+          "submittedAt": "2026-11-12T16:59:59Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        },
+        {
+          "id": "adult-nonresident",
+          "age": 18,
+          "resident": false,
+          "submittedAt": "2026-11-12T17:00:00Z",
+          "expected": {
+            "alice": true,
+            "bob": false
+          }
+        },
+        {
+          "id": "both-conditions",
+          "age": 18,
+          "resident": true,
+          "submittedAt": "2026-11-12T17:00:00Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "id": "neither-condition",
+          "age": 17,
+          "resident": false,
+          "submittedAt": "2026-11-12T16:00:00Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "id": "deadline-still-mandatory",
+          "age": 19,
+          "resident": true,
+          "submittedAt": "2026-11-12T17:00:01Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "C-02",
+      "title": "Equivalent natural paraphrases",
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": 16,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-05T18:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": 16,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-05T18:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "relationship": "equivalent"
+      },
+      "drafts": {
+        "alice": "Participation is limited to neighborhood residents who have reached their sixteenth birthday. Send the application no later than 18:00 UTC on 5 November 2026. Applications arriving exactly at the deadline count as on time.",
+        "bob": "Pueden participar quienes viven en el barrio y tienen 16 años cumplidos o más. El último instante para recibir la solicitud es el 5 de noviembre de 2026 a las 18:00 UTC; ese instante está incluido."
+      },
+      "scenarios": [
+        {
+          "id": "birthday-boundary",
+          "age": 16,
+          "resident": true,
+          "submittedAt": "2026-11-05T18:00:00Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "id": "too-young",
+          "age": 15,
+          "resident": true,
+          "submittedAt": "2026-11-05T17:00:00Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "id": "not-resident",
+          "age": 25,
+          "resident": false,
+          "submittedAt": "2026-11-05T17:00:00Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "id": "one-second-late",
+          "age": 16,
+          "resident": true,
+          "submittedAt": "2026-11-05T18:00:01Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "C-03",
+      "title": "Strict age and time boundaries",
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": 21,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-09T09:00:00Z",
+            "deadlineInclusive": false
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": 20,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-09T09:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "relationship": "different"
+      },
+      "drafts": {
+        "alice": "Applicants must be older than 20 years, counting completed whole years, and must live in the neighborhood. The application must arrive strictly before 09:00 UTC on 9 November 2026; an application arriving exactly at 09:00 is too late.",
+        "bob": "Las personas solicitantes deben tener al menos 20 años cumplidos y vivir en el barrio. La solicitud debe llegar como máximo el 9 de noviembre de 2026 a las 09:00 UTC; se admite una llegada exactamente a esa hora."
+      },
+      "scenarios": [
+        {
+          "id": "age-only-difference",
+          "age": 20,
+          "resident": true,
+          "submittedAt": "2026-11-09T08:59:59Z",
+          "expected": {
+            "alice": false,
+            "bob": true
+          }
+        },
+        {
+          "id": "time-only-difference",
+          "age": 21,
+          "resident": true,
+          "submittedAt": "2026-11-09T09:00:00Z",
+          "expected": {
+            "alice": false,
+            "bob": true
+          }
+        },
+        {
+          "id": "both-accept",
+          "age": 21,
+          "resident": true,
+          "submittedAt": "2026-11-09T08:59:59Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "id": "late-for-both",
+          "age": 21,
+          "resident": true,
+          "submittedAt": "2026-11-09T09:00:01Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "id": "residency-still-mandatory",
+          "age": 25,
+          "resident": false,
+          "submittedAt": "2026-11-09T08:00:00Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "C-04",
+      "title": "Negation changes the connective",
+      "expected": {
+        "alice": {
+          "rules": {
+            "minAge": 18,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-05T18:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "bob": {
+          "rules": {
+            "minAge": 18,
+            "residentRequired": true,
+            "join": "any",
+            "deadline": "2026-11-05T18:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "relationship": "different"
+      },
+      "drafts": {
+        "alice": "You cannot participate if you are under 18 years old or do not live in the neighborhood. Everyone else is eligible, provided their application is received by 5 November 2026 at 18:00 UTC, with that exact instant included.",
+        "bob": "Quedan excluidas únicamente las personas que sean menores de 18 años y que, además, no vivan en el barrio. Las demás pueden participar siempre que la solicitud se reciba a más tardar el 5 de noviembre de 2026 a las 18:00 UTC, incluido ese instante."
+      },
+      "scenarios": [
+        {
+          "id": "young-resident",
+          "age": 17,
+          "resident": true,
+          "submittedAt": "2026-11-05T17:59:59Z",
+          "expected": {
+            "alice": false,
+            "bob": true
+          }
+        },
+        {
+          "id": "adult-nonresident",
+          "age": 18,
+          "resident": false,
+          "submittedAt": "2026-11-05T17:59:59Z",
+          "expected": {
+            "alice": false,
+            "bob": true
+          }
+        },
+        {
+          "id": "excluded-by-both",
+          "age": 17,
+          "resident": false,
+          "submittedAt": "2026-11-05T17:59:59Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        },
+        {
+          "id": "accepted-by-both",
+          "age": 18,
+          "resident": true,
+          "submittedAt": "2026-11-05T18:00:00Z",
+          "expected": {
+            "alice": true,
+            "bob": true
+          }
+        },
+        {
+          "id": "late-despite-eligibility",
+          "age": 18,
+          "resident": true,
+          "submittedAt": "2026-11-05T18:00:01Z",
+          "expected": {
+            "alice": false,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "C-05",
+      "title": "Guarantor exception exceeds the supported model",
+      "expected": {
+        "alice": {
+          "rules": null,
+          "unresolvedReason": "Guarantor status is a required additional variable absent from the five rule fields. Do not erase the exception, set residency optional for every nonresident, or invent guarantor information."
+        },
+        "bob": {
+          "rules": {
+            "minAge": 16,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-05T18:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "relationship": "unresolved"
+      },
+      "drafts": {
+        "alice": "Applicants must be at least 16 years old and live in the neighborhood. A nonresident aged 16 or older may also participate if a neighborhood resident signs as their guarantor. Applications must be received by 5 November 2026 at 18:00 UTC, including that exact instant.",
+        "bob": "Para participar, es necesario tener al menos 16 años y vivir en el barrio. Las solicitudes deben recibirse a más tardar el 5 de noviembre de 2026 a las 18:00 UTC; una solicitud recibida exactamente entonces es válida."
+      },
+      "scenarios": [
+        {
+          "id": "resident",
+          "age": 16,
+          "resident": true,
+          "submittedAt": "2026-11-05T17:00:00Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "id": "nonresident-guarantor-unknown",
+          "age": 20,
+          "resident": false,
+          "submittedAt": "2026-11-05T17:00:00Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        },
+        {
+          "id": "younger-applicant",
+          "age": 15,
+          "resident": true,
+          "submittedAt": "2026-11-05T17:00:00Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "C-06",
+      "title": "Explicit calendar date with an unspecified local timezone",
+      "expected": {
+        "alice": {
+          "rules": null,
+          "unresolvedReason": "Local time has no specified timezone or location. Do not assume UTC, a browser timezone, or the baseline timezone; ask which timezone applies."
+        },
+        "bob": {
+          "rules": {
+            "minAge": 19,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-13T18:00:00Z",
+            "deadlineInclusive": true
+          }
+        },
+        "relationship": "unresolved"
+      },
+      "drafts": {
+        "alice": "Applicants must be at least 19 years old and live in the neighborhood. Applications close on 13 November 2026 at 18:00 local time, with the closing instant included. The event location and the timezone used for this local deadline have not been specified.",
+        "bob": "Las personas solicitantes deben tener al menos 19 años y vivir en el barrio. La inscripción cierra el 13 de noviembre de 2026 a las 18:00 UTC; se acepta una solicitud recibida exactamente en ese instante."
+      },
+      "scenarios": [
+        {
+          "id": "utc-boundary",
+          "age": 19,
+          "resident": true,
+          "submittedAt": "2026-11-13T18:00:00Z",
+          "expected": {
+            "alice": null,
+            "bob": true
+          }
+        },
+        {
+          "id": "utc-late",
+          "age": 19,
+          "resident": true,
+          "submittedAt": "2026-11-13T18:00:01Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        },
+        {
+          "id": "under-new-age",
+          "age": 18,
+          "resident": true,
+          "submittedAt": "2026-11-13T17:00:00Z",
+          "expected": {
+            "alice": null,
+            "bob": false
+          }
+        }
+      ]
+    }
+  ]
+}

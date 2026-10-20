@@ -1,0 +1,29 @@
+{
+  "jobId": "review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "Applicants must be at least 16 years old and live in the neighborhood. A nonresident aged 16 or older may also participate if a neighborhood resident signs as their guarantor. Applications must be received by 5 November 2026 at 18:00 UTC, including that exact instant.",
+      "es": "Las personas solicitantes deben tener al menos 16 años y vivir en el barrio. Una persona no residente de 16 años o más también puede participar si una persona residente del barrio firma como su garante. Las solicitudes deben recibirse a más tardar el 5 de noviembre de 2026 a las 18:00 UTC, incluido ese instante exacto.",
+      "rules": null,
+      "issues": [
+        "The exception allowing nonresidents aged 16 or older to participate with a neighborhood resident signing as guarantor requires a guarantor predicate and an exception that the supported rules cannot represent. Clarify a policy expressible using only the supported age and residency predicates, or extend the rule model before compiling this policy."
+      ]
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "To participate, it is necessary to be at least 16 years old and live in the neighborhood. Applications must be received no later than 5 November 2026 at 18:00 UTC; an application received exactly then is valid.",
+      "es": "Para participar, es necesario tener al menos 16 años y vivir en el barrio. Las solicitudes deben recibirse a más tardar el 5 de noviembre de 2026 a las 18:00 UTC; una solicitud recibida exactamente entonces es válida.",
+      "rules": {
+        "minAge": 16,
+        "residentRequired": true,
+        "join": "all",
+        "deadline": "2026-11-05T18:00:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    }
+  ]
+}

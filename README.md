@@ -8,6 +8,8 @@ The central interaction is a concrete consequence, not only a translation diff. 
 
 ## Current prototype
 
+- **Consequences experiment at `/consequences`:** bilingual policy drafts become proposed executable rules. Compare the same attendee under both interpretations, obtain two matching approvals, and submit a working synthetic registration form. Saved results retain the policy version used. See the [consequences runbook](docs/CONSEQUENCES-DEMO.md).
+- The consequences experiment supports only minimum age, neighborhood residency, AND/OR eligibility, and an explicit UTC deadline. Unsupported or ambiguous clauses must remain unresolved. The original document lab remains available at `/`.
 - Real shared rooms persisted in Cloudflare D1, with polling updates between editor tabs.
 - English-speaking Alice and Spanish-speaking Bob are simulated personas. One person can operate both editors or use their separate links.
 - Versioned proposals, strict JSON validation, atomic room updates, stale-draft protection, and joint conflict resolution.
@@ -52,10 +54,12 @@ Agent responses must match the generated schema exactly. Invalid or outdated res
 Run the existing reducer suite without installing application dependencies:
 
 ```sh
-node --experimental-strip-types --test tests/room.test.mjs
+node --experimental-strip-types --test tests/room.test.mjs tests/consequences.test.mjs
 ```
 
 The 25 reducer tests cover full-document snapshots, atomic holds, exact selected-candidate review, provenance, deletions, stale context, concurrent corrections, legacy job recovery, and draft preservation. They pass for this iteration. TypeScript checking and the production build are separate checks.
+
+The consequences iteration adds 18 passing mechanical tests (43 total). Six frozen bilingual draft pairs received fresh interpretations from one isolated agent: 10 executable interpretations and two unresolved holds matched expectations. An independent evaluator recomputed all 50 outcomes (44 boolean and six unresolved) and verified 25 persisted registrations. Separate Chrome editor tabs demonstrated a version-1 rejection, one-vote and mismatched-vote holds, joint approval, and a version-2 acceptance for the same attendee. These are simulated tests, not real-user research. See [consequences evaluation](docs/CONSEQUENCES-EVALUATION.md).
 
 On 20 October, eight fresh independent-agent responses covered seven frozen cases and their joint-vote continuation. All raw responses passed the production parser unchanged, and the tested semantic outcomes matched the expected facts. A separate browser session operated two editor tabs through a compatible merge, a concrete disagreement, matching votes, and a correctly blocked cross-document contradiction. See [evaluation notes](docs/EVALUATION.md) and the [demo runbook](docs/DEMO.md).
 
@@ -70,6 +74,8 @@ This is a feasibility prototype, not a validated production collaboration system
 
 ## Source map
 
+- `app/consequences/`, `app/api/consequences/`, `lib/consequences*.ts`: policy interpretation, consequence comparison, joint approval and versioned registration.
+- `tests/consequences.test.mjs`, `tests/semantic/2026-10-20-consequences/`: mechanical tests and synthetic semantic evidence.
 - `app/page.tsx`: editor views, conflict explanations, voting, and facilitator controls.
 - `app/api/rooms/`: room creation, actions, and relay endpoints.
 - `lib/room.ts`: pure proposal/reconciliation state machine, prompt construction, and response validation.

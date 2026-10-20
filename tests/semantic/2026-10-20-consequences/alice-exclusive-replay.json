@@ -1,0 +1,130 @@
+{
+  "note": "Replay of unchanged raw C-03 response with byte-identical prompt; not an additional fresh semantic test.",
+  "room": {
+    "kind": "samepage-consequences-v1",
+    "id": "consequence-f9cb72b5-8789-48c5-817d-cbf4e28c8ef1",
+    "revision": 8,
+    "createdAt": "2026-10-20T22:13:47.155Z",
+    "updatedAt": "2026-10-20T22:13:47.256Z",
+    "mode": "agent-manual-relay",
+    "published": {
+      "version": 2,
+      "en": "Applicants must be older than 20 years, counting completed whole years, and must live in the neighborhood. The application must arrive strictly before 09:00 UTC on 9 November 2026; an application arriving exactly at 09:00 is too late.",
+      "es": "Las personas solicitantes deben tener más de 20 años, contando los años completos cumplidos, y deben vivir en el barrio. La solicitud debe llegar estrictamente antes de las 09:00 UTC del 9 de noviembre de 2026; una solicitud que llegue exactamente a las 09:00 llega demasiado tarde.",
+      "rules": {
+        "minAge": 21,
+        "residentRequired": true,
+        "join": "all",
+        "deadline": "2026-11-09T09:00:00.000Z",
+        "deadlineInclusive": false
+      },
+      "publishedAt": "2026-10-20T22:13:47.241Z",
+      "reviewId": "review-3",
+      "candidateId": "review-3-alice"
+    },
+    "drafts": {
+      "alice": {
+        "editor": "alice",
+        "language": "en",
+        "version": 2,
+        "text": "Applicants must be older than 20 years, counting completed whole years, and must live in the neighborhood. The application must arrive strictly before 09:00 UTC on 9 November 2026; an application arriving exactly at 09:00 is too late."
+      },
+      "bob": {
+        "editor": "bob",
+        "language": "es",
+        "version": 2,
+        "text": "Las personas solicitantes deben tener al menos 20 años cumplidos y vivir en el barrio. La solicitud debe llegar como máximo el 9 de noviembre de 2026 a las 09:00 UTC; se admite una llegada exactamente a esa hora."
+      }
+    },
+    "activeJob": null,
+    "review": {
+      "id": "review-3",
+      "basePolicyVersion": 1,
+      "candidates": [
+        {
+          "id": "review-3-alice",
+          "editor": "alice",
+          "sourceVersion": 2,
+          "en": "Applicants must be older than 20 years, counting completed whole years, and must live in the neighborhood. The application must arrive strictly before 09:00 UTC on 9 November 2026; an application arriving exactly at 09:00 is too late.",
+          "es": "Las personas solicitantes deben tener más de 20 años, contando los años completos cumplidos, y deben vivir en el barrio. La solicitud debe llegar estrictamente antes de las 09:00 UTC del 9 de noviembre de 2026; una solicitud que llegue exactamente a las 09:00 llega demasiado tarde.",
+          "rules": {
+            "minAge": 21,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-09T09:00:00.000Z",
+            "deadlineInclusive": false
+          },
+          "issues": []
+        },
+        {
+          "id": "review-3-bob",
+          "editor": "bob",
+          "sourceVersion": 2,
+          "en": "Applicants must be at least 20 completed years old and live in the neighborhood. The application must arrive no later than 9 November 2026 at 09:00 UTC; arrival exactly at that time is accepted.",
+          "es": "Las personas solicitantes deben tener al menos 20 años cumplidos y vivir en el barrio. La solicitud debe llegar como máximo el 9 de noviembre de 2026 a las 09:00 UTC; se admite una llegada exactamente a esa hora.",
+          "rules": {
+            "minAge": 20,
+            "residentRequired": true,
+            "join": "all",
+            "deadline": "2026-11-09T09:00:00.000Z",
+            "deadlineInclusive": true
+          },
+          "issues": []
+        }
+      ],
+      "votes": {
+        "alice": "review-3-alice",
+        "bob": "review-3-alice"
+      },
+      "status": "published",
+      "createdAt": "2026-10-20T22:13:47.185Z",
+      "publishedVersion": 2
+    },
+    "registrations": [
+      {
+        "requestId": "alice-boundary-0",
+        "policyVersion": 2,
+        "label": "Synthetic cutoff 0",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T09:00:00.000Z",
+        "id": "registration-7",
+        "recordedAt": "2026-10-20T22:13:47.250Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Registration must arrive before 2026-11-09T09:00:00.000Z."
+          ],
+          "checks": {
+            "age": true,
+            "residency": true,
+            "deadline": false,
+            "eligibility": true
+          }
+        }
+      },
+      {
+        "requestId": "alice-boundary-1",
+        "policyVersion": 2,
+        "label": "Synthetic cutoff 1",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T08:59:59.000Z",
+        "id": "registration-8",
+        "recordedAt": "2026-10-20T22:13:47.256Z",
+        "decision": {
+          "accepted": true,
+          "reasons": [
+            "Meets all requirements of this policy."
+          ],
+          "checks": {
+            "age": true,
+            "residency": true,
+            "deadline": true,
+            "eligibility": true
+          }
+        }
+      }
+    ]
+  }
+}

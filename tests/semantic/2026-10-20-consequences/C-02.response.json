@@ -1,0 +1,33 @@
+{
+  "jobId": "review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "Participation is limited to neighborhood residents who have reached their sixteenth birthday. Send the application no later than 18:00 UTC on 5 November 2026. Applications arriving exactly at the deadline count as on time.",
+      "es": "La participación está limitada a residentes del barrio que hayan cumplido dieciséis años. Envíe la solicitud a más tardar a las 18:00 UTC del 5 de noviembre de 2026. Las solicitudes que lleguen exactamente en el instante límite se consideran recibidas a tiempo.",
+      "rules": {
+        "minAge": 16,
+        "residentRequired": true,
+        "join": "all",
+        "deadline": "2026-11-05T18:00:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "People who live in the neighborhood and are 16 years old or older may participate. The last instant for receiving the application is 5 November 2026 at 18:00 UTC; that instant is included.",
+      "es": "Pueden participar quienes viven en el barrio y tienen 16 años cumplidos o más. El último instante para recibir la solicitud es el 5 de noviembre de 2026 a las 18:00 UTC; ese instante está incluido.",
+      "rules": {
+        "minAge": 16,
+        "residentRequired": true,
+        "join": "all",
+        "deadline": "2026-11-05T18:00:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    }
+  ]
+}

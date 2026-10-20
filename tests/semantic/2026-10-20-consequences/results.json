@@ -1,0 +1,684 @@
+[
+  {
+    "id": "C-01",
+    "ruleChecks": [
+      {
+        "editor": "alice",
+        "matched": true,
+        "blocked": false
+      },
+      {
+        "editor": "bob",
+        "matched": true,
+        "blocked": false
+      }
+    ],
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "age": 17,
+        "resident": true,
+        "submittedAt": "2026-11-12T16:59:59Z",
+        "accepted": true
+      },
+      {
+        "editor": "alice",
+        "age": 18,
+        "resident": false,
+        "submittedAt": "2026-11-12T17:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "alice",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-12T17:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "alice",
+        "age": 17,
+        "resident": false,
+        "submittedAt": "2026-11-12T16:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 19,
+        "resident": true,
+        "submittedAt": "2026-11-12T17:00:01Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 17,
+        "resident": true,
+        "submittedAt": "2026-11-12T16:59:59Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 18,
+        "resident": false,
+        "submittedAt": "2026-11-12T17:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-12T17:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 17,
+        "resident": false,
+        "submittedAt": "2026-11-12T16:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 19,
+        "resident": true,
+        "submittedAt": "2026-11-12T17:00:01Z",
+        "accepted": false
+      }
+    ],
+    "publicationChecks": [
+      {
+        "oneVoteHeld": true,
+        "mismatchedVotesHeld": true,
+        "twoMatchingVotesPublished": true
+      },
+      {
+        "staleFormRejected": true
+      }
+    ],
+    "registrationChecks": [
+      {
+        "id": "registration-8",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-9",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-10",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-11",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-12",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      }
+    ]
+  },
+  {
+    "id": "C-02",
+    "ruleChecks": [
+      {
+        "editor": "alice",
+        "matched": true,
+        "blocked": false
+      },
+      {
+        "editor": "bob",
+        "matched": true,
+        "blocked": false
+      }
+    ],
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "age": 16,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "alice",
+        "age": 15,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 25,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 16,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:01Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 16,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 15,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 25,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 16,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:01Z",
+        "accepted": false
+      }
+    ],
+    "publicationChecks": [
+      {
+        "oneVoteHeld": true,
+        "mismatchedVotesHeld": true,
+        "twoMatchingVotesPublished": true
+      },
+      {
+        "staleFormRejected": true
+      }
+    ],
+    "registrationChecks": [
+      {
+        "id": "registration-8",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-9",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-10",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-11",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      }
+    ]
+  },
+  {
+    "id": "C-03",
+    "ruleChecks": [
+      {
+        "editor": "alice",
+        "matched": true,
+        "blocked": false
+      },
+      {
+        "editor": "bob",
+        "matched": true,
+        "blocked": false
+      }
+    ],
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "age": 20,
+        "resident": true,
+        "submittedAt": "2026-11-09T08:59:59Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T09:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T08:59:59Z",
+        "accepted": true
+      },
+      {
+        "editor": "alice",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T09:00:01Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 25,
+        "resident": false,
+        "submittedAt": "2026-11-09T08:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 20,
+        "resident": true,
+        "submittedAt": "2026-11-09T08:59:59Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T09:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T08:59:59Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 21,
+        "resident": true,
+        "submittedAt": "2026-11-09T09:00:01Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 25,
+        "resident": false,
+        "submittedAt": "2026-11-09T08:00:00Z",
+        "accepted": false
+      }
+    ],
+    "publicationChecks": [
+      {
+        "oneVoteHeld": true,
+        "mismatchedVotesHeld": true,
+        "twoMatchingVotesPublished": true
+      },
+      {
+        "staleFormRejected": true
+      }
+    ],
+    "registrationChecks": [
+      {
+        "id": "registration-8",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-9",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-10",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-11",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-12",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      }
+    ]
+  },
+  {
+    "id": "C-04",
+    "ruleChecks": [
+      {
+        "editor": "alice",
+        "matched": true,
+        "blocked": false
+      },
+      {
+        "editor": "bob",
+        "matched": true,
+        "blocked": false
+      }
+    ],
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "age": 17,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:59:59Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 18,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:59:59Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 17,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:59:59Z",
+        "accepted": false
+      },
+      {
+        "editor": "alice",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "alice",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:01Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 17,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:59:59Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 18,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:59:59Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 17,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:59:59Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-05T18:00:01Z",
+        "accepted": false
+      }
+    ],
+    "publicationChecks": [
+      {
+        "oneVoteHeld": true,
+        "mismatchedVotesHeld": true,
+        "twoMatchingVotesPublished": true
+      },
+      {
+        "staleFormRejected": true
+      }
+    ],
+    "registrationChecks": [
+      {
+        "id": "registration-8",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-9",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-10",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-11",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-12",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      }
+    ]
+  },
+  {
+    "id": "C-05",
+    "ruleChecks": [
+      {
+        "editor": "alice",
+        "matched": true,
+        "blocked": true
+      },
+      {
+        "editor": "bob",
+        "matched": true,
+        "blocked": false
+      }
+    ],
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "age": 16,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": null
+      },
+      {
+        "editor": "alice",
+        "age": 20,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": null
+      },
+      {
+        "editor": "alice",
+        "age": 15,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": null
+      },
+      {
+        "editor": "bob",
+        "age": 16,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 20,
+        "resident": false,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 15,
+        "resident": true,
+        "submittedAt": "2026-11-05T17:00:00Z",
+        "accepted": false
+      }
+    ],
+    "publicationChecks": [
+      {
+        "unsupportedBlocked": true,
+        "code": "UNRESOLVED"
+      },
+      {
+        "oneVoteHeld": true,
+        "mismatchedVotesHeld": false,
+        "twoMatchingVotesPublished": true
+      },
+      {
+        "staleFormRejected": true
+      }
+    ],
+    "registrationChecks": [
+      {
+        "id": "registration-7",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-8",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-9",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      }
+    ]
+  },
+  {
+    "id": "C-06",
+    "ruleChecks": [
+      {
+        "editor": "alice",
+        "matched": true,
+        "blocked": true
+      },
+      {
+        "editor": "bob",
+        "matched": true,
+        "blocked": false
+      }
+    ],
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "age": 19,
+        "resident": true,
+        "submittedAt": "2026-11-13T18:00:00Z",
+        "accepted": null
+      },
+      {
+        "editor": "alice",
+        "age": 19,
+        "resident": true,
+        "submittedAt": "2026-11-13T18:00:01Z",
+        "accepted": null
+      },
+      {
+        "editor": "alice",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-13T17:00:00Z",
+        "accepted": null
+      },
+      {
+        "editor": "bob",
+        "age": 19,
+        "resident": true,
+        "submittedAt": "2026-11-13T18:00:00Z",
+        "accepted": true
+      },
+      {
+        "editor": "bob",
+        "age": 19,
+        "resident": true,
+        "submittedAt": "2026-11-13T18:00:01Z",
+        "accepted": false
+      },
+      {
+        "editor": "bob",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2026-11-13T17:00:00Z",
+        "accepted": false
+      }
+    ],
+    "publicationChecks": [
+      {
+        "unsupportedBlocked": true,
+        "code": "UNRESOLVED"
+      },
+      {
+        "oneVoteHeld": true,
+        "mismatchedVotesHeld": false,
+        "twoMatchingVotesPublished": true
+      },
+      {
+        "staleFormRejected": true
+      }
+    ],
+    "registrationChecks": [
+      {
+        "id": "registration-7",
+        "version": 2,
+        "accepted": true,
+        "idempotent": true
+      },
+      {
+        "id": "registration-8",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      },
+      {
+        "id": "registration-9",
+        "version": 2,
+        "accepted": false,
+        "idempotent": true
+      }
+    ]
+  }
+]

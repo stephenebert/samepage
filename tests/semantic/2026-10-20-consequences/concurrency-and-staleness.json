@@ -1,0 +1,8 @@
+{
+  "staleVoteCode": "STALE_REVIEW",
+  "staleResponseCode": "STALE_REVIEW",
+  "publishedPolicyPreserved": true,
+  "concurrentRegistrationsPreserved": 5,
+  "uniqueRegistrationIds": true,
+  "oldRoomRouteRejectsNewSchema": 404
+}

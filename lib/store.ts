@@ -14,7 +14,9 @@ export async function getRoom(id: string): Promise<Room> {
   if (!/^[a-zA-Z0-9_-]{1,80}$/.test(id)) throw new RoomError("Room not found.", "NOT_FOUND", 404);
   const row = await database().prepare("SELECT state FROM samepage_rooms WHERE id = ?").bind(id).first<{ state: string }>();
   if (!row) throw new RoomError("Room not found.", "NOT_FOUND", 404);
-  return JSON.parse(row.state) as Room;
+  const state = JSON.parse(row.state);
+  if (!Array.isArray(state.segments)) throw new RoomError("Room not found.", "NOT_FOUND", 404);
+  return state as Room;
 }
 export async function mutateRoom(id: string, update: (room: Room) => Room): Promise<Room> {
   // One compare-and-swap statement commits the entire validated document. Retrying

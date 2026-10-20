@@ -1,0 +1,33 @@
+{
+  "jobId": "review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "You cannot participate if you are under 18 years old or do not live in the neighborhood. Everyone else is eligible, provided their application is received by 5 November 2026 at 18:00 UTC, with that exact instant included.",
+      "es": "No puedes participar si tienes menos de 18 años o no vives en el barrio. Todas las demás personas reúnen los requisitos, siempre que su solicitud se reciba a más tardar el 5 de noviembre de 2026 a las 18:00 UTC, incluido ese instante exacto.",
+      "rules": {
+        "minAge": 18,
+        "residentRequired": true,
+        "join": "all",
+        "deadline": "2026-11-05T18:00:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "Only people who are under 18 years old and also do not live in the neighborhood are excluded. Everyone else may participate provided that the application is received no later than 5 November 2026 at 18:00 UTC, including that instant.",
+      "es": "Quedan excluidas únicamente las personas que sean menores de 18 años y que, además, no vivan en el barrio. Las demás pueden participar siempre que la solicitud se reciba a más tardar el 5 de noviembre de 2026 a las 18:00 UTC, incluido ese instante.",
+      "rules": {
+        "minAge": 18,
+        "residentRequired": true,
+        "join": "any",
+        "deadline": "2026-11-05T18:00:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    }
+  ]
+}

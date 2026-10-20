@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-20",
+  "environment": "local Vinext+D1 preview",
+  "roomId": "consequence-77c81210-87d6-4e7b-899a-024850952c40",
+  "personas": "Two simulated editors in separate Chrome tabs, operated by Codex; not independent humans",
+  "model": "One additional fresh response by consequences_blind_interpreter to browser-hero.prompt.txt; raw response imported untouched",
+  "checks": {
+    "drafts_saved_in_separate_tabs": true,
+    "source_text_preserved": true,
+    "seventeen_nonresident_Alice_rejected_Bob_accepted": true,
+    "form_before_agreement_rejected_at_v1": true,
+    "one_vote_holds_v1": true,
+    "mismatched_votes_hold_v1": true,
+    "matching_votes_publish_v2": true,
+    "form_after_agreement_accepted_at_v2": true,
+    "both_language_views_updated": true,
+    "old_receipt_remains_v1": true,
+    "fifteen_resident_Alice_rejected_Bob_accepted": true,
+    "fifteen_nonresident_both_rejected": true
+  },
+  "limits": [
+    "Manual model relay, not Meta API latency or quality evidence",
+    "Datetime-local automated fill timed out; deadline boundaries verified through live HTTP form endpoint and independent oracle instead",
+    "No real bilingual user study or mobile browser test in this run"
+  ],
+  "screenshot": "browser-local-demo.png",
+  "deployment": {
+    "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/consequences?room=consequence-204a4411-d780-453b-9574-c8945b9b436f",
+    "sourceCommit": "6b319b677c8f4bb0e272048b3f0146a77cce90a5",
+    "status": "succeeded",
+    "preparedWith": "Untouched browser-hero response replayed after exact prompt equality check. Not an additional fresh semantic response.",
+    "state": "Both candidates visible, neither voted, published v1, baseline synthetic rejection saved; ready for user to approve Bob twice and submit again.",
+    "screenshot": "deployed-demo-ready.png"
+  }
+}

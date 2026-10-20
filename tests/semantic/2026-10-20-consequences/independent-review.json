@@ -1,0 +1,724 @@
+{
+  "reviewedAt": "2026-10-20T22:13:32.263Z",
+  "reviewerRole": "Fixture author; independent of response generation; not blinded to expected answers.",
+  "responderProvenance": "Parent reports one fresh fork_turns:none agent, consequences_blind_interpreter, generated all six replies from the exact production prompt files only. This is one responder across six cases, not six independent model samples.",
+  "hashProvenance": "The fixture hash was frozen before generation. All other hashes below are post-run integrity records recorded at reviewedAt, not pre-run commitments.",
+  "fixtureSha256": "361d18ba33f8a9a5491445c59842213b1dd382ee37015a634783d77c586c28c7",
+  "postRunSourceHashes": {
+    "lib/consequences.ts": "e36ec4bd95b5fdc775b249d9cafb6cbb3042e8735daf32b863bce6a8f05f6523",
+    "lib/consequences-types.ts": "b0a299eef2e034a271151c804eae6e9f5ac66ffe1109dd50326f7e450219ed96",
+    "lib/consequences-store.ts": "31f8559e5bd16232865678024305a46d75d4098264bc417132d6938b09ae8efb"
+  },
+  "cases": [
+    {
+      "id": "C-01",
+      "hashes": {
+        "prompt.txt": "48646d570b3227514afebcb99c471ed39a4dc8988e991af7b768a9bbedc3b383",
+        "response.json": "055552af8445866acdd7fc8cbf242eaba851ee434b94271dd94d15949de19104",
+        "before.json": "483dae0e9018543a71ae9f4bbf15c41fb82299bf7a189fb3dee590cb36e0d509",
+        "after.json": "7c94e9b7e0a31902d32ea1de176336d98b69319f881fd5f79c4ad0bc8891816a"
+      },
+      "sourcePreservation": [
+        {
+          "actor": "alice",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        },
+        {
+          "actor": "bob",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "young-resident",
+          "actor": "alice",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "adult-nonresident",
+          "actor": "alice",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "both-conditions",
+          "actor": "alice",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "neither-condition",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "deadline-still-mandatory",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "young-resident",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "adult-nonresident",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "both-conditions",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "neither-condition",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "deadline-still-mandatory",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        }
+      ],
+      "registrations": [
+        {
+          "requestId": "eval-C-01-0",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-01-1",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-01-2",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-01-3",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-01-4",
+          "accepted": false,
+          "independentMatch": true
+        }
+      ],
+      "freshGet": {
+        "passed": true,
+        "matchingRegistrationCount": 5
+      },
+      "publishedEditor": "bob"
+    },
+    {
+      "id": "C-02",
+      "hashes": {
+        "prompt.txt": "71005f05bb02d19b48b28f916d71f956023c202d6d9f26a591f8285bac6e563e",
+        "response.json": "8a73294b8baa3a0e5f279025fab593579de6e67e50b77df1eef717f76eec49d2",
+        "before.json": "d7607b82255d3006da0bfe9f4808028889250ab9d287fa5302ae4458a98b731e",
+        "after.json": "3f8c23aaaa5b83d40b7a6b575dbbff9434c8d359c0f97dc042ec7bc139bb2bc8"
+      },
+      "sourcePreservation": [
+        {
+          "actor": "alice",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        },
+        {
+          "actor": "bob",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "birthday-boundary",
+          "actor": "alice",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "too-young",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "not-resident",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "one-second-late",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "birthday-boundary",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "too-young",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "not-resident",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "one-second-late",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        }
+      ],
+      "registrations": [
+        {
+          "requestId": "eval-C-02-0",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-02-1",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-02-2",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-02-3",
+          "accepted": false,
+          "independentMatch": true
+        }
+      ],
+      "freshGet": {
+        "passed": true,
+        "matchingRegistrationCount": 4
+      },
+      "publishedEditor": "bob"
+    },
+    {
+      "id": "C-03",
+      "hashes": {
+        "prompt.txt": "5611255500b118072cf3721569870648598c5702d5531e9495806a059d45f759",
+        "response.json": "3d8e36b85f6081e7f5bc6cd7da41aac5f78015916c7daa2f7cd0c22fa08ab6a9",
+        "before.json": "88c483cf27393474b9e1ae2e74f002dff6a2499dc05a65fe2af8f7c227327e27",
+        "after.json": "db217b3df9c9e756a1363d9f540643875885fe6e0169321f8c0a36fdbbb569ff"
+      },
+      "sourcePreservation": [
+        {
+          "actor": "alice",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        },
+        {
+          "actor": "bob",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "age-only-difference",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "time-only-difference",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "both-accept",
+          "actor": "alice",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "late-for-both",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "residency-still-mandatory",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "age-only-difference",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "time-only-difference",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "both-accept",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "late-for-both",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "residency-still-mandatory",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        }
+      ],
+      "registrations": [
+        {
+          "requestId": "eval-C-03-0",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-03-1",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-03-2",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-03-3",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-03-4",
+          "accepted": false,
+          "independentMatch": true
+        }
+      ],
+      "freshGet": {
+        "passed": true,
+        "matchingRegistrationCount": 5
+      },
+      "publishedEditor": "bob"
+    },
+    {
+      "id": "C-04",
+      "hashes": {
+        "prompt.txt": "24bc7da1a2754d339f9f6a4d4f0145802cd1b2044c4db842cc45f6b3cc750908",
+        "response.json": "398af095b0a3b33252b90180fa7fdebf51b207fdc9ae0d86fe2defe5ad990eed",
+        "before.json": "96cc1808b74b793c6aaf4768ff0238494429a6a66ec2a01b4ce623dbb60a3965",
+        "after.json": "7bb3f0f52508156882dd3d20ba7e8eef72c1eea243d0e08373ea4cac62e70eae"
+      },
+      "sourcePreservation": [
+        {
+          "actor": "alice",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        },
+        {
+          "actor": "bob",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "young-resident",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "adult-nonresident",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "excluded-by-both",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "accepted-by-both",
+          "actor": "alice",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "late-despite-eligibility",
+          "actor": "alice",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "young-resident",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "adult-nonresident",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "excluded-by-both",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "accepted-by-both",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "late-despite-eligibility",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        }
+      ],
+      "registrations": [
+        {
+          "requestId": "eval-C-04-0",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-04-1",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-04-2",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-04-3",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-04-4",
+          "accepted": false,
+          "independentMatch": true
+        }
+      ],
+      "freshGet": {
+        "passed": true,
+        "matchingRegistrationCount": 5
+      },
+      "publishedEditor": "bob"
+    },
+    {
+      "id": "C-05",
+      "hashes": {
+        "prompt.txt": "1582a867c7b2230ea5bb9635819796e0998d3a23e847a30d0107fdda96a5e7e5",
+        "response.json": "d13b581a4e8895d6be927ff01456d1ba03777573ac3034b1fd650ce2eacf2bf5",
+        "before.json": "8cd498a8bc3ef5db52d6cc9d65557c79772fb459e87c6160be5eded6aa30e926",
+        "after.json": "a9258b23bdc7785795a9774eb7dc8c2815886f51549686f7c70a91051599a126"
+      },
+      "sourcePreservation": [
+        {
+          "actor": "alice",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": true
+        },
+        {
+          "actor": "bob",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "resident",
+          "actor": "alice",
+          "expected": null,
+          "independentlyEvaluated": null
+        },
+        {
+          "id": "nonresident-guarantor-unknown",
+          "actor": "alice",
+          "expected": null,
+          "independentlyEvaluated": null
+        },
+        {
+          "id": "younger-applicant",
+          "actor": "alice",
+          "expected": null,
+          "independentlyEvaluated": null
+        },
+        {
+          "id": "resident",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "nonresident-guarantor-unknown",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "younger-applicant",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        }
+      ],
+      "registrations": [
+        {
+          "requestId": "eval-C-05-0",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-05-1",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-05-2",
+          "accepted": false,
+          "independentMatch": true
+        }
+      ],
+      "freshGet": {
+        "passed": true,
+        "matchingRegistrationCount": 3
+      },
+      "publishedEditor": "bob"
+    },
+    {
+      "id": "C-06",
+      "hashes": {
+        "prompt.txt": "33b43e3bfcf9fa23aa5889cfdd3142bd61075d36c652c95598f7619e2d9e6cc9",
+        "response.json": "7a554adf5deaf7b6be921956c07da45fb78c7953c98065bd4d957edc24a4074a",
+        "before.json": "d2c339775ebe69d39fa00c8b37bb7fb584d359378a1be57714e63afd72c710b9",
+        "after.json": "d64671551cc9c0060d37ab58584e63d21f76bbd6b79edc1ec78c69e91cb94e15"
+      },
+      "sourcePreservation": [
+        {
+          "actor": "alice",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": true
+        },
+        {
+          "actor": "bob",
+          "exact": true,
+          "rulesMatched": true,
+          "unresolved": false
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "utc-boundary",
+          "actor": "alice",
+          "expected": null,
+          "independentlyEvaluated": null
+        },
+        {
+          "id": "utc-late",
+          "actor": "alice",
+          "expected": null,
+          "independentlyEvaluated": null
+        },
+        {
+          "id": "under-new-age",
+          "actor": "alice",
+          "expected": null,
+          "independentlyEvaluated": null
+        },
+        {
+          "id": "utc-boundary",
+          "actor": "bob",
+          "expected": true,
+          "independentlyEvaluated": true
+        },
+        {
+          "id": "utc-late",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        },
+        {
+          "id": "under-new-age",
+          "actor": "bob",
+          "expected": false,
+          "independentlyEvaluated": false
+        }
+      ],
+      "registrations": [
+        {
+          "requestId": "eval-C-06-0",
+          "accepted": true,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-06-1",
+          "accepted": false,
+          "independentMatch": true
+        },
+        {
+          "requestId": "eval-C-06-2",
+          "accepted": false,
+          "independentMatch": true
+        }
+      ],
+      "freshGet": {
+        "passed": true,
+        "matchingRegistrationCount": 3
+      },
+      "publishedEditor": "bob"
+    }
+  ],
+  "findings": [
+    {
+      "id": "translation-review",
+      "severity": "none",
+      "category": "semantic",
+      "status": "pass-with-fixture-caveat",
+      "detail": "Manual bilingual reading found no material translation drift in the twelve candidate pairs. Age thresholds, AND/OR scope, negation, cutoff inclusion, guarantor wording and timezone uncertainty are retained. C-02 carries a source-fixture send/receive ambiguity noted separately."
+    },
+    {
+      "id": "english-only-clarification",
+      "severity": "medium",
+      "category": "demo-usability",
+      "status": "open",
+      "detail": "C-05 and C-06 refusal issues are English-only strings. Spanish policy prose is translated faithfully, but the blocker explanation is not available in Spanish. The schema does not require bilingual issues."
+    },
+    {
+      "id": "c02-submission-receipt-assumption",
+      "severity": "medium",
+      "category": "fixture-validity",
+      "status": "qualified",
+      "detail": "C-02 Alice says send the application by the deadline, while Bob explicitly specifies receipt. Both compile identically only if the electronic submission and receipt instant are assumed equal. The frozen fixture does not model transmission delay; this case should not establish general equivalence of dispatch and receipt policies. Preserve the frozen run and add a clean receipt-worded case separately."
+    },
+    {
+      "id": "scenario-count",
+      "severity": "low",
+      "category": "reporting",
+      "status": "qualified",
+      "detail": "There are 50 checked editor outcomes, consisting of 44 boolean evaluations and 6 null outcomes for unsupported drafts. Do not report 50 executable scenarios, 50 independent model trials, or 12 compiled policies; only 10 candidates have executable rules."
+    },
+    {
+      "id": "bob-only-publication",
+      "severity": "medium",
+      "category": "coverage",
+      "status": "addressed-by-supplement",
+      "detail": "The original 25 persisted checks still select Bob. A separate C-03 mechanical replay reuses unchanged candidate responses, publishes Alice after both editors select her, rejects a resident aged 21 at exactly 09:00 UTC, and accepts the same applicant one second earlier. The saved artifact closes the candidate-direction and exclusive-cutoff publication gap; it is not a fresh semantic model test."
+    },
+    {
+      "id": "shared-evaluator-oracle",
+      "severity": "low",
+      "category": "evidence",
+      "status": "mitigated",
+      "detail": "The original runner imports the production evaluatePolicy function for scenario assertions. This audit independently recomputes all 50 expected outcomes without importing application code, and independently checks all 25 stored registration decisions."
+    },
+    {
+      "id": "reproducibility",
+      "severity": "medium",
+      "category": "evidence",
+      "status": "open",
+      "detail": "prepare can overwrite run-01 evidence; apply is stateful and cannot replay already-completed review jobs. The original manifest records no pre-run source/prompt/response hashes. This review adds post-run hashes, which must not be described as pre-run commitments. The fixture hash is genuinely frozen and still matches."
+    },
+    {
+      "id": "bounded-comparison-coverage",
+      "severity": "medium",
+      "category": "coverage",
+      "status": "open",
+      "detail": "The harness tests fixed scenarios but does not assert generated witness soundness, equivalence detection, browser synchronization, or absence of false equivalence claims. It does not test max-age, absent deadline, removed residency, an OR branch bypassing deadline, prompt injection, or malicious model output. Those are outside this run, not demonstrated failures."
+    },
+    {
+      "id": "idempotency-assertion-strength",
+      "severity": "low",
+      "category": "evidence",
+      "status": "qualified",
+      "detail": "The original repeated-registration check asserts only unchanged list length, so its assertion alone would miss replacement of an existing record. Code inspection shows exact duplicate actions return the unchanged room, and this audit verifies every stored request input and decision. A full state equality check would strengthen repeatability evidence."
+    }
+  ],
+  "counts": {
+    "candidates": 12,
+    "supportedRules": 10,
+    "unresolvedRules": 2,
+    "scenarioOutcomes": 50,
+    "booleanOutcomes": 44,
+    "unresolvedOutcomes": 6,
+    "storedRegistrationOutcomes": 25,
+    "freshGetRegistrationsVerified": 25
+  },
+  "conclusion": "The six saved model responses support the intended bounded extraction examples, with one fixture assumption. Independent arithmetic confirms all 50 expected outcomes and all 25 stored Bob-policy decisions. This is evidence for a controlled age/residency/UTC registration-policy demo, not general bilingual document merging or model reliability beyond these inputs.",
+  "amendedAt": "2026-10-20T22:14:40.264Z",
+  "supplements": [
+    {
+      "file": "run-01/alice-exclusive-replay.json",
+      "sha256": "202667537750a6a5e94937d05a7ec0b8db66853098b68759a0cbb3a0e703862f",
+      "kind": "mechanical-replay",
+      "freshSemanticCall": false,
+      "reviewedSavedArtifact": true,
+      "unchangedCandidateResponses": true,
+      "bothEditorsSelectedAlice": true,
+      "publishedVersion": 2,
+      "exactCutoffRejected": true,
+      "oneSecondBeforeAccepted": true,
+      "addedStoredDecisions": 2,
+      "note": "Reuses unchanged C-03 output; parent reports a byte-identical prompt. Artifact stores final room, not prompt bytes. Supplemental counts are separate from the original six-case counts."
+    }
+  ]
+}
