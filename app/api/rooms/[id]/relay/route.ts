@@ -1,4 +1,4 @@
-import { claimJob, completeJob, RoomError } from "@/lib/room";
+import { abandonJob, claimJob, completeJob, RoomError } from "@/lib/room";
 import { mutateRoom } from "@/lib/store";
 import { errorResponse, json, plainObject, readAction } from "@/lib/http";
 
@@ -15,6 +15,11 @@ export async function POST(request: Request, context: Context) {
     if (body.type === "complete" && Object.keys(body).length === 3 && typeof body.jobId === "string" && typeof body.response === "string") {
       const jobId = body.jobId, response = body.response;
       const room = await mutateRoom(id, r => completeJob(r, jobId, response, now).room);
+      return json({ room, job: room.jobs.find(j => j.id === jobId)! });
+    }
+    if (body.type === "abandon" && Object.keys(body).length === 2 && typeof body.jobId === "string") {
+      const jobId = body.jobId;
+      const room = await mutateRoom(id, r => abandonJob(r, jobId, now).room);
       return json({ room, job: room.jobs.find(j => j.id === jobId)! });
     }
     throw new RoomError("Unknown relay action.");

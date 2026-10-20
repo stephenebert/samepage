@@ -11,47 +11,59 @@ export interface Proposal {
 }
 export interface Candidate extends Bilingual { eventId: string }
 export interface Witness { question: Bilingual; answers: Record<string, Bilingual> }
+export interface ChangeProvenance {
+  eventId: string; operation: "replace" | "delete"; sourceText: string;
+  disposition: "applied" | "equivalent" | "combined" | "candidate" | "held";
+  change: Bilingual;
+}
 export interface Decision {
-  segmentId: string; eventIds: string[]; status: "apply" | "agree" | "conflict" | "clarify";
-  canonical: Bilingual | null; candidates: Candidate[];
+  segmentId: string; eventIds: string[]; status: "apply" | "agree" | "merge" | "conflict" | "clarify";
+  canonical: Bilingual | null; candidates: Candidate[]; provenance: ChangeProvenance[];
   explanation: Bilingual; witness: Witness | null; clarificationQuestion: Bilingual | null;
 }
-export interface ModelResult { jobId: string; decisions: Decision[] }
+export interface DocumentIssue {
+  kind: "contradiction" | "uncertainty"; segmentIds: string[];
+  excerpts: Array<{ segmentId: string; language: Language; text: string }>;
+  explanation: Bilingual; question: Bilingual;
+}
+export interface DocumentCheck {
+  status: "clear" | "blocked" | "uncertain"; reviewedSegmentIds: string[]; issues: DocumentIssue[];
+}
+export interface ModelResult { jobId: string; decisions: Decision[]; documentCheck: DocumentCheck }
 export interface Issue {
-  id: string; kind: "conflict" | "clarify"; segmentId: string; baseVersion: number;
+  id: string; kind: "conflict" | "clarify" | "document"; segmentId: string; baseVersion: number;
   eventIds: string[]; candidates: Candidate[]; explanation: Bilingual;
-  witness: Witness | null; clarificationQuestion: Bilingual | null;
+  witness: Witness | null; clarificationQuestion: Bilingual | null; documentIssues?: DocumentIssue[];
   votes: Partial<Record<ClientId, string>>; status: "open" | "resolved";
+  resolutionStatus?: "queued" | "processing"; resolutionJobId?: string;
   createdAt: string; resolvedAt?: string; selectedEventId?: string;
 }
 export interface RelayJob {
-  id: string; status: "processing" | "completed"; eventIds: string[];
+  id: string; status: "processing" | "completed" | "abandoned"; eventIds: string[];
+  // Optional fields keep legacy rooms readable; old jobs cannot be completed.
+  protocolVersion?: 2; mode?: "edits" | "resolution";
+  resolution?: { issueId: string; selectedEventId: string; candidate: Candidate };
   segments: Segment[]; proposals: Proposal[]; prompt: string;
   claimedAt: string; completedAt?: string; result?: ModelResult;
-  // Queue time is measured from the first proposal; processing includes manual relay.
-  queueMs: number; processingMs?: number;
+  queueMs: number; processingMs?: number; note?: string;
 }
 export interface Activity { id: string; at: string; kind: string; text: string }
 export interface Room {
   id: string; title: string; revision: number; createdAt: string; updatedAt: string;
   segments: Segment[]; presence: Partial<Record<ClientId, Presence>>;
   proposals: Proposal[]; jobs: RelayJob[]; activeJobId: string | null;
-  issues: Issue[]; activity: Activity[];
-  mode: "fable-manual-relay";
+  issues: Issue[]; activity: Activity[]; mode: "agent-manual-relay" | "fable-manual-relay";
 }
 export type RoomAction =
   | { type: "presence"; clientId: ClientId; editingSegmentId: string | null }
   | { type: "propose"; id: string; clientId: ClientId; segmentId: string; baseVersion: number; text: string; supersedesIssueId?: string }
   | { type: "vote"; clientId: ClientId; issueId: string; candidateEventId: string }
   | { type: "cancel"; clientId: ClientId; proposalId: string };
-export type RelayAction = { type: "claim" } | { type: "complete"; jobId: string; response: string };
+export type RelayAction = { type: "claim" } | { type: "complete"; jobId: string; response: string } | { type: "abandon"; jobId: string };
 export interface RoomResponse { room: Room }
 export interface RelayResponse extends RoomResponse { job: RelayJob | null }
 
-// POST /api/rooms {} => RoomResponse
-// GET /api/rooms/:id => RoomResponse
-// POST /api/rooms/:id RoomAction => RoomResponse
-// POST /api/rooms/:id/relay RelayAction => RelayResponse
-// Errors: { error: string, code: string }, HTTP 400/404/409/413/429.
-// Each client must save the displayed SEGMENT version when its draft starts.
+// Empty proposal text is an explicit whole-section deletion. Keep the section ID.
+// Every job snapshots ALL section content/versions, independently of presence.
+// Matching votes queue a fresh consistency check; they never directly commit.
 // The private Site simulates two personas; clientId is not an authentication identity.
