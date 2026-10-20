@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SamePage — See what your words change",
-  description: "Two languages, one agreed policy. Compare the consequences, decide together, and test the working registration form.",
+  title: "SamePage — Find the hidden consequence",
+  description: "SamePage finds concrete disagreements between bilingual policy interpretations. Explore who is affected, decide together, and test the registration form.",
 };
 
 export default function ConsequencesLayout({ children }: Readonly<{ children: React.ReactNode }>) {

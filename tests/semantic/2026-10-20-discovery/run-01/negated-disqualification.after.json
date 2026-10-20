@@ -1,0 +1,105 @@
+{
+  "kind": "samepage-consequences-v1",
+  "id": "consequence-36937710-389b-48ba-955a-614bac983709",
+  "revision": 7,
+  "createdAt": "2026-10-20T22:25:52.141Z",
+  "updatedAt": "2026-10-20T22:27:26.818Z",
+  "mode": "agent-manual-relay",
+  "published": {
+    "version": 2,
+    "en": "Participation policy. Age is measured in completed whole years at the recorded submission timestamp. To determine eligibility, an applicant is disqualified exactly when at least one of these two statements is true: they are younger than 25, or they are not a resident. Anyone not disqualified by this test is eligible. In addition, the system must record the submission no later than 2027-05-23T08:45:00Z (UTC), including that exact instant. Acceptance requires eligibility and compliance with the deadline. There are no other conditions or exceptions.",
+    "es": "Política de participación. La edad se mide en años completos en el instante de presentación registrado. Para determinar la elegibilidad, se excluye a la persona solicitante exactamente cuando se cumple al menos una de estas dos afirmaciones: tiene menos de 25 años, o no es residente. Toda persona no excluida por esta prueba es elegible. Además, el sistema debe registrar la presentación a más tardar el 2027-05-23T08:45:00Z (UTC), incluido ese instante exacto. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones ni excepciones.",
+    "rules": {
+      "minAge": 25,
+      "residentRequired": true,
+      "join": "all",
+      "deadline": "2027-05-23T08:45:00.000Z",
+      "deadlineInclusive": true
+    },
+    "publishedAt": "2026-10-20T22:27:26.810Z",
+    "reviewId": "review-3",
+    "candidateId": "review-3-bob"
+  },
+  "drafts": {
+    "alice": {
+      "editor": "alice",
+      "language": "en",
+      "version": 2,
+      "text": "Participation policy. Age means completed whole years at the recorded submission timestamp. For eligibility, an applicant is disqualified exactly when both of these statements are true: the applicant is younger than 28, and the applicant is not a resident. Anyone not disqualified by that test is eligible. Separately, the application system must record the submission at or before 2027-05-23T08:45:00Z (UTC), including that exact instant. Acceptance requires eligibility and compliance with this deadline. There are no other conditions or exceptions."
+    },
+    "bob": {
+      "editor": "bob",
+      "language": "es",
+      "version": 2,
+      "text": "Política de participación. La edad se mide en años completos en el instante de presentación registrado. Para determinar la elegibilidad, se excluye a la persona solicitante exactamente cuando se cumple al menos una de estas dos afirmaciones: tiene menos de 25 años, o no es residente. Toda persona no excluida por esta prueba es elegible. Además, el sistema debe registrar la presentación a más tardar el 2027-05-23T08:45:00Z (UTC), incluido ese instante exacto. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones ni excepciones."
+    }
+  },
+  "activeJob": null,
+  "review": {
+    "id": "review-3",
+    "basePolicyVersion": 1,
+    "candidates": [
+      {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Participation policy. Age means completed whole years at the recorded submission timestamp. For eligibility, an applicant is disqualified exactly when both of these statements are true: the applicant is younger than 28, and the applicant is not a resident. Anyone not disqualified by that test is eligible. Separately, the application system must record the submission at or before 2027-05-23T08:45:00Z (UTC), including that exact instant. Acceptance requires eligibility and compliance with this deadline. There are no other conditions or exceptions.",
+        "es": "Política de participación. La edad se mide en años completos en el instante de presentación registrado. A efectos de elegibilidad, se excluye a una persona solicitante exactamente cuando ambas afirmaciones siguientes son verdaderas: tiene menos de 28 años y no es residente. Toda persona no excluida por esta prueba es elegible. Por separado, el sistema de solicitudes debe registrar la presentación a más tardar el 2027-05-23T08:45:00Z (UTC), incluido ese instante exacto. La aceptación exige elegibilidad y cumplimiento de este plazo. No hay otras condiciones ni excepciones.",
+        "rules": {
+          "minAge": 28,
+          "residentRequired": true,
+          "join": "any",
+          "deadline": "2027-05-23T08:45:00.000Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      },
+      {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "Participation policy. Age is measured in completed whole years at the recorded submission timestamp. To determine eligibility, an applicant is disqualified exactly when at least one of these two statements is true: they are younger than 25, or they are not a resident. Anyone not disqualified by this test is eligible. In addition, the system must record the submission no later than 2027-05-23T08:45:00Z (UTC), including that exact instant. Acceptance requires eligibility and compliance with the deadline. There are no other conditions or exceptions.",
+        "es": "Política de participación. La edad se mide en años completos en el instante de presentación registrado. Para determinar la elegibilidad, se excluye a la persona solicitante exactamente cuando se cumple al menos una de estas dos afirmaciones: tiene menos de 25 años, o no es residente. Toda persona no excluida por esta prueba es elegible. Además, el sistema debe registrar la presentación a más tardar el 2027-05-23T08:45:00Z (UTC), incluido ese instante exacto. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones ni excepciones.",
+        "rules": {
+          "minAge": 25,
+          "residentRequired": true,
+          "join": "all",
+          "deadline": "2027-05-23T08:45:00.000Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      }
+    ],
+    "votes": {
+      "alice": "review-3-bob",
+      "bob": "review-3-bob"
+    },
+    "status": "published",
+    "createdAt": "2026-10-20T22:27:26.794Z",
+    "publishedVersion": 2
+  },
+  "registrations": [
+    {
+      "requestId": "witness-negated-disqualification-0",
+      "policyVersion": 2,
+      "label": "Discovered attendee 1",
+      "age": 18,
+      "resident": true,
+      "submittedAt": "2027-05-23T08:45:00.000Z",
+      "id": "registration-7",
+      "recordedAt": "2026-10-20T22:27:26.818Z",
+      "decision": {
+        "accepted": false,
+        "reasons": [
+          "Must be at least 25 years old."
+        ],
+        "checks": {
+          "age": false,
+          "residency": true,
+          "deadline": true,
+          "eligibility": false
+        }
+      }
+    }
+  ]
+}

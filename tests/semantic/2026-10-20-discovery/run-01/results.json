@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "crossed-age-deadline",
+    "responseSHA256": "ef6038678af845919ea4bbc0b8bbb78850a9cf9778f8e414a9805cb04e478bd2",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 23,
+          "resident": false,
+          "submittedAt": "2027-04-12T18:30:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 25,
+          "resident": false,
+          "submittedAt": "2027-04-13T09:00:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 25,
+          "resident": true,
+          "submittedAt": "2027-04-12T18:30:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 22,
+          "resident": true,
+          "submittedAt": "2027-04-12T18:29:59Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 23,
+          "resident": false,
+          "submittedAt": "2027-04-12T18:30:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 25,
+          "resident": false,
+          "submittedAt": "2027-04-13T09:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 25,
+          "resident": true,
+          "submittedAt": "2027-04-12T18:30:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 22,
+          "resident": true,
+          "submittedAt": "2027-04-12T18:29:59Z"
+        },
+        "actual": false
+      }
+    ],
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "left-only-23-nonresident-1807554600000",
+          "direction": "left-only",
+          "attendee": {
+            "age": 23,
+            "resident": false,
+            "submittedAt": "2027-04-12T18:30:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": true,
+              "residency": null,
+              "deadline": true,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": false,
+            "reasons": [
+              "Must be at least 25 years old."
+            ],
+            "checks": {
+              "age": false,
+              "residency": null,
+              "deadline": true,
+              "eligibility": false
+            }
+          },
+          "explanation": {
+            "en": "A 23-year-old nonresident registers at 2027-04-12T18:30:00.000Z. Rule A accepts; Rule B rejects because the attendee is under age 25.",
+            "es": "Una persona de 23 años que no reside en el barrio se inscribe el 2027-04-12T18:30:00.000Z. La regla A acepta; la regla B rechaza porque no tiene al menos 25 años."
+          }
+        },
+        {
+          "id": "right-only-25-nonresident-1807727400000",
+          "direction": "right-only",
+          "attendee": {
+            "age": 25,
+            "resident": false,
+            "submittedAt": "2027-04-14T18:30:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "reasons": [
+              "Registration must arrive on or before 2027-04-12T18:30:00.000Z."
+            ],
+            "checks": {
+              "age": true,
+              "residency": null,
+              "deadline": false,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": true,
+              "residency": null,
+              "deadline": true,
+              "eligibility": true
+            }
+          },
+          "explanation": {
+            "en": "A 25-year-old nonresident registers at 2027-04-14T18:30:00.000Z. Rule B accepts; Rule A rejects because registration did not arrive on or before 2027-04-12T18:30:00.000Z.",
+            "es": "Una persona de 25 años que no reside en el barrio se inscribe el 2027-04-14T18:30:00.000Z. La regla B acepta; la regla A rechaza porque la inscripción no llegó a más tardar el 2027-04-12T18:30:00.000Z."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 3,
+        "timePartitions": 5,
+        "residencyValues": 2,
+        "combinations": 30,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Each interpretation accepts someone the other rejects.",
+        "es": "Cada interpretación acepta a alguien que la otra rechaza."
+      }
+    },
+    "discoveryMs": 0.7651659999999936,
+    "registrations": [
+      {
+        "requestId": "witness-crossed-age-deadline-0",
+        "policyVersion": 2,
+        "label": "Discovered attendee 1",
+        "age": 23,
+        "resident": false,
+        "submittedAt": "2027-04-12T18:30:00.000Z",
+        "id": "registration-7",
+        "recordedAt": "2026-10-20T22:27:26.780Z",
+        "decision": {
+          "accepted": true,
+          "reasons": [
+            "Meets all requirements of this policy."
+          ],
+          "checks": {
+            "age": true,
+            "residency": null,
+            "deadline": true,
+            "eligibility": true
+          }
+        }
+      },
+      {
+        "requestId": "witness-crossed-age-deadline-1",
+        "policyVersion": 2,
+        "label": "Discovered attendee 2",
+        "age": 25,
+        "resident": false,
+        "submittedAt": "2027-04-14T18:30:00.000Z",
+        "id": "registration-8",
+        "recordedAt": "2026-10-20T22:27:26.787Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Registration must arrive on or before 2027-04-12T18:30:00.000Z."
+          ],
+          "checks": {
+            "age": true,
+            "residency": null,
+            "deadline": false,
+            "eligibility": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "negated-disqualification",
+    "responseSHA256": "9c2108e0e7b0a5300ca3ae8436c594e6296d8e6b93f2e36a5cf6910381b32011",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 24,
+          "resident": true,
+          "submittedAt": "2027-05-23T08:45:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 28,
+          "resident": false,
+          "submittedAt": "2027-05-22T12:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 25,
+          "resident": true,
+          "submittedAt": "2027-05-22T12:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 27,
+          "resident": false,
+          "submittedAt": "2027-05-22T12:00:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 28,
+          "resident": true,
+          "submittedAt": "2027-05-23T08:45:00.001Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 24,
+          "resident": true,
+          "submittedAt": "2027-05-23T08:45:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 28,
+          "resident": false,
+          "submittedAt": "2027-05-22T12:00:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 25,
+          "resident": true,
+          "submittedAt": "2027-05-22T12:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 27,
+          "resident": false,
+          "submittedAt": "2027-05-22T12:00:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 28,
+          "resident": true,
+          "submittedAt": "2027-05-23T08:45:00.001Z"
+        },
+        "actual": false
+      }
+    ],
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "left-only-18-resident-1811061900000",
+          "direction": "left-only",
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "submittedAt": "2027-05-23T08:45:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": false,
+              "residency": true,
+              "deadline": true,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": false,
+            "reasons": [
+              "Must be at least 25 years old."
+            ],
+            "checks": {
+              "age": false,
+              "residency": true,
+              "deadline": true,
+              "eligibility": false
+            }
+          },
+          "explanation": {
+            "en": "A 18-year-old neighborhood resident registers at 2027-05-23T08:45:00.000Z. Rule A accepts; Rule B rejects because the attendee is under age 25.",
+            "es": "Una persona de 18 años que reside en el barrio se inscribe el 2027-05-23T08:45:00.000Z. La regla A acepta; la regla B rechaza porque no tiene al menos 25 años."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 3,
+        "timePartitions": 3,
+        "residencyValues": 2,
+        "combinations": 18,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Found an attendee accepted by one interpretation and rejected by the other.",
+        "es": "Se encontró una persona aceptada por una interpretación y rechazada por la otra."
+      }
+    },
+    "discoveryMs": 0.20958299999999497,
+    "registrations": [
+      {
+        "requestId": "witness-negated-disqualification-0",
+        "policyVersion": 2,
+        "label": "Discovered attendee 1",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2027-05-23T08:45:00.000Z",
+        "id": "registration-7",
+        "recordedAt": "2026-10-20T22:27:26.818Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Must be at least 25 years old."
+          ],
+          "checks": {
+            "age": false,
+            "residency": true,
+            "deadline": true,
+            "eligibility": false
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "subsecond-cutoff",
+    "responseSHA256": "bb0fde9e686bd7ff959eda82388574293fecf3b346b4da9f0de8085af1c54a95",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 31,
+          "resident": false,
+          "submittedAt": "2027-07-09T12:00:00.375Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 31,
+          "resident": false,
+          "submittedAt": "2027-07-09T12:00:00.374Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 31,
+          "resident": true,
+          "submittedAt": "2027-07-09T12:00:00.376Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 30,
+          "resident": true,
+          "submittedAt": "2027-07-09T12:00:00.375Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 31,
+          "resident": false,
+          "submittedAt": "2027-07-09T12:00:00.375Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 31,
+          "resident": false,
+          "submittedAt": "2027-07-09T12:00:00.374Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 31,
+          "resident": true,
+          "submittedAt": "2027-07-09T12:00:00.376Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 30,
+          "resident": true,
+          "submittedAt": "2027-07-09T12:00:00.375Z"
+        },
+        "actual": false
+      }
+    ],
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "right-only-31-nonresident-1815134400375",
+          "direction": "right-only",
+          "attendee": {
+            "age": 31,
+            "resident": false,
+            "submittedAt": "2027-07-09T12:00:00.375Z"
+          },
+          "left": {
+            "accepted": false,
+            "reasons": [
+              "Registration must arrive before 2027-07-09T12:00:00.375Z."
+            ],
+            "checks": {
+              "age": true,
+              "residency": null,
+              "deadline": false,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": true,
+              "residency": null,
+              "deadline": true,
+              "eligibility": true
+            }
+          },
+          "explanation": {
+            "en": "A 31-year-old nonresident registers at 2027-07-09T12:00:00.375Z. Rule B accepts; Rule A rejects because registration did not arrive before 2027-07-09T12:00:00.375Z.",
+            "es": "Una persona de 31 años que no reside en el barrio se inscribe el 2027-07-09T12:00:00.375Z. La regla B acepta; la regla A rechaza porque la inscripción no llegó antes del 2027-07-09T12:00:00.375Z."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 2,
+        "timePartitions": 3,
+        "residencyValues": 2,
+        "combinations": 12,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Found an attendee accepted by one interpretation and rejected by the other.",
+        "es": "Se encontró una persona aceptada por una interpretación y rechazada por la otra."
+      }
+    },
+    "discoveryMs": 0.1319159999999897,
+    "registrations": [
+      {
+        "requestId": "witness-subsecond-cutoff-0",
+        "policyVersion": 2,
+        "label": "Discovered attendee 1",
+        "age": 31,
+        "resident": false,
+        "submittedAt": "2027-07-09T12:00:00.375Z",
+        "id": "registration-7",
+        "recordedAt": "2026-10-20T22:27:26.853Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Registration must arrive before 2027-07-09T12:00:00.375Z."
+          ],
+          "checks": {
+            "age": true,
+            "residency": null,
+            "deadline": false,
+            "eligibility": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "demorgan-redundancy",
+    "responseSHA256": "d6589a84a2ce71a8ad32e7686e594ee85bb292a9fdbb1149afcc8f883fe5df8b",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 23,
+          "resident": true,
+          "submittedAt": "2027-08-20T06:20:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 26,
+          "resident": true,
+          "submittedAt": "2027-08-20T06:20:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 27,
+          "resident": true,
+          "submittedAt": "2027-08-21T06:20:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 27,
+          "resident": false,
+          "submittedAt": "2027-08-20T06:20:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 80,
+          "resident": true,
+          "submittedAt": "2027-08-21T06:20:00.001Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 23,
+          "resident": true,
+          "submittedAt": "2027-08-20T06:20:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 26,
+          "resident": true,
+          "submittedAt": "2027-08-20T06:20:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 27,
+          "resident": true,
+          "submittedAt": "2027-08-21T06:20:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 27,
+          "resident": false,
+          "submittedAt": "2027-08-20T06:20:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 80,
+          "resident": true,
+          "submittedAt": "2027-08-21T06:20:00.001Z"
+        },
+        "actual": false
+      }
+    ],
+    "discovery": {
+      "status": "equivalent",
+      "witnesses": [],
+      "coverage": {
+        "agePartitions": 2,
+        "timePartitions": 3,
+        "residencyValues": 2,
+        "combinations": 12,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "The executable interpretations make the same acceptance decision throughout the supported input domain. This is not a claim that the original texts mean the same thing.",
+        "es": "Las interpretaciones ejecutables toman la misma decisión de aceptación en todo el dominio admitido. Esto no afirma que los textos originales signifiquen lo mismo."
+      }
+    },
+    "discoveryMs": 0.1377080000000035,
+    "registrations": []
+  },
+  {
+    "id": "residency-optional-vs-bypass",
+    "responseSHA256": "14555d1600c8f04b81fddd8bfd70dbc2541b702c76b9adb9dfdbbfb0d18cbd79",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 33,
+          "resident": true,
+          "submittedAt": "2027-09-02T23:00:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 34,
+          "resident": false,
+          "submittedAt": "2027-09-01T23:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 33,
+          "resident": false,
+          "submittedAt": "2027-09-01T23:00:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 12,
+          "resident": true,
+          "submittedAt": "2027-09-02T23:00:00.001Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 33,
+          "resident": true,
+          "submittedAt": "2027-09-02T23:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 34,
+          "resident": false,
+          "submittedAt": "2027-09-01T23:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 33,
+          "resident": false,
+          "submittedAt": "2027-09-01T23:00:00Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 12,
+          "resident": true,
+          "submittedAt": "2027-09-02T23:00:00.001Z"
+        },
+        "actual": false
+      }
+    ],
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "right-only-18-resident-1819926000000",
+          "direction": "right-only",
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "submittedAt": "2027-09-02T23:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "reasons": [
+              "Must be at least 34 years old."
+            ],
+            "checks": {
+              "age": false,
+              "residency": null,
+              "deadline": true,
+              "eligibility": false
+            }
+          },
+          "right": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": false,
+              "residency": true,
+              "deadline": true,
+              "eligibility": true
+            }
+          },
+          "explanation": {
+            "en": "A 18-year-old neighborhood resident registers at 2027-09-02T23:00:00.000Z. Rule B accepts; Rule A rejects because the attendee is under age 34.",
+            "es": "Una persona de 18 años que reside en el barrio se inscribe el 2027-09-02T23:00:00.000Z. La regla B acepta; la regla A rechaza porque no tiene al menos 34 años."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 2,
+        "timePartitions": 3,
+        "residencyValues": 2,
+        "combinations": 12,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Found an attendee accepted by one interpretation and rejected by the other.",
+        "es": "Se encontró una persona aceptada por una interpretación y rechazada por la otra."
+      }
+    },
+    "discoveryMs": 0.12520900000001234,
+    "registrations": [
+      {
+        "requestId": "witness-residency-optional-vs-bypass-0",
+        "policyVersion": 2,
+        "label": "Discovered attendee 1",
+        "age": 18,
+        "resident": true,
+        "submittedAt": "2027-09-02T23:00:00.000Z",
+        "id": "registration-7",
+        "recordedAt": "2026-10-20T22:27:26.892Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Must be at least 34 years old."
+          ],
+          "checks": {
+            "age": false,
+            "residency": null,
+            "deadline": true,
+            "eligibility": false
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "unsupported-exceptions",
+    "responseSHA256": "4fc52d61833aab9d78152d6c59f426330d42ac870719c9d2d12ac338449de324",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 46,
+          "resident": true,
+          "submittedAt": "2027-11-16T14:10:00Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 29,
+          "resident": false,
+          "submittedAt": "2027-11-16T14:10:00Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 60,
+          "resident": true,
+          "submittedAt": "2027-11-18T14:10:00Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 46,
+          "resident": true,
+          "submittedAt": "2027-11-16T14:10:00Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 29,
+          "resident": false,
+          "submittedAt": "2027-11-16T14:10:00Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 60,
+          "resident": true,
+          "submittedAt": "2027-11-18T14:10:00Z"
+        },
+        "actual": null
+      }
+    ],
+    "discovery": {
+      "status": "unresolved",
+      "witnesses": [],
+      "summary": {
+        "en": "Cannot compare until both policies have executable interpretations. No equivalence claim is possible.",
+        "es": "No se pueden comparar hasta que ambas políticas tengan interpretaciones ejecutables. No se puede afirmar que sean equivalentes."
+      },
+      "coverage": {
+        "agePartitions": 0,
+        "timePartitions": 0,
+        "residencyValues": 2,
+        "combinations": 0,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      }
+    },
+    "discoveryMs": 0.049791999999996506,
+    "registrations": []
+  },
+  {
+    "id": "ambiguous-date-zone",
+    "responseSHA256": "37de2052f375525ad020c53e4f34264d8bfdd76398b62f7b87d1a549fbd96b6d",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 26,
+          "resident": true,
+          "submittedAt": "2027-04-06T10:00:00Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 26,
+          "resident": true,
+          "submittedAt": "2027-04-06T10:00:00.001Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 26,
+          "resident": false,
+          "submittedAt": "2027-04-05T10:00:00Z"
+        },
+        "actual": null
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 26,
+          "resident": true,
+          "submittedAt": "2027-04-06T10:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 26,
+          "resident": true,
+          "submittedAt": "2027-04-06T10:00:00.001Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 26,
+          "resident": false,
+          "submittedAt": "2027-04-05T10:00:00Z"
+        },
+        "actual": false
+      }
+    ],
+    "discovery": {
+      "status": "unresolved",
+      "witnesses": [],
+      "summary": {
+        "en": "Cannot compare until both policies have executable interpretations. No equivalence claim is possible.",
+        "es": "No se pueden comparar hasta que ambas políticas tengan interpretaciones ejecutables. No se puede afirmar que sean equivalentes."
+      },
+      "coverage": {
+        "agePartitions": 0,
+        "timePartitions": 0,
+        "residencyValues": 2,
+        "combinations": 0,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      }
+    },
+    "discoveryMs": 0.005458000000004404,
+    "registrations": []
+  },
+  {
+    "id": "unrestricted-vs-cutoff",
+    "responseSHA256": "295d41eae684d5281963d2839a57afd2ad4d74b83d0c9b215a7827d746f9057d",
+    "sourcePreserved": true,
+    "interpretationsMatchExpected": true,
+    "scenarioChecks": [
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2027-10-18T16:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2027-10-18T16:00:00.001Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "alice",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-01-01T00:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2027-10-18T16:00:00Z"
+        },
+        "actual": true
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 120,
+          "resident": true,
+          "submittedAt": "2027-10-18T16:00:00.001Z"
+        },
+        "actual": false
+      },
+      {
+        "editor": "bob",
+        "attendee": {
+          "age": 0,
+          "resident": false,
+          "submittedAt": "2028-01-01T00:00:00Z"
+        },
+        "actual": false
+      }
+    ],
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "left-only-18-nonresident-1823875200001",
+          "direction": "left-only",
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "submittedAt": "2027-10-18T16:00:00.001Z"
+          },
+          "left": {
+            "accepted": true,
+            "reasons": [
+              "Meets all requirements of this policy."
+            ],
+            "checks": {
+              "age": null,
+              "residency": null,
+              "deadline": null,
+              "eligibility": true
+            }
+          },
+          "right": {
+            "accepted": false,
+            "reasons": [
+              "Registration must arrive on or before 2027-10-18T16:00:00.000Z."
+            ],
+            "checks": {
+              "age": null,
+              "residency": null,
+              "deadline": false,
+              "eligibility": true
+            }
+          },
+          "explanation": {
+            "en": "A 18-year-old nonresident registers at 2027-10-18T16:00:00.001Z. Rule A accepts; Rule B rejects because registration did not arrive on or before 2027-10-18T16:00:00.000Z.",
+            "es": "Una persona de 18 años que no reside en el barrio se inscribe el 2027-10-18T16:00:00.001Z. La regla A acepta; la regla B rechaza porque la inscripción no llegó a más tardar el 2027-10-18T16:00:00.000Z."
+          }
+        }
+      ],
+      "coverage": {
+        "agePartitions": 1,
+        "timePartitions": 3,
+        "residencyValues": 2,
+        "combinations": 6,
+        "domain": {
+          "ageMin": 0,
+          "ageMax": 120,
+          "timeMin": "0000-01-01T00:00:00.000Z",
+          "timeMax": "9999-12-31T23:59:59.999Z"
+        },
+        "scope": "Complete comparison of the two executable interpretations for integer ages 0–120, resident or nonresident, and valid four-digit-year UTC instants at millisecond precision. This does not prove the original language was interpreted correctly, or that real people are affected."
+      },
+      "summary": {
+        "en": "Found an attendee accepted by one interpretation and rejected by the other.",
+        "es": "Se encontró una persona aceptada por una interpretación y rechazada por la otra."
+      }
+    },
+    "discoveryMs": 0.078125,
+    "registrations": [
+      {
+        "requestId": "witness-unrestricted-vs-cutoff-0",
+        "policyVersion": 2,
+        "label": "Discovered attendee 1",
+        "age": 18,
+        "resident": false,
+        "submittedAt": "2027-10-18T16:00:00.001Z",
+        "id": "registration-7",
+        "recordedAt": "2026-10-20T22:27:26.930Z",
+        "decision": {
+          "accepted": false,
+          "reasons": [
+            "Registration must arrive on or before 2027-10-18T16:00:00.000Z."
+          ],
+          "checks": {
+            "age": null,
+            "residency": null,
+            "deadline": false,
+            "eligibility": true
+          }
+        }
+      }
+    ]
+  }
+]

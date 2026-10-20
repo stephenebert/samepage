@@ -1,0 +1,378 @@
+{
+  "reviewedAt": "2026-10-20T22:32:28.924837+00:00",
+  "verdict": "scoped-pass",
+  "blockingFindings": [],
+  "summary": "All eight cases match frozen expectations. All 13 executable interpretations are faithful; all 3 unsupported or ambiguous policies correctly abstain. Every automatic witness and complete acceptance-direction set is independently valid. Six current server registration records match their selected published interpretation. The evidence supports this bounded synthetic one-run test, not a general language-model reliability claim.",
+  "counts": {
+    "pairs": 8,
+    "sourceDraftsProcessed": 16,
+    "sourceLanguageQuotesPreservedExactly": 16,
+    "translatedTextsManuallyReviewed": 16,
+    "executableRuleObjects": 13,
+    "wholePolicyNullAbstentions": 3,
+    "scenarioChecks": 62,
+    "booleanScenarioOutcomes": 53,
+    "nullScenarioOutcomes": 9,
+    "differentPairs": 5,
+    "equivalentPairs": 1,
+    "unresolvedPairs": 2,
+    "automaticWitnesses": 6,
+    "liveRegistrationRecords": 6,
+    "publishedRoomsWithWitnessRegistrations": 5,
+    "acceptedRegistrationRecords": 1,
+    "rejectedRegistrationRecords": 5,
+    "roomsIndependentlyRetrievedByLiveGET": 8,
+    "liveRoomsMatchingSavedAfterStates": 8,
+    "directProseVersusExtractedRulePartitionChecks": 19360,
+    "partitionChecksWithBooleanResult": 17182,
+    "partitionChecksWithNullResult": 2178
+  },
+  "method": {
+    "productionEvaluatorImportedOrUsed": false,
+    "applicationSourceInspected": false,
+    "responseOrFixtureFilesEdited": false,
+    "independentOracle": "Hand-derived per-case formulas from the original prose, separately compared with extracted-rule execution using Python Boolean expressions and lexicographic UTC timestamp tuples. Enumeration covered all 121 integer ages, both residency values, deadline-minus-1ms/exact/deadline-plus-1ms and domain endpoints; unsupported outcomes remain null.",
+    "manualReview": "Read source policies, raw English/Spanish translations, extracted rules, clarification issues, discovery summaries and explanations.",
+    "artifactChecks": "Verified the original frozen cases and EXPECTATIONS hashes, all prompt/response hashes, exact source strings, job/version identities, raw candidate retention, scenario results, witnesses, predicate checks and selected-policy registration decisions.",
+    "liveVerification": "Read-only GET of all eight rooms at http://127.0.0.1:5173/api/consequences/{roomId}; every complete room object equaled its saved after snapshot.",
+    "generationProvenance": "One fresh fork:none responder reading only prompt files is reported by root; no independent invocation trace is present in these run artifacts."
+  },
+  "frozenHashes": {
+    "cases.json": "7a1fdebd60bb1516253cd4e09ac0df6b5bac9b54edfbb9183353d6af67002276",
+    "EXPECTATIONS.md": "fed58c4359d53358ca060d5efb1e48b1c5436e529c1230835f7378b81df31556"
+  },
+  "reviewedArtifactHashes": {
+    "run-evaluation.mjs": "7a5ac74dcbd0a99fffa3382a2b5611399c103ca88fcf2d9f4229d48b5be64f81",
+    "run-01/manifest.json": "f0fe318d925e2b86147e0a6b2f43a75837b85682d62cc2aa915cf6b5acec30ed",
+    "run-01/results.json": "e27cef711cf05c469e97d781c7733f832fbb7162ebe1a2ad1e5f27167db5e9b2"
+  },
+  "cases": [
+    {
+      "id": "crossed-age-deadline",
+      "result": "pass",
+      "languageAndSemanticReview": "Both translations preserve the crossed edits. Age 23 on April 12 satisfies only Alice; age 25 on April 14 satisfies only Bob. No direction is missing.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "different",
+      "directions": [
+        "alice-only",
+        "bob-only"
+      ],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 3872,
+      "witnesses": [
+        {
+          "attendee": {
+            "age": 23,
+            "resident": false,
+            "submittedAt": "2027-04-12T18:30:00.000Z"
+          },
+          "direction": "alice-only",
+          "independentAliceAccepted": true,
+          "independentBobAccepted": false,
+          "perPredicateChecksVerified": true,
+          "fullTimestampInBothExplanations": true
+        },
+        {
+          "attendee": {
+            "age": 25,
+            "resident": false,
+            "submittedAt": "2027-04-14T18:30:00.000Z"
+          },
+          "direction": "bob-only",
+          "independentAliceAccepted": false,
+          "independentBobAccepted": true,
+          "perPredicateChecksVerified": true,
+          "fullTimestampInBothExplanations": true
+        }
+      ],
+      "verifiedRegistrationCount": 2,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-9d0436cc-cd20-45d5-bf51-5cf9f9ce7b22",
+      "publishedVersion": 2,
+      "publishedCandidateId": "review-3-alice",
+      "responseSHA256": "ef6038678af845919ea4bbc0b8bbb78850a9cf9778f8e414a9805cb04e478bd2",
+      "promptSHA256": "8cc72a4ffb560825ea103738acef62c4518d743bb5b8fbbc603dde12ec9c24e3",
+      "afterSnapshotSHA256": "a93833be9c96c317ee706681590d0ecda3f84764a77a024b76fc8adb5b537934"
+    },
+    {
+      "id": "negated-disqualification",
+      "result": "pass",
+      "languageAndSemanticReview": "Alice is the complement of (under 28 AND nonresident), hence age at least 28 OR resident. Bob is the complement of (under 25 OR nonresident), hence age at least 25 AND resident. A resident aged 18 is accepted only by Alice. Every Bob-accepted person is an Alice-accepted resident, so Bob-only is impossible.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "different",
+      "directions": [
+        "alice-only"
+      ],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 2420,
+      "witnesses": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "submittedAt": "2027-05-23T08:45:00.000Z"
+          },
+          "direction": "alice-only",
+          "independentAliceAccepted": true,
+          "independentBobAccepted": false,
+          "perPredicateChecksVerified": true,
+          "fullTimestampInBothExplanations": true
+        }
+      ],
+      "verifiedRegistrationCount": 1,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-36937710-389b-48ba-955a-614bac983709",
+      "publishedVersion": 2,
+      "publishedCandidateId": "review-3-bob",
+      "responseSHA256": "9c2108e0e7b0a5300ca3ae8436c594e6296d8e6b93f2e36a5cf6910381b32011",
+      "promptSHA256": "f7a91a8435c7d5dfdb5d25162e9253ff0d4277bb314606449941f9f5e8aec0fe",
+      "afterSnapshotSHA256": "f3a8b13bb8cfbabaf91643f8e96c5defbef370d549d2391e75b605788db31f24"
+    },
+    {
+      "id": "subsecond-cutoff",
+      "result": "pass",
+      "languageAndSemanticReview": "Both policies require age at least 31. At exactly 2027-07-09T12:00:00.375Z, strict-before Alice rejects and inclusive Bob accepts. A millisecond earlier both accept; a millisecond later both reject. The complete timestamp survives both translations, rules, witness explanations and persisted registration.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "different",
+      "directions": [
+        "bob-only"
+      ],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 2420,
+      "witnesses": [
+        {
+          "attendee": {
+            "age": 31,
+            "resident": false,
+            "submittedAt": "2027-07-09T12:00:00.375Z"
+          },
+          "direction": "bob-only",
+          "independentAliceAccepted": false,
+          "independentBobAccepted": true,
+          "perPredicateChecksVerified": true,
+          "fullTimestampInBothExplanations": true
+        }
+      ],
+      "verifiedRegistrationCount": 1,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-cd0274a9-104f-4e4a-a86e-21c7589a9e6d",
+      "publishedVersion": 2,
+      "publishedCandidateId": "review-3-alice",
+      "responseSHA256": "bb0fde9e686bd7ff959eda82388574293fecf3b346b4da9f0de8085af1c54a95",
+      "promptSHA256": "02c03b32ddcdcff444e009099095f4756eb445e95fc93822231be17a0de961fd",
+      "afterSnapshotSHA256": "e9acacad5b6a65c002354d726041641987d89486713092432589a2b70fbba9b6"
+    },
+    {
+      "id": "demorgan-redundancy",
+      "result": "pass",
+      "languageAndSemanticReview": "Bob excludes under-27 applicants or nonresidents. Not excluded therefore means age at least 27 AND resident. The additional age-23 condition is implied. Both translations preserve that redundant condition, and the executable policies are equivalent.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "equivalent",
+      "directions": [],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 2420,
+      "witnesses": [],
+      "verifiedRegistrationCount": 0,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-8d44ea5b-724a-4ed0-8d08-c9d37adc34bd",
+      "publishedVersion": 1,
+      "publishedCandidateId": null,
+      "responseSHA256": "d6589a84a2ce71a8ad32e7686e594ee85bb292a9fdbb1149afcc8f883fe5df8b",
+      "promptSHA256": "4133c77488ef3c23a0266b3e9ecf544e5990e55521a0e2591080a9673f4970c9",
+      "afterSnapshotSHA256": "a7fa7ba4cf53d31290f5c32fa31492f321cf6977ef9035e24f216d6d5badaa05"
+    },
+    {
+      "id": "residency-optional-vs-bypass",
+      "result": "pass",
+      "languageAndSemanticReview": "Alice requires age at least 34 regardless of residency. Bob permits either residence or age at least 34. The discovered 18-year-old resident is Bob-only. Both translations retain the rule that residency does not waive the deadline.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "different",
+      "directions": [
+        "bob-only"
+      ],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 2420,
+      "witnesses": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "submittedAt": "2027-09-02T23:00:00.000Z"
+          },
+          "direction": "bob-only",
+          "independentAliceAccepted": false,
+          "independentBobAccepted": true,
+          "perPredicateChecksVerified": true,
+          "fullTimestampInBothExplanations": true
+        }
+      ],
+      "verifiedRegistrationCount": 1,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-413bef5d-06fb-415e-a656-3cc0e19f984d",
+      "publishedVersion": 2,
+      "publishedCandidateId": "review-3-alice",
+      "responseSHA256": "14555d1600c8f04b81fddd8bfd70dbc2541b702c76b9adb9dfdbbfb0d18cbd79",
+      "promptSHA256": "9d133d3e1e03ca183a075e904bae6c8e0c9cbc7cc98a0e2dd0ce68f931b24850",
+      "afterSnapshotSHA256": "28fb96b4f1603c27a9f4a0cabde6c66c0e3bf8012d193c58e4f727c3cfe00740"
+    },
+    {
+      "id": "unsupported-exceptions",
+      "result": "pass",
+      "languageAndSemanticReview": "Both translations preserve all unsupported conditions. Alice requires maximum ages and different age ranges depending on residency; Bob exempts residents aged at least 60 from the deadline. Both correctly return a whole-policy null with specific issues, not a partially compiled subset.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "unresolved",
+      "directions": [],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 968,
+      "witnesses": [],
+      "verifiedRegistrationCount": 0,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-98eead99-2643-46bb-a565-1227add1680c",
+      "publishedVersion": 1,
+      "publishedCandidateId": null,
+      "responseSHA256": "4fc52d61833aab9d78152d6c59f426330d42ac870719c9d2d12ac338449de324",
+      "promptSHA256": "65746a184eba796f182b4274a3e6ec4868d659d81497472e14eeae7799ac62b4",
+      "afterSnapshotSHA256": "4a4f8e5b93856ace69d1d24d530edcc63cfb658de393e033b71c12e083139439"
+    },
+    {
+      "id": "ambiguous-date-zone",
+      "result": "pass",
+      "languageAndSemanticReview": "Alice retains the unresolved 04/06/2027 ordering and unspecified local zone in both languages and returns null. The issues correctly identify April 6 versus June 4 and the missing time zone. Bob independently specifies April 6, 10:00 UTC and compiles correctly. The pair stays unresolved.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "unresolved",
+      "directions": [],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 2420,
+      "witnesses": [],
+      "verifiedRegistrationCount": 0,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-c8bdfed8-e7e7-44fa-a2da-0d5940c574d2",
+      "publishedVersion": 1,
+      "publishedCandidateId": null,
+      "responseSHA256": "37de2052f375525ad020c53e4f34264d8bfdd76398b62f7b87d1a549fbd96b6d",
+      "promptSHA256": "14149c9a79e6f683ed1c7b84811d00231e2898eebb86cad1b28561c63ee041f5",
+      "afterSnapshotSHA256": "378a05a71ade8a641aa38574b3d657cdf7cbdc6f4db198163f02edbaa17e569c"
+    },
+    {
+      "id": "unrestricted-vs-cutoff",
+      "result": "pass",
+      "languageAndSemanticReview": "Both translations preserve the absence of age and residency constraints. Alice explicitly has no deadline; Bob has an inclusive cutoff. The discovered timestamp one millisecond after Bob’s cutoff is Alice-only. No inherited default condition appears.",
+      "sourceQuotesExact": true,
+      "translationsFaithfulOnManualReview": true,
+      "clarificationIssuesCorrect": true,
+      "expectedRulesMatchedIncludingNull": true,
+      "importedCandidateFieldsMatchRawResponse": true,
+      "comparison": "different",
+      "directions": [
+        "alice-only"
+      ],
+      "completeDirectionSetIndependentlyVerified": true,
+      "independentPartitionChecks": 2420,
+      "witnesses": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "submittedAt": "2027-10-18T16:00:00.001Z"
+          },
+          "direction": "alice-only",
+          "independentAliceAccepted": true,
+          "independentBobAccepted": false,
+          "perPredicateChecksVerified": true,
+          "fullTimestampInBothExplanations": true
+        }
+      ],
+      "verifiedRegistrationCount": 1,
+      "liveGETMatchedSavedAfterState": true,
+      "roomId": "consequence-003f7cf4-88c1-4721-836f-f2cd280e73a9",
+      "publishedVersion": 2,
+      "publishedCandidateId": "review-3-bob",
+      "responseSHA256": "295d41eae684d5281963d2839a57afd2ad4d74b83d0c9b215a7827d746f9057d",
+      "promptSHA256": "dce1acb2d335b144fa0e40e073a199e7314c5a489ea18e12eb7f28a52197dfbb",
+      "afterSnapshotSHA256": "4f66af68aa3c716850078b3327dd6e94138255e9729dc2f23601fe4d6612b5a9"
+    }
+  ],
+  "nonblockingObservations": [
+    {
+      "id": "precise-counts",
+      "severity": "reporting",
+      "blocking": false,
+      "detail": "Say 16 processed source drafts: 13 executable interpretations and 3 correct abstentions; 62 oracle checks: 53 Boolean outcomes and 9 null checks. Do not describe all 16 as executable or all 62 as live registration tests."
+    },
+    {
+      "id": "deadline-wording",
+      "severity": "minor",
+      "blocking": false,
+      "detail": "Generated deadline reasons use arrive/no llegó while the frozen policies define the application system’s recorded submission timestamp. The complete instant and inclusive/exclusive decision are correct. Using recorded submission timestamp in the explanation would match the source event more precisely; no observed decision error results in this corpus."
+    },
+    {
+      "id": "unresolved-coverage-wording",
+      "severity": "minor",
+      "blocking": false,
+      "detail": "Both unresolved results correctly show zero combinations, no witnesses and an explicit no-equivalence summary, but retain generic coverage.scope text beginning Complete comparison. Make that scope conditional if shown without the status. This is a metadata wording caveat, not an incorrect comparison result."
+    }
+  ],
+  "limits": [
+    {
+      "id": "single-run",
+      "detail": "The root reports one fresh fork:none agent saw only the eight saved prompts and generated all eight responses. This is one isolated responder context, not eight independent model runs or a repeated reliability estimate. Saved files establish prompt content and current hashes, but contain no independent model/configuration/invocation trace proving the complete generation history."
+    },
+    {
+      "id": "controlled-language",
+      "detail": "The corpus is independently authored and frozen before response generation, but deliberately short, synthetic, explicit and matched to a five-field schema. It stresses crossed edits, negation, redundancy, absence of constraints, millisecond boundaries and abstention. It does not establish accuracy on long real policies, implied exceptions, informal mixed-language edits, relative dates, additional jurisdictions or real applicant impact. The ambiguous policy explicitly says its locale and zone are unspecified; unsupported examples closely match unsupported classes named by the prompt."
+    },
+    {
+      "id": "oracle-versus-api",
+      "detail": "The 62 scenario checks are independent-oracle checks, not 62 live form submissions. The six witnesses are independently checked under both extracted policies; only one selected policy per witness is exercised through the live registration endpoint, across five published rooms. All six receipts and their policy/version/checks were independently verified, but there is no mirrored second-policy API submission for each witness."
+    },
+    {
+      "id": "bounded-completeness",
+      "detail": "Exhausting ages 0..120, both residency values and all deadline truth-change partitions is complete for these supported rule shapes. The audit independently established the complete acceptance-direction sets for these cases. It did not inspect production discovery code or validate its partition-count algorithm for every possible rule pair; reported coverage metrics are not a general proof of arbitrary implementation correctness."
+    },
+    {
+      "id": "persistence-and-ui",
+      "detail": "All eight rooms were independently fetched through GET and exactly matched saved after snapshots. This demonstrates current server retrieval, not durability across process restart. Browser rendering, form controls, multi-client races and end-user understanding were not tested in this audit."
+    },
+    {
+      "id": "negative-paths",
+      "detail": "This run does not exercise malformed imports, stale versions, disagreement, retries/idempotency, failed publication of null policies, or publication of the equivalent pair. The harness checks that review completion leaves version 1 unchanged and that the first vote does not publish in differing cases. The audit additionally verified matching votes, selected candidate and published version 2 for the five rooms that registered witnesses."
+    },
+    {
+      "id": "language-review-scope",
+      "detail": "The 16 source-language fields are exact string matches. Translation faithfulness and clarification quality were manually reviewed by this independent corpus/audit agent; those are semantic judgments, not a separate native-speaker study. The corpus author was also this reviewer, independent of application implementation but not independent of the frozen ground truth."
+    },
+    {
+      "id": "replay-provenance",
+      "detail": "The harness apply stage verifies the frozen cases hash and records response hashes. It does not itself recheck saved prompt hashes or the EXPECTATIONS.md hash. This audit independently verified both frozen file hashes and all eight prompt and response hashes. Hashes demonstrate present consistency, not generation provenance."
+    }
+  ],
+  "recommendedClaim": "In one blinded synthetic batch of eight bilingual policy pairs, all 16 source drafts were preserved exactly; 13 compiled faithfully and three correctly abstained. All expected comparison outcomes and six automatic witnesses were independently verified, and six selected-policy registration records were retrieved from the live server."
+}

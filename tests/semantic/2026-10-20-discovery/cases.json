@@ -1,0 +1,155 @@
+{
+  "cases": [
+    {
+      "id": "crossed-age-deadline",
+      "drafts": {
+        "alice": "Participation policy. The applicant must be at least 23 years old. Age means completed whole years at the recorded submission timestamp. Residency is not required and has no effect on eligibility. The application system must record the submission at or before 2027-04-12T18:30:00Z (UTC); equality with that timestamp is accepted. A submission is accepted only if both the age requirement and the deadline are satisfied. There are no other conditions or exceptions.",
+        "bob": "Política de participación. La persona solicitante debe tener al menos 25 años. La edad se mide en años completos en el instante de presentación registrado. No se exige residencia y ser residente no modifica la elegibilidad. El sistema de solicitudes debe registrar la presentación a más tardar el 2027-04-14T18:30:00Z (UTC); se acepta la igualdad con ese instante. La presentación se acepta únicamente si cumple tanto el requisito de edad como el plazo. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": {"minAge": 23, "residentRequired": false, "join": "all", "deadline": "2027-04-12T18:30:00Z", "deadlineInclusive": true}},
+        "bob": {"rules": {"minAge": 25, "residentRequired": false, "join": "all", "deadline": "2027-04-14T18:30:00Z", "deadlineInclusive": true}},
+        "comparison": "different",
+        "directions": ["alice-only", "bob-only"]
+      },
+      "scenarios": [
+        {"age": 23, "resident": false, "submittedAt": "2027-04-12T18:30:00Z", "expected": {"alice": true, "bob": false}},
+        {"age": 25, "resident": false, "submittedAt": "2027-04-13T09:00:00Z", "expected": {"alice": false, "bob": true}},
+        {"age": 25, "resident": true, "submittedAt": "2027-04-12T18:30:00Z", "expected": {"alice": true, "bob": true}},
+        {"age": 22, "resident": true, "submittedAt": "2027-04-12T18:29:59Z", "expected": {"alice": false, "bob": false}}
+      ]
+    },
+    {
+      "id": "negated-disqualification",
+      "drafts": {
+        "alice": "Participation policy. Age means completed whole years at the recorded submission timestamp. For eligibility, an applicant is disqualified exactly when both of these statements are true: the applicant is younger than 28, and the applicant is not a resident. Anyone not disqualified by that test is eligible. Separately, the application system must record the submission at or before 2027-05-23T08:45:00Z (UTC), including that exact instant. Acceptance requires eligibility and compliance with this deadline. There are no other conditions or exceptions.",
+        "bob": "Política de participación. La edad se mide en años completos en el instante de presentación registrado. Para determinar la elegibilidad, se excluye a la persona solicitante exactamente cuando se cumple al menos una de estas dos afirmaciones: tiene menos de 25 años, o no es residente. Toda persona no excluida por esta prueba es elegible. Además, el sistema debe registrar la presentación a más tardar el 2027-05-23T08:45:00Z (UTC), incluido ese instante exacto. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": {"minAge": 28, "residentRequired": true, "join": "any", "deadline": "2027-05-23T08:45:00Z", "deadlineInclusive": true}},
+        "bob": {"rules": {"minAge": 25, "residentRequired": true, "join": "all", "deadline": "2027-05-23T08:45:00Z", "deadlineInclusive": true}},
+        "comparison": "different",
+        "directions": ["alice-only"]
+      },
+      "scenarios": [
+        {"age": 24, "resident": true, "submittedAt": "2027-05-23T08:45:00Z", "expected": {"alice": true, "bob": false}},
+        {"age": 28, "resident": false, "submittedAt": "2027-05-22T12:00:00Z", "expected": {"alice": true, "bob": false}},
+        {"age": 25, "resident": true, "submittedAt": "2027-05-22T12:00:00Z", "expected": {"alice": true, "bob": true}},
+        {"age": 27, "resident": false, "submittedAt": "2027-05-22T12:00:00Z", "expected": {"alice": false, "bob": false}},
+        {"age": 28, "resident": true, "submittedAt": "2027-05-23T08:45:00.001Z", "expected": {"alice": false, "bob": false}}
+      ]
+    },
+    {
+      "id": "subsecond-cutoff",
+      "drafts": {
+        "alice": "Participation policy. An applicant is eligible if and only if they are at least 31 years old, measured in completed whole years at the recorded submission timestamp. Residency is optional and never changes eligibility. The application system must record the submission strictly before 2027-07-09T12:00:00.375Z (UTC). A submission recorded at that exact millisecond is too late. Acceptance requires both eligibility and compliance with this deadline. There are no other conditions or exceptions.",
+        "bob": "Política de participación. Una persona solicitante es elegible si y solo si tiene al menos 31 años, medidos en años completos en el instante de presentación registrado. La residencia es opcional y nunca cambia la elegibilidad. El sistema debe registrar la presentación antes del 2027-07-09T12:00:00.375Z (UTC) o exactamente en ese instante. Una presentación registrada en ese milisegundo exacto está dentro del plazo. La aceptación exige tanto elegibilidad como cumplimiento del plazo. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": {"minAge": 31, "residentRequired": false, "join": "all", "deadline": "2027-07-09T12:00:00.375Z", "deadlineInclusive": false}},
+        "bob": {"rules": {"minAge": 31, "residentRequired": false, "join": "all", "deadline": "2027-07-09T12:00:00.375Z", "deadlineInclusive": true}},
+        "comparison": "different",
+        "directions": ["bob-only"]
+      },
+      "scenarios": [
+        {"age": 31, "resident": false, "submittedAt": "2027-07-09T12:00:00.375Z", "expected": {"alice": false, "bob": true}},
+        {"age": 31, "resident": false, "submittedAt": "2027-07-09T12:00:00.374Z", "expected": {"alice": true, "bob": true}},
+        {"age": 31, "resident": true, "submittedAt": "2027-07-09T12:00:00.376Z", "expected": {"alice": false, "bob": false}},
+        {"age": 30, "resident": true, "submittedAt": "2027-07-09T12:00:00.375Z", "expected": {"alice": false, "bob": false}}
+      ]
+    },
+    {
+      "id": "demorgan-redundancy",
+      "drafts": {
+        "alice": "Participation policy. An applicant is eligible exactly when they are a resident and at least 27 years old. Age means completed whole years at the recorded submission timestamp. The application system must record the submission at or before 2027-08-21T06:20:00Z (UTC), including that exact instant. Acceptance requires eligibility and compliance with this deadline. There are no other conditions or exceptions.",
+        "bob": "Política de participación. La edad se mide en años completos en el instante de presentación registrado. Se excluye por elegibilidad a toda persona que tenga menos de 27 años o que no sea residente. Quienes no estén excluidos por esa regla deben, además, tener al menos 23 años completos para ser elegibles. El sistema debe registrar la presentación a más tardar el 2027-08-21T06:20:00Z (UTC), incluido ese instante exacto. La aceptación exige elegibilidad y cumplimiento del plazo. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": {"minAge": 27, "residentRequired": true, "join": "all", "deadline": "2027-08-21T06:20:00Z", "deadlineInclusive": true}},
+        "bob": {"rules": {"minAge": 27, "residentRequired": true, "join": "all", "deadline": "2027-08-21T06:20:00Z", "deadlineInclusive": true}},
+        "comparison": "equivalent",
+        "directions": []
+      },
+      "scenarios": [
+        {"age": 23, "resident": true, "submittedAt": "2027-08-20T06:20:00Z", "expected": {"alice": false, "bob": false}},
+        {"age": 26, "resident": true, "submittedAt": "2027-08-20T06:20:00Z", "expected": {"alice": false, "bob": false}},
+        {"age": 27, "resident": true, "submittedAt": "2027-08-21T06:20:00Z", "expected": {"alice": true, "bob": true}},
+        {"age": 27, "resident": false, "submittedAt": "2027-08-20T06:20:00Z", "expected": {"alice": false, "bob": false}},
+        {"age": 80, "resident": true, "submittedAt": "2027-08-21T06:20:00.001Z", "expected": {"alice": false, "bob": false}}
+      ]
+    },
+    {
+      "id": "residency-optional-vs-bypass",
+      "drafts": {
+        "alice": "Participation policy. Every applicant must be at least 34 years old, measured in completed whole years at the recorded submission timestamp. Residency is optional: residents and nonresidents qualify under the same age requirement. Being a resident does not waive that requirement. The application system must record the submission at or before 2027-09-02T23:00:00Z (UTC), including that instant. Acceptance requires both eligibility and compliance with the deadline. There are no other conditions or exceptions.",
+        "bob": "Política de participación. Para ser elegible basta con ser residente o tener al menos 34 años. Las personas residentes son elegibles sin edad mínima; las no residentes deben tener al menos 34 años. La edad se mide en años completos en el instante de presentación registrado. El sistema debe registrar la presentación a más tardar el 2027-09-02T23:00:00Z (UTC), incluido ese instante. La aceptación exige tanto elegibilidad como cumplimiento del plazo; ser residente no exime del plazo. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": {"minAge": 34, "residentRequired": false, "join": "all", "deadline": "2027-09-02T23:00:00Z", "deadlineInclusive": true}},
+        "bob": {"rules": {"minAge": 34, "residentRequired": true, "join": "any", "deadline": "2027-09-02T23:00:00Z", "deadlineInclusive": true}},
+        "comparison": "different",
+        "directions": ["bob-only"]
+      },
+      "scenarios": [
+        {"age": 33, "resident": true, "submittedAt": "2027-09-02T23:00:00Z", "expected": {"alice": false, "bob": true}},
+        {"age": 34, "resident": false, "submittedAt": "2027-09-01T23:00:00Z", "expected": {"alice": true, "bob": true}},
+        {"age": 33, "resident": false, "submittedAt": "2027-09-01T23:00:00Z", "expected": {"alice": false, "bob": false}},
+        {"age": 12, "resident": true, "submittedAt": "2027-09-02T23:00:00.001Z", "expected": {"alice": false, "bob": false}}
+      ]
+    },
+    {
+      "id": "unsupported-exceptions",
+      "drafts": {
+        "alice": "Participation policy. Age means completed whole years at the recorded submission timestamp. Normally an applicant is eligible only if they are a resident and are between 20 and 45 years old, inclusive. There is one exception to the residency requirement: a nonresident is eligible if and only if they are between 28 and 32 years old, inclusive. Nobody outside their applicable age range is eligible. The application system must record the submission at or before 2027-11-17T14:10:00Z (UTC), including that instant. Acceptance requires eligibility and compliance with this deadline. There are no other conditions or exceptions.",
+        "bob": "Política de participación. Una persona solicitante es elegible si y solo si es residente y tiene al menos 22 años. La edad se mide en años completos en el instante de presentación registrado. Normalmente el sistema debe registrar la presentación a más tardar el 2027-11-17T14:10:00Z (UTC), incluido ese instante. Sin embargo, se exime por completo del plazo a las personas residentes que tengan al menos 60 años: sus presentaciones se aceptan sin importar el instante registrado. Para todas las demás personas, la aceptación exige tanto elegibilidad como cumplimiento del plazo. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": null},
+        "bob": {"rules": null},
+        "comparison": "unresolved",
+        "directions": []
+      },
+      "scenarios": [
+        {"age": 46, "resident": true, "submittedAt": "2027-11-16T14:10:00Z", "expected": {"alice": null, "bob": null}},
+        {"age": 29, "resident": false, "submittedAt": "2027-11-16T14:10:00Z", "expected": {"alice": null, "bob": null}},
+        {"age": 60, "resident": true, "submittedAt": "2027-11-18T14:10:00Z", "expected": {"alice": null, "bob": null}}
+      ]
+    },
+    {
+      "id": "ambiguous-date-zone",
+      "drafts": {
+        "alice": "Participation policy. An applicant must be a resident and at least 26 years old. Age means completed whole years at the recorded submission timestamp. The application system must record the submission at or before 04/06/2027 at 10:00 local time, including that instant. This policy does not identify a date-format locale, a location, or a time zone for that deadline. Acceptance requires both eligibility and compliance with the deadline. There are no other conditions or exceptions.",
+        "bob": "Política de participación. La persona solicitante debe ser residente y tener al menos 26 años. La edad se mide en años completos en el instante de presentación registrado. El sistema debe registrar la presentación a más tardar el 6 de abril de 2027 a las 10:00 UTC, es decir, 2027-04-06T10:00:00Z, incluido ese instante. La aceptación exige tanto elegibilidad como cumplimiento del plazo. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": null},
+        "bob": {"rules": {"minAge": 26, "residentRequired": true, "join": "all", "deadline": "2027-04-06T10:00:00Z", "deadlineInclusive": true}},
+        "comparison": "unresolved",
+        "directions": []
+      },
+      "scenarios": [
+        {"age": 26, "resident": true, "submittedAt": "2027-04-06T10:00:00Z", "expected": {"alice": null, "bob": true}},
+        {"age": 26, "resident": true, "submittedAt": "2027-04-06T10:00:00.001Z", "expected": {"alice": null, "bob": false}},
+        {"age": 26, "resident": false, "submittedAt": "2027-04-05T10:00:00Z", "expected": {"alice": null, "bob": false}}
+      ]
+    },
+    {
+      "id": "unrestricted-vs-cutoff",
+      "drafts": {
+        "alice": "Participation policy. Every applicant is eligible. There is explicitly no minimum or maximum age and no residency requirement. If age is recorded, it means completed whole years at the recorded submission timestamp; it does not affect acceptance. There is no submission deadline or other time restriction. Any submission recorded by the application system is accepted, regardless of age, residency, or recorded submission timestamp. There are no other conditions or exceptions.",
+        "bob": "Política de participación. Toda persona solicitante es elegible. No hay edad mínima ni máxima ni requisito de residencia. Si se registra la edad, se mide en años completos en el instante de presentación registrado; no afecta a la elegibilidad. La única condición para la aceptación es que el sistema registre la presentación a más tardar el 2027-10-18T16:00:00Z (UTC), incluido ese instante exacto. No hay otras condiciones ni excepciones."
+      },
+      "expected": {
+        "alice": {"rules": {"minAge": null, "residentRequired": false, "join": "all", "deadline": null, "deadlineInclusive": true}},
+        "bob": {"rules": {"minAge": null, "residentRequired": false, "join": "all", "deadline": "2027-10-18T16:00:00Z", "deadlineInclusive": true}},
+        "comparison": "different",
+        "directions": ["alice-only"]
+      },
+      "scenarios": [
+        {"age": 0, "resident": false, "submittedAt": "2027-10-18T16:00:00Z", "expected": {"alice": true, "bob": true}},
+        {"age": 120, "resident": true, "submittedAt": "2027-10-18T16:00:00.001Z", "expected": {"alice": true, "bob": false}},
+        {"age": 0, "resident": false, "submittedAt": "2028-01-01T00:00:00Z", "expected": {"alice": true, "bob": false}}
+      ]
+    }
+  ]
+}

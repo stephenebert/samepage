@@ -1,0 +1,33 @@
+{
+  "jobId": "review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "Participation policy. The applicant must be at least 23 years old. Age means completed whole years at the recorded submission timestamp. Residency is not required and has no effect on eligibility. The application system must record the submission at or before 2027-04-12T18:30:00Z (UTC); equality with that timestamp is accepted. A submission is accepted only if both the age requirement and the deadline are satisfied. There are no other conditions or exceptions.",
+      "es": "Política de participación. La persona solicitante debe tener al menos 23 años. La edad se mide en años completos en el instante de presentación registrado. No se exige residencia y esta no afecta a la elegibilidad. El sistema de solicitudes debe registrar la presentación a más tardar el 2027-04-12T18:30:00Z (UTC); se acepta la igualdad con ese instante. La presentación se acepta únicamente si cumple tanto el requisito de edad como el plazo. No hay otras condiciones ni excepciones.",
+      "rules": {
+        "minAge": 23,
+        "residentRequired": false,
+        "join": "all",
+        "deadline": "2027-04-12T18:30:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "Participation policy. The applicant must be at least 25 years old. Age is measured in completed whole years at the recorded submission timestamp. Residency is not required, and being a resident does not change eligibility. The application system must record the submission no later than 2027-04-14T18:30:00Z (UTC); equality with that instant is accepted. The submission is accepted only if it satisfies both the age requirement and the deadline. There are no other conditions or exceptions.",
+      "es": "Política de participación. La persona solicitante debe tener al menos 25 años. La edad se mide en años completos en el instante de presentación registrado. No se exige residencia y ser residente no modifica la elegibilidad. El sistema de solicitudes debe registrar la presentación a más tardar el 2027-04-14T18:30:00Z (UTC); se acepta la igualdad con ese instante. La presentación se acepta únicamente si cumple tanto el requisito de edad como el plazo. No hay otras condiciones ni excepciones.",
+      "rules": {
+        "minAge": 25,
+        "residentRequired": false,
+        "join": "all",
+        "deadline": "2027-04-14T18:30:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    }
+  ]
+}

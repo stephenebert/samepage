@@ -1,0 +1,33 @@
+{
+  "jobId": "review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "Participation policy. An applicant is eligible if and only if they are at least 31 years old, measured in completed whole years at the recorded submission timestamp. Residency is optional and never changes eligibility. The application system must record the submission strictly before 2027-07-09T12:00:00.375Z (UTC). A submission recorded at that exact millisecond is too late. Acceptance requires both eligibility and compliance with this deadline. There are no other conditions or exceptions.",
+      "es": "Política de participación. Una persona solicitante es elegible si y solo si tiene al menos 31 años, medidos en años completos en el instante de presentación registrado. La residencia es opcional y nunca cambia la elegibilidad. El sistema de solicitudes debe registrar la presentación estrictamente antes del 2027-07-09T12:00:00.375Z (UTC). Una presentación registrada en ese milisegundo exacto llega demasiado tarde. La aceptación exige tanto elegibilidad como cumplimiento de este plazo. No hay otras condiciones ni excepciones.",
+      "rules": {
+        "minAge": 31,
+        "residentRequired": false,
+        "join": "all",
+        "deadline": "2027-07-09T12:00:00.375Z",
+        "deadlineInclusive": false
+      },
+      "issues": []
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "Participation policy. An applicant is eligible if and only if they are at least 31 years old, measured in completed whole years at the recorded submission timestamp. Residency is optional and never changes eligibility. The system must record the submission before 2027-07-09T12:00:00.375Z (UTC) or exactly at that instant. A submission recorded at that exact millisecond is within the deadline. Acceptance requires both eligibility and compliance with the deadline. There are no other conditions or exceptions.",
+      "es": "Política de participación. Una persona solicitante es elegible si y solo si tiene al menos 31 años, medidos en años completos en el instante de presentación registrado. La residencia es opcional y nunca cambia la elegibilidad. El sistema debe registrar la presentación antes del 2027-07-09T12:00:00.375Z (UTC) o exactamente en ese instante. Una presentación registrada en ese milisegundo exacto está dentro del plazo. La aceptación exige tanto elegibilidad como cumplimiento del plazo. No hay otras condiciones ni excepciones.",
+      "rules": {
+        "minAge": 31,
+        "residentRequired": false,
+        "join": "all",
+        "deadline": "2027-07-09T12:00:00.375Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    }
+  ]
+}

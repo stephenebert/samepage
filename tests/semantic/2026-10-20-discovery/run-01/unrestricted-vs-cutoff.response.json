@@ -1,0 +1,33 @@
+{
+  "jobId": "review-3",
+  "candidates": [
+    {
+      "editor": "alice",
+      "sourceVersion": 2,
+      "en": "Participation policy. Every applicant is eligible. There is explicitly no minimum or maximum age and no residency requirement. If age is recorded, it means completed whole years at the recorded submission timestamp; it does not affect acceptance. There is no submission deadline or other time restriction. Any submission recorded by the application system is accepted, regardless of age, residency, or recorded submission timestamp. There are no other conditions or exceptions.",
+      "es": "Política de participación. Toda persona solicitante es elegible. Se establece explícitamente que no hay edad mínima ni máxima ni requisito de residencia. Si se registra la edad, se mide en años completos en el instante de presentación registrado; no afecta a la aceptación. No hay plazo de presentación ni ninguna otra restricción temporal. Se acepta toda presentación registrada por el sistema de solicitudes, independientemente de la edad, la residencia o el instante de presentación registrado. No hay otras condiciones ni excepciones.",
+      "rules": {
+        "minAge": null,
+        "residentRequired": false,
+        "join": "all",
+        "deadline": null,
+        "deadlineInclusive": true
+      },
+      "issues": []
+    },
+    {
+      "editor": "bob",
+      "sourceVersion": 2,
+      "en": "Participation policy. Every applicant is eligible. There is no minimum or maximum age and no residency requirement. If age is recorded, it is measured in completed whole years at the recorded submission timestamp; it does not affect eligibility. The only condition for acceptance is that the system record the submission no later than 2027-10-18T16:00:00Z (UTC), including that exact instant. There are no other conditions or exceptions.",
+      "es": "Política de participación. Toda persona solicitante es elegible. No hay edad mínima ni máxima ni requisito de residencia. Si se registra la edad, se mide en años completos en el instante de presentación registrado; no afecta a la elegibilidad. La única condición para la aceptación es que el sistema registre la presentación a más tardar el 2027-10-18T16:00:00Z (UTC), incluido ese instante exacto. No hay otras condiciones ni excepciones.",
+      "rules": {
+        "minAge": null,
+        "residentRequired": false,
+        "join": "all",
+        "deadline": "2027-10-18T16:00:00.000Z",
+        "deadlineInclusive": true
+      },
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "kind": "samepage-consequences-v1",
+  "id": "consequence-003f7cf4-88c1-4721-836f-f2cd280e73a9",
+  "revision": 7,
+  "createdAt": "2026-10-20T22:25:52.276Z",
+  "updatedAt": "2026-10-20T22:27:26.930Z",
+  "mode": "agent-manual-relay",
+  "published": {
+    "version": 2,
+    "en": "Participation policy. Every applicant is eligible. There is no minimum or maximum age and no residency requirement. If age is recorded, it is measured in completed whole years at the recorded submission timestamp; it does not affect eligibility. The only condition for acceptance is that the system record the submission no later than 2027-10-18T16:00:00Z (UTC), including that exact instant. There are no other conditions or exceptions.",
+    "es": "Política de participación. Toda persona solicitante es elegible. No hay edad mínima ni máxima ni requisito de residencia. Si se registra la edad, se mide en años completos en el instante de presentación registrado; no afecta a la elegibilidad. La única condición para la aceptación es que el sistema registre la presentación a más tardar el 2027-10-18T16:00:00Z (UTC), incluido ese instante exacto. No hay otras condiciones ni excepciones.",
+    "rules": {
+      "minAge": null,
+      "residentRequired": false,
+      "join": "all",
+      "deadline": "2027-10-18T16:00:00.000Z",
+      "deadlineInclusive": true
+    },
+    "publishedAt": "2026-10-20T22:27:26.925Z",
+    "reviewId": "review-3",
+    "candidateId": "review-3-bob"
+  },
+  "drafts": {
+    "alice": {
+      "editor": "alice",
+      "language": "en",
+      "version": 2,
+      "text": "Participation policy. Every applicant is eligible. There is explicitly no minimum or maximum age and no residency requirement. If age is recorded, it means completed whole years at the recorded submission timestamp; it does not affect acceptance. There is no submission deadline or other time restriction. Any submission recorded by the application system is accepted, regardless of age, residency, or recorded submission timestamp. There are no other conditions or exceptions."
+    },
+    "bob": {
+      "editor": "bob",
+      "language": "es",
+      "version": 2,
+      "text": "Política de participación. Toda persona solicitante es elegible. No hay edad mínima ni máxima ni requisito de residencia. Si se registra la edad, se mide en años completos en el instante de presentación registrado; no afecta a la elegibilidad. La única condición para la aceptación es que el sistema registre la presentación a más tardar el 2027-10-18T16:00:00Z (UTC), incluido ese instante exacto. No hay otras condiciones ni excepciones."
+    }
+  },
+  "activeJob": null,
+  "review": {
+    "id": "review-3",
+    "basePolicyVersion": 1,
+    "candidates": [
+      {
+        "id": "review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Participation policy. Every applicant is eligible. There is explicitly no minimum or maximum age and no residency requirement. If age is recorded, it means completed whole years at the recorded submission timestamp; it does not affect acceptance. There is no submission deadline or other time restriction. Any submission recorded by the application system is accepted, regardless of age, residency, or recorded submission timestamp. There are no other conditions or exceptions.",
+        "es": "Política de participación. Toda persona solicitante es elegible. Se establece explícitamente que no hay edad mínima ni máxima ni requisito de residencia. Si se registra la edad, se mide en años completos en el instante de presentación registrado; no afecta a la aceptación. No hay plazo de presentación ni ninguna otra restricción temporal. Se acepta toda presentación registrada por el sistema de solicitudes, independientemente de la edad, la residencia o el instante de presentación registrado. No hay otras condiciones ni excepciones.",
+        "rules": {
+          "minAge": null,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": null,
+          "deadlineInclusive": true
+        },
+        "issues": []
+      },
+      {
+        "id": "review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "Participation policy. Every applicant is eligible. There is no minimum or maximum age and no residency requirement. If age is recorded, it is measured in completed whole years at the recorded submission timestamp; it does not affect eligibility. The only condition for acceptance is that the system record the submission no later than 2027-10-18T16:00:00Z (UTC), including that exact instant. There are no other conditions or exceptions.",
+        "es": "Política de participación. Toda persona solicitante es elegible. No hay edad mínima ni máxima ni requisito de residencia. Si se registra la edad, se mide en años completos en el instante de presentación registrado; no afecta a la elegibilidad. La única condición para la aceptación es que el sistema registre la presentación a más tardar el 2027-10-18T16:00:00Z (UTC), incluido ese instante exacto. No hay otras condiciones ni excepciones.",
+        "rules": {
+          "minAge": null,
+          "residentRequired": false,
+          "join": "all",
+          "deadline": "2027-10-18T16:00:00.000Z",
+          "deadlineInclusive": true
+        },
+        "issues": []
+      }
+    ],
+    "votes": {
+      "alice": "review-3-bob",
+      "bob": "review-3-bob"
+    },
+    "status": "published",
+    "createdAt": "2026-10-20T22:27:26.912Z",
+    "publishedVersion": 2
+  },
+  "registrations": [
+    {
+      "requestId": "witness-unrestricted-vs-cutoff-0",
+      "policyVersion": 2,
+      "label": "Discovered attendee 1",
+      "age": 18,
+      "resident": false,
+      "submittedAt": "2027-10-18T16:00:00.001Z",
+      "id": "registration-7",
+      "recordedAt": "2026-10-20T22:27:26.930Z",
+      "decision": {
+        "accepted": false,
+        "reasons": [
+          "Registration must arrive on or before 2027-10-18T16:00:00.000Z."
+        ],
+        "checks": {
+          "age": null,
+          "residency": null,
+          "deadline": false,
+          "eligibility": true
+        }
+      }
+    }
+  ]
+}

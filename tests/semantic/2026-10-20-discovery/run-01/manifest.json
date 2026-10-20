@@ -1,0 +1,54 @@
+{
+  "casesSHA256": "7a1fdebd60bb1516253cd4e09ac0df6b5bac9b54edfbb9183353d6af67002276",
+  "preparedAt": "2026-10-20T22:25:52.049Z",
+  "cases": [
+    {
+      "id": "crossed-age-deadline",
+      "roomId": "consequence-9d0436cc-cd20-45d5-bf51-5cf9f9ce7b22",
+      "jobId": "review-3",
+      "promptSHA256": "8cc72a4ffb560825ea103738acef62c4518d743bb5b8fbbc603dde12ec9c24e3"
+    },
+    {
+      "id": "negated-disqualification",
+      "roomId": "consequence-36937710-389b-48ba-955a-614bac983709",
+      "jobId": "review-3",
+      "promptSHA256": "f7a91a8435c7d5dfdb5d25162e9253ff0d4277bb314606449941f9f5e8aec0fe"
+    },
+    {
+      "id": "subsecond-cutoff",
+      "roomId": "consequence-cd0274a9-104f-4e4a-a86e-21c7589a9e6d",
+      "jobId": "review-3",
+      "promptSHA256": "02c03b32ddcdcff444e009099095f4756eb445e95fc93822231be17a0de961fd"
+    },
+    {
+      "id": "demorgan-redundancy",
+      "roomId": "consequence-8d44ea5b-724a-4ed0-8d08-c9d37adc34bd",
+      "jobId": "review-3",
+      "promptSHA256": "4133c77488ef3c23a0266b3e9ecf544e5990e55521a0e2591080a9673f4970c9"
+    },
+    {
+      "id": "residency-optional-vs-bypass",
+      "roomId": "consequence-413bef5d-06fb-415e-a656-3cc0e19f984d",
+      "jobId": "review-3",
+      "promptSHA256": "9d133d3e1e03ca183a075e904bae6c8e0c9cbc7cc98a0e2dd0ce68f931b24850"
+    },
+    {
+      "id": "unsupported-exceptions",
+      "roomId": "consequence-98eead99-2643-46bb-a565-1227add1680c",
+      "jobId": "review-3",
+      "promptSHA256": "65746a184eba796f182b4274a3e6ec4868d659d81497472e14eeae7799ac62b4"
+    },
+    {
+      "id": "ambiguous-date-zone",
+      "roomId": "consequence-c8bdfed8-e7e7-44fa-a2da-0d5940c574d2",
+      "jobId": "review-3",
+      "promptSHA256": "14149c9a79e6f683ed1c7b84811d00231e2898eebb86cad1b28561c63ee041f5"
+    },
+    {
+      "id": "unrestricted-vs-cutoff",
+      "roomId": "consequence-003f7cf4-88c1-4721-836f-f2cd280e73a9",
+      "jobId": "review-3",
+      "promptSHA256": "dce1acb2d335b144fa0e40e073a199e7314c5a489ea18e12eb7f28a52197dfbb"
+    }
+  ]
+}
