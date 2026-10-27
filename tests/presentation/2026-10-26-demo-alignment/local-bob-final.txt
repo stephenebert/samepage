@@ -1,0 +1,166 @@
+Browser tab: 1203231775, Title: "SamePage — Two languages, one shared meaning", URL: "http://127.0.0.1:4178/studio?room=studio-ui-polish-local-20261026&editor=bob".
+0 AXWebArea SamePage — Two languages, one shared meaning, URL: 127.0.0.1:4178/studio?room=studio-ui-polish-local-20261026&editor=bob
+	1 container
+		2 link Description: SamePage, Value: 127.0.0.1:4178/studio
+		3 text WORDS → CONSEQUENCES Private prototype AGREE ON WHAT HAPPENS.
+		4 heading The same words.A different outcome., Value: 1
+			5 text The same words.
+			6 text A different outcome.
+		7 text Find a hidden consequence. Repair the wording. Check what else would change before either editor approves.
+		10 container Simulated editors
+			11 text Two simulated editors
+			12 link Description: Alice · EN, Value: 127.0.0.1:4178/studio?room=studio-ui-polish-local-20261026&editor=alice
+			13 link Description: Bob · ES, Value: 127.0.0.1:4178/studio?room=studio-ui-polish-local-20261026&editor=bob
+			14 link Description: Combined view, Value: 127.0.0.1:4178/studio?room=studio-ui-polish-local-20261026
+		15 container Demo steps
+			16 button Write
+			17 button Discover
+			18 button Repair & agree
+			21 button Try the form
+			24 text Checked repair agreed · live form v3
+		25 button (collapsed) Two policies. One shared intent. Bob’s editor, Secondary Actions: Expand
+			26 text Two policies. One shared intent.
+			27 text Bob’s editor
+		78 container Description: Repair and impact check, ID: studio-repair
+			79 container
+				80 text CHANGE THE POLICY. KEEP THE PROMISE.
+				81 heading A focused repair. Its impact, checked., Value: 2
+					82 text A focused repair.
+					83 text Its impact, checked.
+				84 text Follow the saved evidence: the requested change, the impact check, and both editors’ approval. $32.50  for eligible  students Earlier rewrite blocked Both editors approved Form v 3
+			222 button (collapsed) Inspect the saved repair request, Secondary Actions: Expand
+				223 text Inspect the saved repair request
+			224 container
+				225 button (expanded) Earlier: a rewrite was stopped before publication, Secondary Actions: Collapse
+					226 text Earlier: a rewrite was stopped before publication
+				227 text This supplied rewrite  did not satisfy the saved intent. It never changed the live form.
+				228 text This rewrite admits someone who should still be excluded.
+				229 text Synthetic example attendee · evaluated under both rules
+				230 text 20  years old No scholarship Not a student Not a member Nonresident No guardian consent
+				231 container
+					232 text Applied  2027-02-20 · 02:30:00 UTC
+				233 text Baseline
+				234 text Not eligible
+				235 text Your requested outcome
+				236 text Not eligible
+				237 text Blocked rewrite
+				238 text $63.50 fee
+				239 button Load these facts into the current form
+			159 text JOINTLY APPROVED · LIVE FORM V3
+			160 heading The checked repair is now the working policy., Value: 3
+				161 text The checked repair is now the working policy.
+			162 container
+				163 text Checked intent:  Eligible  students  pay  $32.50 . Preserve  Alice ’s admission rules and everyone else’s fees.
+			164 container
+				165 text Meta · muse-spark-1.3  · 7.0s  · generated repair checked
+			166 text Admission and deadlines preserved Selected group receives the requested fee All other fees preserved THE INTENDED EFFECT · SAME ATTENDEE AS THE RECEIPTS
+			167 container
+				168 text Selected baseline $18.50 fee
+			169 container
+				170 text Approved repair $32.50 fee
+			171 container
+				172 text For this  17 -year-old  resident  in the selected group. Admission stays the same.
+			173 text The form now uses the approved repair, v3.
+			174 text No scholarship Student Member Resident No guardian consent
+			175 container
+				176 text Applied  2027-02-16 · 12:00:00 UTC
+			177 button Try this exact attendee in the form
+			178 container
+				179 text 2,048  representative cases checked across the supported rule domain. This checks the interpreted rules; both editors still need to review the wording.
+			180 container Readable bilingual policy
+				181 container
+					182 heading The agreed policy, in both languages, Value: 3
+						183 text The agreed policy, in both languages
+					184 text A reading view of the checked rules. Original wording is preserved below.
+				185 container
+					186 heading English, Value: 4
+						187 text English
+					188 text Admission is allowed if and only if (the submission time is at or after 2027-02-12 17:30:00.000 UTC) and (the submission time is strictly before 2027-02-20 02:15:00.000 UTC) and (the person is at least 16 years old) and ((the person is at least 18 years old) or (guardian consent is present) or ((the person is a resident) and (the person is a member))).
+					189 heading Fee · first matching rule applies, Value: 5
+						190 text Fee · first matching rule applies
+					191 text Fees apply only to admitted attendees. Use the first matching rule, in this order: 1. If the person is a student: $32.50 USD. 2. If the person has a scholarship: $0.00 USD. 3. If (the person is a resident) and (the person is a member): $18.50 USD. 4. If the person is a resident: $34.50 USD. 5. If the person is a member: $49.50 USD. If none of the rules above matches: $63.50 USD.
+				192 container
+					193 heading Español, Value: 4
+						194 text Español
+					195 text La admisión se permite si y solo si (la fecha y hora de envío es igual o posterior a 2027-02-12 17:30:00.000 UTC) y (la fecha y hora de envío es estrictamente anterior a 2027-02-20 02:15:00.000 UTC) y (la edad es de 16 años o más) y ((la edad es de 18 años o más) o (hay consentimiento del tutor) o ((la persona es residente) y (la persona es miembro))).
+					196 heading Tarifa · se aplica la primera regla que corresponda, Value: 5
+						197 text Tarifa · se aplica la primera regla que corresponda
+					198 text Solo se cobra a las personas admitidas. Se aplica la primera regla que se cumpla, en este orden: 1. Si la persona es estudiante: 32,50 USD. 2. Si la persona tiene beca: 0,00 USD. 3. Si (la persona es residente) y (la persona es miembro): 18,50 USD. 4. Si la persona es residente: 34,50 USD. 5. Si la persona es miembro: 49,50 USD. Si no se cumple ninguna de las reglas anteriores: 63,50 USD.
+				199 button (collapsed) Original wording · preserved for review, Secondary Actions: Expand
+					200 text Original wording · preserved for review
+			204 heading Both editors approve this exact repair, Value: 3
+				205 text Both editors approve this exact repair
+			206 text A
+			207 text Alice
+			208 text Approved this repair B
+			209 text Bob
+			210 text Approved this repair Both approvals saved. Earlier receipts retain their original results.
+		214 button (collapsed) Original draft comparison, Secondary Actions: Expand
+			215 text Original draft comparison
+		109 container studio-form
+			110 container
+				111 text THE WORKING REGISTRATION FORM
+				112 heading What actually happens., Value: 2
+					113 text What actually happens.
+				114 text LIVE  v 3 Uses the jointly approved policy. Every result saves its policy version. Synthetic attendee facts · preview only until you submit Attendee label
+				115 text field (settable) Description: Registration attendee label, Value: Synthetic example attendee
+				116 text Age
+				117 stepper (settable, integer) Description: Registration age, Value: 17
+				118 checkbox (settable, integer) Description: Resident, Value: 1
+				119 text Resident
+				120 checkbox (settable, integer) Description: Student, Value: 1
+				121 text Student
+				122 checkbox (settable, integer) Description: Member, Value: 1
+				123 text Member
+				124 checkbox (settable, integer) Description: Guardian consent, Value: 0
+				125 text Guardian consent
+				126 checkbox (settable, integer) Description: Scholarship, Value: 0
+				127 text Scholarship Application time · UTC
+				128 date field (settable) Description: Registration time UTC, Value: 2027-02-16T12:00
+					129 container
+						240 stepper
+						241 stepper
+						242 stepper
+						243 stepper
+						244 stepper
+						245 stepper
+						246 stepper
+						247 stepper
+					138 pop up button Show local date and time picker Show local date and time picker
+				139 text Agreed policy  v 3 $32.50 registration First matching fee rule: Agreed student fee
+				140 button Submit test registration
+				141 text Simulation only · no payment is taken
+				248 container
+					249 text Receipt saved · policy v 3
+				250 text $32.50 registration
+			142 container Versioned registration receipts
+				143 heading Receipts keep the evidence. 2 saved, Value: 3
+					144 text Receipts keep the evidence. 2  saved
+				251 text SAME ATTENDEE. A NEW POLICY.
+				252 container
+					253 text Before · v 2 $18.50 registration
+				254 container
+					255 text After · v 3 $32.50 registration
+				256 text The facts match exactly. Both original receipts remain saved.
+				257 button Try these facts again
+				258 container
+					259 text Synthetic example attendee v 3 $32.50 registration 17  years ·  resident  ·  2027-02-16 · 12:00:00 UTC
+					260 button (collapsed) Attendee facts and receipt, Secondary Actions: Expand
+						261 text Attendee facts and receipt
+				216 container
+					217 text Synthetic open-bench-remote-repair-2027-fresh-01 before repair v 2 $18.50 registration 17  years ·  resident  ·  2027-02-16 · 12:00:00 UTC
+					218 button (collapsed) Attendee facts and receipt, Secondary Actions: Expand
+						219 text Attendee facts and receipt
+		146 button (collapsed) Inspect the agreed policy, rule trace, and search scope, Secondary Actions: Expand
+			147 text Inspect the agreed policy, rule trace, and search scope
+		148 button (collapsed) Advanced review tools · manual relay, Secondary Actions: Expand
+			149 text Advanced review tools · manual relay
+		150 text Synthetic attendees · fee simulation only · no payments or emails
+		151 button New simulated test
+		152 button New recorded demo
+		153 button New blank room
+		154 text SamePage / meaning made testable
+		8 link Description: Earlier policy lab, Value: 127.0.0.1:4178/consequences
+		9 link Description: Document collaboration, Value: 127.0.0.1:4178/
+
+The focused UI element is 0 AXWebArea SamePage — Two languages, one shared meaning, URL: 127.0.0.1:4178/studio?room=studio-ui-polish-local-20261026&editor=bob

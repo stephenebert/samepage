@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Check, CheckCircle2, ChevronDown, CircleAlert, Globe2, History, LoaderCircle, LockKeyhole, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { evaluateStudioPolicy } from "../../lib/studio-engine";
 import { realisticStudioWitness } from "../../lib/studio-witness";
+import { reconcileRepairBaseline } from "../../lib/studio-repair-controls";
+import { studioRepairPresentation } from "../../lib/studio-repair-presentation";
 import PolicySummary from "./policy-summary";
 import type { StudioAction, StudioAttendee, StudioDecision, StudioEditor, StudioFlag, StudioRepair, StudioRepairIntent, StudioRoom, StudioWitness } from "../../lib/studio-types";
 
@@ -58,6 +60,7 @@ export default function RepairPanel({ room, editor, busy, dirty, model, act, rec
   const [voting, setVoting] = useState(false);
   const [editedSinceCheck, setEditedSinceCheck] = useState(false);
   const candidates = room.review?.discovery.status !== "unresolved" ? room.review?.candidates.filter(candidate => candidate.rules && !candidate.issues.length) ?? [] : [];
+  const candidateIdsKey = JSON.stringify(candidates.map(candidate => candidate.id));
   const baseline = candidates.find(candidate => candidate.id === baselineId);
   const cents = feeValue(fee);
   const automatic = room.automaticRepair;
@@ -70,12 +73,8 @@ export default function RepairPanel({ room, editor, busy, dirty, model, act, rec
   const currentRepair = repair && repair.status !== "superseded" ? repair : null;
   const previousBlocked = [...(room.repairHistory ?? [])].reverse().find(item => item.status === "blocked" && item.impact?.verification.witnesses.length);
   const presentationKey = JSON.stringify([currentRepair, room.registrations]);
-  const intendedWitness = useMemo(() => {
-    const original = currentRepair?.impact?.changes.witnesses[0];
-    if (!original || !currentRepair?.proposal?.rules) return null;
-    const preferred = room.registrations.find(receipt => receipt.policyVersion === currentRepair.job.basePolicyVersion);
-    return realisticStudioWitness(currentRepair.job.baseline.rules, currentRepair.proposal.rules, original, preferred, currentRepair.job.intent.scopeFlag);
-  }, [presentationKey]);
+  const presentation = useMemo(() => studioRepairPresentation(currentRepair, room.registrations), [presentationKey]);
+  const intendedWitness = presentation.witness;
   useEffect(() => { if (repair?.status === "published") { setSetupOpen(false); setHistoryOpen(true); } }, [repair?.status]);
   const participants: StudioEditor[] = editor ? [editor] : ["alice", "bob"];
   const hasCollateralChange = currentRepair?.impact?.verification.witnesses.some(witness => witness.left.accepted !== witness.right.accepted || !witness.attendee[currentRepair.job.intent.scopeFlag]) ?? false;
@@ -84,8 +83,13 @@ export default function RepairPanel({ room, editor, busy, dirty, model, act, rec
     setBaselineId(repair.job.intent.baselineCandidateId); setScopeFlag(repair.job.intent.scopeFlag); setFee(String(repair.job.intent.feeCents / 100));
     setProposalEn(repair.job.proposalText?.en ?? ""); setProposalEs(repair.job.proposalText?.es ?? ""); setEditedSinceCheck(false);
   };
-  // Untouched controls follow a remotely received check; local edits never do.
-  useEffect(() => { if (!editedSinceCheck) restoreCheckedRequest(); }, [repair?.id, editedSinceCheck]);
+  // Restore or invalidate once: separate effects could clear a newly restored ID
+  // using the previous render's empty selection when a remote check arrived.
+  useEffect(() => {
+    const next = reconcileRepairBaseline(baselineId, editedSinceCheck, repair, room.review?.id, candidates.map(candidate => candidate.id));
+    if (next.restoreSavedRequest) restoreCheckedRequest();
+    else if (next.baselineId !== baselineId) setBaselineId(next.baselineId);
+  }, [repair?.id, repair?.status, editedSinceCheck, room.review?.id, candidateIdsKey, baselineId]);
 
   useEffect(() => {
     if (!running) return;
@@ -93,11 +97,6 @@ export default function RepairPanel({ room, editor, busy, dirty, model, act, rec
     const timer = setInterval(() => setClock(Date.now()), 1000);
     return () => clearInterval(timer);
   }, [running]);
-  // A new room/review cannot silently retain a baseline from older drafts.
-  useEffect(() => {
-    if (!room.review?.candidates.some(candidate => candidate.id === baselineId)) setBaselineId("");
-  }, [room.review?.id, baselineId, room.review?.candidates]);
-
   const submit = async (custom: boolean) => {
     if (!canRequest || cents === null) return;
     setBusy(true); setError(""); setLocalStartedAt(Date.now()); setClock(Date.now());
@@ -142,7 +141,7 @@ export default function RepairPanel({ room, editor, busy, dirty, model, act, rec
       {currentRepair.status === "failed" && <p className="sps-repair-error" role="status">{automatic?.error?.message || "No complete proposal was accepted. Retry explicitly when ready."}</p>}
       {currentRepair.impact && <>
         {currentRepair.impact.verification.witnesses.map(witness => <RepairWitness key={witness.id} repair={currentRepair} witness={witness} preferred={room.registrations.find(receipt => receipt.policyVersion === currentRepair.job.basePolicyVersion)} useAttendee={useAttendee} />)}
-        {currentRepair.status !== "blocked" && currentRepair.impact.status === "pass" && <><div className="sps-repair-checks"><span><CheckCircle2 size={15} /> Admission and deadlines preserved</span><span><CheckCircle2 size={15} /> Selected group receives the requested fee</span><span><CheckCircle2 size={15} /> All other fees preserved</span></div>{intendedWitness ? <div className="sps-repair-intended"><span className="sps-overline">The intended effect · synthetic example attendee</span><div><strong><small>Selected baseline</small>{outcome(intendedWitness.left)}</strong><ArrowRight size={17} /><strong><small>{currentRepair.status === "published" ? "Approved repair" : "Proposed repair"}</small>{outcome(intendedWitness.right)}</strong></div><p>For this {intendedWitness.attendee.age}-year-old {intendedWitness.attendee.resident ? "resident" : "nonresident"} in the selected group. Admission stays the same.</p><p>{currentRepair.status === "published" ? `The form now uses the approved repair, v${currentRepair.publishedVersion}.` : `The current form still uses policy v${room.published.version} until both editors approve.`}</p><div className="sps-repair-person">{GROUPS.map(group => <span key={group.value} className={intendedWitness.attendee[group.value] ? "positive" : ""}>{intendedWitness.attendee[group.value] ? group.value === "guardianConsent" ? "Guardian consent" : group.value === "scholarship" ? "Scholarship" : group.value === "resident" ? "Resident" : group.value === "student" ? "Student" : "Member" : group.negative}</span>)}</div><p>Applied {time(intendedWitness.attendee.submittedAt)}</p><button type="button" className="sps-button secondary" onClick={() => useAttendee(intendedWitness.attendee)}>Try this exact attendee in the form <ArrowRight size={12} /></button></div> : <p className="sps-repair-note">The baseline already produces the requested outcomes. No admission or fee change was found.</p>}</>}
+        {currentRepair.status !== "blocked" && currentRepair.impact.status === "pass" && <><div className="sps-repair-checks"><span><CheckCircle2 size={15} /> Admission and deadlines preserved</span><span><CheckCircle2 size={15} /> Selected group receives the requested fee</span><span><CheckCircle2 size={15} /> All other fees preserved</span></div>{intendedWitness ? <div className="sps-repair-intended"><span className="sps-overline">{presentation.receiptChange ? "The intended effect · same attendee as the receipts" : "The intended effect · synthetic example attendee"}</span><div><strong><small>Selected baseline</small>{outcome(intendedWitness.left)}</strong><ArrowRight size={17} /><strong><small>{currentRepair.status === "published" ? "Approved repair" : "Proposed repair"}</small>{outcome(intendedWitness.right)}</strong></div><p>For this {intendedWitness.attendee.age}-year-old {intendedWitness.attendee.resident ? "resident" : "nonresident"} in the selected group. Admission stays the same.</p><p>{currentRepair.status === "published" ? `The form now uses the approved repair, v${currentRepair.publishedVersion}.` : `The current form still uses policy v${room.published.version} until both editors approve.`}</p><div className="sps-repair-person">{GROUPS.map(group => <span key={group.value} className={intendedWitness.attendee[group.value] ? "positive" : ""}>{intendedWitness.attendee[group.value] ? group.value === "guardianConsent" ? "Guardian consent" : group.value === "scholarship" ? "Scholarship" : group.value === "resident" ? "Resident" : group.value === "student" ? "Student" : "Member" : group.negative}</span>)}</div><p>Applied {time(intendedWitness.attendee.submittedAt)}</p><button type="button" className="sps-button secondary" onClick={() => useAttendee(intendedWitness.attendee)}>Try this exact attendee in the form <ArrowRight size={12} /></button></div> : <p className="sps-repair-note">The baseline already produces the requested outcomes. No admission or fee change was found.</p>}</>}
         {currentRepair.impact.issues.length > 0 && <div className="sps-repair-issues">{currentRepair.impact.issues.map((issue, index) => <p key={index}>{issue}</p>)}</div>}
         <p className="sps-repair-scope">{currentRepair.impact.verification.checkedCases.toLocaleString()} representative cases checked across the supported rule domain. This checks the interpreted rules; both editors still need to review the wording.</p>
       </>}

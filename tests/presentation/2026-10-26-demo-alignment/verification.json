@@ -1,0 +1,46 @@
+{
+  "sourceCommit": "b17059557a4ea6321dd91f66ff38943755f4e519",
+  "siteVersion": "appgprj_6acf326d0f9c81918e24863d7a25c308~appgver_ed62c08b752c819188a936d5dfbab548",
+  "deployment": {
+    "id": "appgdep_6ae043d97b0881919915d679a6f3f668",
+    "status": "succeeded",
+    "env_set_revision": 21,
+    "updated_at": "2026-10-27T06:25:35.011068+00:00"
+  },
+  "roomId": "studio-6c297563-ae78-496c-95aa-05a39399f076",
+  "tests": {
+    "passed": 180,
+    "failed": 0,
+    "typeCheck": "passed",
+    "productionBuild": "passed"
+  },
+  "newExternalModelCalls": 0,
+  "studioModelCallsPaused": true,
+  "audience": "owner-private",
+  "localBrowser": {
+    "twoEditors": true,
+    "emptySelectorFollowedIncomingRepairWithoutReload": true,
+    "localRequestEditsPreserved": true,
+    "localFormEditsPreserved": true,
+    "oneVoteHeldVersion": 2,
+    "bothVotesPublishedVersion": 3,
+    "matchingAttendeeAge": 17,
+    "beforeFeeCents": 1850,
+    "afterFeeCents": 3250,
+    "originalReceiptPreserved": true,
+    "mode": "Controlled replay of saved responses, then actual local UI approvals and registration; no fresh model interpretation"
+  },
+  "hostedBrowser": {
+    "aliceAndBobVerified": true,
+    "savedBaseline": "Alice",
+    "impactAndReceiptAttendeeMatch": true,
+    "formPrefillsMatchingAttendee": true,
+    "beforeFeeCents": 1850,
+    "afterFeeCents": 3250,
+    "receiptCount": 2,
+    "publishedVersion": 3,
+    "hostedPolicyOrReceiptMutations": 0
+  },
+  "originalFreshArchiveChanged": false,
+  "buildEnvironmentNote": "The Sites build helper could not launch the absent npm binary. The declared package build script was run directly with the bundled Node runtime, passed, and the source helper packaged that output with no remaining commands."
+}

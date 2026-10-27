@@ -7,6 +7,7 @@ import type { StudioAction, StudioAttendee, StudioCandidate, StudioDecision, Stu
 import RepairPanel from "./repair-panel";
 import PolicySummary from "./policy-summary";
 import { realisticStudioWitness } from "../../lib/studio-witness";
+import { findStudioReceiptChange, studioRepairPresentation } from "../../lib/studio-repair-presentation";
 import "./studio.css";
 
 const PEOPLE = { alice: { name: "Alice", language: "en", label: "English" }, bob: { name: "Bob", language: "es", label: "Español" } } as const;
@@ -228,18 +229,6 @@ function ApprovalTrail({ review }: { review: NonNullable<StudioRoom["review"]> }
     return <div key={person} className={selected ? "chosen" : ""}><span className={`sps-avatar ${person}`}>{PEOPLE[person].name[0]}</span><div><strong>{PEOPLE[person].name}</strong><span>{selected ? `${PEOPLE[selected.editor].name}’s meaning selected` : "Waiting for a choice"}</span></div>{selected ? <CheckCircle2 size={16} /> : <span className="sps-choice-dot" />}</div>;
   })}</div>;
 }
-function findReceiptChange(receipts: StudioRegistration[]): { before: StudioRegistration; after: StudioRegistration } | null {
-  const facts: (keyof StudioAttendee)[] = ["age", "resident", "student", "member", "guardianConsent", "scholarship", "submittedAt"];
-  for (let i = receipts.length - 1; i > 0; i--) {
-    const after = receipts[i];
-    for (let j = i - 1; j >= 0; j--) {
-      const before = receipts[j];
-      if (before.policyVersion < after.policyVersion && facts.every(key => before[key] === after[key]) && (before.decision.accepted !== after.decision.accepted || before.decision.feeCents !== after.decision.feeCents)) return { before, after };
-    }
-  }
-  return null;
-}
-
 function DraftEditor({ person, room, act, onDirty }: { person: StudioEditor; room: StudioRoom; act: Act; onDirty: (person: StudioEditor, dirty: boolean) => void }) {
   const saved = room.drafts[person];
   const [draft, setDraft] = useState({ text: saved.text, baseVersion: saved.version, dirty: false });
@@ -268,7 +257,9 @@ function Voter({ person, room, act, witness }: { person: StudioEditor; room: Stu
 }
 
 function RegistrationForm({ room, act, transfer }: { room: StudioRoom; act: Act; transfer: Transfer | null }) {
-  const savedExample = room.repair?.status === "published" ? room.registrations.find(receipt => receipt.policyVersion === room.repair!.job.basePolicyVersion) : undefined;
+  const presentationKey = JSON.stringify([room.repair, room.registrations]);
+  const presentation = useMemo(() => studioRepairPresentation(room.repair, room.registrations), [presentationKey]);
+  const savedExample = room.repair?.status === "published" ? presentation.witness?.attendee : undefined;
   const [fields, setFields] = useState<Fields>(() => savedExample ? toFields(savedExample) : INITIAL_FIELDS);
   const [label, setLabel] = useState(() => savedExample ? "Example attendee · saved test facts" : "Synthetic demo attendee");
   const [busy, setBusy] = useState(false);
@@ -280,7 +271,7 @@ function RegistrationForm({ room, act, transfer }: { room: StudioRoom; act: Act;
   const preview = attendee ? evaluateStudioPolicy(room.published.rules, attendee) : null;
   const receipt = room.registrations.find(item => item.id === receiptId);
   const lastReceipts = [...room.registrations].reverse().slice(0, 3);
-  const proof = findReceiptChange(room.registrations);
+  const proof = room.repair && room.repair.status !== "superseded" ? presentation.receiptChange : findStudioReceiptChange(room.registrations);
   const reuseReceipt = (item: StudioRegistration) => { setFields(toFields(item)); setLabel(item.label); setReceiptId(null); pendingRegistration.current = null; setRetryPending(false); };
   const edit = <K extends keyof Fields>(field: K, value: Fields[K]) => { setFields(current => ({ ...current, [field]: value })); pendingRegistration.current = null; setRetryPending(false); };
   const submit = async (event: React.FormEvent) => {
