@@ -1,0 +1,1043 @@
+{
+  "passed": true,
+  "errors": [],
+  "concreteChecks": 30,
+  "concreteFailures": 0,
+  "checks": [
+    {
+      "id": "A01",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A02",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A03",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A04",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 6350
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 6350
+      },
+      "passed": true
+    },
+    {
+      "id": "A05",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A06",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A07",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1850
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1850
+      },
+      "passed": true
+    },
+    {
+      "id": "A08",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A09",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A10",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 6350
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 6350
+      },
+      "passed": true
+    },
+    {
+      "id": "A11",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 6350
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 6350
+      },
+      "passed": true
+    },
+    {
+      "id": "A12",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A13",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A14",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A15",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A16",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A17",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A18",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A19",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3450
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3450
+      },
+      "passed": true
+    },
+    {
+      "id": "A20",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 4950
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4950
+      },
+      "passed": true
+    },
+    {
+      "id": "A21",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A22",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A23",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A24",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3250
+      },
+      "passed": true
+    },
+    {
+      "id": "A25",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A26",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A27",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A28",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A29",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A30",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    }
+  ],
+  "oracleChecks": [
+    {
+      "editor": "repair",
+      "ok": true,
+      "stage": "repaired",
+      "checkedCases": 46464,
+      "boundaries": [
+        "2027-02-12T17:30:00.000Z",
+        "2027-02-20T02:15:00.000Z",
+        "2027-02-20T02:45:00.000Z"
+      ],
+      "mismatchCount": 0,
+      "mismatches": []
+    }
+  ],
+  "impact": {
+    "status": "pass",
+    "expectedRules": {
+      "eligibility": {
+        "op": "all",
+        "args": [
+          {
+            "op": "time",
+            "cmp": "gte",
+            "value": "2027-02-12T17:30:00.000Z"
+          },
+          {
+            "op": "time",
+            "cmp": "lt",
+            "value": "2027-02-20T02:15:00.000Z"
+          },
+          {
+            "op": "age",
+            "cmp": "gte",
+            "value": 16
+          },
+          {
+            "op": "any",
+            "args": [
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 18
+              },
+              {
+                "op": "flag",
+                "field": "guardianConsent",
+                "value": true
+              },
+              {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fee": {
+        "currency": "USD",
+        "defaultCents": 6350,
+        "overrides": [
+          {
+            "when": {
+              "op": "flag",
+              "field": "student",
+              "value": true
+            },
+            "cents": 3250,
+            "label": "Agreed student fee"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "scholarship",
+              "value": true
+            },
+            "cents": 0,
+            "label": "Scholarship"
+          },
+          {
+            "when": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                }
+              ]
+            },
+            "cents": 1850,
+            "label": "Resident AND member"
+          },
+          {
+            "when": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                }
+              ]
+            },
+            "cents": 2650,
+            "label": "Student AND member"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "resident",
+              "value": true
+            },
+            "cents": 3450,
+            "label": "Resident"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "student",
+              "value": true
+            },
+            "cents": 4550,
+            "label": "Student"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "member",
+              "value": true
+            },
+            "cents": 4950,
+            "label": "Member"
+          }
+        ]
+      }
+    },
+    "verification": {
+      "status": "equivalent",
+      "witnesses": [],
+      "checkedCases": 2048,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 8,
+        "flagCombinations": 32,
+        "timePartitions": 8,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    "changes": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "price-left-higher",
+          "kind": "price-only",
+          "attendee": {
+            "age": 24,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2027-02-12T17:30:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 4550,
+            "feeReason": {
+              "en": "First matching fee rule: Student",
+              "es": "Primera regla de tarifa aplicable: Student"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted < 2027-02-20T02:15:00.000Z",
+                "es": "inscripción < 2027-02-20T02:15:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": false,
+                "en": "(resident AND member)",
+                "es": "(residente Y miembro)"
+              },
+              {
+                "path": "eligibility.3.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.2.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.0",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.1",
+                "passed": false,
+                "en": "(resident AND member)",
+                "es": "(residente Y miembro)"
+              },
+              {
+                "path": "fee.1.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "fee.1.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.2",
+                "passed": false,
+                "en": "(student AND member)",
+                "es": "(estudiante Y miembro)"
+              },
+              {
+                "path": "fee.2.0",
+                "passed": true,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "fee.2.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.3",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "fee.4",
+                "passed": true,
+                "en": "student",
+                "es": "estudiante"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: Student",
+                "es": "Primera regla de tarifa aplicable: Student"
+              }
+            ]
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 3250,
+            "feeReason": {
+              "en": "First matching fee rule: Agreed student fee",
+              "es": "Primera regla de tarifa aplicable: Agreed student fee"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted < 2027-02-20T02:15:00.000Z",
+                "es": "inscripción < 2027-02-20T02:15:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": false,
+                "en": "(resident AND member)",
+                "es": "(residente Y miembro)"
+              },
+              {
+                "path": "eligibility.3.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.2.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.0",
+                "passed": true,
+                "en": "student",
+                "es": "estudiante"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: Agreed student fee",
+                "es": "Primera regla de tarifa aplicable: Agreed student fee"
+              }
+            ]
+          },
+          "feeDeltaCents": 1300,
+          "explanation": {
+            "en": "Both admit this person, but A charges $45.50 and B charges $32.50.",
+            "es": "Ambas admiten a esta persona, pero A cobra $45.50 y B cobra $32.50."
+          }
+        },
+        {
+          "id": "price-right-higher",
+          "kind": "price-only",
+          "attendee": {
+            "age": 24,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2027-02-12T17:30:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 0,
+            "feeReason": {
+              "en": "First matching fee rule: Scholarship",
+              "es": "Primera regla de tarifa aplicable: Scholarship"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted < 2027-02-20T02:15:00.000Z",
+                "es": "inscripción < 2027-02-20T02:15:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": false,
+                "en": "(resident AND member)",
+                "es": "(residente Y miembro)"
+              },
+              {
+                "path": "eligibility.3.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.2.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.0",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: Scholarship",
+                "es": "Primera regla de tarifa aplicable: Scholarship"
+              }
+            ]
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 3250,
+            "feeReason": {
+              "en": "First matching fee rule: Agreed student fee",
+              "es": "Primera regla de tarifa aplicable: Agreed student fee"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted < 2027-02-20T02:15:00.000Z",
+                "es": "inscripción < 2027-02-20T02:15:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": false,
+                "en": "(resident AND member)",
+                "es": "(residente Y miembro)"
+              },
+              {
+                "path": "eligibility.3.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.2.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.0",
+                "passed": true,
+                "en": "student",
+                "es": "estudiante"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: Agreed student fee",
+                "es": "Primera regla de tarifa aplicable: Agreed student fee"
+              }
+            ]
+          },
+          "feeDeltaCents": 3250,
+          "explanation": {
+            "en": "Both admit this person, but A charges $0.00 and B charges $32.50.",
+            "es": "Ambas admiten a esta persona, pero A cobra $0.00 y B cobra $32.50."
+          }
+        }
+      ],
+      "checkedCases": 2048,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 8,
+        "flagCombinations": 32,
+        "timePartitions": 8,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    "issues": []
+  }
+}

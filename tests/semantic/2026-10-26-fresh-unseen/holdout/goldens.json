@@ -1,0 +1,999 @@
+{
+  "schemaVersion": 1,
+  "caseId": "open-bench-remote-repair-2027-fresh-01",
+  "policySummary": {
+    "baselineIntent": "Choose Alice as the authoritative baseline before making the group fee edit.",
+    "feeEditIntent": "Every admitted student must pay exactly 3250 USD cents, regardless of scholarship, residence or membership. Preserve every admission outcome and every fee for applicants who are not students.",
+    "openingInclusive": "2027-02-12T17:30:00.000Z",
+    "closingExclusive": "2027-02-20T02:15:00.000Z",
+    "minimumAge": 16,
+    "adultAge": 18,
+    "aliceTeenConsentException": "resident AND member",
+    "bobTeenConsentException": "resident OR member",
+    "originalFirstMatchFees": [
+      {
+        "if": "scholarship",
+        "feeCents": 0
+      },
+      {
+        "if": "resident AND member",
+        "feeCents": 1850
+      },
+      {
+        "if": "student AND member",
+        "feeCents": 2650
+      },
+      {
+        "if": "resident",
+        "feeCents": 3450
+      },
+      {
+        "if": "student",
+        "feeCents": 4550
+      },
+      {
+        "if": "member",
+        "feeCents": 4950
+      },
+      {
+        "if": "otherwise",
+        "feeCents": 6350
+      }
+    ],
+    "repairedStudentFeeCents": 3250,
+    "unsafeOnlyUnintendedChange": "Closing deadline moves 30 minutes later to 2027-02-20T02:45:00.000Z exclusive."
+  },
+  "explicitAttendees": [
+    {
+      "id": "A01",
+      "reason": "Age zero cannot be admitted even with every status.",
+      "attendee": {
+        "age": 0,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A02",
+      "reason": "One year below the minimum cannot use the consent exception.",
+      "attendee": {
+        "age": 15,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A03",
+      "reason": "Minimum-age applicant without consent or exception.",
+      "attendee": {
+        "age": 16,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A04",
+      "reason": "Guardian consent admits an otherwise unqualified 16-year-old.",
+      "attendee": {
+        "age": 16,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 6350
+        }
+      }
+    },
+    {
+      "id": "A05",
+      "reason": "Resident-only teen exposes the intentional AND/OR disagreement.",
+      "attendee": {
+        "age": 17,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 3450
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A06",
+      "reason": "Member-only teen exposes the intentional AND/OR disagreement.",
+      "attendee": {
+        "age": 16,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 4950
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A07",
+      "reason": "Resident and member together waive consent under both drafts.",
+      "attendee": {
+        "age": 17,
+        "resident": true,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 1850
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 1850
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 1850
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 1850
+        }
+      }
+    },
+    {
+      "id": "A08",
+      "reason": "Student status alone never waives consent.",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A09",
+      "reason": "Scholarship status alone never waives consent.",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A10",
+      "reason": "The adult threshold removes the consent requirement.",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 6350
+        }
+      }
+    },
+    {
+      "id": "A11",
+      "reason": "The maximum supported age remains eligible.",
+      "attendee": {
+        "age": 120,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 6350
+        }
+      }
+    },
+    {
+      "id": "A12",
+      "reason": "A nonstudent scholarship preserves its free fee.",
+      "attendee": {
+        "age": 44,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 0
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 0
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 0
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 0
+        }
+      }
+    },
+    {
+      "id": "A13",
+      "reason": "Exact student fee overrides a scholarship.",
+      "attendee": {
+        "age": 44,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 0
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 0
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A14",
+      "reason": "Student fee wins even over every other discount.",
+      "attendee": {
+        "age": 44,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 0
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 0
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A15",
+      "reason": "Resident-member priority originally beats the student-member tier.",
+      "attendee": {
+        "age": 44,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 1850
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 1850
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A16",
+      "reason": "Student-member discount becomes the exact student fee.",
+      "attendee": {
+        "age": 44,
+        "resident": false,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 2650
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 2650
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A17",
+      "reason": "Resident fee originally beats the student-only fee.",
+      "attendee": {
+        "age": 44,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 3450
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 3450
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A18",
+      "reason": "Student-only fee becomes the exact student fee.",
+      "attendee": {
+        "age": 44,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 4550
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 4550
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A19",
+      "reason": "Nonstudent resident fee is preserved.",
+      "attendee": {
+        "age": 44,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 3450
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 3450
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3450
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3450
+        }
+      }
+    },
+    {
+      "id": "A20",
+      "reason": "Nonstudent member fee is preserved.",
+      "attendee": {
+        "age": 44,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-16T12:00:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 4950
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 4950
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 4950
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 4950
+        }
+      }
+    },
+    {
+      "id": "A21",
+      "reason": "One millisecond before opening is too early.",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-12T17:29:59.999Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A22",
+      "reason": "Opening is inclusive for a student with guardian consent.",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "submittedAt": "2027-02-12T17:30:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 4550
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 4550
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A23",
+      "reason": "One millisecond after opening with the two-status consent exception.",
+      "attendee": {
+        "age": 16,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-12T17:30:00.001Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 1850
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 1850
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A24",
+      "reason": "One millisecond before the original close is on time.",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-20T02:14:59.999Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": true,
+          "feeCents": 4550
+        },
+        "bob": {
+          "accepted": true,
+          "feeCents": 4550
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": true,
+          "feeCents": 3250
+        }
+      }
+    },
+    {
+      "id": "A25",
+      "reason": "Original closing instant exposes the unsafe admission extension.",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-20T02:15:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A26",
+      "reason": "Unsafe extension incorrectly admits a nonstudent one millisecond late.",
+      "attendee": {
+        "age": 44,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-20T02:15:00.001Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 4950
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A27",
+      "reason": "Unsafe extension incorrectly admits a teen using the valid exception.",
+      "attendee": {
+        "age": 17,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-20T02:30:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 3250
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A28",
+      "reason": "Last millisecond of the unsafe extension remains incorrectly eligible.",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-20T02:44:59.999Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": true,
+          "feeCents": 6350
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A29",
+      "reason": "Even the unsafe closing instant is excluded.",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-02-20T02:45:00.000Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    },
+    {
+      "id": "A30",
+      "reason": "After every deadline, scholarship does not restore eligibility.",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2027-02-20T02:45:00.001Z"
+      },
+      "expected": {
+        "alice": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "bob": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "unsafe": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "repaired": {
+          "accepted": false,
+          "feeCents": null
+        }
+      }
+    }
+  ],
+  "beforeAfterAttendee": {
+    "id": "canonical-student-resident-member-teen",
+    "reason": "A student admitted via the resident-and-member consent exception changes from 1850 to 3250 cents.",
+    "attendee": {
+      "age": 17,
+      "resident": true,
+      "student": true,
+      "member": true,
+      "guardianConsent": false,
+      "scholarship": false,
+      "submittedAt": "2027-02-16T12:00:00.000Z"
+    },
+    "before": {
+      "accepted": true,
+      "feeCents": 1850
+    },
+    "after": {
+      "accepted": true,
+      "feeCents": 3250
+    }
+  }
+}

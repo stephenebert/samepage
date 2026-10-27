@@ -1,0 +1,22 @@
+{
+  "status": "fresh-archive-verified",
+  "verifiedFiles": 85,
+  "sourceCommit": "def141d7b93f12709db9b264d104584303ff4bf4",
+  "runStatus": "passed",
+  "modelRequests": 3,
+  "concreteChecks": 120,
+  "independentOracleChecks": 185856,
+  "semanticMismatches": 0,
+  "bilingualAudit": "pass-with-text-notes",
+  "blockedAuthoredRepairs": 1,
+  "publishedGeneratedRepairs": 1,
+  "receipts": 2,
+  "beforeFeeCents": 1850,
+  "afterFeeCents": 3250,
+  "tokenRateEstimateUsd": 0.037673,
+  "conservativeEstimatedMaxUsd": 0.365568,
+  "actualBilledCostUsd": null,
+  "studioLiveCallsPaused": true,
+  "networkCalls": 0,
+  "filesWritten": 0
+}

@@ -1,0 +1,36 @@
+{
+  "runId": "08e06728-d792-4b71-8596-985b8e57e052",
+  "planSha256": "766c51a1605c1b41d0fb679d0d1bef1a08a3ec55f3c1b2b407dd0361029223b9",
+  "maxRequests": 3,
+  "status": "completed",
+  "modelPostAttempts": [
+    {
+      "sequence": 1,
+      "tag": "open-bench-remote-repair-2027-fresh-01-baseline",
+      "route": "/api/studio/studio-6c297563-ae78-496c-95aa-05a39399f076/review",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T06:03:38.346Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/005-open-bench-remote-repair-2027-fresh-01-baseline.json"
+    },
+    {
+      "sequence": 2,
+      "tag": "open-bench-remote-repair-2027-fresh-01-check-rewrite",
+      "route": "/api/studio/studio-6c297563-ae78-496c-95aa-05a39399f076/repair",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T06:03:51.057Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/009-open-bench-remote-repair-2027-fresh-01-check-rewrite.json"
+    },
+    {
+      "sequence": 3,
+      "tag": "open-bench-remote-repair-2027-fresh-01-generate-repair",
+      "route": "/api/studio/studio-6c297563-ae78-496c-95aa-05a39399f076/repair",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T06:04:01.148Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/013-open-bench-remote-repair-2027-fresh-01-generate-repair.json"
+    }
+  ],
+  "startedAt": "2026-10-27T06:03:37.451Z"
+}

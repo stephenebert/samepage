@@ -1,0 +1,3083 @@
+{
+  "kind": "samepage-studio-v1",
+  "id": "studio-6c297563-ae78-496c-95aa-05a39399f076",
+  "revision": 11,
+  "createdAt": "2026-10-27T06:03:37.710Z",
+  "updatedAt": "2026-10-27T06:04:08.233Z",
+  "mode": "automatic-model",
+  "published": {
+    "version": 2,
+    "en": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another.",
+    "es": "Banco Abierto: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción está abierta desde 2027-02-12T17:30:00.000Z inclusive hasta 2027-02-20T02:15:00.000Z exclusive. Compare la marca submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLas personas solicitantes deben tener al menos 16 años. Quienes tengan 18 años o más no necesitan consentimiento del tutor. Quienes tengan 16 o 17 años necesitan consentimiento del tutor salvo que sean A LA VEZ residentes Y miembros. Esas dos condiciones juntas eximen del consentimiento. Ser estudiante o tener beca no cambia la admisión. Toda persona solicitante debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra una tarifa cuando la persona es admitida. Las personas rechazadas no tienen tarifa (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada de tarifas en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores —resident, student, member, guardianConsent y scholarship— son booleanos independientes. Ninguna condición implica otra.",
+    "rules": {
+      "eligibility": {
+        "op": "all",
+        "args": [
+          {
+            "op": "time",
+            "cmp": "gte",
+            "value": "2027-02-12T17:30:00.000Z"
+          },
+          {
+            "op": "time",
+            "cmp": "lt",
+            "value": "2027-02-20T02:15:00.000Z"
+          },
+          {
+            "op": "age",
+            "cmp": "gte",
+            "value": 16
+          },
+          {
+            "op": "any",
+            "args": [
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 18
+              },
+              {
+                "op": "flag",
+                "field": "guardianConsent",
+                "value": true
+              },
+              {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fee": {
+        "currency": "USD",
+        "defaultCents": 6350,
+        "overrides": [
+          {
+            "when": {
+              "op": "flag",
+              "field": "scholarship",
+              "value": true
+            },
+            "cents": 0,
+            "label": "Scholarship"
+          },
+          {
+            "when": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                }
+              ]
+            },
+            "cents": 1850,
+            "label": "Resident AND member"
+          },
+          {
+            "when": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                }
+              ]
+            },
+            "cents": 2650,
+            "label": "Student AND member"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "resident",
+              "value": true
+            },
+            "cents": 3450,
+            "label": "Resident"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "student",
+              "value": true
+            },
+            "cents": 4550,
+            "label": "Student"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "member",
+              "value": true
+            },
+            "cents": 4950,
+            "label": "Member"
+          }
+        ]
+      }
+    },
+    "publishedAt": "2026-10-27T06:03:50.704Z",
+    "reviewId": "studio-review-3",
+    "candidateId": "studio-review-3-alice"
+  },
+  "drafts": {
+    "alice": {
+      "editor": "alice",
+      "language": "en",
+      "version": 2,
+      "text": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another."
+    },
+    "bob": {
+      "editor": "bob",
+      "language": "es",
+      "version": 2,
+      "text": "Open Bench: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción se abre el 2027-02-12T17:30:00.000Z, inclusive, y se cierra el 2027-02-20T02:15:00.000Z, sin incluir ese instante. Compare submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLa edad mínima es de 16 años. A partir de los 18 años no se requiere consentimiento del tutor. A los 16 o 17 años se requiere consentimiento del tutor salvo que la persona sea residente O miembro; basta cualquiera de esas dos condiciones para eximirla del consentimiento. Ser estudiante o tener beca no modifica la admisión. Toda persona debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra si la persona es admitida. Si se rechaza, la tarifa es nula (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores resident, student, member, guardianConsent y scholarship son booleanos independientes. Ningún estado implica otro."
+    }
+  },
+  "activeJob": null,
+  "review": {
+    "id": "studio-review-3",
+    "basePolicyVersion": 1,
+    "candidates": [
+      {
+        "id": "studio-review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another.",
+        "es": "Banco Abierto: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción está abierta desde 2027-02-12T17:30:00.000Z inclusive hasta 2027-02-20T02:15:00.000Z exclusive. Compare la marca submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLas personas solicitantes deben tener al menos 16 años. Quienes tengan 18 años o más no necesitan consentimiento del tutor. Quienes tengan 16 o 17 años necesitan consentimiento del tutor salvo que sean A LA VEZ residentes Y miembros. Esas dos condiciones juntas eximen del consentimiento. Ser estudiante o tener beca no cambia la admisión. Toda persona solicitante debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra una tarifa cuando la persona es admitida. Las personas rechazadas no tienen tarifa (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada de tarifas en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores —resident, student, member, guardianConsent y scholarship— son booleanos independientes. Ninguna condición implica otra.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2027-02-12T17:30:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2027-02-20T02:15:00.000Z"
+              },
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  },
+                  {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 6350,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "Scholarship"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 1850,
+                "label": "Resident AND member"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 2650,
+                "label": "Student AND member"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                "cents": 3450,
+                "label": "Resident"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 4550,
+                "label": "Student"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                },
+                "cents": 4950,
+                "label": "Member"
+              }
+            ]
+          }
+        },
+        "issues": []
+      },
+      {
+        "id": "studio-review-3-bob",
+        "editor": "bob",
+        "sourceVersion": 2,
+        "en": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare submittedAt exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nThe minimum age is 16. From age 18 no guardian consent is required. At age 16 or 17 guardian consent is required unless the person is a resident OR a member; either one of those two conditions is enough to waive consent. Being a student or having a scholarship does not change admission. Every person must satisfy both the registration window and the age and consent rule.\n\nCharge only if the person is admitted. If rejected, the fee is null. For admitted persons, apply the FIRST matching line of this ordered list in USD:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five flags resident, student, member, guardianConsent and scholarship are independent booleans. No status implies another.",
+        "es": "Open Bench: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción se abre el 2027-02-12T17:30:00.000Z, inclusive, y se cierra el 2027-02-20T02:15:00.000Z, sin incluir ese instante. Compare submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLa edad mínima es de 16 años. A partir de los 18 años no se requiere consentimiento del tutor. A los 16 o 17 años se requiere consentimiento del tutor salvo que la persona sea residente O miembro; basta cualquiera de esas dos condiciones para eximirla del consentimiento. Ser estudiante o tener beca no modifica la admisión. Toda persona debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra si la persona es admitida. Si se rechaza, la tarifa es nula (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores resident, student, member, guardianConsent y scholarship son booleanos independientes. Ningún estado implica otro.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2027-02-12T17:30:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2027-02-20T02:15:00.000Z"
+              },
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 6350,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "Scholarship"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 1850,
+                "label": "Resident AND member"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 2650,
+                "label": "Student AND member"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                "cents": 3450,
+                "label": "Resident"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 4550,
+                "label": "Student"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                },
+                "cents": 4950,
+                "label": "Member"
+              }
+            ]
+          }
+        },
+        "issues": []
+      }
+    ],
+    "votes": {},
+    "status": "published",
+    "provenance": "meta-model",
+    "discovery": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "admission-right",
+          "kind": "admission-right",
+          "attendee": {
+            "age": 17,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2027-02-12T17:30:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null,
+            "feeReason": {
+              "en": "No fee: admission denied.",
+              "es": "Sin tarifa: admisión denegada."
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": false,
+                "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted < 2027-02-20T02:15:00.000Z",
+                "es": "inscripción < 2027-02-20T02:15:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": false,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": false,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": false,
+                "en": "(resident AND member)",
+                "es": "(residente Y miembro)"
+              },
+              {
+                "path": "eligibility.3.2.0",
+                "passed": true,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.2.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Admission requires (submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member))).",
+                "es": "La admisión requiere (inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))."
+              }
+            ]
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 3450,
+            "feeReason": {
+              "en": "First matching fee rule: Resident",
+              "es": "Primera regla de tarifa aplicable: Resident"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR resident OR member))",
+                "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O residente O miembro))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted < 2027-02-20T02:15:00.000Z",
+                "es": "inscripción < 2027-02-20T02:15:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR resident OR member)",
+                "es": "(edad ≥ 18 O consentimiento del tutor O residente O miembro)"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": false,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": true,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.3",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.0",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.1",
+                "passed": false,
+                "en": "(resident AND member)",
+                "es": "(residente Y miembro)"
+              },
+              {
+                "path": "fee.1.0",
+                "passed": true,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "fee.1.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.2",
+                "passed": false,
+                "en": "(student AND member)",
+                "es": "(estudiante Y miembro)"
+              },
+              {
+                "path": "fee.2.0",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "fee.2.1",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.3",
+                "passed": true,
+                "en": "resident",
+                "es": "residente"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: Resident",
+                "es": "Primera regla de tarifa aplicable: Resident"
+              }
+            ]
+          },
+          "feeDeltaCents": null,
+          "explanation": {
+            "en": "B admits this person; A refuses them.",
+            "es": "B admite a esta persona; A la rechaza."
+          }
+        }
+      ],
+      "checkedCases": 2048,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 8,
+        "flagCombinations": 32,
+        "timePartitions": 8,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    "createdAt": "2026-10-27T06:03:49.118Z",
+    "publishedVersion": 2
+  },
+  "registrations": [
+    {
+      "requestId": "unseen-977c6a00-0efd-4d68-b425-63a0d4897cc5",
+      "policyVersion": 2,
+      "label": "Synthetic open-bench-remote-repair-2027-fresh-01 before repair",
+      "age": 17,
+      "resident": true,
+      "student": true,
+      "member": true,
+      "guardianConsent": false,
+      "scholarship": false,
+      "submittedAt": "2027-02-16T12:00:00.000Z",
+      "id": "studio-receipt-7",
+      "recordedAt": "2026-10-27T06:03:50.908Z",
+      "decision": {
+        "accepted": true,
+        "feeCents": 1850,
+        "feeReason": {
+          "en": "First matching fee rule: Resident AND member",
+          "es": "Primera regla de tarifa aplicable: Resident AND member"
+        },
+        "trace": [
+          {
+            "path": "eligibility",
+            "passed": true,
+            "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+            "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+          },
+          {
+            "path": "eligibility.0",
+            "passed": true,
+            "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+            "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+          },
+          {
+            "path": "eligibility.1",
+            "passed": true,
+            "en": "submitted < 2027-02-20T02:15:00.000Z",
+            "es": "inscripción < 2027-02-20T02:15:00.000Z"
+          },
+          {
+            "path": "eligibility.2",
+            "passed": true,
+            "en": "age ≥ 16",
+            "es": "edad ≥ 16"
+          },
+          {
+            "path": "eligibility.3",
+            "passed": true,
+            "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+            "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+          },
+          {
+            "path": "eligibility.3.0",
+            "passed": false,
+            "en": "age ≥ 18",
+            "es": "edad ≥ 18"
+          },
+          {
+            "path": "eligibility.3.1",
+            "passed": false,
+            "en": "guardian consent",
+            "es": "consentimiento del tutor"
+          },
+          {
+            "path": "eligibility.3.2",
+            "passed": true,
+            "en": "(resident AND member)",
+            "es": "(residente Y miembro)"
+          },
+          {
+            "path": "eligibility.3.2.0",
+            "passed": true,
+            "en": "resident",
+            "es": "residente"
+          },
+          {
+            "path": "eligibility.3.2.1",
+            "passed": true,
+            "en": "member",
+            "es": "miembro"
+          },
+          {
+            "path": "fee.0",
+            "passed": false,
+            "en": "scholarship",
+            "es": "beca"
+          },
+          {
+            "path": "fee.1",
+            "passed": true,
+            "en": "(resident AND member)",
+            "es": "(residente Y miembro)"
+          },
+          {
+            "path": "fee.1.0",
+            "passed": true,
+            "en": "resident",
+            "es": "residente"
+          },
+          {
+            "path": "fee.1.1",
+            "passed": true,
+            "en": "member",
+            "es": "miembro"
+          }
+        ],
+        "reasons": [
+          {
+            "en": "Meets the complete admission rule.",
+            "es": "Cumple la regla completa de admisión."
+          },
+          {
+            "en": "First matching fee rule: Resident AND member",
+            "es": "Primera regla de tarifa aplicable: Resident AND member"
+          }
+        ]
+      }
+    }
+  ],
+  "modelCallCount": 3,
+  "automaticReview": {
+    "requestId": "a198aa45-ae9c-49c0-ba36-385b8c897713",
+    "jobId": "studio-review-3",
+    "provider": "Meta",
+    "model": "muse-spark-1.3",
+    "protocol": "expression-v3",
+    "reasoningEffort": "low",
+    "requestedEditors": [
+      "alice",
+      "bob"
+    ],
+    "reusedEditors": [],
+    "source": "meta",
+    "status": "completed",
+    "startedAt": "2026-10-27T06:03:38.736Z",
+    "leaseExpiresAt": "2026-10-27T06:05:08.736Z",
+    "finishedAt": "2026-10-27T06:03:49.118Z",
+    "durationMs": 10382,
+    "metrics": {
+      "providerDurationMs": 10174,
+      "requestBytes": 7903,
+      "responseContentBytes": 3964,
+      "promptTokens": 1754,
+      "completionTokens": 2270,
+      "totalTokens": 4024,
+      "reasoningTokens": 1199,
+      "cachedInputTokens": 0,
+      "finishReason": "stop",
+      "maxCompletionTokens": 8192
+    }
+  },
+  "repair": {
+    "id": "repair-97061665-4002-41e5-8666-2154719feb41",
+    "job": {
+      "id": "repair-97061665-4002-41e5-8666-2154719feb41",
+      "reviewId": "studio-review-3",
+      "basePolicyVersion": 2,
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Open Bench: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción se abre el 2027-02-12T17:30:00.000Z, inclusive, y se cierra el 2027-02-20T02:15:00.000Z, sin incluir ese instante. Compare submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLa edad mínima es de 16 años. A partir de los 18 años no se requiere consentimiento del tutor. A los 16 o 17 años se requiere consentimiento del tutor salvo que la persona sea residente O miembro; basta cualquiera de esas dos condiciones para eximirla del consentimiento. Ser estudiante o tener beca no modifica la admisión. Toda persona debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra si la persona es admitida. Si se rechaza, la tarifa es nula (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores resident, student, member, guardianConsent y scholarship son booleanos independientes. Ningún estado implica otro."
+        }
+      },
+      "baseline": {
+        "id": "studio-review-3-alice",
+        "editor": "alice",
+        "sourceVersion": 2,
+        "en": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another.",
+        "es": "Banco Abierto: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción está abierta desde 2027-02-12T17:30:00.000Z inclusive hasta 2027-02-20T02:15:00.000Z exclusive. Compare la marca submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLas personas solicitantes deben tener al menos 16 años. Quienes tengan 18 años o más no necesitan consentimiento del tutor. Quienes tengan 16 o 17 años necesitan consentimiento del tutor salvo que sean A LA VEZ residentes Y miembros. Esas dos condiciones juntas eximen del consentimiento. Ser estudiante o tener beca no cambia la admisión. Toda persona solicitante debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra una tarifa cuando la persona es admitida. Las personas rechazadas no tienen tarifa (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada de tarifas en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores —resident, student, member, guardianConsent y scholarship— son booleanos independientes. Ninguna condición implica otra.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2027-02-12T17:30:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2027-02-20T02:15:00.000Z"
+              },
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  },
+                  {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 6350,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "Scholarship"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 1850,
+                "label": "Resident AND member"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 2650,
+                "label": "Student AND member"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                "cents": 3450,
+                "label": "Resident"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 4550,
+                "label": "Student"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                },
+                "cents": 4950,
+                "label": "Member"
+              }
+            ]
+          }
+        },
+        "issues": []
+      },
+      "intent": {
+        "baselineCandidateId": "studio-review-3-alice",
+        "scopeFlag": "student",
+        "feeCents": 3250
+      },
+      "createdAt": "2026-10-27T06:04:01.203Z"
+    },
+    "proposal": {
+      "en": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Student: $32.50 (3250 cents).\n2. Scholarship: $0.00 (0 cents).\n3. Resident AND member: $18.50 (1850 cents).\n4. Resident: $34.50 (3450 cents).\n5. Member: $49.50 (4950 cents).\n6. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another.",
+      "es": "Banco Abierto: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción está abierta desde 2027-02-12T17:30:00.000Z inclusive hasta 2027-02-20T02:15:00.000Z exclusive. Compare la marca submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLas personas solicitantes deben tener al menos 16 años. Quienes tengan 18 años o más no necesitan consentimiento del tutor. Quienes tengan 16 o 17 años necesitan consentimiento del tutor salvo que sean A LA VEZ residentes Y miembros. Esas dos condiciones juntas eximen del consentimiento. Ser estudiante o tener beca no cambia la admisión. Toda persona solicitante debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra una tarifa cuando la persona es admitida. Las personas rechazadas no tienen tarifa (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada de tarifas en USD:\n1. Estudiante: $32.50 (3250 centavos).\n2. Beca: $0.00 (0 centavos).\n3. Residente Y miembro: $18.50 (1850 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Miembro: $49.50 (4950 centavos).\n6. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores —resident, student, member, guardianConsent y scholarship— son booleanos independientes. Ninguna condición implica otra.",
+      "rules": {
+        "eligibility": {
+          "op": "all",
+          "args": [
+            {
+              "op": "time",
+              "cmp": "gte",
+              "value": "2027-02-12T17:30:00.000Z"
+            },
+            {
+              "op": "time",
+              "cmp": "lt",
+              "value": "2027-02-20T02:15:00.000Z"
+            },
+            {
+              "op": "age",
+              "cmp": "gte",
+              "value": 16
+            },
+            {
+              "op": "any",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 18
+                },
+                {
+                  "op": "flag",
+                  "field": "guardianConsent",
+                  "value": true
+                },
+                {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "fee": {
+          "currency": "USD",
+          "defaultCents": 6350,
+          "overrides": [
+            {
+              "when": {
+                "op": "flag",
+                "field": "student",
+                "value": true
+              },
+              "cents": 3250,
+              "label": "Agreed student fee"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "scholarship",
+                "value": true
+              },
+              "cents": 0,
+              "label": "Scholarship"
+            },
+            {
+              "when": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              },
+              "cents": 1850,
+              "label": "Resident AND member"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "resident",
+                "value": true
+              },
+              "cents": 3450,
+              "label": "Resident"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "member",
+                "value": true
+              },
+              "cents": 4950,
+              "label": "Member"
+            }
+          ]
+        }
+      },
+      "issues": []
+    },
+    "impact": {
+      "status": "pass",
+      "expectedRules": {
+        "eligibility": {
+          "op": "all",
+          "args": [
+            {
+              "op": "time",
+              "cmp": "gte",
+              "value": "2027-02-12T17:30:00.000Z"
+            },
+            {
+              "op": "time",
+              "cmp": "lt",
+              "value": "2027-02-20T02:15:00.000Z"
+            },
+            {
+              "op": "age",
+              "cmp": "gte",
+              "value": 16
+            },
+            {
+              "op": "any",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 18
+                },
+                {
+                  "op": "flag",
+                  "field": "guardianConsent",
+                  "value": true
+                },
+                {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "fee": {
+          "currency": "USD",
+          "defaultCents": 6350,
+          "overrides": [
+            {
+              "when": {
+                "op": "flag",
+                "field": "student",
+                "value": true
+              },
+              "cents": 3250,
+              "label": "Agreed student fee"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "scholarship",
+                "value": true
+              },
+              "cents": 0,
+              "label": "Scholarship"
+            },
+            {
+              "when": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              },
+              "cents": 1850,
+              "label": "Resident AND member"
+            },
+            {
+              "when": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              },
+              "cents": 2650,
+              "label": "Student AND member"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "resident",
+                "value": true
+              },
+              "cents": 3450,
+              "label": "Resident"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "student",
+                "value": true
+              },
+              "cents": 4550,
+              "label": "Student"
+            },
+            {
+              "when": {
+                "op": "flag",
+                "field": "member",
+                "value": true
+              },
+              "cents": 4950,
+              "label": "Member"
+            }
+          ]
+        }
+      },
+      "verification": {
+        "status": "equivalent",
+        "witnesses": [],
+        "checkedCases": 2048,
+        "issues": [],
+        "coverage": {
+          "ageValues": 121,
+          "agePartitions": 8,
+          "flagCombinations": 32,
+          "timePartitions": 8,
+          "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+        }
+      },
+      "changes": {
+        "status": "different",
+        "witnesses": [
+          {
+            "id": "price-left-higher",
+            "kind": "price-only",
+            "attendee": {
+              "age": 24,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2027-02-12T17:30:00.000Z"
+            },
+            "left": {
+              "accepted": true,
+              "feeCents": 4550,
+              "feeReason": {
+                "en": "First matching fee rule: Student",
+                "es": "Primera regla de tarifa aplicable: Student"
+              },
+              "trace": [
+                {
+                  "path": "eligibility",
+                  "passed": true,
+                  "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                  "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                },
+                {
+                  "path": "eligibility.0",
+                  "passed": true,
+                  "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                  "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                },
+                {
+                  "path": "eligibility.1",
+                  "passed": true,
+                  "en": "submitted < 2027-02-20T02:15:00.000Z",
+                  "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                },
+                {
+                  "path": "eligibility.2",
+                  "passed": true,
+                  "en": "age ≥ 16",
+                  "es": "edad ≥ 16"
+                },
+                {
+                  "path": "eligibility.3",
+                  "passed": true,
+                  "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                  "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                },
+                {
+                  "path": "eligibility.3.0",
+                  "passed": true,
+                  "en": "age ≥ 18",
+                  "es": "edad ≥ 18"
+                },
+                {
+                  "path": "eligibility.3.1",
+                  "passed": false,
+                  "en": "guardian consent",
+                  "es": "consentimiento del tutor"
+                },
+                {
+                  "path": "eligibility.3.2",
+                  "passed": false,
+                  "en": "(resident AND member)",
+                  "es": "(residente Y miembro)"
+                },
+                {
+                  "path": "eligibility.3.2.0",
+                  "passed": false,
+                  "en": "resident",
+                  "es": "residente"
+                },
+                {
+                  "path": "eligibility.3.2.1",
+                  "passed": false,
+                  "en": "member",
+                  "es": "miembro"
+                },
+                {
+                  "path": "fee.0",
+                  "passed": false,
+                  "en": "scholarship",
+                  "es": "beca"
+                },
+                {
+                  "path": "fee.1",
+                  "passed": false,
+                  "en": "(resident AND member)",
+                  "es": "(residente Y miembro)"
+                },
+                {
+                  "path": "fee.1.0",
+                  "passed": false,
+                  "en": "resident",
+                  "es": "residente"
+                },
+                {
+                  "path": "fee.1.1",
+                  "passed": false,
+                  "en": "member",
+                  "es": "miembro"
+                },
+                {
+                  "path": "fee.2",
+                  "passed": false,
+                  "en": "(student AND member)",
+                  "es": "(estudiante Y miembro)"
+                },
+                {
+                  "path": "fee.2.0",
+                  "passed": true,
+                  "en": "student",
+                  "es": "estudiante"
+                },
+                {
+                  "path": "fee.2.1",
+                  "passed": false,
+                  "en": "member",
+                  "es": "miembro"
+                },
+                {
+                  "path": "fee.3",
+                  "passed": false,
+                  "en": "resident",
+                  "es": "residente"
+                },
+                {
+                  "path": "fee.4",
+                  "passed": true,
+                  "en": "student",
+                  "es": "estudiante"
+                }
+              ],
+              "reasons": [
+                {
+                  "en": "Meets the complete admission rule.",
+                  "es": "Cumple la regla completa de admisión."
+                },
+                {
+                  "en": "First matching fee rule: Student",
+                  "es": "Primera regla de tarifa aplicable: Student"
+                }
+              ]
+            },
+            "right": {
+              "accepted": true,
+              "feeCents": 3250,
+              "feeReason": {
+                "en": "First matching fee rule: Agreed student fee",
+                "es": "Primera regla de tarifa aplicable: Agreed student fee"
+              },
+              "trace": [
+                {
+                  "path": "eligibility",
+                  "passed": true,
+                  "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                  "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                },
+                {
+                  "path": "eligibility.0",
+                  "passed": true,
+                  "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                  "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                },
+                {
+                  "path": "eligibility.1",
+                  "passed": true,
+                  "en": "submitted < 2027-02-20T02:15:00.000Z",
+                  "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                },
+                {
+                  "path": "eligibility.2",
+                  "passed": true,
+                  "en": "age ≥ 16",
+                  "es": "edad ≥ 16"
+                },
+                {
+                  "path": "eligibility.3",
+                  "passed": true,
+                  "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                  "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                },
+                {
+                  "path": "eligibility.3.0",
+                  "passed": true,
+                  "en": "age ≥ 18",
+                  "es": "edad ≥ 18"
+                },
+                {
+                  "path": "eligibility.3.1",
+                  "passed": false,
+                  "en": "guardian consent",
+                  "es": "consentimiento del tutor"
+                },
+                {
+                  "path": "eligibility.3.2",
+                  "passed": false,
+                  "en": "(resident AND member)",
+                  "es": "(residente Y miembro)"
+                },
+                {
+                  "path": "eligibility.3.2.0",
+                  "passed": false,
+                  "en": "resident",
+                  "es": "residente"
+                },
+                {
+                  "path": "eligibility.3.2.1",
+                  "passed": false,
+                  "en": "member",
+                  "es": "miembro"
+                },
+                {
+                  "path": "fee.0",
+                  "passed": true,
+                  "en": "student",
+                  "es": "estudiante"
+                }
+              ],
+              "reasons": [
+                {
+                  "en": "Meets the complete admission rule.",
+                  "es": "Cumple la regla completa de admisión."
+                },
+                {
+                  "en": "First matching fee rule: Agreed student fee",
+                  "es": "Primera regla de tarifa aplicable: Agreed student fee"
+                }
+              ]
+            },
+            "feeDeltaCents": 1300,
+            "explanation": {
+              "en": "Both admit this person, but A charges $45.50 and B charges $32.50.",
+              "es": "Ambas admiten a esta persona, pero A cobra $45.50 y B cobra $32.50."
+            }
+          },
+          {
+            "id": "price-right-higher",
+            "kind": "price-only",
+            "attendee": {
+              "age": 24,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2027-02-12T17:30:00.000Z"
+            },
+            "left": {
+              "accepted": true,
+              "feeCents": 0,
+              "feeReason": {
+                "en": "First matching fee rule: Scholarship",
+                "es": "Primera regla de tarifa aplicable: Scholarship"
+              },
+              "trace": [
+                {
+                  "path": "eligibility",
+                  "passed": true,
+                  "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                  "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                },
+                {
+                  "path": "eligibility.0",
+                  "passed": true,
+                  "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                  "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                },
+                {
+                  "path": "eligibility.1",
+                  "passed": true,
+                  "en": "submitted < 2027-02-20T02:15:00.000Z",
+                  "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                },
+                {
+                  "path": "eligibility.2",
+                  "passed": true,
+                  "en": "age ≥ 16",
+                  "es": "edad ≥ 16"
+                },
+                {
+                  "path": "eligibility.3",
+                  "passed": true,
+                  "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                  "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                },
+                {
+                  "path": "eligibility.3.0",
+                  "passed": true,
+                  "en": "age ≥ 18",
+                  "es": "edad ≥ 18"
+                },
+                {
+                  "path": "eligibility.3.1",
+                  "passed": false,
+                  "en": "guardian consent",
+                  "es": "consentimiento del tutor"
+                },
+                {
+                  "path": "eligibility.3.2",
+                  "passed": false,
+                  "en": "(resident AND member)",
+                  "es": "(residente Y miembro)"
+                },
+                {
+                  "path": "eligibility.3.2.0",
+                  "passed": false,
+                  "en": "resident",
+                  "es": "residente"
+                },
+                {
+                  "path": "eligibility.3.2.1",
+                  "passed": false,
+                  "en": "member",
+                  "es": "miembro"
+                },
+                {
+                  "path": "fee.0",
+                  "passed": true,
+                  "en": "scholarship",
+                  "es": "beca"
+                }
+              ],
+              "reasons": [
+                {
+                  "en": "Meets the complete admission rule.",
+                  "es": "Cumple la regla completa de admisión."
+                },
+                {
+                  "en": "First matching fee rule: Scholarship",
+                  "es": "Primera regla de tarifa aplicable: Scholarship"
+                }
+              ]
+            },
+            "right": {
+              "accepted": true,
+              "feeCents": 3250,
+              "feeReason": {
+                "en": "First matching fee rule: Agreed student fee",
+                "es": "Primera regla de tarifa aplicable: Agreed student fee"
+              },
+              "trace": [
+                {
+                  "path": "eligibility",
+                  "passed": true,
+                  "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                  "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                },
+                {
+                  "path": "eligibility.0",
+                  "passed": true,
+                  "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                  "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                },
+                {
+                  "path": "eligibility.1",
+                  "passed": true,
+                  "en": "submitted < 2027-02-20T02:15:00.000Z",
+                  "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                },
+                {
+                  "path": "eligibility.2",
+                  "passed": true,
+                  "en": "age ≥ 16",
+                  "es": "edad ≥ 16"
+                },
+                {
+                  "path": "eligibility.3",
+                  "passed": true,
+                  "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                  "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                },
+                {
+                  "path": "eligibility.3.0",
+                  "passed": true,
+                  "en": "age ≥ 18",
+                  "es": "edad ≥ 18"
+                },
+                {
+                  "path": "eligibility.3.1",
+                  "passed": false,
+                  "en": "guardian consent",
+                  "es": "consentimiento del tutor"
+                },
+                {
+                  "path": "eligibility.3.2",
+                  "passed": false,
+                  "en": "(resident AND member)",
+                  "es": "(residente Y miembro)"
+                },
+                {
+                  "path": "eligibility.3.2.0",
+                  "passed": false,
+                  "en": "resident",
+                  "es": "residente"
+                },
+                {
+                  "path": "eligibility.3.2.1",
+                  "passed": false,
+                  "en": "member",
+                  "es": "miembro"
+                },
+                {
+                  "path": "fee.0",
+                  "passed": true,
+                  "en": "student",
+                  "es": "estudiante"
+                }
+              ],
+              "reasons": [
+                {
+                  "en": "Meets the complete admission rule.",
+                  "es": "Cumple la regla completa de admisión."
+                },
+                {
+                  "en": "First matching fee rule: Agreed student fee",
+                  "es": "Primera regla de tarifa aplicable: Agreed student fee"
+                }
+              ]
+            },
+            "feeDeltaCents": 3250,
+            "explanation": {
+              "en": "Both admit this person, but A charges $0.00 and B charges $32.50.",
+              "es": "Ambas admiten a esta persona, pero A cobra $0.00 y B cobra $32.50."
+            }
+          }
+        ],
+        "checkedCases": 2048,
+        "issues": [],
+        "coverage": {
+          "ageValues": 121,
+          "agePartitions": 8,
+          "flagCombinations": 32,
+          "timePartitions": 8,
+          "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+        }
+      },
+      "issues": []
+    },
+    "votes": {},
+    "status": "ready",
+    "createdAt": "2026-10-27T06:04:01.203Z",
+    "completedAt": "2026-10-27T06:04:08.233Z"
+  },
+  "automaticRepair": {
+    "requestId": "97061665-4002-41e5-8666-2154719feb41",
+    "jobId": "repair-97061665-4002-41e5-8666-2154719feb41",
+    "provider": "Meta",
+    "model": "muse-spark-1.3",
+    "protocol": "expression-v3",
+    "reasoningEffort": "low",
+    "requestedEditors": [
+      "alice",
+      "bob"
+    ],
+    "reusedEditors": [],
+    "source": "meta",
+    "status": "completed",
+    "startedAt": "2026-10-27T06:04:01.203Z",
+    "leaseExpiresAt": "2026-10-27T06:05:31.203Z",
+    "finishedAt": "2026-10-27T06:04:08.233Z",
+    "durationMs": 7030,
+    "metrics": {
+      "providerDurationMs": 6722,
+      "requestBytes": 10127,
+      "responseContentBytes": 3824,
+      "promptTokens": 2302,
+      "completionTokens": 1903,
+      "totalTokens": 4205,
+      "reasoningTokens": 796,
+      "cachedInputTokens": 0,
+      "finishReason": "stop",
+      "maxCompletionTokens": 8192
+    }
+  },
+  "repairHistory": [
+    {
+      "id": "repair-68d204ad-6fc5-4a64-8821-a2eb112fb586",
+      "job": {
+        "id": "repair-68d204ad-6fc5-4a64-8821-a2eb112fb586",
+        "reviewId": "studio-review-3",
+        "basePolicyVersion": 2,
+        "drafts": {
+          "alice": {
+            "editor": "alice",
+            "language": "en",
+            "version": 2,
+            "text": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another."
+          },
+          "bob": {
+            "editor": "bob",
+            "language": "es",
+            "version": 2,
+            "text": "Open Bench: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción se abre el 2027-02-12T17:30:00.000Z, inclusive, y se cierra el 2027-02-20T02:15:00.000Z, sin incluir ese instante. Compare submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLa edad mínima es de 16 años. A partir de los 18 años no se requiere consentimiento del tutor. A los 16 o 17 años se requiere consentimiento del tutor salvo que la persona sea residente O miembro; basta cualquiera de esas dos condiciones para eximirla del consentimiento. Ser estudiante o tener beca no modifica la admisión. Toda persona debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra si la persona es admitida. Si se rechaza, la tarifa es nula (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores resident, student, member, guardianConsent y scholarship son booleanos independientes. Ningún estado implica otro."
+          }
+        },
+        "baseline": {
+          "id": "studio-review-3-alice",
+          "editor": "alice",
+          "sourceVersion": 2,
+          "en": "Open Bench: Remote Repair Lab — registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:15:00.000Z exclusive. Compare the submittedAt timestamp exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). For admitted applicants, use the FIRST matching line in this ordered USD fee list:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Student AND member: $26.50 (2650 cents).\n4. Resident: $34.50 (3450 cents).\n5. Student: $45.50 (4550 cents).\n6. Member: $49.50 (4950 cents).\n7. Otherwise: $63.50 (6350 cents).\n\nThe five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another.",
+          "es": "Banco Abierto: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción está abierta desde 2027-02-12T17:30:00.000Z inclusive hasta 2027-02-20T02:15:00.000Z exclusive. Compare la marca submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLas personas solicitantes deben tener al menos 16 años. Quienes tengan 18 años o más no necesitan consentimiento del tutor. Quienes tengan 16 o 17 años necesitan consentimiento del tutor salvo que sean A LA VEZ residentes Y miembros. Esas dos condiciones juntas eximen del consentimiento. Ser estudiante o tener beca no cambia la admisión. Toda persona solicitante debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra una tarifa cuando la persona es admitida. Las personas rechazadas no tienen tarifa (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada de tarifas en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores —resident, student, member, guardianConsent y scholarship— son booleanos independientes. Ninguna condición implica otra.",
+          "rules": {
+            "eligibility": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "time",
+                  "cmp": "gte",
+                  "value": "2027-02-12T17:30:00.000Z"
+                },
+                {
+                  "op": "time",
+                  "cmp": "lt",
+                  "value": "2027-02-20T02:15:00.000Z"
+                },
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 16
+                },
+                {
+                  "op": "any",
+                  "args": [
+                    {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 18
+                    },
+                    {
+                      "op": "flag",
+                      "field": "guardianConsent",
+                      "value": true
+                    },
+                    {
+                      "op": "all",
+                      "args": [
+                        {
+                          "op": "flag",
+                          "field": "resident",
+                          "value": true
+                        },
+                        {
+                          "op": "flag",
+                          "field": "member",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "fee": {
+              "currency": "USD",
+              "defaultCents": 6350,
+              "overrides": [
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  },
+                  "cents": 0,
+                  "label": "Scholarship"
+                },
+                {
+                  "when": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "cents": 1850,
+                  "label": "Resident AND member"
+                },
+                {
+                  "when": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "student",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "cents": 2650,
+                  "label": "Student AND member"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  "cents": 3450,
+                  "label": "Resident"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  "cents": 4550,
+                  "label": "Student"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  "cents": 4950,
+                  "label": "Member"
+                }
+              ]
+            }
+          },
+          "issues": []
+        },
+        "intent": {
+          "baselineCandidateId": "studio-review-3-alice",
+          "scopeFlag": "student",
+          "feeCents": 3250
+        },
+        "proposalText": {
+          "en": "Open Bench: Remote Repair Lab — revised registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:45:00.000Z exclusive. Compare submittedAt exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). Every admitted student pays exactly $32.50 (3250 cents), including students with a scholarship and students who are residents or members. This student fee takes priority over every other fee rule. For admitted nonstudents, use the FIRST matching line:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Resident: $34.50 (3450 cents).\n4. Member: $49.50 (4950 cents).\n5. Otherwise: $63.50 (6350 cents).\n\nAll amounts are USD. The five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another.",
+          "es": "Open Bench: Laboratorio remoto de reparación — política de inscripción revisada\n\nLa inscripción se abre el 2027-02-12T17:30:00.000Z, inclusive, y se cierra el 2027-02-20T02:45:00.000Z, sin incluir ese instante. Compare submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLa edad mínima es de 16 años. A partir de los 18 años no se requiere consentimiento del tutor. A los 16 o 17 años se requiere consentimiento salvo que la persona sea residente Y miembro a la vez. Esas dos condiciones juntas eximen del consentimiento. Ser estudiante o tener beca no modifica la admisión. Toda persona debe cumplir tanto el plazo como la regla de edad y consentimiento.\n\nSolo se cobra a las personas admitidas; si se rechazan, la tarifa es nula (null). Cada estudiante admitido paga exactamente $32.50 (3250 centavos), incluso con beca o si es residente o miembro. Esta tarifa de estudiante tiene prioridad sobre todas las demás. Para las personas admitidas que NO son estudiantes, aplique la PRIMERA línea coincidente:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Residente: $34.50 (3450 centavos).\n4. Miembro: $49.50 (4950 centavos).\n5. En cualquier otro caso: $63.50 (6350 centavos).\n\nTodos los importes son USD. Los cinco indicadores resident, student, member, guardianConsent y scholarship son booleanos independientes. Ningún estado implica otro."
+        },
+        "createdAt": "2026-10-27T06:03:51.092Z"
+      },
+      "proposal": {
+        "en": "Open Bench: Remote Repair Lab — revised registration policy\n\nRegistration is open from 2027-02-12T17:30:00.000Z inclusive until 2027-02-20T02:45:00.000Z exclusive. Compare submittedAt exactly at UTC millisecond precision; a submission at the closing instant is late.\n\nApplicants must be at least 16. Applicants aged 18 or older need no guardian consent. Applicants aged 16 or 17 need guardian consent unless they are BOTH a resident AND a member. Those two statuses together waive consent. Student and scholarship status do not change admission. Every applicant must satisfy both the registration window and the age/consent rule.\n\nCharge a fee only when admitted. Denied applicants have no fee (null). Every admitted student pays exactly $32.50 (3250 cents), including students with a scholarship and students who are residents or members. This student fee takes priority over every other fee rule. For admitted nonstudents, use the FIRST matching line:\n1. Scholarship: $0.00 (0 cents).\n2. Resident AND member: $18.50 (1850 cents).\n3. Resident: $34.50 (3450 cents).\n4. Member: $49.50 (4950 cents).\n5. Otherwise: $63.50 (6350 cents).\n\nAll amounts are USD. The five status flags—resident, student, member, guardianConsent, and scholarship—are independent booleans. No status implies another.",
+        "es": "Open Bench: Laboratorio remoto de reparación — política de inscripción revisada\n\nLa inscripción se abre el 2027-02-12T17:30:00.000Z, inclusive, y se cierra el 2027-02-20T02:45:00.000Z, sin incluir ese instante. Compare submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLa edad mínima es de 16 años. A partir de los 18 años no se requiere consentimiento del tutor. A los 16 o 17 años se requiere consentimiento salvo que la persona sea residente Y miembro a la vez. Esas dos condiciones juntas eximen del consentimiento. Ser estudiante o tener beca no modifica la admisión. Toda persona debe cumplir tanto el plazo como la regla de edad y consentimiento.\n\nSolo se cobra a las personas admitidas; si se rechazan, la tarifa es nula (null). Cada estudiante admitido paga exactamente $32.50 (3250 centavos), incluso con beca o si es residente o miembro. Esta tarifa de estudiante tiene prioridad sobre todas las demás. Para las personas admitidas que NO son estudiantes, aplique la PRIMERA línea coincidente:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Residente: $34.50 (3450 centavos).\n4. Miembro: $49.50 (4950 centavos).\n5. En cualquier otro caso: $63.50 (6350 centavos).\n\nTodos los importes son USD. Los cinco indicadores resident, student, member, guardianConsent y scholarship son booleanos independientes. Ningún estado implica otro.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2027-02-12T17:30:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2027-02-20T02:45:00.000Z"
+              },
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  },
+                  {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 6350,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 3250,
+                "label": "Student"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "Scholarship"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 1850,
+                "label": "Resident AND member"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                "cents": 3450,
+                "label": "Resident"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                },
+                "cents": 4950,
+                "label": "Member"
+              }
+            ]
+          }
+        },
+        "issues": []
+      },
+      "impact": {
+        "status": "blocked",
+        "expectedRules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2027-02-12T17:30:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2027-02-20T02:15:00.000Z"
+              },
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  },
+                  {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 6350,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 3250,
+                "label": "Agreed student fee"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "Scholarship"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 1850,
+                "label": "Resident AND member"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 2650,
+                "label": "Student AND member"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                "cents": 3450,
+                "label": "Resident"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 4550,
+                "label": "Student"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                },
+                "cents": 4950,
+                "label": "Member"
+              }
+            ]
+          }
+        },
+        "verification": {
+          "status": "different",
+          "witnesses": [
+            {
+              "id": "admission-right",
+              "kind": "admission-right",
+              "attendee": {
+                "age": 24,
+                "resident": false,
+                "student": false,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": false,
+                "submittedAt": "2027-02-20T02:15:00.000Z"
+              },
+              "left": {
+                "accepted": false,
+                "feeCents": null,
+                "feeReason": {
+                  "en": "No fee: admission denied.",
+                  "es": "Sin tarifa: admisión denegada."
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": false,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": false,
+                    "en": "submitted < 2027-02-20T02:15:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Admission requires (submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member))).",
+                    "es": "La admisión requiere (inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))."
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 6350,
+                "feeReason": {
+                  "en": "Standard fee; no earlier override matched.",
+                  "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:45:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:45:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "submitted < 2027-02-20T02:45:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:45:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": false,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "fee.1",
+                    "passed": false,
+                    "en": "scholarship",
+                    "es": "beca"
+                  },
+                  {
+                    "path": "fee.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "fee.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "fee.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.3",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "fee.4",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "Standard fee; no earlier override matched.",
+                    "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                  }
+                ]
+              },
+              "feeDeltaCents": null,
+              "explanation": {
+                "en": "B admits this person; A refuses them.",
+                "es": "B admite a esta persona; A la rechaza."
+              }
+            }
+          ],
+          "checkedCases": 2816,
+          "issues": [],
+          "coverage": {
+            "ageValues": 121,
+            "agePartitions": 8,
+            "flagCombinations": 32,
+            "timePartitions": 11,
+            "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+          }
+        },
+        "changes": {
+          "status": "different",
+          "witnesses": [
+            {
+              "id": "admission-right",
+              "kind": "admission-right",
+              "attendee": {
+                "age": 24,
+                "resident": false,
+                "student": false,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": false,
+                "submittedAt": "2027-02-20T02:15:00.000Z"
+              },
+              "left": {
+                "accepted": false,
+                "feeCents": null,
+                "feeReason": {
+                  "en": "No fee: admission denied.",
+                  "es": "Sin tarifa: admisión denegada."
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": false,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": false,
+                    "en": "submitted < 2027-02-20T02:15:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Admission requires (submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member))).",
+                    "es": "La admisión requiere (inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))."
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 6350,
+                "feeReason": {
+                  "en": "Standard fee; no earlier override matched.",
+                  "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:45:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:45:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "submitted < 2027-02-20T02:45:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:45:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": false,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "fee.1",
+                    "passed": false,
+                    "en": "scholarship",
+                    "es": "beca"
+                  },
+                  {
+                    "path": "fee.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "fee.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "fee.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.3",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "fee.4",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "Standard fee; no earlier override matched.",
+                    "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                  }
+                ]
+              },
+              "feeDeltaCents": null,
+              "explanation": {
+                "en": "B admits this person; A refuses them.",
+                "es": "B admite a esta persona; A la rechaza."
+              }
+            },
+            {
+              "id": "price-left-higher",
+              "kind": "price-only",
+              "attendee": {
+                "age": 24,
+                "resident": false,
+                "student": true,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": false,
+                "submittedAt": "2027-02-12T17:30:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 4550,
+                "feeReason": {
+                  "en": "First matching fee rule: Student",
+                  "es": "Primera regla de tarifa aplicable: Student"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "submitted < 2027-02-20T02:15:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": false,
+                    "en": "scholarship",
+                    "es": "beca"
+                  },
+                  {
+                    "path": "fee.1",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "fee.1.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "fee.1.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.2",
+                    "passed": false,
+                    "en": "(student AND member)",
+                    "es": "(estudiante Y miembro)"
+                  },
+                  {
+                    "path": "fee.2.0",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "fee.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.3",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "fee.4",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: Student",
+                    "es": "Primera regla de tarifa aplicable: Student"
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 3250,
+                "feeReason": {
+                  "en": "First matching fee rule: Student",
+                  "es": "Primera regla de tarifa aplicable: Student"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:45:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:45:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "submitted < 2027-02-20T02:45:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:45:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: Student",
+                    "es": "Primera regla de tarifa aplicable: Student"
+                  }
+                ]
+              },
+              "feeDeltaCents": 1300,
+              "explanation": {
+                "en": "Both admit this person, but A charges $45.50 and B charges $32.50.",
+                "es": "Ambas admiten a esta persona, pero A cobra $45.50 y B cobra $32.50."
+              }
+            },
+            {
+              "id": "price-right-higher",
+              "kind": "price-only",
+              "attendee": {
+                "age": 24,
+                "resident": false,
+                "student": true,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": true,
+                "submittedAt": "2027-02-12T17:30:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 0,
+                "feeReason": {
+                  "en": "First matching fee rule: Scholarship",
+                  "es": "Primera regla de tarifa aplicable: Scholarship"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:15:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:15:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "submitted < 2027-02-20T02:15:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:15:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": true,
+                    "en": "scholarship",
+                    "es": "beca"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: Scholarship",
+                    "es": "Primera regla de tarifa aplicable: Scholarship"
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 3250,
+                "feeReason": {
+                  "en": "First matching fee rule: Student",
+                  "es": "Primera regla de tarifa aplicable: Student"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(submitted ≥ 2027-02-12T17:30:00.000Z AND submitted < 2027-02-20T02:45:00.000Z AND age ≥ 16 AND (age ≥ 18 OR guardian consent OR (resident AND member)))",
+                    "es": "(inscripción ≥ 2027-02-12T17:30:00.000Z Y inscripción < 2027-02-20T02:45:00.000Z Y edad ≥ 16 Y (edad ≥ 18 O consentimiento del tutor O (residente Y miembro)))"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "submitted ≥ 2027-02-12T17:30:00.000Z",
+                    "es": "inscripción ≥ 2027-02-12T17:30:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "submitted < 2027-02-20T02:45:00.000Z",
+                    "es": "inscripción < 2027-02-20T02:45:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent OR (resident AND member))",
+                    "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y miembro))"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.3.2",
+                    "passed": false,
+                    "en": "(resident AND member)",
+                    "es": "(residente Y miembro)"
+                  },
+                  {
+                    "path": "eligibility.3.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.3.2.1",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: Student",
+                    "es": "Primera regla de tarifa aplicable: Student"
+                  }
+                ]
+              },
+              "feeDeltaCents": 3250,
+              "explanation": {
+                "en": "Both admit this person, but A charges $0.00 and B charges $32.50.",
+                "es": "Ambas admiten a esta persona, pero A cobra $0.00 y B cobra $32.50."
+              }
+            }
+          ],
+          "checkedCases": 2816,
+          "issues": [],
+          "coverage": {
+            "ageValues": 121,
+            "agePartitions": 8,
+            "flagCombinations": 32,
+            "timePartitions": 11,
+            "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+          }
+        },
+        "issues": [
+          "The proposal changes outcomes beyond the agreed fee-only intent or fails to make the requested fee change. It cannot be published."
+        ]
+      },
+      "votes": {},
+      "status": "blocked",
+      "createdAt": "2026-10-27T06:03:51.092Z",
+      "completedAt": "2026-10-27T06:04:00.006Z"
+    }
+  ]
+}

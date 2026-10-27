@@ -1,0 +1,13 @@
+{
+  "sequence": 3,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-6c297563-ae78-496c-95aa-05a39399f076",
+  "body": {
+    "type": "draft",
+    "editor": "bob",
+    "baseVersion": 1,
+    "text": "Open Bench: Laboratorio remoto de reparación — política de inscripción\n\nLa inscripción se abre el 2027-02-12T17:30:00.000Z, inclusive, y se cierra el 2027-02-20T02:15:00.000Z, sin incluir ese instante. Compare submittedAt exactamente con precisión de milisegundos UTC; una solicitud presentada en el instante de cierre llega tarde.\n\nLa edad mínima es de 16 años. A partir de los 18 años no se requiere consentimiento del tutor. A los 16 o 17 años se requiere consentimiento del tutor salvo que la persona sea residente O miembro; basta cualquiera de esas dos condiciones para eximirla del consentimiento. Ser estudiante o tener beca no modifica la admisión. Toda persona debe cumplir tanto el plazo de inscripción como la regla de edad y consentimiento.\n\nSolo se cobra si la persona es admitida. Si se rechaza, la tarifa es nula (null). Para las personas admitidas, aplique la PRIMERA línea coincidente de esta lista ordenada en USD:\n1. Beca: $0.00 (0 centavos).\n2. Residente Y miembro: $18.50 (1850 centavos).\n3. Estudiante Y miembro: $26.50 (2650 centavos).\n4. Residente: $34.50 (3450 centavos).\n5. Estudiante: $45.50 (4550 centavos).\n6. Miembro: $49.50 (4950 centavos).\n7. En cualquier otro caso: $63.50 (6350 centavos).\n\nLos cinco indicadores resident, student, member, guardianConsent y scholarship son booleanos independientes. Ningún estado implica otro."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

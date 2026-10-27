@@ -1,0 +1,61 @@
+{
+  "caseId": "open-bench-remote-repair-2027-fresh-01",
+  "roomId": "studio-6c297563-ae78-496c-95aa-05a39399f076",
+  "sourceCommit": "def141d7b93f12709db9b264d104584303ff4bf4",
+  "siteId": "appgprj_6acf326d0f9c81918e24863d7a25c308",
+  "siteVersionId": "appgprj_6acf326d0f9c81918e24863d7a25c308~appgver_521c660cdc248191b5b1a9b19e850588",
+  "sourceArchiveSha256": "7eab6242b466176345b4056d6f904ce0051f12b4697dacc89f6d0c65cf07767e",
+  "sourceOrPromptChangesDuringRun": false,
+  "externalModelRequests": 3,
+  "modelRetries": 0,
+  "studioMetaEnabled": false,
+  "activation": {
+    "id": "appgdep_6ae03ea30c688191a33da59613fd3915",
+    "status": "succeeded",
+    "env_set_revision": 20,
+    "succeededAt": "2026-10-27T06:03:20.801553+00:00"
+  },
+  "deployment": {
+    "id": "appgdep_6ae03f021b3c81919b42ec2796bacc90",
+    "status": "succeeded",
+    "env_set_revision": 21,
+    "succeededAt": "2026-10-27T06:04:55.265430+00:00"
+  },
+  "shutdownScope": "SAMEPAGE_STUDIO_META_ENABLED=false was saved and deployed on the same v16. This does not revoke the API key or assert that other legacy endpoints are disabled.",
+  "verification": {
+    "hostedBrowser": {
+      "aliceTabVerified": true,
+      "bobTabVerified": true,
+      "publishedVersion": 3,
+      "bothApprovalsVisible": true,
+      "preservedReceiptCount": 2,
+      "beforeFeeCents": 1850,
+      "afterFeeCents": 3250,
+      "receiptFactsMatch": true,
+      "aliceFormAfterReload": "17-year-old resident, student and member; no guardian consent or scholarship; 2027-02-16T12:00 UTC; $32.50",
+      "bobFormAfterLoadingSavedReceipt": "Same saved attendee facts; $32.50; local preview only, no additional submission",
+      "findings": [
+        {
+          "id": "baseline-selector-live-sync",
+          "severity": "presentation",
+          "observation": "During live server updates, the saved-request baseline selector displayed Choose the meaning to preserve while the persisted checked intent correctly selected Alice. After reload, the selector correctly displayed Alice's English interpretation, draft v2.",
+          "fixedDuringRun": false
+        },
+        {
+          "id": "different-impact-and-receipt-attendees",
+          "severity": "presentation",
+          "observation": "The intended-effect card shows a 20-year-old nonresident student changing from $45.50 to $32.50. The same-attendee receipts show a different 17-year-old resident, member and student changing from $18.50 to $32.50. Both outcomes are correct for the exact fixed-fee request, but the different examples and opposite change directions can confuse a demo audience.",
+          "fixedDuringRun": false
+        }
+      ],
+      "evidenceFiles": ["browser-transition.jpg", "browser-alice-final.jpg", "browser-alice-final.txt", "browser-bob-final.txt"],
+      "interactionLimits": "Read-only browser QA plus disclosure toggles, reload and loading saved receipt facts into local preview; no model calls or saved policy/receipt changes."
+    }
+  },
+  "cost": {
+    "tokenRateEstimateUsd": 0.037673,
+    "actualBilledCostUsd": null,
+    "actualCreditDeductionConfirmed": false,
+    "declaredEstimatedCapUsd": 0.40
+  }
+}

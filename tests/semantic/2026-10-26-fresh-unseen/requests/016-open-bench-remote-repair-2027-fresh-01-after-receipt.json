@@ -1,0 +1,20 @@
+{
+  "sequence": 16,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-6c297563-ae78-496c-95aa-05a39399f076",
+  "body": {
+    "type": "register",
+    "requestId": "unseen-9c0ab3d5-3d1a-4147-b55b-2fc3f0e38bdd",
+    "policyVersion": 3,
+    "label": "Synthetic open-bench-remote-repair-2027-fresh-01 after repair",
+    "age": 17,
+    "resident": true,
+    "student": true,
+    "member": true,
+    "guardianConsent": false,
+    "scholarship": false,
+    "submittedAt": "2027-02-16T12:00:00.000Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}
