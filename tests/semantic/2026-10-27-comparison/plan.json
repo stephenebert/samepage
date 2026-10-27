@@ -1,0 +1,114 @@
+{
+  "runId": "comparison-20261027-v1",
+  "sourceCoreCommit": "9d7b0c5755de3465610a592cfccd83bfd4d3ba7b",
+  "datasetHash": "e8f94d6cfd9784b72aa60af463d1e557263084d39c30f58a4a66f345fa840475",
+  "model": "muse-spark-1.3",
+  "protocol": "expression-v3",
+  "reasoningEffort": "low",
+  "maxCompletionTokens": 8192,
+  "maxRequests": 24,
+  "maxProviderRequestBytes": 32768,
+  "framingTokens": 4096,
+  "budgetUsd": 2,
+  "conservativeEstimatedMaxUsd": 1.941504,
+  "exactRequestsConservativeEstimateUsd": 1.1406265,
+  "automaticRetries": false,
+  "order": [
+    {
+      "caseId": "c07",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c07",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c02",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c02",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c11",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c11",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c04",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c04",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c09",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c09",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c01",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c01",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c08",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c08",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c06",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c06",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c12",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c12",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c05",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c05",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c10",
+      "arm": "samepage"
+    },
+    {
+      "caseId": "c10",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c03",
+      "arm": "plain-meta"
+    },
+    {
+      "caseId": "c03",
+      "arm": "samepage"
+    }
+  ]
+}

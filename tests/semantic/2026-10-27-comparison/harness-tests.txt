@@ -1,0 +1,20 @@
+✔ separate exact-run gate keeps ordinary Studio calls paused and pins all provider settings (0.740791ms)
+✔ only twelve provider-input cases are accepted; hidden labels and duplicates fail before execution (0.414458ms)
+✔ 32 KiB requests plus 4096-token framing and full output reserve keep all24 attempts below $2 (0.945041ms)
+✔ plain review uses the frozen strong prompt, same model and effort, and returns durable cached results (10.224791ms)
+✔ samepage arm uses real interpretation/validation/discovery and leaves two approvals pending (7.95675ms)
+✔ invalid/partial provider output is terminal and consumes its reservation without retry (1.155083ms)
+✔ a network failure never causes a hidden retry or retains credentials in evidence (0.412583ms)
+✔ concurrent duplicate requests share one claim; another slot cannot start while it is running (0.664667ms)
+✔ a stranded durable claim never expires into a duplicate provider attempt (0.400667ms)
+✔ changing frozen inputs cannot reuse the ledger and corrupt reservation totals fail closed (0.432209ms)
+✔ plain output rejects inconsistent witness outcomes and preserves genuine clarification (0.15425ms)
+✔ all24 fixed slots run once and repeated POSTs cannot expand the finite spending allowance (25.175292ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127.193458

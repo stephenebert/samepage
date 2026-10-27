@@ -1,0 +1,19 @@
+{
+  "status": "independently-reproduced",
+  "reviewer": "Separate assistant agent, not human evaluation",
+  "frozenFilesVerified": 47,
+  "modelRequests": 24,
+  "naturalStops": 24,
+  "samepageCorrect": 11,
+  "plainMetaCorrect": 12,
+  "compiledPoliciesChecked": 19,
+  "policyOutcomeChecks": 294272,
+  "policyOutcomeMismatches": 0,
+  "samepageValidWitnesses": 7,
+  "plainValidWitnesses": 6,
+  "jointPublications": 9,
+  "receiptsCorrect": 27,
+  "unnecessaryAbstention": "c09",
+  "additionalProviderCalls": 0,
+  "artifactChangesByReviewer": 0
+}

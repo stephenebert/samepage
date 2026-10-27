@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "id": "c07",
+      "title": "Willow reading forum",
+      "alice": "Willow reading forum rejects anyone younger than 18 or older than 65. It also rejects anyone who is neither a resident nor a member. Everyone else is admitted, with no deadline or guardian-consent requirement. Use the first matching USD fee rule: a student without a scholarship pays 11; a scholarship holder pays 0; everyone else pays 23.",
+      "bob": "El foro de lectura Willow admite exactamente a quienes tengan entre 18 y 65 años, incluidos ambos extremos, y además sean residentes o miembros, o ambas cosas. No hay plazo límite ni requisito de consentimiento del tutor. Se aplica la primera tarifa en USD que corresponda: las personas con beca pagan 0; los estudiantes pagan 11; las demás personas pagan 23."
+    },
+    {
+      "id": "c02",
+      "title": "Lantern print studio",
+      "alice": "Lantern print studio admits everyone aged 16 or older, but a person younger than 18 must also have guardian consent. No other status changes admission and there is no deadline. For an admitted person, use only the first matching fee rule: (1) scholarship holders pay USD 0; (2) students pay USD 11; (3) everyone else pays USD 24. Do not combine discounts. Membership and residency do not change fees.",
+      "bob": "El estudio de impresión Lantern admite a las personas de 16 años o más, pero quien tenga menos de 18 años también necesita consentimiento del tutor. Ninguna otra condición cambia la admisión y no hay plazo límite. Para una persona admitida se aplica únicamente la primera regla de tarifa que corresponda: (1) los estudiantes pagan 11 USD; (2) quienes tienen beca pagan 0 USD; (3) las demás personas pagan 24 USD. No se acumulan descuentos. La membresía y la residencia no cambian las tarifas."
+    },
+    {
+      "id": "c11",
+      "title": "Pine community studio",
+      "alice": "Pine community studio admits everyone aged 18 or older, with no deadline. The general fee is USD 25. Students pay USD 12 and members pay USD 9. Discounts cannot be combined, but the policy does not specify which fee applies to a person who is both a student and a member. Residency, scholarship and guardian consent have no effect.",
+      "bob": "El estudio comunitario Pine admite a todas las personas de 18 años o más, sin fecha límite. La tarifa general es de 25 USD. Los estudiantes pagan 12 USD y los miembros pagan 9 USD. Los descuentos no se acumulan, pero no se indica qué tarifa corresponde a una persona que sea estudiante y miembro a la vez. La residencia, la beca y el consentimiento del tutor no influyen."
+    },
+    {
+      "id": "c04",
+      "title": "Juniper map room",
+      "alice": "Juniper map room requires everyone to be at least 16. Within that age range, members qualify automatically. A nonmember qualifies only if they are a local resident and either are not a student or hold a scholarship. Thus a resident student with a scholarship qualifies. There is no deadline and guardian consent is irrelevant. Admitted people pay the first matching USD fee: scholarship holder 7; member 9; otherwise 18.",
+      "bob": "La sala de mapas Juniper exige que todas las personas tengan al menos 16 años. A partir de esa edad, los miembros cumplen automáticamente los requisitos. Una persona que no sea miembro solo cumple los requisitos si es residente local y no es estudiante ni tiene beca. Es decir, para una persona no miembro, ser estudiante o tener beca impide la admisión. No hay plazo límite y el consentimiento del tutor no influye. Las personas admitidas pagan la primera tarifa aplicable en USD: con beca, 7; miembro, 9; en los demás casos, 18."
+    },
+    {
+      "id": "c09",
+      "title": "Lumen youth exhibition",
+      "alice": "Lumen youth exhibition admits applicants aged 16 through 24 inclusive. Applicants younger than 18 must have guardian consent. Applications are accepted through 2026-12-20T19:30:00.000Z (UTC), including that exact instant; later submissions are rejected. Submission times have millisecond precision. The fee is USD 30, except that students submitting strictly before 2026-12-19T19:30:00.000Z pay USD 10. Residency, membership and scholarships have no effect.",
+      "bob": "La exposición juvenil Lumen admite a solicitantes de 16 a 24 años, inclusive; quienes aún no hayan cumplido 18 necesitan consentimiento del tutor. Las solicitudes deben presentarse estrictamente antes del 2026-12-20T19:30:00.001Z (UTC). Los tiempos de presentación tienen precisión de milisegundos. La tarifa es de 30 USD, salvo para estudiantes que presenten la solicitud antes del 2026-12-19T19:30:00.000Z, quienes pagan 10 USD. La residencia, la membresía y las becas no influyen."
+    },
+    {
+      "id": "c01",
+      "title": "Cypress evening workshop",
+      "alice": "Cypress evening workshop. Admission requires age 18 or older and at least one of these: local resident or workshop member. Being a member never waives the age requirement. Every admitted member pays USD 15; every other admitted person pays USD 25. There is no submission deadline. Student, scholarship and guardian-consent status do not change admission or fees.",
+      "bob": "Taller nocturno Cypress. Se admite a toda persona de 18 años o más que sea residente local; también se admite a cualquier miembro del taller, sin requisito de edad para los miembros. Cada miembro admitido paga 15 USD; cualquier otra persona admitida paga 25 USD. No hay fecha límite de solicitud. Ser estudiante, tener beca o tener consentimiento del tutor no cambia la admisión ni la tarifa."
+    },
+    {
+      "id": "c08",
+      "title": "Ember ceramics session",
+      "alice": "Ember ceramics session admits people aged at least 16 if they are at least 18 or have guardian consent. There is no deadline, and residency does not affect anything. Fee rules are applied in this order, stopping at the first match: scholarship holder USD 0; student without a scholarship USD 9; member who is neither a student nor a scholarship holder USD 13; otherwise USD 22.",
+      "bob": "La sesión de cerámica Ember admite a todos los adultos de 18 años o más, y también a quienes tengan 16 o 17 años si cuentan con consentimiento del tutor. No hay fecha límite y la residencia no afecta a nada. Se aplica únicamente la primera tarifa que coincida, en este orden: 13 USD para miembros que no sean estudiantes y no tengan beca; 9 USD para estudiantes sin beca; 0 USD para quienes tengan beca; 22 USD para las demás personas."
+    },
+    {
+      "id": "c06",
+      "title": "Cedar prototype clinic",
+      "alice": "Cedar prototype clinic admits people aged 18 through 70 inclusive who are residents or members. There is no final application deadline. Fees in USD use only the first matching rule: (1) applications submitted before 2026-12-12T09:00:00.000Z pay 17 if the applicant is not a student; (2) applicants who are both students and members pay 8; (3) scholarship holders pay 0; (4) everyone else pays 28. Guardian consent has no effect. In rule 1, membership does not affect whether someone is a student.",
+      "bob": "La clínica de prototipos Cedar admite a personas de entre 18 y 70 años, inclusive, que sean residentes o miembros. No hay una fecha límite final para solicitar plaza. Las tarifas en USD siguen únicamente la primera regla aplicable: (1) las solicitudes presentadas antes del 2026-12-12T09:00:00.000Z pagan 17 si el solicitante no reúne a la vez las dos condiciones de ser estudiante y ser miembro; por tanto, un estudiante que no sea miembro puede obtener esta tarifa anticipada; (2) quienes sean estudiantes y miembros pagan 8; (3) las personas con beca pagan 0; (4) las demás pagan 28. El consentimiento del tutor no influye."
+    },
+    {
+      "id": "c12",
+      "title": "Orchid collaborative workshop",
+      "alice": "Orchid collaborative workshop accepts only the first 40 eligible registrations received, in arrival order; later registrations must be rejected even if otherwise eligible. Eligibility requires age 18 or older and either residency or membership. The fee is USD 16 for every admitted person. There is no deadline; student, scholarship and guardian-consent status have no effect.",
+      "bob": "El taller colaborativo Orchid acepta únicamente las primeras 40 inscripciones que cumplan los requisitos, por orden de llegada; las posteriores se rechazan aunque cumplan los demás requisitos. Para ser elegible se exige tener 18 años o más y ser residente o miembro. Cada persona admitida paga 16 USD. No hay plazo límite; ser estudiante, tener beca o tener consentimiento del tutor no influye."
+    },
+    {
+      "id": "c05",
+      "title": "Mosaic digital lab",
+      "alice": "Mosaic digital lab admits adults aged 18 or older, plus 16- and 17-year-olds who have guardian consent. Everyone else is rejected. There is no deadline. Every admitted person pays USD 24 except that the fee is USD 12 when all of the following hold: the person is a local resident; the person is a student or a member (or both); and the person does not hold a scholarship. There are no other discounts or eligibility conditions.",
+      "bob": "El laboratorio digital Mosaic admite a los adultos de 18 años o más y a las personas de 16 o 17 años con consentimiento del tutor. Se rechaza a las demás personas. No hay plazo límite. Cada persona admitida paga 24 USD, salvo que paga 12 USD si pertenece a cualquiera de estos dos grupos: (a) residentes locales que sean estudiantes, tengan o no beca; (b) miembros que no tengan beca, sean o no residentes locales. No existen otros descuentos ni requisitos de admisión."
+    },
+    {
+      "id": "c10",
+      "title": "Atlas civic design day",
+      "alice": "Atlas civic design day admits adults aged 18 or older who are members, or who are both residents and students. The age requirement applies to both paths. There is no deadline and guardian consent and scholarships have no effect. For admitted people, use the first matching USD fee rule: member 18; student 12; resident 10; otherwise 25.",
+      "bob": "La jornada de diseño cívico Atlas admite a miembros de 18 años o más y a estudiantes residentes de 18 años o más. No hay plazo límite; el consentimiento del tutor y las becas no influyen. Para las personas admitidas se usa la primera tarifa aplicable en USD: estudiante que no sea miembro, 12; miembro, 18; residente que no sea estudiante ni miembro, 10; en los demás casos, 25."
+    },
+    {
+      "id": "c03",
+      "title": "Quartz public seminar",
+      "alice": "Quartz public seminar. The application must be submitted strictly before 2026-12-04T18:00:00.000Z (UTC). Subject to that deadline, admission requires either age 21 or older, or age 18 or older together with local residency. All others are rejected. Fees in USD use the first matching rule: students pay 10, members pay 18, everyone else pays 26. Scholarship and guardian consent have no effect.",
+      "bob": "Seminario público Quartz. La solicitud debe presentarse a más tardar el 2026-12-04T18:00:00.000Z (UTC), incluido ese instante. Si se cumple el plazo, se admite a quien tenga 21 años o más, o a quien tenga al menos 18 años y sea residente local. Se rechaza a las demás personas. Las tarifas en USD siguen la primera regla aplicable: estudiantes, 10; miembros, 18; demás personas, 26. La beca y el consentimiento del tutor no influyen."
+    }
+  ]
+}

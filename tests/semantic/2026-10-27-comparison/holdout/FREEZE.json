@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "frozenAt": "2026-10-27T21:00:55.903458+00:00",
+  "cases": 12,
+  "labels": {
+    "different": 6,
+    "equivalent": 4,
+    "unresolved": 2
+  },
+  "sourceFiles": {
+    "provider-inputs.json": "23489f6fece2fe2b76da7d2590bc85fd40241842946c384bd953fee7604b4f43",
+    "goldens.json": "a15655f0a5d80fc20fba48a52cd32743301b99548c587bccfc948807d5d90efb",
+    "independent-oracle.mjs": "3588a44cccf821daf35b2d535e524f0c839d0ab25d29efbb9ba7ea6174f9ee29"
+  },
+  "authorship": "AI-authored synthetic policies with a separate AI bilingual/reference review; not human validation.",
+  "providerOutputsSeen": false,
+  "applicationPromptsReadByAuthor": false,
+  "priorEvaluationExamplesReadByAuthor": false,
+  "providerVisibleFile": "provider-inputs.json",
+  "hiddenReferenceFiles": [
+    "goldens.json",
+    "independent-oracle.mjs"
+  ],
+  "preflight": {
+    "authorPairChecks": 127776,
+    "independentOutcomeChecks": 332992,
+    "literalOutcomeChecks": 82,
+    "reviewResult": "passed",
+    "auditFile": "../preflight-audit.json"
+  },
+  "note": "Freeze predates provider outputs. Correctness includes required clarification for unexecutable/underspecified policy pairs, not only textual agreement.",
+  "sha256": "6b5afe0bdd97eb7f4bdf34961a30b5c8a4486f09632efdfae07a1e9685187a78"
+}
