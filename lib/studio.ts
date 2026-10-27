@@ -1,4 +1,5 @@
 import { RoomError } from "./room.ts";
+import { supersedeStudioRepair, voteStudioRepair } from "./studio-repair.ts";
 import { discoverStudioConsequences, evaluateStudioPolicy, parseStudioAttendee, parseStudioRules, STUDIO_FLAGS, studioInteger, studioKeys, studioObject, studioText } from "./studio-engine.ts";
 import type { StudioAction, StudioCandidate, StudioDemoFixture, StudioEditor, StudioJob, StudioRoom } from "./studio-types";
 
@@ -32,6 +33,10 @@ export function parseStudioAction(value: unknown): StudioAction {
   if (a.type === "vote") {
     studioKeys(a, ["type", "editor", "reviewId", "candidateId"], "action");
     return { type: "vote", editor: editor(a.editor), reviewId: identifier(a.reviewId, "reviewId"), candidateId: identifier(a.candidateId, "candidateId") };
+  }
+  if (a.type === "voteRepair") {
+    studioKeys(a, ["type", "editor", "repairId"], "action");
+    return { type: "voteRepair", editor: editor(a.editor), repairId: identifier(a.repairId, "repairId") };
   }
   if (a.type === "register") {
     studioKeys(a, ["type", "requestId", "policyVersion", "label", "age", ...STUDIO_FLAGS, "submittedAt"], "action");
@@ -94,9 +99,11 @@ export function applyStudioAction(before: StudioRoom, value: StudioAction, now: 
     if (previous.text === a.text && (a.baseVersion === previous.version || a.baseVersion === previous.version - 1)) return before;
     if (a.baseVersion !== previous.version) fail("This editor's draft changed. Reload before saving.", "STALE_DRAFT", 409);
     const room = copy(before); room.drafts[a.editor] = { ...previous, text: a.text, version: previous.version + 1 }; room.activeJob = null; room.review = null;
+    supersedeStudioRepair(room, now);
     if (room.automaticReview) room.automaticReview = { ...room.automaticReview, status: "superseded", finishedAt: now, durationMs: Math.max(0, Date.parse(now) - Date.parse(room.automaticReview.startedAt)) };
     return changed(room, now);
   }
+  if (a.type === "voteRepair") return voteStudioRepair(before, a.editor, a.repairId, now);
   if (a.type === "requestReview") {
     if (before.activeJob || before.review) return before;
     const room = copy(before), job: StudioJob = { id: `studio-review-${room.revision + 1}`, basePolicyVersion: room.published.version, drafts: copy(room.drafts), prompt: "", createdAt: now };
@@ -114,6 +121,7 @@ export function applyStudioAction(before: StudioRoom, value: StudioAction, now: 
     return changed(room, now);
   }
   if (a.type === "vote") {
+    if (before.repair && before.repair.status !== "superseded" && before.repair.status !== "published") fail("Finish the checked repair or edit a draft before choosing an original interpretation.", "REPAIR_ACTIVE", 409);
     const review = before.review;
     if (!review || review.id !== a.reviewId) fail("This review is no longer current.", "STALE_REVIEW", 409);
     if (review!.discovery.status === "unresolved") fail("This comparison is unresolved. Clarify both policies or simplify them before either editor can approve.", "UNRESOLVED");

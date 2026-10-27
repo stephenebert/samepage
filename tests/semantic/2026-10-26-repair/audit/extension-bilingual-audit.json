@@ -1,0 +1,86 @@
+{
+  "reviewer": "Independent Codex repair_holdout agent; AI review, not human bilingual validation",
+  "phase": "revised-prompt-extension",
+  "substantiveFidelityPass": true,
+  "generatedIntentSatisfied": true,
+  "sourceCopiesExact": true,
+  "generatedLanguageInstancesReviewed": 6,
+  "lumenRepair": {
+    "verdict": "pass",
+    "evidenceScope": "Known original failure retested after prompt revision; not fresh unseen evidence",
+    "admissionPreserved": true,
+    "feeIntentSatisfied": true,
+    "outsideGroupFeesPreserved": true,
+    "details": [
+      "Both English and Spanish preserve minimum age15, guardian consent below18, resident/member/student/age25 access, and strict closing boundary.",
+      "All eligible scholarship holders receive fee0, including those older than19.",
+      "Membership/student/resident/standard priorities and rates are unchanged for non-scholarship attendees.",
+      "Both languages explicitly use first-match fee ordering and say a fee waiver does not grant admission."
+    ]
+  },
+  "orbitBaseline": {
+    "verdict": "pass",
+    "details": [
+      "Alice Spanish translation preserves minimum16, nonmember minimum21, consent below18 and inclusive exact closing instant.",
+      "Both candidate translations preserve scholarship0/member14/early student12/other student18/resident19/default26 first-match order.",
+      "Early student cutoff remains strictly before the UTC boundary.",
+      "Original English and original Spanish are preserved exactly."
+    ]
+  },
+  "orbitRepair": {
+    "verdict": "pass",
+    "evidenceScope": "Fresh holdout policy first tested with revised prompt",
+    "admissionPreserved": true,
+    "feeIntentSatisfied": true,
+    "outsideGroupFeesPreserved": true,
+    "details": [
+      "Both languages give all eligible members fee0 without changing age, nonmember age floor, youth consent or closing boundaries.",
+      "Scholarship holders remain free. Nonmember early students remain12, ordinary students18, residents19 and standard26 USD.",
+      "Independent flags and first-match ordering preserve overlaps."
+    ]
+  },
+  "presentationFindings": [
+    {
+      "severity": "minor",
+      "case": "Lumen",
+      "finding": "Generated wording retains an unreachable scholarship age≤19/$6 clause after the all-scholarship/$0 clause. Explicit first-match order makes it semantically correct, but redundant wording is confusing."
+    },
+    {
+      "severity": "minor",
+      "case": "Orbit",
+      "finding": "Generated wording retains an unreachable members/$14 clause after members/$0. Explicit first-match order makes it semantically correct, but it should be simplified in presentation."
+    },
+    {
+      "severity": "minor",
+      "finding": "Some Spanish fee traces retain English labels; event noun sprint/meetup varies without changing policy meaning."
+    }
+  ],
+  "limits": [
+    "Independent AI review, not human bilingual validation.",
+    "Model-emitted rules are checked against a bounded intent; successful checks do not prove arbitrary natural-language fidelity.",
+    "The authored Orbit flawed rewrite was skipped to keep six total requests.",
+    "The original failed repair remains a failure and is not counted as an accurate generation."
+  ],
+  "sourceFiles": [
+    {
+      "path": "extension/report.json",
+      "sha256": "1248075f7238bc428b7deeb1844d8e1f23c1b155aa8c0c4c5d9bc1951c19b8bc"
+    },
+    {
+      "path": "extension/live-ledger.json",
+      "sha256": "5ecbd90daaf2370e2dce5b15d8ff57240b5630b02347215742e35bb5a824dd9b"
+    },
+    {
+      "path": "extension/stages/lumen-archive-workshop-generate-repair/after.json",
+      "sha256": "80ea72cc9d4a3dbef8516ea610a5922d14fcdf9af4eca20b2e7571974fb932f7"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-baseline/after.json",
+      "sha256": "4341bb6dcbca6d5313c05a6a99d945ded3b78a89deca2e6d5be80106b638601a"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-generate-repair/after.json",
+      "sha256": "edfcf9e8753d712b14db46368ae67f1389e11e32d4b1b0c48d0f6cd5d6974dbf"
+    }
+  ]
+}

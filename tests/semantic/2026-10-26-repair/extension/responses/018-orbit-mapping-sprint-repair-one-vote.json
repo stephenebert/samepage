@@ -1,0 +1,1183 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 212,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-f796aeb7-8f84-4d82-bd30-a0bf29337606\",\"revision\":10,\"createdAt\":\"2026-10-27T05:15:19.495Z\",\"updatedAt\":\"2026-10-27T05:15:38.959Z\",\"mode\":\"automatic-model\",\"published\":{\"version\":2,\"en\":\"Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.\",\"es\":\"Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"age\",\"cmp\":\"gte\",\"value\":21}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"lte\",\"value\":\"2034-09-07T16:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":2600,\"overrides\":[{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"scholarship holders\"},{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":1400,\"label\":\"members\"},{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2034-09-01T00:00:00.000Z\"}]},\"cents\":1200,\"label\":\"early students\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1800,\"label\":\"other students\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1900,\"label\":\"residents\"}]}},\"publishedAt\":\"2026-10-27T05:15:30.672Z\",\"reviewId\":\"studio-review-3\",\"candidateId\":\"studio-review-3-alice\"},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan.\"}},\"activeJob\":null,\"review\":{\"id\":\"studio-review-3\",\"basePolicyVersion\":1,\"candidates\":[{\"id\":\"studio-review-3-alice\",\"editor\":\"alice\",\"sourceVersion\":2,\"en\":\"Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.\",\"es\":\"Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"age\",\"cmp\":\"gte\",\"value\":21}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"lte\",\"value\":\"2034-09-07T16:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":2600,\"overrides\":[{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"scholarship holders\"},{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":1400,\"label\":\"members\"},{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2034-09-01T00:00:00.000Z\"}]},\"cents\":1200,\"label\":\"early students\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1800,\"label\":\"other students\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1900,\"label\":\"residents\"}]}},\"issues\":[]},{\"id\":\"studio-review-3-bob\",\"editor\":\"bob\",\"sourceVersion\":2,\"en\":\"Orbit Atlas is a remote mapping meetup. Participants must be at least 16 years old. Those who are not members must be at least 21 years old. Every person under 18 years old must have guardian consent. Registrations are accepted until 2034-09-07T16:00:00.000Z, including that exact instant, and are closed afterwards. No fee category exempts anyone from the admission requirements. Admitted persons pay the first applicable fee in this order: those with a scholarship pay 0 USD; members pay 14 USD; students whose registration is sent strictly before 2034-09-01T00:00:00.000Z pay 12 USD; all other students pay 18 USD; residents pay 19 USD; all other persons pay 26 USD. Categories may overlap, but fees are never combined.\",\"es\":\"Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"age\",\"cmp\":\"gte\",\"value\":21}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"lte\",\"value\":\"2034-09-07T16:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":2600,\"overrides\":[{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"scholarship holders\"},{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":1400,\"label\":\"members\"},{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2034-09-01T00:00:00.000Z\"}]},\"cents\":1200,\"label\":\"early students\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1800,\"label\":\"other students\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1900,\"label\":\"residents\"}]}},\"issues\":[]}],\"votes\":{},\"status\":\"published\",\"provenance\":\"meta-model\",\"discovery\":{\"status\":\"equivalent\",\"witnesses\":[],\"checkedCases\":2816,\"issues\":[],\"coverage\":{\"ageValues\":121,\"agePartitions\":11,\"flagCombinations\":32,\"timePartitions\":8,\"scope\":\"Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language.\"}},\"createdAt\":\"2026-10-27T05:15:30.134Z\",\"publishedVersion\":2},\"registrations\":[{\"requestId\":\"repair-ext-86c742b3-0de8-4ae5-a86d-eaa02b734ded\",\"policyVersion\":2,\"label\":\"Synthetic orbit-mapping-sprint before repair\",\"age\":16,\"resident\":false,\"student\":false,\"member\":true,\"guardianConsent\":true,\"scholarship\":false,\"submittedAt\":\"2034-08-31T12:00:00.000Z\",\"id\":\"studio-receipt-7\",\"recordedAt\":\"2026-10-27T05:15:30.850Z\",\"decision\":{\"accepted\":true,\"feeCents\":1400,\"feeReason\":{\"en\":\"First matching fee rule: members\",\"es\":\"Primera regla de tarifa aplicable: members\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND (member OR age ≥ 21) AND (age ≥ 18 OR guardian consent) AND submitted ≤ 2034-09-07T16:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y (miembro O edad ≥ 21) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≤ 2034-09-07T16:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"(member OR age ≥ 21)\",\"es\":\"(miembro O edad ≥ 21)\"},{\"path\":\"eligibility.1.0\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.1.1\",\"passed\":false,\"en\":\"age ≥ 21\",\"es\":\"edad ≥ 21\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.2.0\",\"passed\":false,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.2.1\",\"passed\":true,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"submitted ≤ 2034-09-07T16:00:00.000Z\",\"es\":\"inscripción ≤ 2034-09-07T16:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":false,\"en\":\"scholarship\",\"es\":\"beca\"},{\"path\":\"fee.1\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: members\",\"es\":\"Primera regla de tarifa aplicable: members\"}]}}],\"modelCallCount\":2,\"automaticReview\":{\"requestId\":\"c458b4b1-3486-42a7-8b32-300c3c09fca5\",\"jobId\":\"studio-review-3\",\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"protocol\":\"expression-v3\",\"reasoningEffort\":\"low\",\"requestedEditors\":[\"alice\",\"bob\"],\"reusedEditors\":[],\"source\":\"meta\",\"status\":\"completed\",\"startedAt\":\"2026-10-27T05:15:20.193Z\",\"leaseExpiresAt\":\"2026-10-27T05:16:50.193Z\",\"finishedAt\":\"2026-10-27T05:15:30.134Z\",\"durationMs\":9941,\"metrics\":{\"providerDurationMs\":9563,\"requestBytes\":6823,\"responseContentBytes\":2889,\"promptTokens\":1435,\"completionTokens\":2477,\"totalTokens\":3912,\"reasoningTokens\":1639,\"cachedInputTokens\":0,\"finishReason\":\"stop\",\"maxCompletionTokens\":8192}},\"repair\":{\"id\":\"repair-851c0357-fe7c-4725-9837-4f35032f3eb1\",\"job\":{\"id\":\"repair-851c0357-fe7c-4725-9837-4f35032f3eb1\",\"reviewId\":\"studio-review-3\",\"basePolicyVersion\":2,\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan.\"}},\"baseline\":{\"id\":\"studio-review-3-alice\",\"editor\":\"alice\",\"sourceVersion\":2,\"en\":\"Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.\",\"es\":\"Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"age\",\"cmp\":\"gte\",\"value\":21}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"lte\",\"value\":\"2034-09-07T16:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":2600,\"overrides\":[{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"scholarship holders\"},{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":1400,\"label\":\"members\"},{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2034-09-01T00:00:00.000Z\"}]},\"cents\":1200,\"label\":\"early students\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1800,\"label\":\"other students\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1900,\"label\":\"residents\"}]}},\"issues\":[]},\"intent\":{\"baselineCandidateId\":\"studio-review-3-alice\",\"scopeFlag\":\"member\",\"feeCents\":0},\"createdAt\":\"2026-10-27T05:15:31.075Z\"},\"proposal\":{\"en\":\"Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: members pay $0; scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.\",\"es\":\"Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: los miembros pagan 0 $; las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"age\",\"cmp\":\"gte\",\"value\":21}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"lte\",\"value\":\"2034-09-07T16:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":2600,\"overrides\":[{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":0,\"label\":\"Agreed member fee\"},{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"scholarship holders\"},{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":1400,\"label\":\"members\"},{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2034-09-01T00:00:00.000Z\"}]},\"cents\":1200,\"label\":\"early students\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1800,\"label\":\"other students\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1900,\"label\":\"residents\"}]}},\"issues\":[]},\"impact\":{\"status\":\"pass\",\"expectedRules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"age\",\"cmp\":\"gte\",\"value\":21}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"lte\",\"value\":\"2034-09-07T16:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":2600,\"overrides\":[{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":0,\"label\":\"Agreed member fee\"},{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"scholarship holders\"},{\"when\":{\"op\":\"flag\",\"field\":\"member\",\"value\":true},\"cents\":1400,\"label\":\"members\"},{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2034-09-01T00:00:00.000Z\"}]},\"cents\":1200,\"label\":\"early students\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1800,\"label\":\"other students\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1900,\"label\":\"residents\"}]}},\"verification\":{\"status\":\"equivalent\",\"witnesses\":[],\"checkedCases\":2816,\"issues\":[],\"coverage\":{\"ageValues\":121,\"agePartitions\":11,\"flagCombinations\":32,\"timePartitions\":8,\"scope\":\"Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language.\"}},\"changes\":{\"status\":\"different\",\"witnesses\":[{\"id\":\"price-left-higher\",\"kind\":\"price-only\",\"attendee\":{\"age\":24,\"resident\":false,\"student\":false,\"member\":true,\"guardianConsent\":false,\"scholarship\":false,\"submittedAt\":\"2034-09-01T00:00:00.000Z\"},\"left\":{\"accepted\":true,\"feeCents\":1400,\"feeReason\":{\"en\":\"First matching fee rule: members\",\"es\":\"Primera regla de tarifa aplicable: members\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND (member OR age ≥ 21) AND (age ≥ 18 OR guardian consent) AND submitted ≤ 2034-09-07T16:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y (miembro O edad ≥ 21) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≤ 2034-09-07T16:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"(member OR age ≥ 21)\",\"es\":\"(miembro O edad ≥ 21)\"},{\"path\":\"eligibility.1.0\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.1.1\",\"passed\":true,\"en\":\"age ≥ 21\",\"es\":\"edad ≥ 21\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.2.0\",\"passed\":true,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.2.1\",\"passed\":false,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"submitted ≤ 2034-09-07T16:00:00.000Z\",\"es\":\"inscripción ≤ 2034-09-07T16:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":false,\"en\":\"scholarship\",\"es\":\"beca\"},{\"path\":\"fee.1\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: members\",\"es\":\"Primera regla de tarifa aplicable: members\"}]},\"right\":{\"accepted\":true,\"feeCents\":0,\"feeReason\":{\"en\":\"First matching fee rule: Agreed member fee\",\"es\":\"Primera regla de tarifa aplicable: Agreed member fee\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND (member OR age ≥ 21) AND (age ≥ 18 OR guardian consent) AND submitted ≤ 2034-09-07T16:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y (miembro O edad ≥ 21) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≤ 2034-09-07T16:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"(member OR age ≥ 21)\",\"es\":\"(miembro O edad ≥ 21)\"},{\"path\":\"eligibility.1.0\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.1.1\",\"passed\":true,\"en\":\"age ≥ 21\",\"es\":\"edad ≥ 21\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.2.0\",\"passed\":true,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.2.1\",\"passed\":false,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"submitted ≤ 2034-09-07T16:00:00.000Z\",\"es\":\"inscripción ≤ 2034-09-07T16:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: Agreed member fee\",\"es\":\"Primera regla de tarifa aplicable: Agreed member fee\"}]},\"feeDeltaCents\":1400,\"explanation\":{\"en\":\"Both admit this person, but A charges $14.00 and B charges $0.00.\",\"es\":\"Ambas admiten a esta persona, pero A cobra $14.00 y B cobra $0.00.\"}}],\"checkedCases\":2816,\"issues\":[],\"coverage\":{\"ageValues\":121,\"agePartitions\":11,\"flagCombinations\":32,\"timePartitions\":8,\"scope\":\"Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language.\"}},\"issues\":[]},\"votes\":{\"alice\":true},\"status\":\"ready\",\"createdAt\":\"2026-10-27T05:15:31.075Z\",\"completedAt\":\"2026-10-27T05:15:38.714Z\"},\"automaticRepair\":{\"requestId\":\"851c0357-fe7c-4725-9837-4f35032f3eb1\",\"jobId\":\"repair-851c0357-fe7c-4725-9837-4f35032f3eb1\",\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"protocol\":\"expression-v3\",\"reasoningEffort\":\"low\",\"requestedEditors\":[\"alice\",\"bob\"],\"reusedEditors\":[],\"source\":\"meta\",\"status\":\"completed\",\"startedAt\":\"2026-10-27T05:15:31.075Z\",\"leaseExpiresAt\":\"2026-10-27T05:17:01.075Z\",\"finishedAt\":\"2026-10-27T05:15:38.714Z\",\"durationMs\":7639,\"metrics\":{\"providerDurationMs\":7493,\"requestBytes\":8661,\"responseContentBytes\":2898,\"promptTokens\":1940,\"completionTokens\":2120,\"totalTokens\":4060,\"reasoningTokens\":1328,\"cachedInputTokens\":0,\"finishReason\":\"stop\",\"maxCompletionTokens\":8192}}},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"expression-v3\",\"reasoningEffort\":\"low\",\"reuseUnchanged\":false,\"maxCompletionTokens\":8192}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-f796aeb7-8f84-4d82-bd30-a0bf29337606",
+      "revision": 10,
+      "createdAt": "2026-10-27T05:15:19.495Z",
+      "updatedAt": "2026-10-27T05:15:38.959Z",
+      "mode": "automatic-model",
+      "published": {
+        "version": 2,
+        "en": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.",
+        "es": "Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 21
+                  }
+                ]
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "time",
+                "cmp": "lte",
+                "value": "2034-09-07T16:00:00.000Z"
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 2600,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "scholarship holders"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                },
+                "cents": 1400,
+                "label": "members"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    {
+                      "op": "time",
+                      "cmp": "lt",
+                      "value": "2034-09-01T00:00:00.000Z"
+                    }
+                  ]
+                },
+                "cents": 1200,
+                "label": "early students"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 1800,
+                "label": "other students"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                "cents": 1900,
+                "label": "residents"
+              }
+            ]
+          }
+        },
+        "publishedAt": "2026-10-27T05:15:30.672Z",
+        "reviewId": "studio-review-3",
+        "candidateId": "studio-review-3-alice"
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan."
+        }
+      },
+      "activeJob": null,
+      "review": {
+        "id": "studio-review-3",
+        "basePolicyVersion": 1,
+        "candidates": [
+          {
+            "id": "studio-review-3-alice",
+            "editor": "alice",
+            "sourceVersion": 2,
+            "en": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.",
+            "es": "Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.",
+            "rules": {
+              "eligibility": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      },
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 21
+                      }
+                    ]
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 18
+                      },
+                      {
+                        "op": "flag",
+                        "field": "guardianConsent",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "op": "time",
+                    "cmp": "lte",
+                    "value": "2034-09-07T16:00:00.000Z"
+                  }
+                ]
+              },
+              "fee": {
+                "currency": "USD",
+                "defaultCents": 2600,
+                "overrides": [
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "scholarship",
+                      "value": true
+                    },
+                    "cents": 0,
+                    "label": "scholarship holders"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    },
+                    "cents": 1400,
+                    "label": "members"
+                  },
+                  {
+                    "when": {
+                      "op": "all",
+                      "args": [
+                        {
+                          "op": "flag",
+                          "field": "student",
+                          "value": true
+                        },
+                        {
+                          "op": "time",
+                          "cmp": "lt",
+                          "value": "2034-09-01T00:00:00.000Z"
+                        }
+                      ]
+                    },
+                    "cents": 1200,
+                    "label": "early students"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    "cents": 1800,
+                    "label": "other students"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    "cents": 1900,
+                    "label": "residents"
+                  }
+                ]
+              }
+            },
+            "issues": []
+          },
+          {
+            "id": "studio-review-3-bob",
+            "editor": "bob",
+            "sourceVersion": 2,
+            "en": "Orbit Atlas is a remote mapping meetup. Participants must be at least 16 years old. Those who are not members must be at least 21 years old. Every person under 18 years old must have guardian consent. Registrations are accepted until 2034-09-07T16:00:00.000Z, including that exact instant, and are closed afterwards. No fee category exempts anyone from the admission requirements. Admitted persons pay the first applicable fee in this order: those with a scholarship pay 0 USD; members pay 14 USD; students whose registration is sent strictly before 2034-09-01T00:00:00.000Z pay 12 USD; all other students pay 18 USD; residents pay 19 USD; all other persons pay 26 USD. Categories may overlap, but fees are never combined.",
+            "es": "Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan.",
+            "rules": {
+              "eligibility": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      },
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 21
+                      }
+                    ]
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 18
+                      },
+                      {
+                        "op": "flag",
+                        "field": "guardianConsent",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "op": "time",
+                    "cmp": "lte",
+                    "value": "2034-09-07T16:00:00.000Z"
+                  }
+                ]
+              },
+              "fee": {
+                "currency": "USD",
+                "defaultCents": 2600,
+                "overrides": [
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "scholarship",
+                      "value": true
+                    },
+                    "cents": 0,
+                    "label": "scholarship holders"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    },
+                    "cents": 1400,
+                    "label": "members"
+                  },
+                  {
+                    "when": {
+                      "op": "all",
+                      "args": [
+                        {
+                          "op": "flag",
+                          "field": "student",
+                          "value": true
+                        },
+                        {
+                          "op": "time",
+                          "cmp": "lt",
+                          "value": "2034-09-01T00:00:00.000Z"
+                        }
+                      ]
+                    },
+                    "cents": 1200,
+                    "label": "early students"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    "cents": 1800,
+                    "label": "other students"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    "cents": 1900,
+                    "label": "residents"
+                  }
+                ]
+              }
+            },
+            "issues": []
+          }
+        ],
+        "votes": {},
+        "status": "published",
+        "provenance": "meta-model",
+        "discovery": {
+          "status": "equivalent",
+          "witnesses": [],
+          "checkedCases": 2816,
+          "issues": [],
+          "coverage": {
+            "ageValues": 121,
+            "agePartitions": 11,
+            "flagCombinations": 32,
+            "timePartitions": 8,
+            "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+          }
+        },
+        "createdAt": "2026-10-27T05:15:30.134Z",
+        "publishedVersion": 2
+      },
+      "registrations": [
+        {
+          "requestId": "repair-ext-86c742b3-0de8-4ae5-a86d-eaa02b734ded",
+          "policyVersion": 2,
+          "label": "Synthetic orbit-mapping-sprint before repair",
+          "age": 16,
+          "resident": false,
+          "student": false,
+          "member": true,
+          "guardianConsent": true,
+          "scholarship": false,
+          "submittedAt": "2034-08-31T12:00:00.000Z",
+          "id": "studio-receipt-7",
+          "recordedAt": "2026-10-27T05:15:30.850Z",
+          "decision": {
+            "accepted": true,
+            "feeCents": 1400,
+            "feeReason": {
+              "en": "First matching fee rule: members",
+              "es": "Primera regla de tarifa aplicable: members"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(age ≥ 16 AND (member OR age ≥ 21) AND (age ≥ 18 OR guardian consent) AND submitted ≤ 2034-09-07T16:00:00.000Z)",
+                "es": "(edad ≥ 16 Y (miembro O edad ≥ 21) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≤ 2034-09-07T16:00:00.000Z)"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "(member OR age ≥ 21)",
+                "es": "(miembro O edad ≥ 21)"
+              },
+              {
+                "path": "eligibility.1.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.1.1",
+                "passed": false,
+                "en": "age ≥ 21",
+                "es": "edad ≥ 21"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent)",
+                "es": "(edad ≥ 18 O consentimiento del tutor)"
+              },
+              {
+                "path": "eligibility.2.0",
+                "passed": false,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.2.1",
+                "passed": true,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "submitted ≤ 2034-09-07T16:00:00.000Z",
+                "es": "inscripción ≤ 2034-09-07T16:00:00.000Z"
+              },
+              {
+                "path": "fee.0",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.1",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: members",
+                "es": "Primera regla de tarifa aplicable: members"
+              }
+            ]
+          }
+        }
+      ],
+      "modelCallCount": 2,
+      "automaticReview": {
+        "requestId": "c458b4b1-3486-42a7-8b32-300c3c09fca5",
+        "jobId": "studio-review-3",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "protocol": "expression-v3",
+        "reasoningEffort": "low",
+        "requestedEditors": [
+          "alice",
+          "bob"
+        ],
+        "reusedEditors": [],
+        "source": "meta",
+        "status": "completed",
+        "startedAt": "2026-10-27T05:15:20.193Z",
+        "leaseExpiresAt": "2026-10-27T05:16:50.193Z",
+        "finishedAt": "2026-10-27T05:15:30.134Z",
+        "durationMs": 9941,
+        "metrics": {
+          "providerDurationMs": 9563,
+          "requestBytes": 6823,
+          "responseContentBytes": 2889,
+          "promptTokens": 1435,
+          "completionTokens": 2477,
+          "totalTokens": 3912,
+          "reasoningTokens": 1639,
+          "cachedInputTokens": 0,
+          "finishReason": "stop",
+          "maxCompletionTokens": 8192
+        }
+      },
+      "repair": {
+        "id": "repair-851c0357-fe7c-4725-9837-4f35032f3eb1",
+        "job": {
+          "id": "repair-851c0357-fe7c-4725-9837-4f35032f3eb1",
+          "reviewId": "studio-review-3",
+          "basePolicyVersion": 2,
+          "drafts": {
+            "alice": {
+              "editor": "alice",
+              "language": "en",
+              "version": 2,
+              "text": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine."
+            },
+            "bob": {
+              "editor": "bob",
+              "language": "es",
+              "version": 2,
+              "text": "Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan."
+            }
+          },
+          "baseline": {
+            "id": "studio-review-3-alice",
+            "editor": "alice",
+            "sourceVersion": 2,
+            "en": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.",
+            "es": "Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.",
+            "rules": {
+              "eligibility": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      },
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 21
+                      }
+                    ]
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 18
+                      },
+                      {
+                        "op": "flag",
+                        "field": "guardianConsent",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "op": "time",
+                    "cmp": "lte",
+                    "value": "2034-09-07T16:00:00.000Z"
+                  }
+                ]
+              },
+              "fee": {
+                "currency": "USD",
+                "defaultCents": 2600,
+                "overrides": [
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "scholarship",
+                      "value": true
+                    },
+                    "cents": 0,
+                    "label": "scholarship holders"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    },
+                    "cents": 1400,
+                    "label": "members"
+                  },
+                  {
+                    "when": {
+                      "op": "all",
+                      "args": [
+                        {
+                          "op": "flag",
+                          "field": "student",
+                          "value": true
+                        },
+                        {
+                          "op": "time",
+                          "cmp": "lt",
+                          "value": "2034-09-01T00:00:00.000Z"
+                        }
+                      ]
+                    },
+                    "cents": 1200,
+                    "label": "early students"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    "cents": 1800,
+                    "label": "other students"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    "cents": 1900,
+                    "label": "residents"
+                  }
+                ]
+              }
+            },
+            "issues": []
+          },
+          "intent": {
+            "baselineCandidateId": "studio-review-3-alice",
+            "scopeFlag": "member",
+            "feeCents": 0
+          },
+          "createdAt": "2026-10-27T05:15:31.075Z"
+        },
+        "proposal": {
+          "en": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: members pay $0; scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.",
+          "es": "Orbit Atlas es un sprint de cartografía remota. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona participante menor de 18 años debe contar con el consentimiento de su tutor. La inscripción se acepta hasta el 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y se cierra después. Ninguna de las categorías de tarifa exime de ningún requisito de admisión. Las personas admitidas pagan la primera tarifa coincidente en este orden: los miembros pagan 0 $; las personas becarias pagan 0 $; los miembros pagan 14 $; los estudiantes cuya inscripción se envíe estrictamente antes del 2034-09-01T00:00:00.000Z pagan 12 $; todos los demás estudiantes pagan 18 $; los residentes pagan 19 $; todas las demás personas pagan 26 $. Todos los importes son en USD. Las categorías pueden solaparse, pero las tarifas nunca se combinan.",
+          "rules": {
+            "eligibility": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 16
+                },
+                {
+                  "op": "any",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    },
+                    {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 21
+                    }
+                  ]
+                },
+                {
+                  "op": "any",
+                  "args": [
+                    {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 18
+                    },
+                    {
+                      "op": "flag",
+                      "field": "guardianConsent",
+                      "value": true
+                    }
+                  ]
+                },
+                {
+                  "op": "time",
+                  "cmp": "lte",
+                  "value": "2034-09-07T16:00:00.000Z"
+                }
+              ]
+            },
+            "fee": {
+              "currency": "USD",
+              "defaultCents": 2600,
+              "overrides": [
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  "cents": 0,
+                  "label": "Agreed member fee"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  },
+                  "cents": 0,
+                  "label": "scholarship holders"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  "cents": 1400,
+                  "label": "members"
+                },
+                {
+                  "when": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "student",
+                        "value": true
+                      },
+                      {
+                        "op": "time",
+                        "cmp": "lt",
+                        "value": "2034-09-01T00:00:00.000Z"
+                      }
+                    ]
+                  },
+                  "cents": 1200,
+                  "label": "early students"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  "cents": 1800,
+                  "label": "other students"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  "cents": 1900,
+                  "label": "residents"
+                }
+              ]
+            }
+          },
+          "issues": []
+        },
+        "impact": {
+          "status": "pass",
+          "expectedRules": {
+            "eligibility": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 16
+                },
+                {
+                  "op": "any",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    },
+                    {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 21
+                    }
+                  ]
+                },
+                {
+                  "op": "any",
+                  "args": [
+                    {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 18
+                    },
+                    {
+                      "op": "flag",
+                      "field": "guardianConsent",
+                      "value": true
+                    }
+                  ]
+                },
+                {
+                  "op": "time",
+                  "cmp": "lte",
+                  "value": "2034-09-07T16:00:00.000Z"
+                }
+              ]
+            },
+            "fee": {
+              "currency": "USD",
+              "defaultCents": 2600,
+              "overrides": [
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  "cents": 0,
+                  "label": "Agreed member fee"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  },
+                  "cents": 0,
+                  "label": "scholarship holders"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  "cents": 1400,
+                  "label": "members"
+                },
+                {
+                  "when": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "student",
+                        "value": true
+                      },
+                      {
+                        "op": "time",
+                        "cmp": "lt",
+                        "value": "2034-09-01T00:00:00.000Z"
+                      }
+                    ]
+                  },
+                  "cents": 1200,
+                  "label": "early students"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  "cents": 1800,
+                  "label": "other students"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  "cents": 1900,
+                  "label": "residents"
+                }
+              ]
+            }
+          },
+          "verification": {
+            "status": "equivalent",
+            "witnesses": [],
+            "checkedCases": 2816,
+            "issues": [],
+            "coverage": {
+              "ageValues": 121,
+              "agePartitions": 11,
+              "flagCombinations": 32,
+              "timePartitions": 8,
+              "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+            }
+          },
+          "changes": {
+            "status": "different",
+            "witnesses": [
+              {
+                "id": "price-left-higher",
+                "kind": "price-only",
+                "attendee": {
+                  "age": 24,
+                  "resident": false,
+                  "student": false,
+                  "member": true,
+                  "guardianConsent": false,
+                  "scholarship": false,
+                  "submittedAt": "2034-09-01T00:00:00.000Z"
+                },
+                "left": {
+                  "accepted": true,
+                  "feeCents": 1400,
+                  "feeReason": {
+                    "en": "First matching fee rule: members",
+                    "es": "Primera regla de tarifa aplicable: members"
+                  },
+                  "trace": [
+                    {
+                      "path": "eligibility",
+                      "passed": true,
+                      "en": "(age ≥ 16 AND (member OR age ≥ 21) AND (age ≥ 18 OR guardian consent) AND submitted ≤ 2034-09-07T16:00:00.000Z)",
+                      "es": "(edad ≥ 16 Y (miembro O edad ≥ 21) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≤ 2034-09-07T16:00:00.000Z)"
+                    },
+                    {
+                      "path": "eligibility.0",
+                      "passed": true,
+                      "en": "age ≥ 16",
+                      "es": "edad ≥ 16"
+                    },
+                    {
+                      "path": "eligibility.1",
+                      "passed": true,
+                      "en": "(member OR age ≥ 21)",
+                      "es": "(miembro O edad ≥ 21)"
+                    },
+                    {
+                      "path": "eligibility.1.0",
+                      "passed": true,
+                      "en": "member",
+                      "es": "miembro"
+                    },
+                    {
+                      "path": "eligibility.1.1",
+                      "passed": true,
+                      "en": "age ≥ 21",
+                      "es": "edad ≥ 21"
+                    },
+                    {
+                      "path": "eligibility.2",
+                      "passed": true,
+                      "en": "(age ≥ 18 OR guardian consent)",
+                      "es": "(edad ≥ 18 O consentimiento del tutor)"
+                    },
+                    {
+                      "path": "eligibility.2.0",
+                      "passed": true,
+                      "en": "age ≥ 18",
+                      "es": "edad ≥ 18"
+                    },
+                    {
+                      "path": "eligibility.2.1",
+                      "passed": false,
+                      "en": "guardian consent",
+                      "es": "consentimiento del tutor"
+                    },
+                    {
+                      "path": "eligibility.3",
+                      "passed": true,
+                      "en": "submitted ≤ 2034-09-07T16:00:00.000Z",
+                      "es": "inscripción ≤ 2034-09-07T16:00:00.000Z"
+                    },
+                    {
+                      "path": "fee.0",
+                      "passed": false,
+                      "en": "scholarship",
+                      "es": "beca"
+                    },
+                    {
+                      "path": "fee.1",
+                      "passed": true,
+                      "en": "member",
+                      "es": "miembro"
+                    }
+                  ],
+                  "reasons": [
+                    {
+                      "en": "Meets the complete admission rule.",
+                      "es": "Cumple la regla completa de admisión."
+                    },
+                    {
+                      "en": "First matching fee rule: members",
+                      "es": "Primera regla de tarifa aplicable: members"
+                    }
+                  ]
+                },
+                "right": {
+                  "accepted": true,
+                  "feeCents": 0,
+                  "feeReason": {
+                    "en": "First matching fee rule: Agreed member fee",
+                    "es": "Primera regla de tarifa aplicable: Agreed member fee"
+                  },
+                  "trace": [
+                    {
+                      "path": "eligibility",
+                      "passed": true,
+                      "en": "(age ≥ 16 AND (member OR age ≥ 21) AND (age ≥ 18 OR guardian consent) AND submitted ≤ 2034-09-07T16:00:00.000Z)",
+                      "es": "(edad ≥ 16 Y (miembro O edad ≥ 21) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≤ 2034-09-07T16:00:00.000Z)"
+                    },
+                    {
+                      "path": "eligibility.0",
+                      "passed": true,
+                      "en": "age ≥ 16",
+                      "es": "edad ≥ 16"
+                    },
+                    {
+                      "path": "eligibility.1",
+                      "passed": true,
+                      "en": "(member OR age ≥ 21)",
+                      "es": "(miembro O edad ≥ 21)"
+                    },
+                    {
+                      "path": "eligibility.1.0",
+                      "passed": true,
+                      "en": "member",
+                      "es": "miembro"
+                    },
+                    {
+                      "path": "eligibility.1.1",
+                      "passed": true,
+                      "en": "age ≥ 21",
+                      "es": "edad ≥ 21"
+                    },
+                    {
+                      "path": "eligibility.2",
+                      "passed": true,
+                      "en": "(age ≥ 18 OR guardian consent)",
+                      "es": "(edad ≥ 18 O consentimiento del tutor)"
+                    },
+                    {
+                      "path": "eligibility.2.0",
+                      "passed": true,
+                      "en": "age ≥ 18",
+                      "es": "edad ≥ 18"
+                    },
+                    {
+                      "path": "eligibility.2.1",
+                      "passed": false,
+                      "en": "guardian consent",
+                      "es": "consentimiento del tutor"
+                    },
+                    {
+                      "path": "eligibility.3",
+                      "passed": true,
+                      "en": "submitted ≤ 2034-09-07T16:00:00.000Z",
+                      "es": "inscripción ≤ 2034-09-07T16:00:00.000Z"
+                    },
+                    {
+                      "path": "fee.0",
+                      "passed": true,
+                      "en": "member",
+                      "es": "miembro"
+                    }
+                  ],
+                  "reasons": [
+                    {
+                      "en": "Meets the complete admission rule.",
+                      "es": "Cumple la regla completa de admisión."
+                    },
+                    {
+                      "en": "First matching fee rule: Agreed member fee",
+                      "es": "Primera regla de tarifa aplicable: Agreed member fee"
+                    }
+                  ]
+                },
+                "feeDeltaCents": 1400,
+                "explanation": {
+                  "en": "Both admit this person, but A charges $14.00 and B charges $0.00.",
+                  "es": "Ambas admiten a esta persona, pero A cobra $14.00 y B cobra $0.00."
+                }
+              }
+            ],
+            "checkedCases": 2816,
+            "issues": [],
+            "coverage": {
+              "ageValues": 121,
+              "agePartitions": 11,
+              "flagCombinations": 32,
+              "timePartitions": 8,
+              "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+            }
+          },
+          "issues": []
+        },
+        "votes": {
+          "alice": true
+        },
+        "status": "ready",
+        "createdAt": "2026-10-27T05:15:31.075Z",
+        "completedAt": "2026-10-27T05:15:38.714Z"
+      },
+      "automaticRepair": {
+        "requestId": "851c0357-fe7c-4725-9837-4f35032f3eb1",
+        "jobId": "repair-851c0357-fe7c-4725-9837-4f35032f3eb1",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "protocol": "expression-v3",
+        "reasoningEffort": "low",
+        "requestedEditors": [
+          "alice",
+          "bob"
+        ],
+        "reusedEditors": [],
+        "source": "meta",
+        "status": "completed",
+        "startedAt": "2026-10-27T05:15:31.075Z",
+        "leaseExpiresAt": "2026-10-27T05:17:01.075Z",
+        "finishedAt": "2026-10-27T05:15:38.714Z",
+        "durationMs": 7639,
+        "metrics": {
+          "providerDurationMs": 7493,
+          "requestBytes": 8661,
+          "responseContentBytes": 2898,
+          "promptTokens": 1940,
+          "completionTokens": 2120,
+          "totalTokens": 4060,
+          "reasoningTokens": 1328,
+          "cachedInputTokens": 0,
+          "finishReason": "stop",
+          "maxCompletionTokens": 8192
+        }
+      }
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reuseUnchanged": false,
+      "maxCompletionTokens": 8192
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "reviewer": "Independent Codex repair_holdout agent; AI review, not human bilingual validation",
+  "runStatus": "stopped-fail-closed",
+  "modelRequests": 3,
+  "reviewedGeneratedLanguageInstances": 4,
+  "reviewedCopiedRewriteLanguageInstances": 2,
+  "sourceCopiesExact": true,
+  "bilingualMeaningAligned": true,
+  "generatedRepairIntentSatisfied": false,
+  "publicationGateHeld": true,
+  "baseline": {
+    "verdict": "pass",
+    "details": [
+      "Both original sources were retained exactly.",
+      "Alice Spanish translation preserves minimum age15, consent below18, resident/member/student/age25 access disjunction, exclusive UTC deadline, scholarship through age19 fee6, then member11/student15/resident21/default29 with first-match ordering.",
+      "Bob English translation preserves the same rules and fee order. All dollar amounts remain USD."
+    ]
+  },
+  "suppliedRewrite": {
+    "verdict": "faithful interpretation; correctly blocked",
+    "authorship": "Deliberately authored challenge input, not a spontaneous Meta error",
+    "details": [
+      "English and Spanish rewrite sources were returned byte-for-byte.",
+      "Both expressly waive guardian consent for scholarship holders under18 while retaining minimum age15 and other access/deadline requirements.",
+      "Both expressly make all admitted scholarship holders free, regardless of age.",
+      "The admission expansion is outside the fee-only intent and is correctly blocked."
+    ]
+  },
+  "generatedRepair": {
+    "verdict": "intent failure; correctly blocked",
+    "authorship": "Fresh Meta-generated proposal, not an authored failure fixture",
+    "details": [
+      "The English and Spanish policies agree with each other and the returned rules.",
+      "Both preserve admission/consent/access/deadline requirements and unrelated fees.",
+      "Both incorrectly retain the age19-or-younger restriction on the scholarship fee waiver.",
+      "Intent requires fee0 for every eligible scholarship holder. Older scholarship holders remain charged11/15/21/29 USD.",
+      "The checker exposes this under-applied repair and withholds approval/publication."
+    ],
+    "concreteExample": {
+      "age": 20,
+      "resident": true,
+      "student": false,
+      "member": false,
+      "guardianConsent": false,
+      "scholarship": true,
+      "submittedAt": "2033-05-13T12:00:00.000Z",
+      "expectedCents": 0,
+      "proposedCents": 2100
+    }
+  },
+  "minorPresentationNotes": [
+    "Some Spanish fee traces append English fee labels; no substantive rule change results."
+  ],
+  "limits": [
+    "This review does not establish arbitrary-policy accuracy, production readiness, or a human usability result.",
+    "The second frozen policy was not reached.",
+    "No generated repair was published in this stopped run."
+  ],
+  "sourceFiles": [
+    {
+      "path": "holdout/provider-inputs.json",
+      "sha256": "23b05ff1403d16b9c61fa114a726d8d0b76064d39a0a3bb9cac42dc64e5822a9"
+    },
+    {
+      "path": "holdout/goldens.json",
+      "sha256": "b25b25ebac3ad6df84c73156d331c6c9b313dbfe4eddc54c3f69c379230de582"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-baseline/after.json",
+      "sha256": "36bd10242ecf94beb0839756d8a7e79cbff60bae1fd3a9ddcdc6b47bb5123bc9"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-check-rewrite/after.json",
+      "sha256": "8ead1d9e5c738b8d9f3ac58552f984ba7a2076630c8704cb18856da12a5cf275"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-generate-repair/after.json",
+      "sha256": "5cd6c47719f5387abb7984b704bf5e52a159a5cb41c81d920752b7305f306e0b"
+    }
+  ]
+}

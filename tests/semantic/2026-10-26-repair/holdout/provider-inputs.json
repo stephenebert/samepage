@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "description": "Synthetic policies and proposed rewrites. No expected rules or verdicts are included in this provider-input file.",
+  "cases": [
+    {
+      "id": "lumen-archive-workshop",
+      "title": "Lumen Archive online workshop",
+      "sourceTexts": {
+        "en": "Lumen Archive is an online archive workshop. Participants must be at least 15 years old. Participants younger than 18 must have guardian consent. Each participant must also be a resident, a member, a student, or at least 25 years old. Registration must be submitted strictly before 2033-05-14T18:30:00.000Z. All admission requirements apply even to scholarship holders. For eligible participants, charge the first matching fee in this order: scholarship holders aged 19 or younger pay $6; members pay $11; students pay $15; residents pay $21; everyone else pays $29. All amounts are USD. These fees do not combine.",
+        "es": "Lumen Archive es un taller de archivo en línea. Las personas participantes deben tener al menos 15 años. Las menores de 18 años deben contar con el consentimiento de su tutor. Cada participante también debe ser residente, miembro, estudiante o tener al menos 25 años. La inscripción debe enviarse estrictamente antes de 2033-05-14T18:30:00.000Z. Todos los requisitos de admisión se aplican también a quienes tienen una beca. Para las personas admitidas, se cobra la primera tarifa aplicable en este orden: quienes tienen una beca y 19 años o menos pagan 6 USD; los miembros pagan 11 USD; los estudiantes pagan 15 USD; los residentes pagan 21 USD; todas las demás personas pagan 29 USD. Las tarifas no se combinan."
+      },
+      "intent": {
+        "scopeFlag": "scholarship",
+        "feeCents": 0
+      },
+      "proposalText": {
+        "en": "Lumen Archive is an online archive workshop. Participants must be at least 15 years old. Participants younger than 18 must have guardian consent unless they hold a scholarship. Each participant must also be a resident, a member, a student, or at least 25 years old. Registration must be submitted strictly before 2033-05-14T18:30:00.000Z. For eligible participants, charge the first matching fee in this order: all scholarship holders pay $0 regardless of age; members pay $11; students pay $15; residents pay $21; everyone else pays $29. All amounts are USD. These fees do not combine.",
+        "es": "Lumen Archive es un taller de archivo en línea. Las personas participantes deben tener al menos 15 años. Las menores de 18 años deben contar con el consentimiento de su tutor, salvo que tengan una beca. Cada participante también debe ser residente, miembro, estudiante o tener al menos 25 años. La inscripción debe enviarse estrictamente antes de 2033-05-14T18:30:00.000Z. Para las personas admitidas, se cobra la primera tarifa aplicable en este orden: todas las personas con beca pagan 0 USD, independientemente de su edad; los miembros pagan 11 USD; los estudiantes pagan 15 USD; los residentes pagan 21 USD; todas las demás personas pagan 29 USD. Las tarifas no se combinan."
+      }
+    },
+    {
+      "id": "orbit-mapping-sprint",
+      "title": "Orbit Atlas remote mapping sprint",
+      "sourceTexts": {
+        "en": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.",
+        "es": "Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan."
+      },
+      "intent": {
+        "scopeFlag": "member",
+        "feeCents": 0
+      },
+      "proposalText": {
+        "en": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: members pay $0; scholarship holders pay $0; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $9; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.",
+        "es": "Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: los miembros pagan 0 USD; quienes tienen una beca pagan 0 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 9 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan."
+      }
+    }
+  ]
+}

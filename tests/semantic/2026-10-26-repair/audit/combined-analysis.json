@@ -1,0 +1,116 @@
+{
+  "modelRequests": 6,
+  "responsesCompletedNaturally": 6,
+  "originalRunPassed": false,
+  "extensionPassed": true,
+  "originalFailure": "Automatic repair wrongly limited the scholarship waiver to age19 or younger. Checker blocked it.",
+  "originalFailureConcreteExample": {
+    "age": 20,
+    "resident": true,
+    "scholarship": true,
+    "expectedCents": 0,
+    "proposedCents": 2100
+  },
+  "authoredChallenge": "A supplied rewrite excused scholarship minors from consent; correctly blocked. This was authored test input.",
+  "safeRepairsPublished": 2,
+  "receiptChanges": [
+    {
+      "case": "Lumen",
+      "beforeCents": 2100,
+      "afterCents": 0,
+      "versions": [
+        2,
+        3
+      ]
+    },
+    {
+      "case": "Orbit",
+      "beforeCents": 1400,
+      "afterCents": 0,
+      "versions": [
+        2,
+        3
+      ]
+    }
+  ],
+  "concreteChecks": 224,
+  "concreteMatches": 218,
+  "concreteIntentFailures": 6,
+  "independentOracleChecks": 189728,
+  "independentOracleIntentMismatches": 3212,
+  "generatedLanguageInstancesReviewed": 10,
+  "copiedRewriteLanguageInstancesReviewed": 2,
+  "actualBilledCostUsd": null,
+  "tokenRateEstimateUsd": 0.06640075,
+  "conservativeEstimateUsd": 0.731136,
+  "promptTokens": 10114,
+  "completionTokens": 12649,
+  "stages": [
+    {
+      "phase": "original",
+      "stage": "lumen-archive-workshop-baseline",
+      "result": "passed",
+      "httpDurationMs": 9751,
+      "providerDurationMs": 9392,
+      "promptTokens": 1376,
+      "completionTokens": 2631,
+      "finishReason": "stop"
+    },
+    {
+      "phase": "original",
+      "stage": "lumen-archive-workshop-check-rewrite",
+      "result": "passed",
+      "httpDurationMs": 8113,
+      "providerDurationMs": 7758,
+      "promptTokens": 1909,
+      "completionTokens": 1958,
+      "finishReason": "stop"
+    },
+    {
+      "phase": "original",
+      "stage": "lumen-archive-workshop-generate-repair",
+      "result": "generated-intent-failure-safely-blocked",
+      "httpDurationMs": 5743,
+      "providerDurationMs": 5337,
+      "promptTokens": 1616,
+      "completionTokens": 1499,
+      "finishReason": "stop"
+    },
+    {
+      "phase": "revised-prompt-extension",
+      "stage": "lumen-archive-workshop-generate-repair",
+      "result": "passed",
+      "httpDurationMs": 7641,
+      "providerDurationMs": 7225,
+      "promptTokens": 1838,
+      "completionTokens": 1964,
+      "finishReason": "stop"
+    },
+    {
+      "phase": "revised-prompt-extension",
+      "stage": "orbit-mapping-sprint-baseline",
+      "result": "passed",
+      "httpDurationMs": 10277,
+      "providerDurationMs": 9563,
+      "promptTokens": 1435,
+      "completionTokens": 2477,
+      "finishReason": "stop"
+    },
+    {
+      "phase": "revised-prompt-extension",
+      "stage": "orbit-mapping-sprint-generate-repair",
+      "result": "passed",
+      "httpDurationMs": 7850,
+      "providerDurationMs": 7493,
+      "promptTokens": 1940,
+      "completionTokens": 2120,
+      "finishReason": "stop"
+    }
+  ],
+  "limitations": [
+    "Original3-request ledger/report are unchanged and retain failure. The failed stage retains its initial running label because the quality check threw; top-level status stopped-fail-closed, natural-stop metrics and saved blocked after-state prove that no provider operation remains running.",
+    "Lumen success is a known-case retest under revised prompt. Orbit is a fresh holdout success.",
+    "One measurement per request; no latency distribution or generalized accuracy claim.",
+    "No independent human bilingual study."
+  ]
+}

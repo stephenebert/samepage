@@ -1,0 +1,792 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Read-only integrity of original failed run and revised continuation; failure is never relabeled as pass",
+  "sourceCommit": "d5c94fdc0fe17b95cbc88691a6b98db45a6ec9e8",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3105,
+      "sha256": "9b7d8a6dbaf515c9d80cea44b9516ec2318373c02bc90d6b97317cbee4443fd8"
+    },
+    {
+      "path": "activation-and-shutdown.json",
+      "bytes": 2220,
+      "sha256": "b36ecbce6025540437137121400db9c3255e7794717ebe49de00456b01250c54"
+    },
+    {
+      "path": "audit/audit-stopped-run.mjs",
+      "bytes": 3939,
+      "sha256": "70ab45348ad5151a98950e4c6d229cb78eca28594639b80e3a9033cf65ca2b19"
+    },
+    {
+      "path": "audit/combined-analysis.json",
+      "bytes": 3562,
+      "sha256": "9d7cdcdbf77877df21f153521f046d7d434a0876182c2b6d1f39e0aabe3318c8"
+    },
+    {
+      "path": "audit/extension-bilingual-audit.json",
+      "bytes": 4060,
+      "sha256": "0c51354ffb5ecacb0784b984f8877dcf9a9df7ebd1cc5e2ee0f5f3728fcc4120"
+    },
+    {
+      "path": "audit/extension-verification-result.json",
+      "bytes": 628,
+      "sha256": "527e228261aa58a8a5ae74e3097199db72a202b2432d6abf074ea79a44ed114d"
+    },
+    {
+      "path": "audit/stopped-run-bilingual-audit.json",
+      "bytes": 3602,
+      "sha256": "8c9e0b7c5f7bc6e72df9e9b7fbce796533dcb7e2edf30c974714698c482769be"
+    },
+    {
+      "path": "audit/stopped-run-rule-audit.json",
+      "bytes": 39790,
+      "sha256": "5a89027efd977301c650874b9eee2bddb9a0d8f26b8ceb06a5392d4b7696e346"
+    },
+    {
+      "path": "evaluator/consequences.ts",
+      "bytes": 18664,
+      "sha256": "38b396f9de841c59dfbe0366e71295593c0990613076fa48b5f2391f23ba120a"
+    },
+    {
+      "path": "evaluator/policy-model.ts",
+      "bytes": 11082,
+      "sha256": "582285b4a8f02dd3f505e38de90039a2f90bee5eade99406d1e131620367aabb"
+    },
+    {
+      "path": "evaluator/room.ts",
+      "bytes": 36259,
+      "sha256": "18b5436d33f94d5a7bfd5ef7fa5d76e669251c46394ad6dd99b537f171b8a016"
+    },
+    {
+      "path": "evaluator/studio-engine.ts",
+      "bytes": 15659,
+      "sha256": "00a582c4dea024a8c6a47211bf3fb5bbf6c7e69e0e45b28de14831090b95b50e"
+    },
+    {
+      "path": "evaluator/studio-expression.ts",
+      "bytes": 8238,
+      "sha256": "48bd26b5594506fdce221c932bd8d08bba5ef504cda3a4f1c422e47859e1ec0c"
+    },
+    {
+      "path": "evaluator/studio-model.ts",
+      "bytes": 20628,
+      "sha256": "b2d19c26a7767684dab5816ae2fd4df64a81f029c868fcce93436d9eb6cad805"
+    },
+    {
+      "path": "evaluator/studio-repair-model.ts",
+      "bytes": 6854,
+      "sha256": "1e86f8672087a2ed92d1934207741dd94ffe586b1a4ece792d86344fd80375cf"
+    },
+    {
+      "path": "evaluator/studio-repair.ts",
+      "bytes": 9739,
+      "sha256": "eba1c2def6fe87aa714258dcae18abe2468323ffe415cd586b7eacd0fc5ab535"
+    },
+    {
+      "path": "evaluator/studio.ts",
+      "bytes": 15871,
+      "sha256": "14c070169cd5345d9584d7be221d4645366bda503d5ec1e3c34e90358532b2d6"
+    },
+    {
+      "path": "evaluator-snapshot.json",
+      "bytes": 2057,
+      "sha256": "5c7c959ee03ef6fa567a8762755b7fb31e9f4a946e7a3b3c9a9fa7e14de4699d"
+    },
+    {
+      "path": "extension/cases/lumen-archive-workshop/final.json",
+      "bytes": 125457,
+      "sha256": "5b635b29cb6468c9425471fc5ed9a65630e2743b12061b314a38720cef9135ef"
+    },
+    {
+      "path": "extension/cases/lumen-archive-workshop/start.json",
+      "bytes": 95863,
+      "sha256": "5cd6c47719f5387abb7984b704bf5e52a159a5cb41c81d920752b7305f306e0b"
+    },
+    {
+      "path": "extension/cases/orbit-mapping-sprint/final.json",
+      "bytes": 46949,
+      "sha256": "3deb9fa012a575a7ee1a04a9387b4aed818f01676d735006fd1b1a2ceb8f8248"
+    },
+    {
+      "path": "extension/cases/orbit-mapping-sprint/start.json",
+      "bytes": 20354,
+      "sha256": "c60b23789415c3628edcb982872a0bb9ea29e1bfc4d8d218755ff002f38ddb4f"
+    },
+    {
+      "path": "extension/evaluator/consequences.ts",
+      "bytes": 18664,
+      "sha256": "38b396f9de841c59dfbe0366e71295593c0990613076fa48b5f2391f23ba120a"
+    },
+    {
+      "path": "extension/evaluator/policy-model.ts",
+      "bytes": 11082,
+      "sha256": "582285b4a8f02dd3f505e38de90039a2f90bee5eade99406d1e131620367aabb"
+    },
+    {
+      "path": "extension/evaluator/room.ts",
+      "bytes": 36259,
+      "sha256": "18b5436d33f94d5a7bfd5ef7fa5d76e669251c46394ad6dd99b537f171b8a016"
+    },
+    {
+      "path": "extension/evaluator/studio-engine.ts",
+      "bytes": 15659,
+      "sha256": "00a582c4dea024a8c6a47211bf3fb5bbf6c7e69e0e45b28de14831090b95b50e"
+    },
+    {
+      "path": "extension/evaluator/studio-expression.ts",
+      "bytes": 8238,
+      "sha256": "48bd26b5594506fdce221c932bd8d08bba5ef504cda3a4f1c422e47859e1ec0c"
+    },
+    {
+      "path": "extension/evaluator/studio-model.ts",
+      "bytes": 20628,
+      "sha256": "b2d19c26a7767684dab5816ae2fd4df64a81f029c868fcce93436d9eb6cad805"
+    },
+    {
+      "path": "extension/evaluator/studio-repair-model.ts",
+      "bytes": 7370,
+      "sha256": "7fd8b81968375ad07d26db480624f6fee7c4ad845097396a76131f7a6f032cd0"
+    },
+    {
+      "path": "extension/evaluator/studio-repair.ts",
+      "bytes": 9739,
+      "sha256": "eba1c2def6fe87aa714258dcae18abe2468323ffe415cd586b7eacd0fc5ab535"
+    },
+    {
+      "path": "extension/evaluator/studio.ts",
+      "bytes": 15871,
+      "sha256": "14c070169cd5345d9584d7be221d4645366bda503d5ec1e3c34e90358532b2d6"
+    },
+    {
+      "path": "extension/evaluator-snapshot.json",
+      "bytes": 2057,
+      "sha256": "989e3ba7a5c1045360e548729a7a860c68e9dfba6453d9791f1d4460fe3edb3e"
+    },
+    {
+      "path": "extension/live-ledger.json",
+      "bytes": 1331,
+      "sha256": "5ecbd90daaf2370e2dce5b15d8ff57240b5630b02347215742e35bb5a824dd9b"
+    },
+    {
+      "path": "extension/plan.freeze.json",
+      "bytes": 136,
+      "sha256": "0627d244af5fe9f71a81cab71ac3d3b9891e847dc82f3bfd9c94c4882a0a9d62"
+    },
+    {
+      "path": "extension/plan.json",
+      "bytes": 1347,
+      "sha256": "fc9fd9ce3021b8bebd4565a1d3ac9d77110d1b4b5c28bfd4b388e30efc0d3901"
+    },
+    {
+      "path": "extension/preflight.json",
+      "bytes": 752,
+      "sha256": "1bf447df27b3bd603c13f4fa50127c1428d2fb9c99c6518f7df2fcb05d7d2a2d"
+    },
+    {
+      "path": "extension/prepare-extension.mjs",
+      "bytes": 2949,
+      "sha256": "030b737249631d0625c415c3f56aa7419379dd845766e8e5a17de4225057d8aa"
+    },
+    {
+      "path": "extension/report.json",
+      "bytes": 69682,
+      "sha256": "1248075f7238bc428b7deeb1844d8e1f23c1b155aa8c0c4c5d9bc1951c19b8bc"
+    },
+    {
+      "path": "extension/requests/001-lumen-archive-workshop-existing.json",
+      "bytes": 255,
+      "sha256": "5b7c8555fd558d3224f24d77d8d2b35679b1d64d1e14655e25d7b868bdd50471"
+    },
+    {
+      "path": "extension/requests/002-lumen-archive-workshop-actual-failure-blocked-alice.json",
+      "bytes": 368,
+      "sha256": "39b8f9837f2a3306f20b19e1f5bb9c540a7632f56f6f28c488b1c12443f1ecb4"
+    },
+    {
+      "path": "extension/requests/003-lumen-archive-workshop-actual-failure-blocked-bob.json",
+      "bytes": 366,
+      "sha256": "4205576fe083906703719a4eb7d1c5d0ac8e945ef04342eb8a95c2f736f42a69"
+    },
+    {
+      "path": "extension/requests/004-lumen-archive-workshop-actual-failure-held.json",
+      "bytes": 255,
+      "sha256": "9e4538ee659fa3b2bfadb600e223a23f266b0f4bf9c7f02b3bfc077c97f536b5"
+    },
+    {
+      "path": "extension/requests/005-lumen-archive-workshop-generate-repair.json",
+      "bytes": 413,
+      "sha256": "51dcaef578721d96640f18c2d24b4b99bee87e267d94370820fd46d1e7057d89"
+    },
+    {
+      "path": "extension/requests/006-lumen-archive-workshop-repair-one-vote.json",
+      "bytes": 368,
+      "sha256": "b6337a98a0f7ccb830f41dd7045c7a548ede49ea9c868ce03c152455264c0e8d"
+    },
+    {
+      "path": "extension/requests/007-lumen-archive-workshop-repair-two-votes.json",
+      "bytes": 366,
+      "sha256": "ebbf22cd86dd705063de2e934165ab21b35ff17723624ced13ce2515504fe81a"
+    },
+    {
+      "path": "extension/requests/008-lumen-archive-workshop-after-receipt.json",
+      "bytes": 616,
+      "sha256": "9fc999004b88e0e0d0ea306311b8e2231a92eb2a48a2dd4b16be5896725b59e8"
+    },
+    {
+      "path": "extension/requests/009-orbit-mapping-sprint-create.json",
+      "bytes": 210,
+      "sha256": "f3202980396e467d21f7690629bd93c30369b62e9b7413e4ec78be875c0fd3e3"
+    },
+    {
+      "path": "extension/requests/010-orbit-mapping-sprint-draft-alice.json",
+      "bytes": 1041,
+      "sha256": "8a87eca81ac3bf45950d10ee4d30624c0ddc852db3bbf72e81719b3e2c4c7d55"
+    },
+    {
+      "path": "extension/requests/011-orbit-mapping-sprint-draft-bob.json",
+      "bytes": 1179,
+      "sha256": "cf75db36195cbaa9193abcfff1bcaf651f30263f55240feab10ac421334f4077"
+    },
+    {
+      "path": "extension/requests/012-orbit-mapping-sprint-saved.json",
+      "bytes": 256,
+      "sha256": "15ea65871ae5bf0c5e65f27695c886558816537b433e2b94ae75b781da39f73c"
+    },
+    {
+      "path": "extension/requests/013-orbit-mapping-sprint-baseline.json",
+      "bytes": 262,
+      "sha256": "b11692f7e197b4b605f9e02dafb44bca03e2d368abdbb05dd6f5aab0cc678e9d"
+    },
+    {
+      "path": "extension/requests/014-orbit-mapping-sprint-baseline-one-vote.json",
+      "bytes": 379,
+      "sha256": "333ece54681cd0321a5affe02edd605f2cae16e7a50083ab16f78cf08411f873"
+    },
+    {
+      "path": "extension/requests/015-orbit-mapping-sprint-baseline-two-votes.json",
+      "bytes": 377,
+      "sha256": "812acac0a71ac6e61df00f60c90ddf19059478b212f84b71432e1c81d6e21335"
+    },
+    {
+      "path": "extension/requests/016-orbit-mapping-sprint-before-receipt.json",
+      "bytes": 616,
+      "sha256": "a1edae3455c12170a0bf301053f4f260e2fa98e92dc27e10c4001f4efcd2a291"
+    },
+    {
+      "path": "extension/requests/017-orbit-mapping-sprint-generate-repair.json",
+      "bytes": 390,
+      "sha256": "34cf8233c4776492d25376a27b1422b84048c441aaebd823f5a2e29f91a6baee"
+    },
+    {
+      "path": "extension/requests/018-orbit-mapping-sprint-repair-one-vote.json",
+      "bytes": 369,
+      "sha256": "9f81db1815aed26e551508fe3b9ac88c1c5e36a82015ebb4b89da189ae508952"
+    },
+    {
+      "path": "extension/requests/019-orbit-mapping-sprint-repair-two-votes.json",
+      "bytes": 367,
+      "sha256": "ce012f229975adf27872c7af51802ccde517115e074ef9a28c3260fdac02640a"
+    },
+    {
+      "path": "extension/requests/020-orbit-mapping-sprint-after-receipt.json",
+      "bytes": 615,
+      "sha256": "7a6b900989079b892e095b8941f824c92b35ea077dd2779da473271ea23f1fa6"
+    },
+    {
+      "path": "extension/responses/001-lumen-archive-workshop-existing.json",
+      "bytes": 164924,
+      "sha256": "28ec7ba5813bddb2133ae318f11345643995fbed1b0e7b66ba892aff442a6e98"
+    },
+    {
+      "path": "extension/responses/002-lumen-archive-workshop-actual-failure-blocked-alice.json",
+      "bytes": 320,
+      "sha256": "fd7d553420ea57da7cb1fbd7672af093701625efc2d846da6fb087cfe2707f93"
+    },
+    {
+      "path": "extension/responses/003-lumen-archive-workshop-actual-failure-blocked-bob.json",
+      "bytes": 320,
+      "sha256": "a914bdaee1d1b439a42b07e19aed49084aa88f1c9fbdf238a1e747b61e98a8f5"
+    },
+    {
+      "path": "extension/responses/004-lumen-archive-workshop-actual-failure-held.json",
+      "bytes": 164924,
+      "sha256": "000ec76bba548670de8ec7ffff2373dde1346396a45139041e1546bb1cb807d9"
+    },
+    {
+      "path": "extension/responses/005-lumen-archive-workshop-generate-repair.json",
+      "bytes": 207939,
+      "sha256": "64d3644fabcdfc1f31dda2fdcad16055cc62a69a0adc4dc758ded71708e36ccf"
+    },
+    {
+      "path": "extension/responses/006-lumen-archive-workshop-repair-one-vote.json",
+      "bytes": 207776,
+      "sha256": "bcc1696c054230a55f991a8714bbee59ff20b6588c2b23941185edd46b3f8da0"
+    },
+    {
+      "path": "extension/responses/007-lumen-archive-workshop-repair-two-votes.json",
+      "bytes": 208745,
+      "sha256": "c134c5359c3f1b0850c37e6a4d269ee183a4a74222b4051848b30bda4158ef11"
+    },
+    {
+      "path": "extension/responses/008-lumen-archive-workshop-after-receipt.json",
+      "bytes": 214891,
+      "sha256": "245013a58481c7b03505aa1189c35aa8f0323e53b39fc7ff4af45700a567afc7"
+    },
+    {
+      "path": "extension/responses/009-orbit-mapping-sprint-create.json",
+      "bytes": 3034,
+      "sha256": "7ec0f9e341f461a838c96dc99b7d0a4fb52266c79b1fa2e0784ce70ec76fb2b8"
+    },
+    {
+      "path": "extension/responses/010-orbit-mapping-sprint-draft-alice.json",
+      "bytes": 4298,
+      "sha256": "cf7ea253a2c8f8f1a939282a64df11f32ede92a9fc812d51c59fd79c1ef32197"
+    },
+    {
+      "path": "extension/responses/011-orbit-mapping-sprint-draft-bob.json",
+      "bytes": 5780,
+      "sha256": "acbd1846957acfa4211745353c2786586ab1245540944435b50648ae3fbef45a"
+    },
+    {
+      "path": "extension/responses/012-orbit-mapping-sprint-saved.json",
+      "bytes": 5779,
+      "sha256": "e375931b5f62705b4c18f90f47551d9ade8057aecd262f4d23a747c24bb823bc"
+    },
+    {
+      "path": "extension/responses/013-orbit-mapping-sprint-baseline.json",
+      "bytes": 25062,
+      "sha256": "70f94cf59811a8e766b655382daa9f9d95794954beac8520cedafcc1a574a96e"
+    },
+    {
+      "path": "extension/responses/014-orbit-mapping-sprint-baseline-one-vote.json",
+      "bytes": 24938,
+      "sha256": "ae3235acfdf38850c73ac370cf74fbdd0e1a23dc0b8b7756ce6ff3621f076ef8"
+    },
+    {
+      "path": "extension/responses/015-orbit-mapping-sprint-baseline-two-votes.json",
+      "bytes": 31696,
+      "sha256": "2f83a3da8951e5e5d8d5023aa6ada5b71bb3e76efc2aa882d19e78b7b1ebaebf"
+    },
+    {
+      "path": "extension/responses/016-orbit-mapping-sprint-before-receipt.json",
+      "bytes": 37259,
+      "sha256": "153f2e314d3aa0b389077edf6dc47e466efed34a4c128c0b3d08cfbb7ee24cfb"
+    },
+    {
+      "path": "extension/responses/017-orbit-mapping-sprint-generate-repair.json",
+      "bytes": 77980,
+      "sha256": "9e6c7d7cd36fa4fa76215ecb223cfbc21d65ba42d865683b4e9fbd3b1b4284a9"
+    },
+    {
+      "path": "extension/responses/018-orbit-mapping-sprint-repair-one-vote.json",
+      "bytes": 77819,
+      "sha256": "7f1a4aaf761875087e24f1d98845bf8ae27f565e4b079fb2a94fff7303fdf2f4"
+    },
+    {
+      "path": "extension/responses/019-orbit-mapping-sprint-repair-two-votes.json",
+      "bytes": 78402,
+      "sha256": "dd4a7e82622ce2e9e82a1a2ea42493e1ffc05890fd7dc04d6b654b6172f4ec11"
+    },
+    {
+      "path": "extension/responses/020-orbit-mapping-sprint-after-receipt.json",
+      "bytes": 83792,
+      "sha256": "4a7242906e010c3b252f85cd180973bf6fed93a46891b136fd8ed631a4439fe0"
+    },
+    {
+      "path": "extension/run-extension.mjs",
+      "bytes": 26587,
+      "sha256": "aca13d08155f9caaf6aa9830e58e62389ac2bb6841837d361e07e513bafcc003"
+    },
+    {
+      "path": "extension/stages/lumen-archive-workshop-generate-repair/after.json",
+      "bytes": 121540,
+      "sha256": "80ea72cc9d4a3dbef8516ea610a5922d14fcdf9af4eca20b2e7571974fb932f7"
+    },
+    {
+      "path": "extension/stages/lumen-archive-workshop-generate-repair/before.json",
+      "bytes": 95863,
+      "sha256": "5cd6c47719f5387abb7984b704bf5e52a159a5cb41c81d920752b7305f306e0b"
+    },
+    {
+      "path": "extension/stages/lumen-archive-workshop-generate-repair/provider-request-exact.json",
+      "bytes": 12608,
+      "sha256": "e19b54fae52c3dcb0c443decacdae9864a30d7a0ef08a5b9ba7a83d1acdbb10a"
+    },
+    {
+      "path": "extension/stages/lumen-archive-workshop-generate-repair/quality.json",
+      "bytes": 19353,
+      "sha256": "62f7e818577c6240f51eb649a947e6e3eab3ec05d9718dc8062b8c94475f203e"
+    },
+    {
+      "path": "extension/stages/lumen-archive-workshop-generate-repair/request-estimate.json",
+      "bytes": 18763,
+      "sha256": "43d0174cf533b4cd7c9bb726cea538bbb7621a15409ecef6b469555f959bf999"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-baseline/after.json",
+      "bytes": 13447,
+      "sha256": "4341bb6dcbca6d5313c05a6a99d945ded3b78a89deca2e6d5be80106b638601a"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-baseline/before.json",
+      "bytes": 2572,
+      "sha256": "2b441b823ba15de7958d285b5b3a6451be594e238ca7c99e63b85ac6cc33a7d8"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-baseline/provider-request-exact.json",
+      "bytes": 10181,
+      "sha256": "5549f711fd0512ded1cd3e73877542662672f9751919bf8301f9dd357c2ee344"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-baseline/quality.json",
+      "bytes": 14761,
+      "sha256": "973e853d1fee2bf9c0332ed3a2e04646a3f7d6c1ac995485c9601a9f90beba2f"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-baseline/request-estimate.json",
+      "bytes": 17606,
+      "sha256": "d308836bd9134a32a7936246ef068b263a881f62680c9f80ef70db76d73a7d94"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-generate-repair/after.json",
+      "bytes": 43642,
+      "sha256": "edfcf9e8753d712b14db46368ae67f1389e11e32d4b1b0c48d0f6cd5d6974dbf"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-generate-repair/before.json",
+      "bytes": 20354,
+      "sha256": "c60b23789415c3628edcb982872a0bb9ea29e1bfc4d8d218755ff002f38ddb4f"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-generate-repair/provider-request-exact.json",
+      "bytes": 12931,
+      "sha256": "ee667b2abbe9a31f732edf02d5eb855ba049c54eb9489f5a8b530cdacdfe336a"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-generate-repair/quality.json",
+      "bytes": 17631,
+      "sha256": "db92a16fe5e65bcaff7b09cd903f781de6f039160d00622e71a40aae68bc6b7d"
+    },
+    {
+      "path": "extension/stages/orbit-mapping-sprint-generate-repair/request-estimate.json",
+      "bytes": 19469,
+      "sha256": "83b26d83c1ff3f9cef1adc090a882df40d0cde533c83bf10e97030afb22bd301"
+    },
+    {
+      "path": "extension/verify-evidence.mjs",
+      "bytes": 8089,
+      "sha256": "abe157b0ffc3c9f7f09daa853170149aefb07f05ed822b8a7f5a03b0f31cb121"
+    },
+    {
+      "path": "holdout/README.md",
+      "bytes": 3636,
+      "sha256": "8a752df3be6af3d9db849f08671ee51175eeefce4530666b649db9fa04d14372"
+    },
+    {
+      "path": "holdout/SHA256SUMS",
+      "bytes": 590,
+      "sha256": "8f20e8e8572f9144fdd8afb95b6856bd971a8ff496591b40313b5c226b74615d"
+    },
+    {
+      "path": "holdout/author-corpus.mjs",
+      "bytes": 16588,
+      "sha256": "e0201646b4fe1592ab7ce2e3476e91c44dbb7fe5b68defdba1269711de6ccafc"
+    },
+    {
+      "path": "holdout/goldens.json",
+      "bytes": 58456,
+      "sha256": "b25b25ebac3ad6df84c73156d331c6c9b313dbfe4eddc54c3f69c379230de582"
+    },
+    {
+      "path": "holdout/independent-oracle.mjs",
+      "bytes": 4215,
+      "sha256": "4b1e774ebc3f2d65e3371f4ed96a91e7cc5d94f588782dfbce9c8004d5aaf5e6"
+    },
+    {
+      "path": "holdout/oracle-verification.json",
+      "bytes": 1238,
+      "sha256": "8faf09d784ede71ccc3a5c16995e5f7fc459309a14297569ae06468a3d4c3363"
+    },
+    {
+      "path": "holdout/provider-inputs.json",
+      "bytes": 6501,
+      "sha256": "23b05ff1403d16b9c61fa114a726d8d0b76064d39a0a3bb9cac42dc64e5822a9"
+    },
+    {
+      "path": "holdout/verify-oracle.mjs",
+      "bytes": 1423,
+      "sha256": "7f126c074d00c707f15c218ed58fe2ad0bda68a97c39f47f02e17d38b32fcc1e"
+    },
+    {
+      "path": "live-ledger.json",
+      "bytes": 1345,
+      "sha256": "8da9efaee4209f42893e264d72773b7f128fe092302efea90ebae8cbcf056832"
+    },
+    {
+      "path": "mechanical-tests-final.txt",
+      "bytes": 15936,
+      "sha256": "cde329534f94cd3d44e8daf9f98386280925e8535026753331ae934618876dda"
+    },
+    {
+      "path": "mechanical-tests.txt",
+      "bytes": 15818,
+      "sha256": "83542491a04ab1a74f7c059dda7c05bac155db925f3d0fd7b109e7deaf3d28c4"
+    },
+    {
+      "path": "plan.freeze.json",
+      "bytes": 136,
+      "sha256": "0721c2ae94007f889d6b3057fdf3bded41b3c35826d8d67f31e70981aa2808c5"
+    },
+    {
+      "path": "plan.json",
+      "bytes": 711,
+      "sha256": "910369827980ae56d17bd8863d8dbbc90b398dd618d720a8bf8512289014c587"
+    },
+    {
+      "path": "preflight.json",
+      "bytes": 592,
+      "sha256": "85eeed1e9072f53bfb894a27769ec16f118c5a1a248d80332db74f562c96d1f8"
+    },
+    {
+      "path": "prepare-evidence.mjs",
+      "bytes": 2343,
+      "sha256": "9c2ab131073e0678aea436bfa8c333366d66eed116780b5497f1ee776b337cdd"
+    },
+    {
+      "path": "report.json",
+      "bytes": 63977,
+      "sha256": "eb06966559baa0ddb3b2bb0d702a7452a6303d3f5536c591d0c38cc269fe10bd"
+    },
+    {
+      "path": "requests/001-lumen-archive-workshop-create.json",
+      "bytes": 210,
+      "sha256": "3c8be097ff541810a0fb6e30cbf3860988adc38937b543c9150139636f2b13ed"
+    },
+    {
+      "path": "requests/002-lumen-archive-workshop-draft-alice.json",
+      "bytes": 952,
+      "sha256": "a9f94ff92b3c60bba4da7d0ac01dfc560d9839b84b33cbad7062a513bb9c9a45"
+    },
+    {
+      "path": "requests/003-lumen-archive-workshop-draft-bob.json",
+      "bytes": 1059,
+      "sha256": "8b09126236dac982d9d756c44aa723c898ecf61483448b7c4763ec17c2f6afa8"
+    },
+    {
+      "path": "requests/004-lumen-archive-workshop-saved.json",
+      "bytes": 255,
+      "sha256": "9e4538ee659fa3b2bfadb600e223a23f266b0f4bf9c7f02b3bfc077c97f536b5"
+    },
+    {
+      "path": "requests/005-lumen-archive-workshop-baseline.json",
+      "bytes": 261,
+      "sha256": "4447d5ee71403263a26cefbc02e188d3872844449a4352715a6fa047fd2dac8f"
+    },
+    {
+      "path": "requests/006-lumen-archive-workshop-baseline-one-vote.json",
+      "bytes": 378,
+      "sha256": "0902dce60110dbc90b29bf1031b36cd592e9c11c5cc3b94cb8bd551a186253a4"
+    },
+    {
+      "path": "requests/007-lumen-archive-workshop-baseline-two-votes.json",
+      "bytes": 376,
+      "sha256": "3490be8ea243a0fef470ab3c48bdd834afd23a8a72b684f2ad452fec87a958b0"
+    },
+    {
+      "path": "requests/008-lumen-archive-workshop-before-receipt.json",
+      "bytes": 618,
+      "sha256": "eacc0ead7b58fa574e1293520ea851089deff46330d845c2a0d91570cd68ade7"
+    },
+    {
+      "path": "requests/009-lumen-archive-workshop-check-rewrite.json",
+      "bytes": 1725,
+      "sha256": "aa68b219040b207cbfb044c4553570a7724922f6b08aaf5a0a78e41c54f403c2"
+    },
+    {
+      "path": "requests/010-lumen-archive-workshop-blocked-vote-alice.json",
+      "bytes": 369,
+      "sha256": "7d5a0bc3846a3ac30166742f51e1d564d959daaf939560e575b19457e601a122"
+    },
+    {
+      "path": "requests/011-lumen-archive-workshop-blocked-vote-bob.json",
+      "bytes": 367,
+      "sha256": "68e385a63ccd2bea493f6e25464bc116d3abd92984ccef713e2455c2b1c36fc7"
+    },
+    {
+      "path": "requests/012-lumen-archive-workshop-blocked-held.json",
+      "bytes": 256,
+      "sha256": "0c3a75435d71f92b9fb7b3e2819f43a15a1893883ab002ac2e5c5ac694ca8f2e"
+    },
+    {
+      "path": "requests/013-lumen-archive-workshop-generate-repair.json",
+      "bytes": 395,
+      "sha256": "295e5d333260b76513c551115495570dfac35ffc445531999fff6469e370d648"
+    },
+    {
+      "path": "responses/001-lumen-archive-workshop-create.json",
+      "bytes": 3034,
+      "sha256": "751cfbbb847e5b80b8c80827e480a946ba0beb04902a0166e845546d7f4e099e"
+    },
+    {
+      "path": "responses/002-lumen-archive-workshop-draft-alice.json",
+      "bytes": 5366,
+      "sha256": "dfc974d4a83ba8d657cd90ac99606e70c2a5341250e2877429d8aae8cbd580c4"
+    },
+    {
+      "path": "responses/003-lumen-archive-workshop-draft-bob.json",
+      "bytes": 4278,
+      "sha256": "01be27b4dd4f876abc3faf1dce191aecbb9d8a82ac961aeb3dd5fb51c2901bd1"
+    },
+    {
+      "path": "responses/004-lumen-archive-workshop-saved.json",
+      "bytes": 5366,
+      "sha256": "541fac4810765e53c1c9c61d87eefa920ef7e8b150173706974be25db28f0219"
+    },
+    {
+      "path": "responses/005-lumen-archive-workshop-baseline.json",
+      "bytes": 23819,
+      "sha256": "2f092cdfc6e11882f3904bf6fa7d8530e39340594ffeb7d452a2a11f61f778e3"
+    },
+    {
+      "path": "responses/006-lumen-archive-workshop-baseline-one-vote.json",
+      "bytes": 23696,
+      "sha256": "2f8f77143622a3e05c0ea5eacbf84d10925305f127c72a8322e3886a2d3be5e7"
+    },
+    {
+      "path": "responses/007-lumen-archive-workshop-baseline-two-votes.json",
+      "bytes": 30071,
+      "sha256": "a8cc17f71fd3ffb78ec68ef10d7bdc011a19653bf400c37846d556ae725b85f1"
+    },
+    {
+      "path": "responses/008-lumen-archive-workshop-before-receipt.json",
+      "bytes": 37424,
+      "sha256": "26bac3203551c3192bf027e749f6ab42f5e76048e90a587db7a8f1626c4adf6c"
+    },
+    {
+      "path": "responses/009-lumen-archive-workshop-check-rewrite.json",
+      "bytes": 108180,
+      "sha256": "c615b2ac840659820d98a4db1a5ac228b9a55892772aa909bd0c24c92731608c"
+    },
+    {
+      "path": "responses/010-lumen-archive-workshop-blocked-vote-alice.json",
+      "bytes": 320,
+      "sha256": "12363b006656787e9b059a93888a01a494d87473e24f1b73403190a168e0c395"
+    },
+    {
+      "path": "responses/011-lumen-archive-workshop-blocked-vote-bob.json",
+      "bytes": 320,
+      "sha256": "416253d27a8b6dbc9ba3fcb7611527878010b3fbdfd176e5036ec063da8da505"
+    },
+    {
+      "path": "responses/012-lumen-archive-workshop-blocked-held.json",
+      "bytes": 107970,
+      "sha256": "85cd1c9f6bba3530c9adb036e01e3743dad21a4af760949d76478d94c4948e75"
+    },
+    {
+      "path": "responses/013-lumen-archive-workshop-generate-repair.json",
+      "bytes": 165134,
+      "sha256": "fd073f29f8dafcc7679066675f06191189814ea35af7a013c42272002cb6516b"
+    },
+    {
+      "path": "run-repair.mjs",
+      "bytes": 24602,
+      "sha256": "2ee8a7cef3292048db52a7aea2cc3630c85599bf4e8515751278d9e9af2704b3"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-baseline/after.json",
+      "bytes": 12869,
+      "sha256": "36bd10242ecf94beb0839756d8a7e79cbff60bae1fd3a9ddcdc6b47bb5123bc9"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-baseline/before.json",
+      "bytes": 2365,
+      "sha256": "fe5119129922167b217b2d75839825b119f8fa6f20cbf6096131ecd6a1749ec5"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-baseline/provider-request-exact.json",
+      "bytes": 9974,
+      "sha256": "462ac1e0acdf77ea2d255245bfe8dab73f4eccd478b78b0fc12841188ad1a448"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-baseline/quality.json",
+      "bytes": 14809,
+      "sha256": "cbef7aa31684a8b312bd6564ea784d35b69dc6a1e4cdd5e3247e98d1724e1035"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-baseline/request-estimate.json",
+      "bytes": 16983,
+      "sha256": "deaf55d7161148e3a0ecfd7c9ac201f32e80382af9dba2e6eb2bcce5ab10bc83"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-check-rewrite/after.json",
+      "bytes": 61617,
+      "sha256": "8ead1d9e5c738b8d9f3ac58552f984ba7a2076630c8704cb18856da12a5cf275"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-check-rewrite/before.json",
+      "bytes": 20619,
+      "sha256": "84aea8c2703a16ca8abea5363c343e407627a95d0bd6391b1539abf0915d7fbf"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-check-rewrite/provider-request-exact.json",
+      "bytes": 12898,
+      "sha256": "96d3eac4c0d3f81ff292ea1732a3a6b240cbd34be72dbb13317a4335c15e71fc"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-check-rewrite/quality.json",
+      "bytes": 34147,
+      "sha256": "78456087cc26c46e5344745d7f2e2ea6f586b70e51a2642562b73739637f95a8"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-check-rewrite/request-estimate.json",
+      "bytes": 20383,
+      "sha256": "d686a615c9ba29259282bceaf32e2440acf7be2397cdbc11d0da112fd859af4f"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-generate-repair/after.json",
+      "bytes": 95863,
+      "sha256": "5cd6c47719f5387abb7984b704bf5e52a159a5cb41c81d920752b7305f306e0b"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-generate-repair/before.json",
+      "bytes": 61617,
+      "sha256": "8ead1d9e5c738b8d9f3ac58552f984ba7a2076630c8704cb18856da12a5cf275"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-generate-repair/provider-request-exact.json",
+      "bytes": 11637,
+      "sha256": "b9c8e2a33abc21e2e277a40b8b1a23d73ab0fa6ad0c2403695d16a4959f045f1"
+    },
+    {
+      "path": "stages/lumen-archive-workshop-generate-repair/request-estimate.json",
+      "bytes": 17793,
+      "sha256": "6b269e649aff314e87815ce382f101e7589c401af9b0fdebb7b09585248dfa22"
+    },
+    {
+      "path": "ui-fixtures/prepare.mjs",
+      "bytes": 5001,
+      "sha256": "ec4bf443c73d38db25c49c6e9e80d7d9362fd2250cc66fa70781dba7f7140739"
+    },
+    {
+      "path": "ui-fixtures/studio-repair-qa-blocked.json",
+      "bytes": 43970,
+      "sha256": "e91caff3c16329d73c37209aee56dc0688b9bb8058c2d6154946963b742d1d17"
+    },
+    {
+      "path": "ui-fixtures/studio-repair-qa-ready.json",
+      "bytes": 60402,
+      "sha256": "c45a1ce25f12e2bce3297ff5a27313cb9d0e8c5ee1e51c24556e6d4560cc4530"
+    },
+    {
+      "path": "verify-archive.mjs",
+      "bytes": 6357,
+      "sha256": "19e648d35e5ddb6b41ffac064908a6b9d7f0137f18d464b0a2844da7cba78e50"
+    },
+    {
+      "path": "verify-evidence.mjs",
+      "bytes": 8663,
+      "sha256": "b9cd2e1ab4e8d85dd00f7efa2f8fc9a57e63569245eaecfa0952e2ccd3270651"
+    }
+  ]
+}

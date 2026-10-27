@@ -1,0 +1,36 @@
+{
+  "runId": "00ca32db-11ce-492a-a8c6-28034e6501a4",
+  "planSha256": "fc9fd9ce3021b8bebd4565a1d3ac9d77110d1b4b5c28bfd4b388e30efc0d3901",
+  "maxRequests": 3,
+  "status": "completed",
+  "modelPostAttempts": [
+    {
+      "sequence": 1,
+      "tag": "lumen-archive-workshop-generate-repair",
+      "route": "/api/studio/studio-b44de4dc-a522-4f78-bc44-f9f0af96f9f6/repair",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T05:15:11.046Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/005-lumen-archive-workshop-generate-repair.json"
+    },
+    {
+      "sequence": 2,
+      "tag": "orbit-mapping-sprint-baseline",
+      "route": "/api/studio/studio-f796aeb7-8f84-4d82-bd30-a0bf29337606/review",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T05:15:19.987Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/013-orbit-mapping-sprint-baseline.json"
+    },
+    {
+      "sequence": 3,
+      "tag": "orbit-mapping-sprint-generate-repair",
+      "route": "/api/studio/studio-f796aeb7-8f84-4d82-bd30-a0bf29337606/repair",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T05:15:30.938Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/017-orbit-mapping-sprint-generate-repair.json"
+    }
+  ],
+  "startedAt": "2026-10-27T05:15:09.802Z"
+}

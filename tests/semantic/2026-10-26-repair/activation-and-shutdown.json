@@ -1,0 +1,66 @@
+{
+  "sourceCommit": "d5c94fdc0fe17b95cbc88691a6b98db45a6ec9e8",
+  "originalEvaluatedSource": "a2192649eca69594b25052e780ccba346ee7aa56",
+  "deployment": {
+    "id": "appgdep_6ae0339df4048191bd8874bf1a36585d",
+    "project_id": "appgprj_6acf326d0f9c81918e24863d7a25c308",
+    "title": "SamePage",
+    "version_id": "appgprj_6acf326d0f9c81918e24863d7a25c308~appgver_75eb11a5fdc481918915a1a15be707c3",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://samepage-language-lab.ampleboar17.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6acf326d0f9c81918e24863d7a25c308",
+    "failure_message": null,
+    "env_set_revision": 19,
+    "updated_at": "2026-10-27T05:16:19.506607+00:00"
+  },
+  "studioMetaEnabled": false,
+  "configuration": {
+    "protocol": "expression-v3",
+    "reasoningEffort": "low",
+    "reuseUnchanged": false,
+    "maxCompletionTokens": 8192
+  },
+  "externalModelRequests": 6,
+  "actualBilledCostUsd": null,
+  "verification": {
+    "localTests": 156,
+    "typeScript": "passed",
+    "productionBuild": "passed",
+    "localBrowser": {
+      "fixture": "controlled responses; no external API",
+      "checks": [
+        "Unsent target-fee edit disables both approvals",
+        "Restore checked request reenables approval",
+        "Alice approval alone keeps policy v2",
+        "Bob matching approval publishes v3",
+        "Target attendee evaluates $0 after approval",
+        "Blocked rewrite has no approval buttons"
+      ]
+    },
+    "hostedBrowser": {
+      "room": "studio-b44de4dc-a522-4f78-bc44-f9f0af96f9f6",
+      "aliceTab": "verified",
+      "bobTab": "verified",
+      "publishedVersion": 3,
+      "receipts": [
+        {
+          "policyVersion": 2,
+          "feeCents": 2100
+        },
+        {
+          "policyVersion": 3,
+          "feeCents": 0
+        }
+      ],
+      "blockedPriorGeneratedRepairVisible": true
+    }
+  },
+  "limits": [
+    "Native environment revision19 deployed successfully; no new provider calls after six.",
+    "Studio pause does not revoke shared key or globally disable older consequences endpoint.",
+    "Simulated editor personas, not real bilingual user study."
+  ]
+}

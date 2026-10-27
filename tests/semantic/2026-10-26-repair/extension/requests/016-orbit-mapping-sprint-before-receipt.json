@@ -1,0 +1,20 @@
+{
+  "sequence": 16,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-f796aeb7-8f84-4d82-bd30-a0bf29337606",
+  "body": {
+    "type": "register",
+    "requestId": "repair-ext-86c742b3-0de8-4ae5-a86d-eaa02b734ded",
+    "policyVersion": 2,
+    "label": "Synthetic orbit-mapping-sprint before repair",
+    "age": 16,
+    "resident": false,
+    "student": false,
+    "member": true,
+    "guardianConsent": true,
+    "scholarship": false,
+    "submittedAt": "2034-08-31T12:00:00.000Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

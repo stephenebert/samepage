@@ -78,10 +78,39 @@ export interface AutomaticStudioReview {
   startedAt: string; leaseExpiresAt: string; finishedAt?: string; durationMs?: number;
   error?: { code: string; message: string };
 }
+export interface StudioRepairIntent {
+  baselineCandidateId: string; scopeFlag: StudioFlag; feeCents: number;
+}
+export interface StudioRepairProposal extends StudioText {
+  rules: StudioRules | null; issues: string[];
+}
+export interface StudioRepairJob {
+  id: string; reviewId: string; basePolicyVersion: number;
+  drafts: Record<StudioEditor, StudioDraft>; baseline: StudioCandidate;
+  intent: StudioRepairIntent; proposalText?: StudioText; createdAt: string;
+}
+export interface StudioRepairImpact {
+  status: "pass" | "blocked" | "unresolved";
+  expectedRules: StudioRules;
+  /** The authorized outcome is left; the proposed outcome is right. */
+  verification: StudioDiscovery;
+  /** The selected baseline is left; the proposed outcome is right. */
+  changes: StudioDiscovery;
+  issues: string[];
+}
+export interface StudioRepair {
+  id: string; job: StudioRepairJob; proposal: StudioRepairProposal | null;
+  impact: StudioRepairImpact | null; votes: Partial<Record<StudioEditor, true>>;
+  status: "running" | "ready" | "blocked" | "failed" | "published" | "superseded";
+  createdAt: string; completedAt?: string; publishedVersion?: number;
+}
 export interface StudioRoom {
   kind: "samepage-studio-v1"; id: string; revision: number; createdAt: string; updatedAt: string;
   mode: "manual-agent-review" | "automatic-model" | "simulated-model";
   automaticReview?: AutomaticStudioReview;
+  automaticRepair?: AutomaticStudioReview;
+  repair?: StudioRepair;
+  repairHistory?: StudioRepair[];
   modelCallCount?: number;
   interpretationCache?: StudioInterpretationCache;
   simulation?: "studio-fee-v1";
@@ -94,6 +123,7 @@ export type StudioAction =
   | { type: "requestReview" }
   | { type: "completeReview"; response: unknown }
   | { type: "vote"; editor: StudioEditor; reviewId: string; candidateId: string }
+  | { type: "voteRepair"; editor: StudioEditor; repairId: string }
   | ({ type: "register"; requestId: string; policyVersion: number; label: string } & StudioAttendee);
 export interface StudioDemoFixture {
   en: string; es: string;

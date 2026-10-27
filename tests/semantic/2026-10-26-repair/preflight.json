@@ -1,0 +1,16 @@
+{
+  "kind": "offline-preflight",
+  "planSha256": "910369827980ae56d17bd8863d8dbbc90b398dd618d720a8bf8512289014c587",
+  "maxRequests": 6,
+  "maxPerRequestBytes": 65536,
+  "maxCompletionTokens": 8192,
+  "framingTokens": 4096,
+  "estimatedMaxUsd": 0.731136,
+  "pricing": {
+    "inputUsdPerMillionTokens": 1.25,
+    "outputUsdPerMillionTokens": 4.25
+  },
+  "method": "Count full provider JSON UTF-8 bytes as input tokens, plus4096 framing tokens; reserve8192 completion tokens for each of six requests. Estimate only; not confirmed billing.",
+  "actualBilledCostUsd": null,
+  "networkCalls": 0
+}

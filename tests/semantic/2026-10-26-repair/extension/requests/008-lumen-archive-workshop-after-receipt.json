@@ -1,0 +1,20 @@
+{
+  "sequence": 8,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-b44de4dc-a522-4f78-bc44-f9f0af96f9f6",
+  "body": {
+    "type": "register",
+    "requestId": "repair-ext-bea867b6-8c3a-4182-ae63-979c37ca2e31",
+    "policyVersion": 3,
+    "label": "Synthetic lumen-archive-workshop after repair",
+    "age": 20,
+    "resident": true,
+    "student": false,
+    "member": false,
+    "guardianConsent": false,
+    "scholarship": true,
+    "submittedAt": "2033-05-13T12:00:00.000Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

@@ -1,0 +1,62 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 144,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-b44de4dc-a522-4f78-bc44-f9f0af96f9f6\",\"revision\":2,\"createdAt\":\"2026-10-27T05:09:39.609Z\",\"updatedAt\":\"2026-10-27T05:09:39.840Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T05:09:39.609Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Lumen Archive is an online archive workshop. Participants must be at least 15 years old. Participants younger than 18 must have guardian consent. Each participant must also be a resident, a member, a student, or at least 25 years old. Registration must be submitted strictly before 2033-05-14T18:30:00.000Z. All admission requirements apply even to scholarship holders. For eligible participants, charge the first matching fee in this order: scholarship holders aged 19 or younger pay $6; members pay $11; students pay $15; residents pay $21; everyone else pays $29. All amounts are USD. These fees do not combine.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Lumen Archive es un taller de archivo en línea. Las personas participantes deben tener al menos 15 años. Las menores de 18 años deben contar con el consentimiento de su tutor. Cada participante también debe ser residente, miembro, estudiante o tener al menos 25 años. La inscripción debe enviarse estrictamente antes de 2033-05-14T18:30:00.000Z. Todos los requisitos de admisión se aplican también a quienes tienen una beca. Para las personas admitidas, se cobra la primera tarifa aplicable en este orden: quienes tienen una beca y 19 años o menos pagan 6 USD; los miembros pagan 11 USD; los estudiantes pagan 15 USD; los residentes pagan 21 USD; todas las demás personas pagan 29 USD. Las tarifas no se combinan.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"expression-v3\",\"reasoningEffort\":\"low\",\"reuseUnchanged\":false,\"maxCompletionTokens\":8192}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-b44de4dc-a522-4f78-bc44-f9f0af96f9f6",
+      "revision": 2,
+      "createdAt": "2026-10-27T05:09:39.609Z",
+      "updatedAt": "2026-10-27T05:09:39.840Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T05:09:39.609Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Lumen Archive is an online archive workshop. Participants must be at least 15 years old. Participants younger than 18 must have guardian consent. Each participant must also be a resident, a member, a student, or at least 25 years old. Registration must be submitted strictly before 2033-05-14T18:30:00.000Z. All admission requirements apply even to scholarship holders. For eligible participants, charge the first matching fee in this order: scholarship holders aged 19 or younger pay $6; members pay $11; students pay $15; residents pay $21; everyone else pays $29. All amounts are USD. These fees do not combine."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Lumen Archive es un taller de archivo en línea. Las personas participantes deben tener al menos 15 años. Las menores de 18 años deben contar con el consentimiento de su tutor. Cada participante también debe ser residente, miembro, estudiante o tener al menos 25 años. La inscripción debe enviarse estrictamente antes de 2033-05-14T18:30:00.000Z. Todos los requisitos de admisión se aplican también a quienes tienen una beca. Para las personas admitidas, se cobra la primera tarifa aplicable en este orden: quienes tienen una beca y 19 años o menos pagan 6 USD; los miembros pagan 11 USD; los estudiantes pagan 15 USD; los residentes pagan 21 USD; todas las demás personas pagan 29 USD. Las tarifas no se combinan."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reuseUnchanged": false,
+      "maxCompletionTokens": 8192
+    }
+  }
+}

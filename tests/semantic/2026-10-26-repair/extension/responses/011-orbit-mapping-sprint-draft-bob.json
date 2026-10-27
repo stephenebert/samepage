@@ -1,0 +1,62 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 345,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-f796aeb7-8f84-4d82-bd30-a0bf29337606\",\"revision\":2,\"createdAt\":\"2026-10-27T05:15:19.495Z\",\"updatedAt\":\"2026-10-27T05:15:19.798Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T05:15:19.495Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"expression-v3\",\"reasoningEffort\":\"low\",\"reuseUnchanged\":false,\"maxCompletionTokens\":8192}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-f796aeb7-8f84-4d82-bd30-a0bf29337606",
+      "revision": 2,
+      "createdAt": "2026-10-27T05:15:19.495Z",
+      "updatedAt": "2026-10-27T05:15:19.798Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T05:15:19.495Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Orbit Atlas is a remote mapping sprint. Participants must be at least 16 years old. Nonmembers must be at least 21 years old. Every participant younger than 18 must have guardian consent. Registration is accepted through 2034-09-07T16:00:00.000Z, including that exact instant, and is closed afterward. None of the fee categories waives any admission requirement. Eligible participants pay the first matching fee in this order: scholarship holders pay $0; members pay $14; students whose registration is submitted strictly before 2034-09-01T00:00:00.000Z pay $12; all other students pay $18; residents pay $19; everyone else pays $26. All amounts are USD. Categories may overlap, but fees never combine."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Orbit Atlas es un encuentro de cartografía a distancia. Las personas participantes deben tener al menos 16 años. Quienes no son miembros deben tener al menos 21 años. Toda persona menor de 18 años debe contar con el consentimiento de su tutor. Se aceptan inscripciones hasta 2034-09-07T16:00:00.000Z, incluido ese instante exacto, y después se cierran. Ninguna categoría de tarifa exime de los requisitos de admisión. Las personas admitidas pagan la primera tarifa aplicable en este orden: quienes tienen una beca pagan 0 USD; los miembros pagan 14 USD; los estudiantes cuya inscripción se envíe estrictamente antes de 2034-09-01T00:00:00.000Z pagan 12 USD; los demás estudiantes pagan 18 USD; los residentes pagan 19 USD; todas las demás personas pagan 26 USD. Las categorías pueden coincidir, pero las tarifas nunca se combinan."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reuseUnchanged": false,
+      "maxCompletionTokens": 8192
+    }
+  }
+}
