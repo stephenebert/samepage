@@ -120,11 +120,14 @@ export interface StudioRoom {
   modelCallCount?: number;
   interpretationCache?: StudioInterpretationCache;
   simulation?: "studio-fee-v1";
+  /** Recorded full-flow demo. Its baseline is pre-agreed setup; new votes are live. */
+  fullDemo?: { kind: "beacon-repair-v1"; recordedAt: string; model: string; unsafeRepairId: string; correctedRepairId: string };
   published: StudioPublished; drafts: Record<StudioEditor, StudioDraft>;
   activeJob: StudioJob | null; review: StudioReview | null;
   registrations: StudioRegistration[];
 }
 export type StudioAction =
+  | { type: "loadDemoRepair"; repairId: string }
   | { type: "draft"; editor: StudioEditor; baseVersion: number; text: string }
   | { type: "requestReview" }
   | { type: "completeReview"; response: unknown }

@@ -49,6 +49,7 @@ export async function runAutomaticStudioReview(id: string, config: StudioModelCo
   const now = dependencies.now ?? (() => new Date().toISOString());
   const requestId = (dependencies.requestId ?? (() => crypto.randomUUID()))(), claimedAt = now();
   const claimed = await dependencies.mutate(id, before => {
+    if (before.fullDemo) throw new PolicyModelError("MODEL_REPLAY_ONLY", "This recorded demo never makes model requests. Start a separate room for fresh policy interpretation.", 409);
     if (simulation) requireSimulation(before);
     if (before.review) return before;
     const previous = before.automaticReview;

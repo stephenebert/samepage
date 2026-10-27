@@ -1,6 +1,7 @@
 import { canonicalStudioPolicy, STUDIO_GROUPING_GUIDANCE } from "./studio-presentation.ts";
 import { RoomError } from "./room.ts";
 import { supersedeStudioRepair, voteStudioRepair } from "./studio-repair.ts";
+import { loadStudioDemoRepair } from "./studio-full-demo.ts";
 import { discoverStudioConsequences, evaluateStudioPolicy, parseStudioAttendee, parseStudioRules, STUDIO_FLAGS, studioInteger, studioKeys, studioObject, studioText } from "./studio-engine.ts";
 import type { StudioAction, StudioCandidate, StudioDemoFixture, StudioEditor, StudioJob, StudioRoom } from "./studio-types";
 
@@ -25,6 +26,10 @@ export function createStudioRoom(id: string, now: string): StudioRoom {
 }
 export function parseStudioAction(value: unknown): StudioAction {
   const a = studioObject(value, "action");
+  if (a.type === "loadDemoRepair") {
+    studioKeys(a, ["type", "repairId"], "action");
+    return { type: "loadDemoRepair", repairId: identifier(a.repairId, "repairId") };
+  }
   if (a.type === "draft") {
     studioKeys(a, ["type", "editor", "baseVersion", "text"], "action");
     return { type: "draft", editor: editor(a.editor), baseVersion: studioInteger(a.baseVersion, "baseVersion", 1, 1000000), text: studioText(a.text, "draft text") };
@@ -96,6 +101,7 @@ export function parseStudioReview(value: unknown, job: StudioJob): StudioCandida
 }
 export function applyStudioAction(before: StudioRoom, value: StudioAction, now: string): StudioRoom {
   const a = parseStudioAction(value);
+  if (a.type === "loadDemoRepair") return loadStudioDemoRepair(before, a.repairId, now);
   if (a.type === "draft") {
     const previous = before.drafts[a.editor];
     if (previous.text === a.text && (a.baseVersion === previous.version || a.baseVersion === previous.version - 1)) return before;

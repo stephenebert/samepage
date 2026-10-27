@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "tests": 207,
+  "typecheck": "pass",
+  "apiCalls": 0,
+  "localBrowser": {
+    "separateEditors": true,
+    "blockedFee": [
+      27,
+      31
+    ],
+    "afterAlice": {
+      "policyVersion": 2,
+      "fee": 14,
+      "reloadPreservesVote": true
+    },
+    "afterBob": {
+      "policyVersion": 3,
+      "fee": 19
+    },
+    "receiptsSameAttendee": true,
+    "freshResetPreservesPreviousTake": true
+  },
+  "note": "Uses saved Meta outputs; checks, approvals, publication, registration and storage executed now.",
+  "hostedBrowser": {
+    "status": "pass",
+    "separateEditors": true,
+    "blockedFee": [
+      27,
+      31
+    ],
+    "afterAlice": {
+      "policyVersion": 2,
+      "fee": 14
+    },
+    "afterBob": {
+      "policyVersion": 3,
+      "fee": 19
+    },
+    "receiptsSameAttendee": true
+  },
+  "sourceCommit": "9d7b0c5755de3465610a592cfccd83bfd4d3ba7b",
+  "deployment": "private",
+  "environmentRevision": 25,
+  "build": "pass"
+}

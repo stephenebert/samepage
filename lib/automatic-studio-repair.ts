@@ -37,6 +37,7 @@ export async function runAutomaticStudioRepair(id: string, config: StudioModelCo
   const input = parseStudioRepairRequest(value), now = deps.now ?? (() => new Date().toISOString());
   const requestId = (deps.requestId ?? (() => crypto.randomUUID()))(), at = now();
   const claimed = await deps.mutate(id, before => {
+    if (before.fullDemo) throw new PolicyModelError("MODEL_REPLAY_ONLY", "This recorded demo never makes model requests. Load its recorded repair or start a separate room for fresh policies.", 409);
     const previous = before.automaticRepair, repair = before.repair;
     if (previous?.status === "running" && repair?.status === "running" && repairJobIsCurrent(before, repair.job)) {
       if (Date.parse(previous.leaseExpiresAt) > Date.parse(at)) return before;
