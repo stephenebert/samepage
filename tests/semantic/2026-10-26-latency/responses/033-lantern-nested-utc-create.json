@@ -1,0 +1,59 @@
+{
+  "status": 201,
+  "ok": true,
+  "durationMs": 123,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-6023ee3e-c53c-451c-9f20-6100f4cb3bac\",\"revision\":0,\"createdAt\":\"2026-10-27T03:57:17.862Z\",\"updatedAt\":\"2026-10-27T03:57:17.862Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T03:57:17.862Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":1,\"text\":\"Everyone is eligible. Registration has no deadline. Admission is free.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":1,\"text\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"compact-v2\"}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-6023ee3e-c53c-451c-9f20-6100f4cb3bac",
+      "revision": 0,
+      "createdAt": "2026-10-27T03:57:17.862Z",
+      "updatedAt": "2026-10-27T03:57:17.862Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T03:57:17.862Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 1,
+          "text": "Everyone is eligible. Registration has no deadline. Admission is free."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 1,
+          "text": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "compact-v2"
+    }
+  }
+}

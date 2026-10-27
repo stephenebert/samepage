@@ -1,0 +1,21 @@
+{
+  "sequence": 9,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-9810adcb-7979-478e-94b1-b3ea5140b2a6",
+  "body": {
+    "type": "register",
+    "requestId": "eval-mosaic-priority-14a359b0-ce7f-4697-9283-9311a6bea1c4",
+    "policyVersion": 2,
+    "label": "Synthetic frozen mosaic-paid-to-free",
+    "age": 27,
+    "resident": true,
+    "student": true,
+    "member": false,
+    "guardianConsent": false,
+    "scholarship": true,
+    "submittedAt": "2032-02-29T12:00:00.000Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T04:15:00.477Z"
+}

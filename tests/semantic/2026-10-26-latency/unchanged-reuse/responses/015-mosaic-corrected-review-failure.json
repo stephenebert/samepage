@@ -1,0 +1,5 @@
+{
+  "durationMs": 25796,
+  "message": "Dispatch, response read, HTTP contract, or model-metadata check failed. No retry was attempted.",
+  "reason": "Site request failed with HTTP 502; see saved response. No retry was attempted."
+}

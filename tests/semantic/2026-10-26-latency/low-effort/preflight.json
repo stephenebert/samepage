@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "kind": "offline-preflight-only",
+  "generatedAt": "2026-10-27T04:02:27.673Z",
+  "liveExecuted": false,
+  "actualReviewPostAttempts": 0,
+  "actualProviderAttempts": null,
+  "networkCalls": 0,
+  "siteOrigin": "https://samepage-language-lab.ampleboar17.chatgpt.site",
+  "model": "muse-spark-1.3",
+  "corpusSha256": "8f89bf4264332da863fcbfedd1cdc8901102fba73caa61b1d5386233f12ec678",
+  "evaluatorSnapshotSha256": "801461cfc188e40a4cc2d64b99d2c4675f2332ec93bbcafa6f5df220ae5bdd96",
+  "maxReviewPostsAcrossAllRooms": 4,
+  "priorCompletedRequests": 8,
+  "combinedTaskMaximumRequests": 12,
+  "combinedEstimatedMaxUsd": 0.5999019999999999,
+  "reasoningEffort": "low",
+  "noAutomaticRetries": true,
+  "estimatedMaxUsd": 0.19717650000000003,
+  "budgetUsd": 1,
+  "pricing": {
+    "inputUsdPerMillionTokens": 1.25,
+    "outputUsdPerMillionTokens": 4.25,
+    "maxCompletionTokens": 8192,
+    "searchEnabled": false
+  },
+  "estimateMethod": "Actual adapter-shaped JSON body: UTF-8 bytes charged as input tokens, plus 4096 tokens per request for framing; maximum 8192 output tokens. Job IDs and versions padded above this workflow. No search/tools requested. Estimated bound, not billing measurement.",
+  "actualUsage": null,
+  "actualCostUsd": null,
+  "stages": [
+    {
+      "stageId": "lantern-nested-utc",
+      "inputWireBytes": 7661,
+      "conservativeInputTokens": 11757,
+      "maxOutputTokens": 8192,
+      "estimatedMaxUsd": 0.04951225,
+      "providerBodySha256": "a6b8e898a9f5cfcbd51dae49b1420770fd14928f8684277d0718b70ebe6b7678",
+      "assumedMaximumJobIdCharacters": 101,
+      "assumedMaximumVersion": 1000000
+    },
+    {
+      "stageId": "mosaic-priority",
+      "inputWireBytes": 7673,
+      "conservativeInputTokens": 11769,
+      "maxOutputTokens": 8192,
+      "estimatedMaxUsd": 0.04952725,
+      "providerBodySha256": "6164515fbebb231456d5dbc246f9ab44533d9c8fba80ee40d5d40c1cb9875c93",
+      "assumedMaximumJobIdCharacters": 101,
+      "assumedMaximumVersion": 1000000
+    },
+    {
+      "stageId": "mosaic-corrected",
+      "inputWireBytes": 7774,
+      "conservativeInputTokens": 11870,
+      "maxOutputTokens": 8192,
+      "estimatedMaxUsd": 0.0496535,
+      "providerBodySha256": "38b77748dfc9e4c2fc739c44650f3c07e874d986591175a281a367e563c43940",
+      "assumedMaximumJobIdCharacters": 101,
+      "assumedMaximumVersion": 1000000
+    },
+    {
+      "stageId": "watercolor-overlap",
+      "inputWireBytes": 6838,
+      "conservativeInputTokens": 10934,
+      "maxOutputTokens": 8192,
+      "estimatedMaxUsd": 0.0484835,
+      "providerBodySha256": "871dd2158c6341c379dc2e1b4fa6f419e3a2c2c57690561e7cf2d88f7278c96f",
+      "assumedMaximumJobIdCharacters": 101,
+      "assumedMaximumVersion": 1000000
+    }
+  ],
+  "limitations": [
+    "No live model quality result is established by this preflight.",
+    "Hosted review API returns parsed candidates and bounded token counters when available, not raw Meta envelopes or billed charges.",
+    "Local source snapshot hashes establish evaluator identity; they do not remotely attest deployed source.",
+    "Structured-rule equivalence and exact-source preservation are tested. Full quality of generated translations is not automatically scored."
+  ],
+  "executionGate": "Wait for root/operator explicit live execution after payment, key setup and server enablement. This agent has no authorization to execute network requests."
+}

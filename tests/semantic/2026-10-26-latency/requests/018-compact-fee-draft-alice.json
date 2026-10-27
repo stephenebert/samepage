@@ -1,0 +1,14 @@
+{
+  "sequence": 18,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-38ca5bfd-961c-4f2b-93b7-554dddd5259b",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Cyanotype Book-Cover Workshop — complete registration policy.\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a person who is both a resident and a member pays USD 17.25; (2) a scholarship holder pays USD 0.00; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T03:56:35.391Z"
+}

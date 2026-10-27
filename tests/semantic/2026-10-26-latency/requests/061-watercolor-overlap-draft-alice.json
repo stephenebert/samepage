@@ -1,0 +1,14 @@
+{
+  "sequence": 61,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-0fe3ba48-087d-4ba0-9d43-a277fca90e1f",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Watercolor circle. Admission is open exactly to people aged 18 through 72 inclusive who are residents or members, or both. Registration has no deadline. The standard admission price is $46 USD. Residents pay $14 USD. Students pay $7 USD. Scholarship recipients pay $0 USD. These are alternative whole prices, not amounts to add or subtract. There are no other eligibility conditions."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T03:58:19.072Z"
+}

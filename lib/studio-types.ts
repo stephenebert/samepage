@@ -46,6 +46,11 @@ export interface StudioCandidate {
   id: string; editor: StudioEditor; sourceVersion: number;
   en: string; es: string; rules: StudioRules | null; issues: string[];
 }
+export interface StudioInterpretationCacheEntry {
+  source: "meta"; model: string; protocol: "compact-v2"; reasoningEffort: "medium";
+  interpreterVersion: string; sourceText: string; candidate: StudioCandidate;
+}
+export type StudioInterpretationCache = Partial<Record<StudioEditor, StudioInterpretationCacheEntry>>;
 export interface StudioReview {
   id: string; basePolicyVersion: number; candidates: StudioCandidate[];
   votes: Partial<Record<StudioEditor, string>>; status: "open" | "published";
@@ -58,6 +63,15 @@ export interface StudioRegistration extends StudioAttendee {
 }
 export interface AutomaticStudioReview {
   requestId: string; jobId: string; provider: "Meta"; model: string;
+  protocol?: "compact-v2" | "full-v1";
+  reasoningEffort?: "low" | "medium";
+  requestedEditors?: StudioEditor[]; reusedEditors?: StudioEditor[];
+  metrics?: {
+    providerDurationMs: number; requestBytes: number; responseContentBytes: number;
+    promptTokens: number | null; completionTokens: number | null; totalTokens: number | null;
+    reasoningTokens: number | null; cachedInputTokens: number | null;
+    finishReason?: "stop" | "length" | "content_filter" | "tool_calls" | "function_call" | null;
+  };
   source: "meta" | "simulation";
   status: "running" | "completed" | "failed" | "superseded";
   startedAt: string; leaseExpiresAt: string; finishedAt?: string; durationMs?: number;
@@ -68,6 +82,7 @@ export interface StudioRoom {
   mode: "manual-agent-review" | "automatic-model" | "simulated-model";
   automaticReview?: AutomaticStudioReview;
   modelCallCount?: number;
+  interpretationCache?: StudioInterpretationCache;
   simulation?: "studio-fee-v1";
   published: StudioPublished; drafts: Record<StudioEditor, StudioDraft>;
   activeJob: StudioJob | null; review: StudioReview | null;

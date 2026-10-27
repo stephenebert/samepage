@@ -1,0 +1,1053 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 231,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-9902fe33-ace6-4ea8-a064-5960196f3f2a\",\"revision\":8,\"createdAt\":\"2026-10-27T03:57:35.806Z\",\"updatedAt\":\"2026-10-27T03:57:56.101Z\",\"mode\":\"automatic-model\",\"published\":{\"version\":2,\"en\":\"Mosaic club session. Admission requires age 16 through 80 inclusive and at least one of resident, student, or member status. Anyone under 18 must also have guardian consent; adults do not need it. Registration must be submitted at or after 2032-02-29T09:00:00.000Z and strictly before 2032-03-01T09:00:00.000Z. For admitted participants, select the first matching rule in the following priority order and stop: a member who has guardian consent pays $9 USD; otherwise a resident pays $16 USD; otherwise a student pays $14 USD; otherwise a scholarship recipient pays $0 USD; otherwise the price is $31 USD. Scholarship status never overrides an earlier matching price and never waives admission requirements. Do not combine prices. There are no other eligibility conditions or deadlines.\",\"es\":\"Sesión del club Mosaic. La admisión requiere tener entre 16 y 80 años, ambos incluidos, y tener al menos una de las condiciones de residente, estudiante o miembro. Cualquier persona menor de 18 años también debe tener consentimiento del tutor; los adultos no lo necesitan. La inscripción debe presentarse en o después de 2032-02-29T09:00:00.000Z y estrictamente antes de 2032-03-01T09:00:00.000Z. Para los participantes admitidos, seleccione la primera regla coincidente en el siguiente orden de prioridad y deténgase: un miembro que tenga consentimiento del tutor paga $9 USD; de lo contrario, un residente paga $16 USD; de lo contrario, un estudiante paga $14 USD; de lo contrario, un becario paga $0 USD; de lo contrario, el precio es $31 USD. La condición de becario nunca prevalece sobre un precio anterior coincidente y nunca exime de los requisitos de admisión. No se combinan precios. No hay otras condiciones de elegibilidad ni plazos.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"age\",\"cmp\":\"lte\",\"value\":80},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"flag\",\"field\":\"member\",\"value\":true}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"gte\",\"value\":\"2032-02-29T09:00:00.000Z\"},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2032-03-01T09:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":3100,\"overrides\":[{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},\"cents\":900,\"label\":\"member with guardian consent pays $9\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1600,\"label\":\"otherwise resident pays $16\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1400,\"label\":\"otherwise student pays $14\"},{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"otherwise scholarship recipient pays $0\"}]}},\"publishedAt\":\"2026-10-27T03:57:55.849Z\",\"reviewId\":\"studio-review-3\",\"candidateId\":\"studio-review-3-alice\"},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Mosaic club session. Admission requires age 16 through 80 inclusive and at least one of resident, student, or member status. Anyone under 18 must also have guardian consent; adults do not need it. Registration must be submitted at or after 2032-02-29T09:00:00.000Z and strictly before 2032-03-01T09:00:00.000Z. For admitted participants, select the first matching rule in the following priority order and stop: a member who has guardian consent pays $9 USD; otherwise a resident pays $16 USD; otherwise a student pays $14 USD; otherwise a scholarship recipient pays $0 USD; otherwise the price is $31 USD. Scholarship status never overrides an earlier matching price and never waives admission requirements. Do not combine prices. There are no other eligibility conditions or deadlines.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Sesión del club de mosaicos. Para ser admitida, una persona debe tener entre 16 y 80 años, ambos incluidos, y ser residente, estudiante o miembro, con al menos una de esas condiciones. Si tiene menos de 18 años, además necesita consentimiento del tutor; las personas adultas no lo necesitan. La inscripción se admite desde 2032-02-29T09:00:00.000Z, incluido ese instante, hasta antes de 2032-03-01T09:00:00.000Z, excluido ese último instante. Para una persona admitida se usa únicamente la primera regla que corresponda, con esta prioridad: si tiene beca, $0 USD; en su defecto, si es estudiante, $14 USD; en su defecto, si es miembro y tiene consentimiento del tutor, $9 USD; en su defecto, si es residente, $16 USD; en cualquier otro caso, $31 USD. La beca no elimina los requisitos de admisión. No se combinan precios. No hay otras condiciones de admisión ni otros plazos.\"}},\"activeJob\":null,\"review\":{\"id\":\"studio-review-3\",\"basePolicyVersion\":1,\"candidates\":[{\"id\":\"studio-review-3-alice\",\"editor\":\"alice\",\"sourceVersion\":2,\"en\":\"Mosaic club session. Admission requires age 16 through 80 inclusive and at least one of resident, student, or member status. Anyone under 18 must also have guardian consent; adults do not need it. Registration must be submitted at or after 2032-02-29T09:00:00.000Z and strictly before 2032-03-01T09:00:00.000Z. For admitted participants, select the first matching rule in the following priority order and stop: a member who has guardian consent pays $9 USD; otherwise a resident pays $16 USD; otherwise a student pays $14 USD; otherwise a scholarship recipient pays $0 USD; otherwise the price is $31 USD. Scholarship status never overrides an earlier matching price and never waives admission requirements. Do not combine prices. There are no other eligibility conditions or deadlines.\",\"es\":\"Sesión del club Mosaic. La admisión requiere tener entre 16 y 80 años, ambos incluidos, y tener al menos una de las condiciones de residente, estudiante o miembro. Cualquier persona menor de 18 años también debe tener consentimiento del tutor; los adultos no lo necesitan. La inscripción debe presentarse en o después de 2032-02-29T09:00:00.000Z y estrictamente antes de 2032-03-01T09:00:00.000Z. Para los participantes admitidos, seleccione la primera regla coincidente en el siguiente orden de prioridad y deténgase: un miembro que tenga consentimiento del tutor paga $9 USD; de lo contrario, un residente paga $16 USD; de lo contrario, un estudiante paga $14 USD; de lo contrario, un becario paga $0 USD; de lo contrario, el precio es $31 USD. La condición de becario nunca prevalece sobre un precio anterior coincidente y nunca exime de los requisitos de admisión. No se combinan precios. No hay otras condiciones de elegibilidad ni plazos.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"age\",\"cmp\":\"lte\",\"value\":80},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"flag\",\"field\":\"member\",\"value\":true}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"gte\",\"value\":\"2032-02-29T09:00:00.000Z\"},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2032-03-01T09:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":3100,\"overrides\":[{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},\"cents\":900,\"label\":\"member with guardian consent pays $9\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1600,\"label\":\"otherwise resident pays $16\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1400,\"label\":\"otherwise student pays $14\"},{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"otherwise scholarship recipient pays $0\"}]}},\"issues\":[]},{\"id\":\"studio-review-3-bob\",\"editor\":\"bob\",\"sourceVersion\":2,\"en\":\"Mosaic club session. To be admitted, a person must be between 16 and 80 years old, both inclusive, and be a resident, student or member, with at least one of those conditions. If under 18 years old, they additionally need guardian consent; adults do not need it. Registration is accepted from 2032-02-29T09:00:00.000Z, including that instant, until before 2032-03-01T09:00:00.000Z, excluding that final instant. For an admitted person only the first applicable rule is used, with this priority: if they have a scholarship, $0 USD; otherwise, if they are a student, $14 USD; otherwise, if they are a member and have guardian consent, $9 USD; otherwise, if they are a resident, $16 USD; in any other case, $31 USD. The scholarship does not remove admission requirements. Prices are not combined. There are no other admission conditions or deadlines.\",\"es\":\"Sesión del club de mosaicos. Para ser admitida, una persona debe tener entre 16 y 80 años, ambos incluidos, y ser residente, estudiante o miembro, con al menos una de esas condiciones. Si tiene menos de 18 años, además necesita consentimiento del tutor; las personas adultas no lo necesitan. La inscripción se admite desde 2032-02-29T09:00:00.000Z, incluido ese instante, hasta antes de 2032-03-01T09:00:00.000Z, excluido ese último instante. Para una persona admitida se usa únicamente la primera regla que corresponda, con esta prioridad: si tiene beca, $0 USD; en su defecto, si es estudiante, $14 USD; en su defecto, si es miembro y tiene consentimiento del tutor, $9 USD; en su defecto, si es residente, $16 USD; en cualquier otro caso, $31 USD. La beca no elimina los requisitos de admisión. No se combinan precios. No hay otras condiciones de admisión ni otros plazos.\",\"rules\":{\"eligibility\":{\"op\":\"all\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":16},{\"op\":\"age\",\"cmp\":\"lte\",\"value\":80},{\"op\":\"any\",\"args\":[{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},{\"op\":\"flag\",\"field\":\"student\",\"value\":true},{\"op\":\"flag\",\"field\":\"member\",\"value\":true}]},{\"op\":\"any\",\"args\":[{\"op\":\"age\",\"cmp\":\"gte\",\"value\":18},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},{\"op\":\"time\",\"cmp\":\"gte\",\"value\":\"2032-02-29T09:00:00.000Z\"},{\"op\":\"time\",\"cmp\":\"lt\",\"value\":\"2032-03-01T09:00:00.000Z\"}]},\"fee\":{\"currency\":\"USD\",\"defaultCents\":3100,\"overrides\":[{\"when\":{\"op\":\"flag\",\"field\":\"scholarship\",\"value\":true},\"cents\":0,\"label\":\"if scholarship $0\"},{\"when\":{\"op\":\"flag\",\"field\":\"student\",\"value\":true},\"cents\":1400,\"label\":\"otherwise if student $14\"},{\"when\":{\"op\":\"all\",\"args\":[{\"op\":\"flag\",\"field\":\"member\",\"value\":true},{\"op\":\"flag\",\"field\":\"guardianConsent\",\"value\":true}]},\"cents\":900,\"label\":\"otherwise if member with guardian consent $9\"},{\"when\":{\"op\":\"flag\",\"field\":\"resident\",\"value\":true},\"cents\":1600,\"label\":\"otherwise if resident $16\"}]}},\"issues\":[]}],\"votes\":{\"alice\":\"studio-review-3-alice\",\"bob\":\"studio-review-3-alice\"},\"status\":\"published\",\"provenance\":\"meta-model\",\"discovery\":{\"status\":\"different\",\"witnesses\":[{\"id\":\"price-left-higher\",\"kind\":\"price-only\",\"attendee\":{\"age\":24,\"resident\":true,\"student\":false,\"member\":false,\"guardianConsent\":false,\"scholarship\":true,\"submittedAt\":\"2032-02-29T09:00:00.000Z\"},\"left\":{\"accepted\":true,\"feeCents\":1600,\"feeReason\":{\"en\":\"First matching fee rule: otherwise resident pays $16\",\"es\":\"Primera regla de tarifa aplicable: otherwise resident pays $16\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"age ≤ 80\",\"es\":\"edad ≤ 80\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(resident OR student OR member)\",\"es\":\"(residente O estudiante O miembro)\"},{\"path\":\"eligibility.2.0\",\"passed\":true,\"en\":\"resident\",\"es\":\"residente\"},{\"path\":\"eligibility.2.1\",\"passed\":false,\"en\":\"student\",\"es\":\"estudiante\"},{\"path\":\"eligibility.2.2\",\"passed\":false,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.3.0\",\"passed\":true,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.3.1\",\"passed\":false,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.4\",\"passed\":true,\"en\":\"submitted ≥ 2032-02-29T09:00:00.000Z\",\"es\":\"inscripción ≥ 2032-02-29T09:00:00.000Z\"},{\"path\":\"eligibility.5\",\"passed\":true,\"en\":\"submitted < 2032-03-01T09:00:00.000Z\",\"es\":\"inscripción < 2032-03-01T09:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":false,\"en\":\"(member AND guardian consent)\",\"es\":\"(miembro Y consentimiento del tutor)\"},{\"path\":\"fee.0.0\",\"passed\":false,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"fee.0.1\",\"passed\":false,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"fee.1\",\"passed\":true,\"en\":\"resident\",\"es\":\"residente\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: otherwise resident pays $16\",\"es\":\"Primera regla de tarifa aplicable: otherwise resident pays $16\"}]},\"right\":{\"accepted\":true,\"feeCents\":0,\"feeReason\":{\"en\":\"First matching fee rule: if scholarship $0\",\"es\":\"Primera regla de tarifa aplicable: if scholarship $0\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"age ≤ 80\",\"es\":\"edad ≤ 80\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(resident OR student OR member)\",\"es\":\"(residente O estudiante O miembro)\"},{\"path\":\"eligibility.2.0\",\"passed\":true,\"en\":\"resident\",\"es\":\"residente\"},{\"path\":\"eligibility.2.1\",\"passed\":false,\"en\":\"student\",\"es\":\"estudiante\"},{\"path\":\"eligibility.2.2\",\"passed\":false,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.3.0\",\"passed\":true,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.3.1\",\"passed\":false,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.4\",\"passed\":true,\"en\":\"submitted ≥ 2032-02-29T09:00:00.000Z\",\"es\":\"inscripción ≥ 2032-02-29T09:00:00.000Z\"},{\"path\":\"eligibility.5\",\"passed\":true,\"en\":\"submitted < 2032-03-01T09:00:00.000Z\",\"es\":\"inscripción < 2032-03-01T09:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":true,\"en\":\"scholarship\",\"es\":\"beca\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: if scholarship $0\",\"es\":\"Primera regla de tarifa aplicable: if scholarship $0\"}]},\"feeDeltaCents\":1600,\"explanation\":{\"en\":\"Both admit this person, but A charges $16.00 and B charges $0.00.\",\"es\":\"Ambas admiten a esta persona, pero A cobra $16.00 y B cobra $0.00.\"}},{\"id\":\"price-right-higher\",\"kind\":\"price-only\",\"attendee\":{\"age\":24,\"resident\":false,\"student\":true,\"member\":true,\"guardianConsent\":true,\"scholarship\":false,\"submittedAt\":\"2032-02-29T09:00:00.000Z\"},\"left\":{\"accepted\":true,\"feeCents\":900,\"feeReason\":{\"en\":\"First matching fee rule: member with guardian consent pays $9\",\"es\":\"Primera regla de tarifa aplicable: member with guardian consent pays $9\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"age ≤ 80\",\"es\":\"edad ≤ 80\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(resident OR student OR member)\",\"es\":\"(residente O estudiante O miembro)\"},{\"path\":\"eligibility.2.0\",\"passed\":false,\"en\":\"resident\",\"es\":\"residente\"},{\"path\":\"eligibility.2.1\",\"passed\":true,\"en\":\"student\",\"es\":\"estudiante\"},{\"path\":\"eligibility.2.2\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.3.0\",\"passed\":true,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.3.1\",\"passed\":true,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.4\",\"passed\":true,\"en\":\"submitted ≥ 2032-02-29T09:00:00.000Z\",\"es\":\"inscripción ≥ 2032-02-29T09:00:00.000Z\"},{\"path\":\"eligibility.5\",\"passed\":true,\"en\":\"submitted < 2032-03-01T09:00:00.000Z\",\"es\":\"inscripción < 2032-03-01T09:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":true,\"en\":\"(member AND guardian consent)\",\"es\":\"(miembro Y consentimiento del tutor)\"},{\"path\":\"fee.0.0\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"fee.0.1\",\"passed\":true,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: member with guardian consent pays $9\",\"es\":\"Primera regla de tarifa aplicable: member with guardian consent pays $9\"}]},\"right\":{\"accepted\":true,\"feeCents\":1400,\"feeReason\":{\"en\":\"First matching fee rule: otherwise if student $14\",\"es\":\"Primera regla de tarifa aplicable: otherwise if student $14\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"age ≤ 80\",\"es\":\"edad ≤ 80\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(resident OR student OR member)\",\"es\":\"(residente O estudiante O miembro)\"},{\"path\":\"eligibility.2.0\",\"passed\":false,\"en\":\"resident\",\"es\":\"residente\"},{\"path\":\"eligibility.2.1\",\"passed\":true,\"en\":\"student\",\"es\":\"estudiante\"},{\"path\":\"eligibility.2.2\",\"passed\":true,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.3.0\",\"passed\":true,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.3.1\",\"passed\":true,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.4\",\"passed\":true,\"en\":\"submitted ≥ 2032-02-29T09:00:00.000Z\",\"es\":\"inscripción ≥ 2032-02-29T09:00:00.000Z\"},{\"path\":\"eligibility.5\",\"passed\":true,\"en\":\"submitted < 2032-03-01T09:00:00.000Z\",\"es\":\"inscripción < 2032-03-01T09:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":false,\"en\":\"scholarship\",\"es\":\"beca\"},{\"path\":\"fee.1\",\"passed\":true,\"en\":\"student\",\"es\":\"estudiante\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: otherwise if student $14\",\"es\":\"Primera regla de tarifa aplicable: otherwise if student $14\"}]},\"feeDeltaCents\":500,\"explanation\":{\"en\":\"Both admit this person, but A charges $9.00 and B charges $14.00.\",\"es\":\"Ambas admiten a esta persona, pero A cobra $9.00 y B cobra $14.00.\"}}],\"checkedCases\":2816,\"issues\":[],\"coverage\":{\"ageValues\":121,\"agePartitions\":11,\"flagCombinations\":32,\"timePartitions\":8,\"scope\":\"Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language.\"}},\"createdAt\":\"2026-10-27T03:57:55.262Z\",\"publishedVersion\":2},\"registrations\":[{\"requestId\":\"eval-mosaic-priority-c6ddfbb2-52d1-4031-9e8e-322be4bbb21e\",\"policyVersion\":2,\"label\":\"Synthetic frozen mosaic-paid-to-free\",\"age\":27,\"resident\":true,\"student\":true,\"member\":false,\"guardianConsent\":false,\"scholarship\":true,\"submittedAt\":\"2032-02-29T12:00:00.000Z\",\"id\":\"studio-receipt-8\",\"recordedAt\":\"2026-10-27T03:57:56.101Z\",\"decision\":{\"accepted\":true,\"feeCents\":1600,\"feeReason\":{\"en\":\"First matching fee rule: otherwise resident pays $16\",\"es\":\"Primera regla de tarifa aplicable: otherwise resident pays $16\"},\"trace\":[{\"path\":\"eligibility\",\"passed\":true,\"en\":\"(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)\",\"es\":\"(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)\"},{\"path\":\"eligibility.0\",\"passed\":true,\"en\":\"age ≥ 16\",\"es\":\"edad ≥ 16\"},{\"path\":\"eligibility.1\",\"passed\":true,\"en\":\"age ≤ 80\",\"es\":\"edad ≤ 80\"},{\"path\":\"eligibility.2\",\"passed\":true,\"en\":\"(resident OR student OR member)\",\"es\":\"(residente O estudiante O miembro)\"},{\"path\":\"eligibility.2.0\",\"passed\":true,\"en\":\"resident\",\"es\":\"residente\"},{\"path\":\"eligibility.2.1\",\"passed\":true,\"en\":\"student\",\"es\":\"estudiante\"},{\"path\":\"eligibility.2.2\",\"passed\":false,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"eligibility.3\",\"passed\":true,\"en\":\"(age ≥ 18 OR guardian consent)\",\"es\":\"(edad ≥ 18 O consentimiento del tutor)\"},{\"path\":\"eligibility.3.0\",\"passed\":true,\"en\":\"age ≥ 18\",\"es\":\"edad ≥ 18\"},{\"path\":\"eligibility.3.1\",\"passed\":false,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"eligibility.4\",\"passed\":true,\"en\":\"submitted ≥ 2032-02-29T09:00:00.000Z\",\"es\":\"inscripción ≥ 2032-02-29T09:00:00.000Z\"},{\"path\":\"eligibility.5\",\"passed\":true,\"en\":\"submitted < 2032-03-01T09:00:00.000Z\",\"es\":\"inscripción < 2032-03-01T09:00:00.000Z\"},{\"path\":\"fee.0\",\"passed\":false,\"en\":\"(member AND guardian consent)\",\"es\":\"(miembro Y consentimiento del tutor)\"},{\"path\":\"fee.0.0\",\"passed\":false,\"en\":\"member\",\"es\":\"miembro\"},{\"path\":\"fee.0.1\",\"passed\":false,\"en\":\"guardian consent\",\"es\":\"consentimiento del tutor\"},{\"path\":\"fee.1\",\"passed\":true,\"en\":\"resident\",\"es\":\"residente\"}],\"reasons\":[{\"en\":\"Meets the complete admission rule.\",\"es\":\"Cumple la regla completa de admisión.\"},{\"en\":\"First matching fee rule: otherwise resident pays $16\",\"es\":\"Primera regla de tarifa aplicable: otherwise resident pays $16\"}]}}],\"modelCallCount\":1,\"automaticReview\":{\"requestId\":\"0d121d31-db4b-41a9-a4c1-e31329a6fda6\",\"jobId\":\"studio-review-3\",\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"protocol\":\"compact-v2\",\"source\":\"meta\",\"status\":\"completed\",\"startedAt\":\"2026-10-27T03:57:36.503Z\",\"leaseExpiresAt\":\"2026-10-27T03:59:06.503Z\",\"finishedAt\":\"2026-10-27T03:57:55.262Z\",\"durationMs\":18759,\"metrics\":{\"providerDurationMs\":18624,\"requestBytes\":7504,\"responseContentBytes\":3805,\"promptTokens\":1620,\"completionTokens\":6494,\"totalTokens\":8114,\"reasoningTokens\":5421,\"cachedInputTokens\":0}}},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"compact-v2\"}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-9902fe33-ace6-4ea8-a064-5960196f3f2a",
+      "revision": 8,
+      "createdAt": "2026-10-27T03:57:35.806Z",
+      "updatedAt": "2026-10-27T03:57:56.101Z",
+      "mode": "automatic-model",
+      "published": {
+        "version": 2,
+        "en": "Mosaic club session. Admission requires age 16 through 80 inclusive and at least one of resident, student, or member status. Anyone under 18 must also have guardian consent; adults do not need it. Registration must be submitted at or after 2032-02-29T09:00:00.000Z and strictly before 2032-03-01T09:00:00.000Z. For admitted participants, select the first matching rule in the following priority order and stop: a member who has guardian consent pays $9 USD; otherwise a resident pays $16 USD; otherwise a student pays $14 USD; otherwise a scholarship recipient pays $0 USD; otherwise the price is $31 USD. Scholarship status never overrides an earlier matching price and never waives admission requirements. Do not combine prices. There are no other eligibility conditions or deadlines.",
+        "es": "Sesión del club Mosaic. La admisión requiere tener entre 16 y 80 años, ambos incluidos, y tener al menos una de las condiciones de residente, estudiante o miembro. Cualquier persona menor de 18 años también debe tener consentimiento del tutor; los adultos no lo necesitan. La inscripción debe presentarse en o después de 2032-02-29T09:00:00.000Z y estrictamente antes de 2032-03-01T09:00:00.000Z. Para los participantes admitidos, seleccione la primera regla coincidente en el siguiente orden de prioridad y deténgase: un miembro que tenga consentimiento del tutor paga $9 USD; de lo contrario, un residente paga $16 USD; de lo contrario, un estudiante paga $14 USD; de lo contrario, un becario paga $0 USD; de lo contrario, el precio es $31 USD. La condición de becario nunca prevalece sobre un precio anterior coincidente y nunca exime de los requisitos de admisión. No se combinan precios. No hay otras condiciones de elegibilidad ni plazos.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "age",
+                "cmp": "lte",
+                "value": 80
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2032-02-29T09:00:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2032-03-01T09:00:00.000Z"
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 3100,
+            "overrides": [
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "guardianConsent",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 900,
+                "label": "member with guardian consent pays $9"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                "cents": 1600,
+                "label": "otherwise resident pays $16"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                "cents": 1400,
+                "label": "otherwise student pays $14"
+              },
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "otherwise scholarship recipient pays $0"
+              }
+            ]
+          }
+        },
+        "publishedAt": "2026-10-27T03:57:55.849Z",
+        "reviewId": "studio-review-3",
+        "candidateId": "studio-review-3-alice"
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Mosaic club session. Admission requires age 16 through 80 inclusive and at least one of resident, student, or member status. Anyone under 18 must also have guardian consent; adults do not need it. Registration must be submitted at or after 2032-02-29T09:00:00.000Z and strictly before 2032-03-01T09:00:00.000Z. For admitted participants, select the first matching rule in the following priority order and stop: a member who has guardian consent pays $9 USD; otherwise a resident pays $16 USD; otherwise a student pays $14 USD; otherwise a scholarship recipient pays $0 USD; otherwise the price is $31 USD. Scholarship status never overrides an earlier matching price and never waives admission requirements. Do not combine prices. There are no other eligibility conditions or deadlines."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Sesión del club de mosaicos. Para ser admitida, una persona debe tener entre 16 y 80 años, ambos incluidos, y ser residente, estudiante o miembro, con al menos una de esas condiciones. Si tiene menos de 18 años, además necesita consentimiento del tutor; las personas adultas no lo necesitan. La inscripción se admite desde 2032-02-29T09:00:00.000Z, incluido ese instante, hasta antes de 2032-03-01T09:00:00.000Z, excluido ese último instante. Para una persona admitida se usa únicamente la primera regla que corresponda, con esta prioridad: si tiene beca, $0 USD; en su defecto, si es estudiante, $14 USD; en su defecto, si es miembro y tiene consentimiento del tutor, $9 USD; en su defecto, si es residente, $16 USD; en cualquier otro caso, $31 USD. La beca no elimina los requisitos de admisión. No se combinan precios. No hay otras condiciones de admisión ni otros plazos."
+        }
+      },
+      "activeJob": null,
+      "review": {
+        "id": "studio-review-3",
+        "basePolicyVersion": 1,
+        "candidates": [
+          {
+            "id": "studio-review-3-alice",
+            "editor": "alice",
+            "sourceVersion": 2,
+            "en": "Mosaic club session. Admission requires age 16 through 80 inclusive and at least one of resident, student, or member status. Anyone under 18 must also have guardian consent; adults do not need it. Registration must be submitted at or after 2032-02-29T09:00:00.000Z and strictly before 2032-03-01T09:00:00.000Z. For admitted participants, select the first matching rule in the following priority order and stop: a member who has guardian consent pays $9 USD; otherwise a resident pays $16 USD; otherwise a student pays $14 USD; otherwise a scholarship recipient pays $0 USD; otherwise the price is $31 USD. Scholarship status never overrides an earlier matching price and never waives admission requirements. Do not combine prices. There are no other eligibility conditions or deadlines.",
+            "es": "Sesión del club Mosaic. La admisión requiere tener entre 16 y 80 años, ambos incluidos, y tener al menos una de las condiciones de residente, estudiante o miembro. Cualquier persona menor de 18 años también debe tener consentimiento del tutor; los adultos no lo necesitan. La inscripción debe presentarse en o después de 2032-02-29T09:00:00.000Z y estrictamente antes de 2032-03-01T09:00:00.000Z. Para los participantes admitidos, seleccione la primera regla coincidente en el siguiente orden de prioridad y deténgase: un miembro que tenga consentimiento del tutor paga $9 USD; de lo contrario, un residente paga $16 USD; de lo contrario, un estudiante paga $14 USD; de lo contrario, un becario paga $0 USD; de lo contrario, el precio es $31 USD. La condición de becario nunca prevalece sobre un precio anterior coincidente y nunca exime de los requisitos de admisión. No se combinan precios. No hay otras condiciones de elegibilidad ni plazos.",
+            "rules": {
+              "eligibility": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "age",
+                    "cmp": "lte",
+                    "value": 80
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "student",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 18
+                      },
+                      {
+                        "op": "flag",
+                        "field": "guardianConsent",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "op": "time",
+                    "cmp": "gte",
+                    "value": "2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "op": "time",
+                    "cmp": "lt",
+                    "value": "2032-03-01T09:00:00.000Z"
+                  }
+                ]
+              },
+              "fee": {
+                "currency": "USD",
+                "defaultCents": 3100,
+                "overrides": [
+                  {
+                    "when": {
+                      "op": "all",
+                      "args": [
+                        {
+                          "op": "flag",
+                          "field": "member",
+                          "value": true
+                        },
+                        {
+                          "op": "flag",
+                          "field": "guardianConsent",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "cents": 900,
+                    "label": "member with guardian consent pays $9"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    "cents": 1600,
+                    "label": "otherwise resident pays $16"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    "cents": 1400,
+                    "label": "otherwise student pays $14"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "scholarship",
+                      "value": true
+                    },
+                    "cents": 0,
+                    "label": "otherwise scholarship recipient pays $0"
+                  }
+                ]
+              }
+            },
+            "issues": []
+          },
+          {
+            "id": "studio-review-3-bob",
+            "editor": "bob",
+            "sourceVersion": 2,
+            "en": "Mosaic club session. To be admitted, a person must be between 16 and 80 years old, both inclusive, and be a resident, student or member, with at least one of those conditions. If under 18 years old, they additionally need guardian consent; adults do not need it. Registration is accepted from 2032-02-29T09:00:00.000Z, including that instant, until before 2032-03-01T09:00:00.000Z, excluding that final instant. For an admitted person only the first applicable rule is used, with this priority: if they have a scholarship, $0 USD; otherwise, if they are a student, $14 USD; otherwise, if they are a member and have guardian consent, $9 USD; otherwise, if they are a resident, $16 USD; in any other case, $31 USD. The scholarship does not remove admission requirements. Prices are not combined. There are no other admission conditions or deadlines.",
+            "es": "Sesión del club de mosaicos. Para ser admitida, una persona debe tener entre 16 y 80 años, ambos incluidos, y ser residente, estudiante o miembro, con al menos una de esas condiciones. Si tiene menos de 18 años, además necesita consentimiento del tutor; las personas adultas no lo necesitan. La inscripción se admite desde 2032-02-29T09:00:00.000Z, incluido ese instante, hasta antes de 2032-03-01T09:00:00.000Z, excluido ese último instante. Para una persona admitida se usa únicamente la primera regla que corresponda, con esta prioridad: si tiene beca, $0 USD; en su defecto, si es estudiante, $14 USD; en su defecto, si es miembro y tiene consentimiento del tutor, $9 USD; en su defecto, si es residente, $16 USD; en cualquier otro caso, $31 USD. La beca no elimina los requisitos de admisión. No se combinan precios. No hay otras condiciones de admisión ni otros plazos.",
+            "rules": {
+              "eligibility": {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "age",
+                    "cmp": "lte",
+                    "value": 80
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "student",
+                        "value": true
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 18
+                      },
+                      {
+                        "op": "flag",
+                        "field": "guardianConsent",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "op": "time",
+                    "cmp": "gte",
+                    "value": "2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "op": "time",
+                    "cmp": "lt",
+                    "value": "2032-03-01T09:00:00.000Z"
+                  }
+                ]
+              },
+              "fee": {
+                "currency": "USD",
+                "defaultCents": 3100,
+                "overrides": [
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "scholarship",
+                      "value": true
+                    },
+                    "cents": 0,
+                    "label": "if scholarship $0"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    "cents": 1400,
+                    "label": "otherwise if student $14"
+                  },
+                  {
+                    "when": {
+                      "op": "all",
+                      "args": [
+                        {
+                          "op": "flag",
+                          "field": "member",
+                          "value": true
+                        },
+                        {
+                          "op": "flag",
+                          "field": "guardianConsent",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "cents": 900,
+                    "label": "otherwise if member with guardian consent $9"
+                  },
+                  {
+                    "when": {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    "cents": 1600,
+                    "label": "otherwise if resident $16"
+                  }
+                ]
+              }
+            },
+            "issues": []
+          }
+        ],
+        "votes": {
+          "alice": "studio-review-3-alice",
+          "bob": "studio-review-3-alice"
+        },
+        "status": "published",
+        "provenance": "meta-model",
+        "discovery": {
+          "status": "different",
+          "witnesses": [
+            {
+              "id": "price-left-higher",
+              "kind": "price-only",
+              "attendee": {
+                "age": 24,
+                "resident": true,
+                "student": false,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": true,
+                "submittedAt": "2032-02-29T09:00:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 1600,
+                "feeReason": {
+                  "en": "First matching fee rule: otherwise resident pays $16",
+                  "es": "Primera regla de tarifa aplicable: otherwise resident pays $16"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": true,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": false,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": false,
+                    "en": "(member AND guardian consent)",
+                    "es": "(miembro Y consentimiento del tutor)"
+                  },
+                  {
+                    "path": "fee.0.0",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "fee.1",
+                    "passed": true,
+                    "en": "resident",
+                    "es": "residente"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: otherwise resident pays $16",
+                    "es": "Primera regla de tarifa aplicable: otherwise resident pays $16"
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 0,
+                "feeReason": {
+                  "en": "First matching fee rule: if scholarship $0",
+                  "es": "Primera regla de tarifa aplicable: if scholarship $0"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": true,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": false,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": true,
+                    "en": "scholarship",
+                    "es": "beca"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: if scholarship $0",
+                    "es": "Primera regla de tarifa aplicable: if scholarship $0"
+                  }
+                ]
+              },
+              "feeDeltaCents": 1600,
+              "explanation": {
+                "en": "Both admit this person, but A charges $16.00 and B charges $0.00.",
+                "es": "Ambas admiten a esta persona, pero A cobra $16.00 y B cobra $0.00."
+              }
+            },
+            {
+              "id": "price-right-higher",
+              "kind": "price-only",
+              "attendee": {
+                "age": 24,
+                "resident": false,
+                "student": true,
+                "member": true,
+                "guardianConsent": true,
+                "scholarship": false,
+                "submittedAt": "2032-02-29T09:00:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 900,
+                "feeReason": {
+                  "en": "First matching fee rule: member with guardian consent pays $9",
+                  "es": "Primera regla de tarifa aplicable: member with guardian consent pays $9"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": true,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": true,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": true,
+                    "en": "(member AND guardian consent)",
+                    "es": "(miembro Y consentimiento del tutor)"
+                  },
+                  {
+                    "path": "fee.0.0",
+                    "passed": true,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0.1",
+                    "passed": true,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: member with guardian consent pays $9",
+                    "es": "Primera regla de tarifa aplicable: member with guardian consent pays $9"
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 1400,
+                "feeReason": {
+                  "en": "First matching fee rule: otherwise if student $14",
+                  "es": "Primera regla de tarifa aplicable: otherwise if student $14"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": true,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": true,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": false,
+                    "en": "scholarship",
+                    "es": "beca"
+                  },
+                  {
+                    "path": "fee.1",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: otherwise if student $14",
+                    "es": "Primera regla de tarifa aplicable: otherwise if student $14"
+                  }
+                ]
+              },
+              "feeDeltaCents": 500,
+              "explanation": {
+                "en": "Both admit this person, but A charges $9.00 and B charges $14.00.",
+                "es": "Ambas admiten a esta persona, pero A cobra $9.00 y B cobra $14.00."
+              }
+            }
+          ],
+          "checkedCases": 2816,
+          "issues": [],
+          "coverage": {
+            "ageValues": 121,
+            "agePartitions": 11,
+            "flagCombinations": 32,
+            "timePartitions": 8,
+            "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+          }
+        },
+        "createdAt": "2026-10-27T03:57:55.262Z",
+        "publishedVersion": 2
+      },
+      "registrations": [
+        {
+          "requestId": "eval-mosaic-priority-c6ddfbb2-52d1-4031-9e8e-322be4bbb21e",
+          "policyVersion": 2,
+          "label": "Synthetic frozen mosaic-paid-to-free",
+          "age": 27,
+          "resident": true,
+          "student": true,
+          "member": false,
+          "guardianConsent": false,
+          "scholarship": true,
+          "submittedAt": "2032-02-29T12:00:00.000Z",
+          "id": "studio-receipt-8",
+          "recordedAt": "2026-10-27T03:57:56.101Z",
+          "decision": {
+            "accepted": true,
+            "feeCents": 1600,
+            "feeReason": {
+              "en": "First matching fee rule: otherwise resident pays $16",
+              "es": "Primera regla de tarifa aplicable: otherwise resident pays $16"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "age ≥ 16",
+                "es": "edad ≥ 16"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "age ≤ 80",
+                "es": "edad ≤ 80"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "(resident OR student OR member)",
+                "es": "(residente O estudiante O miembro)"
+              },
+              {
+                "path": "eligibility.2.0",
+                "passed": true,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.2.1",
+                "passed": true,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.2.2",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent)",
+                "es": "(edad ≥ 18 O consentimiento del tutor)"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.4",
+                "passed": true,
+                "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+              },
+              {
+                "path": "eligibility.5",
+                "passed": true,
+                "en": "submitted < 2032-03-01T09:00:00.000Z",
+                "es": "inscripción < 2032-03-01T09:00:00.000Z"
+              },
+              {
+                "path": "fee.0",
+                "passed": false,
+                "en": "(member AND guardian consent)",
+                "es": "(miembro Y consentimiento del tutor)"
+              },
+              {
+                "path": "fee.0.0",
+                "passed": false,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "fee.0.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "fee.1",
+                "passed": true,
+                "en": "resident",
+                "es": "residente"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: otherwise resident pays $16",
+                "es": "Primera regla de tarifa aplicable: otherwise resident pays $16"
+              }
+            ]
+          }
+        }
+      ],
+      "modelCallCount": 1,
+      "automaticReview": {
+        "requestId": "0d121d31-db4b-41a9-a4c1-e31329a6fda6",
+        "jobId": "studio-review-3",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "protocol": "compact-v2",
+        "source": "meta",
+        "status": "completed",
+        "startedAt": "2026-10-27T03:57:36.503Z",
+        "leaseExpiresAt": "2026-10-27T03:59:06.503Z",
+        "finishedAt": "2026-10-27T03:57:55.262Z",
+        "durationMs": 18759,
+        "metrics": {
+          "providerDurationMs": 18624,
+          "requestBytes": 7504,
+          "responseContentBytes": 3805,
+          "promptTokens": 1620,
+          "completionTokens": 6494,
+          "totalTokens": 8114,
+          "reasoningTokens": 5421,
+          "cachedInputTokens": 0
+        }
+      }
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "compact-v2"
+    }
+  }
+}

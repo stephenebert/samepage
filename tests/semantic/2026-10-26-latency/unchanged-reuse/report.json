@@ -1,0 +1,1711 @@
+{
+  "schemaVersion": 1,
+  "kind": "hosted-live-evaluation",
+  "liveExecuted": true,
+  "startedAt": "2026-10-27T04:14:39.223Z",
+  "status": "stopped-fail-closed",
+  "siteOrigin": "https://samepage-language-lab.ampleboar17.chatgpt.site",
+  "model": "muse-spark-1.3",
+  "corpusSha256": "a8e402b7d24fc94f7992af8ffd141fc553c7b124444b1a35f41842df5c8d3e7c",
+  "preflight": {
+    "schemaVersion": 1,
+    "kind": "offline-preflight-only",
+    "generatedAt": "2026-10-27T04:14:29.411Z",
+    "liveExecuted": false,
+    "actualReviewPostAttempts": 0,
+    "actualProviderAttempts": null,
+    "networkCalls": 0,
+    "siteOrigin": "https://samepage-language-lab.ampleboar17.chatgpt.site",
+    "model": "muse-spark-1.3",
+    "corpusSha256": "a8e402b7d24fc94f7992af8ffd141fc553c7b124444b1a35f41842df5c8d3e7c",
+    "evaluatorSnapshotSha256": "5f56899196c566ca45068e434ff27d66d3d6615c65c35644d165de235206ec2c",
+    "maxReviewPostsAcrossAllRooms": 2,
+    "priorCompletedRequests": 10,
+    "combinedTaskMaximumRequests": 12,
+    "combinedEstimatedMaxUsd": 0.60095325,
+    "reasoningEffort": "medium",
+    "noAutomaticRetries": true,
+    "estimatedMaxUsd": 0.09918825,
+    "budgetUsd": 1,
+    "pricing": {
+      "inputUsdPerMillionTokens": 1.25,
+      "outputUsdPerMillionTokens": 4.25,
+      "maxCompletionTokens": 8192,
+      "searchEnabled": false
+    },
+    "estimateMethod": "Actual adapter-shaped JSON body: UTF-8 bytes charged as input tokens, plus 4096 tokens per request for framing; maximum 8192 output tokens. Job IDs and versions padded above this workflow. No search/tools requested. Estimated bound, not billing measurement.",
+    "actualUsage": null,
+    "actualCostUsd": null,
+    "stages": [
+      {
+        "stageId": "mosaic-priority",
+        "inputWireBytes": 7676,
+        "conservativeInputTokens": 11772,
+        "maxOutputTokens": 8192,
+        "estimatedMaxUsd": 0.049531,
+        "providerBodySha256": "90b1cc44753e447c139c1694dbbd3b93b9011e89469d2ea88aa1caf6237c85b6",
+        "assumedMaximumJobIdCharacters": 101,
+        "assumedMaximumVersion": 1000000
+      },
+      {
+        "stageId": "mosaic-corrected",
+        "inputWireBytes": 7777,
+        "conservativeInputTokens": 11873,
+        "maxOutputTokens": 8192,
+        "estimatedMaxUsd": 0.04965725,
+        "providerBodySha256": "e658cf2d08de6b2dd78da74e97926e5d06a8aa1a513f82dd799b8918591d5094",
+        "assumedMaximumJobIdCharacters": 101,
+        "assumedMaximumVersion": 1000000
+      }
+    ],
+    "limitations": [
+      "No live model quality result is established by this preflight.",
+      "Hosted review API returns parsed candidates and bounded token counters when available, not raw Meta envelopes or billed charges.",
+      "Local source snapshot hashes establish evaluator identity; they do not remotely attest deployed source.",
+      "Structured-rule equivalence and exact-source preservation are tested. Full quality of generated translations is not automatically scored."
+    ],
+    "executionGate": "Wait for root/operator explicit live execution after payment, key setup and server enablement. This agent has no authorization to execute network requests."
+  },
+  "stages": [
+    {
+      "stageId": "mosaic-priority",
+      "status": "passed",
+      "consensus": [
+        {
+          "step": "one-vote-holds",
+          "passed": true,
+          "publishedVersion": 1
+        },
+        {
+          "step": "two-split-votes-hold",
+          "passed": true,
+          "publishedVersion": 1
+        },
+        {
+          "step": "two-matching-votes-publish",
+          "passed": true,
+          "publishedVersion": 2
+        }
+      ],
+      "failures": [],
+      "roomId": "studio-9810adcb-7979-478e-94b1-b3ea5140b2a6",
+      "requestEstimate": {
+        "inputWireBytes": 7504,
+        "conservativeInputTokens": 11600,
+        "maxOutputTokens": 8192,
+        "estimatedMaxUsd": 0.049316,
+        "providerBodySha256": "a740c4353a9f3d658c692554ecd13f85d4fa4e4a66a1fc4bc0253ea37df9f3a4"
+      },
+      "quality": {
+        "passed": true,
+        "failures": [],
+        "scenarioResults": [
+          {
+            "scenarioId": "mosaic-age-15",
+            "editor": "alice",
+            "attendee": {
+              "age": 15,
+              "resident": true,
+              "student": true,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-16-no-consent",
+            "editor": "alice",
+            "attendee": {
+              "age": 16,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-16-consent",
+            "editor": "alice",
+            "attendee": {
+              "age": 16,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": true,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-17-member-student",
+            "editor": "alice",
+            "attendee": {
+              "age": 17,
+              "resident": false,
+              "student": true,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-18-default",
+            "editor": "alice",
+            "attendee": {
+              "age": 18,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 3100
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 3100
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-80-overlap",
+            "editor": "alice",
+            "attendee": {
+              "age": 80,
+              "resident": true,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-81",
+            "editor": "alice",
+            "attendee": {
+              "age": 81,
+              "resident": true,
+              "student": true,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-paid-to-free",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-member-consent-scholar",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-member-only-scholar",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-student-scholar",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-member-resident-consent",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-resident-only",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-student-only",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-scholar-with-no-status",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-before-opening",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T08:59:59.999Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-exact-opening",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T09:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-before-closing",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-03-01T08:59:59.999Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-exact-closing",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-03-01T09:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-after-closing",
+            "editor": "alice",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-03-01T09:00:00.001Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-youth-student-no-consent",
+            "editor": "alice",
+            "attendee": {
+              "age": 17,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-15",
+            "editor": "bob",
+            "attendee": {
+              "age": 15,
+              "resident": true,
+              "student": true,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-16-no-consent",
+            "editor": "bob",
+            "attendee": {
+              "age": 16,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-16-consent",
+            "editor": "bob",
+            "attendee": {
+              "age": 16,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": true,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-17-member-student",
+            "editor": "bob",
+            "attendee": {
+              "age": 17,
+              "resident": false,
+              "student": true,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-18-default",
+            "editor": "bob",
+            "attendee": {
+              "age": 18,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 3100
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 3100
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-80-overlap",
+            "editor": "bob",
+            "attendee": {
+              "age": 80,
+              "resident": true,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-age-81",
+            "editor": "bob",
+            "attendee": {
+              "age": 81,
+              "resident": true,
+              "student": true,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-paid-to-free",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-member-consent-scholar",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-member-only-scholar",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-student-scholar",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 0
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-member-resident-consent",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": true,
+              "guardianConsent": true,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 900
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-resident-only",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-student-only",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1400
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-scholar-with-no-status",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": false,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-before-opening",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T08:59:59.999Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-exact-opening",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T09:00:00.000Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-before-closing",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-03-01T08:59:59.999Z"
+            },
+            "expected": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "actual": {
+              "accepted": true,
+              "feeCents": 1600
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-exact-closing",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-03-01T09:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-after-closing",
+            "editor": "bob",
+            "attendee": {
+              "age": 27,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-03-01T09:00:00.001Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          },
+          {
+            "scenarioId": "mosaic-youth-student-no-consent",
+            "editor": "bob",
+            "attendee": {
+              "age": 17,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2032-02-29T12:00:00.000Z"
+            },
+            "expected": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "actual": {
+              "accepted": false,
+              "feeCents": null
+            },
+            "passed": true
+          }
+        ],
+        "semanticOracleChecks": [
+          {
+            "editor": "alice",
+            "status": "equivalent",
+            "witnesses": [],
+            "checkedCases": 2816,
+            "issues": [],
+            "coverage": {
+              "ageValues": 121,
+              "agePartitions": 11,
+              "flagCombinations": 32,
+              "timePartitions": 8,
+              "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+            }
+          },
+          {
+            "editor": "bob",
+            "status": "equivalent",
+            "witnesses": [],
+            "checkedCases": 2816,
+            "issues": [],
+            "coverage": {
+              "ageValues": 121,
+              "agePartitions": 11,
+              "flagCombinations": 32,
+              "timePartitions": 8,
+              "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+            }
+          }
+        ],
+        "issueTopicChecks": [],
+        "discovery": {
+          "status": "different",
+          "witnesses": [
+            {
+              "id": "price-left-higher",
+              "kind": "price-only",
+              "attendee": {
+                "age": 24,
+                "resident": true,
+                "student": false,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": true,
+                "submittedAt": "2032-02-29T09:00:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 1600,
+                "feeReason": {
+                  "en": "First matching fee rule: resident",
+                  "es": "Primera regla de tarifa aplicable: resident"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": true,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": false,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": false,
+                    "en": "(member AND guardian consent)",
+                    "es": "(miembro Y consentimiento del tutor)"
+                  },
+                  {
+                    "path": "fee.0.0",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "fee.1",
+                    "passed": true,
+                    "en": "resident",
+                    "es": "residente"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: resident",
+                    "es": "Primera regla de tarifa aplicable: resident"
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 0,
+                "feeReason": {
+                  "en": "First matching fee rule: scholarship",
+                  "es": "Primera regla de tarifa aplicable: scholarship"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": true,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": false,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": false,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": false,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": true,
+                    "en": "scholarship",
+                    "es": "beca"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: scholarship",
+                    "es": "Primera regla de tarifa aplicable: scholarship"
+                  }
+                ]
+              },
+              "feeDeltaCents": 1600,
+              "explanation": {
+                "en": "Both admit this person, but A charges $16.00 and B charges $0.00.",
+                "es": "Ambas admiten a esta persona, pero A cobra $16.00 y B cobra $0.00."
+              }
+            },
+            {
+              "id": "price-right-higher",
+              "kind": "price-only",
+              "attendee": {
+                "age": 24,
+                "resident": false,
+                "student": true,
+                "member": true,
+                "guardianConsent": true,
+                "scholarship": false,
+                "submittedAt": "2032-02-29T09:00:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 900,
+                "feeReason": {
+                  "en": "First matching fee rule: member with guardian consent",
+                  "es": "Primera regla de tarifa aplicable: member with guardian consent"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": true,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": true,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": true,
+                    "en": "(member AND guardian consent)",
+                    "es": "(miembro Y consentimiento del tutor)"
+                  },
+                  {
+                    "path": "fee.0.0",
+                    "passed": true,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "fee.0.1",
+                    "passed": true,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: member with guardian consent",
+                    "es": "Primera regla de tarifa aplicable: member with guardian consent"
+                  }
+                ]
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 1400,
+                "feeReason": {
+                  "en": "First matching fee rule: student",
+                  "es": "Primera regla de tarifa aplicable: student"
+                },
+                "trace": [
+                  {
+                    "path": "eligibility",
+                    "passed": true,
+                    "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+                    "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+                  },
+                  {
+                    "path": "eligibility.0",
+                    "passed": true,
+                    "en": "age ≥ 16",
+                    "es": "edad ≥ 16"
+                  },
+                  {
+                    "path": "eligibility.1",
+                    "passed": true,
+                    "en": "age ≤ 80",
+                    "es": "edad ≤ 80"
+                  },
+                  {
+                    "path": "eligibility.2",
+                    "passed": true,
+                    "en": "(resident OR student OR member)",
+                    "es": "(residente O estudiante O miembro)"
+                  },
+                  {
+                    "path": "eligibility.2.0",
+                    "passed": false,
+                    "en": "resident",
+                    "es": "residente"
+                  },
+                  {
+                    "path": "eligibility.2.1",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  },
+                  {
+                    "path": "eligibility.2.2",
+                    "passed": true,
+                    "en": "member",
+                    "es": "miembro"
+                  },
+                  {
+                    "path": "eligibility.3",
+                    "passed": true,
+                    "en": "(age ≥ 18 OR guardian consent)",
+                    "es": "(edad ≥ 18 O consentimiento del tutor)"
+                  },
+                  {
+                    "path": "eligibility.3.0",
+                    "passed": true,
+                    "en": "age ≥ 18",
+                    "es": "edad ≥ 18"
+                  },
+                  {
+                    "path": "eligibility.3.1",
+                    "passed": true,
+                    "en": "guardian consent",
+                    "es": "consentimiento del tutor"
+                  },
+                  {
+                    "path": "eligibility.4",
+                    "passed": true,
+                    "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+                    "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+                  },
+                  {
+                    "path": "eligibility.5",
+                    "passed": true,
+                    "en": "submitted < 2032-03-01T09:00:00.000Z",
+                    "es": "inscripción < 2032-03-01T09:00:00.000Z"
+                  },
+                  {
+                    "path": "fee.0",
+                    "passed": false,
+                    "en": "scholarship",
+                    "es": "beca"
+                  },
+                  {
+                    "path": "fee.1",
+                    "passed": true,
+                    "en": "student",
+                    "es": "estudiante"
+                  }
+                ],
+                "reasons": [
+                  {
+                    "en": "Meets the complete admission rule.",
+                    "es": "Cumple la regla completa de admisión."
+                  },
+                  {
+                    "en": "First matching fee rule: student",
+                    "es": "Primera regla de tarifa aplicable: student"
+                  }
+                ]
+              },
+              "feeDeltaCents": 500,
+              "explanation": {
+                "en": "Both admit this person, but A charges $9.00 and B charges $14.00.",
+                "es": "Ambas admiten a esta persona, pero A cobra $9.00 y B cobra $14.00."
+              }
+            }
+          ],
+          "checkedCases": 2816,
+          "issues": [],
+          "coverage": {
+            "ageValues": 121,
+            "agePartitions": 11,
+            "flagCombinations": 32,
+            "timePartitions": 8,
+            "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+          }
+        }
+      },
+      "httpDurationMs": 18271,
+      "metrics": {
+        "providerDurationMs": 17951,
+        "requestBytes": 7504,
+        "responseContentBytes": 3951,
+        "promptTokens": 1620,
+        "completionTokens": 6838,
+        "totalTokens": 8458,
+        "reasoningTokens": 5502,
+        "cachedInputTokens": 0
+      },
+      "receipt": {
+        "requestId": "eval-mosaic-priority-14a359b0-ce7f-4697-9283-9311a6bea1c4",
+        "policyVersion": 2,
+        "label": "Synthetic frozen mosaic-paid-to-free",
+        "age": 27,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2032-02-29T12:00:00.000Z",
+        "id": "studio-receipt-8",
+        "recordedAt": "2026-10-27T04:15:00.562Z",
+        "decision": {
+          "accepted": true,
+          "feeCents": 1600,
+          "feeReason": {
+            "en": "First matching fee rule: resident",
+            "es": "Primera regla de tarifa aplicable: resident"
+          },
+          "trace": [
+            {
+              "path": "eligibility",
+              "passed": true,
+              "en": "(age ≥ 16 AND age ≤ 80 AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2032-02-29T09:00:00.000Z AND submitted < 2032-03-01T09:00:00.000Z)",
+              "es": "(edad ≥ 16 Y edad ≤ 80 Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2032-02-29T09:00:00.000Z Y inscripción < 2032-03-01T09:00:00.000Z)"
+            },
+            {
+              "path": "eligibility.0",
+              "passed": true,
+              "en": "age ≥ 16",
+              "es": "edad ≥ 16"
+            },
+            {
+              "path": "eligibility.1",
+              "passed": true,
+              "en": "age ≤ 80",
+              "es": "edad ≤ 80"
+            },
+            {
+              "path": "eligibility.2",
+              "passed": true,
+              "en": "(resident OR student OR member)",
+              "es": "(residente O estudiante O miembro)"
+            },
+            {
+              "path": "eligibility.2.0",
+              "passed": true,
+              "en": "resident",
+              "es": "residente"
+            },
+            {
+              "path": "eligibility.2.1",
+              "passed": true,
+              "en": "student",
+              "es": "estudiante"
+            },
+            {
+              "path": "eligibility.2.2",
+              "passed": false,
+              "en": "member",
+              "es": "miembro"
+            },
+            {
+              "path": "eligibility.3",
+              "passed": true,
+              "en": "(age ≥ 18 OR guardian consent)",
+              "es": "(edad ≥ 18 O consentimiento del tutor)"
+            },
+            {
+              "path": "eligibility.3.0",
+              "passed": true,
+              "en": "age ≥ 18",
+              "es": "edad ≥ 18"
+            },
+            {
+              "path": "eligibility.3.1",
+              "passed": false,
+              "en": "guardian consent",
+              "es": "consentimiento del tutor"
+            },
+            {
+              "path": "eligibility.4",
+              "passed": true,
+              "en": "submitted ≥ 2032-02-29T09:00:00.000Z",
+              "es": "inscripción ≥ 2032-02-29T09:00:00.000Z"
+            },
+            {
+              "path": "eligibility.5",
+              "passed": true,
+              "en": "submitted < 2032-03-01T09:00:00.000Z",
+              "es": "inscripción < 2032-03-01T09:00:00.000Z"
+            },
+            {
+              "path": "fee.0",
+              "passed": false,
+              "en": "(member AND guardian consent)",
+              "es": "(miembro Y consentimiento del tutor)"
+            },
+            {
+              "path": "fee.0.0",
+              "passed": false,
+              "en": "member",
+              "es": "miembro"
+            },
+            {
+              "path": "fee.0.1",
+              "passed": false,
+              "en": "guardian consent",
+              "es": "consentimiento del tutor"
+            },
+            {
+              "path": "fee.1",
+              "passed": true,
+              "en": "resident",
+              "es": "residente"
+            }
+          ],
+          "reasons": [
+            {
+              "en": "Meets the complete admission rule.",
+              "es": "Cumple la regla completa de admisión."
+            },
+            {
+              "en": "First matching fee rule: resident",
+              "es": "Primera regla de tarifa aplicable: resident"
+            }
+          ]
+        }
+      },
+      "observedRoomModelCallCount": 1
+    },
+    {
+      "stageId": "mosaic-corrected",
+      "status": "running",
+      "consensus": [
+        {
+          "step": "corrected-drafts-invalidate-old-votes",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "roomId": "studio-9810adcb-7979-478e-94b1-b3ea5140b2a6",
+      "requestEstimate": {
+        "inputWireBytes": 6633,
+        "conservativeInputTokens": 10729,
+        "maxOutputTokens": 8192,
+        "estimatedMaxUsd": 0.04822725,
+        "providerBodySha256": "5c6602fbc8e70d780176eca43a570d989c6d8a2829f2f48f7d2eab0f62c55e78"
+      }
+    }
+  ],
+  "actualReviewPostAttempts": 2,
+  "actualProviderAttempts": null,
+  "actualUsage": null,
+  "actualCostUsd": null,
+  "networkCalls": 15,
+  "evidenceScope": "API calls to the owned hosted test site. Alice/Bob are simulated editors. Raw responses are own-site API responses containing hydrated rules, not raw Meta transport payloads. Corpus expected decisions are separate from model output.",
+  "usageLimitation": "Review POST attempts are durably counted before dispatch. Numeric provider counters and durations are retained when available; billed cost is not measured. Room modelCallCount is an app counter, not a billing receipt. No retries or search.",
+  "qualityFailures": [
+    "Site operation mosaic-corrected-review failed; recorded evidence; no retry was attempted."
+  ]
+}

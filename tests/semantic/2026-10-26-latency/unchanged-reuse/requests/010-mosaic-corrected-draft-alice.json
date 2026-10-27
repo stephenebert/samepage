@@ -1,0 +1,14 @@
+{
+  "sequence": 10,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-9810adcb-7979-478e-94b1-b3ea5140b2a6",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 2,
+    "text": "Mosaic club session. A participant is eligible exactly when their age is at least 16 and at most 80, they are not someone who is none of a resident, a student, and a member, and they are either at least 18 or have guardian consent. The submission instant must be no earlier than 2032-02-29T09:00:00.000Z and earlier than 2032-03-01T09:00:00.000Z; the opening instant is included and the closing instant is excluded. Apply fees only to admitted participants. A scholarship recipient pays nothing. Among people without a scholarship, every student pays $14 USD. Among the remaining people, members with guardian consent pay $9 USD; after that, remaining residents pay $16 USD; anyone still unmatched pays $31 USD. Each person receives only the first applicable price in that order. A scholarship does not waive any admission requirement. No other eligibility conditions or deadlines apply."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T04:15:00.708Z"
+}

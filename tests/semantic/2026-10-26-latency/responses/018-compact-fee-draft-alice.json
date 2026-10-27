@@ -1,0 +1,59 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 219,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-38ca5bfd-961c-4f2b-93b7-554dddd5259b\",\"revision\":1,\"createdAt\":\"2026-10-27T03:56:35.022Z\",\"updatedAt\":\"2026-10-27T03:56:35.520Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T03:56:35.022Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Cyanotype Book-Cover Workshop — complete registration policy.\\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a person who is both a resident and a member pays USD 17.25; (2) a scholarship holder pays USD 0.00; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":1,\"text\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"compact-v2\"}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-38ca5bfd-961c-4f2b-93b7-554dddd5259b",
+      "revision": 1,
+      "createdAt": "2026-10-27T03:56:35.022Z",
+      "updatedAt": "2026-10-27T03:56:35.520Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T03:56:35.022Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Cyanotype Book-Cover Workshop — complete registration policy.\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a person who is both a resident and a member pays USD 17.25; (2) a scholarship holder pays USD 0.00; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 1,
+          "text": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "compact-v2"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 210,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-54840ba6-628b-45db-8c29-bba0526fa394\",\"revision\":1,\"createdAt\":\"2026-10-27T03:56:52.404Z\",\"updatedAt\":\"2026-10-27T03:56:52.580Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T03:56:52.404Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Stop-Motion Miniatures Club — complete policy for this optional hobby workshop.\\nOnly people aged 14 through 79 inclusive may attend. Anyone younger than 18 must have guardian consent; adults do not need guardian consent. A nonresident is excluded unless they are a member. However, a nonresident member who is a student is still excluded unless that person has a scholarship. Residents are unaffected by these nonresident exclusions. A scholarship waives no other eligibility requirement.\\nApplications must be submitted at or after 2027-09-08T06:00:00.000Z and strictly before 2027-09-12T17:00:00.000Z. These are exact UTC instants. No other attendance conditions or deadlines apply.\\nFees apply only after eligibility is established. Choose the first applicable rule in this order: scholarship holders pay USD 0.00; members pay USD 23.40; students pay USD 12.60. Everyone else who is eligible pays the fixed fee of USD 29.95. The rates do not stack, and no other flag or age changes the fee. Rejected applicants pay no fee.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":1,\"text\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"compact-v2\"}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-54840ba6-628b-45db-8c29-bba0526fa394",
+      "revision": 1,
+      "createdAt": "2026-10-27T03:56:52.404Z",
+      "updatedAt": "2026-10-27T03:56:52.580Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T03:56:52.404Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Stop-Motion Miniatures Club — complete policy for this optional hobby workshop.\nOnly people aged 14 through 79 inclusive may attend. Anyone younger than 18 must have guardian consent; adults do not need guardian consent. A nonresident is excluded unless they are a member. However, a nonresident member who is a student is still excluded unless that person has a scholarship. Residents are unaffected by these nonresident exclusions. A scholarship waives no other eligibility requirement.\nApplications must be submitted at or after 2027-09-08T06:00:00.000Z and strictly before 2027-09-12T17:00:00.000Z. These are exact UTC instants. No other attendance conditions or deadlines apply.\nFees apply only after eligibility is established. Choose the first applicable rule in this order: scholarship holders pay USD 0.00; members pay USD 23.40; students pay USD 12.60. Everyone else who is eligible pays the fixed fee of USD 29.95. The rates do not stack, and no other flag or age changes the fee. Rejected applicants pay no fee."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 1,
+          "text": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "compact-v2"
+    }
+  }
+}

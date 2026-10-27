@@ -1,0 +1,59 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 132,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-6023ee3e-c53c-451c-9f20-6100f4cb3bac\",\"revision\":2,\"createdAt\":\"2026-10-27T03:57:17.862Z\",\"updatedAt\":\"2026-10-27T03:57:18.063Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T03:57:17.862Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Paper-lantern workshop. Only people aged 14 through 65, inclusive, may attend. Someone who is neither a resident nor a student is excluded unless they are a member. A person under 18 is excluded if they lack guardian consent; this youth exclusion alone does not apply when the person is both a resident and a scholarship recipient. A scholarship does not waive the age range or the resident/student/member requirement. Registration must be submitted strictly before 2031-11-02T01:30:00.000Z; the exact stated instant is too late. All prices are in USD and apply only after admission. Charge the first applicable price in this order: scholarship recipient, $0; member, $17; otherwise, $48. Prices do not stack. There are no other eligibility conditions or deadlines.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Taller de farolillos de papel. Solo pueden participar personas de 14 a 65 años, ambos extremos incluidos. Quien no sea ni residente ni estudiante queda excluido, salvo que sea miembro. También queda excluida una persona menor de 18 años que no tenga consentimiento del tutor; esta exclusión de menores, y solo esta, no se aplica a quien sea residente y tenga una beca a la vez. Una beca no elimina el intervalo de edad ni el requisito de ser residente, estudiante o miembro. La inscripción debe enviarse antes de 2031-11-02T01:30:00.000Z o exactamente en ese instante; el instante indicado sí se acepta. Todos los precios son en USD y solo se aplican después de admitir a la persona. Se cobra el primer precio aplicable en este orden: persona con beca, $0; miembro, $17; en cualquier otro caso, $48. Los precios no se acumulan. No existen otras condiciones de admisión ni otros plazos.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"compact-v2\"}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-6023ee3e-c53c-451c-9f20-6100f4cb3bac",
+      "revision": 2,
+      "createdAt": "2026-10-27T03:57:17.862Z",
+      "updatedAt": "2026-10-27T03:57:18.063Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T03:57:17.862Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Paper-lantern workshop. Only people aged 14 through 65, inclusive, may attend. Someone who is neither a resident nor a student is excluded unless they are a member. A person under 18 is excluded if they lack guardian consent; this youth exclusion alone does not apply when the person is both a resident and a scholarship recipient. A scholarship does not waive the age range or the resident/student/member requirement. Registration must be submitted strictly before 2031-11-02T01:30:00.000Z; the exact stated instant is too late. All prices are in USD and apply only after admission. Charge the first applicable price in this order: scholarship recipient, $0; member, $17; otherwise, $48. Prices do not stack. There are no other eligibility conditions or deadlines."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Taller de farolillos de papel. Solo pueden participar personas de 14 a 65 años, ambos extremos incluidos. Quien no sea ni residente ni estudiante queda excluido, salvo que sea miembro. También queda excluida una persona menor de 18 años que no tenga consentimiento del tutor; esta exclusión de menores, y solo esta, no se aplica a quien sea residente y tenga una beca a la vez. Una beca no elimina el intervalo de edad ni el requisito de ser residente, estudiante o miembro. La inscripción debe enviarse antes de 2031-11-02T01:30:00.000Z o exactamente en ese instante; el instante indicado sí se acepta. Todos los precios son en USD y solo se aplican después de admitir a la persona. Se cobra el primer precio aplicable en este orden: persona con beca, $0; miembro, $17; en cualquier otro caso, $48. Los precios no se acumulan. No existen otras condiciones de admisión ni otros plazos."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "compact-v2"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "sequence": 2,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-9810adcb-7979-478e-94b1-b3ea5140b2a6",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Mosaic club session. Admission requires age 16 through 80 inclusive and at least one of resident, student, or member status. Anyone under 18 must also have guardian consent; adults do not need it. Registration must be submitted at or after 2032-02-29T09:00:00.000Z and strictly before 2032-03-01T09:00:00.000Z. For admitted participants, select the first matching rule in the following priority order and stop: a member who has guardian consent pays $9 USD; otherwise a resident pays $16 USD; otherwise a student pays $14 USD; otherwise a scholarship recipient pays $0 USD; otherwise the price is $31 USD. Scholarship status never overrides an earlier matching price and never waives admission requirements. Do not combine prices. There are no other eligibility conditions or deadlines."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T04:14:39.574Z"
+}

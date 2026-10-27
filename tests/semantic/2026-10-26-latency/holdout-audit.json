@@ -1,0 +1,70 @@
+{
+  "schema": "samepage-independent-holdout-audit-v1",
+  "auditedAt": "2026-10-27T03:54:13.369695+00:00",
+  "status": "pass",
+  "findings": [],
+  "scope": "Independent AI bilingual prose review plus a separately written direct semantic oracle and recursive AST evaluator. No previous corpus/model output or author oracle source was used. No API or network calls. Frozen files unchanged.",
+  "verifiedFreezeHashes": {
+    "corpus.json": "70014e6e704fe7c005ede0e20881874e13814846f778c77568d1be163a8f0e2e",
+    "sources.json": "49f6f4376b3491053c91fb2e0e27c16da57bb72fcba51ac5206d32cb6a98d13d",
+    "goldens.json": "d8e6d9249e9893778409eea773941cab88e13b91999bc0cd237f0c8575ee1faa",
+    "author-corpus.py": "a8a05b59b564314a4a10db1b47e3432484061eceb34a76d938347248bb776952",
+    "verify-corpus.py": "ca754b12c310de2c1bcee0b06206d60a4a6d068ac9037f3904be4a20b6a75412",
+    "truth-verification.json": "0c0c12baa767f4c4f8da6a8f04b7a8eb82adbf25edfc1e4c39dcca8016d56412",
+    "corpus-notes.txt": "ee3918272243284d446503bac44628725c7b4b85d2c37172aed5ded1b453fae3"
+  },
+  "totals": {
+    "concreteDecisionAssertions": 118,
+    "unresolvedAbstentions": 8,
+    "independentRuleComparisons": 162624
+  },
+  "stages": [
+    {
+      "id": "lantern-nested-utc",
+      "status": "pass",
+      "explicitChecks": 34,
+      "independentRuleComparisons": 38720,
+      "witnessCategories": [
+        "admission-right"
+      ],
+      "maximumFeeDifferencesCents": {},
+      "semanticReview": "Both languages scope the resident-and-scholarship exception solely to youth guardian consent. They retain the age and resident/student/member restrictions. Only exact closing inclusion differs; scholarship then member fee precedence is shared."
+    },
+    {
+      "id": "mosaic-priority",
+      "status": "pass",
+      "explicitChecks": 42,
+      "independentRuleComparisons": 61952,
+      "witnessCategories": [
+        "price-left-higher",
+        "price-right-higher"
+      ],
+      "maximumFeeDifferencesCents": {
+        "price-left-higher": 1600,
+        "price-right-higher": 500
+      },
+      "semanticReview": "Eligibility, guardian consent and explicit leap-day UTC interval match. Alice prioritizes member-with-consent, resident, student, scholarship. Bob prioritizes scholarship, student, member-with-consent, resident. Both possible price directions and maxima are correct."
+    },
+    {
+      "id": "mosaic-corrected",
+      "status": "pass",
+      "explicitChecks": 42,
+      "independentRuleComparisons": 61952,
+      "witnessCategories": [],
+      "maximumFeeDifferencesCents": {},
+      "semanticReview": "Alice negated none-of status is equivalent to Bob at-least-one status. Remaining-person fee clauses match Bob explicit first-match order. Bob source is byte-identical; the selected scholarship attendee changes from USD16 to zero."
+    },
+    {
+      "id": "watercolor-overlap",
+      "status": "pass",
+      "explicitChecks": 8,
+      "independentRuleComparisons": 0,
+      "witnessCategories": [],
+      "maximumFeeDifferencesCents": {},
+      "semanticReview": "Both languages give alternative whole prices for overlapping resident/student/scholarship categories without a conflict priority. Whole rules must remain null; no smallest-price or source-order assumption is justified."
+    }
+  ],
+  "limits": [
+    "This validates the held-out expectations, not the model outputs."
+  ]
+}

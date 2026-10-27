@@ -1,0 +1,14 @@
+{
+  "status": "verified-including-expected-experiment-failures",
+  "verifiedFiles": 293,
+  "reviewAttempts": 12,
+  "structuredReviews": 11,
+  "passedReviews": 10,
+  "concreteChecks": 400,
+  "concreteFailures": 8,
+  "unresolvedChecks": 8,
+  "speedupDemonstrated": false,
+  "networkCalls": 0,
+  "filesWritten": 0,
+  "actualBilledCostUsd": null
+}

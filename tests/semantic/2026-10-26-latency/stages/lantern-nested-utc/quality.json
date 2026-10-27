@@ -1,0 +1,1045 @@
+{
+  "passed": true,
+  "failures": [],
+  "scenarioResults": [
+    {
+      "scenarioId": "lantern-age-13",
+      "editor": "alice",
+      "attendee": {
+        "age": 13,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-14-no-consent",
+      "editor": "alice",
+      "attendee": {
+        "age": 14,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-youth-exempt",
+      "editor": "alice",
+      "attendee": {
+        "age": 14,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-student-scholar-no-consent",
+      "editor": "alice",
+      "attendee": {
+        "age": 14,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-17-consent",
+      "editor": "alice",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-18-no-consent",
+      "editor": "alice",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-65-member",
+      "editor": "alice",
+      "attendee": {
+        "age": 65,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 1700
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1700
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-66",
+      "editor": "alice",
+      "attendee": {
+        "age": 66,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-neither-and-not-member",
+      "editor": "alice",
+      "attendee": {
+        "age": 27,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-exact-cutoff-member",
+      "editor": "alice",
+      "attendee": {
+        "age": 27,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:30:00.000Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-exact-cutoff-scholar",
+      "editor": "alice",
+      "attendee": {
+        "age": 27,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:30:00.000Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-after-cutoff",
+      "editor": "alice",
+      "attendee": {
+        "age": 27,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:30:00.001Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-before-cutoff",
+      "editor": "alice",
+      "attendee": {
+        "age": 27,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-young-member-scholar",
+      "editor": "alice",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-young-member-consent-scholar",
+      "editor": "alice",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-120",
+      "editor": "alice",
+      "attendee": {
+        "age": 120,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-0",
+      "editor": "alice",
+      "attendee": {
+        "age": 0,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-13",
+      "editor": "bob",
+      "attendee": {
+        "age": 13,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-14-no-consent",
+      "editor": "bob",
+      "attendee": {
+        "age": 14,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-youth-exempt",
+      "editor": "bob",
+      "attendee": {
+        "age": 14,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-student-scholar-no-consent",
+      "editor": "bob",
+      "attendee": {
+        "age": 14,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-17-consent",
+      "editor": "bob",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": true,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-18-no-consent",
+      "editor": "bob",
+      "attendee": {
+        "age": 18,
+        "resident": false,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-65-member",
+      "editor": "bob",
+      "attendee": {
+        "age": 65,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 1700
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1700
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-66",
+      "editor": "bob",
+      "attendee": {
+        "age": 66,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-neither-and-not-member",
+      "editor": "bob",
+      "attendee": {
+        "age": 27,
+        "resident": false,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-exact-cutoff-member",
+      "editor": "bob",
+      "attendee": {
+        "age": 27,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:30:00.000Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 1700
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1700
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-exact-cutoff-scholar",
+      "editor": "bob",
+      "attendee": {
+        "age": 27,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:30:00.000Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-after-cutoff",
+      "editor": "bob",
+      "attendee": {
+        "age": 27,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:30:00.001Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-before-cutoff",
+      "editor": "bob",
+      "attendee": {
+        "age": 27,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4800
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-young-member-scholar",
+      "editor": "bob",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-young-member-consent-scholar",
+      "editor": "bob",
+      "attendee": {
+        "age": 17,
+        "resident": false,
+        "student": false,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-120",
+      "editor": "bob",
+      "attendee": {
+        "age": 120,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "scenarioId": "lantern-age-0",
+      "editor": "bob",
+      "attendee": {
+        "age": 0,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": true,
+        "scholarship": true,
+        "submittedAt": "2031-11-02T01:29:59.999Z"
+      },
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    }
+  ],
+  "semanticOracleChecks": [
+    {
+      "editor": "alice",
+      "status": "equivalent",
+      "witnesses": [],
+      "checkedCases": 2080,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 13,
+        "flagCombinations": 32,
+        "timePartitions": 5,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    {
+      "editor": "bob",
+      "status": "equivalent",
+      "witnesses": [],
+      "checkedCases": 2080,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 13,
+        "flagCombinations": 32,
+        "timePartitions": 5,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    }
+  ],
+  "issueTopicChecks": [],
+  "discovery": {
+    "status": "different",
+    "witnesses": [
+      {
+        "id": "admission-right",
+        "kind": "admission-right",
+        "attendee": {
+          "age": 24,
+          "resident": true,
+          "student": false,
+          "member": false,
+          "guardianConsent": false,
+          "scholarship": false,
+          "submittedAt": "2031-11-02T01:30:00.000Z"
+        },
+        "left": {
+          "accepted": false,
+          "feeCents": null,
+          "feeReason": {
+            "en": "No fee: admission denied.",
+            "es": "Sin tarifa: admisión denegada."
+          },
+          "trace": [
+            {
+              "path": "eligibility",
+              "passed": false,
+              "en": "((age ≥ 14 AND age ≤ 65) AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent OR (resident AND scholarship)) AND submitted < 2031-11-02T01:30:00.000Z)",
+              "es": "((edad ≥ 14 Y edad ≤ 65) Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor O (residente Y beca)) Y inscripción < 2031-11-02T01:30:00.000Z)"
+            },
+            {
+              "path": "eligibility.0",
+              "passed": true,
+              "en": "(age ≥ 14 AND age ≤ 65)",
+              "es": "(edad ≥ 14 Y edad ≤ 65)"
+            },
+            {
+              "path": "eligibility.0.0",
+              "passed": true,
+              "en": "age ≥ 14",
+              "es": "edad ≥ 14"
+            },
+            {
+              "path": "eligibility.0.1",
+              "passed": true,
+              "en": "age ≤ 65",
+              "es": "edad ≤ 65"
+            },
+            {
+              "path": "eligibility.1",
+              "passed": true,
+              "en": "(resident OR student OR member)",
+              "es": "(residente O estudiante O miembro)"
+            },
+            {
+              "path": "eligibility.1.0",
+              "passed": true,
+              "en": "resident",
+              "es": "residente"
+            },
+            {
+              "path": "eligibility.1.1",
+              "passed": false,
+              "en": "student",
+              "es": "estudiante"
+            },
+            {
+              "path": "eligibility.1.2",
+              "passed": false,
+              "en": "member",
+              "es": "miembro"
+            },
+            {
+              "path": "eligibility.2",
+              "passed": true,
+              "en": "(age ≥ 18 OR guardian consent OR (resident AND scholarship))",
+              "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y beca))"
+            },
+            {
+              "path": "eligibility.2.0",
+              "passed": true,
+              "en": "age ≥ 18",
+              "es": "edad ≥ 18"
+            },
+            {
+              "path": "eligibility.2.1",
+              "passed": false,
+              "en": "guardian consent",
+              "es": "consentimiento del tutor"
+            },
+            {
+              "path": "eligibility.2.2",
+              "passed": false,
+              "en": "(resident AND scholarship)",
+              "es": "(residente Y beca)"
+            },
+            {
+              "path": "eligibility.2.2.0",
+              "passed": true,
+              "en": "resident",
+              "es": "residente"
+            },
+            {
+              "path": "eligibility.2.2.1",
+              "passed": false,
+              "en": "scholarship",
+              "es": "beca"
+            },
+            {
+              "path": "eligibility.3",
+              "passed": false,
+              "en": "submitted < 2031-11-02T01:30:00.000Z",
+              "es": "inscripción < 2031-11-02T01:30:00.000Z"
+            }
+          ],
+          "reasons": [
+            {
+              "en": "Admission requires ((age ≥ 14 AND age ≤ 65) AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent OR (resident AND scholarship)) AND submitted < 2031-11-02T01:30:00.000Z).",
+              "es": "La admisión requiere ((edad ≥ 14 Y edad ≤ 65) Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor O (residente Y beca)) Y inscripción < 2031-11-02T01:30:00.000Z)."
+            }
+          ]
+        },
+        "right": {
+          "accepted": true,
+          "feeCents": 4800,
+          "feeReason": {
+            "en": "Standard fee; no earlier override matched.",
+            "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+          },
+          "trace": [
+            {
+              "path": "eligibility",
+              "passed": true,
+              "en": "((age ≥ 14 AND age ≤ 65) AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent OR (resident AND scholarship)) AND submitted ≤ 2031-11-02T01:30:00.000Z)",
+              "es": "((edad ≥ 14 Y edad ≤ 65) Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor O (residente Y beca)) Y inscripción ≤ 2031-11-02T01:30:00.000Z)"
+            },
+            {
+              "path": "eligibility.0",
+              "passed": true,
+              "en": "(age ≥ 14 AND age ≤ 65)",
+              "es": "(edad ≥ 14 Y edad ≤ 65)"
+            },
+            {
+              "path": "eligibility.0.0",
+              "passed": true,
+              "en": "age ≥ 14",
+              "es": "edad ≥ 14"
+            },
+            {
+              "path": "eligibility.0.1",
+              "passed": true,
+              "en": "age ≤ 65",
+              "es": "edad ≤ 65"
+            },
+            {
+              "path": "eligibility.1",
+              "passed": true,
+              "en": "(resident OR student OR member)",
+              "es": "(residente O estudiante O miembro)"
+            },
+            {
+              "path": "eligibility.1.0",
+              "passed": true,
+              "en": "resident",
+              "es": "residente"
+            },
+            {
+              "path": "eligibility.1.1",
+              "passed": false,
+              "en": "student",
+              "es": "estudiante"
+            },
+            {
+              "path": "eligibility.1.2",
+              "passed": false,
+              "en": "member",
+              "es": "miembro"
+            },
+            {
+              "path": "eligibility.2",
+              "passed": true,
+              "en": "(age ≥ 18 OR guardian consent OR (resident AND scholarship))",
+              "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y beca))"
+            },
+            {
+              "path": "eligibility.2.0",
+              "passed": true,
+              "en": "age ≥ 18",
+              "es": "edad ≥ 18"
+            },
+            {
+              "path": "eligibility.2.1",
+              "passed": false,
+              "en": "guardian consent",
+              "es": "consentimiento del tutor"
+            },
+            {
+              "path": "eligibility.2.2",
+              "passed": false,
+              "en": "(resident AND scholarship)",
+              "es": "(residente Y beca)"
+            },
+            {
+              "path": "eligibility.2.2.0",
+              "passed": true,
+              "en": "resident",
+              "es": "residente"
+            },
+            {
+              "path": "eligibility.2.2.1",
+              "passed": false,
+              "en": "scholarship",
+              "es": "beca"
+            },
+            {
+              "path": "eligibility.3",
+              "passed": true,
+              "en": "submitted ≤ 2031-11-02T01:30:00.000Z",
+              "es": "inscripción ≤ 2031-11-02T01:30:00.000Z"
+            },
+            {
+              "path": "fee.0",
+              "passed": false,
+              "en": "scholarship",
+              "es": "beca"
+            },
+            {
+              "path": "fee.1",
+              "passed": false,
+              "en": "member",
+              "es": "miembro"
+            }
+          ],
+          "reasons": [
+            {
+              "en": "Meets the complete admission rule.",
+              "es": "Cumple la regla completa de admisión."
+            },
+            {
+              "en": "Standard fee; no earlier override matched.",
+              "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+            }
+          ]
+        },
+        "feeDeltaCents": null,
+        "explanation": {
+          "en": "B admits this person; A refuses them.",
+          "es": "B admite a esta persona; A la rechaza."
+        }
+      }
+    ],
+    "checkedCases": 1920,
+    "issues": [],
+    "coverage": {
+      "ageValues": 121,
+      "agePartitions": 12,
+      "flagCombinations": 32,
+      "timePartitions": 5,
+      "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+    }
+  }
+}

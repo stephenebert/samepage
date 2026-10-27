@@ -1,0 +1,170 @@
+{
+  "passed": true,
+  "failures": [],
+  "scenarioResults": [
+    {
+      "scenarioId": "watercolor-resident-student",
+      "editor": "alice",
+      "attendee": {
+        "age": 20,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "watercolor-student-scholar-member",
+      "editor": "alice",
+      "attendee": {
+        "age": 20,
+        "resident": false,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "watercolor-resident-scholar",
+      "editor": "alice",
+      "attendee": {
+        "age": 20,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "watercolor-three-way",
+      "editor": "alice",
+      "attendee": {
+        "age": 20,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "watercolor-resident-student",
+      "editor": "bob",
+      "attendee": {
+        "age": 20,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "watercolor-student-scholar-member",
+      "editor": "bob",
+      "attendee": {
+        "age": 20,
+        "resident": false,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "watercolor-resident-scholar",
+      "editor": "bob",
+      "attendee": {
+        "age": 20,
+        "resident": true,
+        "student": false,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "watercolor-three-way",
+      "editor": "bob",
+      "attendee": {
+        "age": 20,
+        "resident": true,
+        "student": true,
+        "member": false,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2032-02-29T12:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    }
+  ],
+  "semanticOracleChecks": [],
+  "issueTopicChecks": [
+    {
+      "editor": "alice",
+      "issues": [
+        "Fee overlap is ambiguous: what single total price applies when a person matches more than one fee category at once (resident + student, resident + scholarship, student + scholarship, or all three)? The policy lists $14 for residents, $7 for students, $0 for scholarship recipients as alternative whole prices with no stacking rule and no priority/order, so no unique result can be determined without inventing priority."
+      ],
+      "addressesFees": true,
+      "addressesPriority": true,
+      "method": "Conservative bilingual topic-keyword check; does not prove full natural-language fidelity."
+    },
+    {
+      "editor": "bob",
+      "issues": [
+        "Fee overlap is ambiguous: what single total price applies when a person matches more than one fee category at once (resident + student, resident + scholarship, student + scholarship, or all three)? The policy lists $14 for residents, $7 for students, $0 for scholarship recipients as alternative total prices with no stacking rule and no priority/order, so no unique result can be determined without inventing priority."
+      ],
+      "addressesFees": true,
+      "addressesPriority": true,
+      "method": "Conservative bilingual topic-keyword check; does not prove full natural-language fidelity."
+    }
+  ],
+  "discovery": {
+    "status": "unresolved",
+    "witnesses": [],
+    "checkedCases": 0,
+    "issues": [
+      "At least one draft needs clarification; no complete comparison is possible."
+    ],
+    "coverage": {
+      "ageValues": 121,
+      "agePartitions": 0,
+      "flagCombinations": 32,
+      "timePartitions": 0,
+      "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+    }
+  }
+}

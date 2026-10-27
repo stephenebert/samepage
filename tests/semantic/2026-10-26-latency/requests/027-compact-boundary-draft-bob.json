@@ -1,0 +1,14 @@
+{
+  "sequence": 27,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-54840ba6-628b-45db-8c29-bba0526fa394",
+  "body": {
+    "type": "draft",
+    "editor": "bob",
+    "baseVersion": 1,
+    "text": "Club de miniaturas en stop motion — política completa para este taller opcional de afición.\nSolo pueden participar las personas de entre 14 y 79 años, ambos inclusive. Quienes tengan menos de 18 años deben contar con el consentimiento de su tutor; las personas adultas no lo necesitan. Una persona no residente queda excluida salvo que sea miembro. Sin embargo, una persona no residente que sea miembro y estudiante sigue excluida incluso si tiene una beca. Estas exclusiones para no residentes no afectan a las personas residentes. Una beca no exime de ningún requisito de participación.\nLas solicitudes deben presentarse en 2027-09-08T06:00:00.000Z o después de ese instante, y como máximo en 2027-09-12T17:00:00.000Z, incluyendo exactamente ese último instante. Son instantes exactos expresados en UTC. No hay otras condiciones de participación ni plazos.\nLas tarifas se aplican únicamente después de determinar que la persona puede participar. Se elige la primera regla aplicable en este orden: quienes tienen beca pagan USD 0.00; los miembros pagan USD 23.40; los estudiantes pagan USD 12.60. Las demás personas admitidas pagan la tarifa fija de USD 29.95. Las tarifas no se acumulan, y ninguna otra condición ni la edad cambia la tarifa. Una persona rechazada no paga ninguna tarifa."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T03:56:52.461Z"
+}

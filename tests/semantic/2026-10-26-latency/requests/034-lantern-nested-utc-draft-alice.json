@@ -1,0 +1,14 @@
+{
+  "sequence": 34,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-6023ee3e-c53c-451c-9f20-6100f4cb3bac",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Paper-lantern workshop. Only people aged 14 through 65, inclusive, may attend. Someone who is neither a resident nor a student is excluded unless they are a member. A person under 18 is excluded if they lack guardian consent; this youth exclusion alone does not apply when the person is both a resident and a scholarship recipient. A scholarship does not waive the age range or the resident/student/member requirement. Registration must be submitted strictly before 2031-11-02T01:30:00.000Z; the exact stated instant is too late. All prices are in USD and apply only after admission. Charge the first applicable price in this order: scholarship recipient, $0; member, $17; otherwise, $48. Prices do not stack. There are no other eligibility conditions or deadlines."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T03:57:17.921Z"
+}

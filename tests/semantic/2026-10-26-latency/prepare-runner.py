@@ -1,0 +1,43 @@
+from pathlib import Path
+import json, hashlib
+
+ROOT = Path(__file__).resolve().parent
+OLD = ROOT.parent / 'samepage-meta-live-evidence' / 'run-live.mjs'
+s = OLD.read_text()
+def replace(old, new):
+    global s
+    assert old in s, old[:160]
+    s = s.replace(old, new)
+
+replace("const FROZEN_CORPUS_SHA256 = '4202af1610de58a958241c187200f5c740e95b9b70d8868c3eb6fbd0b5d75ecb';", "const FROZEN_CORPUS_SHA256 = 'PLAN_SHA256_PENDING';")
+replace('const MAX_REVIEWS = 4;', 'const MAX_REVIEWS = 8;')
+replace("let wire;", "let wire;\nconst BATCH = process.argv.includes('--baseline') ? 'baseline' : 'compact';\nconst ACTIVE_PROTOCOL = BATCH === 'baseline' ? 'full-v1' : 'compact-v2';")
+replace("'Server model metadata is not ready automatic Meta muse-spark-1.3; no review may be requested.');", "'Server model metadata is not ready automatic Meta muse-spark-1.3; no review may be requested.');\n  expect(model.protocol === ACTIVE_PROTOCOL, 'Server protocol differs from this batch; no review may be requested.');")
+replace('function providerBody(job) {', "function providerBody(job, protocol = ACTIVE_PROTOCOL) {")
+replace('wire.buildStudioWirePrompt(job)', 'wire.buildStudioWirePrompt(job, protocol)')
+replace("name: 'samepage_studio_review', strict: true, schema: wire.studioReviewWireSchema(job)", "name: protocol === 'full-v1' ? 'samepage_studio_review' : 'samepage_studio_compact', strict: true, schema: wire.studioReviewWireSchema(job, protocol)")
+replace('function costForJob(job) {\n  const body = providerBody(job);', 'function costForJob(job, protocol = ACTIVE_PROTOCOL) {\n  const body = providerBody(job, protocol);')
+replace('...costForJob(job), assumedMaximumJobIdCharacters', '...costForJob(job, stage.protocol), protocol: stage.protocol, assumedMaximumJobIdCharacters')
+replace("loadJson('corpus.freeze.json')", "loadJson('plan.freeze.json')")
+replace("path.join(DIR, 'corpus.json')", "path.join(DIR, 'plan.json')")
+replace("    workflow: { publishEditor: stage.evaluation.approval?.candidateApprovalsAllowed === false ? null : 'alice',\n      ...(['pair1_initial','pair1_correction'].includes(stage.id) ? { receiptScenarioId: 'resident_member_scholarship' } : {}) },", "    workflow: stage.workflow ?? { publishEditor: stage.evaluation.approval?.candidateApprovalsAllowed === false ? null : 'alice' },")
+replace("'Exactly four frozen stages are required.'", "'Exactly eight frozen stages are required.'")
+replace("  expect(corpus.stages[0].roomKey === corpus.stages[1].roomKey && corpus.stages[1].reusePreviousRoom === true, 'Correction must reuse first room.');\n  expect(new Set(corpus.stages.map(s => s.roomKey)).size === 3, 'Exactly three fresh policy-pair rooms required.');", "  expect(corpus.stages.filter(s => s.protocol === 'full-v1').length === 2, 'Two baseline requests required.');\n  expect(corpus.stages.filter(s => s.protocol === 'compact-v2').length === 6, 'Six compact requests required.');\n  expect(corpus.stages.filter(s => s.reusePreviousRoom).length === 1, 'One held-out correction required.');")
+replace("process.argv.slice(2).every(arg => ['--live'].includes(arg))", "process.argv.slice(2).every(arg => ['--live','--baseline','--compact'].includes(arg))")
+replace("'Global four-review POST limit reached.'", "'Global eight-review POST limit reached.'")
+replace("  check(review.provenance === 'meta-model',", "  check(after.automaticReview?.protocol === stage.protocol, 'Returned review protocol differs from planned protocol.');\n  check(review.provenance === 'meta-model',")
+replace("const actualEstimate = costForJob(job),", "const actualEstimate = costForJob(job, stage.protocol),")
+replace("providerRequestBody: providerBody(job)", "providerRequestBody: providerBody(job, stage.protocol)")
+replace("const evidence = { stageId: stage.id, status: 'running', consensus: [], failures: [] };", "const evidence = { stageId: stage.id, protocol: stage.protocol, status: 'running', consensus: [], failures: [] };")
+replace("  const quality = checkQuality(stage, before, room); evidence.quality = quality;", "  const quality = checkQuality(stage, before, room); evidence.quality = quality; evidence.httpDurationMs = response.durationMs; evidence.metrics = room.automaticReview?.metrics ?? null;")
+replace("    await fs.access(path.join(DIR, 'live-ledger.json')).then(() => { throw new Error('A durable live ledger already exists. This runner never resumes or retries; inspect saved evidence.'); }, error => { if (error.code !== 'ENOENT') throw error; });\n    ledger =", "    let existing = null; try { existing = await loadJson('live-ledger.json'); } catch (error) { if (error.code !== 'ENOENT') throw error; }\n    if (existing) {\n      expect(BATCH === 'compact' && existing.status === 'baseline-completed' && existing.reviewPostAttempts.length === 2, 'Existing ledger cannot resume except the untouched compact batch after two completed baseline requests.');\n      expect(existing.corpusSha256 === preflight.corpusSha256, 'Plan changed between batches.');\n      ledger = existing; lastReport = await loadJson('report.json'); networkCalls = lastReport.networkCalls;\n      expect(lastReport.stages.length === 2 && lastReport.stages.every(s => s.status === 'passed'), 'Baseline did not fully pass; no compact requests.');\n      ledger.status = 'running'; lastReport.status = 'running';\n    } else {\n      expect(BATCH === 'baseline', 'Baseline must run first.');\n    ledger =")
+replace("    const rooms = new Map();\n    for (const stage of inputs.corpus.stages) await runStage(stage, rooms);\n    expect(ledger.reviewPostAttempts.length === MAX_REVIEWS, 'Expected exactly four completed review POSTs.');\n    lastReport.status = 'passed'; lastReport.completedAt = new Date().toISOString();\n    lastReport.observedAppModelAttempts = [...rooms.values()].reduce((sum, room) => sum + (room.modelCallCount ?? 0), 0);\n    ledger.status = 'completed'; ledger.completedAt = lastReport.completedAt;", "    }\n    const rooms = new Map();\n    for (const stage of inputs.corpus.stages.filter(stage => stage.protocol === ACTIVE_PROTOCOL)) await runStage(stage, rooms);\n    expect(ledger.reviewPostAttempts.length === (BATCH === 'baseline' ? 2 : MAX_REVIEWS), 'Unexpected completed review POST count.');\n    lastReport.status = BATCH === 'baseline' ? 'baseline-completed' : 'passed'; lastReport.completedAt = new Date().toISOString();\n    lastReport.observedAppModelAttempts = ledger.reviewPostAttempts.length;\n    ledger.status = BATCH === 'baseline' ? 'baseline-completed' : 'completed'; ledger.completedAt = lastReport.completedAt;")
+replace("expect(args.length <= 1 && (args.length === 0 || ['--dry-run','--live'].includes(args[0])),", "expect(args.length <= 2 && args.every(a => ['--dry-run','--live','--baseline','--compact'].includes(a)) && !(args.includes('--baseline') && args.includes('--compact')),")
+replace("if (args[0] !== '--live')", "if (!args.includes('--live'))")
+replace("  const inputs = await verifyFrozenInputs();", "  expect(!(args.includes('--live') && args.includes('--dry-run')), 'Live and dry-run modes cannot be combined.');\n  const inputs = await verifyFrozenInputs();")
+replace("  room = response.json.room;\n  const quality =", "  room = response.json.room;\n  expect(room.automaticReview?.metrics?.requestBytes === actualEstimate.inputWireBytes, 'Hosted provider request bytes differ from frozen reconstruction.');\n  expect(Number.isFinite(room.automaticReview.metrics.providerDurationMs) && room.automaticReview.metrics.providerDurationMs >= 0, 'Invalid measured provider duration.');\n  expect(Number.isInteger(room.automaticReview.metrics.responseContentBytes) && room.automaticReview.metrics.responseContentBytes > 0 && room.automaticReview.metrics.responseContentBytes <= 160000, 'Invalid measured response size.');\n  const quality =")
+replace('Hosted review API returns hydrated structured candidates and room state, not raw Meta transport responses or token usage.', 'Hosted review API returns hydrated candidates, room state and bounded numeric provider counters when available; not raw Meta response envelopes or billed charges.')
+replace('Provider delivery/token usage/billed cost are not measured; observed room modelCallCount is an app counter, not a billing receipt.', 'Bounded provider token counters and durations are retained when returned; billed cost is not measured. Observed room modelCallCount is an app counter, not a billing receipt.')
+replace("maxReviewPostsAcrossAllRooms: MAX_REVIEWS", "maxReviewPostsAcrossAllRooms: MAX_REVIEWS")
+(ROOT/'run-evaluation.mjs').write_text(s)
+print('Prepared bounded batch runner; plan hash and evaluator snapshot must be frozen before use.')

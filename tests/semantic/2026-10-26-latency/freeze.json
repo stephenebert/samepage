@@ -1,0 +1,54 @@
+{
+  "kind": "samepage-fresh-holdout-freeze-v1",
+  "frozenAt": "2026-10-27T03:52:54.414707Z",
+  "beforeProviderCalls": true,
+  "files": {
+    "corpus.json": {
+      "sha256": "70014e6e704fe7c005ede0e20881874e13814846f778c77568d1be163a8f0e2e",
+      "bytes": 74401
+    },
+    "sources.json": {
+      "sha256": "49f6f4376b3491053c91fb2e0e27c16da57bb72fcba51ac5206d32cb6a98d13d",
+      "bytes": 7461
+    },
+    "goldens.json": {
+      "sha256": "d8e6d9249e9893778409eea773941cab88e13b91999bc0cd237f0c8575ee1faa",
+      "bytes": 66439
+    },
+    "author-corpus.py": {
+      "sha256": "a8a05b59b564314a4a10db1b47e3432484061eceb34a76d938347248bb776952",
+      "bytes": 22561
+    },
+    "verify-corpus.py": {
+      "sha256": "ca754b12c310de2c1bcee0b06206d60a4a6d068ac9037f3904be4a20b6a75412",
+      "bytes": 12081
+    },
+    "truth-verification.json": {
+      "sha256": "0c0c12baa767f4c4f8da6a8f04b7a8eb82adbf25edfc1e4c39dcca8016d56412",
+      "bytes": 2151
+    },
+    "corpus-notes.txt": {
+      "sha256": "ee3918272243284d446503bac44628725c7b4b85d2c37172aed5ded1b453fae3",
+      "bytes": 3069
+    }
+  },
+  "sourceTextSha256": {
+    "lantern-nested-utc": {
+      "alice": "7d3a974b61cdb888f38daec5c0a13291317d1036830e0ff85a8218b8fbb3dc97",
+      "bob": "7293b7f64f784818060835a058fd4f19c1c299f253a22f44039e65284ee1fd96"
+    },
+    "mosaic-priority": {
+      "alice": "c23909b526b4c0e9b9418dbe5e2b2e1f2a7a963bd0a0dc250a2e6dd5ffe5ac8c",
+      "bob": "9f8fa69a8d82f711bfbd05adfc32df6380f38924872960a8161c52e116b9618f"
+    },
+    "mosaic-corrected": {
+      "alice": "965af2293b66796179dc65f7f3d9f441f993713783f9a0161bc977a9eb66e4b5",
+      "bob": "9f8fa69a8d82f711bfbd05adfc32df6380f38924872960a8161c52e116b9618f"
+    },
+    "watercolor-overlap": {
+      "alice": "28e0778f7f9b423c98e286ec4d8a2d9084647d3cf5739354b08f5220bba2d8ab",
+      "bob": "d9ff74cc11663f34cbb8de43ded39d9a71f883508978c1a1e8a45987de144317"
+    }
+  },
+  "protocol": "Do not alter sources, goldens, oracle, or expectations after provider outputs. Root runner and independent audit are separate files."
+}

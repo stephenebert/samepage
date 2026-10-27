@@ -1,0 +1,419 @@
+{
+  "schema": "samepage-latency-live-output-audit-v1",
+  "auditedAt": "2026-10-27T03:59:52.731709+00:00",
+  "status": "pass",
+  "qualityFindings": [],
+  "latencyFinding": "No latency improvement was observed in the two matched medium-reasoning pairs. Compact responses and prompts were smaller, but reasoning tokens increased and both measured provider durations were longer.",
+  "scope": "Independent AI clause-by-clause translation review plus a separate recursive evaluator against frozen goldens. Application-parsed live Meta outputs matched recorded owned-site HTTP response bodies. No provider requests or existing artifact edits.",
+  "planSha256": "c44fff62dd0de93bfaf29b7b93d00d4159a444c1170a13b4b29a5a33c141c6b1",
+  "totals": {
+    "candidates": 16,
+    "exactOriginalSources": 16,
+    "faithfulTranslations": 16,
+    "concreteDecisionChecks": 282,
+    "unresolvedChecks": 8,
+    "independentRuleComparisons": 410432
+  },
+  "stages": [
+    {
+      "id": "baseline-fee",
+      "protocol": "full-v1",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "Both translations preserve inclusive age bounds, status disjunction, adult-or-consent branch, nonwaiving scholarship, inclusive opening/exclusive closing and all prices. Each retains its own fee priority; no harmonization.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 19,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 19,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        }
+      ],
+      "reviewStateSha256": "31884cf9181b9669e6d2a05f0c5b12e5878b07b95530c403cdd6b22b4ee95191",
+      "responseSha256": "18dd45a0a2e6b0e1a2c3a53a0a79fcc6c7de5cdd367903a4dbb1b2eacfd86d4c",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 15124,
+      "metrics": {
+        "providerDurationMs": 14756,
+        "requestBytes": 9680,
+        "responseContentBytes": 6164,
+        "promptTokens": 2160,
+        "completionTokens": 5862,
+        "totalTokens": 8022,
+        "reasoningTokens": 4186,
+        "cachedInputTokens": 2033
+      }
+    },
+    {
+      "id": "baseline-boundary",
+      "protocol": "full-v1",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "Both translations preserve the nested nonresident membership/student restrictions, scope away from residents, age/consent, and ordered fees. Alice scholarship exception and strict closing differ correctly from Bob exclusion even with scholarship and inclusive closing.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 22,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 22,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        }
+      ],
+      "reviewStateSha256": "c8246455ceae12bb24a0280490fa5f60f498bea3acdd5f509363002725ab0df9",
+      "responseSha256": "97af32458ec694de6412455296c1a366d4604b9d29bf55d8247791a0df07eb73",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 22360,
+      "metrics": {
+        "providerDurationMs": 22074,
+        "requestBytes": 9913,
+        "responseContentBytes": 6574,
+        "promptTokens": 2181,
+        "completionTokens": 7568,
+        "totalTokens": 9749,
+        "reasoningTokens": 5872,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "id": "compact-fee",
+      "protocol": "compact-v2",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "Cross-language texts preserve every source clause and price. Scholarship remains second in Alice and first in Bob, resident-and-member and student-not-member conditions remain distinct. Original language texts match saved source exactly.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 19,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 19,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        }
+      ],
+      "reviewStateSha256": "0bca5a05ff67870e1b5deae54a8cfb9d63932cf53d35a7e440028e0b4bf2f4f7",
+      "responseSha256": "a386cefd729ea951c180e928735401211afe3d4086e2822c8b6e71aaa709eeae",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 15826,
+      "metrics": {
+        "providerDurationMs": 15470,
+        "requestBytes": 7943,
+        "responseContentBytes": 4133,
+        "promptTokens": 1733,
+        "completionTokens": 5923,
+        "totalTokens": 7656,
+        "reasoningTokens": 4554,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "id": "compact-boundary",
+      "protocol": "compact-v2",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "Cross-language texts faithfully preserve Alice unless-scholarship exception and exclusive closing versus Bob even-if-scholarship exclusion and inclusive closing. No other eligibility, age, consent or fee scope changed; original texts exact.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 22,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 22,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        }
+      ],
+      "reviewStateSha256": "241e9723f622d8e8fe0d664255b56f6621b23895a1430ccb3742f58e3337e42f",
+      "responseSha256": "f1635001a69232b45c97e64b6996c80476e7ac624133be947a1833f2b375a860",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 24110,
+      "metrics": {
+        "providerDurationMs": 23822,
+        "requestBytes": 8176,
+        "responseContentBytes": 4214,
+        "promptTokens": 1754,
+        "completionTokens": 8042,
+        "totalTokens": 9796,
+        "reasoningTokens": 6900,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "id": "lantern-nested-utc",
+      "protocol": "compact-v2",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "Both translated texts keep the resident-and-scholarship exception limited to under-18 consent, with age/status requirements unaffected. Alice excludes and Bob includes the exact UTC cutoff. Shared scholarship/member fee order preserved.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 17,
+          "ruleComparisons": 19360,
+          "wholeRulesBlocked": false
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 17,
+          "ruleComparisons": 19360,
+          "wholeRulesBlocked": false
+        }
+      ],
+      "reviewStateSha256": "a5b3963d9ca19e6568a812916e6a8372b9422d06300ae1cf412844baa6e0a5ac",
+      "responseSha256": "de0cc9bca652544b11fea74d625f4d37e30fd88a52461667cb1828c60f81249b",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 16449,
+      "metrics": {
+        "providerDurationMs": 16135,
+        "requestBytes": 7492,
+        "responseContentBytes": 3532,
+        "promptTokens": 1597,
+        "completionTokens": 5544,
+        "totalTokens": 7141,
+        "reasoningTokens": 4423,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "id": "mosaic-priority",
+      "protocol": "compact-v2",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "The English-to-Spanish wording is somewhat literal but preserves all eligibility and leap-day interval conditions, explicit ordered fees, adult consent distinction and scholarship nonwaiver. Bob English preserves its different scholarship/student-first precedence.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 21,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 21,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        }
+      ],
+      "reviewStateSha256": "0517749917d2098bc413064004c39c194ac4be67656e1b8688a88a99440276b7",
+      "responseSha256": "10b6b419f37c559f3403f613c903caafa3820ad5ebf99c4243bb3e37fec67598",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 18902,
+      "metrics": {
+        "providerDurationMs": 18624,
+        "requestBytes": 7504,
+        "responseContentBytes": 3805,
+        "promptTokens": 1620,
+        "completionTokens": 6494,
+        "totalTokens": 8114,
+        "reasoningTokens": 5421,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "id": "mosaic-corrected",
+      "protocol": "compact-v2",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "Spanish preserves Alice double-negated none-of status and successive remaining-person fee groups; English preserves Bob at-least-one status and explicit first-match order. These are equivalent, and scholarship still waives no admission condition.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 21,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 21,
+          "ruleComparisons": 30976,
+          "wholeRulesBlocked": false
+        }
+      ],
+      "reviewStateSha256": "361222cb1f5a8f7b54990d2cec3c76bd780a06eccb2734cf89973608d542fee4",
+      "responseSha256": "239eb4bf2822e736900d0441ac8f84d3ad556fcd26421660cb7168858a38bf71",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 21122,
+      "metrics": {
+        "providerDurationMs": 20797,
+        "requestBytes": 7607,
+        "responseContentBytes": 3736,
+        "promptTokens": 1643,
+        "completionTokens": 7332,
+        "totalTokens": 8975,
+        "reasoningTokens": 6279,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "id": "watercolor-overlap",
+      "protocol": "compact-v2",
+      "status": "pass",
+      "sourcePreservation": true,
+      "translationsFaithful": true,
+      "manualSemanticReview": "Translations preserve exact ages, resident-or-member admission, no deadline and all alternative whole prices without inventing precedence. Both issues name concrete overlaps and ask which single price prevails; whole rules remain null.",
+      "candidateChecks": [
+        {
+          "editor": "alice",
+          "scenarioChecks": 4,
+          "ruleComparisons": 0,
+          "wholeRulesBlocked": true
+        },
+        {
+          "editor": "bob",
+          "scenarioChecks": 4,
+          "ruleComparisons": 0,
+          "wholeRulesBlocked": true
+        }
+      ],
+      "reviewStateSha256": "042478ef991327830a92457575d840d1d2b176e500eff0f7c664bd35ba0c2989",
+      "responseSha256": "0c33a34452c0392e8b6faee1a5dbe5be19b8c10ba2ac702348595ecf43abbffb",
+      "recordedResponseMatchesSavedState": true,
+      "httpDurationMs": 8790,
+      "metrics": {
+        "providerDurationMs": 8526,
+        "requestBytes": 6669,
+        "responseContentBytes": 1846,
+        "promptTokens": 1399,
+        "completionTokens": 2968,
+        "totalTokens": 4367,
+        "reasoningTokens": 2573,
+        "cachedInputTokens": 0
+      }
+    }
+  ],
+  "matchedComparisons": [
+    {
+      "baseline": "baseline-fee",
+      "compact": "compact-fee",
+      "baselineProviderMs": 14756,
+      "compactProviderMs": 15470,
+      "providerDeltaMs": 714,
+      "providerDeltaPercent": 4.839,
+      "baselineHttpMs": 15124,
+      "compactHttpMs": 15826,
+      "baselineMetrics": {
+        "providerDurationMs": 14756,
+        "requestBytes": 9680,
+        "responseContentBytes": 6164,
+        "promptTokens": 2160,
+        "completionTokens": 5862,
+        "totalTokens": 8022,
+        "reasoningTokens": 4186,
+        "cachedInputTokens": 2033
+      },
+      "compactMetrics": {
+        "providerDurationMs": 15470,
+        "requestBytes": 7943,
+        "responseContentBytes": 4133,
+        "promptTokens": 1733,
+        "completionTokens": 5923,
+        "totalTokens": 7656,
+        "reasoningTokens": 4554,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "baseline": "baseline-boundary",
+      "compact": "compact-boundary",
+      "baselineProviderMs": 22074,
+      "compactProviderMs": 23822,
+      "providerDeltaMs": 1748,
+      "providerDeltaPercent": 7.919,
+      "baselineHttpMs": 22360,
+      "compactHttpMs": 24110,
+      "baselineMetrics": {
+        "providerDurationMs": 22074,
+        "requestBytes": 9913,
+        "responseContentBytes": 6574,
+        "promptTokens": 2181,
+        "completionTokens": 7568,
+        "totalTokens": 9749,
+        "reasoningTokens": 5872,
+        "cachedInputTokens": 0
+      },
+      "compactMetrics": {
+        "providerDurationMs": 23822,
+        "requestBytes": 8176,
+        "responseContentBytes": 4214,
+        "promptTokens": 1754,
+        "completionTokens": 8042,
+        "totalTokens": 9796,
+        "reasoningTokens": 6900,
+        "cachedInputTokens": 0
+      }
+    }
+  ],
+  "matchedAggregate": {
+    "providerDurationMs": {
+      "baselineTotal": 36830,
+      "compactTotal": 39292,
+      "changePercent": 6.685
+    },
+    "requestBytes": {
+      "baselineTotal": 19593,
+      "compactTotal": 16119,
+      "changePercent": -17.731
+    },
+    "responseContentBytes": {
+      "baselineTotal": 12738,
+      "compactTotal": 8347,
+      "changePercent": -34.472
+    },
+    "promptTokens": {
+      "baselineTotal": 4341,
+      "compactTotal": 3487,
+      "changePercent": -19.673
+    },
+    "completionTokens": {
+      "baselineTotal": 13430,
+      "compactTotal": 13965,
+      "changePercent": 3.984
+    },
+    "reasoningTokens": {
+      "baselineTotal": 10058,
+      "compactTotal": 11454,
+      "changePercent": 13.879
+    },
+    "totalTokens": {
+      "baselineTotal": 17771,
+      "compactTotal": 17452,
+      "changePercent": -1.795
+    },
+    "cachedInputTokens": {
+      "baselineTotal": 2033,
+      "compactTotal": 0,
+      "changePercent": -100.0
+    }
+  },
+  "limitations": [
+    "Two matched input pairs, one request per protocol per pair, are insufficient to establish general latency or reliability; no confidence interval or win claim.",
+    "Calls were sequential and not randomized; baseline fee call reported2033cached input tokens while corresponding compact call reported0.",
+    "Provider latency is retained transport duration including response read; hosted HTTP durations include application/network work.",
+    "Fresh held-out durations have no paired full-v1 baselines and cannot demonstrate speedup.",
+    "Recorded response files contain parsed application candidates, not raw Meta transport envelopes; compact originals are restored server-side from snapshots.",
+    "API token counters support usage measurement, not exact billing confirmation."
+  ]
+}

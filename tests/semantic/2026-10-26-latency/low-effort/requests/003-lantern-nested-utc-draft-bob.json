@@ -1,0 +1,14 @@
+{
+  "sequence": 3,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-b4c52965-1070-432f-a636-ee6d4d8109ca",
+  "body": {
+    "type": "draft",
+    "editor": "bob",
+    "baseVersion": 1,
+    "text": "Taller de farolillos de papel. Solo pueden participar personas de 14 a 65 años, ambos extremos incluidos. Quien no sea ni residente ni estudiante queda excluido, salvo que sea miembro. También queda excluida una persona menor de 18 años que no tenga consentimiento del tutor; esta exclusión de menores, y solo esta, no se aplica a quien sea residente y tenga una beca a la vez. Una beca no elimina el intervalo de edad ni el requisito de ser residente, estudiante o miembro. La inscripción debe enviarse antes de 2031-11-02T01:30:00.000Z o exactamente en ese instante; el instante indicado sí se acepta. Todos los precios son en USD y solo se aplican después de admitir a la persona. Se cobra el primer precio aplicable en este orden: persona con beca, $0; miembro, $17; en cualquier otro caso, $48. Los precios no se acumulan. No existen otras condiciones de admisión ni otros plazos."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T04:02:35.110Z"
+}

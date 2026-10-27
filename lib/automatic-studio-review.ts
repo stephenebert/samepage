@@ -1,13 +1,13 @@
 import { applyStudioAction } from "./studio.ts";
 import { studioDemoFixture } from "./studio-demo.ts";
-import { PolicyModelError } from "./policy-model.ts";
-import { encodeStudioRules, interpretStudioJob, MAX_STUDIO_MODEL_CALLS, requireStudioModel, type StudioModelConfig } from "./studio-model.ts";
+import { PolicyModelError, type PolicyModelMetrics } from "./policy-model.ts";
+import { createStudioInterpretationCache, encodeStudioRules, interpretStudioJob, MAX_STUDIO_MODEL_CALLS, prepareStudioRequest, requireStudioModel, type StudioModelConfig, type StudioModelRequestOptions } from "./studio-model.ts";
 import type { AutomaticStudioReview, StudioJob, StudioRoom } from "./studio-types";
 
 export const STUDIO_MODEL_LEASE_MS = 90_000;
 export interface AutomaticStudioReviewDependencies {
   mutate: (id: string, update: (room: StudioRoom) => StudioRoom) => Promise<StudioRoom>;
-  interpret?: (job: StudioJob, config: StudioModelConfig) => Promise<unknown>;
+  interpret?: (job: StudioJob, config: StudioModelConfig, options?: StudioModelRequestOptions) => Promise<unknown>;
   now?: () => string;
   requestId?: () => string;
 }
@@ -35,8 +35,9 @@ function requireSimulation(room: StudioRoom) {
 /** The only offline provider stub: exact known fixture, through the real wire adapter. */
 async function simulate(job: StudioJob, config: StudioModelConfig): Promise<unknown> {
   if (job.drafts.alice.text !== studioDemoFixture.en || job.drafts.bob.text !== studioDemoFixture.es) throw new PolicyModelError("MODEL_SIMULATION_UNAVAILABLE", "The saved policies no longer match the controlled offline example.", 409);
-  const response = { jobId: job.id, candidates: studioDemoFixture.candidates.map(c => ({ ...c, sourceVersion: job.drafts[c.editor].version, rules: c.rules === null ? null : encodeStudioRules(c.rules) })) };
-  return interpretStudioJob(job, { apiKey: "offline-simulation-not-a-credential", model: config.model, enabled: true }, {
+  const protocol = config.protocol ?? "compact-v2";
+  const response = { jobId: job.id, candidates: studioDemoFixture.candidates.map(c => ({ ...(protocol === "full-v1" ? { ...c, sourceVersion: job.drafts[c.editor].version } : { editor: c.editor, translation: c.editor === "alice" ? c.es : c.en, issues: c.issues }), rules: c.rules === null ? null : encodeStudioRules(c.rules) })) };
+  return interpretStudioJob(job, { apiKey: "offline-simulation-not-a-credential", model: config.model, enabled: true, protocol, reasoningEffort: config.reasoningEffort ?? "medium" }, {
     fetch: async () => Response.json({ choices: [{ finish_reason: "stop", message: { content: JSON.stringify(response) } }] }),
   });
 }
@@ -64,9 +65,10 @@ export async function runAutomaticStudioReview(id: string, config: StudioModelCo
     if (!simulation && count >= MAX_STUDIO_MODEL_CALLS) throw new PolicyModelError("MODEL_CALL_LIMIT", "This room has reached its five external model attempts. No further request was made. This is a per-room request limit, not an account spending cap.", 429);
     const room = clone(applyStudioAction(before, { type: "requestReview" }, claimedAt));
     if (!room.activeJob) return before;
+    const plan = prepareStudioRequest(room.activeJob, config, simulation ? undefined : room.interpretationCache);
     room.mode = simulation ? "simulated-model" : "automatic-model";
     room.modelCallCount = count + (simulation ? 0 : 1);
-    room.automaticReview = { requestId, jobId: room.activeJob.id, provider: "Meta", model: config.model, source: simulation ? "simulation" : "meta", status: "running", startedAt: claimedAt, leaseExpiresAt: new Date(Date.parse(claimedAt) + STUDIO_MODEL_LEASE_MS).toISOString() };
+    room.automaticReview = { requestId, jobId: room.activeJob.id, provider: "Meta", model: config.model, protocol: config.protocol ?? "compact-v2", reasoningEffort: config.reasoningEffort ?? "medium", requestedEditors: plan.requestedEditors, reusedEditors: plan.reusedEditors, source: simulation ? "simulation" : "meta", status: "running", startedAt: claimedAt, leaseExpiresAt: new Date(Date.parse(claimedAt) + STUDIO_MODEL_LEASE_MS).toISOString() };
     return revise(room, before, claimedAt);
   });
   if (claimed.review) return result(claimed, "already-reviewed", claimed.automaticReview?.requestId ?? null);
@@ -76,8 +78,8 @@ export async function runAutomaticStudioReview(id: string, config: StudioModelCo
     return result(claimed, status, lease?.requestId ?? null, status === "running" ? 202 : status === "failed" ? 409 : 200, lease?.error);
   }
   const snapshot = claimed.activeJob;
-  let response: unknown, failure: PolicyModelError | null = null;
-  try { response = await (simulation ? simulate(snapshot, config) : (dependencies.interpret ?? interpretStudioJob)(snapshot, config)); }
+  let response: unknown, failure: PolicyModelError | null = null, metrics: PolicyModelMetrics | undefined;
+  try { response = await (simulation ? simulate(snapshot, config) : (dependencies.interpret ?? interpretStudioJob)(snapshot, config, { interpretationCache: claimed.interpretationCache, onMetrics: value => { metrics = value; } })); }
   catch (error) { failure = error instanceof PolicyModelError ? error : new PolicyModelError("MODEL_FAILED", "The model review failed. No policy was changed. Retry when ready."); }
   const finished = await dependencies.mutate(id, before => {
     const finishedAt = now(), current = before.automaticReview;
@@ -95,11 +97,12 @@ export async function runAutomaticStudioReview(id: string, config: StudioModelCo
       try {
         const room = applyStudioAction(before, { type: "completeReview", response }, finishedAt);
         room.review!.provenance = simulation ? "simulated-model" : "meta-model";
-        room.automaticReview = { ...finish(current, finishedAt), status: "completed" };
+        if (!simulation) room.interpretationCache = createStudioInterpretationCache(snapshot, config, room.review!.candidates);
+        room.automaticReview = { ...finish(current, finishedAt), status: "completed", ...(metrics ? { metrics } : {}) };
         return room;
       } catch { failure = new PolicyModelError("MODEL_REVIEW_INVALID", "The model response failed policy validation. No rules were applied. Retry or clarify the drafts."); }
     }
-    const room = clone(before); room.automaticReview = { ...finish(current, finishedAt), status: "failed", error: { code: failure!.code, message: failure!.message } };
+    const room = clone(before); room.automaticReview = { ...finish(current, finishedAt), status: "failed", ...(metrics ? { metrics } : {}), error: { code: failure!.code, message: failure!.message } };
     return revise(room, before, finishedAt);
   });
   if (finished.automaticReview?.requestId !== requestId || finished.automaticReview.status === "superseded") return result(finished, "superseded", requestId);

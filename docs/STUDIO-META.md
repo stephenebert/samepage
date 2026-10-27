@@ -8,6 +8,8 @@ The studio separates three responsibilities:
 
 ## Current verification boundary
 
+The later 12-request [latency and demo evaluation](LATENCY-DEMO.md) preserves two failed speed experiments. The final source passes 122 mechanical tests, TypeScript and production build; medium effort and compact output remain selected, experimental reuse is opt-in/default off, and Studio live calls are paused. The four-review run below remains historical evidence.
+
 Four fresh hosted Meta `muse-spark-1.3` reviews completed on October 26: all 120 concrete candidate/outcome checks and four unresolved checks matched the frozen expectations. The correction changed a synthetic receipt from $17.25 to $0 in a new policy version while preserving its original receipt. Studio live calls were then paused again. See [the live evaluation, independent audit and billing limits](META-LIVE-EVALUATION.md). The controlled fixtures below remain separate historical engineering evidence.
 
 The integration can be exercised without contacting Meta. **Test with simulated editors** creates an explicitly marked scenario with recorded policy interpretations. **Run simulated review** sends that controlled response through the same request transport, parsing, validation and durable review path used by the live adapter. It does not interpret arbitrary new language, use an API key, or measure Meta quality, latency or cost.
@@ -20,7 +22,7 @@ Earlier October 26 controlled validation: all 113 mechanical tests passed, inclu
 
 ## Provider contract
 
-The adapter uses the existing server-side Meta transport with `muse-spark-1.3` by default, a fixed Chat Completions endpoint, strict structured output, a bounded completion and response size, and a request timeout. It does not retry automatically.
+The adapter uses the existing server-side Meta transport with `muse-spark-1.3` by default, a fixed Chat Completions endpoint, strict structured output, a bounded completion and response size, and a request timeout. It does not retry automatically. Compact output regenerates translations and rules while exact originals and versions are restored from the claimed server snapshot. `SAMEPAGE_STUDIO_PROTOCOL=full-v1` retains the older comparison contract. `SAMEPAGE_STUDIO_REASONING_EFFORT=low` and `SAMEPAGE_STUDIO_REUSE_UNCHANGED=true` are explicit experimental settings; neither was adopted after the latency evaluation.
 
 Meta's structured-output documentation rejects recursive JSON schemas. The studio therefore uses a flat, bounded condition representation on the wire and validates its conversion into the nested rules used by the application. Exact source text, draft versions, job identity, rule limits and clarification consistency remain server-side checks.
 

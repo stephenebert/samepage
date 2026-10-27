@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "kind": "operator-confirmed-activation-and-shutdown",
+  "source": "Parent agent deployment tool result; public readiness is independently checked after this record.",
+  "checkedAt": "2026-10-27T04:18:37.488818+00:00",
+  "liveEnabledAfterTest": false,
+  "reasoningEffort": "medium",
+  "protocol": "compact-v2",
+  "reuseUnchanged": false,
+  "siteVisibility": "owner-private",
+  "environmentRevision": 10,
+  "finalSourceCommit": "772d63dca16bce7b5379cbfd4af4a7c02e863d90",
+  "siteVersion": "appgprj_6acf326d0f9c81918e24863d7a25c308~appgver_a969d04d58dc8191a2e19c037f51865b",
+  "deploymentId": "appgdep_6ae02617227c8191816d6e0ab5bb0aea",
+  "deploymentStatus": "succeeded",
+  "reviewPostAttempts": 12,
+  "automaticRetries": 0,
+  "additionalProviderCallsAfterShutdown": 0,
+  "measuredResponsesWithTokenMetrics": 11,
+  "finalIncompleteResponseTokenMetricsAvailable": false,
+  "tokenRateEstimateFor11MeasuredResponsesUsd": 0.29426525,
+  "combinedConservativePreflightEstimateUsd": 0.60095325,
+  "actualBilledCostUsd": null,
+  "limits": [
+    "Token-rate estimate uses uncached input pricing and includes reasoning in completion tokens; it is not measured billing.",
+    "The final incomplete request lacks retained usage counters; its exact cost and finish reason were not captured.",
+    "The Studio disable switch does not revoke the shared key or globally disable the legacy consequences endpoint.",
+    "No final speedup was demonstrated. Experimental reuse remains opt-in and disabled."
+  ],
+  "runtimeMetadata": {
+    "httpStatus": 200,
+    "provider": "Meta",
+    "model": "muse-spark-1.3",
+    "ready": false,
+    "mode": "disabled",
+    "protocol": "compact-v2",
+    "reasoningEffort": "medium",
+    "reuseUnchanged": false
+  },
+  "demoState": {
+    "roomId": "studio-9902fe33-ace6-4ea8-a064-5960196f3f2a",
+    "publishedVersion": 3,
+    "receiptCount": 2,
+    "localPreviewStopped": true
+  }
+}

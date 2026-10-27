@@ -1,0 +1,27 @@
+{
+  "schema": "samepage-low-runner-read-only-audit-v1",
+  "status": "pass",
+  "auditedAt": "2026-10-27T04:02:04.791526+00:00",
+  "findings": [],
+  "runnerSha256": "68fbe3aa1bcdb8d8c061c9d2e1e89824dfb2df672965f6ee86605ffe4d228964",
+  "corpusSha256": "8f89bf4264332da863fcbfedd1cdc8901102fba73caa61b1d5386233f12ec678",
+  "checks": [
+    "Requires exact Meta muse-spark-1.3 / compact-v2 / low / automatic-ready metadata before any review call.",
+    "Four additional reviews consume durable allowance before dispatch; failed or unknown attempts are not retried and any existing ledger prevents reexecution.",
+    "Prior eight-review report must match frozen hash, be passed, and record exactly eight attempts.",
+    "Prior conservative estimate matches actual prior report; combined twelve-request estimate is below USD1.",
+    "All four low-reasoning input texts, expected rules/outcomes and correction workflow match the corresponding medium-reasoning holdouts.",
+    "Existing exact-origin, hidden-stdin, redirected-request rejection, no credential evidence, and fail-before-approval quality gates remain.",
+    "Imported preflight validates input/snapshot hashes without network or writes; model guard rejects full-v1 or medium modes."
+  ],
+  "preflight": {
+    "additionalMaxRequests": 4,
+    "combinedMaxRequests": 12,
+    "combinedEstimatedMaximumUsd": 0.599902,
+    "networkCalls": 0,
+    "filesWrittenByPreflight": 0
+  },
+  "limitations": [
+    "This verifies runner safeguards and fixed comparison inputs, not low-effort model quality or elapsed time."
+  ]
+}
