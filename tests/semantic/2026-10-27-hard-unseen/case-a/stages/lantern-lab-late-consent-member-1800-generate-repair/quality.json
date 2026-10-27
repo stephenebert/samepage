@@ -1,0 +1,1464 @@
+{
+  "passed": true,
+  "errors": [],
+  "concreteChecks": 30,
+  "concreteFailures": 0,
+  "checks": [
+    {
+      "id": "A01",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A02",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A03",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A04",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A05",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A06",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A07",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A08",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A09",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A10",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A11",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A12",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A13",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "passed": true
+    },
+    {
+      "id": "A14",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A15",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "passed": true
+    },
+    {
+      "id": "A16",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3000
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3000
+      },
+      "passed": true
+    },
+    {
+      "id": "A17",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A18",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A19",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A20",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A21",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A22",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A23",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A24",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A25",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A26",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A27",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A28",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "passed": true
+    },
+    {
+      "id": "A29",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1800
+      },
+      "passed": true
+    },
+    {
+      "id": "A30",
+      "editor": "repair",
+      "stage": "repaired",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    }
+  ],
+  "oracleChecks": [
+    {
+      "editor": "repair",
+      "ok": true,
+      "checkedCases": 65824,
+      "mismatchCount": 0,
+      "mismatches": []
+    }
+  ],
+  "impact": {
+    "status": "pass",
+    "expectedRules": {
+      "eligibility": {
+        "op": "all",
+        "args": [
+          {
+            "op": "age",
+            "cmp": "gte",
+            "value": 14
+          },
+          {
+            "op": "time",
+            "cmp": "gte",
+            "value": "2026-11-01T00:00:00.000Z"
+          },
+          {
+            "op": "time",
+            "cmp": "lt",
+            "value": "2026-12-01T00:00:00.000Z"
+          },
+          {
+            "op": "any",
+            "args": [
+              {
+                "op": "flag",
+                "field": "resident",
+                "value": true
+              },
+              {
+                "op": "flag",
+                "field": "student",
+                "value": true
+              },
+              {
+                "op": "flag",
+                "field": "member",
+                "value": true
+              },
+              {
+                "op": "flag",
+                "field": "scholarship",
+                "value": true
+              }
+            ]
+          },
+          {
+            "op": "any",
+            "args": [
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 18
+              },
+              {
+                "op": "flag",
+                "field": "guardianConsent",
+                "value": true
+              },
+              {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  {
+                    "op": "any",
+                    "args": [
+                      {
+                        "op": "time",
+                        "cmp": "lt",
+                        "value": "2026-11-20T00:00:00.000Z"
+                      },
+                      {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "flag",
+                            "field": "member",
+                            "value": true
+                          },
+                          {
+                            "op": "flag",
+                            "field": "scholarship",
+                            "value": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "any",
+            "args": [
+              {
+                "op": "flag",
+                "field": "resident",
+                "value": true
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2026-11-25T00:00:00.000Z"
+              },
+              {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fee": {
+        "currency": "USD",
+        "defaultCents": 4200,
+        "overrides": [
+          {
+            "when": {
+              "op": "flag",
+              "field": "member",
+              "value": true
+            },
+            "cents": 1800,
+            "label": "Agreed member fee"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "scholarship",
+              "value": true
+            },
+            "cents": 0,
+            "label": "scholarship"
+          },
+          {
+            "when": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                }
+              ]
+            },
+            "cents": 1200,
+            "label": "resident AND student"
+          },
+          {
+            "when": {
+              "op": "age",
+              "cmp": "lte",
+              "value": 17
+            },
+            "cents": 1600,
+            "label": "age under 18"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "member",
+              "value": true
+            },
+            "cents": 2600,
+            "label": "member"
+          },
+          {
+            "when": {
+              "op": "flag",
+              "field": "resident",
+              "value": true
+            },
+            "cents": 3000,
+            "label": "resident"
+          }
+        ]
+      }
+    },
+    "verification": {
+      "status": "equivalent",
+      "witnesses": [],
+      "checkedCases": 4480,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 10,
+        "flagCombinations": 32,
+        "timePartitions": 14,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    "changes": {
+      "status": "different",
+      "witnesses": [
+        {
+          "id": "price-left-higher",
+          "kind": "price-only",
+          "attendee": {
+            "age": 24,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2026-11-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2600,
+            "feeReason": {
+              "en": "First matching fee rule: member",
+              "es": "Primera regla de tarifa aplicable: member"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(age ≥ 14 AND submitted ≥ 2026-11-01T00:00:00.000Z AND submitted < 2026-12-01T00:00:00.000Z AND (resident OR student OR member OR scholarship) AND (age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))) AND (resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(edad ≥ 14 Y inscripción ≥ 2026-11-01T00:00:00.000Z Y inscripción < 2026-12-01T00:00:00.000Z Y (residente O estudiante O miembro O beca) Y (edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))) Y (residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "age ≥ 14",
+                "es": "edad ≥ 14"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted ≥ 2026-11-01T00:00:00.000Z",
+                "es": "inscripción ≥ 2026-11-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "submitted < 2026-12-01T00:00:00.000Z",
+                "es": "inscripción < 2026-12-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(resident OR student OR member OR scholarship)",
+                "es": "(residente O estudiante O miembro O beca)"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.3.3",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.4",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))))"
+              },
+              {
+                "path": "eligibility.4.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.4.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.4.2",
+                "passed": false,
+                "en": "(resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.4.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.4.2.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.4.2.2",
+                "passed": true,
+                "en": "(submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.4.2.2.0",
+                "passed": true,
+                "en": "submitted < 2026-11-20T00:00:00.000Z",
+                "es": "inscripción < 2026-11-20T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.4.2.2.1",
+                "passed": false,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.4.2.2.1.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.4.2.2.1.1",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.5",
+                "passed": true,
+                "en": "(resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.5.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.5.1",
+                "passed": true,
+                "en": "submitted < 2026-11-25T00:00:00.000Z",
+                "es": "inscripción < 2026-11-25T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.5.2",
+                "passed": false,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.5.2.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.5.2.1",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.0",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.1",
+                "passed": false,
+                "en": "(resident AND student)",
+                "es": "(residente Y estudiante)"
+              },
+              {
+                "path": "fee.1.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "fee.1.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "fee.2",
+                "passed": false,
+                "en": "age ≤ 17",
+                "es": "edad ≤ 17"
+              },
+              {
+                "path": "fee.3",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: member",
+                "es": "Primera regla de tarifa aplicable: member"
+              }
+            ]
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1800,
+            "feeReason": {
+              "en": "First matching fee rule: Agreed member fee",
+              "es": "Primera regla de tarifa aplicable: Agreed member fee"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(age ≥ 14 AND submitted ≥ 2026-11-01T00:00:00.000Z AND submitted < 2026-12-01T00:00:00.000Z AND (resident OR student OR member OR scholarship) AND (age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))) AND (resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(edad ≥ 14 Y inscripción ≥ 2026-11-01T00:00:00.000Z Y inscripción < 2026-12-01T00:00:00.000Z Y (residente O estudiante O miembro O beca) Y (edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))) Y (residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "age ≥ 14",
+                "es": "edad ≥ 14"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted ≥ 2026-11-01T00:00:00.000Z",
+                "es": "inscripción ≥ 2026-11-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "submitted < 2026-12-01T00:00:00.000Z",
+                "es": "inscripción < 2026-12-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(resident OR student OR member OR scholarship)",
+                "es": "(residente O estudiante O miembro O beca)"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.3.3",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.4",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))))"
+              },
+              {
+                "path": "eligibility.4.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.4.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.4.2",
+                "passed": false,
+                "en": "(resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.4.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.4.2.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.4.2.2",
+                "passed": true,
+                "en": "(submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.4.2.2.0",
+                "passed": true,
+                "en": "submitted < 2026-11-20T00:00:00.000Z",
+                "es": "inscripción < 2026-11-20T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.4.2.2.1",
+                "passed": false,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.4.2.2.1.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.4.2.2.1.1",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.5",
+                "passed": true,
+                "en": "(resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.5.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.5.1",
+                "passed": true,
+                "en": "submitted < 2026-11-25T00:00:00.000Z",
+                "es": "inscripción < 2026-11-25T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.5.2",
+                "passed": false,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.5.2.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.5.2.1",
+                "passed": false,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: Agreed member fee",
+                "es": "Primera regla de tarifa aplicable: Agreed member fee"
+              }
+            ]
+          },
+          "feeDeltaCents": 800,
+          "explanation": {
+            "en": "Both admit this person, but A charges $26.00 and B charges $18.00.",
+            "es": "Ambas admiten a esta persona, pero A cobra $26.00 y B cobra $18.00."
+          }
+        },
+        {
+          "id": "price-right-higher",
+          "kind": "price-only",
+          "attendee": {
+            "age": 24,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2026-11-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 0,
+            "feeReason": {
+              "en": "First matching fee rule: scholarship",
+              "es": "Primera regla de tarifa aplicable: scholarship"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(age ≥ 14 AND submitted ≥ 2026-11-01T00:00:00.000Z AND submitted < 2026-12-01T00:00:00.000Z AND (resident OR student OR member OR scholarship) AND (age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))) AND (resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(edad ≥ 14 Y inscripción ≥ 2026-11-01T00:00:00.000Z Y inscripción < 2026-12-01T00:00:00.000Z Y (residente O estudiante O miembro O beca) Y (edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))) Y (residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "age ≥ 14",
+                "es": "edad ≥ 14"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted ≥ 2026-11-01T00:00:00.000Z",
+                "es": "inscripción ≥ 2026-11-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "submitted < 2026-12-01T00:00:00.000Z",
+                "es": "inscripción < 2026-12-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(resident OR student OR member OR scholarship)",
+                "es": "(residente O estudiante O miembro O beca)"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.3.3",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.4",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))))"
+              },
+              {
+                "path": "eligibility.4.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.4.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.4.2",
+                "passed": false,
+                "en": "(resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.4.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.4.2.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.4.2.2",
+                "passed": true,
+                "en": "(submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.4.2.2.0",
+                "passed": true,
+                "en": "submitted < 2026-11-20T00:00:00.000Z",
+                "es": "inscripción < 2026-11-20T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.4.2.2.1",
+                "passed": true,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.4.2.2.1.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.4.2.2.1.1",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.5",
+                "passed": true,
+                "en": "(resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.5.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.5.1",
+                "passed": true,
+                "en": "submitted < 2026-11-25T00:00:00.000Z",
+                "es": "inscripción < 2026-11-25T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.5.2",
+                "passed": true,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.5.2.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.5.2.1",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.0",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: scholarship",
+                "es": "Primera regla de tarifa aplicable: scholarship"
+              }
+            ]
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1800,
+            "feeReason": {
+              "en": "First matching fee rule: Agreed member fee",
+              "es": "Primera regla de tarifa aplicable: Agreed member fee"
+            },
+            "trace": [
+              {
+                "path": "eligibility",
+                "passed": true,
+                "en": "(age ≥ 14 AND submitted ≥ 2026-11-01T00:00:00.000Z AND submitted < 2026-12-01T00:00:00.000Z AND (resident OR student OR member OR scholarship) AND (age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))) AND (resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(edad ≥ 14 Y inscripción ≥ 2026-11-01T00:00:00.000Z Y inscripción < 2026-12-01T00:00:00.000Z Y (residente O estudiante O miembro O beca) Y (edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))) Y (residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.0",
+                "passed": true,
+                "en": "age ≥ 14",
+                "es": "edad ≥ 14"
+              },
+              {
+                "path": "eligibility.1",
+                "passed": true,
+                "en": "submitted ≥ 2026-11-01T00:00:00.000Z",
+                "es": "inscripción ≥ 2026-11-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.2",
+                "passed": true,
+                "en": "submitted < 2026-12-01T00:00:00.000Z",
+                "es": "inscripción < 2026-12-01T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.3",
+                "passed": true,
+                "en": "(resident OR student OR member OR scholarship)",
+                "es": "(residente O estudiante O miembro O beca)"
+              },
+              {
+                "path": "eligibility.3.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.3.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.3.2",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.3.3",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.4",
+                "passed": true,
+                "en": "(age ≥ 18 OR guardian consent OR (resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))))",
+                "es": "(edad ≥ 18 O consentimiento del tutor O (residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))))"
+              },
+              {
+                "path": "eligibility.4.0",
+                "passed": true,
+                "en": "age ≥ 18",
+                "es": "edad ≥ 18"
+              },
+              {
+                "path": "eligibility.4.1",
+                "passed": false,
+                "en": "guardian consent",
+                "es": "consentimiento del tutor"
+              },
+              {
+                "path": "eligibility.4.2",
+                "passed": false,
+                "en": "(resident AND student AND (submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship)))",
+                "es": "(residente Y estudiante Y (inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca)))"
+              },
+              {
+                "path": "eligibility.4.2.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.4.2.1",
+                "passed": false,
+                "en": "student",
+                "es": "estudiante"
+              },
+              {
+                "path": "eligibility.4.2.2",
+                "passed": true,
+                "en": "(submitted < 2026-11-20T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(inscripción < 2026-11-20T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.4.2.2.0",
+                "passed": true,
+                "en": "submitted < 2026-11-20T00:00:00.000Z",
+                "es": "inscripción < 2026-11-20T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.4.2.2.1",
+                "passed": true,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.4.2.2.1.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.4.2.2.1.1",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "eligibility.5",
+                "passed": true,
+                "en": "(resident OR submitted < 2026-11-25T00:00:00.000Z OR (member AND scholarship))",
+                "es": "(residente O inscripción < 2026-11-25T00:00:00.000Z O (miembro Y beca))"
+              },
+              {
+                "path": "eligibility.5.0",
+                "passed": false,
+                "en": "resident",
+                "es": "residente"
+              },
+              {
+                "path": "eligibility.5.1",
+                "passed": true,
+                "en": "submitted < 2026-11-25T00:00:00.000Z",
+                "es": "inscripción < 2026-11-25T00:00:00.000Z"
+              },
+              {
+                "path": "eligibility.5.2",
+                "passed": true,
+                "en": "(member AND scholarship)",
+                "es": "(miembro Y beca)"
+              },
+              {
+                "path": "eligibility.5.2.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              },
+              {
+                "path": "eligibility.5.2.1",
+                "passed": true,
+                "en": "scholarship",
+                "es": "beca"
+              },
+              {
+                "path": "fee.0",
+                "passed": true,
+                "en": "member",
+                "es": "miembro"
+              }
+            ],
+            "reasons": [
+              {
+                "en": "Meets the complete admission rule.",
+                "es": "Cumple la regla completa de admisión."
+              },
+              {
+                "en": "First matching fee rule: Agreed member fee",
+                "es": "Primera regla de tarifa aplicable: Agreed member fee"
+              }
+            ]
+          },
+          "feeDeltaCents": 1800,
+          "explanation": {
+            "en": "Both admit this person, but A charges $0.00 and B charges $18.00.",
+            "es": "Ambas admiten a esta persona, pero A cobra $0.00 y B cobra $18.00."
+          }
+        }
+      ],
+      "checkedCases": 4480,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 10,
+        "flagCombinations": 32,
+        "timePartitions": 14,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    "issues": []
+  }
+}

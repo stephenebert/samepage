@@ -1,0 +1,36 @@
+{
+  "runId": "0f93c9ea-2d23-4a58-ac63-98c83207f69d",
+  "planSha256": "4dfeae30867949b992f3e71fb07ed7e6e8fb0c0fb80ec0e61a7a1b7e607ac047",
+  "maxRequests": 3,
+  "status": "completed",
+  "modelPostAttempts": [
+    {
+      "sequence": 1,
+      "tag": "hard-b-window-and-resident-fee-baseline",
+      "route": "/api/studio/studio-cf6521c8-b24b-4752-b420-8934f7551e61/review",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T17:17:26.470Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/005-hard-b-window-and-resident-fee-baseline.json"
+    },
+    {
+      "sequence": 2,
+      "tag": "hard-b-window-and-resident-fee-check-rewrite",
+      "route": "/api/studio/studio-cf6521c8-b24b-4752-b420-8934f7551e61/repair",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T17:17:50.547Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/009-hard-b-window-and-resident-fee-check-rewrite.json"
+    },
+    {
+      "sequence": 3,
+      "tag": "hard-b-window-and-resident-fee-generate-repair",
+      "route": "/api/studio/studio-cf6521c8-b24b-4752-b420-8934f7551e61/repair",
+      "outcome": "response-received",
+      "startedAt": "2026-10-27T17:18:08.347Z",
+      "httpStatus": 200,
+      "responseEvidence": "responses/013-hard-b-window-and-resident-fee-generate-repair.json"
+    }
+  ],
+  "startedAt": "2026-10-27T17:17:23.968Z"
+}

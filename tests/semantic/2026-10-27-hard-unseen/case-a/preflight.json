@@ -1,0 +1,19 @@
+{
+  "kind": "offline-preflight",
+  "planSha256": "55e6a60ed36f495c51b32e36bd2cc6ac5dca42f26eea7e03740c2ce3a64f0be2",
+  "sourceCommit": "b17059557a4ea6321dd91f66ff38943755f4e519",
+  "caseId": "lantern-lab-late-consent-member-1800",
+  "maxRequests": 3,
+  "maxProviderRequestBytes": 65536,
+  "maxCompletionTokens": 8192,
+  "framingTokens": 4096,
+  "budgetUsd": 0.4,
+  "conservativeEstimatedMaxUsd": 0.365568,
+  "pricing": {
+    "inputUsdPerMillionTokens": 1.25,
+    "outputUsdPerMillionTokens": 4.25
+  },
+  "method": "Conservative estimate: treat each full provider JSON UTF-8 byte as an input token, add4096 framing tokens, reserve8192 output tokens per request. Not confirmed billing or an account-wide cap.",
+  "actualBilledCostUsd": null,
+  "networkCalls": 0
+}

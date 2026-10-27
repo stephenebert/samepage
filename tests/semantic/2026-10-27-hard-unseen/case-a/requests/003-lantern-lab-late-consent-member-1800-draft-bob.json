@@ -1,0 +1,13 @@
+{
+  "sequence": 3,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-2c516632-dc7c-438e-8c67-f2a4b8a539d6",
+  "body": {
+    "type": "draft",
+    "editor": "bob",
+    "baseVersion": 1,
+    "text": "Taller comunitario en línea Lantern Lab. Cada indicador (resident, student, member, guardianConsent, scholarship) es independiente. Todas las horas son UTC; submittedAt es la hora de inscripción. La admisión requiere TODAS estas condiciones:\n1. age es al menos 14; submittedAt es igual o posterior a 2026-11-01T00:00:00.000Z y estrictamente anterior a 2026-12-01T00:00:00.000Z.\n2. Al menos uno de resident, student, member o scholarship es verdadero.\n3. Se excluye a una persona menor de 18 sin guardianConsent, salvo que tanto resident como student sean verdaderos. Esta dispensa para estudiantes residentes se suspende desde 2026-11-20T00:00:00.000Z inclusive, excepto cuando member O scholarship sea verdadero (o ambos). Las personas de 18 años o más, o con guardianConsent, no necesitan esta dispensa.\n4. Se excluye a un no residente que se inscriba desde 2026-11-25T00:00:00.000Z inclusive, salvo que TANTO member COMO scholarship sean verdaderos.\nSolo para personas admitidas, se cobra la PRIMERA tarifa aplicable, en centavos de dólar estadounidense: scholarship: 0; resident Y student: 1200; age menor de 18: 1600; member: 2600; resident: 3000; en otro caso: 4200. Las personas rechazadas no tienen tarifa."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

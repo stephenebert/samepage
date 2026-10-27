@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "kind": "post-live-bilingual-ai-audit",
+  "status": "findings-present",
+  "createdAt": "2026-10-27T17:22:08.048Z",
+  "reviewer": "hard_holdout_audit",
+  "secondReviewer": "bilingual_second_review",
+  "humanStudy": false,
+  "reviewerNetworkCalls": 0,
+  "reviewerProviderCalls": 0,
+  "sourceOrPromptChanges": false,
+  "holdoutChanges": false,
+  "preflightFilesModified": false,
+  "frozenSuiteFilesUnchanged": 47,
+  "preflightReviewedFilesUnchanged": 17,
+  "suiteModelCallsObserved": 6,
+  "compiledStagesPassed": 6,
+  "recordedConcreteChecks": 240,
+  "recordedOracleChecks": 573056,
+  "recordedOracleMismatches": 0,
+  "cases": [
+    {
+      "case": "case-a",
+      "roomId": "studio-2c516632-dc7c-438e-8c67-f2a4b8a539d6",
+      "modelRequests": 3,
+      "compiledRunStatus": "passed",
+      "publishedPolicyVersion": 3,
+      "stages": [
+        {
+          "stage": "baseline",
+          "compiledStatus": "passed",
+          "concreteChecks": 60,
+          "oracleChecks": 131648,
+          "oracleMismatches": 0
+        },
+        {
+          "stage": "check-rewrite",
+          "compiledStatus": "passed",
+          "concreteChecks": 30,
+          "oracleChecks": 65824,
+          "oracleMismatches": 0
+        },
+        {
+          "stage": "generate-repair",
+          "compiledStatus": "passed",
+          "concreteChecks": 30,
+          "oracleChecks": 65824,
+          "oracleMismatches": 0
+        }
+      ],
+      "bilingualAuditStatus": "pass",
+      "sourceTextsRestoredVerbatim": true,
+      "authoredUnsafeTextsPreservedVerbatim": true,
+      "publishedRepairMatchesAuditedProposal": true
+    },
+    {
+      "case": "case-b",
+      "roomId": "studio-cf6521c8-b24b-4752-b420-8934f7551e61",
+      "modelRequests": 3,
+      "compiledRunStatus": "passed",
+      "publishedPolicyVersion": 3,
+      "stages": [
+        {
+          "stage": "baseline",
+          "compiledStatus": "passed",
+          "concreteChecks": 60,
+          "oracleChecks": 154880,
+          "oracleMismatches": 0
+        },
+        {
+          "stage": "check-rewrite",
+          "compiledStatus": "passed",
+          "concreteChecks": 30,
+          "oracleChecks": 77440,
+          "oracleMismatches": 0
+        },
+        {
+          "stage": "generate-repair",
+          "compiledStatus": "passed",
+          "concreteChecks": 30,
+          "oracleChecks": 77440,
+          "oracleMismatches": 0
+        }
+      ],
+      "bilingualAuditStatus": "scope-ambiguity-found",
+      "sourceTextsRestoredVerbatim": true,
+      "authoredUnsafeTextsPreservedVerbatim": true,
+      "publishedRepairMatchesAuditedProposal": true
+    }
+  ],
+  "ambiguity": {
+    "status": "not-run",
+    "modelRequests": 0,
+    "reason": "Root intentionally stopped the remaining test after the case B prose finding. No live ambiguity lock or report exists. No claim about model clarification behavior is supported."
+  },
+  "caseAFindings": {
+    "status": "pass",
+    "baseline": "Alice Spanish preserves both member AND scholarship exceptions; Bob English preserves the intended nested OR while retaining the separate nonresident AND. All cutoff endpoints and fee priorities agree with frozen text.",
+    "generatedRepair": "English and Spanish preserve Alice admission and all exact deadlines. Member1800 comes first even above scholarship0; all nonmember fees retain order. The unreachable old member2600 fee is removed.",
+    "unsafeRewrite": "Supplied English and Spanish are retained byte-for-byte and faithfully express the intentional collateral admission defect; the recorded deterministic gate blocked them."
+  },
+  "caseBAdditionalObservations": {
+    "englishBaselineAndRepair": "Faithful to source, including second-window exclusive opening in Alice and generated repair, inclusive opening in Bob translation, exact remaining endpoints, eligibility groups, and priority fees.",
+    "fees": "Resident4200 is first in both repair languages; nonresident student4800 is retained and the unsafe5100 change is absent. Other fee tiers agree.",
+    "unsafeRewrite": "Supplied English/Spanish are retained byte-for-byte; their explicit adult grouping remains intact and the authored outside-scope student fee change was blocked.",
+    "nonoperativeNote": "The otherwise6400 fallback remains in readable repair text. After resident4200 is prepended, every eligible nonresident is a student, so that fallback is unreachable. Retention is harmless to outcomes."
+  },
+  "findings": [
+    {
+      "id": "B-ES-AGE-SCOPE",
+      "severity": "material-prose-ambiguity",
+      "status": "unresolved-in-this-frozen-run",
+      "case": "case-b",
+      "language": "Spanish",
+      "title": "Student alternative can plausibly escape the adult age requirement",
+      "exactQuote": "(2) tiene al menos 18 años, y es residente sin beca, o es estudiante que cumple al menos una de estas dos condiciones: ser miembro, o no tener beca.",
+      "locations": [
+        {
+          "path": "case-b/stages/hard-b-window-and-resident-fee-baseline/after.json",
+          "jsonPointer": "/review/candidates/0/es",
+          "note": "Alice candidate; editor identity checked in the room"
+        },
+        {
+          "path": "case-b/stages/hard-b-window-and-resident-fee-generate-repair/after.json",
+          "jsonPointer": "/repair/proposal/es"
+        },
+        {
+          "path": "case-b/case-final.json",
+          "jsonPointer": "/published/es"
+        }
+      ],
+      "intendedAdultMeaning": "age >=18 AND ((resident AND NOT scholarship) OR (student AND (member OR NOT scholarship)))",
+      "plausibleLooseAdultReading": "(age >=18 AND resident AND NOT scholarship) OR (student AND (member OR NOT scholarship))",
+      "explanation": "The generated Spanish drops the explicit either/or grouping that scopes age18+ over both alternatives. Numbering the adult branch does not itself bind the age conjunct across its internal or. The comma before “o es estudiante” permits loose coordination. An intended grouped reading remains possible, so this is ambiguity rather than an established unequivocal mistranslation.",
+      "witness": {
+        "goldenId": "B18",
+        "attendee": {
+          "age": 17,
+          "resident": false,
+          "student": true,
+          "member": true,
+          "guardianConsent": true,
+          "scholarship": false,
+          "submittedAt": "2026-11-15T12:00:00.000Z"
+        },
+        "intendedAndCompiledOutcome": {
+          "accepted": false,
+          "feeCents": null
+        },
+        "plausibleLooseReadingOutcome": {
+          "accepted": true,
+          "feeCents": 3600
+        },
+        "reason": "The17-year-old nonresident student is a member, so the intended minor branch fails and the adult branch is unavailable. The loose student alternative would admit them and the member fee would apply."
+      },
+      "independentReviewerAgreement": {
+        "primaryAIReviewer": "hard_holdout_audit",
+        "secondAIReviewer": "bilingual_second_review",
+        "agreement": "Both separately flagged this scope ambiguity before consolidating their assessments.",
+        "humanReviewPerformed": false
+      },
+      "displayMitigation": "Frozen studio-presentation.ts conditionText renders AST all/any children inside parentheses. An AST-derived reading view can therefore display explicit grouping, but this does not rewrite or remove the original ambiguous Muse text preserved in candidate, repair, and published fields.",
+      "compiledRuleErrorDemonstrated": false,
+      "remediationApplied": false,
+      "retestPerformed": false,
+      "followup": "A separate future change/test should preserve explicit alternative grouping in generated Spanish. This frozen run must retain the finding and cannot be described as an unqualified bilingual-fidelity pass."
+    }
+  ],
+  "reviewedEvidenceFiles": {
+    "case-a/report.json": "83e3689a519765a521f0e7fe05e2087975a4be6d8ad154cec363ec81111963fc",
+    "case-a/live-ledger.json": "bd64d3e6c5d322966052689f714340eb7837e52d4a60e35183fbd3b34e90d14d",
+    "case-a/case-final.json": "75c8ae78c6f58ae54f2a75b82fe6017a2e24dfafd119c34439cc9ff9f83e28ee",
+    "case-a/stages/lantern-lab-late-consent-member-1800-baseline/after.json": "df673f97dcc652fd65d70261fe2d16b2cdab751df38f44f167bbd3e912de546b",
+    "case-a/stages/lantern-lab-late-consent-member-1800-baseline/quality.json": "5f4bac1e48663309e318c26358e6df1f3c3c998246e66ee1b2b2ae11ad86b687",
+    "case-a/stages/lantern-lab-late-consent-member-1800-check-rewrite/after.json": "6a87578a045d2a6e8f819c0ae64a28455d0b635d99c87ba6efa6e01e654db649",
+    "case-a/stages/lantern-lab-late-consent-member-1800-check-rewrite/quality.json": "6b9367f2d38cff14b9510161f7d515fe594c91ad640ca5018450a0abfca26cf4",
+    "case-a/stages/lantern-lab-late-consent-member-1800-generate-repair/after.json": "6feba54b8b16066488c287fc0ac1e7f2e27248f55a52bbea809069ee45c194a9",
+    "case-a/stages/lantern-lab-late-consent-member-1800-generate-repair/quality.json": "748c0b4d6ba7bf52b4495bd6cfda852dd8775f9617b07662e29cc143d67585a2",
+    "case-b/report.json": "ed9118dafbfe8a1da4e2e4172935d4e245e9fb2161b784b00ea0fc1973c0a747",
+    "case-b/live-ledger.json": "5682a37dfedcacbec1ceb8de17da5cd02c00d130e6a3de68977e7428f89837b5",
+    "case-b/case-final.json": "5af7fc6aa2670423befd4e4d221d84ed18eedc08f9f5ad65f428fad92b87aecf",
+    "case-b/stages/hard-b-window-and-resident-fee-baseline/after.json": "b94d4317486ce048045e2cf16965f1f36716e79eb98da13e1ecb2268a5389789",
+    "case-b/stages/hard-b-window-and-resident-fee-baseline/quality.json": "40e36fc64ac0dbec4f5f766116fb13cbe8b7cfe34e66dcce4258ef9d9d41758a",
+    "case-b/stages/hard-b-window-and-resident-fee-check-rewrite/after.json": "16f76fd653e5756e67ac777b07ea66bbb0b2220393b21fd6ef64a5b3cdf0045c",
+    "case-b/stages/hard-b-window-and-resident-fee-check-rewrite/quality.json": "d203f25736b0db430386b874f6dd625a92e47a3b2b54d738744cc5e80917b74e",
+    "case-b/stages/hard-b-window-and-resident-fee-generate-repair/after.json": "07df301d77892924daf43c7703010c21598d1fbb6fead9866aeb662c9caac2f3",
+    "case-b/stages/hard-b-window-and-resident-fee-generate-repair/quality.json": "9c53ee4bb4194bb8e2411a54bad4adeecfa37e01d90e0999c818b007a4f0d742"
+  },
+  "conclusion": "Six provider stages passed their frozen compiled-rule gates. Case A also passed this bilingual AI review. Case B has a material Spanish age-scope ambiguity in baseline translation and generated/published repair prose. The remaining ambiguity test was not run. This is a mixed result, not a full seven-call or complete bilingual-fidelity success.",
+  "limits": [
+    "This is agreement between two AI reviewers, not a human bilingual study or formal proof about every reader’s interpretation.",
+    "The identified alternate reading is plausible, not proof that the correct executable rules admit the witness. The stored rules reject the witness.",
+    "This audit reviews recorded outputs and original prose fields. It does not establish independent authenticated human approvals or actual billed cost.",
+    "No source, prompt, example, or response was repaired or retested within this frozen run."
+  ]
+}

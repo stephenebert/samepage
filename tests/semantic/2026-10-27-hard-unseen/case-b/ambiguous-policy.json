@@ -1,0 +1,8 @@
+{
+  "caseId": "ambiguous-b-unspecified-student-fee",
+  "title": "Missing student fee amount",
+  "alice": "Only applicants aged at least 18 are admitted; younger applicants are rejected. There is no submission deadline. For admitted applicants, the fee is 6400 USD cents, except students pay a reduced fee. Rejected applicants have no fee.",
+  "bob": "Solo se admiten las personas de al menos 18 años; las personas menores de 18 años son rechazadas. No hay fecha límite de presentación. Para las personas admitidas, la tarifa es de 6400 centavos de USD, salvo los estudiantes, que pagan una tarifa reducida. Las personas rechazadas no tienen tarifa.",
+  "reason": "Both languages specify a student reduction without a reduced amount or a calculation rule. Ask for that missing fee; do not guess a number, assume free admission, or emit rules.",
+  "expected": "clarification-no-rules"
+}

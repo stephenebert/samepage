@@ -1,0 +1,20 @@
+{
+  "sequence": 16,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-cf6521c8-b24b-4752-b420-8934f7551e61",
+  "body": {
+    "type": "register",
+    "requestId": "unseen-fbbe9524-e2ab-4905-ba70-ebed24b05c42",
+    "policyVersion": 3,
+    "label": "Synthetic hard-b-window-and-resident-fee after repair",
+    "age": 31,
+    "resident": true,
+    "student": true,
+    "member": false,
+    "guardianConsent": false,
+    "scholarship": false,
+    "submittedAt": "2026-11-15T12:00:00.000Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

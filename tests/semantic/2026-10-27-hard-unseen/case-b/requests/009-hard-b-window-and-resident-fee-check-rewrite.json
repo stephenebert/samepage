@@ -1,0 +1,18 @@
+{
+  "sequence": 9,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-cf6521c8-b24b-4752-b420-8934f7551e61/repair",
+  "body": {
+    "intent": {
+      "baselineCandidateId": "studio-review-3-alice",
+      "scopeFlag": "resident",
+      "feeCents": 4200
+    },
+    "proposalText": {
+      "en": "Applications are admitted only within either of these UTC windows: at or after 2026-11-03T08:00:00.000Z but strictly before 2026-11-08T20:00:00.000Z; or strictly after 2026-11-12T16:00:00.000Z and at or before 2026-11-17T23:59:59.999Z. Within a window, an applicant qualifies if either (1) age is at least 14 but under 18, guardian consent is present, and the applicant is a resident or is both a student and not a member; or (2) age is at least 18, and the applicant is either a resident without a scholarship, or a student who satisfies at least one of these two conditions: being a member, or having no scholarship. All other applications are rejected. For admitted applicants only, use the first matching fee in this priority order, in USD cents: resident 4200; scholarship 1800; member 3600; age under 18 2900; student 5100; otherwise 6400. Rejected applicants have no fee.",
+      "es": "Las solicitudes se admiten únicamente dentro de una de estas ventanas UTC: a partir de 2026-11-03T08:00:00.000Z, inclusive, pero antes de 2026-11-08T20:00:00.000Z, sin incluir ese instante; o después de 2026-11-12T16:00:00.000Z, sin incluir ese instante, y hasta 2026-11-17T23:59:59.999Z, inclusive. Dentro de una ventana, se cumple el requisito si (1) la edad es de al menos 14 y menor de 18, hay consentimiento del tutor, y la persona es residente o es estudiante sin ser miembro; o (2) la edad es de al menos 18, y se cumple una de estas dos alternativas: ser residente sin beca, o ser estudiante y cumplir al menos una de estas condiciones: ser miembro, o no tener beca. Se rechazan todas las demás solicitudes. Solo para solicitudes admitidas, se aplica la primera tarifa que corresponda en este orden de prioridad, en centavos de USD: residente 4200; beca 1800; miembro 3600; edad menor de 18, 2900; estudiante 5100; en otro caso 6400. Las solicitudes rechazadas no tienen tarifa."
+    }
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

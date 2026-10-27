@@ -1,0 +1,20 @@
+{
+  "sequence": 16,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-2c516632-dc7c-438e-8c67-f2a4b8a539d6",
+  "body": {
+    "type": "register",
+    "requestId": "unseen-592a094d-d823-4aaf-9ddd-54cb8675dab2",
+    "policyVersion": 3,
+    "label": "Synthetic lantern-lab-late-consent-member-1800 after repair",
+    "age": 32,
+    "resident": false,
+    "student": false,
+    "member": true,
+    "guardianConsent": false,
+    "scholarship": false,
+    "submittedAt": "2026-11-10T12:34:56.789Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

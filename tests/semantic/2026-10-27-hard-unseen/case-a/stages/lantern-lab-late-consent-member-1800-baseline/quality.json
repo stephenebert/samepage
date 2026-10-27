@@ -1,0 +1,865 @@
+{
+  "passed": true,
+  "errors": [],
+  "concreteChecks": 60,
+  "concreteFailures": 0,
+  "checks": [
+    {
+      "id": "A01",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "passed": true
+    },
+    {
+      "id": "A02",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A03",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A04",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A05",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A06",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A07",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A08",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A09",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A10",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A11",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A12",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A13",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "passed": true
+    },
+    {
+      "id": "A14",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "passed": true
+    },
+    {
+      "id": "A15",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "passed": true
+    },
+    {
+      "id": "A16",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3000
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3000
+      },
+      "passed": true
+    },
+    {
+      "id": "A17",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A18",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A19",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A20",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A21",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A22",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A23",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "passed": true
+    },
+    {
+      "id": "A24",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A25",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A26",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A27",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A28",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "passed": true
+    },
+    {
+      "id": "A29",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "passed": true
+    },
+    {
+      "id": "A30",
+      "editor": "alice",
+      "stage": "alice",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A01",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "passed": true
+    },
+    {
+      "id": "A02",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A03",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A04",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A05",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A06",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A07",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A08",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A09",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A10",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A11",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A12",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A13",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "passed": true
+    },
+    {
+      "id": "A14",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1600
+      },
+      "passed": true
+    },
+    {
+      "id": "A15",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "passed": true
+    },
+    {
+      "id": "A16",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 3000
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 3000
+      },
+      "passed": true
+    },
+    {
+      "id": "A17",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A18",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A19",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A20",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A21",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "A22",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A23",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "passed": true
+    },
+    {
+      "id": "A24",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A25",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A26",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    },
+    {
+      "id": "A27",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 1200
+      },
+      "passed": true
+    },
+    {
+      "id": "A28",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 4200
+      },
+      "passed": true
+    },
+    {
+      "id": "A29",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "actual": {
+        "accepted": true,
+        "feeCents": 2600
+      },
+      "passed": true
+    },
+    {
+      "id": "A30",
+      "editor": "bob",
+      "stage": "bob",
+      "expected": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "actual": {
+        "accepted": false,
+        "feeCents": null
+      },
+      "passed": true
+    }
+  ],
+  "oracleChecks": [
+    {
+      "editor": "alice",
+      "ok": true,
+      "checkedCases": 65824,
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "editor": "bob",
+      "ok": true,
+      "checkedCases": 65824,
+      "mismatchCount": 0,
+      "mismatches": []
+    }
+  ],
+  "impact": null
+}
