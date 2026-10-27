@@ -8,13 +8,15 @@ The studio separates three responsibilities:
 
 ## Current verification boundary
 
+Four fresh hosted Meta `muse-spark-1.3` reviews completed on October 26: all 120 concrete candidate/outcome checks and four unresolved checks matched the frozen expectations. The correction changed a synthetic receipt from $17.25 to $0 in a new policy version while preserving its original receipt. Studio live calls were then paused again. See [the live evaluation, independent audit and billing limits](META-LIVE-EVALUATION.md). The controlled fixtures below remain separate historical engineering evidence.
+
 The integration can be exercised without contacting Meta. **Test with simulated editors** creates an explicitly marked scenario with recorded policy interpretations. **Run simulated review** sends that controlled response through the same request transport, parsing, validation and durable review path used by the live adapter. It does not interpret arbitrary new language, use an API key, or measure Meta quality, latency or cost.
 
 The simulated scenario compares a scholarship waiver for under-18s with a waiver for all scholarship recipients. Both interpretations preserve the minimum age and guardian-consent requirements. Consequences are computed by the rule engine rather than supplied as a model answer.
 
-Automated integration tests additionally inject responses for separate policy scenarios, failures and concurrent edits. These are engineering checks, not a blind semantic evaluation of Meta. A real provider run is required before claiming the complete live-model flow is demonstrated.
+Automated integration tests additionally inject responses for separate policy scenarios, failures and concurrent edits. These are engineering checks, not a blind semantic evaluation of Meta. They do not contribute additional provider samples to the four-review live evaluation.
 
-October 26 validation: all 113 mechanical tests passed, including 18 new integration tests, and TypeScript checking passed. Local HTTP tests exercised concurrent editor saves and two reviews, with a scholarship attendee charged $80 under v2 and $0 under v3. One approval and split approvals held v2; the original receipt remained unchanged. Separate Chrome editor tabs exercised simulation, split approvals, matching approval, witness transfer and a saved registration. An independently authored controlled fixture tested a $25-to-$0 correction while preserving guardian consent and a strict deadline. No live Meta calls were made. The corrections in these tests are editor choices or new drafts; automatic repair synthesis is separate work.
+Earlier October 26 controlled validation: all 113 mechanical tests passed, including 18 new integration tests, and TypeScript checking passed. Local HTTP tests exercised concurrent editor saves and two reviews, with a scholarship attendee charged $80 under v2 and $0 under v3. One approval and split approvals held v2; the original receipt remained unchanged. Separate Chrome editor tabs exercised simulation, split approvals, matching approval, witness transfer and a saved registration. An independently authored controlled fixture tested a $25-to-$0 correction while preserving guardian consent and a strict deadline. No live Meta calls were made in those controlled checks. The corrections in these tests are editor choices or new drafts; automatic repair synthesis is separate work.
 
 ## Provider contract
 
@@ -44,4 +46,4 @@ Keep this deployment owner-private. Alice and Bob are simulated roles, not separ
 - [Meta model catalog](https://dev.meta.ai/docs/models)
 - [Meta spend-limit alerts](https://dev.meta.ai/help/billing/spend-limit-alert)
 
-Contract checked on October 26, 2026. No live provider call is implied by this document.
+Contract checked on October 26, 2026. The later live result is documented separately in [META-LIVE-EVALUATION.md](META-LIVE-EVALUATION.md).

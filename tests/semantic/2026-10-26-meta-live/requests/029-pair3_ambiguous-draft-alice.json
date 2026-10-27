@@ -1,0 +1,14 @@
+{
+  "sequence": 29,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-409203bf-4b14-4faf-8331-35455ddfd8bb",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Paper-Sculpture Social — complete registration policy.\nPeople aged 12 through 90 inclusive are eligible if they are residents or members. Those under 16 also need guardian consent; those aged 16 or older do not. Student and scholarship status do not change eligibility. Registration is allowed at any UTC submission instant, with no opening time and no deadline. There are no further eligibility conditions.\nThe standard fixed fee for an eligible attendee is USD 28.00. Members pay USD 11.00. Scholarship holders pay USD 0.00. Students who are residents pay USD 7.50. These are separate fixed prices, not cumulative discounts. A rejected applicant pays no fee."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T03:38:38.572Z"
+}

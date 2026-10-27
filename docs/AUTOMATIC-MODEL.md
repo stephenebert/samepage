@@ -4,7 +4,7 @@ The consequences workspace has a **Find consequences** action that sends both sa
 
 ## Activation
 
-The site owner has not yet obtained Meta Model API access. The integration is implemented, but no live Meta response or latency claim has been verified. Controlled tests use injected provider responses and do not measure model understanding.
+This runbook records the original consequences integration. Meta access was subsequently configured for a four-review hosted `/studio` evaluation on October 26, after which studio live calls were paused. See [that live evaluation and its limits](META-LIVE-EVALUATION.md). The dedicated consequences workflow was not evaluated live in that run. Its controlled tests use injected responses and do not measure model understanding.
 
 1. Obtain Meta Model API access and an API key using the [official developer portal](https://dev.meta.ai/).
 2. Open [SamePage settings](https://chatgpt.com/space/sites/appgprj_6acf326d0f9c81918e24863d7a25c308/settings), then **Environment variables**.
@@ -30,9 +30,9 @@ The mechanical suite covers provider-response handling and request coordination 
 
 All **76 mechanical tests**, TypeScript checking and the production build passed. Local HTTP and Chrome checks verified the unconfigured state, missing-key rejection without room mutation, cross-origin rejection, preserved unsaved edits and available manual fallback. Independent code review found and helped repair an expired-lease edge case. See [implementation verification](../tests/semantic/2026-10-20-automatic/IMPLEMENTATION-VERIFICATION.md) and the [future automatic evaluation runner](../tests/semantic/2026-10-20-automatic/AUTOMATIC-RUNNER.md).
 
-The integration was deployed owner-private from Sites commit `ba429294eb7a5c404255942f5b0442d5a2aacff1`. Its existing prepared demo remains usable and explicitly attributes its review to the manual relay; the deployed model connection is unconfigured.
+At the October 20 checkpoint, the integration was deployed owner-private from Sites commit `ba429294eb7a5c404255942f5b0442d5a2aacff1`. Its existing prepared demo remains usable and explicitly attributes its review to the manual relay; the deployed model connection was unconfigured.
 
-Provider access, real model quality, live latency, usage charges and the complete real-model browser loop remain unverified until activation. Continue using only synthetic policies for the initial evaluation.
+Those October 20 checks did not verify provider access, live model quality, latency or charges. The later studio evaluation supplies four live reviews and recorded HTTP durations; actual token usage and billed charges remain unmeasured. Continue using synthetic policies for further authorized evaluation.
 
 ## Primary references
 

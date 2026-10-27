@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "runId": "24064611-0490-43ce-b581-5971acdb0b08",
+  "startedAt": "2026-10-27T03:37:32.311Z",
+  "corpusSha256": "4202af1610de58a958241c187200f5c740e95b9b70d8868c3eb6fbd0b5d75ecb",
+  "maxReviewPosts": 4,
+  "reviewPostAttempts": [
+    {
+      "sequence": 1,
+      "tag": "pair1_initial-review",
+      "route": "/api/studio/studio-2b4e9c58-8a38-4a59-9afd-3c4896a7da50/review",
+      "dispatchedAt": "2026-10-27T03:37:33.328Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/005-pair1_initial-review.json"
+    },
+    {
+      "sequence": 2,
+      "tag": "pair1_correction-review",
+      "route": "/api/studio/studio-2b4e9c58-8a38-4a59-9afd-3c4896a7da50/review",
+      "dispatchedAt": "2026-10-27T03:37:55.171Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/015-pair1_correction-review.json"
+    },
+    {
+      "sequence": 3,
+      "tag": "pair2_boundary_exception-review",
+      "route": "/api/studio/studio-56e1a270-20c9-492a-81b3-0d1a5e2a4561/review",
+      "dispatchedAt": "2026-10-27T03:38:13.986Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/024-pair2_boundary_exception-review.json"
+    },
+    {
+      "sequence": 4,
+      "tag": "pair3_ambiguous-review",
+      "route": "/api/studio/studio-409203bf-4b14-4faf-8331-35455ddfd8bb/review",
+      "dispatchedAt": "2026-10-27T03:38:39.023Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/032-pair3_ambiguous-review.json"
+    }
+  ],
+  "status": "completed",
+  "completedAt": "2026-10-27T03:38:52.027Z"
+}

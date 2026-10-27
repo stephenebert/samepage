@@ -1,0 +1,268 @@
+{
+  "schema": "samepage-live-semantic-audit-v1",
+  "auditedAt": "2026-10-27T03:40:57.947804+00:00",
+  "status": "pass",
+  "findings": [],
+  "scope": "Independent read-only audit of saved completed Meta candidates, original-source preservation, eight translations, structured-rule meaning, and clarification specificity. No provider, browser, or network calls were made by this auditor. Existing artifacts were not modified.",
+  "evidenceClassification": {
+    "liveModelOutputs": "Candidate content was read from stages/*/review-state.json and matched exactly to the room in the recorded successful live review HTTP responses. Each review is marked meta-model with a completed Meta muse-spark-1.3 automatic review and its own request ID. The live ledger records four review attempts with four HTTP 200 responses. These are the saved application-parsed live Meta outputs; the response artifacts are application-route HTTP bodies, not raw provider response envelopes.",
+    "offlineChecks": "This audit uses a separate local condition evaluator against the already frozen, independently audited goldens. The 120 outcome checks and partition comparisons are offline verification of those live outputs, not extra provider calls or substitute model responses. No test-offline.mjs or offline-test-report.json artifact was used as live evidence."
+  },
+  "frozenCorpusSha256": "4202af1610de58a958241c187200f5c740e95b9b70d8868c3eb6fbd0b5d75ecb",
+  "liveRunId": "24064611-0490-43ce-b581-5971acdb0b08",
+  "liveReviewAttempts": 4,
+  "verificationTotals": {
+    "candidatesReviewed": 8,
+    "faithfulTranslations": 8,
+    "exactOriginalSources": 8,
+    "executableCandidates": 6,
+    "correctlyBlockedCandidates": 2,
+    "namedOutcomesChecked": 120,
+    "ruleEquivalenceComparisons": 185856,
+    "method": "Every integer age 0..120, all 32 flag combinations, and representatives of each time truth region from the union of actual and expected boundaries, including extrema and each boundary +/-1ms. Full bilingual prose was also reviewed manually for all scopes and amounts."
+  },
+  "stageResults": [
+    {
+      "stageId": "pair1_initial",
+      "status": "pass",
+      "evidence": {
+        "reviewState": "stages/pair1_initial/review-state.json",
+        "reviewStateSha256": "aef435b937a79f2fbf40eb3e13f949d5e73a0c3f44175826401643cea5005089",
+        "httpResponse": "responses/005-pair1_initial-review.json",
+        "httpResponseSha256": "13353c814e745e96431b4d5d17a518e2bf718813f889b4ac144313a7afcef8a0",
+        "httpStatus": 200,
+        "httpResponseRoomMatchesSavedReview": true,
+        "rawHttpBodyMatchesParsedJson": true,
+        "reviewProvenance": "meta-model",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "requestId": "ccb58fe5-a59e-49ad-93fa-5120df96bbe0",
+        "finishedAt": "2026-10-27T03:37:53.317Z"
+      },
+      "candidates": [
+        {
+          "editor": "alice",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "Spanish translation faithfully preserves inclusive ages 16–75, the resident/student/member disjunction, adult-or-consent branch, nonwaiving scholarship, inclusive opening and exclusive closing instants, resident-and-member priority before scholarship, student-and-not-member rate, and default fee. Source priority is not harmonized with Bob.",
+          "rulesSemanticallyFaithful": true,
+          "namedOutcomeChecks": 19,
+          "ruleEquivalenceChecks": 30976,
+          "timePartitionRepresentatives": [
+            "0000-01-01T00:00:00.000Z",
+            "2027-04-03T09:14:59.999Z",
+            "2027-04-03T09:15:00.000Z",
+            "2027-04-03T09:15:00.001Z",
+            "2027-04-10T20:44:59.999Z",
+            "2027-04-10T20:45:00.000Z",
+            "2027-04-10T20:45:00.001Z",
+            "9999-12-31T23:59:59.999Z"
+          ]
+        },
+        {
+          "editor": "bob",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "English translation faithfully preserves the same eligibility scopes and UTC boundaries, while keeping scholarship ahead of resident-and-member and the nonmember student condition. It retains fixed fees and rejection without a fee.",
+          "rulesSemanticallyFaithful": true,
+          "namedOutcomeChecks": 19,
+          "ruleEquivalenceChecks": 30976,
+          "timePartitionRepresentatives": [
+            "0000-01-01T00:00:00.000Z",
+            "2027-04-03T09:14:59.999Z",
+            "2027-04-03T09:15:00.000Z",
+            "2027-04-03T09:15:00.001Z",
+            "2027-04-10T20:44:59.999Z",
+            "2027-04-10T20:45:00.000Z",
+            "2027-04-10T20:45:00.001Z",
+            "9999-12-31T23:59:59.999Z"
+          ]
+        }
+      ],
+      "discoveryStatus": "different",
+      "witnessIds": [
+        "price-left-higher"
+      ]
+    },
+    {
+      "stageId": "pair1_correction",
+      "status": "pass",
+      "evidence": {
+        "reviewState": "stages/pair1_correction/review-state.json",
+        "reviewStateSha256": "625826b74c3a9d93338a6722da318f0b771ed059edf6e867526ef4347e971db3",
+        "httpResponse": "responses/015-pair1_correction-review.json",
+        "httpResponseSha256": "4afc7edf76c508e50f114a4a10121061884c1b48262d2cc3ce5752910f396f23",
+        "httpStatus": 200,
+        "httpResponseRoomMatchesSavedReview": true,
+        "rawHttpBodyMatchesParsedJson": true,
+        "reviewProvenance": "meta-model",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "requestId": "517ecddc-860c-4223-82c2-cc100507b759",
+        "finishedAt": "2026-10-27T03:38:11.277Z"
+      },
+      "candidates": [
+        {
+          "editor": "alice",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "Spanish translation keeps all admission and time clauses unchanged and faithfully moves scholarship zero fee ahead of resident-and-member and nonmember student fees.",
+          "rulesSemanticallyFaithful": true,
+          "namedOutcomeChecks": 19,
+          "ruleEquivalenceChecks": 30976,
+          "timePartitionRepresentatives": [
+            "0000-01-01T00:00:00.000Z",
+            "2027-04-03T09:14:59.999Z",
+            "2027-04-03T09:15:00.000Z",
+            "2027-04-03T09:15:00.001Z",
+            "2027-04-10T20:44:59.999Z",
+            "2027-04-10T20:45:00.000Z",
+            "2027-04-10T20:45:00.001Z",
+            "9999-12-31T23:59:59.999Z"
+          ]
+        },
+        {
+          "editor": "bob",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "English translation preserves the explicit single-fee, first-matching-condition priority over all later conditions, no combination, exact fee values, and the unchanged eligibility and time limits.",
+          "rulesSemanticallyFaithful": true,
+          "namedOutcomeChecks": 19,
+          "ruleEquivalenceChecks": 30976,
+          "timePartitionRepresentatives": [
+            "0000-01-01T00:00:00.000Z",
+            "2027-04-03T09:14:59.999Z",
+            "2027-04-03T09:15:00.000Z",
+            "2027-04-03T09:15:00.001Z",
+            "2027-04-10T20:44:59.999Z",
+            "2027-04-10T20:45:00.000Z",
+            "2027-04-10T20:45:00.001Z",
+            "9999-12-31T23:59:59.999Z"
+          ]
+        }
+      ],
+      "discoveryStatus": "equivalent",
+      "witnessIds": []
+    },
+    {
+      "stageId": "pair2_boundary_exception",
+      "status": "pass",
+      "evidence": {
+        "reviewState": "stages/pair2_boundary_exception/review-state.json",
+        "reviewStateSha256": "3076c2ff4dc9631069b09bd599f0e4a4e427ac3e7a8064f8b3f706881ba1f37b",
+        "httpResponse": "responses/024-pair2_boundary_exception-review.json",
+        "httpResponseSha256": "f75f56553ec4ad6969fe642f1548b65f01dd47f9810f5a28b70b9b19d61688e8",
+        "httpStatus": 200,
+        "httpResponseRoomMatchesSavedReview": true,
+        "rawHttpBodyMatchesParsedJson": true,
+        "reviewProvenance": "meta-model",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "requestId": "c5a549f3-d2c4-4304-abd4-e050c8c2af1b",
+        "finishedAt": "2026-10-27T03:38:37.633Z"
+      },
+      "candidates": [
+        {
+          "editor": "alice",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "Spanish translation preserves the nonresident membership exception and the nested student exclusion unless scholarship, explicitly scopes those exclusions away from residents, and retains the scholarship nonwaiver of all other admission requirements. Ages 14–79, under-18 consent, inclusive opening, exclusive closing, and scholarship/member/student fee order are faithful.",
+          "rulesSemanticallyFaithful": true,
+          "namedOutcomeChecks": 22,
+          "ruleEquivalenceChecks": 30976,
+          "timePartitionRepresentatives": [
+            "0000-01-01T00:00:00.000Z",
+            "2027-09-08T05:59:59.999Z",
+            "2027-09-08T06:00:00.000Z",
+            "2027-09-08T06:00:00.001Z",
+            "2027-09-12T16:59:59.999Z",
+            "2027-09-12T17:00:00.000Z",
+            "2027-09-12T17:00:00.001Z",
+            "9999-12-31T23:59:59.999Z"
+          ]
+        },
+        {
+          "editor": "bob",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "English translation explicitly retains exclusion of nonresident student members even with a scholarship, residents unaffected, no scholarship waiver, and inclusion of exactly the closing instant. All age/consent/fee scopes are faithful and remain independent of Alice.",
+          "rulesSemanticallyFaithful": true,
+          "namedOutcomeChecks": 22,
+          "ruleEquivalenceChecks": 30976,
+          "timePartitionRepresentatives": [
+            "0000-01-01T00:00:00.000Z",
+            "2027-09-08T05:59:59.999Z",
+            "2027-09-08T06:00:00.000Z",
+            "2027-09-08T06:00:00.001Z",
+            "2027-09-12T16:59:59.999Z",
+            "2027-09-12T17:00:00.000Z",
+            "2027-09-12T17:00:00.001Z",
+            "9999-12-31T23:59:59.999Z"
+          ]
+        }
+      ],
+      "discoveryStatus": "different",
+      "witnessIds": [
+        "admission-right",
+        "admission-left"
+      ]
+    },
+    {
+      "stageId": "pair3_ambiguous",
+      "status": "pass",
+      "evidence": {
+        "reviewState": "stages/pair3_ambiguous/review-state.json",
+        "reviewStateSha256": "eea2623c30031a6ecfb27908db0c863bc9d251b88e4873f062a460effec03af0",
+        "httpResponse": "responses/032-pair3_ambiguous-review.json",
+        "httpResponseSha256": "1c746a159006775dfef0809ae3b8ad734ed461d455f8840b1d58cc1f2d52ee21",
+        "httpStatus": 200,
+        "httpResponseRoomMatchesSavedReview": true,
+        "rawHttpBodyMatchesParsedJson": true,
+        "reviewProvenance": "meta-model",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "requestId": "3b673775-73ea-462d-88f1-570c590fcf9f",
+        "finishedAt": "2026-10-27T03:38:51.585Z"
+      },
+      "candidates": [
+        {
+          "editor": "alice",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "Spanish translation preserves inclusive ages 12–90, resident-or-member eligibility, under-16 consent only, student/scholarship non-effect on eligibility, no opening/deadline, and all distinct fixed prices without inventing a priority.",
+          "rulesSemanticallyFaithful": true,
+          "clarificationAssessment": "Pass: the issue names member, scholarship, and resident-student overlaps with their exact competing prices, gives concrete overlap examples, and requests explicit priority or mutually exclusive conditions. It does not invent a fee or compile eligibility partially.",
+          "returnedIssues": [
+            "Overlapping fee categories have no unambiguous priority or unique resulting fee: a person can simultaneously be a member (USD 11.00), a scholarship holder (USD 0.00), and/or a resident student (USD 7.50) — e.g., a member with a scholarship, a resident student who is also a member, or a resident student with a scholarship — yielding different fixed prices. Source states they are separate fixed prices, not cumulative, but gives no first-match order. Specify explicit priority order or restate as mutually exclusive conditions to determine a unique fee."
+          ]
+        },
+        {
+          "editor": "bob",
+          "originalSourcePreservedExactly": true,
+          "translationFaithful": true,
+          "manualTranslationReview": "English translation preserves all eligibility scopes and unrestricted UTC registration plus the competing fixed prices, without inserting a priority.",
+          "rulesSemanticallyFaithful": true,
+          "clarificationAssessment": "Pass: the issue names member, scholarship, and resident-student overlaps with their exact competing prices, gives concrete overlap examples, and requests explicit priority or mutually exclusive conditions. It does not invent a fee or compile eligibility partially.",
+          "returnedIssues": [
+            "Overlapping fee categories have no unambiguous priority or unique resulting fee: a person can simultaneously be a member (USD 11.00), a scholarship holder (USD 0.00), and/or a resident student (USD 7.50) — e.g., a member with a scholarship, a resident student who is also a member, or a resident student with a scholarship — yielding different fixed prices. Source states they are distinct fixed prices, not cumulative, but gives no first-match order. Specify explicit priority order or restate as mutually exclusive conditions to determine a unique fee."
+          ]
+        }
+      ],
+      "discoveryStatus": "unresolved",
+      "witnessIds": [],
+      "ambiguityGuardState": {
+        "wholeRulesNullForBoth": true,
+        "targetedClarificationsForBoth": true,
+        "checkedCases": 0,
+        "votesRemainEmpty": true,
+        "publicationUnchanged": true
+      }
+    }
+  ],
+  "interpretationNotes": [
+    "Slightly literal translation phrasing, such as Spanish en o después de an ISO instant or English does not exempt any participation requirement, preserves the original policy semantics. No substantive mistranslation, invented requirement, omitted clause, priority harmonization, or unsupported partial compilation was found."
+  ],
+  "limits": [
+    "Passing these four held-out stages supports this specific run; it does not establish general model reliability for arbitrary policies."
+  ]
+}

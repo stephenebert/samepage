@@ -1,0 +1,703 @@
+{
+  "kind": "samepage-studio-v1",
+  "id": "studio-2b4e9c58-8a38-4a59-9afd-3c4896a7da50",
+  "revision": 16,
+  "createdAt": "2026-10-27T03:37:32.668Z",
+  "updatedAt": "2026-10-27T03:38:13.245Z",
+  "mode": "automatic-model",
+  "published": {
+    "version": 3,
+    "en": "Cyanotype Book-Cover Workshop — complete registration policy.\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a scholarship holder pays USD 0.00; (2) a person who is both a resident and a member pays USD 17.25; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee.",
+    "es": "Taller de cubiertas de libros con cianotipia — política completa de inscripción.\nUna persona es elegible solo si se cumplen todos estos requisitos: su edad es de 16 a 75 inclusive; es residente, estudiante o miembro (al menos uno); y o bien tiene al menos 18 años o tiene el consentimiento del tutor. Una beca no exime ningún requisito de elegibilidad. Las solicitudes deben presentarse en o después de 2027-04-03T09:15:00.000Z y estrictamente antes de 2027-04-10T20:45:00.000Z. Estos son instantes UTC; no hay otros requisitos de elegibilidad ni plazos.\nPara una persona elegible, utilice la primera regla de tarifa coincidente en el siguiente orden, sin combinar tarifas: (1) un becario paga USD 0.00; (2) una persona que es tanto residente como miembro paga USD 17.25; (3) un estudiante que no es miembro paga USD 13.50. Si ninguna aplica, la tarifa fija es USD 36.75. El consentimiento del tutor y la edad no cambian de otro modo la tarifa. Un solicitante rechazado no debe ninguna tarifa.",
+    "rules": {
+      "eligibility": {
+        "op": "all",
+        "args": [
+          {
+            "op": "all",
+            "args": [
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 16
+              },
+              {
+                "op": "age",
+                "cmp": "lte",
+                "value": 75
+              }
+            ]
+          },
+          {
+            "op": "any",
+            "args": [
+              {
+                "op": "flag",
+                "field": "resident",
+                "value": true
+              },
+              {
+                "op": "flag",
+                "field": "student",
+                "value": true
+              },
+              {
+                "op": "flag",
+                "field": "member",
+                "value": true
+              }
+            ]
+          },
+          {
+            "op": "any",
+            "args": [
+              {
+                "op": "age",
+                "cmp": "gte",
+                "value": 18
+              },
+              {
+                "op": "flag",
+                "field": "guardianConsent",
+                "value": true
+              }
+            ]
+          },
+          {
+            "op": "time",
+            "cmp": "gte",
+            "value": "2027-04-03T09:15:00.000Z"
+          },
+          {
+            "op": "time",
+            "cmp": "lt",
+            "value": "2027-04-10T20:45:00.000Z"
+          }
+        ]
+      },
+      "fee": {
+        "currency": "USD",
+        "defaultCents": 3675,
+        "overrides": [
+          {
+            "when": {
+              "op": "flag",
+              "field": "scholarship",
+              "value": true
+            },
+            "cents": 0,
+            "label": "scholarship holder"
+          },
+          {
+            "when": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "flag",
+                  "field": "resident",
+                  "value": true
+                },
+                {
+                  "op": "flag",
+                  "field": "member",
+                  "value": true
+                }
+              ]
+            },
+            "cents": 1725,
+            "label": "resident and member"
+          },
+          {
+            "when": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "flag",
+                  "field": "student",
+                  "value": true
+                },
+                {
+                  "op": "flag",
+                  "field": "member",
+                  "value": false
+                }
+              ]
+            },
+            "cents": 1350,
+            "label": "student who is not a member"
+          }
+        ]
+      }
+    },
+    "publishedAt": "2026-10-27T03:38:13.051Z",
+    "reviewId": "studio-review-11",
+    "candidateId": "studio-review-11-alice"
+  },
+  "drafts": {
+    "alice": {
+      "editor": "alice",
+      "language": "en",
+      "version": 3,
+      "text": "Cyanotype Book-Cover Workshop — complete registration policy.\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a scholarship holder pays USD 0.00; (2) a person who is both a resident and a member pays USD 17.25; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee."
+    },
+    "bob": {
+      "editor": "bob",
+      "language": "es",
+      "version": 3,
+      "text": "Taller de cubiertas de libros con cianotipia — política completa de inscripción.\nUna persona puede participar únicamente si cumple todos estos requisitos: tiene entre 16 y 75 años, ambos inclusive; es residente, estudiante o miembro (al menos una de estas condiciones); y tiene al menos 18 años o cuenta con el consentimiento de su tutor. Una beca no exime de ningún requisito de participación. La solicitud debe presentarse en 2027-04-03T09:15:00.000Z o después de ese instante, y estrictamente antes de 2027-04-10T20:45:00.000Z. Estos instantes están expresados en UTC; no hay otros requisitos de participación ni plazos.\nPara cada persona admitida, se elige una sola tarifa: la primera condición cumplida en esta lista ordenada tiene prioridad sobre todas las posteriores. Primero, tener una beca implica pagar USD 0.00. Segundo, ser residente y miembro implica pagar USD 17.25. Tercero, ser estudiante sin ser miembro implica pagar USD 13.50. Cuando ninguna condición se cumple, se pagan USD 36.75. No se suman ni se combinan tarifas. El consentimiento del tutor y la edad no modifican la tarifa de ninguna otra forma. Una persona cuya solicitud sea rechazada no debe pagar ninguna tarifa."
+    }
+  },
+  "activeJob": null,
+  "review": {
+    "id": "studio-review-11",
+    "basePolicyVersion": 2,
+    "candidates": [
+      {
+        "id": "studio-review-11-alice",
+        "editor": "alice",
+        "sourceVersion": 3,
+        "en": "Cyanotype Book-Cover Workshop — complete registration policy.\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a scholarship holder pays USD 0.00; (2) a person who is both a resident and a member pays USD 17.25; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee.",
+        "es": "Taller de cubiertas de libros con cianotipia — política completa de inscripción.\nUna persona es elegible solo si se cumplen todos estos requisitos: su edad es de 16 a 75 inclusive; es residente, estudiante o miembro (al menos uno); y o bien tiene al menos 18 años o tiene el consentimiento del tutor. Una beca no exime ningún requisito de elegibilidad. Las solicitudes deben presentarse en o después de 2027-04-03T09:15:00.000Z y estrictamente antes de 2027-04-10T20:45:00.000Z. Estos son instantes UTC; no hay otros requisitos de elegibilidad ni plazos.\nPara una persona elegible, utilice la primera regla de tarifa coincidente en el siguiente orden, sin combinar tarifas: (1) un becario paga USD 0.00; (2) una persona que es tanto residente como miembro paga USD 17.25; (3) un estudiante que no es miembro paga USD 13.50. Si ninguna aplica, la tarifa fija es USD 36.75. El consentimiento del tutor y la edad no cambian de otro modo la tarifa. Un solicitante rechazado no debe ninguna tarifa.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "age",
+                    "cmp": "lte",
+                    "value": 75
+                  }
+                ]
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2027-04-03T09:15:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2027-04-10T20:45:00.000Z"
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 3675,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "scholarship holder"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 1725,
+                "label": "resident and member"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": false
+                    }
+                  ]
+                },
+                "cents": 1350,
+                "label": "student who is not a member"
+              }
+            ]
+          }
+        },
+        "issues": []
+      },
+      {
+        "id": "studio-review-11-bob",
+        "editor": "bob",
+        "sourceVersion": 3,
+        "en": "Cyanotype Book-Cover Workshop — complete registration policy.\nA person may participate only if they meet all of these requirements: they are between 16 and 75 years old, both inclusive; they are a resident, student or member (at least one of these conditions); and they are at least 18 years old or have guardian consent. A scholarship does not exempt any participation requirement. The application must be submitted on 2027-04-03T09:15:00.000Z or after that instant, and strictly before 2027-04-10T20:45:00.000Z. These instants are expressed in UTC; there are no other participation requirements or deadlines.\nFor each admitted person, a single fee is chosen: the first condition met in this ordered list takes priority over all later ones. First, having a scholarship implies paying USD 0.00. Second, being a resident and member implies paying USD 17.25. Third, being a student without being a member implies paying USD 13.50. When no condition is met, USD 36.75 is paid. Fees are not added or combined. Guardian consent and age do not modify the fee in any other way. A person whose application is rejected must not pay any fee.",
+        "es": "Taller de cubiertas de libros con cianotipia — política completa de inscripción.\nUna persona puede participar únicamente si cumple todos estos requisitos: tiene entre 16 y 75 años, ambos inclusive; es residente, estudiante o miembro (al menos una de estas condiciones); y tiene al menos 18 años o cuenta con el consentimiento de su tutor. Una beca no exime de ningún requisito de participación. La solicitud debe presentarse en 2027-04-03T09:15:00.000Z o después de ese instante, y estrictamente antes de 2027-04-10T20:45:00.000Z. Estos instantes están expresados en UTC; no hay otros requisitos de participación ni plazos.\nPara cada persona admitida, se elige una sola tarifa: la primera condición cumplida en esta lista ordenada tiene prioridad sobre todas las posteriores. Primero, tener una beca implica pagar USD 0.00. Segundo, ser residente y miembro implica pagar USD 17.25. Tercero, ser estudiante sin ser miembro implica pagar USD 13.50. Cuando ninguna condición se cumple, se pagan USD 36.75. No se suman ni se combinan tarifas. El consentimiento del tutor y la edad no modifican la tarifa de ninguna otra forma. Una persona cuya solicitud sea rechazada no debe pagar ninguna tarifa.",
+        "rules": {
+          "eligibility": {
+            "op": "all",
+            "args": [
+              {
+                "op": "all",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 16
+                  },
+                  {
+                    "op": "age",
+                    "cmp": "lte",
+                    "value": 75
+                  }
+                ]
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "student",
+                    "value": true
+                  },
+                  {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "any",
+                "args": [
+                  {
+                    "op": "age",
+                    "cmp": "gte",
+                    "value": 18
+                  },
+                  {
+                    "op": "flag",
+                    "field": "guardianConsent",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "op": "time",
+                "cmp": "gte",
+                "value": "2027-04-03T09:15:00.000Z"
+              },
+              {
+                "op": "time",
+                "cmp": "lt",
+                "value": "2027-04-10T20:45:00.000Z"
+              }
+            ]
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 3675,
+            "overrides": [
+              {
+                "when": {
+                  "op": "flag",
+                  "field": "scholarship",
+                  "value": true
+                },
+                "cents": 0,
+                "label": "scholarship holder"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "resident",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": true
+                    }
+                  ]
+                },
+                "cents": 1725,
+                "label": "resident and member"
+              },
+              {
+                "when": {
+                  "op": "all",
+                  "args": [
+                    {
+                      "op": "flag",
+                      "field": "student",
+                      "value": true
+                    },
+                    {
+                      "op": "flag",
+                      "field": "member",
+                      "value": false
+                    }
+                  ]
+                },
+                "cents": 1350,
+                "label": "student who is not a member"
+              }
+            ]
+          }
+        },
+        "issues": []
+      }
+    ],
+    "votes": {
+      "alice": "studio-review-11-alice",
+      "bob": "studio-review-11-alice"
+    },
+    "status": "published",
+    "provenance": "meta-model",
+    "discovery": {
+      "status": "equivalent",
+      "witnesses": [],
+      "checkedCases": 2816,
+      "issues": [],
+      "coverage": {
+        "ageValues": 121,
+        "agePartitions": 11,
+        "flagCombinations": 32,
+        "timePartitions": 8,
+        "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+      }
+    },
+    "createdAt": "2026-10-27T03:38:11.277Z",
+    "publishedVersion": 3
+  },
+  "registrations": [
+    {
+      "requestId": "eval-pair1_initial-22344959-5c22-458c-9897-a8a870049a60",
+      "policyVersion": 2,
+      "label": "Synthetic frozen resident_member_scholarship",
+      "age": 32,
+      "resident": true,
+      "student": false,
+      "member": true,
+      "guardianConsent": false,
+      "scholarship": true,
+      "submittedAt": "2027-04-06T12:00:00.000Z",
+      "id": "studio-receipt-8",
+      "recordedAt": "2026-10-27T03:37:54.179Z",
+      "decision": {
+        "accepted": true,
+        "feeCents": 1725,
+        "feeReason": {
+          "en": "First matching fee rule: resident and member",
+          "es": "Primera regla de tarifa aplicable: resident and member"
+        },
+        "trace": [
+          {
+            "path": "eligibility",
+            "passed": true,
+            "en": "((age ≥ 16 AND age ≤ 75) AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND (submitted ≥ 2027-04-03T09:15:00.000Z AND submitted < 2027-04-10T20:45:00.000Z))",
+            "es": "((edad ≥ 16 Y edad ≤ 75) Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y (inscripción ≥ 2027-04-03T09:15:00.000Z Y inscripción < 2027-04-10T20:45:00.000Z))"
+          },
+          {
+            "path": "eligibility.0",
+            "passed": true,
+            "en": "(age ≥ 16 AND age ≤ 75)",
+            "es": "(edad ≥ 16 Y edad ≤ 75)"
+          },
+          {
+            "path": "eligibility.0.0",
+            "passed": true,
+            "en": "age ≥ 16",
+            "es": "edad ≥ 16"
+          },
+          {
+            "path": "eligibility.0.1",
+            "passed": true,
+            "en": "age ≤ 75",
+            "es": "edad ≤ 75"
+          },
+          {
+            "path": "eligibility.1",
+            "passed": true,
+            "en": "(resident OR student OR member)",
+            "es": "(residente O estudiante O miembro)"
+          },
+          {
+            "path": "eligibility.1.0",
+            "passed": true,
+            "en": "resident",
+            "es": "residente"
+          },
+          {
+            "path": "eligibility.1.1",
+            "passed": false,
+            "en": "student",
+            "es": "estudiante"
+          },
+          {
+            "path": "eligibility.1.2",
+            "passed": true,
+            "en": "member",
+            "es": "miembro"
+          },
+          {
+            "path": "eligibility.2",
+            "passed": true,
+            "en": "(age ≥ 18 OR guardian consent)",
+            "es": "(edad ≥ 18 O consentimiento del tutor)"
+          },
+          {
+            "path": "eligibility.2.0",
+            "passed": true,
+            "en": "age ≥ 18",
+            "es": "edad ≥ 18"
+          },
+          {
+            "path": "eligibility.2.1",
+            "passed": false,
+            "en": "guardian consent",
+            "es": "consentimiento del tutor"
+          },
+          {
+            "path": "eligibility.3",
+            "passed": true,
+            "en": "(submitted ≥ 2027-04-03T09:15:00.000Z AND submitted < 2027-04-10T20:45:00.000Z)",
+            "es": "(inscripción ≥ 2027-04-03T09:15:00.000Z Y inscripción < 2027-04-10T20:45:00.000Z)"
+          },
+          {
+            "path": "eligibility.3.0",
+            "passed": true,
+            "en": "submitted ≥ 2027-04-03T09:15:00.000Z",
+            "es": "inscripción ≥ 2027-04-03T09:15:00.000Z"
+          },
+          {
+            "path": "eligibility.3.1",
+            "passed": true,
+            "en": "submitted < 2027-04-10T20:45:00.000Z",
+            "es": "inscripción < 2027-04-10T20:45:00.000Z"
+          },
+          {
+            "path": "fee.0",
+            "passed": true,
+            "en": "(resident AND member)",
+            "es": "(residente Y miembro)"
+          },
+          {
+            "path": "fee.0.0",
+            "passed": true,
+            "en": "resident",
+            "es": "residente"
+          },
+          {
+            "path": "fee.0.1",
+            "passed": true,
+            "en": "member",
+            "es": "miembro"
+          }
+        ],
+        "reasons": [
+          {
+            "en": "Meets the complete admission rule.",
+            "es": "Cumple la regla completa de admisión."
+          },
+          {
+            "en": "First matching fee rule: resident and member",
+            "es": "Primera regla de tarifa aplicable: resident and member"
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "eval-pair1_correction-327f86af-abfa-4d6f-b4ca-dacebcf2e881",
+      "policyVersion": 3,
+      "label": "Synthetic frozen resident_member_scholarship",
+      "age": 32,
+      "resident": true,
+      "student": false,
+      "member": true,
+      "guardianConsent": false,
+      "scholarship": true,
+      "submittedAt": "2027-04-06T12:00:00.000Z",
+      "id": "studio-receipt-16",
+      "recordedAt": "2026-10-27T03:38:13.245Z",
+      "decision": {
+        "accepted": true,
+        "feeCents": 0,
+        "feeReason": {
+          "en": "First matching fee rule: scholarship holder",
+          "es": "Primera regla de tarifa aplicable: scholarship holder"
+        },
+        "trace": [
+          {
+            "path": "eligibility",
+            "passed": true,
+            "en": "((age ≥ 16 AND age ≤ 75) AND (resident OR student OR member) AND (age ≥ 18 OR guardian consent) AND submitted ≥ 2027-04-03T09:15:00.000Z AND submitted < 2027-04-10T20:45:00.000Z)",
+            "es": "((edad ≥ 16 Y edad ≤ 75) Y (residente O estudiante O miembro) Y (edad ≥ 18 O consentimiento del tutor) Y inscripción ≥ 2027-04-03T09:15:00.000Z Y inscripción < 2027-04-10T20:45:00.000Z)"
+          },
+          {
+            "path": "eligibility.0",
+            "passed": true,
+            "en": "(age ≥ 16 AND age ≤ 75)",
+            "es": "(edad ≥ 16 Y edad ≤ 75)"
+          },
+          {
+            "path": "eligibility.0.0",
+            "passed": true,
+            "en": "age ≥ 16",
+            "es": "edad ≥ 16"
+          },
+          {
+            "path": "eligibility.0.1",
+            "passed": true,
+            "en": "age ≤ 75",
+            "es": "edad ≤ 75"
+          },
+          {
+            "path": "eligibility.1",
+            "passed": true,
+            "en": "(resident OR student OR member)",
+            "es": "(residente O estudiante O miembro)"
+          },
+          {
+            "path": "eligibility.1.0",
+            "passed": true,
+            "en": "resident",
+            "es": "residente"
+          },
+          {
+            "path": "eligibility.1.1",
+            "passed": false,
+            "en": "student",
+            "es": "estudiante"
+          },
+          {
+            "path": "eligibility.1.2",
+            "passed": true,
+            "en": "member",
+            "es": "miembro"
+          },
+          {
+            "path": "eligibility.2",
+            "passed": true,
+            "en": "(age ≥ 18 OR guardian consent)",
+            "es": "(edad ≥ 18 O consentimiento del tutor)"
+          },
+          {
+            "path": "eligibility.2.0",
+            "passed": true,
+            "en": "age ≥ 18",
+            "es": "edad ≥ 18"
+          },
+          {
+            "path": "eligibility.2.1",
+            "passed": false,
+            "en": "guardian consent",
+            "es": "consentimiento del tutor"
+          },
+          {
+            "path": "eligibility.3",
+            "passed": true,
+            "en": "submitted ≥ 2027-04-03T09:15:00.000Z",
+            "es": "inscripción ≥ 2027-04-03T09:15:00.000Z"
+          },
+          {
+            "path": "eligibility.4",
+            "passed": true,
+            "en": "submitted < 2027-04-10T20:45:00.000Z",
+            "es": "inscripción < 2027-04-10T20:45:00.000Z"
+          },
+          {
+            "path": "fee.0",
+            "passed": true,
+            "en": "scholarship",
+            "es": "beca"
+          }
+        ],
+        "reasons": [
+          {
+            "en": "Meets the complete admission rule.",
+            "es": "Cumple la regla completa de admisión."
+          },
+          {
+            "en": "First matching fee rule: scholarship holder",
+            "es": "Primera regla de tarifa aplicable: scholarship holder"
+          }
+        ]
+      }
+    }
+  ],
+  "modelCallCount": 2,
+  "automaticReview": {
+    "requestId": "517ecddc-860c-4223-82c2-cc100507b759",
+    "jobId": "studio-review-11",
+    "provider": "Meta",
+    "model": "muse-spark-1.3",
+    "source": "meta",
+    "status": "completed",
+    "startedAt": "2026-10-27T03:37:55.371Z",
+    "leaseExpiresAt": "2026-10-27T03:39:25.371Z",
+    "finishedAt": "2026-10-27T03:38:11.277Z",
+    "durationMs": 15906
+  }
+}

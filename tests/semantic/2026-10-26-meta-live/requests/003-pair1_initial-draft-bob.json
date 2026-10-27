@@ -1,0 +1,14 @@
+{
+  "sequence": 3,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-2b4e9c58-8a38-4a59-9afd-3c4896a7da50",
+  "body": {
+    "type": "draft",
+    "editor": "bob",
+    "baseVersion": 1,
+    "text": "Taller de cubiertas de libros con cianotipia — política completa de inscripción.\nUna persona puede participar únicamente si cumple todos estos requisitos: tiene entre 16 y 75 años, ambos inclusive; es residente, estudiante o miembro (al menos una de estas condiciones); y tiene al menos 18 años o cuenta con el consentimiento de su tutor. Una beca no exime de ningún requisito de participación. La solicitud debe presentarse en 2027-04-03T09:15:00.000Z o después de ese instante, y estrictamente antes de 2027-04-10T20:45:00.000Z. Estos instantes están expresados en UTC; no hay otros requisitos de participación ni plazos.\nPara una persona que puede participar, se aplica la primera tarifa que corresponda en el siguiente orden, sin combinar tarifas: (1) una persona con beca paga USD 0.00; (2) una persona que es tanto residente como miembro paga USD 17.25; (3) una persona que es estudiante y no es miembro paga USD 13.50. Si no corresponde ninguna de estas tarifas, la tarifa fija es USD 36.75. El consentimiento del tutor y la edad no modifican la tarifa de ninguna otra forma. Una persona cuya solicitud sea rechazada no debe pagar ninguna tarifa."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T03:37:32.859Z"
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "samepage-frozen-corpus-independent-audit-v1",
+  "auditedAt": "2026-10-27T03:33:22.010293+00:00",
+  "status": "pass",
+  "scope": "Independent semantic audit before inspecting any live provider result. Read corpus.json, corpus-notes.md, and complete buildStudioPrompt contract. No provider, browser, or network calls; no frozen files or application files modified.",
+  "corpusBytesSha256": "4202af1610de58a958241c187200f5c740e95b9b70d8868c3eb6fbd0b5d75ecb",
+  "notesBytesSha256": "617dbf1c306211046b47cddfd4c9e678fbdb125df44efedcee1f2a492d2839fe",
+  "freezeChecks": [
+    {
+      "payload": "providerInputs",
+      "sha256": "62b250cf9e2b3a2cdfd2ca216becaf301b659196fa3abe61a54a8362b6de1ecb",
+      "matches": true
+    },
+    {
+      "payload": "evaluations",
+      "sha256": "f84cf8612e6d8d02dbd690799be9b7275c16d803f347abebcf751292ed5bc808",
+      "matches": true
+    },
+    {
+      "payload": "corpusWithoutFreeze",
+      "sha256": "cc4358069bbb2440c8a2b26c2575e5dbfcb05ab0c1def3dac04cbd2ddea4f177",
+      "matches": true
+    }
+  ],
+  "findings": [],
+  "sourceInterpretationFindings": [
+    "Each English and Spanish policy is complete within the supported contract. No unintended missing requirement, unsupported clause, contradiction, or ambiguity was found in the three executable stages.",
+    "Initial cyanotype rules differ only for eligible resident members with scholarships; Alice charges 1725 cents and Bob zero. All eligibility, age, consent, and UTC time scopes match.",
+    "The bilingual correction makes scholarship first for both independently interpreted sources, changes only the affected Alice fees, and admits the target at zero cents.",
+    "Stop-motion Alice admits nonresident student members only with scholarships and strictly before closing; Bob continues excluding that subgroup and permits the exact closing instant for otherwise eligible attendees. Other admission and fee scopes match.",
+    "Paper-sculpture provides complete eligibility and no time restrictions but leaves overlapping fixed-price priority unspecified in both languages. Whole rules:null with targeted fee clarification is appropriate; source listing order cannot supply priority under the production prompt."
+  ],
+  "localVerification": {
+    "namedOutcomeChecks": 120,
+    "sourceToRulePartitionChecks": 162624,
+    "ageDomain": "Every integer age 0..120",
+    "flagDomain": "All 32 combinations of the five supported flags",
+    "timeDomain": "Seven instants per executable stage covering both endpoints and +/-1 millisecond plus interior; these represent every distinct comparison truth region",
+    "results": [
+      {
+        "stageId": "pair1_initial",
+        "namedOutcomesChecked": 38,
+        "sourceToRuleChecks": 54208,
+        "witnessCategories": [
+          "price-left-higher"
+        ],
+        "maximumFeeDeltaCents": 1725,
+        "schemaMetrics": {
+          "alice": {
+            "conditionNodes": 19,
+            "maxDepth": 3,
+            "feeOverrides": 3
+          },
+          "bob": {
+            "conditionNodes": 19,
+            "maxDepth": 3,
+            "feeOverrides": 3
+          }
+        }
+      },
+      {
+        "stageId": "pair1_correction",
+        "namedOutcomesChecked": 38,
+        "sourceToRuleChecks": 54208,
+        "witnessCategories": [],
+        "maximumFeeDeltaCents": 0,
+        "schemaMetrics": {
+          "alice": {
+            "conditionNodes": 19,
+            "maxDepth": 3,
+            "feeOverrides": 3
+          },
+          "bob": {
+            "conditionNodes": 19,
+            "maxDepth": 3,
+            "feeOverrides": 3
+          }
+        }
+      },
+      {
+        "stageId": "pair2_boundary_exception",
+        "namedOutcomesChecked": 44,
+        "sourceToRuleChecks": 54208,
+        "witnessCategories": [
+          "admission-left",
+          "admission-right"
+        ],
+        "maximumFeeDeltaCents": 0,
+        "schemaMetrics": {
+          "alice": {
+            "conditionNodes": 19,
+            "maxDepth": 6,
+            "feeOverrides": 3
+          },
+          "bob": {
+            "conditionNodes": 17,
+            "maxDepth": 5,
+            "feeOverrides": 3
+          }
+        }
+      }
+    ]
+  },
+  "nonblockingNotes": [
+    {
+      "location": "pair1_correction.evaluation.outcomeCases[resident_member_scholarship].purpose",
+      "detail": "The copied purpose still says it isolates a disagreement, although the correction has eliminated that disagreement. This is descriptive metadata only; expected zero-fee outcomes and correction assertions are correct. Frozen content was left unchanged."
+    }
+  ],
+  "limitations": [
+    "This audit validates the frozen goldens and source meaning. It does not assess a live provider response or translation output."
+  ]
+}

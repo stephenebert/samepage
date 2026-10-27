@@ -1,0 +1,58 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 326,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-2b4e9c58-8a38-4a59-9afd-3c4896a7da50\",\"revision\":2,\"createdAt\":\"2026-10-27T03:37:32.668Z\",\"updatedAt\":\"2026-10-27T03:37:33.053Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T03:37:32.668Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Cyanotype Book-Cover Workshop — complete registration policy.\\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a person who is both a resident and a member pays USD 17.25; (2) a scholarship holder pays USD 0.00; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Taller de cubiertas de libros con cianotipia — política completa de inscripción.\\nUna persona puede participar únicamente si cumple todos estos requisitos: tiene entre 16 y 75 años, ambos inclusive; es residente, estudiante o miembro (al menos una de estas condiciones); y tiene al menos 18 años o cuenta con el consentimiento de su tutor. Una beca no exime de ningún requisito de participación. La solicitud debe presentarse en 2027-04-03T09:15:00.000Z o después de ese instante, y estrictamente antes de 2027-04-10T20:45:00.000Z. Estos instantes están expresados en UTC; no hay otros requisitos de participación ni plazos.\\nPara una persona que puede participar, se aplica la primera tarifa que corresponda en el siguiente orden, sin combinar tarifas: (1) una persona con beca paga USD 0.00; (2) una persona que es tanto residente como miembro paga USD 17.25; (3) una persona que es estudiante y no es miembro paga USD 13.50. Si no corresponde ninguna de estas tarifas, la tarifa fija es USD 36.75. El consentimiento del tutor y la edad no modifican la tarifa de ninguna otra forma. Una persona cuya solicitud sea rechazada no debe pagar ninguna tarifa.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-2b4e9c58-8a38-4a59-9afd-3c4896a7da50",
+      "revision": 2,
+      "createdAt": "2026-10-27T03:37:32.668Z",
+      "updatedAt": "2026-10-27T03:37:33.053Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T03:37:32.668Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Cyanotype Book-Cover Workshop — complete registration policy.\nA person is eligible only if all of these requirements hold: their age is 16 through 75 inclusive; they are a resident, a student, or a member (at least one); and either they are at least 18 or they have guardian consent. A scholarship does not waive any eligibility requirement. Applications must be submitted at or after 2027-04-03T09:15:00.000Z and strictly before 2027-04-10T20:45:00.000Z. These are UTC instants; there are no other eligibility requirements or deadlines.\nFor an eligible person, use the first matching fee rule in the following order, without combining rates: (1) a person who is both a resident and a member pays USD 17.25; (2) a scholarship holder pays USD 0.00; (3) a student who is not a member pays USD 13.50. If none applies, the fixed fee is USD 36.75. Guardian consent and age do not otherwise change the fee. A rejected applicant owes no fee."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Taller de cubiertas de libros con cianotipia — política completa de inscripción.\nUna persona puede participar únicamente si cumple todos estos requisitos: tiene entre 16 y 75 años, ambos inclusive; es residente, estudiante o miembro (al menos una de estas condiciones); y tiene al menos 18 años o cuenta con el consentimiento de su tutor. Una beca no exime de ningún requisito de participación. La solicitud debe presentarse en 2027-04-03T09:15:00.000Z o después de ese instante, y estrictamente antes de 2027-04-10T20:45:00.000Z. Estos instantes están expresados en UTC; no hay otros requisitos de participación ni plazos.\nPara una persona que puede participar, se aplica la primera tarifa que corresponda en el siguiente orden, sin combinar tarifas: (1) una persona con beca paga USD 0.00; (2) una persona que es tanto residente como miembro paga USD 17.25; (3) una persona que es estudiante y no es miembro paga USD 13.50. Si no corresponde ninguna de estas tarifas, la tarifa fija es USD 36.75. El consentimiento del tutor y la edad no modifican la tarifa de ninguna otra forma. Una persona cuya solicitud sea rechazada no debe pagar ninguna tarifa."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "failures": [],
+  "scenarioResults": [
+    {
+      "scenarioId": "member_scholarship_overlap",
+      "editor": "alice",
+      "attendee": {
+        "age": 32,
+        "resident": true,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2030-01-01T00:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "three_way_overlap",
+      "editor": "alice",
+      "attendee": {
+        "age": 32,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2020-01-01T00:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "member_scholarship_overlap",
+      "editor": "bob",
+      "attendee": {
+        "age": 32,
+        "resident": true,
+        "student": false,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2030-01-01T00:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "three_way_overlap",
+      "editor": "bob",
+      "attendee": {
+        "age": 32,
+        "resident": true,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": true,
+        "submittedAt": "2020-01-01T00:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    }
+  ],
+  "semanticOracleChecks": [],
+  "issueTopicChecks": [
+    {
+      "editor": "alice",
+      "issues": [
+        "Overlapping fee categories have no unambiguous priority or unique resulting fee: a person can simultaneously be a member (USD 11.00), a scholarship holder (USD 0.00), and/or a resident student (USD 7.50) — e.g., a member with a scholarship, a resident student who is also a member, or a resident student with a scholarship — yielding different fixed prices. Source states they are separate fixed prices, not cumulative, but gives no first-match order. Specify explicit priority order or restate as mutually exclusive conditions to determine a unique fee."
+      ],
+      "addressesFees": true,
+      "addressesPriority": true,
+      "method": "Conservative bilingual topic-keyword check; does not prove full natural-language fidelity."
+    },
+    {
+      "editor": "bob",
+      "issues": [
+        "Overlapping fee categories have no unambiguous priority or unique resulting fee: a person can simultaneously be a member (USD 11.00), a scholarship holder (USD 0.00), and/or a resident student (USD 7.50) — e.g., a member with a scholarship, a resident student who is also a member, or a resident student with a scholarship — yielding different fixed prices. Source states they are distinct fixed prices, not cumulative, but gives no first-match order. Specify explicit priority order or restate as mutually exclusive conditions to determine a unique fee."
+      ],
+      "addressesFees": true,
+      "addressesPriority": true,
+      "method": "Conservative bilingual topic-keyword check; does not prove full natural-language fidelity."
+    }
+  ],
+  "discovery": {
+    "status": "unresolved",
+    "witnesses": [],
+    "checkedCases": 0,
+    "issues": [
+      "At least one draft needs clarification; no complete comparison is possible."
+    ],
+    "coverage": {
+      "ageValues": 121,
+      "agePartitions": 0,
+      "flagCombinations": 32,
+      "timePartitions": 0,
+      "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+    }
+  }
+}

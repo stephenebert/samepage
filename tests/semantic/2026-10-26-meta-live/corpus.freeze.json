@@ -1,0 +1,6 @@
+{
+  "algorithm": "sha256",
+  "sha256": "4202af1610de58a958241c187200f5c740e95b9b70d8868c3eb6fbd0b5d75ecb",
+  "bytes": 79445,
+  "source": "Frozen corpus supplied by live_policy_corpus before any live call. Embedded provider-input, held-out-evaluation and corpus-content hashes are checked separately."
+}
