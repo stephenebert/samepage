@@ -1,0 +1,28 @@
+SamePage temporal-language fix vs plain Meta — second frozen comparison
+Prepared 27 October 2026, before any requests for this new holdout.
+
+Question and scope
+Evaluate the revised SamePage bilingual policy interpreter plus deterministic checker against the same competent plain Meta reviewer on12 new synthetic policy pairs. This is a policy-pair interpretation/comparison benchmark. Supplemental simulated approvals and receipts do not constitute a comparative repair study or human usability test.
+The previous benchmark remains unchanged: SamePage11/12 versus plain Meta12/12, with one unnecessary Spanish clarification. The fix adds general explicit-time boundary guidance, respects whole-phrase negation, retains genuine clarification requirements, and invalidates old interpretation caches. It does not rewrite user source or weaken rule validation.
+
+Fresh data
+An author agent with no old policies, old model outputs, application prompts or implementation context authors12 new pairs:6 different,4 equivalent,2 genuinely unresolved. A separate assistant reviews English/Spanish meaning and direct reference functions before freeze. Neither authorship nor review is human validation. Generic case IDs and mixed order are used. Both arms receive only the same two original source policies, without expected labels, oracle code or reference attendees. Freeze inputs, expected outcomes, oracle, prompts, scorer, model settings and request order before provider calls. No replacement, tuning, retries, or exclusions after outputs are observed.
+
+Arms
+Both use muse-spark-1.3, low reasoning,8192 completion-token cap, the same shared system message about untrusted policy text, and separate contexts for each case. Exactly one request per arm per pair;24 maximum. Alternate the first arm across the mixed case order.
+SamePage uses the revised production expression-v3 interpreter, no reuse, followed by unchanged rule validation and consequence discovery. Its complete evaluator snapshot and source commit are frozen in the plan. Plain Meta uses the exact same competent natural-language reviewer prompt/schema as the first benchmark: shared domain requirements, ambiguity handling, classification, concise explanation and one concrete witness. It receives no rule tree or execution tool. Different output overhead is measured as part of each approach, not artificially equalized.
+
+Scoring fixed before calls
+Primary: correct three-way label different/equivalent/unresolved. Keep all12 cases in the denominator. Provider failures, refusals, incomplete output and schema errors are errors, not appropriate clarification. If infrastructure requires early stop, identify unexecuted cases and mark paired comparisons unavailable rather than wins.
+Report6 difference detections,4 equivalent recognitions,2 necessary clarifications, false alarms and unnecessary abstentions separately.
+Secondary: evaluate each returned witness using the independent oracle. A valid witness has truly different outcomes and both reported acceptance/fee amounts correct. Classification credit is separate from witness validity for schema-valid answers.
+For SamePage, separately test each compiled policy against the direct reference across all121 integer ages,32 flag combinations, and source/model time boundaries, adjacent milliseconds and extreme timestamps. A correct pair label does not excuse an incorrect interpretation. Uncompiled resolved sources count as interpretation failures. Source-language fidelity is not proved merely by exhaustive execution of the returned rules.
+Replay actual returned rules offline through production reducers: separate simulated Alice/Bob draft saves, one-approval hold, differing-choice hold, joint selection/publication and correct synthetic form receipts. Truly unresolved cases must block; an unnecessary block is a failure. Preserve existing publications and original evidence.
+Report provider and complete HTTP latency, input/output tokens, estimated uncached-rate cost and whether usage counters are complete. Do not claim measured human-time savings or superiority from one small synthetic sample. Fresh scores are not directly paired with the old holdout scores.
+
+Budget and access
+Billing UI showed148.85USD free credits and0USD outstanding at preflight; recent usage may lag up to one hour. Verified Meta standard muse-spark-1.3 rates:1.25USD input and4.25USD output per million tokens. Reserve every full JSON UTF-8 byte as an input token plus4096 framing tokens and8192 output tokens per call. A32768-byte maximum gives24*((32768+4096)*1.25+8192*4.25)/1e6=1.941504USD, below2USD. This is a conservative estimated run bound, not an account-wide spending limit or confirmed billing.
+New fixed run ID comparison-20261027-v2 has24 durable attempt slots. Prior ledger is preserved; no client-selected resets, prompts, model overrides or retries. Claim and reserve before fetch; duplicate or interrupted slots cannot start another call. Only the private benchmark gate is temporarily enabled. Ordinary Studio model calls remain paused. Remove the benchmark gate and verify no further requests after the run.
+
+Reporting commitment
+Preserve every result and report paired wins/losses/ties, clarification and witness errors, completeness, cost and limitations. Keep the first benchmark and any second-run failure intact. Do not retune the test to produce a winning claim. Any further changes need a separate evaluation.

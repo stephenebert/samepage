@@ -28,7 +28,7 @@ const attendee={age:30,resident:false,student:false,member:false,guardianConsent
 
 test('separate exact-run gate keeps ordinary Studio calls paused and pins all provider settings',()=>{
   assert.doesNotThrow(()=>requireBenchmarkConfig(config,BENCHMARK_RUN_ID));
-  for(const gate of [undefined,'true','comparison-20261027-v2']) assert.throws(()=>requireBenchmarkConfig(config,gate),{code:'BENCHMARK_DISABLED'});
+  for(const gate of [undefined,'true','comparison-20261027-v1',`${BENCHMARK_RUN_ID}-wrong`]) assert.throws(()=>requireBenchmarkConfig(config,gate),{code:'BENCHMARK_DISABLED'});
   for(const drift of [{enabled:true},{model:'different-model'},{reasoningEffort:'medium'},{protocol:'compact-v2'},{reuseUnchanged:true},{maxCompletionTokens:12288}]) assert.throws(()=>requireBenchmarkConfig({...config,...drift},BENCHMARK_RUN_ID),{code:'BENCHMARK_CONFIG'});
 });
 

@@ -1,0 +1,226 @@
+{
+  "runId": "comparison-20261027-v2",
+  "startedAt": "2026-10-27T21:38:09.412Z",
+  "status": "completed",
+  "freezeSha256": "5fec87572c943a864225ad61f7d8bfa3aa60c87b1607de0edc708c1c0ee6d67e",
+  "attempts": [
+    {
+      "caseId": "v2c01",
+      "arm": "samepage",
+      "sequence": 1,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:09.696Z",
+      "httpStatus": 200,
+      "responseFile": "responses/01-v2c01-samepage.json"
+    },
+    {
+      "caseId": "v2c01",
+      "arm": "plain-meta",
+      "sequence": 2,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:16.924Z",
+      "httpStatus": 200,
+      "responseFile": "responses/02-v2c01-plain-meta.json"
+    },
+    {
+      "caseId": "v2c02",
+      "arm": "plain-meta",
+      "sequence": 3,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:21.511Z",
+      "httpStatus": 200,
+      "responseFile": "responses/03-v2c02-plain-meta.json"
+    },
+    {
+      "caseId": "v2c02",
+      "arm": "samepage",
+      "sequence": 4,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:24.022Z",
+      "httpStatus": 200,
+      "responseFile": "responses/04-v2c02-samepage.json"
+    },
+    {
+      "caseId": "v2c03",
+      "arm": "samepage",
+      "sequence": 5,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:32.494Z",
+      "httpStatus": 200,
+      "responseFile": "responses/05-v2c03-samepage.json"
+    },
+    {
+      "caseId": "v2c03",
+      "arm": "plain-meta",
+      "sequence": 6,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:40.172Z",
+      "httpStatus": 200,
+      "responseFile": "responses/06-v2c03-plain-meta.json"
+    },
+    {
+      "caseId": "v2c04",
+      "arm": "plain-meta",
+      "sequence": 7,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:43.137Z",
+      "httpStatus": 200,
+      "responseFile": "responses/07-v2c04-plain-meta.json"
+    },
+    {
+      "caseId": "v2c04",
+      "arm": "samepage",
+      "sequence": 8,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:45.110Z",
+      "httpStatus": 200,
+      "responseFile": "responses/08-v2c04-samepage.json"
+    },
+    {
+      "caseId": "v2c05",
+      "arm": "samepage",
+      "sequence": 9,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:52.317Z",
+      "httpStatus": 200,
+      "responseFile": "responses/09-v2c05-samepage.json"
+    },
+    {
+      "caseId": "v2c05",
+      "arm": "plain-meta",
+      "sequence": 10,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:38:59.676Z",
+      "httpStatus": 200,
+      "responseFile": "responses/10-v2c05-plain-meta.json"
+    },
+    {
+      "caseId": "v2c06",
+      "arm": "plain-meta",
+      "sequence": 11,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:03.125Z",
+      "httpStatus": 200,
+      "responseFile": "responses/11-v2c06-plain-meta.json"
+    },
+    {
+      "caseId": "v2c06",
+      "arm": "samepage",
+      "sequence": 12,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:06.444Z",
+      "httpStatus": 200,
+      "responseFile": "responses/12-v2c06-samepage.json"
+    },
+    {
+      "caseId": "v2c07",
+      "arm": "samepage",
+      "sequence": 13,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:11.300Z",
+      "httpStatus": 200,
+      "responseFile": "responses/13-v2c07-samepage.json"
+    },
+    {
+      "caseId": "v2c07",
+      "arm": "plain-meta",
+      "sequence": 14,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:21.609Z",
+      "httpStatus": 200,
+      "responseFile": "responses/14-v2c07-plain-meta.json"
+    },
+    {
+      "caseId": "v2c08",
+      "arm": "plain-meta",
+      "sequence": 15,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:24.250Z",
+      "httpStatus": 200,
+      "responseFile": "responses/15-v2c08-plain-meta.json"
+    },
+    {
+      "caseId": "v2c08",
+      "arm": "samepage",
+      "sequence": 16,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:26.939Z",
+      "httpStatus": 200,
+      "responseFile": "responses/16-v2c08-samepage.json"
+    },
+    {
+      "caseId": "v2c09",
+      "arm": "samepage",
+      "sequence": 17,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:33.092Z",
+      "httpStatus": 200,
+      "responseFile": "responses/17-v2c09-samepage.json"
+    },
+    {
+      "caseId": "v2c09",
+      "arm": "plain-meta",
+      "sequence": 18,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:39.361Z",
+      "httpStatus": 200,
+      "responseFile": "responses/18-v2c09-plain-meta.json"
+    },
+    {
+      "caseId": "v2c10",
+      "arm": "plain-meta",
+      "sequence": 19,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:44.231Z",
+      "httpStatus": 200,
+      "responseFile": "responses/19-v2c10-plain-meta.json"
+    },
+    {
+      "caseId": "v2c10",
+      "arm": "samepage",
+      "sequence": 20,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:47.316Z",
+      "httpStatus": 200,
+      "responseFile": "responses/20-v2c10-samepage.json"
+    },
+    {
+      "caseId": "v2c11",
+      "arm": "samepage",
+      "sequence": 21,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:55.601Z",
+      "httpStatus": 200,
+      "responseFile": "responses/21-v2c11-samepage.json"
+    },
+    {
+      "caseId": "v2c11",
+      "arm": "plain-meta",
+      "sequence": 22,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:40:09.647Z",
+      "httpStatus": 200,
+      "responseFile": "responses/22-v2c11-plain-meta.json"
+    },
+    {
+      "caseId": "v2c12",
+      "arm": "plain-meta",
+      "sequence": 23,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:40:12.082Z",
+      "httpStatus": 200,
+      "responseFile": "responses/23-v2c12-plain-meta.json"
+    },
+    {
+      "caseId": "v2c12",
+      "arm": "samepage",
+      "sequence": 24,
+      "status": "completed",
+      "startedAt": "2026-10-27T21:40:16.185Z",
+      "httpStatus": 200,
+      "responseFile": "responses/24-v2c12-samepage.json"
+    }
+  ],
+  "actualBilledCostUsd": null,
+  "finishedAt": "2026-10-27T21:40:22.569Z"
+}

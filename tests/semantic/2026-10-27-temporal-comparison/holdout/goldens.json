@@ -1,0 +1,1777 @@
+{
+  "cases": [
+    {
+      "id": "v2c01",
+      "status": "different",
+      "rationale": "Alice requires submission strictly before the stated UTC deadline. Bob includes that exact instant. An otherwise eligible applicant at the deadline is rejected by Alice and admitted by Bob.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2031-04-09T18:29:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2400
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2400
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2031-04-09T18:30:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2400
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2031-04-09T18:30:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 0
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2031-04-09T18:30:00.001Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2031-04-09T18:29:59.999Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2031-04-09T18:29:59.999Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 120,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "0000-01-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 0
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 0
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "9999-12-31T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c02",
+      "status": "equivalent",
+      "rationale": "Both admit exactly ages 12–17 with (resident OR student) AND (member OR guardianConsent). Both apply scholarship, then member, then student, then default fees. Neither restricts submission time.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 11,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 12,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1800
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1800
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 900
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 900
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 12,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1400
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1400
+          }
+        },
+        {
+          "attendee": {
+            "age": 12,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": true,
+            "student": true,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 0
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 0
+          }
+        },
+        {
+          "attendee": {
+            "age": 12,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "0000-01-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 900
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 900
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "9999-12-31T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1400
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1400
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c03",
+      "status": "equivalent",
+      "rationale": "The admission alternatives describe age >=16 AND (age >=18 OR guardianConsent). In both fee descriptions a scholarship takes priority over membership; all other members pay 1500 cents and all remaining admitted people pay 2500 cents. Neither has a deadline.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 15,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 16,
+            "resident": false,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 16,
+            "resident": false,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2500
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2500
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1500
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1500
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2500
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2500
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 0
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 0
+          }
+        },
+        {
+          "attendee": {
+            "age": 120,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 0
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 0
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "0000-01-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1500
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1500
+          }
+        },
+        {
+          "attendee": {
+            "age": 16,
+            "resident": false,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "9999-12-31T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2500
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2500
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c04",
+      "status": "different",
+      "rationale": "Alice excludes the intersection of residents and students. Bob excludes their union. At age 18 or older, belonging to exactly one of those groups produces a different admission result. Fees agree wherever both admit.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1900
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1100
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1900
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1900
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1100
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1100
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 120,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "9999-12-31T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1100
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1100
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c05",
+      "status": "different",
+      "rationale": "Admission agrees. For an admitted applicant who is both a member and a scholarship holder, Alice selects the earlier member rule (1200 cents), while Bob selects the earlier scholarship rule (400 cents). The explicit first-match orders resolve each source independently.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1200
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 400
+          }
+        },
+        {
+          "attendee": {
+            "age": 8,
+            "resident": true,
+            "student": true,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1200
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 400
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 400
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 400
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1200
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1200
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2000
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2000
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2800
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2800
+          }
+        },
+        {
+          "attendee": {
+            "age": 7,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 8,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 400
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 400
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c06",
+      "status": "unresolved",
+      "rationale": "Alice gives a local clock deadline without a location or time zone. The UTC instant cannot be determined from the supplied policy. Bob specifies a UTC deadline. No external location or time-zone assumption is authorized.",
+      "examples": []
+    },
+    {
+      "id": "v2c07",
+      "status": "equivalent",
+      "rationale": "At UTC millisecond precision, the instants strictly after 2028-02-28T23:59:59.999Z and strictly before 2028-03-01T00:00:00.000Z are exactly the inclusive UTC interval spanning February 29. The age, consent, resident-or-scholarship conditions and student fee agree.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2028-02-28T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2028-02-29T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1600
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1600
+          }
+        },
+        {
+          "attendee": {
+            "age": 14,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2028-02-29T00:00:00.001Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 800
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 800
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2028-02-29T23:59:59.998Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1600
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1600
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2028-02-29T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 800
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 800
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2028-03-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 13,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2028-02-29T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 14,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2028-02-29T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2028-02-29T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 14,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2028-02-29T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1600
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1600
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c08",
+      "status": "different",
+      "rationale": "Within ages 10–17, Alice requires guardian consent for either student or member eligibility. Bob has a student path with no consent requirement and a member-with-consent path. A student without guardian consent is admitted only by Bob.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 10,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1300
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 300
+          }
+        },
+        {
+          "attendee": {
+            "age": 10,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1300
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1300
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 300
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 300
+          }
+        },
+        {
+          "attendee": {
+            "age": 10,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 10,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 9,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "9999-12-31T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1300
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1300
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c09",
+      "status": "unresolved",
+      "rationale": "Alice states a member fee and a student fee but supplies no priority or combination rule for an admitted applicant in both groups. Their fee is not uniquely determined. Bob supplies an explicit first-match order. It would be an extra assumption to turn Alice’s sentence order into a priority rule.",
+      "examples": []
+    },
+    {
+      "id": "v2c10",
+      "status": "different",
+      "rationale": "The upper UTC endpoint is excluded in both policies. Alice also excludes the opening instant using “after”; Bob includes the opening instant. At the opening instant an otherwise eligible person is admitted only by Bob.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 0,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2026-12-06T08:59:59.999Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 0,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2026-12-06T09:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 700
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2026-12-06T09:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 0
+          }
+        },
+        {
+          "attendee": {
+            "age": 0,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2026-12-06T09:00:00.001Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 700
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 700
+          }
+        },
+        {
+          "attendee": {
+            "age": 120,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2026-12-06T09:59:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 0
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 0
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2026-12-06T10:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2026-12-06T10:00:00.001Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2026-12-06T09:30:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2026-12-06T09:30:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c11",
+      "status": "equivalent",
+      "rationale": "Both admit exactly residents aged at least 21 who are not students. Alice’s student fee branch is unreachable for admitted applicants. Both therefore charge admitted members 1000 cents and other admitted people 2000 cents; rejected people have no fee.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 21,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2000
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2000
+          }
+        },
+        {
+          "attendee": {
+            "age": 21,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1000
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1000
+          }
+        },
+        {
+          "attendee": {
+            "age": 21,
+            "resident": true,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 21,
+            "resident": true,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 20,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 21,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 120,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2000
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2000
+          }
+        },
+        {
+          "attendee": {
+            "age": 21,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "0000-01-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1000
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2c12",
+      "status": "different",
+      "rationale": "After the common age and resident-or-member tests, Alice’s condition is scholarship implies student. Bob’s condition is student OR scholarship. Thus a nonstudent without a scholarship may be admitted only by Alice, while a nonstudent with a scholarship may be admitted only by Bob.",
+      "examples": [
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": false,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2400
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": false,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 2400
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": false,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1100
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1100
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": true,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1100
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1100
+          }
+        },
+        {
+          "attendee": {
+            "age": 17,
+            "resident": true,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": false,
+            "student": true,
+            "member": false,
+            "guardianConsent": false,
+            "scholarship": true,
+            "submittedAt": "2030-06-15T12:00:00.000Z"
+          },
+          "left": {
+            "accepted": false,
+            "feeCents": null
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 120,
+            "resident": true,
+            "student": false,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": false,
+            "submittedAt": "9999-12-31T23:59:59.999Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 2400
+          },
+          "right": {
+            "accepted": false,
+            "feeCents": null
+          }
+        },
+        {
+          "attendee": {
+            "age": 18,
+            "resident": true,
+            "student": true,
+            "member": true,
+            "guardianConsent": true,
+            "scholarship": true,
+            "submittedAt": "0000-01-01T00:00:00.000Z"
+          },
+          "left": {
+            "accepted": true,
+            "feeCents": 1100
+          },
+          "right": {
+            "accepted": true,
+            "feeCents": 1100
+          }
+        }
+      ]
+    }
+  ]
+}

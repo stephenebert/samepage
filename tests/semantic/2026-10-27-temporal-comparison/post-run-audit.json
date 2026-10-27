@@ -1,0 +1,33 @@
+{
+  "status": "independently-reproduced-with-disputed-golden",
+  "reviewer": "Separate assistant; not human validation",
+  "frozenFilesVerified": 50,
+  "modelRequests": 24,
+  "naturalStops": 24,
+  "frozenScore": {
+    "samepage": 11,
+    "plainMeta": 12,
+    "denominator": 12
+  },
+  "disputedCase": "v2c07",
+  "postHocSensitivity": {
+    "samepage": 11,
+    "plainMeta": 11,
+    "denominator": 11,
+    "notReplacementPrimary": true
+  },
+  "compiledPoliciesTotal": 21,
+  "compiledResolvedCasePoliciesChecked": 19,
+  "policyOutcomeChecks": 456896,
+  "policyOutcomeMismatches": 0,
+  "samepageValidWitnesses": 7,
+  "plainValidWitnesses": 6,
+  "jointPublications": 9,
+  "receiptsCorrect": 27,
+  "targetedTemporalCases": [
+    "v2c01",
+    "v2c06",
+    "v2c10"
+  ],
+  "additionalProviderCalls": 0
+}

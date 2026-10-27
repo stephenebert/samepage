@@ -1,0 +1,2948 @@
+{
+  "httpStatus": 200,
+  "durationMs": 4864,
+  "body": {
+    "caseId": "v2c09",
+    "arm": "plain-meta"
+  },
+  "json": {
+    "runId": "comparison-20261027-v2",
+    "caseId": "v2c09",
+    "arm": "plain-meta",
+    "slot": {
+      "caseId": "v2c09",
+      "arm": "plain-meta",
+      "claimId": "b41a5ac7-6c10-4db2-a356-c0496563e74f",
+      "status": "completed",
+      "startedAt": "2026-10-27T21:39:39.423Z",
+      "requestBytes": 5032,
+      "requestSha256": "0af953695658967124640ff6115076621ec6deb626b86d008064031d3f2f0434",
+      "reservedNanoUsd": 46226000,
+      "finishedAt": "2026-10-27T21:39:44.020Z",
+      "durationMs": 4597,
+      "metrics": {
+        "providerDurationMs": 4389,
+        "requestBytes": 5032,
+        "responseContentBytes": 364,
+        "promptTokens": 991,
+        "completionTokens": 1011,
+        "totalTokens": 2002,
+        "reasoningTokens": 924,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "result": {
+        "status": "unresolved",
+        "explanation": "Alice's policy is ambiguous for attendees who are both members and students, so equivalence cannot be decided without clarification.",
+        "witness": null,
+        "issues": [
+          "Clarify in Alice's policy which fee applies when an admitted attendee is both a member ($12.00) and a student ($18.00), or confirm explicit first-applicable order."
+        ]
+      }
+    },
+    "replayed": false,
+    "ledger": {
+      "kind": "samepage-comparison-v1",
+      "id": "benchmark-comparison-20261027-v2",
+      "revision": 36,
+      "runId": "comparison-20261027-v2",
+      "inputSha256": "ba386e54c93f1f00343788c5120b7f46416637d6256aed34c53dd18f37ab6bc8",
+      "config": {
+        "model": "muse-spark-1.3",
+        "protocol": "expression-v3",
+        "reasoningEffort": "low",
+        "maxCompletionTokens": 8192,
+        "reuseUnchanged": false
+      },
+      "createdAt": "2026-10-27T21:38:09.781Z",
+      "updatedAt": "2026-10-27T21:39:44.020Z",
+      "attempts": {
+        "v2c01:samepage": {
+          "caseId": "v2c01",
+          "arm": "samepage",
+          "claimId": "5652da4a-07ae-4d5e-b56a-73a0a92fd297",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:09.781Z",
+          "requestBytes": 7650,
+          "requestSha256": "5c83041a797f1d2ea7740c68764910b7f125755449e024073c11c2fcb96d33e7",
+          "reservedNanoUsd": 49498500,
+          "finishedAt": "2026-10-27T21:38:16.671Z",
+          "durationMs": 6890,
+          "metrics": {
+            "providerDurationMs": 6684,
+            "requestBytes": 7650,
+            "responseContentBytes": 1206,
+            "promptTokens": 1625,
+            "completionTokens": 2068,
+            "totalTokens": 3693,
+            "reasoningTokens": 1719,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c01",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:38:09.781Z",
+              "updatedAt": "2026-10-27T21:38:16.671Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:38:09.781Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Applicants must be at least 18 years old and must be residents or members. A submission must arrive before 18:30:00.000 UTC on April 9, 2031. For an admitted applicant, the fee is $0.00 if they hold a scholarship and $24.00 otherwise. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Para inscribirse hay que tener al menos 18 años y ser residente o socio. La solicitud debe recibirse a más tardar el 9 de abril de 2031 a las 18:30:00.000 UTC; se incluye ese instante. Si la persona es admitida, paga 0,00 USD si tiene beca y 24,00 USD en caso contrario. No hay otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 18 years old and must be residents or members. A submission must arrive before 18:30:00.000 UTC on April 9, 2031. For an admitted applicant, the fee is $0.00 if they hold a scholarship and $24.00 otherwise. No other conditions or fees apply.",
+                    "es": "Los solicitantes deben tener al menos 18 años Y (ser residentes O miembros). La solicitud debe recibirse antes del 9 de abril de 2031 a las 18:30:00.000 UTC. Para un solicitante admitido, la tarifa es de 0,00 USD si tiene beca y de 24,00 USD en caso contrario. No se aplican otras condiciones ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 18
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "resident",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "member",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "time",
+                            "cmp": "lt",
+                            "value": "2031-04-09T18:30:00.000Z"
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 2400,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 0,
+                            "label": "scholarship"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "To register, you must be at least 18 years old AND (be a resident OR a member). The application must be received at or before April 9, 2031 at 18:30:00.000 UTC; that instant is included. If the person is admitted, they pay USD 0.00 if they hold a scholarship and USD 24.00 otherwise. There are no other requirements or fees.",
+                    "es": "Para inscribirse hay que tener al menos 18 años y ser residente o socio. La solicitud debe recibirse a más tardar el 9 de abril de 2031 a las 18:30:00.000 UTC; se incluye ese instante. Si la persona es admitida, paga 0,00 USD si tiene beca y 24,00 USD en caso contrario. No hay otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 18
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "resident",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "member",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "time",
+                            "cmp": "lte",
+                            "value": "2031-04-09T18:30:00.000Z"
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 2400,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 0,
+                            "label": "scholarship"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "different",
+                  "witnesses": [
+                    {
+                      "id": "admission-right",
+                      "kind": "admission-right",
+                      "attendee": {
+                        "age": 24,
+                        "resident": true,
+                        "student": false,
+                        "member": false,
+                        "guardianConsent": false,
+                        "scholarship": false,
+                        "submittedAt": "2031-04-09T18:30:00.000Z"
+                      },
+                      "left": {
+                        "accepted": false,
+                        "feeCents": null,
+                        "feeReason": {
+                          "en": "No fee: admission denied.",
+                          "es": "Sin tarifa: admisión denegada."
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": false,
+                            "en": "(age ≥ 18 AND (resident OR member) AND submitted < 2031-04-09T18:30:00.000Z)",
+                            "es": "(edad ≥ 18 Y (residente O miembro) Y inscripción < 2031-04-09T18:30:00.000Z)"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 18",
+                            "es": "edad ≥ 18"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": true,
+                            "en": "(resident OR member)",
+                            "es": "(residente O miembro)"
+                          },
+                          {
+                            "path": "eligibility.1.0",
+                            "passed": true,
+                            "en": "resident",
+                            "es": "residente"
+                          },
+                          {
+                            "path": "eligibility.1.1",
+                            "passed": false,
+                            "en": "member",
+                            "es": "miembro"
+                          },
+                          {
+                            "path": "eligibility.2",
+                            "passed": false,
+                            "en": "submitted < 2031-04-09T18:30:00.000Z",
+                            "es": "inscripción < 2031-04-09T18:30:00.000Z"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Admission requires (age ≥ 18 AND (resident OR member) AND submitted < 2031-04-09T18:30:00.000Z).",
+                            "es": "La admisión requiere (edad ≥ 18 Y (residente O miembro) Y inscripción < 2031-04-09T18:30:00.000Z)."
+                          }
+                        ]
+                      },
+                      "right": {
+                        "accepted": true,
+                        "feeCents": 2400,
+                        "feeReason": {
+                          "en": "Standard fee; no earlier override matched.",
+                          "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": true,
+                            "en": "(age ≥ 18 AND (resident OR member) AND submitted ≤ 2031-04-09T18:30:00.000Z)",
+                            "es": "(edad ≥ 18 Y (residente O miembro) Y inscripción ≤ 2031-04-09T18:30:00.000Z)"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 18",
+                            "es": "edad ≥ 18"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": true,
+                            "en": "(resident OR member)",
+                            "es": "(residente O miembro)"
+                          },
+                          {
+                            "path": "eligibility.1.0",
+                            "passed": true,
+                            "en": "resident",
+                            "es": "residente"
+                          },
+                          {
+                            "path": "eligibility.1.1",
+                            "passed": false,
+                            "en": "member",
+                            "es": "miembro"
+                          },
+                          {
+                            "path": "eligibility.2",
+                            "passed": true,
+                            "en": "submitted ≤ 2031-04-09T18:30:00.000Z",
+                            "es": "inscripción ≤ 2031-04-09T18:30:00.000Z"
+                          },
+                          {
+                            "path": "fee.0",
+                            "passed": false,
+                            "en": "scholarship",
+                            "es": "beca"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Meets the complete admission rule.",
+                            "es": "Cumple la regla completa de admisión."
+                          },
+                          {
+                            "en": "Standard fee; no earlier override matched.",
+                            "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                          }
+                        ]
+                      },
+                      "feeDeltaCents": null,
+                      "explanation": {
+                        "en": "B admits this person; A refuses them.",
+                        "es": "B admite a esta persona; A la rechaza."
+                      }
+                    }
+                  ],
+                  "checkedCases": 960,
+                  "issues": [],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 6,
+                    "flagCombinations": 32,
+                    "timePartitions": 5,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:38:16.671Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [
+              {
+                "attendee": {
+                  "age": 24,
+                  "resident": true,
+                  "student": false,
+                  "member": false,
+                  "guardianConsent": false,
+                  "scholarship": false,
+                  "submittedAt": "2031-04-09T18:30:00.000Z"
+                },
+                "left": {
+                  "accepted": false,
+                  "feeCents": null
+                },
+                "right": {
+                  "accepted": true,
+                  "feeCents": 2400
+                }
+              }
+            ],
+            "issues": []
+          }
+        },
+        "v2c01:plain-meta": {
+          "caseId": "v2c01",
+          "arm": "plain-meta",
+          "claimId": "4ac88b6a-1896-42fb-8cc3-6f0089fb6f1c",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:17.639Z",
+          "requestBytes": 5125,
+          "requestSha256": "dcb3f0c709c6d04dab33f165489b6259e319feef03006013562ea0b26da85d4b",
+          "reservedNanoUsd": 46342250,
+          "finishedAt": "2026-10-27T21:38:21.333Z",
+          "durationMs": 3694,
+          "metrics": {
+            "providerDurationMs": 3464,
+            "requestBytes": 5125,
+            "responseContentBytes": 567,
+            "promptTokens": 1031,
+            "completionTokens": 890,
+            "totalTokens": 1921,
+            "reasoningTokens": 739,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "explanation": "Policies differ on the deadline instant: Alice requires submission strictly before 2031-04-09T18:30:00.000Z, while Bob explicitly includes that instant. An otherwise qualified applicant submitting exactly at that millisecond is rejected by Alice and admitted by Bob.",
+            "witness": {
+              "attendee": {
+                "age": 18,
+                "resident": true,
+                "student": false,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": false,
+                "submittedAt": "2031-04-09T18:30:00.000Z"
+              },
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 2400
+              }
+            },
+            "issues": []
+          }
+        },
+        "v2c02:plain-meta": {
+          "caseId": "v2c02",
+          "arm": "plain-meta",
+          "claimId": "e08065b3-2f3c-4f7f-84e2-992305d5f3a5",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:21.588Z",
+          "requestBytes": 5403,
+          "requestSha256": "03206f2ebb223cbb251756c2c3c9a907c9f91403e915db18135ed2e8a5138194",
+          "reservedNanoUsd": 46689750,
+          "finishedAt": "2026-10-27T21:38:23.848Z",
+          "durationMs": 2260,
+          "metrics": {
+            "providerDurationMs": 2110,
+            "requestBytes": 5403,
+            "responseContentBytes": 281,
+            "promptTokens": 1071,
+            "completionTokens": 601,
+            "totalTokens": 1672,
+            "reasoningTokens": 525,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "equivalent",
+            "explanation": "Both policies admit ages 12-17 inclusive who are (resident or student) and (member or guardianConsent) with no deadline, and apply identical fee priority: scholarship $0, then member $9, then student $14, else $18.",
+            "witness": null,
+            "issues": []
+          }
+        },
+        "v2c02:samepage": {
+          "caseId": "v2c02",
+          "arm": "samepage",
+          "claimId": "d0e0528b-3fef-4c37-9107-87a0f63d5224",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:24.120Z",
+          "requestBytes": 7928,
+          "requestSha256": "90d38da19aafc2eca51f0b5359ba987a4b580e1358383e23c0315b7b32404d0e",
+          "reservedNanoUsd": 49846000,
+          "finishedAt": "2026-10-27T21:38:32.239Z",
+          "durationMs": 8119,
+          "metrics": {
+            "providerDurationMs": 7985,
+            "requestBytes": 7928,
+            "responseContentBytes": 1708,
+            "promptTokens": 1665,
+            "completionTokens": 2748,
+            "totalTokens": 4413,
+            "reasoningTokens": 2315,
+            "cachedInputTokens": 497,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "equivalent",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c02",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:38:24.120Z",
+              "updatedAt": "2026-10-27T21:38:32.239Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:38:24.120Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Admission is limited to applicants aged 12 through 17, inclusive, who are residents or students. Every applicant who is not a member must have guardian consent. There is no submission deadline. For admitted applicants, use the first matching fee in this order: scholarship holder, $0.00; member, $9.00; student, $14.00; everyone else, $18.00. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Se admiten únicamente personas de 12 a 17 años, incluidos ambos extremos. Se rechaza a quien no sea residente ni estudiante, y también a quien no sea socio y no tenga consentimiento de su tutor. No hay fecha límite para presentar la solicitud. Entre las personas admitidas, quienes tienen beca no pagan. De las restantes, los socios pagan 9,00 USD; entre quienes quedan, los estudiantes pagan 14,00 USD; los demás pagan 18,00 USD. No se aplican otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Admission is limited to applicants aged 12 through 17, inclusive, who are residents or students. Every applicant who is not a member must have guardian consent. There is no submission deadline. For admitted applicants, use the first matching fee in this order: scholarship holder, $0.00; member, $9.00; student, $14.00; everyone else, $18.00. No other conditions or fees apply.",
+                    "es": "La admisión se limita a los solicitantes de 12 a 17 años, inclusive, que sean (residentes o estudiantes). Todo solicitante que no sea socio debe tener el consentimiento de su tutor. No hay fecha límite de presentación. Para los solicitantes admitidos, utilícese la primera tarifa coincidente en este orden: titular de beca, 0,00 USD; socio, 9,00 USD; estudiante, 14,00 USD; todos los demás, 18,00 USD. No se aplican otras condiciones ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 12
+                          },
+                          {
+                            "op": "age",
+                            "cmp": "lte",
+                            "value": 17
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "resident",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "student",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "member",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "guardianConsent",
+                                "value": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1800,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 0,
+                            "label": "scholarship holder"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 900,
+                            "label": "member"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            "cents": 1400,
+                            "label": "student"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "Only persons aged 12 to 17, inclusive of both endpoints, are admitted. Any person who is neither a resident nor a student is rejected, and also any person who is (not a member AND without guardian consent) is rejected. There is no deadline for submitting the application. Among admitted persons, scholarship holders pay nothing. Of the remaining, members pay 9.00 USD; of those who remain, students pay 14.00 USD; the rest pay 18.00 USD. No other requirements or fees apply.",
+                    "es": "Se admiten únicamente personas de 12 a 17 años, incluidos ambos extremos. Se rechaza a quien no sea residente ni estudiante, y también a quien no sea socio y no tenga consentimiento de su tutor. No hay fecha límite para presentar la solicitud. Entre las personas admitidas, quienes tienen beca no pagan. De las restantes, los socios pagan 9,00 USD; entre quienes quedan, los estudiantes pagan 14,00 USD; los demás pagan 18,00 USD. No se aplican otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 12
+                          },
+                          {
+                            "op": "age",
+                            "cmp": "lte",
+                            "value": 17
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "resident",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "student",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "member",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "guardianConsent",
+                                "value": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1800,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 0,
+                            "label": "scholarship holders"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 900,
+                            "label": "member"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            "cents": 1400,
+                            "label": "student"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "equivalent",
+                  "witnesses": [],
+                  "checkedCases": 864,
+                  "issues": [],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 9,
+                    "flagCombinations": 32,
+                    "timePartitions": 3,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:38:32.239Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [],
+            "issues": []
+          }
+        },
+        "v2c03:samepage": {
+          "caseId": "v2c03",
+          "arm": "samepage",
+          "claimId": "f5ff9c9d-175d-48a9-8ede-96763904c79a",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:32.569Z",
+          "requestBytes": 7704,
+          "requestSha256": "6877926d99a56121ab86f5cd3e702ec4e05a607009195b099082759fb87d88f7",
+          "reservedNanoUsd": 49566000,
+          "finishedAt": "2026-10-27T21:38:39.946Z",
+          "durationMs": 7377,
+          "metrics": {
+            "providerDurationMs": 7103,
+            "requestBytes": 7704,
+            "responseContentBytes": 1280,
+            "promptTokens": 1619,
+            "completionTokens": 2102,
+            "totalTokens": 3721,
+            "reasoningTokens": 1768,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "equivalent",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c03",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:38:32.569Z",
+              "updatedAt": "2026-10-27T21:38:39.946Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:38:32.569Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Applicants must be at least 16 years old. Those younger than 18 also need guardian consent. There is no submission deadline. Admitted applicants pay $25.00, except that members pay $15.00. A scholarship reduces the fee to $0.00 regardless of membership. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "No hay fecha límite de solicitud. Pueden entrar las personas de 18 años en adelante y también las de 16 o 17 años que tengan consentimiento de su tutor. Para cada persona admitida, se usa la primera tarifa que corresponda: 0,00 USD si tiene beca; 15,00 USD si es socio; 25,00 USD en cualquier otro caso. No hay otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 16 years old. Those younger than 18 also need guardian consent. There is no submission deadline. Admitted applicants pay $25.00, except that members pay $15.00. A scholarship reduces the fee to $0.00 regardless of membership. No other conditions or fees apply.",
+                    "es": "Los solicitantes deben tener al menos 16 años Y (tener al menos 18 años O contar con el consentimiento de su tutor). No hay fecha límite de presentación. Los solicitantes admitidos pagan 25,00 USD, excepto que (los miembros pagan 15,00 USD). Una beca reduce la tarifa a 0,00 USD independientemente de la membresía. No se aplican otras condiciones ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 16
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "age",
+                                "cmp": "gte",
+                                "value": 18
+                              },
+                              {
+                                "op": "flag",
+                                "field": "guardianConsent",
+                                "value": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 2500,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 0,
+                            "label": "scholarship"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 1500,
+                            "label": "member"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "There is no application deadline. Persons aged 18 or older may enter, and also (persons aged 16 or 17 with guardian consent). For each admitted person, the first matching fee applies: 0.00 USD if (has scholarship); 15.00 USD if (is a member); 25.00 USD otherwise. There are no other requirements or fees.",
+                    "es": "No hay fecha límite de solicitud. Pueden entrar las personas de 18 años en adelante y también las de 16 o 17 años que tengan consentimiento de su tutor. Para cada persona admitida, se usa la primera tarifa que corresponda: 0,00 USD si tiene beca; 15,00 USD si es socio; 25,00 USD en cualquier otro caso. No hay otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "any",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 18
+                          },
+                          {
+                            "op": "all",
+                            "args": [
+                              {
+                                "op": "age",
+                                "cmp": "gte",
+                                "value": 16
+                              },
+                              {
+                                "op": "age",
+                                "cmp": "lte",
+                                "value": 17
+                              },
+                              {
+                                "op": "flag",
+                                "field": "guardianConsent",
+                                "value": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 2500,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 0,
+                            "label": "scholarship"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 1500,
+                            "label": "member"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "equivalent",
+                  "witnesses": [],
+                  "checkedCases": 768,
+                  "issues": [],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 8,
+                    "flagCombinations": 32,
+                    "timePartitions": 3,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:38:39.946Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [],
+            "issues": []
+          }
+        },
+        "v2c03:plain-meta": {
+          "caseId": "v2c03",
+          "arm": "plain-meta",
+          "claimId": "7c4b6a9c-25d1-4c6f-9d20-0502dfa66222",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:40.226Z",
+          "requestBytes": 5179,
+          "requestSha256": "8973b5c5e3b9ed94d594ae1733810873dbbeb4714299f76a6db377f7df284132",
+          "reservedNanoUsd": 46409750,
+          "finishedAt": "2026-10-27T21:38:42.969Z",
+          "durationMs": 2743,
+          "metrics": {
+            "providerDurationMs": 2583,
+            "requestBytes": 5179,
+            "responseContentBytes": 244,
+            "promptTokens": 1025,
+            "completionTokens": 533,
+            "totalTokens": 1558,
+            "reasoningTokens": 469,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "equivalent",
+            "explanation": "Both policies admit ages 16-17 only with guardian consent and ages 18+ regardless, with no deadline, and charge $0 with scholarship, otherwise $15 for members and $25 otherwise.",
+            "witness": null,
+            "issues": []
+          }
+        },
+        "v2c04:plain-meta": {
+          "caseId": "v2c04",
+          "arm": "plain-meta",
+          "claimId": "516af945-9136-4060-80ee-cb3fa6e3ddc5",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:43.208Z",
+          "requestBytes": 5219,
+          "requestSha256": "42727de240827e3add8fcbdb240194bce87fbc53b6c741acfd0a15ea25c118c0",
+          "reservedNanoUsd": 46459750,
+          "finishedAt": "2026-10-27T21:38:44.934Z",
+          "durationMs": 1726,
+          "metrics": {
+            "providerDurationMs": 1577,
+            "requestBytes": 5219,
+            "responseContentBytes": 482,
+            "promptTokens": 1022,
+            "completionTokens": 520,
+            "totalTokens": 1542,
+            "reasoningTokens": 389,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "explanation": "Alice rejects only applicants who are both resident and student, while Bob rejects anyone who is resident or student. A resident-only adult is admitted by Alice but rejected by Bob.",
+            "witness": {
+              "attendee": {
+                "age": 20,
+                "resident": true,
+                "student": false,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": false,
+                "submittedAt": "2026-06-01T00:00:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 1900
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            },
+            "issues": []
+          }
+        },
+        "v2c04:samepage": {
+          "caseId": "v2c04",
+          "arm": "samepage",
+          "claimId": "fe771622-ce2e-4ed2-9115-1c4b29a5f487",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:45.182Z",
+          "requestBytes": 7744,
+          "requestSha256": "d2a4587e2c441bdc847be5d9ee253983db772be563b27c45ed1431ef88d34906",
+          "reservedNanoUsd": 49616000,
+          "finishedAt": "2026-10-27T21:38:52.140Z",
+          "durationMs": 6958,
+          "metrics": {
+            "providerDurationMs": 6799,
+            "requestBytes": 7744,
+            "responseContentBytes": 1258,
+            "promptTokens": 1616,
+            "completionTokens": 1843,
+            "totalTokens": 3459,
+            "reasoningTokens": 1482,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c04",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:38:45.182Z",
+              "updatedAt": "2026-10-27T21:38:52.140Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:38:45.182Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Applicants must be at least 18 years old. An applicant who is both a resident and a student is ineligible. All other applicants meeting the age requirement are admitted. There is no submission deadline. Admitted members pay $11.00 and all other admitted applicants pay $19.00. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Las personas deben tener al menos 18 años. No pueden inscribirse los residentes ni los estudiantes. Toda persona que cumpla el requisito de edad y no pertenezca a ninguno de esos dos grupos es admitida. No hay fecha límite de solicitud. Los socios admitidos pagan 11,00 USD y las demás personas admitidas pagan 19,00 USD. No hay otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 18 years old. An applicant who is both a resident and a student is ineligible. All other applicants meeting the age requirement are admitted. There is no submission deadline. Admitted members pay $11.00 and all other admitted applicants pay $19.00. No other conditions or fees apply.",
+                    "es": "Los solicitantes deben tener al menos 18 años. Un solicitante que sea (residente Y estudiante) no es elegible. Todos los demás solicitantes que cumplan el requisito de edad son admitidos. No hay fecha límite de presentación. Los miembros admitidos pagan 11,00 USD y todos los demás solicitantes admitidos pagan 19,00 USD. No se aplican otras condiciones ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 18
+                          },
+                          {
+                            "op": "not",
+                            "arg": {
+                              "op": "all",
+                              "args": [
+                                {
+                                  "op": "flag",
+                                  "field": "resident",
+                                  "value": true
+                                },
+                                {
+                                  "op": "flag",
+                                  "field": "student",
+                                  "value": true
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1900,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 1100,
+                            "label": "admitted members"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 18 years old. Neither (residents OR students) may register. Any person who meets the age requirement and belongs to neither of those two groups is admitted. There is no application deadline. Admitted members pay $11.00 and all other admitted persons pay $19.00. There are no other requirements or fees.",
+                    "es": "Las personas deben tener al menos 18 años. No pueden inscribirse los residentes ni los estudiantes. Toda persona que cumpla el requisito de edad y no pertenezca a ninguno de esos dos grupos es admitida. No hay fecha límite de solicitud. Los socios admitidos pagan 11,00 USD y las demás personas admitidas pagan 19,00 USD. No hay otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 18
+                          },
+                          {
+                            "op": "not",
+                            "arg": {
+                              "op": "any",
+                              "args": [
+                                {
+                                  "op": "flag",
+                                  "field": "resident",
+                                  "value": true
+                                },
+                                {
+                                  "op": "flag",
+                                  "field": "student",
+                                  "value": true
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1900,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 1100,
+                            "label": "admitted members"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "different",
+                  "witnesses": [
+                    {
+                      "id": "admission-left",
+                      "kind": "admission-left",
+                      "attendee": {
+                        "age": 24,
+                        "resident": true,
+                        "student": false,
+                        "member": false,
+                        "guardianConsent": false,
+                        "scholarship": false,
+                        "submittedAt": "2026-10-26T12:00:00.000Z"
+                      },
+                      "left": {
+                        "accepted": true,
+                        "feeCents": 1900,
+                        "feeReason": {
+                          "en": "Standard fee; no earlier override matched.",
+                          "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": true,
+                            "en": "(age ≥ 18 AND NOT ((resident AND student)))",
+                            "es": "(edad ≥ 18 Y NO ((residente Y estudiante)))"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 18",
+                            "es": "edad ≥ 18"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": true,
+                            "en": "NOT ((resident AND student))",
+                            "es": "NO ((residente Y estudiante))"
+                          },
+                          {
+                            "path": "eligibility.1.not",
+                            "passed": false,
+                            "en": "(resident AND student)",
+                            "es": "(residente Y estudiante)"
+                          },
+                          {
+                            "path": "eligibility.1.not.0",
+                            "passed": true,
+                            "en": "resident",
+                            "es": "residente"
+                          },
+                          {
+                            "path": "eligibility.1.not.1",
+                            "passed": false,
+                            "en": "student",
+                            "es": "estudiante"
+                          },
+                          {
+                            "path": "fee.0",
+                            "passed": false,
+                            "en": "member",
+                            "es": "miembro"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Meets the complete admission rule.",
+                            "es": "Cumple la regla completa de admisión."
+                          },
+                          {
+                            "en": "Standard fee; no earlier override matched.",
+                            "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                          }
+                        ]
+                      },
+                      "right": {
+                        "accepted": false,
+                        "feeCents": null,
+                        "feeReason": {
+                          "en": "No fee: admission denied.",
+                          "es": "Sin tarifa: admisión denegada."
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": false,
+                            "en": "(age ≥ 18 AND NOT ((resident OR student)))",
+                            "es": "(edad ≥ 18 Y NO ((residente O estudiante)))"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 18",
+                            "es": "edad ≥ 18"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": false,
+                            "en": "NOT ((resident OR student))",
+                            "es": "NO ((residente O estudiante))"
+                          },
+                          {
+                            "path": "eligibility.1.not",
+                            "passed": true,
+                            "en": "(resident OR student)",
+                            "es": "(residente O estudiante)"
+                          },
+                          {
+                            "path": "eligibility.1.not.0",
+                            "passed": true,
+                            "en": "resident",
+                            "es": "residente"
+                          },
+                          {
+                            "path": "eligibility.1.not.1",
+                            "passed": false,
+                            "en": "student",
+                            "es": "estudiante"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Admission requires (age ≥ 18 AND NOT ((resident OR student))).",
+                            "es": "La admisión requiere (edad ≥ 18 Y NO ((residente O estudiante)))."
+                          }
+                        ]
+                      },
+                      "feeDeltaCents": null,
+                      "explanation": {
+                        "en": "A admits this person; B refuses them.",
+                        "es": "A admite a esta persona; B la rechaza."
+                      }
+                    }
+                  ],
+                  "checkedCases": 576,
+                  "issues": [],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 6,
+                    "flagCombinations": 32,
+                    "timePartitions": 3,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:38:52.140Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [
+              {
+                "attendee": {
+                  "age": 24,
+                  "resident": true,
+                  "student": false,
+                  "member": false,
+                  "guardianConsent": false,
+                  "scholarship": false,
+                  "submittedAt": "2026-10-26T12:00:00.000Z"
+                },
+                "left": {
+                  "accepted": true,
+                  "feeCents": 1900
+                },
+                "right": {
+                  "accepted": false,
+                  "feeCents": null
+                }
+              }
+            ],
+            "issues": []
+          }
+        },
+        "v2c05:samepage": {
+          "caseId": "v2c05",
+          "arm": "samepage",
+          "claimId": "86ef3f8b-cb48-4562-a2ca-346f5ef25ad4",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:52.375Z",
+          "requestBytes": 7840,
+          "requestSha256": "51d3b1fc4feaea41eb7ec0fa357cfae1ab90936372040179017400a97d40423d",
+          "reservedNanoUsd": 49736000,
+          "finishedAt": "2026-10-27T21:38:59.285Z",
+          "durationMs": 6910,
+          "metrics": {
+            "providerDurationMs": 6751,
+            "requestBytes": 7840,
+            "responseContentBytes": 1845,
+            "promptTokens": 1650,
+            "completionTokens": 2056,
+            "totalTokens": 3706,
+            "reasoningTokens": 1579,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c05",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:38:52.375Z",
+              "updatedAt": "2026-10-27T21:38:59.285Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:38:52.375Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Applicants must be at least 8 years old and must be residents or members. Anyone younger than 18 also needs guardian consent. There is no submission deadline. For an admitted applicant, select the first matching rule from this ordered list: members pay $12.00; scholarship holders pay $4.00; students pay $20.00; everyone else pays $28.00. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Se requiere tener al menos 8 años y ser residente o socio. Quienes no hayan cumplido 18 años necesitan además consentimiento de su tutor. No hay fecha límite de solicitud. Para cada persona admitida, se aplica la primera regla que corresponda en este orden: con beca, 4,00 USD; socio, 12,00 USD; estudiante, 20,00 USD; cualquier otra persona, 28,00 USD. No hay otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 8 years old and must be residents or members. Anyone younger than 18 also needs guardian consent. There is no submission deadline. For an admitted applicant, select the first matching rule from this ordered list: members pay $12.00; scholarship holders pay $4.00; students pay $20.00; everyone else pays $28.00. No other conditions or fees apply.",
+                    "es": "Las personas solicitantes deben tener al menos 8 años Y (ser residentes O ser miembros). Quienes tengan menos de 18 años (es decir, quienes NO cumplan (tener al menos 18 años)) necesitan además el consentimiento de su tutor. No hay fecha límite de presentación. Para cada persona admitida, seleccione la primera regla coincidente de esta lista ordenada: los miembros pagan 12,00 USD; los titulares de beca pagan 4,00 USD; los estudiantes pagan 20,00 USD; todas las demás personas pagan 28,00 USD. No se aplican otras condiciones ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 8
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "resident",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "member",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "age",
+                                "cmp": "gte",
+                                "value": 18
+                              },
+                              {
+                                "op": "flag",
+                                "field": "guardianConsent",
+                                "value": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 2800,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 1200,
+                            "label": "members pay $12.00"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 400,
+                            "label": "scholarship holders pay $4.00"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            "cents": 2000,
+                            "label": "students pay $20.00"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 8 years old AND (be residents OR be members). Anyone who has not reached 18 years old (i.e., anyone who does NOT satisfy (being at least 18 years old)) also needs guardian consent. There is no application deadline. For each admitted person, apply the first matching rule in this order: scholarship holders pay USD 4.00; members pay USD 12.00; students pay USD 20.00; any other person pays USD 28.00. No other requirements or fees apply.",
+                    "es": "Se requiere tener al menos 8 años y ser residente o socio. Quienes no hayan cumplido 18 años necesitan además consentimiento de su tutor. No hay fecha límite de solicitud. Para cada persona admitida, se aplica la primera regla que corresponda en este orden: con beca, 4,00 USD; socio, 12,00 USD; estudiante, 20,00 USD; cualquier otra persona, 28,00 USD. No hay otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 8
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "resident",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "member",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "age",
+                                "cmp": "gte",
+                                "value": 18
+                              },
+                              {
+                                "op": "flag",
+                                "field": "guardianConsent",
+                                "value": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 2800,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 400,
+                            "label": "scholarship holders pay $4.00"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 1200,
+                            "label": "members pay $12.00"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            "cents": 2000,
+                            "label": "students pay $20.00"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "different",
+                  "witnesses": [
+                    {
+                      "id": "price-left-higher",
+                      "kind": "price-only",
+                      "attendee": {
+                        "age": 24,
+                        "resident": false,
+                        "student": false,
+                        "member": true,
+                        "guardianConsent": false,
+                        "scholarship": true,
+                        "submittedAt": "2026-10-26T12:00:00.000Z"
+                      },
+                      "left": {
+                        "accepted": true,
+                        "feeCents": 1200,
+                        "feeReason": {
+                          "en": "First matching fee rule: members pay $12.00",
+                          "es": "Primera regla de tarifa aplicable: members pay $12.00"
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": true,
+                            "en": "(age ≥ 8 AND (resident OR member) AND (age ≥ 18 OR guardian consent))",
+                            "es": "(edad ≥ 8 Y (residente O miembro) Y (edad ≥ 18 O consentimiento del tutor))"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 8",
+                            "es": "edad ≥ 8"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": true,
+                            "en": "(resident OR member)",
+                            "es": "(residente O miembro)"
+                          },
+                          {
+                            "path": "eligibility.1.0",
+                            "passed": false,
+                            "en": "resident",
+                            "es": "residente"
+                          },
+                          {
+                            "path": "eligibility.1.1",
+                            "passed": true,
+                            "en": "member",
+                            "es": "miembro"
+                          },
+                          {
+                            "path": "eligibility.2",
+                            "passed": true,
+                            "en": "(age ≥ 18 OR guardian consent)",
+                            "es": "(edad ≥ 18 O consentimiento del tutor)"
+                          },
+                          {
+                            "path": "eligibility.2.0",
+                            "passed": true,
+                            "en": "age ≥ 18",
+                            "es": "edad ≥ 18"
+                          },
+                          {
+                            "path": "eligibility.2.1",
+                            "passed": false,
+                            "en": "guardian consent",
+                            "es": "consentimiento del tutor"
+                          },
+                          {
+                            "path": "fee.0",
+                            "passed": true,
+                            "en": "member",
+                            "es": "miembro"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Meets the complete admission rule.",
+                            "es": "Cumple la regla completa de admisión."
+                          },
+                          {
+                            "en": "First matching fee rule: members pay $12.00",
+                            "es": "Primera regla de tarifa aplicable: members pay $12.00"
+                          }
+                        ]
+                      },
+                      "right": {
+                        "accepted": true,
+                        "feeCents": 400,
+                        "feeReason": {
+                          "en": "First matching fee rule: scholarship holders pay $4.00",
+                          "es": "Primera regla de tarifa aplicable: scholarship holders pay $4.00"
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": true,
+                            "en": "(age ≥ 8 AND (resident OR member) AND (age ≥ 18 OR guardian consent))",
+                            "es": "(edad ≥ 8 Y (residente O miembro) Y (edad ≥ 18 O consentimiento del tutor))"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 8",
+                            "es": "edad ≥ 8"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": true,
+                            "en": "(resident OR member)",
+                            "es": "(residente O miembro)"
+                          },
+                          {
+                            "path": "eligibility.1.0",
+                            "passed": false,
+                            "en": "resident",
+                            "es": "residente"
+                          },
+                          {
+                            "path": "eligibility.1.1",
+                            "passed": true,
+                            "en": "member",
+                            "es": "miembro"
+                          },
+                          {
+                            "path": "eligibility.2",
+                            "passed": true,
+                            "en": "(age ≥ 18 OR guardian consent)",
+                            "es": "(edad ≥ 18 O consentimiento del tutor)"
+                          },
+                          {
+                            "path": "eligibility.2.0",
+                            "passed": true,
+                            "en": "age ≥ 18",
+                            "es": "edad ≥ 18"
+                          },
+                          {
+                            "path": "eligibility.2.1",
+                            "passed": false,
+                            "en": "guardian consent",
+                            "es": "consentimiento del tutor"
+                          },
+                          {
+                            "path": "fee.0",
+                            "passed": true,
+                            "en": "scholarship",
+                            "es": "beca"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Meets the complete admission rule.",
+                            "es": "Cumple la regla completa de admisión."
+                          },
+                          {
+                            "en": "First matching fee rule: scholarship holders pay $4.00",
+                            "es": "Primera regla de tarifa aplicable: scholarship holders pay $4.00"
+                          }
+                        ]
+                      },
+                      "feeDeltaCents": 800,
+                      "explanation": {
+                        "en": "Both admit this person, but A charges $12.00 and B charges $4.00.",
+                        "es": "Ambas admiten a esta persona, pero A cobra $12.00 y B cobra $4.00."
+                      }
+                    }
+                  ],
+                  "checkedCases": 864,
+                  "issues": [],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 9,
+                    "flagCombinations": 32,
+                    "timePartitions": 3,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:38:59.285Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [
+              {
+                "attendee": {
+                  "age": 24,
+                  "resident": false,
+                  "student": false,
+                  "member": true,
+                  "guardianConsent": false,
+                  "scholarship": true,
+                  "submittedAt": "2026-10-26T12:00:00.000Z"
+                },
+                "left": {
+                  "accepted": true,
+                  "feeCents": 1200
+                },
+                "right": {
+                  "accepted": true,
+                  "feeCents": 400
+                }
+              }
+            ],
+            "issues": []
+          }
+        },
+        "v2c05:plain-meta": {
+          "caseId": "v2c05",
+          "arm": "plain-meta",
+          "claimId": "aff7e175-2188-4969-9954-1c15f0db2122",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:38:59.748Z",
+          "requestBytes": 5315,
+          "requestSha256": "ed369cb718103fbf2c2cfa97bcf87b5932c14ef849a2a818a4bf1ddbd3f07f1a",
+          "reservedNanoUsd": 46579750,
+          "finishedAt": "2026-10-27T21:39:02.725Z",
+          "durationMs": 2977,
+          "metrics": {
+            "providerDurationMs": 2797,
+            "requestBytes": 5315,
+            "responseContentBytes": 474,
+            "promptTokens": 1056,
+            "completionTokens": 721,
+            "totalTokens": 1777,
+            "reasoningTokens": 592,
+            "cachedInputTokens": 753,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "explanation": "Policies differ only in fee priority for attendees who are both members and scholarship holders. Alice charges members $12 first, while Bob charges scholarship holders $4 first.",
+            "witness": {
+              "attendee": {
+                "age": 20,
+                "resident": true,
+                "student": false,
+                "member": true,
+                "guardianConsent": false,
+                "scholarship": true,
+                "submittedAt": "2026-01-15T12:00:00.000Z"
+              },
+              "left": {
+                "accepted": true,
+                "feeCents": 1200
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 400
+              }
+            },
+            "issues": []
+          }
+        },
+        "v2c06:plain-meta": {
+          "caseId": "v2c06",
+          "arm": "plain-meta",
+          "claimId": "6335dc3e-0edf-44c0-9340-76102d96d95a",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:03.205Z",
+          "requestBytes": 5014,
+          "requestSha256": "48b6f8a12ccac245876c3bba54f37b6c55e5f5cfb9295aebbc16c1809a292780",
+          "reservedNanoUsd": 46203500,
+          "finishedAt": "2026-10-27T21:39:06.261Z",
+          "durationMs": 3056,
+          "metrics": {
+            "providerDurationMs": 2889,
+            "requestBytes": 5014,
+            "responseContentBytes": 398,
+            "promptTokens": 1000,
+            "completionTokens": 531,
+            "totalTokens": 1531,
+            "reasoningTokens": 429,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "unresolved",
+            "explanation": "Alice requires arrival before 4pm 'local time' without specifying which timezone, so the UTC deadline cannot be determined, while Bob specifies 16:00 UTC exactly.",
+            "witness": null,
+            "issues": [
+              "Clarify which timezone '4:00 p.m. local time on March 12, 2028' refers to and how a UTC submittedAt instant is compared to it, including exact millisecond inclusivity."
+            ]
+          }
+        },
+        "v2c06:samepage": {
+          "caseId": "v2c06",
+          "arm": "samepage",
+          "claimId": "a91e5371-4136-4108-ba73-ecb45eb11fda",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:06.518Z",
+          "requestBytes": 7539,
+          "requestSha256": "85755adad0653216e6540c52cffac2467d33851f3341102f983f24a765feb649",
+          "reservedNanoUsd": 49359750,
+          "finishedAt": "2026-10-27T21:39:11.089Z",
+          "durationMs": 4571,
+          "metrics": {
+            "providerDurationMs": 4374,
+            "requestBytes": 7539,
+            "responseContentBytes": 1096,
+            "promptTokens": 1594,
+            "completionTokens": 1337,
+            "totalTokens": 2931,
+            "reasoningTokens": 1020,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "unresolved",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c06",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:39:06.518Z",
+              "updatedAt": "2026-10-27T21:39:11.089Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:39:06.518Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Applicants must be at least 18 years old. Applications must arrive before 4:00 p.m. local time on March 12, 2028. Admitted members pay $8.00; all other admitted applicants pay $16.00. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Se admiten personas de al menos 18 años cuyas solicitudes lleguen antes del 12 de marzo de 2028 a las 16:00:00.000 UTC. Los socios admitidos pagan 8,00 USD y las demás personas admitidas pagan 16,00 USD. No se aplican otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 18 years old. Applications must arrive before 4:00 p.m. local time on March 12, 2028. Admitted members pay $8.00; all other admitted applicants pay $16.00. No other conditions or fees apply.",
+                    "es": "Los solicitantes deben tener al menos 18 años. Las solicitudes deben llegar antes de las 16:00 (hora local) del 12 de marzo de 2028. Los miembros admitidos pagan 8,00 USD; todas las demás personas admitidas pagan 16,00 USD. No se aplican otros requisitos ni tarifas.",
+                    "rules": null,
+                    "issues": [
+                      "Clarification needed: deadline 'before 4:00 p.m. local time on March 12, 2028' has no explicit timezone/UTC offset, so the exact UTC cutoff cannot be determined. Please specify the timezone/offset or an explicit UTC instant."
+                    ]
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "Persons at least 18 years old whose applications arrive before March 12, 2028 at 16:00:00.000 UTC are admitted. Admitted members pay 8.00 USD and all other admitted persons pay 16.00 USD. No other requirements or fees apply.",
+                    "es": "Se admiten personas de al menos 18 años cuyas solicitudes lleguen antes del 12 de marzo de 2028 a las 16:00:00.000 UTC. Los socios admitidos pagan 8,00 USD y las demás personas admitidas pagan 16,00 USD. No se aplican otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 18
+                          },
+                          {
+                            "op": "time",
+                            "cmp": "lt",
+                            "value": "2028-03-12T16:00:00.000Z"
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1600,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 800,
+                            "label": "admitted members"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "unresolved",
+                  "witnesses": [],
+                  "checkedCases": 0,
+                  "issues": [
+                    "At least one draft needs clarification; no complete comparison is possible."
+                  ],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 0,
+                    "flagCombinations": 32,
+                    "timePartitions": 0,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:39:11.089Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [],
+            "issues": [
+              "At least one draft needs clarification; no complete comparison is possible.",
+              "Clarification needed: deadline 'before 4:00 p.m. local time on March 12, 2028' has no explicit timezone/UTC offset, so the exact UTC cutoff cannot be determined. Please specify the timezone/offset or an explicit UTC instant."
+            ]
+          }
+        },
+        "v2c07:samepage": {
+          "caseId": "v2c07",
+          "arm": "samepage",
+          "claimId": "29314259-08be-4a13-8f8a-edf3c3bcd443",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:11.867Z",
+          "requestBytes": 7874,
+          "requestSha256": "c31f210a1b259886a6b4caf98f280fd2dde1f046b2744905b31ac5fcc77dd39a",
+          "reservedNanoUsd": 49778500,
+          "finishedAt": "2026-10-27T21:39:21.371Z",
+          "durationMs": 9504,
+          "metrics": {
+            "providerDurationMs": 9320,
+            "requestBytes": 7874,
+            "responseContentBytes": 1674,
+            "promptTokens": 1681,
+            "completionTokens": 3009,
+            "totalTokens": 4690,
+            "reasoningTokens": 2549,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "unresolved",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c07",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:39:11.867Z",
+              "updatedAt": "2026-10-27T21:39:21.371Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:39:11.867Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Applicants must be at least 14 years old, must be residents or scholarship holders, and must have guardian consent if they are younger than 18. A submission must arrive after February 28, 2028 at 23:59:59.999 UTC and before March 1, 2028 at 00:00:00.000 UTC. Admitted students pay $8.00 and all other admitted applicants pay $16.00. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Para ser admitido hay que tener al menos 14 años y ser residente o tener beca; además, los menores de 18 años necesitan consentimiento de su tutor. Se reciben solicitudes desde el 29 de febrero de 2028 a las 00:00:00.000 UTC hasta el 29 de febrero de 2028 a las 23:59:59.999 UTC, incluidos ambos extremos. Los estudiantes admitidos pagan 8,00 USD y las demás personas admitidas pagan 16,00 USD. No hay otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Applicants must be at least 14 years old, must be residents or scholarship holders, and must have guardian consent if they are younger than 18. A submission must arrive after February 28, 2028 at 23:59:59.999 UTC and before March 1, 2028 at 00:00:00.000 UTC. Admitted students pay $8.00 and all other admitted applicants pay $16.00. No other conditions or fees apply.",
+                    "es": "Los solicitantes deben tener al menos 14 años, deben ser (residentes O titulares de beca), y deben tener consentimiento del tutor si tienen 17 años o menos (es decir, si son menores de 18 años). La solicitud debe llegar después del 28 de febrero de 2028 a las 23:59:59.999 UTC y antes del 1 de marzo de 2028 a las 00:00:00.000 UTC. Los estudiantes admitidos pagan 8,00 USD y todos los demás solicitantes admitidos pagan 16,00 USD. No se aplican otras condiciones ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 14
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "resident",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "scholarship",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "age",
+                                "cmp": "gte",
+                                "value": 18
+                              },
+                              {
+                                "op": "flag",
+                                "field": "guardianConsent",
+                                "value": true
+                              }
+                            ]
+                          },
+                          {
+                            "op": "time",
+                            "cmp": "gt",
+                            "value": "2028-02-28T23:59:59.999Z"
+                          },
+                          {
+                            "op": "time",
+                            "cmp": "lt",
+                            "value": "2028-03-01T00:00:00.000Z"
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1600,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            "cents": 800,
+                            "label": "admitted students"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "To be admitted you must be at least 14 years old and be a resident or have a scholarship; in addition, those under 18 years old need guardian consent. Applications are received from February 29, 2028 at 00:00:00.000 UTC to February 29, 2028 at 23:59:59.999 UTC, including both endpoints. Admitted students pay 8.00 USD and all other admitted persons pay 16.00 USD. There are no other requirements or fees.",
+                    "es": "Para ser admitido hay que tener al menos 14 años y ser residente o tener beca; además, los menores de 18 años necesitan consentimiento de su tutor. Se reciben solicitudes desde el 29 de febrero de 2028 a las 00:00:00.000 UTC hasta el 29 de febrero de 2028 a las 23:59:59.999 UTC, incluidos ambos extremos. Los estudiantes admitidos pagan 8,00 USD y las demás personas admitidas pagan 16,00 USD. No hay otros requisitos ni tarifas.",
+                    "rules": null,
+                    "issues": [
+                      "Clarification needed: the Spanish clause 'tener al menos 14 años y ser residente o tener beca' has ambiguous AND/OR scope — it is unclear whether it means 'al menos 14 años Y (residente O beca)' or '(al menos 14 años Y residente) O beca'. Please restate with parentheses or by repeating the age qualifier in each alternative."
+                    ]
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "unresolved",
+                  "witnesses": [],
+                  "checkedCases": 0,
+                  "issues": [
+                    "At least one draft needs clarification; no complete comparison is possible."
+                  ],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 0,
+                    "flagCombinations": 32,
+                    "timePartitions": 0,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:39:21.371Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [],
+            "issues": [
+              "At least one draft needs clarification; no complete comparison is possible.",
+              "Clarification needed: the Spanish clause 'tener al menos 14 años y ser residente o tener beca' has ambiguous AND/OR scope — it is unclear whether it means 'al menos 14 años Y (residente O beca)' or '(al menos 14 años Y residente) O beca'. Please restate with parentheses or by repeating the age qualifier in each alternative."
+            ]
+          }
+        },
+        "v2c07:plain-meta": {
+          "caseId": "v2c07",
+          "arm": "plain-meta",
+          "claimId": "417d8185-9217-4ebf-a3d1-8b1ec59804cc",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:21.674Z",
+          "requestBytes": 5349,
+          "requestSha256": "8f4ab8a396d2bb8561bd5ad7c86e658702152ba0bd18e63058446d531c2cf13c",
+          "reservedNanoUsd": 46622250,
+          "finishedAt": "2026-10-27T21:39:24.033Z",
+          "durationMs": 2359,
+          "metrics": {
+            "providerDurationMs": 2191,
+            "requestBytes": 5349,
+            "responseContentBytes": 314,
+            "promptTokens": 1087,
+            "completionTokens": 525,
+            "totalTokens": 1612,
+            "reasoningTokens": 434,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "equivalent",
+            "explanation": "Both policies require age 14+, resident or scholarship, guardian consent if under 18, submission within Feb 29, 2028 00:00:00.000 to 23:59:59.999 UTC inclusive, with $8.00 for admitted students and $16.00 otherwise. No behavioral difference found.",
+            "witness": null,
+            "issues": []
+          }
+        },
+        "v2c08:plain-meta": {
+          "caseId": "v2c08",
+          "arm": "plain-meta",
+          "claimId": "59c722d3-9a6f-4682-a78d-ad848f9cdd63",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:24.330Z",
+          "requestBytes": 5191,
+          "requestSha256": "bf484d090cf12c621831f7cc8b919275b9c98e81a3c9782d9d3c9ef155b8674a",
+          "reservedNanoUsd": 46424750,
+          "finishedAt": "2026-10-27T21:39:26.740Z",
+          "durationMs": 2410,
+          "metrics": {
+            "providerDurationMs": 2242,
+            "requestBytes": 5191,
+            "responseContentBytes": 574,
+            "promptTokens": 1016,
+            "completionTokens": 552,
+            "totalTokens": 1568,
+            "reasoningTokens": 399,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "explanation": "Policies differ on guardian consent for students. Alice requires consent for all admitted 10-17 year-olds who are students or members. Bob admits a student without requiring consent. A 15-year-old student without consent is rejected by Alice but admitted by Bob for $13.00.",
+            "witness": {
+              "attendee": {
+                "age": 15,
+                "resident": false,
+                "student": true,
+                "member": false,
+                "guardianConsent": false,
+                "scholarship": false,
+                "submittedAt": "2026-06-01T12:00:00.000Z"
+              },
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 1300
+              }
+            },
+            "issues": []
+          }
+        },
+        "v2c08:samepage": {
+          "caseId": "v2c08",
+          "arm": "samepage",
+          "claimId": "410c0287-22db-475d-b14b-8fa29b1da18a",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:26.989Z",
+          "requestBytes": 7716,
+          "requestSha256": "334e9073e3f8f5feb40bae9fc2efc472b90c7ec648e0fa198ebc37a808b89913",
+          "reservedNanoUsd": 49581000,
+          "finishedAt": "2026-10-27T21:39:32.807Z",
+          "durationMs": 5818,
+          "metrics": {
+            "providerDurationMs": 5640,
+            "requestBytes": 7716,
+            "responseContentBytes": 1250,
+            "promptTokens": 1610,
+            "completionTokens": 1665,
+            "totalTokens": 3275,
+            "reasoningTokens": 1353,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "different",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c08",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:39:26.989Z",
+              "updatedAt": "2026-10-27T21:39:32.807Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:39:26.989Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Only applicants aged 10 through 17, inclusive, may attend. They must have guardian consent and must be either students or members. There is no submission deadline. Admitted scholarship holders pay $3.00 and all other admitted applicants pay $13.00. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Solo pueden asistir personas de 10 a 17 años, incluidos ambos extremos. Deben cumplir al menos una de estas dos opciones: ser estudiante; o ser socio y tener consentimiento de su tutor. No hay fecha límite de solicitud. Las personas admitidas con beca pagan 3,00 USD y las demás personas admitidas pagan 13,00 USD. No se aplican otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Only applicants aged 10 through 17, inclusive, may attend. They must have guardian consent and must be either students or members. There is no submission deadline. Admitted scholarship holders pay $3.00 and all other admitted applicants pay $13.00. No other conditions or fees apply.",
+                    "es": "Solo pueden asistir los solicitantes de 10 a 17 años, inclusive. Deben tener el consentimiento de su tutor y deben ser (estudiantes o socios). No hay fecha límite de presentación. Los titulares de becas admitidos pagan 3,00 USD y todos los demás solicitantes admitidos pagan 13,00 USD. No se aplican otras condiciones ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 10
+                          },
+                          {
+                            "op": "age",
+                            "cmp": "lte",
+                            "value": 17
+                          },
+                          {
+                            "op": "flag",
+                            "field": "guardianConsent",
+                            "value": true
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "student",
+                                "value": true
+                              },
+                              {
+                                "op": "flag",
+                                "field": "member",
+                                "value": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1300,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 300,
+                            "label": "admitted scholarship holders"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "Only persons aged 10 through 17, inclusive, may attend. They must satisfy at least one of these two options: (1) be a student; or (2) be a member and have guardian consent. There is no application deadline. Admitted scholarship holders pay USD 3.00 and all other admitted persons pay USD 13.00. No other requirements or fees apply.",
+                    "es": "Solo pueden asistir personas de 10 a 17 años, incluidos ambos extremos. Deben cumplir al menos una de estas dos opciones: ser estudiante; o ser socio y tener consentimiento de su tutor. No hay fecha límite de solicitud. Las personas admitidas con beca pagan 3,00 USD y las demás personas admitidas pagan 13,00 USD. No se aplican otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "all",
+                        "args": [
+                          {
+                            "op": "age",
+                            "cmp": "gte",
+                            "value": 10
+                          },
+                          {
+                            "op": "age",
+                            "cmp": "lte",
+                            "value": 17
+                          },
+                          {
+                            "op": "any",
+                            "args": [
+                              {
+                                "op": "flag",
+                                "field": "student",
+                                "value": true
+                              },
+                              {
+                                "op": "all",
+                                "args": [
+                                  {
+                                    "op": "flag",
+                                    "field": "member",
+                                    "value": true
+                                  },
+                                  {
+                                    "op": "flag",
+                                    "field": "guardianConsent",
+                                    "value": true
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 1300,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "scholarship",
+                              "value": true
+                            },
+                            "cents": 300,
+                            "label": "admitted scholarship holders"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "different",
+                  "witnesses": [
+                    {
+                      "id": "admission-right",
+                      "kind": "admission-right",
+                      "attendee": {
+                        "age": 17,
+                        "resident": false,
+                        "student": true,
+                        "member": false,
+                        "guardianConsent": false,
+                        "scholarship": false,
+                        "submittedAt": "2026-10-26T12:00:00.000Z"
+                      },
+                      "left": {
+                        "accepted": false,
+                        "feeCents": null,
+                        "feeReason": {
+                          "en": "No fee: admission denied.",
+                          "es": "Sin tarifa: admisión denegada."
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": false,
+                            "en": "(age ≥ 10 AND age ≤ 17 AND guardian consent AND (student OR member))",
+                            "es": "(edad ≥ 10 Y edad ≤ 17 Y consentimiento del tutor Y (estudiante O miembro))"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 10",
+                            "es": "edad ≥ 10"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": true,
+                            "en": "age ≤ 17",
+                            "es": "edad ≤ 17"
+                          },
+                          {
+                            "path": "eligibility.2",
+                            "passed": false,
+                            "en": "guardian consent",
+                            "es": "consentimiento del tutor"
+                          },
+                          {
+                            "path": "eligibility.3",
+                            "passed": true,
+                            "en": "(student OR member)",
+                            "es": "(estudiante O miembro)"
+                          },
+                          {
+                            "path": "eligibility.3.0",
+                            "passed": true,
+                            "en": "student",
+                            "es": "estudiante"
+                          },
+                          {
+                            "path": "eligibility.3.1",
+                            "passed": false,
+                            "en": "member",
+                            "es": "miembro"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Admission requires (age ≥ 10 AND age ≤ 17 AND guardian consent AND (student OR member)).",
+                            "es": "La admisión requiere (edad ≥ 10 Y edad ≤ 17 Y consentimiento del tutor Y (estudiante O miembro))."
+                          }
+                        ]
+                      },
+                      "right": {
+                        "accepted": true,
+                        "feeCents": 1300,
+                        "feeReason": {
+                          "en": "Standard fee; no earlier override matched.",
+                          "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                        },
+                        "trace": [
+                          {
+                            "path": "eligibility",
+                            "passed": true,
+                            "en": "(age ≥ 10 AND age ≤ 17 AND (student OR (member AND guardian consent)))",
+                            "es": "(edad ≥ 10 Y edad ≤ 17 Y (estudiante O (miembro Y consentimiento del tutor)))"
+                          },
+                          {
+                            "path": "eligibility.0",
+                            "passed": true,
+                            "en": "age ≥ 10",
+                            "es": "edad ≥ 10"
+                          },
+                          {
+                            "path": "eligibility.1",
+                            "passed": true,
+                            "en": "age ≤ 17",
+                            "es": "edad ≤ 17"
+                          },
+                          {
+                            "path": "eligibility.2",
+                            "passed": true,
+                            "en": "(student OR (member AND guardian consent))",
+                            "es": "(estudiante O (miembro Y consentimiento del tutor))"
+                          },
+                          {
+                            "path": "eligibility.2.0",
+                            "passed": true,
+                            "en": "student",
+                            "es": "estudiante"
+                          },
+                          {
+                            "path": "eligibility.2.1",
+                            "passed": false,
+                            "en": "(member AND guardian consent)",
+                            "es": "(miembro Y consentimiento del tutor)"
+                          },
+                          {
+                            "path": "eligibility.2.1.0",
+                            "passed": false,
+                            "en": "member",
+                            "es": "miembro"
+                          },
+                          {
+                            "path": "eligibility.2.1.1",
+                            "passed": false,
+                            "en": "guardian consent",
+                            "es": "consentimiento del tutor"
+                          },
+                          {
+                            "path": "fee.0",
+                            "passed": false,
+                            "en": "scholarship",
+                            "es": "beca"
+                          }
+                        ],
+                        "reasons": [
+                          {
+                            "en": "Meets the complete admission rule.",
+                            "es": "Cumple la regla completa de admisión."
+                          },
+                          {
+                            "en": "Standard fee; no earlier override matched.",
+                            "es": "Tarifa estándar; no coincidió ninguna excepción anterior."
+                          }
+                        ]
+                      },
+                      "feeDeltaCents": null,
+                      "explanation": {
+                        "en": "B admits this person; A refuses them.",
+                        "es": "B admite a esta persona; A la rechaza."
+                      }
+                    }
+                  ],
+                  "checkedCases": 864,
+                  "issues": [],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 9,
+                    "flagCombinations": 32,
+                    "timePartitions": 3,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:39:32.807Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [
+              {
+                "attendee": {
+                  "age": 17,
+                  "resident": false,
+                  "student": true,
+                  "member": false,
+                  "guardianConsent": false,
+                  "scholarship": false,
+                  "submittedAt": "2026-10-26T12:00:00.000Z"
+                },
+                "left": {
+                  "accepted": false,
+                  "feeCents": null
+                },
+                "right": {
+                  "accepted": true,
+                  "feeCents": 1300
+                }
+              }
+            ],
+            "issues": []
+          }
+        },
+        "v2c09:samepage": {
+          "caseId": "v2c09",
+          "arm": "samepage",
+          "claimId": "dd307f89-f562-4c31-8216-e862a0496e5b",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:33.145Z",
+          "requestBytes": 7557,
+          "requestSha256": "b5b8a632ec2f17cbb3637cf1bd2a08440d2b7543b060aa67cc10b4946515f5ab",
+          "reservedNanoUsd": 49382250,
+          "finishedAt": "2026-10-27T21:39:39.116Z",
+          "durationMs": 5971,
+          "metrics": {
+            "providerDurationMs": 5797,
+            "requestBytes": 7557,
+            "responseContentBytes": 1133,
+            "promptTokens": 1585,
+            "completionTokens": 1697,
+            "totalTokens": 3282,
+            "reasoningTokens": 1416,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "unresolved",
+            "room": {
+              "kind": "samepage-studio-v1",
+              "id": "studio-benchmark-comparison-20261027-v2-v2c09",
+              "revision": 4,
+              "createdAt": "2026-10-27T21:39:33.145Z",
+              "updatedAt": "2026-10-27T21:39:39.116Z",
+              "mode": "automatic-model",
+              "published": {
+                "version": 1,
+                "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+                "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+                "rules": {
+                  "eligibility": {
+                    "op": "always"
+                  },
+                  "fee": {
+                    "currency": "USD",
+                    "defaultCents": 0,
+                    "overrides": []
+                  }
+                },
+                "publishedAt": "2026-10-27T21:39:33.145Z",
+                "reviewId": null,
+                "candidateId": null
+              },
+              "drafts": {
+                "alice": {
+                  "editor": "alice",
+                  "language": "en",
+                  "version": 2,
+                  "text": "Applicants aged 18 or older are admitted. There is no submission deadline. Admitted members pay $12.00. Admitted students pay $18.00. All other admitted applicants pay $30.00. No other conditions or fees apply."
+                },
+                "bob": {
+                  "editor": "bob",
+                  "language": "es",
+                  "version": 2,
+                  "text": "Se admiten personas de al menos 18 años. No hay fecha límite de solicitud. Para cada persona admitida se aplica la primera tarifa que corresponda en este orden: socio, 12,00 USD; estudiante, 18,00 USD; cualquier otra persona, 30,00 USD. No hay otros requisitos ni tarifas."
+                }
+              },
+              "activeJob": null,
+              "review": {
+                "wordingSource": "checked-rules-v1",
+                "id": "studio-review-3",
+                "basePolicyVersion": 1,
+                "candidates": [
+                  {
+                    "id": "studio-review-3-alice",
+                    "editor": "alice",
+                    "sourceVersion": 2,
+                    "en": "Applicants aged 18 or older are admitted. There is no submission deadline. Admitted members pay $12.00. Admitted students pay $18.00. All other admitted applicants pay $30.00. No other conditions or fees apply.",
+                    "es": "Se admiten los solicitantes de 18 años o más. No hay fecha límite de presentación. Los miembros admitidos pagan 12,00 USD. Los estudiantes admitidos pagan 18,00 USD. Todos los demás solicitantes admitidos pagan 30,00 USD. No se aplican otras condiciones ni tarifas.",
+                    "rules": null,
+                    "issues": [
+                      "Overlapping fee clauses lack priority: an admitted applicant who is both member and student matches both the $12.00 member fee and the $18.00 student fee, and the source states no first-match order or other priority, so no unique fee result can be determined."
+                    ]
+                  },
+                  {
+                    "id": "studio-review-3-bob",
+                    "editor": "bob",
+                    "sourceVersion": 2,
+                    "en": "Persons aged at least 18 years are admitted. There is no application deadline. For each admitted person the first applicable fee in this order applies: member, USD 12.00; student, USD 18.00; any other person, USD 30.00. There are no other requirements or fees.",
+                    "es": "Se admiten personas de al menos 18 años. No hay fecha límite de solicitud. Para cada persona admitida se aplica la primera tarifa que corresponda en este orden: socio, 12,00 USD; estudiante, 18,00 USD; cualquier otra persona, 30,00 USD. No hay otros requisitos ni tarifas.",
+                    "rules": {
+                      "eligibility": {
+                        "op": "age",
+                        "cmp": "gte",
+                        "value": 18
+                      },
+                      "fee": {
+                        "currency": "USD",
+                        "defaultCents": 3000,
+                        "overrides": [
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "member",
+                              "value": true
+                            },
+                            "cents": 1200,
+                            "label": "member"
+                          },
+                          {
+                            "when": {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            "cents": 1800,
+                            "label": "student"
+                          }
+                        ]
+                      }
+                    },
+                    "issues": []
+                  }
+                ],
+                "votes": {},
+                "status": "open",
+                "provenance": "meta-model",
+                "discovery": {
+                  "status": "unresolved",
+                  "witnesses": [],
+                  "checkedCases": 0,
+                  "issues": [
+                    "At least one draft needs clarification; no complete comparison is possible."
+                  ],
+                  "coverage": {
+                    "ageValues": 121,
+                    "agePartitions": 0,
+                    "flagCombinations": 32,
+                    "timePartitions": 0,
+                    "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+                  }
+                },
+                "createdAt": "2026-10-27T21:39:39.116Z"
+              },
+              "registrations": [],
+              "modelCallCount": 1
+            },
+            "witnesses": [],
+            "issues": [
+              "At least one draft needs clarification; no complete comparison is possible.",
+              "Overlapping fee clauses lack priority: an admitted applicant who is both member and student matches both the $12.00 member fee and the $18.00 student fee, and the source states no first-match order or other priority, so no unique fee result can be determined."
+            ]
+          }
+        },
+        "v2c09:plain-meta": {
+          "caseId": "v2c09",
+          "arm": "plain-meta",
+          "claimId": "b41a5ac7-6c10-4db2-a356-c0496563e74f",
+          "status": "completed",
+          "startedAt": "2026-10-27T21:39:39.423Z",
+          "requestBytes": 5032,
+          "requestSha256": "0af953695658967124640ff6115076621ec6deb626b86d008064031d3f2f0434",
+          "reservedNanoUsd": 46226000,
+          "finishedAt": "2026-10-27T21:39:44.020Z",
+          "durationMs": 4597,
+          "metrics": {
+            "providerDurationMs": 4389,
+            "requestBytes": 5032,
+            "responseContentBytes": 364,
+            "promptTokens": 991,
+            "completionTokens": 1011,
+            "totalTokens": 2002,
+            "reasoningTokens": 924,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          },
+          "result": {
+            "status": "unresolved",
+            "explanation": "Alice's policy is ambiguous for attendees who are both members and students, so equivalence cannot be decided without clarification.",
+            "witness": null,
+            "issues": [
+              "Clarify in Alice's policy which fee applies when an admitted attendee is both a member ($12.00) and a student ($18.00), or confirm explicit first-applicable order."
+            ]
+          }
+        }
+      },
+      "reservedNanoUsd": 864321750,
+      "inFlight": null
+    }
+  }
+}

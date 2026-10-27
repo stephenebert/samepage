@@ -1,0 +1,176 @@
+{
+  "httpStatus": 200,
+  "json": {
+    "runId": "comparison-20261027-v2",
+    "datasetHash": "ba386e54c93f1f00343788c5120b7f46416637d6256aed34c53dd18f37ab6bc8",
+    "inputSha256": "ba386e54c93f1f00343788c5120b7f46416637d6256aed34c53dd18f37ab6bc8",
+    "ready": true,
+    "configurationError": null,
+    "config": {
+      "model": "muse-spark-1.3",
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "maxCompletionTokens": 8192,
+      "reuseUnchanged": false
+    },
+    "ordinaryStudioEnabled": false,
+    "keyConfigured": true,
+    "maxAttempts": 24,
+    "maxEstimatedUsd": 2,
+    "maxRequestBytes": 32768,
+    "framingTokenReserve": 4096,
+    "ratesPerMillionTokens": {
+      "inputUsd": 1.25,
+      "outputUsd": 4.25
+    },
+    "actualBilledCostUsd": null,
+    "plans": [
+      {
+        "caseId": "v2c01",
+        "arm": "samepage",
+        "requestBytes": 7650,
+        "conservativeEstimatedMaxUsd": 0.0494985
+      },
+      {
+        "caseId": "v2c01",
+        "arm": "plain-meta",
+        "requestBytes": 5125,
+        "conservativeEstimatedMaxUsd": 0.04634225
+      },
+      {
+        "caseId": "v2c02",
+        "arm": "samepage",
+        "requestBytes": 7928,
+        "conservativeEstimatedMaxUsd": 0.049846
+      },
+      {
+        "caseId": "v2c02",
+        "arm": "plain-meta",
+        "requestBytes": 5403,
+        "conservativeEstimatedMaxUsd": 0.04668975
+      },
+      {
+        "caseId": "v2c03",
+        "arm": "samepage",
+        "requestBytes": 7704,
+        "conservativeEstimatedMaxUsd": 0.049566
+      },
+      {
+        "caseId": "v2c03",
+        "arm": "plain-meta",
+        "requestBytes": 5179,
+        "conservativeEstimatedMaxUsd": 0.04640975
+      },
+      {
+        "caseId": "v2c04",
+        "arm": "samepage",
+        "requestBytes": 7744,
+        "conservativeEstimatedMaxUsd": 0.049616
+      },
+      {
+        "caseId": "v2c04",
+        "arm": "plain-meta",
+        "requestBytes": 5219,
+        "conservativeEstimatedMaxUsd": 0.04645975
+      },
+      {
+        "caseId": "v2c05",
+        "arm": "samepage",
+        "requestBytes": 7840,
+        "conservativeEstimatedMaxUsd": 0.049736
+      },
+      {
+        "caseId": "v2c05",
+        "arm": "plain-meta",
+        "requestBytes": 5315,
+        "conservativeEstimatedMaxUsd": 0.04657975
+      },
+      {
+        "caseId": "v2c06",
+        "arm": "samepage",
+        "requestBytes": 7539,
+        "conservativeEstimatedMaxUsd": 0.04935975
+      },
+      {
+        "caseId": "v2c06",
+        "arm": "plain-meta",
+        "requestBytes": 5014,
+        "conservativeEstimatedMaxUsd": 0.0462035
+      },
+      {
+        "caseId": "v2c07",
+        "arm": "samepage",
+        "requestBytes": 7874,
+        "conservativeEstimatedMaxUsd": 0.0497785
+      },
+      {
+        "caseId": "v2c07",
+        "arm": "plain-meta",
+        "requestBytes": 5349,
+        "conservativeEstimatedMaxUsd": 0.04662225
+      },
+      {
+        "caseId": "v2c08",
+        "arm": "samepage",
+        "requestBytes": 7716,
+        "conservativeEstimatedMaxUsd": 0.049581
+      },
+      {
+        "caseId": "v2c08",
+        "arm": "plain-meta",
+        "requestBytes": 5191,
+        "conservativeEstimatedMaxUsd": 0.04642475
+      },
+      {
+        "caseId": "v2c09",
+        "arm": "samepage",
+        "requestBytes": 7557,
+        "conservativeEstimatedMaxUsd": 0.04938225
+      },
+      {
+        "caseId": "v2c09",
+        "arm": "plain-meta",
+        "requestBytes": 5032,
+        "conservativeEstimatedMaxUsd": 0.046226
+      },
+      {
+        "caseId": "v2c10",
+        "arm": "samepage",
+        "requestBytes": 7811,
+        "conservativeEstimatedMaxUsd": 0.04969975
+      },
+      {
+        "caseId": "v2c10",
+        "arm": "plain-meta",
+        "requestBytes": 5286,
+        "conservativeEstimatedMaxUsd": 0.0465435
+      },
+      {
+        "caseId": "v2c11",
+        "arm": "samepage",
+        "requestBytes": 7652,
+        "conservativeEstimatedMaxUsd": 0.049501
+      },
+      {
+        "caseId": "v2c11",
+        "arm": "plain-meta",
+        "requestBytes": 5127,
+        "conservativeEstimatedMaxUsd": 0.04634475
+      },
+      {
+        "caseId": "v2c12",
+        "arm": "samepage",
+        "requestBytes": 7663,
+        "conservativeEstimatedMaxUsd": 0.04951475
+      },
+      {
+        "caseId": "v2c12",
+        "arm": "plain-meta",
+        "requestBytes": 5138,
+        "conservativeEstimatedMaxUsd": 0.0463585
+      }
+    ],
+    "conservativeEstimatedMaxUsd": 1.1522839999999999,
+    "ledger": null
+  }
+}

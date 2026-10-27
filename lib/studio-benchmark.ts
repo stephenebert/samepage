@@ -6,7 +6,7 @@ import type { StudioAttendee, StudioRoom } from "./studio-types";
 
 // A single, finite evaluation. There is intentionally no reset, arbitrary prompt,
 // configurable model, retry, or caller-selected run identifier.
-export const BENCHMARK_RUN_ID = "comparison-20261027-v1";
+export const BENCHMARK_RUN_ID = "comparison-20261027-v2";
 export const BENCHMARK_LEDGER_ID = `benchmark-${BENCHMARK_RUN_ID}`;
 export const BENCHMARK_MAX_ATTEMPTS = 24;
 export const BENCHMARK_MAX_REQUEST_BYTES = 32768;

@@ -1,0 +1,1609 @@
+{
+  "scope": "12 fresh synthetic bilingual policy-pair reviews, one independent request per arm per pair; no human study, not a full repair-workflow comparison.",
+  "runStatus": "completed",
+  "model": "muse-spark-1.3",
+  "reasoningEffort": "low",
+  "maxCompletionTokens": 8192,
+  "summary": {
+    "samepage": {
+      "correct": 11,
+      "total": 12,
+      "completed": 12,
+      "failures": 0,
+      "unexecuted": 0,
+      "differencesDetected": 6,
+      "differentTotal": 6,
+      "equivalentCorrect": 3,
+      "equivalentTotal": 4,
+      "falseAlarms": 0,
+      "unnecessaryAbstentions": 1,
+      "clarificationCorrect": 2,
+      "clarificationTotal": 2,
+      "differentCasesWithValidWitness": 6,
+      "invalidWitnesses": 0,
+      "medianProviderMs": 6775,
+      "medianHttpMs": 7289,
+      "promptTokens": 19506,
+      "completionTokens": 26137,
+      "usageComplete": true,
+      "uncachedRateEstimateUsd": 0.13546475,
+      "actualBilledCostUsd": null,
+      "reportedUsageEstimateUsd": 0.13546475
+    },
+    "plain-meta": {
+      "correct": 12,
+      "total": 12,
+      "completed": 12,
+      "failures": 0,
+      "unexecuted": 0,
+      "differencesDetected": 6,
+      "differentTotal": 6,
+      "equivalentCorrect": 4,
+      "equivalentTotal": 4,
+      "falseAlarms": 0,
+      "unnecessaryAbstentions": 0,
+      "clarificationCorrect": 2,
+      "clarificationTotal": 2,
+      "differentCasesWithValidWitness": 6,
+      "invalidWitnesses": 0,
+      "medianProviderMs": 2612.5,
+      "medianHttpMs": 3020,
+      "promptTokens": 12378,
+      "completionTokens": 7750,
+      "usageComplete": true,
+      "uncachedRateEstimateUsd": 0.04841,
+      "actualBilledCostUsd": null,
+      "reportedUsageEstimateUsd": 0.04841
+    }
+  },
+  "paired": [
+    {
+      "caseId": "v2c01",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c02",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c03",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c04",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c05",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c06",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c07",
+      "samepage": false,
+      "plain": true,
+      "result": "plain-win"
+    },
+    {
+      "caseId": "v2c08",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c09",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c10",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c11",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    },
+    {
+      "caseId": "v2c12",
+      "samepage": true,
+      "plain": true,
+      "result": "both-correct"
+    }
+  ],
+  "rows": [
+    {
+      "caseId": "v2c01",
+      "arm": "samepage",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 6684,
+        "requestBytes": 7650,
+        "responseContentBytes": 1206,
+        "promptTokens": 1625,
+        "completionTokens": 2068,
+        "totalTokens": 3693,
+        "reasoningTokens": 1719,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 7224,
+      "operationDurationMs": 6890,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 24,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2031-04-09T18:30:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 2400
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 2400
+              }
+            }
+          }
+        ]
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 10,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 38720,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 38720,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c01",
+      "arm": "plain-meta",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 3464,
+        "requestBytes": 5125,
+        "responseContentBytes": 567,
+        "promptTokens": 1031,
+        "completionTokens": 890,
+        "totalTokens": 1921,
+        "reasoningTokens": 739,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 4586,
+      "operationDurationMs": 3694,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 18,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2031-04-09T18:30:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 2400
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 2400
+              }
+            }
+          }
+        ]
+      },
+      "explanation": "Policies differ on the deadline instant: Alice requires submission strictly before 2031-04-09T18:30:00.000Z, while Bob explicitly includes that instant. An otherwise qualified applicant submitting exactly at that millisecond is rejected by Alice and admitted by Bob.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c02",
+      "arm": "samepage",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 7985,
+        "requestBytes": 7928,
+        "responseContentBytes": 1708,
+        "promptTokens": 1665,
+        "completionTokens": 2748,
+        "totalTokens": 4413,
+        "reasoningTokens": 2315,
+        "cachedInputTokens": 497,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 8469,
+      "operationDurationMs": 8119,
+      "error": null,
+      "predicted": "equivalent",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 3,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c02",
+      "arm": "plain-meta",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 2110,
+        "requestBytes": 5403,
+        "responseContentBytes": 281,
+        "promptTokens": 1071,
+        "completionTokens": 601,
+        "totalTokens": 1672,
+        "reasoningTokens": 525,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 2509,
+      "operationDurationMs": 2260,
+      "error": null,
+      "predicted": "equivalent",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "explanation": "Both policies admit ages 12-17 inclusive who are (resident or student) and (member or guardianConsent) with no deadline, and apply identical fee priority: scholarship $0, then member $9, then student $14, else $18.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c03",
+      "arm": "samepage",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 7103,
+        "requestBytes": 7704,
+        "responseContentBytes": 1280,
+        "promptTokens": 1619,
+        "completionTokens": 2102,
+        "totalTokens": 3721,
+        "reasoningTokens": 1768,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 7674,
+      "operationDurationMs": 7377,
+      "error": null,
+      "predicted": "equivalent",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 3,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c03",
+      "arm": "plain-meta",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 2583,
+        "requestBytes": 5179,
+        "responseContentBytes": 244,
+        "promptTokens": 1025,
+        "completionTokens": 533,
+        "totalTokens": 1558,
+        "reasoningTokens": 469,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 2961,
+      "operationDurationMs": 2743,
+      "error": null,
+      "predicted": "equivalent",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "explanation": "Both policies admit ages 16-17 only with guardian consent and ages 18+ regardless, with no deadline, and charge $0 with scholarship, otherwise $15 for members and $25 otherwise.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c04",
+      "arm": "samepage",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 6799,
+        "requestBytes": 7744,
+        "responseContentBytes": 1258,
+        "promptTokens": 1616,
+        "completionTokens": 1843,
+        "totalTokens": 3459,
+        "reasoningTokens": 1482,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 7205,
+      "operationDurationMs": 6958,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 24,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-10-26T12:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1900
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1900
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            }
+          }
+        ]
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 3,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c04",
+      "arm": "plain-meta",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 1577,
+        "requestBytes": 5219,
+        "responseContentBytes": 482,
+        "promptTokens": 1022,
+        "completionTokens": 520,
+        "totalTokens": 1542,
+        "reasoningTokens": 389,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 1970,
+      "operationDurationMs": 1726,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 20,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-06-01T00:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1900
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1900
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            }
+          }
+        ]
+      },
+      "explanation": "Alice rejects only applicants who are both resident and student, while Bob rejects anyone who is resident or student. A resident-only adult is admitted by Alice but rejected by Bob.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c05",
+      "arm": "samepage",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 6751,
+        "requestBytes": 7840,
+        "responseContentBytes": 1845,
+        "promptTokens": 1650,
+        "completionTokens": 2056,
+        "totalTokens": 3706,
+        "reasoningTokens": 1579,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 7354,
+      "operationDurationMs": 6910,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 24,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2026-10-26T12:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1200
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 400
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1200
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 400
+              }
+            }
+          }
+        ]
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 3,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c05",
+      "arm": "plain-meta",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 2797,
+        "requestBytes": 5315,
+        "responseContentBytes": 474,
+        "promptTokens": 1056,
+        "completionTokens": 721,
+        "totalTokens": 1777,
+        "reasoningTokens": 592,
+        "cachedInputTokens": 753,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 3447,
+      "operationDurationMs": 2977,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 20,
+              "resident": true,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2026-01-15T12:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1200
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 400
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": true,
+                "feeCents": 1200
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 400
+              }
+            }
+          }
+        ]
+      },
+      "explanation": "Policies differ only in fee priority for attendees who are both members and scholarship holders. Alice charges members $12 first, while Bob charges scholarship holders $4 first.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c06",
+      "arm": "samepage",
+      "expected": "unresolved",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 4374,
+        "requestBytes": 7539,
+        "responseContentBytes": 1096,
+        "promptTokens": 1594,
+        "completionTokens": 1337,
+        "totalTokens": 2931,
+        "reasoningTokens": 1020,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 4851,
+      "operationDurationMs": 4571,
+      "error": null,
+      "predicted": "unresolved",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "fidelity": {
+        "applicable": false
+      },
+      "workflow": {
+        "passed": true,
+        "clarificationBlocksBothApprovals": true
+      }
+    },
+    {
+      "caseId": "v2c06",
+      "arm": "plain-meta",
+      "expected": "unresolved",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 2889,
+        "requestBytes": 5014,
+        "responseContentBytes": 398,
+        "promptTokens": 1000,
+        "completionTokens": 531,
+        "totalTokens": 1531,
+        "reasoningTokens": 429,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 3316,
+      "operationDurationMs": 3056,
+      "error": null,
+      "predicted": "unresolved",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "explanation": "Alice requires arrival before 4pm 'local time' without specifying which timezone, so the UTC deadline cannot be determined, while Bob specifies 16:00 UTC exactly.",
+      "issues": [
+        "Clarify which timezone '4:00 p.m. local time on March 12, 2028' refers to and how a UTC submittedAt instant is compared to it, including exact millisecond inclusivity."
+      ]
+    },
+    {
+      "caseId": "v2c07",
+      "arm": "samepage",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": false,
+      "metrics": {
+        "providerDurationMs": 9320,
+        "requestBytes": 7874,
+        "responseContentBytes": 1674,
+        "promptTokens": 1681,
+        "completionTokens": 3009,
+        "totalTokens": 4690,
+        "reasoningTokens": 2549,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 10305,
+      "operationDurationMs": 9504,
+      "error": null,
+      "predicted": "unresolved",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": false,
+        "timePartitions": 20,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 77440,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": false,
+            "checks": 0,
+            "mismatches": null,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": false,
+        "error": "Resolved source was unnecessarily blocked"
+      }
+    },
+    {
+      "caseId": "v2c07",
+      "arm": "plain-meta",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 2191,
+        "requestBytes": 5349,
+        "responseContentBytes": 314,
+        "promptTokens": 1087,
+        "completionTokens": 525,
+        "totalTokens": 1612,
+        "reasoningTokens": 434,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 2637,
+      "operationDurationMs": 2359,
+      "error": null,
+      "predicted": "equivalent",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "explanation": "Both policies require age 14+, resident or scholarship, guardian consent if under 18, submission within Feb 29, 2028 00:00:00.000 to 23:59:59.999 UTC inclusive, with $8.00 for admitted students and $16.00 otherwise. No behavioral difference found.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c08",
+      "arm": "samepage",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 5640,
+        "requestBytes": 7716,
+        "responseContentBytes": 1250,
+        "promptTokens": 1610,
+        "completionTokens": 1665,
+        "totalTokens": 3275,
+        "reasoningTokens": 1353,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 6148,
+      "operationDurationMs": 5818,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 17,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-10-26T12:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 1300
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 1300
+              }
+            }
+          }
+        ]
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 3,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c08",
+      "arm": "plain-meta",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 2242,
+        "requestBytes": 5191,
+        "responseContentBytes": 574,
+        "promptTokens": 1016,
+        "completionTokens": 552,
+        "totalTokens": 1568,
+        "reasoningTokens": 399,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 2686,
+      "operationDurationMs": 2410,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 15,
+              "resident": false,
+              "student": true,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-06-01T12:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 1300
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 1300
+              }
+            }
+          }
+        ]
+      },
+      "explanation": "Policies differ on guardian consent for students. Alice requires consent for all admitted 10-17 year-olds who are students or members. Bob admits a student without requiring consent. A 15-year-old student without consent is rejected by Alice but admitted by Bob for $13.00.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c09",
+      "arm": "samepage",
+      "expected": "unresolved",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 5797,
+        "requestBytes": 7557,
+        "responseContentBytes": 1133,
+        "promptTokens": 1585,
+        "completionTokens": 1697,
+        "totalTokens": 3282,
+        "reasoningTokens": 1416,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 6265,
+      "operationDurationMs": 5971,
+      "error": null,
+      "predicted": "unresolved",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "fidelity": {
+        "applicable": false
+      },
+      "workflow": {
+        "passed": true,
+        "clarificationBlocksBothApprovals": true
+      }
+    },
+    {
+      "caseId": "v2c09",
+      "arm": "plain-meta",
+      "expected": "unresolved",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 4389,
+        "requestBytes": 5032,
+        "responseContentBytes": 364,
+        "promptTokens": 991,
+        "completionTokens": 1011,
+        "totalTokens": 2002,
+        "reasoningTokens": 924,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 4864,
+      "operationDurationMs": 4597,
+      "error": null,
+      "predicted": "unresolved",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "explanation": "Alice's policy is ambiguous for attendees who are both members and students, so equivalence cannot be decided without clarification.",
+      "issues": [
+        "Clarify in Alice's policy which fee applies when an admitted attendee is both a member ($12.00) and a student ($18.00), or confirm explicit first-applicable order."
+      ]
+    },
+    {
+      "caseId": "v2c10",
+      "arm": "samepage",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 7767,
+        "requestBytes": 7811,
+        "responseContentBytes": 1510,
+        "promptTokens": 1660,
+        "completionTokens": 2232,
+        "totalTokens": 3892,
+        "reasoningTokens": 1799,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 8279,
+      "operationDurationMs": 7964,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 24,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-12-06T09:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 700
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 700
+              }
+            }
+          }
+        ]
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 18,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 69696,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 69696,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c10",
+      "arm": "plain-meta",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 2642,
+        "requestBytes": 5286,
+        "responseContentBytes": 566,
+        "promptTokens": 1066,
+        "completionTokens": 521,
+        "totalTokens": 1587,
+        "reasoningTokens": 371,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 3079,
+      "operationDurationMs": 2836,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 30,
+              "resident": false,
+              "student": false,
+              "member": true,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-12-06T09:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 700
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 700
+              }
+            }
+          }
+        ]
+      },
+      "explanation": "Policies differ on the lower deadline inclusivity. Alice requires submission strictly after 09:00:00.000 UTC, while Bob explicitly includes that instant. An otherwise eligible applicant at exactly that instant is rejected by Alice but admitted with $7.00 fee by Bob.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c11",
+      "arm": "samepage",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 13535,
+        "requestBytes": 7652,
+        "responseContentBytes": 1167,
+        "promptTokens": 1602,
+        "completionTokens": 3405,
+        "totalTokens": 5007,
+        "reasoningTokens": 3108,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 14039,
+      "operationDurationMs": 13749,
+      "error": null,
+      "predicted": "equivalent",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 3,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c11",
+      "arm": "plain-meta",
+      "expected": "equivalent",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 1885,
+        "requestBytes": 5127,
+        "responseContentBytes": 322,
+        "promptTokens": 1008,
+        "completionTokens": 530,
+        "totalTokens": 1538,
+        "reasoningTokens": 452,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 2429,
+      "operationDurationMs": 2084,
+      "error": null,
+      "predicted": "equivalent",
+      "witness": {
+        "count": 0,
+        "valid": 0,
+        "invalid": 0,
+        "atLeastOneValid": false,
+        "results": []
+      },
+      "explanation": "Both policies admit exactly residents aged 21+ who are not students, with no deadline, and charge admitted members $10.00 and all other admitted persons $20.00. Alice's $5 student tier never applies because students are rejected, so behavior is identical.",
+      "issues": []
+    },
+    {
+      "caseId": "v2c12",
+      "arm": "samepage",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 5812,
+        "requestBytes": 7663,
+        "responseContentBytes": 1170,
+        "promptTokens": 1599,
+        "completionTokens": 1975,
+        "totalTokens": 3574,
+        "reasoningTokens": 1684,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 6380,
+      "operationDurationMs": 6028,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 2,
+        "valid": 2,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 24,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-10-26T12:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": true,
+                "feeCents": 2400
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": true,
+                "feeCents": 2400
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            }
+          },
+          {
+            "valid": true,
+            "attendee": {
+              "age": 24,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": true,
+              "submittedAt": "2026-10-26T12:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 2400
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": false,
+                "feeCents": null
+              },
+              "right": {
+                "accepted": true,
+                "feeCents": 2400
+              }
+            }
+          }
+        ]
+      },
+      "fidelity": {
+        "applicable": true,
+        "allFaithful": true,
+        "timePartitions": 3,
+        "policies": [
+          {
+            "editor": "alice",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          },
+          {
+            "editor": "bob",
+            "compiled": true,
+            "checks": 11616,
+            "mismatches": 0,
+            "examples": []
+          }
+        ]
+      },
+      "workflow": {
+        "passed": true,
+        "oneVoteHeld": true,
+        "divergentVotesHeld": true,
+        "jointSelectionPublished": true,
+        "receiptsCorrect": 3
+      }
+    },
+    {
+      "caseId": "v2c12",
+      "arm": "plain-meta",
+      "expected": "different",
+      "status": "completed",
+      "correct": true,
+      "metrics": {
+        "providerDurationMs": 3123,
+        "requestBytes": 5138,
+        "responseContentBytes": 573,
+        "promptTokens": 1005,
+        "completionTokens": 815,
+        "totalTokens": 1820,
+        "reasoningTokens": 667,
+        "cachedInputTokens": 0,
+        "finishReason": "stop",
+        "maxCompletionTokens": 8192
+      },
+      "httpDurationMs": 4101,
+      "operationDurationMs": 3481,
+      "error": null,
+      "predicted": "different",
+      "witness": {
+        "count": 1,
+        "valid": 1,
+        "invalid": 0,
+        "atLeastOneValid": true,
+        "results": [
+          {
+            "valid": true,
+            "attendee": {
+              "age": 20,
+              "resident": true,
+              "student": false,
+              "member": false,
+              "guardianConsent": false,
+              "scholarship": false,
+              "submittedAt": "2026-01-01T00:00:00.000Z"
+            },
+            "expected": {
+              "left": {
+                "accepted": true,
+                "feeCents": 2400
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            },
+            "reported": {
+              "left": {
+                "accepted": true,
+                "feeCents": 2400
+              },
+              "right": {
+                "accepted": false,
+                "feeCents": null
+              }
+            }
+          }
+        ]
+      },
+      "explanation": "Policies differ on student/scholarship requirement: Alice admits non-students unless they hold a scholarship, while Bob requires students unless they hold a scholarship. A 20-year-old resident non-student without scholarship is admitted under Alice but rejected under Bob.",
+      "issues": []
+    }
+  ],
+  "limitations": [
+    "One small synthetic sample and one generation per condition; no statistical superiority claim.",
+    "AI-authored goldens and independent AI review, not human bilingual validation.",
+    "Source-language fidelity remains a separate metric from deterministic agreement over compiled rules.",
+    "Dollar figures estimate usage at published uncached token rates; provider billing may lag."
+  ],
+  "actualBilledCostUsd": null
+}
