@@ -49,16 +49,26 @@ export interface StudioCandidate {
 export interface StudioReview {
   id: string; basePolicyVersion: number; candidates: StudioCandidate[];
   votes: Partial<Record<StudioEditor, string>>; status: "open" | "published";
-  discovery: StudioDiscovery; provenance: "manual-agent-review" | "fixture-replay";
+  discovery: StudioDiscovery; provenance: "manual-agent-review" | "fixture-replay" | "meta-model" | "simulated-model";
   publishedVersion?: number; createdAt: string;
 }
 export interface StudioRegistration extends StudioAttendee {
   id: string; requestId: string; policyVersion: number; label: string;
   recordedAt: string; decision: StudioDecision;
 }
+export interface AutomaticStudioReview {
+  requestId: string; jobId: string; provider: "Meta"; model: string;
+  source: "meta" | "simulation";
+  status: "running" | "completed" | "failed" | "superseded";
+  startedAt: string; leaseExpiresAt: string; finishedAt?: string; durationMs?: number;
+  error?: { code: string; message: string };
+}
 export interface StudioRoom {
   kind: "samepage-studio-v1"; id: string; revision: number; createdAt: string; updatedAt: string;
-  mode: "manual-agent-review";
+  mode: "manual-agent-review" | "automatic-model" | "simulated-model";
+  automaticReview?: AutomaticStudioReview;
+  modelCallCount?: number;
+  simulation?: "studio-fee-v1";
   published: StudioPublished; drafts: Record<StudioEditor, StudioDraft>;
   activeJob: StudioJob | null; review: StudioReview | null;
   registrations: StudioRegistration[];

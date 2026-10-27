@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-26",
+  "scope": "Local HTTP integration with two simulated editor clients; controlled model responses, not a live Meta evaluation",
+  "roomId": "studio-52e32729-cefb-40c2-a5d9-3df6902c44cb",
+  "modelCalls": 0,
+  "finalVersion": 3,
+  "fees": [
+    {
+      "policyVersion": 2,
+      "feeCents": 8000
+    },
+    {
+      "policyVersion": 2,
+      "feeCents": 8000
+    },
+    {
+      "policyVersion": 3,
+      "feeCents": 0
+    }
+  ],
+  "checks": [
+    "Live review disabled: rejected without changing room",
+    "Simulated adapter → discovered $80 fee difference → two approvals → v2 receipt at $80",
+    "Concurrent editor saves preserved; simulation refused unfamiliar wording without pretending to interpret it",
+    "One approval and split approvals held v2/$80; joint agreement published v3/$0; old receipts unchanged"
+  ]
+}

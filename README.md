@@ -8,8 +8,8 @@ The current `/studio` demo finds realistic admission and fee differences between
 
 ## Current prototype
 
-- **Realistic policy studio at `/studio`:** nested boolean conditions, age ranges, five attendee flags, explicit UTC boundaries, and ordered USD fee overrides. The guided demo replays a clearly labeled recorded interpretation, then computes its witnesses. Fresh wording uses manual agent review; this route makes no provider calls. See [studio evidence and demo runbook](docs/REALISTIC-POLICY-STUDIO.md).
-- **Current verification:** 95 mechanical tests, TypeScript, production build, a frozen five-pair evaluation with separately recorded deadline clarifications, and two simulated browser editors. All 48 executable admission/fee scenario checks passed; two original pairs first abstained because deadlines were omitted. No paid model calls.
+- **Realistic policy studio at `/studio`:** nested boolean conditions, age ranges, five attendee flags, explicit UTC boundaries, and ordered USD fee overrides. The richer studio now connects to the server-side Meta adapter with a nonrecursive wire schema, exact-source validation, durable request leases and joint approval. Live requests remain disabled until explicitly authorized and configured. **Test with simulated editors** exercises the adapter with a clearly labeled fixed response and no external calls. Manual review and the earlier recorded demo remain available. See [studio Meta integration and activation](docs/STUDIO-META.md).
+- **Current verification:** 113 mechanical tests, TypeScript and production build pass. Eighteen new integration tests use independent HTTP fixtures, including a $25-to-$0 policy correction. Local HTTP clients verified concurrent editor saves, split-vote holds, and $80-to-$0 registrations with preserved receipts. Separate Chrome editor tabs verified simulation, voting and registration. No live Meta call has been made; this does not establish Meta's semantic quality. Historical studio evaluation results remain in [the earlier studio runbook](docs/REALISTIC-POLICY-STUDIO.md).
 
 - **Automatic model integration at `/consequences`:** **Find consequences** sends both saved policy drafts to a server-side Meta integration, validates the returned bilingual rules, and starts counterexample discovery. The integration is implemented, but Meta API access is not configured yet; no live Meta call or model-quality result has been verified. See [activation, failure handling and verification scope](docs/AUTOMATIC-MODEL.md).
 - **Automatic counterexample discovery at `/consequences`:** bilingual policy drafts become proposed executable rules. SamePage automatically finds a concrete attendee with different outcomes, including exact millisecond deadline boundaries. It exposes both acceptance directions when they exist, and distinguishes equivalent supported rules from unresolved interpretations. See [discovery design, evidence and demo flow](docs/COUNTEREXAMPLE-DISCOVERY.md).
@@ -44,6 +44,8 @@ Open the local URL printed by the server (normally `http://127.0.0.1:5173`). App
 The repository includes the nonsecret Sites binding configuration and build tooling. See [Sites runtime details](docs/SITES-RUNTIME.md) for profiles, local sign-in simulation, and deployment integration. The existing hosting project ID identifies the original private deployment; it is not an API credential. Publishing is a separate step and requires access to that hosting project or configuration for a new one.
 
 ## Try the consequences workflow
+
+For the current studio, open `/studio`, choose **Test with simulated editors**, and select **Run simulated review**. Inspect the discovered attendee, make matching choices from both editor roles, then use the attendee in the working form. The fixed simulation cannot interpret arbitrary edits. Fresh policies require manual review or explicitly enabled Meta access; see [activation and limits](docs/STUDIO-META.md).
 
 1. Open `/consequences`, create a room and use the combined view or separate Alice/Bob editor links.
 2. Save both full policy drafts. Local unsaved text is preserved and excluded from review.
@@ -89,16 +91,17 @@ A subsequent six-pair hard unseen-policy evaluation passed **64 scenario checks*
 
 Next build priorities:
 
-1. Keep paid provider calls paused. After a specific budget is authorized, adapt the live Meta integration to the richer studio contract and measure quality, latency, cost, and failure recovery.
-2. Evaluate the streamlined `/studio` demonstration with independent bilingual people; preserve visible consequences and both editors’ agency.
-3. Test with independent bilingual people; improve confusing explanations and translations using their feedback.
+1. Keep live provider calls paused. The richer studio adapter is implemented; after key setup and authorized credit use, evaluate unseen policies with actual Meta responses and measure quality, latency and usage.
+2. Add automatic correction proposals and verify their effects against the intended change; current corrections are editor choices or fresh drafts.
+3. Evaluate the `/studio` demo with independent bilingual people and improve confusing explanations using their feedback.
 4. Add actual editor identity, room membership and permissions before expanding access.
 
 This is a feasibility prototype, not a validated production collaboration system. English and Spanish are the only implemented languages. The experiments do not establish a probability of winning a competition or general bilingual reliability.
 
 ## Source map
 
-- `app/studio/`, `app/api/studio/`, `lib/studio*.ts`: realistic eligibility/fees, recorded demo fixture, manual interpretation, complete bounded comparison, joint approval, and receipts.
+- `app/studio/`, `app/api/studio/`, `lib/studio*.ts`, `lib/automatic-studio-review.ts`: rich policy interpretation, flat provider schema, explicitly enabled Meta adapter, controlled simulation, bounded comparison, joint approval, and receipts.
+- `tests/studio-integration.test.mjs`, `tests/semantic/2026-10-26-studio-meta/`: controlled transport, concurrency, clarification, quota and full-flow evidence; no live Meta evaluation.
 - `tests/studio*.test.mjs`, `tests/semantic/2026-10-20-studio/`: mechanics, original frozen source/expectations, untouched agent outputs, separate clarification rounds, audit, HTTP checks, and two-browser evidence.
 
 - `app/consequences/`, `app/api/consequences/`, `lib/consequences*.ts`: policy interpretation, consequence comparison, joint approval and versioned registration.

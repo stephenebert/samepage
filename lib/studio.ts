@@ -94,6 +94,7 @@ export function applyStudioAction(before: StudioRoom, value: StudioAction, now: 
     if (previous.text === a.text && (a.baseVersion === previous.version || a.baseVersion === previous.version - 1)) return before;
     if (a.baseVersion !== previous.version) fail("This editor's draft changed. Reload before saving.", "STALE_DRAFT", 409);
     const room = copy(before); room.drafts[a.editor] = { ...previous, text: a.text, version: previous.version + 1 }; room.activeJob = null; room.review = null;
+    if (room.automaticReview) room.automaticReview = { ...room.automaticReview, status: "superseded", finishedAt: now, durationMs: Math.max(0, Date.parse(now) - Date.parse(room.automaticReview.startedAt)) };
     return changed(room, now);
   }
   if (a.type === "requestReview") {
@@ -107,6 +108,9 @@ export function applyStudioAction(before: StudioRoom, value: StudioAction, now: 
     if (!job || job.basePolicyVersion !== before.published.version || !same(job.drafts, before.drafts)) fail("The drafts changed or there is no pending review. Request a fresh review.", "STALE_REVIEW", 409);
     const candidates = parseStudioReview(a.response, job!), room = copy(before);
     room.review = { id: job!.id, basePolicyVersion: job!.basePolicyVersion, candidates, votes: {}, status: "open", provenance: "manual-agent-review", discovery: discoverStudioConsequences(candidates[0].rules, candidates[1].rules), createdAt: now }; room.activeJob = null;
+    // A manual import supersedes a running provider request. The automatic
+    // runner replaces this metadata only when applying its own current lease.
+    if (room.automaticReview?.status === "running") room.automaticReview = { ...room.automaticReview, status: "superseded", finishedAt: now, durationMs: Math.max(0, Date.parse(now) - Date.parse(room.automaticReview.startedAt)) };
     return changed(room, now);
   }
   if (a.type === "vote") {
@@ -149,5 +153,15 @@ export function createStudioDemoRoom(id: string, now: string, fixture: StudioDem
   room = applyStudioAction(room, { type: "requestReview" }, now);
   room = applyStudioAction(room, { type: "completeReview", response: { jobId: room.activeJob!.id, candidates: fixture.candidates.map(c => ({ ...c, sourceVersion: room.drafts[c.editor].version })) } }, now);
   room.review!.provenance = "fixture-replay";
+  return room;
+}
+
+/** A controlled offline run starts with saved drafts, not precomputed review. */
+export function createStudioSimulationRoom(id: string, now: string, fixture: StudioDemoFixture): StudioRoom {
+  let room = createStudioRoom(id, now);
+  room = applyStudioAction(room, { type: "draft", editor: "alice", baseVersion: 1, text: fixture.en }, now);
+  room = applyStudioAction(room, { type: "draft", editor: "bob", baseVersion: 1, text: fixture.es }, now);
+  room.simulation = "studio-fee-v1";
+  room.mode = "simulated-model";
   return room;
 }
