@@ -1,0 +1,5 @@
+{
+  "route": "/api/studio",
+  "body": {},
+  "credentialHeaderPresent": true
+}

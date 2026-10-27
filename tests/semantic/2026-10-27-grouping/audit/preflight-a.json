@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "reviewedBy": "grouping_holdout_b",
+  "caseId": "harbor-archive-nested-adults-student-2100",
+  "reviewedAtUtc": "2026-10-27T17:33:21.638762+00:00",
+  "semanticFidelityJudgment": "The source English/Spanish policies express the same complete rules except the deliberate adult first-alternative student negation. Both unsafe rewrites faithfully express the intended consent-removal challenge. All goldens and receipt values agree with literal source meaning.",
+  "checks": {
+    "literalBilingualSourceReviewed": true,
+    "goldenChecks": 120,
+    "receiptChecks": 2,
+    "independentOracleCrossChecks": 201344,
+    "timestamps": 13,
+    "mismatches": 0,
+    "networkCalls": 0
+  },
+  "independentMethod": "Read both source texts and unsafe rewrites; wrote a separate control-flow truth function with ordered fee predicates, rather than using the holdout oracle to generate reviewer expectations. Crossed ages0–120/all32flagsets/13timestamps/fourstages. See preflight-a-reviewer.mjs.",
+  "findings": [],
+  "scopeNotes": [
+    "Adult age20+ explicitly governs both alternatives. Spanish adult(b) briefly uses flat conjunction/disjunction but immediately disambiguates with a separate mandatory-residence sentence.",
+    "Youth age15–19 and guardian consent are required for both youth alternatives.",
+    "Opening is exclusive at .125; closing inclusive at .875. Late gate applies only strictly after .500, and to both age routes.",
+    "Bob alone changes adult(a) from member AND NOTstudent to member AND student.",
+    "Unsafe rewrite removes guardian consent from the late membership alternative and preserves all remaining admission conditions. Its new student2100 fee is first-priority.",
+    "Candidate timestamp scanner covers offsets, minute precision, keys and values, and samples +/-1ms. Within the supported threshold grammar, those neighbors cover intervening nonempty intervals.",
+    "This is an AI source review and finite-domain oracle cross-check, not human bilingual validation or live evidence."
+  ],
+  "groupingWitness": {
+    "id": "A12",
+    "expected": "reject",
+    "counterReading": "Removing age20+ from adult resident alternative could admit a19-year-old resident/member nonstudent with consent, contrary to both source routes."
+  },
+  "receipt": {
+    "age": 24,
+    "beforeFeeCents": 2300,
+    "afterFeeCents": 2100
+  },
+  "evidenceSha256": {
+    "case-a/holdout/provider-inputs.json": "34dd542e563b9213f3d60fae38644868b92ea54063dc3cc252ea101fcde7e70b",
+    "case-a/holdout/goldens.json": "9e0194c15ccb73d7886abbc5d6c7bcf4e5864720b89482cd50d8435f3f2e6a36",
+    "case-a/holdout/independent-oracle.mjs": "ca1594a69f8286fe4414d9c625e312a9eb7260ae2f40c292484b14d25dde763a",
+    "case-a/holdout/README.md": "b28663fb4fee255077e4a75a325a160b56c7237934fd1a4ce93c3605741c804b",
+    "case-a/holdout/FREEZE.json": "7d4b0e76a949bf0402510e2d744c9fd92b8b4c6402b978e39a129b634abbc278",
+    "case-a/holdout/SHA256SUMS": "230982ada26a67cc072eb026b7ba93fb8156cea15fe0a016446dcf528d72167e"
+  }
+}

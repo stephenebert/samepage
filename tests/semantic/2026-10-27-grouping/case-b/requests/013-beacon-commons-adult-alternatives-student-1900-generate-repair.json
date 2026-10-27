@@ -1,0 +1,14 @@
+{
+  "sequence": 13,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-571e0bcf-4279-4d1a-bae6-ed98834e77d9/repair",
+  "body": {
+    "intent": {
+      "baselineCandidateId": "studio-review-3-alice",
+      "scopeFlag": "student",
+      "feeCents": 1900
+    }
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

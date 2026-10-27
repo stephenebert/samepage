@@ -1,0 +1,242 @@
+{
+  "status": "passed-with-bounded-scope",
+  "sourceCommit": "212edcda2fc930f37910511d5805c2b317af8acf",
+  "siteVersion": "appgprj_6acf326d0f9c81918e24863d7a25c308~appgver_28c70860ef308191a30236551d84fb81",
+  "model": "muse-spark-1.3",
+  "protocol": "expression-v3",
+  "frozenFilesVerified": 53,
+  "mechanicalTestsPassed": 187,
+  "typecheckPassed": true,
+  "productionBuildPassed": true,
+  "automaticRetries": 0,
+  "sourceChangesAfterFreeze": false,
+  "exampleTuningAfterFreeze": false,
+  "totals": {
+    "modelRequests": 7,
+    "passedStages": 6,
+    "failedStages": 0,
+    "naturalStops": 7,
+    "concreteChecks": 240,
+    "concreteFailures": 0,
+    "independentOracleChecks": 402688,
+    "independentOracleMismatches": 0,
+    "blockedAuthoredRepairs": 2,
+    "publishedGeneratedRepairs": 2,
+    "receipts": 4,
+    "promptTokens": 15455,
+    "completionTokens": 20040,
+    "unresolvedCandidates": 2,
+    "clarificationVotesBlocked": 2
+  },
+  "uncachedTokenRateEstimateUsd": 0.10448875,
+  "actualBilledCostUsd": null,
+  "conservativeEstimatedMaxUsd": 0.852992,
+  "pricingSource": "https://dev.meta.ai/docs/pricing-rate-limits",
+  "billingObservation": "billing-observation.json",
+  "cases": [
+    {
+      "directory": "case-a",
+      "caseId": "harbor-archive-nested-adults-student-2100",
+      "status": "passed",
+      "roomId": "studio-7c79c128-c2f8-4878-b5b4-5497eb5bbfc8",
+      "blockedRepairId": "repair-8bb2c77d-09cf-4e7d-8bd9-c60ba45b21bf",
+      "publishedRepairId": "repair-b9005178-8fda-416f-95bc-1074111cc5af",
+      "receipts": [
+        {
+          "version": 2,
+          "feeCents": 2300
+        },
+        {
+          "version": 3,
+          "feeCents": 2100
+        }
+      ],
+      "rawBilingualAudit": "pass",
+      "canonicalWordingAudit": "pass",
+      "canonicalPublicationVerified": true,
+      "originalWordingPreserved": true,
+      "stages": [
+        {
+          "stage": "baseline",
+          "httpDurationMs": 24366,
+          "metrics": {
+            "providerDurationMs": 23821,
+            "requestBytes": 8932,
+            "responseContentBytes": 4629,
+            "promptTokens": 1934,
+            "completionTokens": 4394,
+            "totalTokens": 6328,
+            "reasoningTokens": 3061,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          }
+        },
+        {
+          "stage": "check-rewrite",
+          "httpDurationMs": 13671,
+          "metrics": {
+            "providerDurationMs": 13173,
+            "requestBytes": 12276,
+            "responseContentBytes": 4668,
+            "promptTokens": 2878,
+            "completionTokens": 2950,
+            "totalTokens": 5828,
+            "reasoningTokens": 1680,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          }
+        },
+        {
+          "stage": "generate-repair",
+          "httpDurationMs": 14248,
+          "metrics": {
+            "providerDurationMs": 13769,
+            "requestBytes": 11350,
+            "responseContentBytes": 4570,
+            "promptTokens": 2590,
+            "completionTokens": 2862,
+            "totalTokens": 5452,
+            "reasoningTokens": 1555,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          }
+        }
+      ],
+      "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/studio?room=studio-7c79c128-c2f8-4878-b5b4-5497eb5bbfc8#studio-repair"
+    },
+    {
+      "directory": "case-b",
+      "caseId": "beacon-commons-adult-alternatives-student-1900",
+      "status": "passed",
+      "roomId": "studio-571e0bcf-4279-4d1a-bae6-ed98834e77d9",
+      "blockedRepairId": "repair-4555bc37-88d9-4284-9534-5f928d0efc66",
+      "publishedRepairId": "repair-7189334f-4c1b-42bb-bc04-0693004f6cc6",
+      "receipts": [
+        {
+          "version": 2,
+          "feeCents": 1400
+        },
+        {
+          "version": 3,
+          "feeCents": 1900
+        }
+      ],
+      "rawBilingualAudit": "pass",
+      "canonicalWordingAudit": "pass",
+      "canonicalPublicationVerified": true,
+      "originalWordingPreserved": true,
+      "stages": [
+        {
+          "stage": "baseline",
+          "httpDurationMs": 19384,
+          "metrics": {
+            "providerDurationMs": 18964,
+            "requestBytes": 8109,
+            "responseContentBytes": 3829,
+            "promptTokens": 1761,
+            "completionTokens": 4398,
+            "totalTokens": 6159,
+            "reasoningTokens": 3350,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          }
+        },
+        {
+          "stage": "check-rewrite",
+          "httpDurationMs": 8715,
+          "metrics": {
+            "providerDurationMs": 8239,
+            "requestBytes": 10720,
+            "responseContentBytes": 3318,
+            "promptTokens": 2521,
+            "completionTokens": 2256,
+            "totalTokens": 4777,
+            "reasoningTokens": 1309,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          }
+        },
+        {
+          "stage": "generate-repair",
+          "httpDurationMs": 9548,
+          "metrics": {
+            "providerDurationMs": 8953,
+            "requestBytes": 10400,
+            "responseContentBytes": 3672,
+            "promptTokens": 2380,
+            "completionTokens": 1955,
+            "totalTokens": 4335,
+            "reasoningTokens": 843,
+            "cachedInputTokens": 0,
+            "finishReason": "stop",
+            "maxCompletionTokens": 8192
+          }
+        }
+      ],
+      "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/studio?room=studio-571e0bcf-4279-4d1a-bae6-ed98834e77d9#studio-repair"
+    }
+  ],
+  "clarificationTest": {
+    "status": "passed",
+    "modelRequests": 1,
+    "networkRequests": 7,
+    "actualBilledCostUsd": null,
+    "caseId": "ambiguous-cobalt-unspecified-scholarship-fee",
+    "planSha256": "5adea6cd4b7a2fd095d320d5c7e6022d3bf29119d926cbece8f9ec2c7ef323f6",
+    "roomId": "studio-4a09ba63-51bd-4a19-8ff7-8141e002c8a3",
+    "metrics": {
+      "providerDurationMs": 6136,
+      "requestBytes": 6816,
+      "responseContentBytes": 1453,
+      "promptTokens": 1391,
+      "completionTokens": 1225,
+      "totalTokens": 2616,
+      "reasoningTokens": 909,
+      "cachedInputTokens": 0,
+      "finishReason": "stop",
+      "maxCompletionTokens": 8192
+    },
+    "httpDurationMs": 6480,
+    "clarifications": [
+      {
+        "editor": "alice",
+        "issues": [
+          "What is the exact reduced fee in USD cents for admitted scholarship holders? The policy states a reduced fee applies but does not specify the amount, so no unique fee can be compiled."
+        ]
+      },
+      {
+        "editor": "bob",
+        "issues": [
+          "What is the exact reduced fee in USD cents for admitted scholarship holders? The policy states a reduced fee applies but does not specify the amount, so no unique fee can be compiled."
+        ]
+      }
+    ],
+    "approvalsBlocked": 2,
+    "publicationUnchanged": true,
+    "completedAt": "2026-10-27T17:38:36.972Z"
+  },
+  "shutdown": {
+    "deploymentId": "appgdep_6ae0e1a9f40481919a50217da46521c4",
+    "status": "succeeded",
+    "envRevision": 25,
+    "updatedAt": "2026-10-27T17:38:56.201256+00:00",
+    "studioEnabled": false,
+    "scope": "Studio Meta gate only; existing secret retained. No account-wide key revocation."
+  },
+  "fix": "New approvals display and publish the same explicitly grouped bilingual text rendered from checked rules; original user/model wording is retained separately. Prompts also require explicit grouping.",
+  "legacyBehavior": "Previously saved pending/published records retain their original wording and approval behavior; no retroactive migration or rewritten receipts.",
+  "limits": [
+    "Two fresh synthetic full flows plus one clarification policy; simulated roles, not real users.",
+    "Independent bilingual review was performed by AI agents, not human bilingual reviewers.",
+    "Compiled-rule comparisons do not establish faithful interpretation of arbitrary natural language.",
+    "Canonical wording guarantees grouping relative to the interpreted rules, not correctness of the interpretation.",
+    "Unsafe rewrites were authored test challenges; generated repairs received server-derived target rules.",
+    "No speed improvement is claimed; individual HTTP waits ranged from 6.480 to 24.366 seconds.",
+    "Cost is a token-rate estimate; the refreshed billing page remained loading, so actual credit deduction is unconfirmed."
+  ]
+}

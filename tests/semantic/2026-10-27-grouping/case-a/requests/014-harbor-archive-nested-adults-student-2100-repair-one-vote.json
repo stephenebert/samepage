@@ -1,0 +1,12 @@
+{
+  "sequence": 14,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-7c79c128-c2f8-4878-b5b4-5497eb5bbfc8",
+  "body": {
+    "type": "voteRepair",
+    "editor": "alice",
+    "repairId": "repair-b9005178-8fda-416f-95bc-1074111cc5af"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

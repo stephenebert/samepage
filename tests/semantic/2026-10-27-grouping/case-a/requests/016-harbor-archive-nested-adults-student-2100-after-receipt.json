@@ -1,0 +1,20 @@
+{
+  "sequence": 16,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-7c79c128-c2f8-4878-b5b4-5497eb5bbfc8",
+  "body": {
+    "type": "register",
+    "requestId": "unseen-3d1f825c-22b6-402e-be17-28ce6bf83af4",
+    "policyVersion": 3,
+    "label": "Synthetic harbor-archive-nested-adults-student-2100 after repair",
+    "age": 24,
+    "resident": true,
+    "student": true,
+    "member": false,
+    "guardianConsent": false,
+    "scholarship": false,
+    "submittedAt": "2026-12-10T11:22:33.444Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

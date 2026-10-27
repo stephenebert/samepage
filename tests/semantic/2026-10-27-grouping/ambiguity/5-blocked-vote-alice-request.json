@@ -1,0 +1,10 @@
+{
+  "route": "/api/studio/studio-4a09ba63-51bd-4a19-8ff7-8141e002c8a3",
+  "body": {
+    "type": "vote",
+    "editor": "alice",
+    "reviewId": "studio-review-3",
+    "candidateId": "studio-review-3-alice"
+  },
+  "credentialHeaderPresent": true
+}

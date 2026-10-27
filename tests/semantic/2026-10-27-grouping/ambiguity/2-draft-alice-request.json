@@ -1,0 +1,10 @@
+{
+  "route": "/api/studio/studio-4a09ba63-51bd-4a19-8ff7-8141e002c8a3",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Cobalt Reading Room admits everyone age 18 or older and rejects everyone younger than 18. Registration is always open; there are no date or time restrictions. For admitted attendees the standard fee is 5800 USD cents. Admitted scholarship holders instead pay a reduced fee, but the amount of that reduced fee has not been specified. No other status changes admission or the fee. Rejected attendees have no fee."
+  },
+  "credentialHeaderPresent": true
+}

@@ -1,3 +1,4 @@
+import { canonicalStudioPolicy } from "./studio-presentation.ts";
 import { RoomError } from "./room.ts";
 import { discoverStudioConsequences, parseStudioRules, STUDIO_FLAGS, studioInteger, studioKeys, studioObject, studioText } from "./studio-engine.ts";
 import type { StudioEditor, StudioRepairImpact, StudioRepairIntent, StudioRepairJob, StudioRepairProposal, StudioRoom, StudioRules, StudioText } from "./studio-types";
@@ -86,7 +87,7 @@ export function completeStudioRepair(before: StudioRoom, jobId: string, proposal
   if (repair.job.proposalText && !same(repair.job.proposalText, { en: proposal.en, es: proposal.es })) fail("The checked proposal text changed.", "REPAIR_SOURCE_CHANGED", 409);
   const impact = checkStudioRepairImpact(repair.job.baseline.rules!, repair.job.intent, proposal.rules);
   const room = copy(before);
-  room.repair = { ...copy(repair), proposal, impact, votes: {}, status: impact.status === "pass" ? "ready" : "blocked", completedAt: now };
+  room.repair = { ...copy(repair), wordingSource: "checked-rules-v1", proposal, impact, votes: {}, status: impact.status === "pass" ? "ready" : "blocked", completedAt: now };
   return changed(room, now);
 }
 
@@ -107,7 +108,7 @@ export function voteStudioRepair(before: StudioRoom, editor: StudioEditor, repai
   const room = copy(before), next = room.repair!;
   next.votes[editor] = true;
   if (next.votes.alice && next.votes.bob) {
-    room.published = { version: before.published.version + 1, en: next.proposal!.en, es: next.proposal!.es, rules: copy(next.proposal!.rules!), publishedAt: now, reviewId: next.job.reviewId, candidateId: next.id };
+    room.published = { version: before.published.version + 1, ...(next.wordingSource === "checked-rules-v1" ? { ...canonicalStudioPolicy(next.proposal!.rules!), wordingSource: "checked-rules-v1" as const, originalWording: { en: next.proposal!.en, es: next.proposal!.es } } : { en: next.proposal!.en, es: next.proposal!.es }), rules: copy(next.proposal!.rules!), publishedAt: now, reviewId: next.job.reviewId, candidateId: next.id };
     next.status = "published"; next.publishedVersion = room.published.version;
   }
   return changed(room, now);

@@ -37,6 +37,10 @@ export interface StudioDraft { editor: StudioEditor; language: StudioLanguage; v
 export interface StudioPublished {
   version: number; en: string; es: string; rules: StudioRules;
   publishedAt: string; reviewId: string | null; candidateId: string | null;
+  /** New publications use this rule-derived wording; legacy records stay untouched. */
+  wordingSource?: "checked-rules-v1";
+  /** Exact source/model wording, retained as evidence rather than authoritative text. */
+  originalWording?: StudioText;
 }
 export interface StudioJob {
   id: string; basePolicyVersion: number; drafts: Record<StudioEditor, StudioDraft>;
@@ -52,6 +56,7 @@ export interface StudioInterpretationCacheEntry {
 }
 export type StudioInterpretationCache = Partial<Record<StudioEditor, StudioInterpretationCacheEntry>>;
 export interface StudioReview {
+  wordingSource?: "checked-rules-v1";
   id: string; basePolicyVersion: number; candidates: StudioCandidate[];
   votes: Partial<Record<StudioEditor, string>>; status: "open" | "published";
   discovery: StudioDiscovery; provenance: "manual-agent-review" | "fixture-replay" | "meta-model" | "simulated-model";
@@ -99,6 +104,7 @@ export interface StudioRepairImpact {
   issues: string[];
 }
 export interface StudioRepair {
+  wordingSource?: "checked-rules-v1";
   id: string; job: StudioRepairJob; proposal: StudioRepairProposal | null;
   impact: StudioRepairImpact | null; votes: Partial<Record<StudioEditor, true>>;
   status: "running" | "ready" | "blocked" | "failed" | "published" | "superseded";

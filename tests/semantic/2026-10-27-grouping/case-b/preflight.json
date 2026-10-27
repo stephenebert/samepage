@@ -1,0 +1,19 @@
+{
+  "kind": "offline-preflight",
+  "planSha256": "2dbe1ae388f61119021aec8d2c9fdb33455ecad18977f2bcd6afd4c0fe1cdf3c",
+  "sourceCommit": "212edcda2fc930f37910511d5805c2b317af8acf",
+  "caseId": "beacon-commons-adult-alternatives-student-1900",
+  "maxRequests": 3,
+  "maxProviderRequestBytes": 65536,
+  "maxCompletionTokens": 8192,
+  "framingTokens": 4096,
+  "budgetUsd": 0.4,
+  "conservativeEstimatedMaxUsd": 0.365568,
+  "pricing": {
+    "inputUsdPerMillionTokens": 1.25,
+    "outputUsdPerMillionTokens": 4.25
+  },
+  "method": "Conservative estimate: treat each full provider JSON UTF-8 byte as an input token, add4096 framing tokens, reserve8192 output tokens per request. Not confirmed billing or an account-wide cap.",
+  "actualBilledCostUsd": null,
+  "networkCalls": 0
+}

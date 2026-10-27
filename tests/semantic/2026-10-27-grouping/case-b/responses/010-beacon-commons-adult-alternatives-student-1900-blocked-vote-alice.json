@@ -1,0 +1,10 @@
+{
+  "status": 409,
+  "ok": false,
+  "durationMs": 158,
+  "rawText": "{\"error\":\"Only a complete repair that passes every impact check can be approved.\",\"code\":\"REPAIR_BLOCKED\"}",
+  "json": {
+    "error": "Only a complete repair that passes every impact check can be approved.",
+    "code": "REPAIR_BLOCKED"
+  }
+}

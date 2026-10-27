@@ -1,0 +1,10 @@
+{
+  "status": 400,
+  "ok": false,
+  "durationMs": 331,
+  "rawText": "{\"error\":\"This comparison is unresolved. Clarify both policies or simplify them before either editor can approve.\",\"code\":\"UNRESOLVED\"}",
+  "json": {
+    "error": "This comparison is unresolved. Clarify both policies or simplify them before either editor can approve.",
+    "code": "UNRESOLVED"
+  }
+}

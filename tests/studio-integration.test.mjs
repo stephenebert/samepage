@@ -244,7 +244,7 @@ test('an edit during model review prevents stale output from replacing a newer j
   const agreed = store.room;
   gate.resolve(); const obsolete = await old;
   assert.equal(obsolete.automatic.status, 'superseded'); assert.strictEqual(store.room, agreed);
-  assert.equal(store.room.published.version, 2); assert.equal(store.room.published.en, fixedA);
+  assert.equal(store.room.published.version, 2); assert.equal(store.room.published.originalWording.en, fixedA); assert.equal(store.room.published.wordingSource, 'checked-rules-v1');
 });
 
 test('a manual fallback completed during a model request keeps its approval when the old response arrives', async () => {

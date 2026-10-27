@@ -1,0 +1,43 @@
+{
+  "sourceCommit": "212edcda2fc930f37910511d5805c2b317af8acf",
+  "deployment": {
+    "id": "appgdep_6ae0e0cb946c8191876c1e58ae9e4bd8",
+    "project_id": "appgprj_6acf326d0f9c81918e24863d7a25c308",
+    "title": "SamePage",
+    "version_id": "appgprj_6acf326d0f9c81918e24863d7a25c308~appgver_28c70860ef308191a30236551d84fb81",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://samepage-language-lab.ampleboar17.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6acf326d0f9c81918e24863d7a25c308",
+    "failure_message": null,
+    "env_set_revision": 23,
+    "updated_at": "2026-10-27T17:35:14.336985+00:00"
+  },
+  "activation": {
+    "id": "appgdep_6ae0e0ed96b881918c0085515c93fc0b",
+    "project_id": "appgprj_6acf326d0f9c81918e24863d7a25c308",
+    "title": "SamePage",
+    "version_id": "appgprj_6acf326d0f9c81918e24863d7a25c308~appgver_28c70860ef308191a30236551d84fb81",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://samepage-language-lab.ampleboar17.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6acf326d0f9c81918e24863d7a25c308",
+    "failure_message": null,
+    "env_set_revision": 24,
+    "updated_at": "2026-10-27T17:35:47.783236+00:00"
+  },
+  "shutdown": {
+    "deploymentId": "appgdep_6ae0e1a9f40481919a50217da46521c4",
+    "status": "succeeded",
+    "envRevision": 25,
+    "updatedAt": "2026-10-27T17:38:56.201256+00:00",
+    "studioEnabled": false,
+    "scope": "Studio Meta gate only; existing secret retained. No account-wide key revocation."
+  },
+  "modelKeyExposed": false,
+  "sourceOrPromptChangesDuringRun": false
+}

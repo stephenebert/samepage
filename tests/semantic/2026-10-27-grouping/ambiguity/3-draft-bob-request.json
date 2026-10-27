@@ -1,0 +1,10 @@
+{
+  "route": "/api/studio/studio-4a09ba63-51bd-4a19-8ff7-8141e002c8a3",
+  "body": {
+    "type": "draft",
+    "editor": "bob",
+    "baseVersion": 1,
+    "text": "Cobalt Reading Room admite a todas las personas de 18 años o más y rechaza a todas las menores de 18 años. La inscripción está siempre abierta; no hay restricciones de fecha ni de hora. Para las personas admitidas, la tarifa estándar es de 5800 centavos USD. Las personas admitidas que tienen beca pagan en su lugar una tarifa reducida, pero no se ha especificado el importe de esa tarifa reducida. Ningún otro estado modifica la admisión ni la tarifa. Las personas rechazadas no tienen tarifa."
+  },
+  "credentialHeaderPresent": true
+}

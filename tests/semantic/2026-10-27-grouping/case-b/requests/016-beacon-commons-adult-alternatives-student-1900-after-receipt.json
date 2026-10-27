@@ -1,0 +1,20 @@
+{
+  "sequence": 16,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-571e0bcf-4279-4d1a-bae6-ed98834e77d9",
+  "body": {
+    "type": "register",
+    "requestId": "unseen-e886c9a2-b88a-4534-8f11-6d7dbcac7cbf",
+    "policyVersion": 3,
+    "label": "Synthetic beacon-commons-adult-alternatives-student-1900 after repair",
+    "age": 29,
+    "resident": true,
+    "student": true,
+    "member": true,
+    "guardianConsent": false,
+    "scholarship": false,
+    "submittedAt": "2026-11-23T12:00:00.000Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

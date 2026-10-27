@@ -1,0 +1,58 @@
+{
+  "status": "pass",
+  "reviewer": "grouping_holdout_b",
+  "reviewedAtUtc": "2026-10-27T17:38:26.425476+00:00",
+  "caseId": "harbor-archive-nested-adults-student-2100",
+  "sourceCommit": "212edcda2fc930f37910511d5805c2b317af8acf",
+  "judgment": "Both generated baseline translations and the generated repair preserve intended bilingual meaning with explicit grouping. Both baseline and repair publication use canonical grouped wording with original model/source wording retained. No operative prose defect found in this case.",
+  "reviewType": "Independent AI bilingual semantic review; not a human bilingual study",
+  "findings": [],
+  "reviewedStages": {
+    "baseline": "Alice English and Bob Spanish source text retained exactly. Alice generated Spanish and Bob generated English preserve their respective negation difference and all common restrictions.",
+    "unsafeRewrite": "Both supplied unsafe language fields retained exactly; late member exception deliberately omits consent; impact checker blocks proposal.",
+    "generatedRepair": "Alice admission is preserved in both languages; student2100 is first priority; unreachable resident/student2300 removed without changing nonstudent fees.",
+    "publication": "Both v2 baseline and v3 repair are checked-rules-v1. Stored EN/ES equal canonicalStudioPolicy of selected rules. originalWording exactly retains corresponding raw language fields."
+  },
+  "keyScopeEvidence": {
+    "rawSpanishAdult": "Vía adulta: se exige (tener al menos 20 años Y (cumplir al menos una de estas alternativas: (a) (ser miembro Y no ser estudiante), o (b) (ser residente Y (no tener beca O ser estudiante)))).",
+    "rawSpanishLate": "entonces se exige (tener una beca O (ser miembro Y contar con el consentimiento del tutor)).",
+    "canonicalSpanishAdult": "((la edad es de 20 años o más) y (((la persona es miembro) y (la persona no es estudiante)) o ((la persona es residente) y ((la persona no tiene beca) o (la persona es estudiante)))))"
+  },
+  "checks": {
+    "sourceLanguageRetentionExact": true,
+    "unsafeTextRetentionExact": true,
+    "canonicalPublicationExact": true,
+    "originalWordingRetentionExact": true,
+    "a12RejectedForAllFourRuleSets": true,
+    "recordedConcreteChecks": 120,
+    "recordedOracleChecks": 201344,
+    "recordedMismatchCount": 0,
+    "naturalProviderStops": 3,
+    "networkCallsByReviewer": 0
+  },
+  "receipts": [
+    {
+      "version": 2,
+      "feeCents": 2300
+    },
+    {
+      "version": 3,
+      "feeCents": 2100
+    }
+  ],
+  "limitations": [
+    "This is one fresh synthetic policy with simulated roles, not a general accuracy estimate.",
+    "Canonical wording preserves the selected rule tree; it cannot prove that the model interpreted every original-language policy faithfully.",
+    "Raw Spanish uses the slightly unnatural phrase en o antes, but adds inclusive and preserves the exact cutoff, so this is stylistic rather than an operative ambiguity.",
+    "The rejected rewrite is an authored challenge, not an autonomous model error."
+  ],
+  "evidenceSha256": {
+    "case-a/stages/harbor-archive-nested-adults-student-2100-baseline/after.json": "087d28f1e355e3fd6b344a94db002d412cc4b6d1b392bc0904602a5739c0e9c8",
+    "case-a/stages/harbor-archive-nested-adults-student-2100-check-rewrite/after.json": "bbec6e88c0636d79c53681f4dae2bd61c5928098bdc76668b3390c095b1f8bd9",
+    "case-a/stages/harbor-archive-nested-adults-student-2100-generate-repair/after.json": "bd3a526ccba490b34e44d5e00c5794906a10ab80445c370654a60269dc258392",
+    "case-a/case-final.json": "9a0fe581237599c9bc46f9881dd226c8fd98556d2b6d0e1713cc625ac42f949f",
+    "case-a/holdout/provider-inputs.json": "34dd542e563b9213f3d60fae38644868b92ea54063dc3cc252ea101fcde7e70b",
+    "case-a/holdout/goldens.json": "9e0194c15ccb73d7886abbc5d6c7bcf4e5864720b89482cd50d8435f3f2e6a36",
+    "case-a/report.json": "06b3d9b47a8d330ba301009d9ad3f2a024c140e3aad410be22e044a66c5ab1f8"
+  }
+}

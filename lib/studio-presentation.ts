@@ -1,5 +1,5 @@
 import { discoverStudioConsequences, parseStudioRules } from "./studio-engine.ts";
-import type { StudioCondition, StudioFlag, StudioLanguage, StudioRules } from "./studio-types";
+import type { StudioCondition, StudioFlag, StudioLanguage, StudioRules, StudioText } from "./studio-types";
 
 /** Presentation only: never changes saved policy text, approval state or receipts. */
 export function simplifyStudioFees(rules: StudioRules): { rules: StudioRules; removedCount: number; verified: boolean } {
@@ -89,3 +89,19 @@ export function readableStudioPolicy(rules: StudioRules, language: StudioLanguag
   ] : [`${es ? "Solo las personas admitidas pagan" : "Admitted attendees pay"} ${money(r.fee.defaultCents)}.`];
   return { admission, fees, removedCount: simplified.removedCount, verified: simplified.verified };
 }
+
+/**
+ * The exact bounded wording displayed for new approvals and stored on publication.
+ * This guarantees grouping relative to the interpreted AST, not faithful source
+ * interpretation. Original prose is retained separately and must still be reviewed.
+ */
+export function canonicalStudioPolicy(rules: StudioRules): StudioText {
+  parseStudioRules(rules);
+  const render = (language: StudioLanguage) => {
+    const view = readableStudioPolicy(rules, language);
+    return [view.admission, ...view.fees].join("\n");
+  };
+  return { en: render("en"), es: render("es") };
+}
+
+export const STUDIO_GROUPING_GUIDANCE = "For generated translations or rewritten text, make every AND/OR scope explicit in BOTH languages. Use parentheses or numbered nested alternatives, or repeat each shared qualifier in every alternative. For example, age>=18 AND (resident OR student) means 'at least 18 AND (resident OR student)' / 'al menos 18 años Y (residente O estudiante)'; never flatten it to 'al menos 18 años y residente, o estudiante'. The age, consent, deadline and negation restrictions must visibly govern every intended alternative. Do not resolve ambiguity in a supplied source by guessing; return rules:null and a clarification issue instead.";

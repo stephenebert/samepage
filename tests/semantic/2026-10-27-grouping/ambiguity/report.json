@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "modelRequests": 1,
+  "networkRequests": 7,
+  "actualBilledCostUsd": null,
+  "caseId": "ambiguous-cobalt-unspecified-scholarship-fee",
+  "planSha256": "5adea6cd4b7a2fd095d320d5c7e6022d3bf29119d926cbece8f9ec2c7ef323f6",
+  "roomId": "studio-4a09ba63-51bd-4a19-8ff7-8141e002c8a3",
+  "metrics": {
+    "providerDurationMs": 6136,
+    "requestBytes": 6816,
+    "responseContentBytes": 1453,
+    "promptTokens": 1391,
+    "completionTokens": 1225,
+    "totalTokens": 2616,
+    "reasoningTokens": 909,
+    "cachedInputTokens": 0,
+    "finishReason": "stop",
+    "maxCompletionTokens": 8192
+  },
+  "httpDurationMs": 6480,
+  "clarifications": [
+    {
+      "editor": "alice",
+      "issues": [
+        "What is the exact reduced fee in USD cents for admitted scholarship holders? The policy states a reduced fee applies but does not specify the amount, so no unique fee can be compiled."
+      ]
+    },
+    {
+      "editor": "bob",
+      "issues": [
+        "What is the exact reduced fee in USD cents for admitted scholarship holders? The policy states a reduced fee applies but does not specify the amount, so no unique fee can be compiled."
+      ]
+    }
+  ],
+  "approvalsBlocked": 2,
+  "publicationUnchanged": true,
+  "completedAt": "2026-10-27T17:38:36.972Z"
+}

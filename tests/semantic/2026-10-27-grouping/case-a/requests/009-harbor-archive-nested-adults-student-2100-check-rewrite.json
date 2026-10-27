@@ -1,0 +1,18 @@
+{
+  "sequence": 9,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-7c79c128-c2f8-4878-b5b4-5497eb5bbfc8/repair",
+  "body": {
+    "intent": {
+      "baselineCandidateId": "studio-review-3-alice",
+      "scopeFlag": "student",
+      "feeCents": 2100
+    },
+    "proposalText": {
+      "en": "Applications to the Harbor Archive Open Studio are in time only when submitted strictly after 2026-12-04T09:00:00.125Z and at or before 2026-12-19T18:00:00.875Z. An on-time applicant must qualify through at least one of the two routes below. Youth route: all three requirements apply: age is at least 15 and at most 19; guardian consent is present; and at least one of these alternatives holds: (a) the applicant is a resident and is not a member, or (b) the applicant is a student and has a scholarship. Adult route: the applicant must be at least 20 years old AND must satisfy at least one of these alternatives: (a) the applicant is a member and is not a student, or (b) the applicant is a resident and also either does not have a scholarship or is a student. The age requirement applies to both adult alternatives. There is one additional requirement for every route: for a submission strictly after 2026-12-14T10:30:00.500Z, the applicant must either have a scholarship or be a member. At or before that instant, this additional requirement does not apply. Everyone else is rejected. Only admitted applicants have a fee. Use the first matching fee in this order, in USD cents: student, 2100; scholarship AND membership, 350; scholarship, 900; age at most 19, 1700; resident AND student, 2300; membership, 3200; otherwise, 4700.",
+      "es": "Las solicitudes para el Estudio Abierto del Archivo del Puerto están dentro de plazo únicamente si se presentan estrictamente después de 2026-12-04T09:00:00.125Z y a más tardar en 2026-12-19T18:00:00.875Z, incluido ese instante. Una persona solicitante dentro de plazo debe cumplir al menos una de las dos vías siguientes. Vía juvenil: se exigen los tres requisitos siguientes: tener al menos 15 y como máximo 19 años; contar con el consentimiento del tutor; y cumplir al menos una de estas alternativas: (a) ser residente y no ser miembro, o (b) ser estudiante y tener una beca. Vía adulta: se exige tener al menos 20 años Y cumplir al menos una de estas alternativas: (a) ser miembro y no ser estudiante, o (b) ser residente y, además, no tener beca o ser estudiante. En la alternativa (b), ser residente es obligatorio; además, debe cumplirse al menos una de las condiciones «no tener beca» y «ser estudiante». La edad mínima de 20 años se exige en ambas alternativas de la vía adulta. Hay un requisito adicional para ambas vías: si la solicitud se presenta estrictamente después de 2026-12-14T10:30:00.500Z, se exige tener una beca o ser miembro. Si la solicitud se presenta en ese instante o antes, este requisito adicional no se aplica. Se rechazan todas las demás solicitudes. Solo las personas admitidas tienen tarifa. Se aplica la primera tarifa que corresponda en este orden, en centavos de dólar estadounidense: estudiante, 2100; beca Y membresía, 350; beca, 900; edad de 19 años como máximo, 1700; residente Y estudiante, 2300; membresía, 3200; en otro caso, 4700."
+    }
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization"
+}

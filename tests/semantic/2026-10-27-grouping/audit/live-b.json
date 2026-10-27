@@ -1,0 +1,80 @@
+{
+  "status": "pass",
+  "caseId": "beacon-commons-adult-alternatives-student-1900",
+  "roomId": "studio-571e0bcf-4279-4d1a-bae6-ed98834e77d9",
+  "sourceCommit": "212edcda2fc930f37910511d5805c2b317af8acf",
+  "expectedFidelityPassed": true,
+  "scope": "Independent AI review of saved live raw bilingual wording, canonical published wording, and originalWording preservation; no model or network calls; not a human bilingual study.",
+  "baseline": {
+    "sourceTextsUnchanged": true,
+    "aliceSpanishTranslationFaithful": true,
+    "bobEnglishTranslationFaithful": true,
+    "ageScopeExplicit": true,
+    "cutoffDifferencePreserved": true,
+    "feesFaithful": true
+  },
+  "unsafeRewrite": {
+    "verbatimEnglishSpanish": true,
+    "deliberateNonstudentMemberFeeLeakPreserved": true,
+    "status": "blocked"
+  },
+  "generatedRepair": {
+    "rawEnglishFaithful": true,
+    "rawSpanishFaithful": true,
+    "ageScopeExplicit": true,
+    "allAdmissionAndDeadlinesPreserved": true,
+    "student1900FirstPriority": true,
+    "outsideScopeMember2700Retained": true,
+    "deadOriginalStudentTiersCorrectlyRemoved": true
+  },
+  "publication": {
+    "baselineVersion": 2,
+    "finalVersion": 3,
+    "wordingSource": "checked-rules-v1",
+    "canonicalEnglishFaithful": true,
+    "canonicalSpanishFaithful": true,
+    "baselineOriginalWordingMatchesCandidateExactly": true,
+    "finalOriginalWordingMatchesGeneratedRepairExactly": true,
+    "bothRepairApprovalsPresent": true,
+    "receiptFeesCents": [
+      1400,
+      1900
+    ]
+  },
+  "groupingWitness": {
+    "id": "B14",
+    "interpretation": "If age >=21 scopes only A1, A2 could admit the 20-year-old nonresident student/member. The full policy must reject this attendee.",
+    "intended": {
+      "accepted": false,
+      "feeCents": null
+    },
+    "looseAdultAlternativeReading": {
+      "accepted": true,
+      "feeCents": 1400
+    }
+  },
+  "recordedRuleChecks": {
+    "concreteChecks": 120,
+    "independentOracleComparisons": 201344,
+    "independentOracleMismatches": 0
+  },
+  "findings": [],
+  "preflightEvidenceUnchanged": true,
+  "evidenceSha256": {
+    "case-b/report.json": "be032503b87c40475d206307a4c9619b73b40671479a040b3bb247bcc3b2a59d",
+    "case-b/case-final.json": "56cff7314bdbad4fed368578664edf61c0db6245db377ecf2fd85e101ee09a32",
+    "case-b/stages/beacon-commons-adult-alternatives-student-1900-baseline/after.json": "9c7d1b6c5dacf7d86a8b88aabc602572d3385eefd729785cb8f829ce3549ce12",
+    "case-b/stages/beacon-commons-adult-alternatives-student-1900-generate-repair/after.json": "99da786dbd72e5ec39565727e28346574df128446934003b2eeb172a29ae0b82",
+    "case-b/stages/beacon-commons-adult-alternatives-student-1900-check-rewrite/after.json": "dc12d448e5a8833e4eb09d08b4a862d15e3d07093cf31675bcbea6245d4e8c50",
+    "case-b/holdout/provider-inputs.json": "4f64ce9a9388b0963a1c7fa6fc14205621349271a11f1e8c2425d81171d01b12",
+    "case-b/holdout/goldens.json": "f2adf8ab54b958761e88c40b851c1d304ddd939ba433d9d587f045fdb12b4c38",
+    "case-b/holdout/independent-oracle.mjs": "3e96c97b8702c51c3893332a90d2ca81e63db73f0ef6a9cb5f3f24142c6c33d0",
+    "case-b/holdout/README.md": "68fd3948df7f004e578cd7fa4855a275bda5ae05dec1708a38887412a2df7d92",
+    "case-b/holdout/FREEZE.json": "a88aef999146c118d41f87b47907710acd35aca159c38602c03aecb5de300515",
+    "case-b/holdout/SHA256SUMS": "8d59352214eb42d7d4e6b4e3140166603493a5e3ce40cb6bcf315a6f4c7f141e",
+    "case-b/ambiguous-policy.json": "58700c1252f28780d08c91a8f770f62dcfe8f0345ac361b849260a4ac2bd49a7"
+  },
+  "networkCalls": 0,
+  "modelCalls": 0,
+  "humanBilingualStudy": false
+}
