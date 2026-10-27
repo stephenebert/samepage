@@ -44,13 +44,20 @@ test('wire decoder checks job/source identity, expression syntax, whole-policy s
 });
 test('generated repair receives an unconditional target-group override derived from the chosen baseline',()=>{
  const room=initial();
- room.review.candidates[0].rules.fee.overrides=[{when:{op:'all',args:[{op:'flag',field:'scholarship',value:true},{op:'age',cmp:'lte',value:19}]},cents:600,label:'Youth scholarship'}];
+ room.review.candidates[0].rules.fee.overrides=[{when:{op:'all',args:[{op:'flag',field:'scholarship',value:true},{op:'age',cmp:'lte',value:19}]},cents:600,label:'Youth scholarship'},{when:{op:'any',args:[{op:'flag',field:'scholarship',value:true},{op:'flag',field:'resident',value:true}]},cents:1500,label:'Scholarship or resident'}];
  const job=startStudioRepair(room,intent(room),now,'repair-scope').repair.job;
+ const sourceSnapshot=JSON.stringify(job);
  const prompt=buildStudioRepairPrompt(job),snapshot=JSON.parse(prompt.split('Snapshot:\n')[1]);
  assert.deepEqual(snapshot.targetRules.fee.overrides[0],{when:'scholarship',cents:0,label:'Agreed scholarship fee'});
- assert.match(snapshot.targetRules.fee.overrides[1].when,/age <= 19/);
+ assert.equal(snapshot.targetRules.fee.overrides.length,2,'the unreachable old age-restricted waiver is omitted');
+ assert.match(snapshot.targetRules.fee.overrides[1].when,/resident/,'the overlapping clause still applies outside the scholarship group');
+ assert.match(snapshot.baseline.rules.fee.overrides[0].when,/age <= 19/,'the original baseline audit remains intact');
  assert.equal(snapshot.targetRules.eligibility,snapshot.baseline.rules.eligibility);
  assert.match(prompt,/EVERY eligible attendee/);
+ assert.match(prompt,/Omit unreachable old fee clauses/);
+ assert.equal(JSON.stringify(job),sourceSnapshot,'prompt preparation cannot mutate saved policy or job history');
+ const checkPrompt=buildStudioRepairPrompt({...job,proposalText:fixedText});
+ assert.doesNotMatch(checkPrompt,/"targetRules":|Omit unreachable old fee clauses/,'authored rewrite checks remain literal');
 });
 test('actual structured adapter is bounded, does not retry, and keeps model output out of publication',async()=>{
  const store=memory();let count=0;

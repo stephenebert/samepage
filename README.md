@@ -6,7 +6,9 @@ The current `/studio` demo finds realistic admission and fee differences between
 
 [Project brief and build plan (private Google Doc)](https://docs.google.com/document/d/1SovcRW_BpJU2tisT57L3vq3POAh3rn0wzOC077BCYIY/edit)
 
-Latest October 26 update: automatic fee repair now proposes bilingual wording and checks its admission/fee effects before joint approval. Six live requests included a genuine generated scope error: Meta kept an age limit on a requested all-scholarship waiver, and the checker blocked publication. After a prompt revision, a known-case correction and a fresh second policy passed their checks and were jointly published, preserving $21-to-$0 and $14-to-$0 versioned receipts. The final source passes 156 mechanical tests, TypeScript and production build; Studio live calls are paused. See [the repair results, retained failure and frozen evidence](docs/AUTOMATIC-REPAIR.md).
+Latest demo update: the checked repair now leads the saved-room walkthrough, with the earlier blocked proposal visible and a readable bilingual policy derived from the checked rules. Complete outcome comparison removes one redundant fee clause from each saved policy’s reading view; original wording, approvals and receipts remain intact. Recomputed examples use the saved 20-year-old Lumen attendee and 16-year-old Orbit attendee. The working form starts with those facts, never submits automatically, and preserves later edits. The source passes 169 mechanical tests and TypeScript checking. No new Meta calls were made for this polish; Studio calls remain paused. The simplified-target generation prompt has not been live retested. See [the 60–90 second demo sequence and its scope](docs/DEMO-POLISH.md).
+
+The preceding six-request repair evaluation included a genuine generated scope error: Meta kept an age limit on a requested all-scholarship waiver, and the checker blocked publication. After a prompt revision, a known-case correction and a fresh second policy passed their checks and were jointly published, preserving $21-to-$0 and $14-to-$0 versioned receipts. That evaluated source passed 156 mechanical tests, TypeScript and production build. See [the repair results, retained failure and frozen evidence](docs/AUTOMATIC-REPAIR.md).
 
 Earlier that day, a bounded expression protocol removed numbered-node bookkeeping while preserving the existing rule validator and joint approval. Ten live requests completed; all 404 concrete checks and four unresolved-result checks passed. Low reasoning with the new protocol reduced total HTTP wait by about 40% across four matched requests, with individual waits of 10.038–27.707 seconds. The private deployment explicitly selects that tested configuration; Studio live calls are paused, reuse is disabled, and the 8,192-token cap is unchanged. That source passed 133 mechanical tests, TypeScript and production build. See [expression interpretation, timing limits and frozen evidence](docs/EXPRESSION-INTERPRETATION.md).
 
@@ -99,7 +101,7 @@ A subsequent six-pair hard unseen-policy evaluation passed **64 scenario checks*
 Next build priorities:
 
 1. Keep Studio live calls paused after the completed six-request repair evaluation. Expand the frozen sample only within newly authorized credit use, measure latency across repeated runs, and obtain confirmed billing; current token estimates are not a bill.
-2. Simplify redundant wording in generated repairs while checking that the parsed outcomes remain equivalent; the current successful proposals retain unreachable older fee clauses.
+2. Evaluate the simplified-target generation prompt on fresh authorized model requests; this polish verifies a derived reading view and does not establish that new model wording will be better.
 3. Evaluate the `/studio` demo with independent bilingual people and improve confusing explanations using their feedback.
 4. Add actual editor identity, room membership and permissions before expanding access.
 
@@ -108,6 +110,7 @@ This is a feasibility prototype, not a validated production collaboration system
 ## Source map
 
 - `app/studio/`, `app/api/studio/`, `lib/studio*.ts`, `lib/automatic-studio-review.ts`: rich policy interpretation, flat or bounded-expression provider schema, explicitly enabled Meta adapter, controlled simulation, bounded comparison, joint approval, and receipts.
+- `lib/studio-presentation.ts`, `lib/studio-witness.ts`, `app/studio/policy-summary.tsx`, `docs/DEMO-POLISH.md`: outcome-verified reading views, recomputed realistic examples and a saved-evidence walkthrough.
 - `lib/studio-repair.ts`, `lib/studio-repair-model.ts`, `lib/automatic-studio-repair.ts`, `app/studio/repair-panel.tsx`, `tests/semantic/2026-10-26-repair/`, `docs/AUTOMATIC-REPAIR.md`: bounded fee repair, authored-rewrite interpretation, semantic impact gates, exact-proposal joint approval, and the retained live failure plus revised continuation.
 - `lib/studio-expression.ts`, `tests/studio-expression.test.mjs`, `tests/semantic/2026-10-26-expression/`, `docs/EXPRESSION-INTERPRETATION.md`: bounded expression parsing, ten live reviews, matched medium/low timing, semantic checks and pause verification.
 - `tests/studio-integration.test.mjs`, `tests/semantic/2026-10-26-studio-meta/`: historical controlled transport, concurrency, clarification, quota and full-flow evidence.
