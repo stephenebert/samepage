@@ -72,14 +72,14 @@ test("Meta HTTP contract uses server secret, fixed endpoint, strict schema and v
 test("malformed JSON, truncated completions, refusals, markdown and schema changes are rejected", async () => {
   const job = pending().activeJob;
   const invalid = valid(job); invalid.candidates[0].en += " changed";
-  for (const factory of [
-    () => new Response("not JSON"),
-    () => response(job, { finish_reason: "length" }),
-    () => response(job, { message: { refusal: "No", content: JSON.stringify(valid(job)) } }),
-    () => response(job, { message: { content: "```json\n{}\n```" } }),
-    () => response(job, { message: { content: JSON.stringify(invalid) } }),
-    () => Response.json({ choices: [] }),
-  ]) await assert.rejects(interpretPolicyJob(job, config, { fetch: async () => factory() }), error => /^MODEL_(RESPONSE|REVIEW)_INVALID$/.test(error.code));
+  for (const [factory, code] of [
+    [() => new Response("not JSON"), "MODEL_RESPONSE_INVALID"],
+    [() => response(job, { finish_reason: "length" }), "MODEL_OUTPUT_LIMIT"],
+    [() => response(job, { message: { refusal: "No", content: JSON.stringify(valid(job)) } }), "MODEL_REFUSED"],
+    [() => response(job, { message: { content: "```json\n{}\n```" } }), "MODEL_REVIEW_INVALID"],
+    [() => response(job, { message: { content: JSON.stringify(invalid) } }), "MODEL_REVIEW_INVALID"],
+    [() => Response.json({ choices: [] }), "MODEL_RESPONSE_INVALID"],
+  ]) await assert.rejects(interpretPolicyJob(job, config, { fetch: async () => factory() }), { code });
 });
 test("oversized provider bodies are rejected with and without content-length", async () => {
   const job = pending().activeJob;

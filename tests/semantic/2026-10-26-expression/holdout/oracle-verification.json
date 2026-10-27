@@ -1,0 +1,43 @@
+{
+  "pass": true,
+  "independentOracle": "Source-level control flow, with no application imports or provider output",
+  "handSpecifiedCases": 38,
+  "boundaryPolicyChecks": 76,
+  "goldenASTChecks": {
+    "alice": {
+      "pass": true,
+      "checkedCases": 42592,
+      "mismatches": 0,
+      "firstMismatches": []
+    },
+    "bob": {
+      "pass": true,
+      "checkedCases": 42592,
+      "mismatches": 0,
+      "firstMismatches": []
+    }
+  },
+  "pairComparison": {
+    "expectedStatus": "different",
+    "comparedCases": 42592,
+    "ageValues": 121,
+    "flagAssignments": 32,
+    "timeRepresentatives": 11,
+    "outcomes": {
+      "bothDenied": 22292,
+      "bothAdmittedSameFee": 15060,
+      "admissionAliceOnly": 1260,
+      "admissionBobOnly": 2720,
+      "aliceFeeHigher": 0,
+      "bobFeeHigher": 1260
+    }
+  },
+  "ambiguity": {
+    "expectedStatus": "unresolved",
+    "bothRulesNull": true,
+    "overlappingFeeCents": [
+      900,
+      1300
+    ]
+  }
+}

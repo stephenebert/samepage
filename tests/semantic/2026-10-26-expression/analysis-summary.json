@@ -1,0 +1,50 @@
+{
+  "status": "six-requests-completed-without-observed-semantic-regression",
+  "reviewRequests": 6,
+  "allFinishReasons": [
+    "stop",
+    "stop",
+    "stop",
+    "stop",
+    "stop",
+    "stop"
+  ],
+  "allMaxCompletionTokens": [
+    8192,
+    8192,
+    8192,
+    8192,
+    8192,
+    8192
+  ],
+  "priorIncompleteResponseReproduced": false,
+  "originalFailureCauseEstablished": false,
+  "semanticChecks": {
+    "concretePassed": 244,
+    "concreteFailed": 0,
+    "unresolvedPassed": 2,
+    "independentSourceOracleChecks": 85184
+  },
+  "comparison": {
+    "initialBaselineHttpMs": 31361,
+    "initialExpressionHttpMs": 24884,
+    "correctionBaselineHttpMs": 27645,
+    "correctionExpressionHttpMs": 39885,
+    "initialReductionPercent": 20.653040400497435,
+    "correctionIncreasePercent": 44.27563754747694,
+    "pairedTotalChangePercent": 9.766803375927879,
+    "limitations": [
+      "One sequential sample per configuration; provider load and run order not controlled.",
+      "Baseline correction reused Bob; expression correction reviewed both editors. This compares complete iteration paths, not isolated serialization changes.",
+      "No consistent speedup demonstrated."
+    ]
+  },
+  "usage": {
+    "promptTokens": 9055,
+    "completionTokens": 31493,
+    "reasoningTokens": 26810,
+    "estimatedUsdAtUncachedRates": 0.14516400000000002,
+    "conservativePreflightUsd": 0.399719,
+    "actualBilledCostUsd": null
+  }
+}

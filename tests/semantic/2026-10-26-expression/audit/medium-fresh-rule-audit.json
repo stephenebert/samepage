@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "auditType": "Independent source-level semantic check; no application engine imported",
+  "pass": true,
+  "frozenManifestSHA256": "0a1e959ae04b89f3c7138da87bcbab2294fff134f77e9c94317d32dd881d3581",
+  "frozenFilesVerified": true,
+  "totalNightjarOracleDecisions": 85184,
+  "totalNightjarHandSpecifiedDecisions": 76,
+  "results": [
+    {
+      "pairId": "nightjar-online-sound-jam",
+      "artifact": "/Users/steph/Documents/Playground/output/meta-hackathon/samepage-compiler-evidence/stages/fresh-nightjar-online-sound-jam/review-state.json",
+      "artifactSHA256": "3dc02bd0c7a050dbe049de859af833ef23e1e8c2f484af61b56f4e6062e92d23",
+      "candidates": [
+        {
+          "editor": "alice",
+          "sourceLanguage": "en",
+          "sourceMatchesFrozenExactly": true,
+          "authorLanguagePreservedExactly": true,
+          "oracle": {
+            "pass": true,
+            "checkedCases": 42592,
+            "mismatches": 0,
+            "firstMismatches": []
+          },
+          "handSpecifiedBoundaryCasesPassed": 38
+        },
+        {
+          "editor": "bob",
+          "sourceLanguage": "es",
+          "sourceMatchesFrozenExactly": true,
+          "authorLanguagePreservedExactly": true,
+          "oracle": {
+            "pass": true,
+            "checkedCases": 42592,
+            "mismatches": 0,
+            "firstMismatches": []
+          },
+          "handSpecifiedBoundaryCasesPassed": 38
+        }
+      ],
+      "expectedDiscoveryStatus": "different",
+      "discoveryStatusMatches": true,
+      "witnessesValidated": 3
+    },
+    {
+      "pairId": "pixel-loom-online-mini-course",
+      "artifact": "/Users/steph/Documents/Playground/output/meta-hackathon/samepage-compiler-evidence/stages/fresh-pixel-loom-online-mini-course/review-state.json",
+      "artifactSHA256": "d1f06f0d3d0058c4898e7d1686242d0e2e4eb95f8a08d360c1142e281e53d325",
+      "candidates": [
+        {
+          "editor": "alice",
+          "sourceLanguage": "en",
+          "sourceMatchesFrozenExactly": true,
+          "authorLanguagePreservedExactly": true,
+          "rulesNull": true,
+          "issues": [
+            "For an applicant who is both a member and a student, which fee applies: USD 9.00 or USD 13.00? The policy states only one rate may be applied but provides no unambiguous priority or tie-breaker."
+          ]
+        },
+        {
+          "editor": "bob",
+          "sourceLanguage": "es",
+          "sourceMatchesFrozenExactly": true,
+          "authorLanguagePreservedExactly": true,
+          "rulesNull": true,
+          "issues": [
+            "For an applicant who is both a member and a student, which fee applies: USD 9.00 or USD 13.00? The policy states only one fee may be applied to each registration but provides no unambiguous priority or tie-breaker."
+          ]
+        }
+      ],
+      "expectedDiscoveryStatus": "unresolved",
+      "discoveryStatusMatches": true,
+      "witnessesValidated": 0
+    }
+  ]
+}

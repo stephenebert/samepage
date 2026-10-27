@@ -1,0 +1,62 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 101,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-04f69645-ae3f-4244-b625-910eb024f970\",\"revision\":2,\"createdAt\":\"2026-10-27T04:36:03.843Z\",\"updatedAt\":\"2026-10-27T04:36:04.124Z\",\"mode\":\"manual-agent-review\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T04:36:03.843Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Nightjar Online Sound Jam — registration policy\\nThis is a fully online creative sound-making event. Applicants must be at least 14 years old. Anyone younger than 18 must have guardian consent; membership and scholarships do not waive that requirement.\\nRegistration must be submitted at or after 2027-04-08T16:00:00.000Z and strictly before 2027-04-10T16:00:00.000Z. All timestamps are UTC and are compared to the exact millisecond.\\nWe refuse applicants who are neither residents nor members, except students for whom it is not true that they both lack a scholarship and are younger than 21. This exception lifts only the resident-or-member restriction: it does not lift the minimum age, guardian consent, or registration-window requirements.\\nDecide admission before calculating a fee; rejected applicants have no fee. For accepted applicants, apply the first matching rate in this exact order, without combining rates:\\n1. Scholarship holders: USD 0.00.\\n2. Members: USD 7.50.\\n3. Students whose registration was submitted strictly before 2027-04-09T16:00:00.000Z: USD 12.00.\\n4. Residents: USD 17.00.\\nIf no listed rate matches, the fee is USD 28.00.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Encuentro virtual de creación sonora Nightjar — normas de inscripción\\nEste encuentro de creación sonora se celebra completamente en línea. Las personas solicitantes deben tener al menos 14 años. Quienes tengan menos de 18 años deben contar con el consentimiento de su tutor; ni ser miembro ni tener una beca exime de este requisito.\\nLa inscripción debe enviarse desde 2027-04-08T16:00:00.000Z hasta 2027-04-10T16:00:00.000Z, ambos instantes incluidos. Todos los sellos de tiempo están en UTC y se comparan con precisión de un milisegundo.\\nSe rechaza a quienes no sean residentes ni miembros, salvo a los estudiantes para quienes no sea cierto que carecen de beca o que tienen menos de 21 años. Esta excepción elimina únicamente la restricción de ser residente o miembro: no elimina los requisitos de edad mínima, consentimiento del tutor ni plazo de inscripción.\\nPrimero se decide la admisión y después se calcula la tarifa; las personas rechazadas no tienen tarifa. Para las personas admitidas, se aplica la primera tarifa que corresponda en este orden exacto, sin combinar tarifas:\\n1. Personas con beca: USD 0,00.\\n2. Estudiantes cuya inscripción se haya enviado estrictamente antes de 2027-04-09T16:00:00.000Z: USD 12,00.\\n3. Miembros: USD 7,50.\\n4. Residentes: USD 17,00.\\nSi no corresponde ninguna tarifa de la lista, la tarifa es USD 28,00.\"}},\"activeJob\":null,\"review\":null,\"registrations\":[]},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"expression-v3\",\"reasoningEffort\":\"medium\",\"reuseUnchanged\":false,\"maxCompletionTokens\":8192}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-04f69645-ae3f-4244-b625-910eb024f970",
+      "revision": 2,
+      "createdAt": "2026-10-27T04:36:03.843Z",
+      "updatedAt": "2026-10-27T04:36:04.124Z",
+      "mode": "manual-agent-review",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T04:36:03.843Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Nightjar Online Sound Jam — registration policy\nThis is a fully online creative sound-making event. Applicants must be at least 14 years old. Anyone younger than 18 must have guardian consent; membership and scholarships do not waive that requirement.\nRegistration must be submitted at or after 2027-04-08T16:00:00.000Z and strictly before 2027-04-10T16:00:00.000Z. All timestamps are UTC and are compared to the exact millisecond.\nWe refuse applicants who are neither residents nor members, except students for whom it is not true that they both lack a scholarship and are younger than 21. This exception lifts only the resident-or-member restriction: it does not lift the minimum age, guardian consent, or registration-window requirements.\nDecide admission before calculating a fee; rejected applicants have no fee. For accepted applicants, apply the first matching rate in this exact order, without combining rates:\n1. Scholarship holders: USD 0.00.\n2. Members: USD 7.50.\n3. Students whose registration was submitted strictly before 2027-04-09T16:00:00.000Z: USD 12.00.\n4. Residents: USD 17.00.\nIf no listed rate matches, the fee is USD 28.00."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Encuentro virtual de creación sonora Nightjar — normas de inscripción\nEste encuentro de creación sonora se celebra completamente en línea. Las personas solicitantes deben tener al menos 14 años. Quienes tengan menos de 18 años deben contar con el consentimiento de su tutor; ni ser miembro ni tener una beca exime de este requisito.\nLa inscripción debe enviarse desde 2027-04-08T16:00:00.000Z hasta 2027-04-10T16:00:00.000Z, ambos instantes incluidos. Todos los sellos de tiempo están en UTC y se comparan con precisión de un milisegundo.\nSe rechaza a quienes no sean residentes ni miembros, salvo a los estudiantes para quienes no sea cierto que carecen de beca o que tienen menos de 21 años. Esta excepción elimina únicamente la restricción de ser residente o miembro: no elimina los requisitos de edad mínima, consentimiento del tutor ni plazo de inscripción.\nPrimero se decide la admisión y después se calcula la tarifa; las personas rechazadas no tienen tarifa. Para las personas admitidas, se aplica la primera tarifa que corresponda en este orden exacto, sin combinar tarifas:\n1. Personas con beca: USD 0,00.\n2. Estudiantes cuya inscripción se haya enviado estrictamente antes de 2027-04-09T16:00:00.000Z: USD 12,00.\n3. Miembros: USD 7,50.\n4. Residentes: USD 17,00.\nSi no corresponde ninguna tarifa de la lista, la tarifa es USD 28,00."
+        }
+      },
+      "activeJob": null,
+      "review": null,
+      "registrations": []
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "expression-v3",
+      "reasoningEffort": "medium",
+      "reuseUnchanged": false,
+      "maxCompletionTokens": 8192
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "sequence": 47,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-04f69645-ae3f-4244-b625-910eb024f970",
+  "body": {
+    "type": "register",
+    "requestId": "eval-fresh-nightjar-online-sound-jam-5e038484-d2b4-499b-a5dc-011808c91a78",
+    "policyVersion": 2,
+    "label": "Synthetic frozen member-and-early-student",
+    "age": 30,
+    "resident": false,
+    "student": true,
+    "member": true,
+    "guardianConsent": false,
+    "scholarship": false,
+    "submittedAt": "2027-04-09T12:00:00.000Z"
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T04:36:40.736Z"
+}

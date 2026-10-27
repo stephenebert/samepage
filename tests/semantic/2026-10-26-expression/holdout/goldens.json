@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "authorship": "Fresh independent holdouts; authored from the supported domain and source policies without reading earlier holdout corpora or any provider output.",
+  "domain": {
+    "age": "integer 0..120 inclusive",
+    "independentBooleanFlags": [
+      "resident",
+      "student",
+      "member",
+      "guardianConsent",
+      "scholarship"
+    ],
+    "submittedAt": "exact UTC millisecond instants in years 0000..9999",
+    "evaluation": "eligibility first; denied fee is null; otherwise first matching ordered USD-cent fee override, then default"
+  },
+  "pairs": [
+    {
+      "id": "nightjar-online-sound-jam",
+      "expectedDiscoveryStatus": "different",
+      "candidates": [
+        {
+          "editor": "alice",
+          "language": "en",
+          "rules": {
+            "eligibility": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 14
+                },
+                {
+                  "op": "any",
+                  "args": [
+                    {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 18
+                    },
+                    {
+                      "op": "flag",
+                      "field": "guardianConsent",
+                      "value": true
+                    }
+                  ]
+                },
+                {
+                  "op": "time",
+                  "cmp": "gte",
+                  "value": "2027-04-08T16:00:00.000Z"
+                },
+                {
+                  "op": "time",
+                  "cmp": "lt",
+                  "value": "2027-04-10T16:00:00.000Z"
+                },
+                {
+                  "op": "not",
+                  "arg": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": false
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": false
+                      },
+                      {
+                        "op": "not",
+                        "arg": {
+                          "op": "all",
+                          "args": [
+                            {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            {
+                              "op": "not",
+                              "arg": {
+                                "op": "all",
+                                "args": [
+                                  {
+                                    "op": "flag",
+                                    "field": "scholarship",
+                                    "value": false
+                                  },
+                                  {
+                                    "op": "age",
+                                    "cmp": "lte",
+                                    "value": 20
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "fee": {
+              "currency": "USD",
+              "defaultCents": 2800,
+              "overrides": [
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  },
+                  "cents": 0,
+                  "label": "Scholarship"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  "cents": 750,
+                  "label": "Member"
+                },
+                {
+                  "when": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "student",
+                        "value": true
+                      },
+                      {
+                        "op": "time",
+                        "cmp": "lt",
+                        "value": "2027-04-09T16:00:00.000Z"
+                      }
+                    ]
+                  },
+                  "cents": 1200,
+                  "label": "Early student"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  "cents": 1700,
+                  "label": "Resident"
+                }
+              ]
+            }
+          },
+          "issues": []
+        },
+        {
+          "editor": "bob",
+          "language": "es",
+          "rules": {
+            "eligibility": {
+              "op": "all",
+              "args": [
+                {
+                  "op": "age",
+                  "cmp": "gte",
+                  "value": 14
+                },
+                {
+                  "op": "any",
+                  "args": [
+                    {
+                      "op": "age",
+                      "cmp": "gte",
+                      "value": 18
+                    },
+                    {
+                      "op": "flag",
+                      "field": "guardianConsent",
+                      "value": true
+                    }
+                  ]
+                },
+                {
+                  "op": "time",
+                  "cmp": "gte",
+                  "value": "2027-04-08T16:00:00.000Z"
+                },
+                {
+                  "op": "time",
+                  "cmp": "lte",
+                  "value": "2027-04-10T16:00:00.000Z"
+                },
+                {
+                  "op": "not",
+                  "arg": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "resident",
+                        "value": false
+                      },
+                      {
+                        "op": "flag",
+                        "field": "member",
+                        "value": false
+                      },
+                      {
+                        "op": "not",
+                        "arg": {
+                          "op": "all",
+                          "args": [
+                            {
+                              "op": "flag",
+                              "field": "student",
+                              "value": true
+                            },
+                            {
+                              "op": "not",
+                              "arg": {
+                                "op": "any",
+                                "args": [
+                                  {
+                                    "op": "flag",
+                                    "field": "scholarship",
+                                    "value": false
+                                  },
+                                  {
+                                    "op": "age",
+                                    "cmp": "lte",
+                                    "value": 20
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "fee": {
+              "currency": "USD",
+              "defaultCents": 2800,
+              "overrides": [
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "scholarship",
+                    "value": true
+                  },
+                  "cents": 0,
+                  "label": "Scholarship"
+                },
+                {
+                  "when": {
+                    "op": "all",
+                    "args": [
+                      {
+                        "op": "flag",
+                        "field": "student",
+                        "value": true
+                      },
+                      {
+                        "op": "time",
+                        "cmp": "lt",
+                        "value": "2027-04-09T16:00:00.000Z"
+                      }
+                    ]
+                  },
+                  "cents": 1200,
+                  "label": "Early student"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "member",
+                    "value": true
+                  },
+                  "cents": 750,
+                  "label": "Member"
+                },
+                {
+                  "when": {
+                    "op": "flag",
+                    "field": "resident",
+                    "value": true
+                  },
+                  "cents": 1700,
+                  "label": "Resident"
+                }
+              ]
+            }
+          },
+          "issues": []
+        }
+      ],
+      "semanticDifferences": [
+        "English student exception negates (no scholarship AND age below 21); Spanish negates (no scholarship OR age below 21).",
+        "English excludes the exact closing instant; Spanish includes it.",
+        "English member rate precedes early-student rate; Spanish early-student rate precedes member rate."
+      ]
+    },
+    {
+      "id": "pixel-loom-online-mini-course",
+      "expectedDiscoveryStatus": "unresolved",
+      "candidates": [
+        {
+          "editor": "alice",
+          "language": "en",
+          "rules": null,
+          "issues": [
+            "Member and student rates overlap for an admitted applicant who has both flags. The text does not choose a rate or establish priority; both USD 9.00 and USD 13.00 are supported. Clarification is required before producing executable rules."
+          ]
+        },
+        {
+          "editor": "bob",
+          "language": "es",
+          "rules": null,
+          "issues": [
+            "Member and student rates overlap for an admitted applicant who has both flags. The text does not choose a rate or establish priority; both USD 9.00 and USD 13.00 are supported. Clarification is required before producing executable rules."
+          ]
+        }
+      ],
+      "ambiguityWitness": {
+        "attendee": {
+          "age": 26,
+          "resident": false,
+          "student": true,
+          "member": true,
+          "guardianConsent": false,
+          "scholarship": false,
+          "submittedAt": "2027-08-02T09:00:00.000Z"
+        },
+        "admission": true,
+        "possibleFeeCents": [
+          900,
+          1300
+        ],
+        "missingInformation": "Priority or tie-breaking rule between member and student rates. Text order alone does not explicitly establish first-match fee priority."
+      }
+    }
+  ]
+}

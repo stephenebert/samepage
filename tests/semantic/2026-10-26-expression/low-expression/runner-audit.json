@@ -1,0 +1,74 @@
+{
+  "status": "offline-runner-and-exact-body-checks-passed",
+  "networkCalls": 0,
+  "modelApiCalls": 0,
+  "liveQualityEstablished": false,
+  "planSha256": "5fc5775ca0e617be2eb1047a0efc5a3f1ae9a0de38e285b64c474ab15361bd74",
+  "maxReviewPosts": 4,
+  "combinedRequests": 10,
+  "conservativeEstimatedMaxUsd": 0.19606025,
+  "combinedConservativeEstimatedMaxUsd": 0.59577925,
+  "bodyChecks": [
+    {
+      "stageId": "expression-mosaic-priority",
+      "maxCompletionTokens": 8192,
+      "requestedEditors": [
+        "alice",
+        "bob"
+      ],
+      "reusedEditors": [],
+      "exactTransportBodyBytes": 6965,
+      "bodySha256": "3637f01c70eb9adb60ad27b72fef4edfd404570d2af69fe75d3b39251926814b",
+      "parsedCandidates": 2,
+      "fixturePassed": true
+    },
+    {
+      "stageId": "expression-mosaic-corrected",
+      "maxCompletionTokens": 8192,
+      "requestedEditors": [
+        "alice",
+        "bob"
+      ],
+      "reusedEditors": [],
+      "exactTransportBodyBytes": 7066,
+      "bodySha256": "5ecbd811625fa403cb4d80d6ab9c27d176ed8943f06618e02a91a82998421775",
+      "parsedCandidates": 2,
+      "fixturePassed": true
+    },
+    {
+      "stageId": "fresh-nightjar-online-sound-jam",
+      "maxCompletionTokens": 8192,
+      "requestedEditors": [
+        "alice",
+        "bob"
+      ],
+      "reusedEditors": [],
+      "exactTransportBodyBytes": 7841,
+      "bodySha256": "bd6478922630c1cc54b0839a3f489c3171a58667809562a246e4081796f05e24",
+      "parsedCandidates": 2,
+      "fixturePassed": true
+    },
+    {
+      "stageId": "fresh-pixel-loom-online-mini-course",
+      "maxCompletionTokens": 8192,
+      "requestedEditors": [
+        "alice",
+        "bob"
+      ],
+      "reusedEditors": [],
+      "exactTransportBodyBytes": 6557,
+      "bodySha256": "8106c04d7685a3fbcc0c99f7eee3adc47d396b5281b51fb5e6d20cef15a7685a",
+      "parsedCandidates": 2,
+      "fixturePassed": true
+    }
+  ],
+  "limits": [
+    "Exactly four extension requests, previous six report+ledger+plan are hash-bound; total10.",
+    "No resume or retries; duplicate stage tags rejected and ledger consumed before dispatch.",
+    "Only fixed own-site origin; hidden stdin service bearer, never a Meta API key.",
+    "Same four expression policies and goldens byte-equivalent as prior frozen stage objects.",
+    "Low reasoning,8192outputtokens,no reuse required in server metadata.",
+    "Semantic failure stops before votes."
+  ],
+  "reviewNote": "This is an offline mechanical self-audit; an independent reviewer should inspect runner before root dispatches live requests."
+}

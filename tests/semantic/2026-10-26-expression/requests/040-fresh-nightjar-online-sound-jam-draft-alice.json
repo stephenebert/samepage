@@ -1,0 +1,14 @@
+{
+  "sequence": 40,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-04f69645-ae3f-4244-b625-910eb024f970",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Nightjar Online Sound Jam — registration policy\nThis is a fully online creative sound-making event. Applicants must be at least 14 years old. Anyone younger than 18 must have guardian consent; membership and scholarships do not waive that requirement.\nRegistration must be submitted at or after 2027-04-08T16:00:00.000Z and strictly before 2027-04-10T16:00:00.000Z. All timestamps are UTC and are compared to the exact millisecond.\nWe refuse applicants who are neither residents nor members, except students for whom it is not true that they both lack a scholarship and are younger than 21. This exception lifts only the resident-or-member restriction: it does not lift the minimum age, guardian consent, or registration-window requirements.\nDecide admission before calculating a fee; rejected applicants have no fee. For accepted applicants, apply the first matching rate in this exact order, without combining rates:\n1. Scholarship holders: USD 0.00.\n2. Members: USD 7.50.\n3. Students whose registration was submitted strictly before 2027-04-09T16:00:00.000Z: USD 12.00.\n4. Residents: USD 17.00.\nIf no listed rate matches, the fee is USD 28.00."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T04:36:03.777Z"
+}

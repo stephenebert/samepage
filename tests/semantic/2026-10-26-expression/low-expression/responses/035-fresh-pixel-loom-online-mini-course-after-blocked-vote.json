@@ -1,0 +1,140 @@
+{
+  "status": 200,
+  "ok": true,
+  "durationMs": 91,
+  "rawText": "{\"room\":{\"kind\":\"samepage-studio-v1\",\"id\":\"studio-c579c8ea-37bd-42ec-9060-c758c4480ac1\",\"revision\":4,\"createdAt\":\"2026-10-27T04:42:17.532Z\",\"updatedAt\":\"2026-10-27T04:42:29.556Z\",\"mode\":\"automatic-model\",\"published\":{\"version\":1,\"en\":\"Everyone is eligible. Registration has no deadline. Admission is free.\",\"es\":\"Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.\",\"rules\":{\"eligibility\":{\"op\":\"always\"},\"fee\":{\"currency\":\"USD\",\"defaultCents\":0,\"overrides\":[]}},\"publishedAt\":\"2026-10-27T04:42:17.532Z\",\"reviewId\":null,\"candidateId\":null},\"drafts\":{\"alice\":{\"editor\":\"alice\",\"language\":\"en\",\"version\":2,\"text\":\"Pixel Loom Online Mini-Course — registration policy\\nThis creative pixel-art mini-course takes place entirely online. Registration is open to everyone aged 18 or older whose registration is submitted from 2027-08-01T09:00:00.000Z through 2027-08-03T09:00:00.000Z, including both endpoints. These are exact UTC instants.\\nApplicants who do not meet these admission requirements are rejected and have no fee. Accepted applicants pay a standard fee of USD 24.00. Members qualify for a rate of USD 9.00; students qualify for a rate of USD 13.00. Only one rate may be applied to a registration.\"},\"bob\":{\"editor\":\"bob\",\"language\":\"es\",\"version\":2,\"text\":\"Minicurso virtual Pixel Loom — normas de inscripción\\nEste minicurso creativo de arte con píxeles se realiza completamente en línea. La inscripción está abierta a todas las personas de 18 años o más cuya inscripción se envíe desde 2027-08-01T09:00:00.000Z hasta 2027-08-03T09:00:00.000Z, ambos extremos incluidos. Son instantes exactos en UTC.\\nQuienes no cumplan estos requisitos de admisión son rechazados y no tienen tarifa. Las personas admitidas pagan una tarifa general de USD 24,00. Los miembros pueden acceder a una tarifa de USD 9,00; los estudiantes pueden acceder a una tarifa de USD 13,00. Solo se puede aplicar una tarifa a cada inscripción.\"}},\"activeJob\":null,\"review\":{\"id\":\"studio-review-3\",\"basePolicyVersion\":1,\"candidates\":[{\"id\":\"studio-review-3-alice\",\"editor\":\"alice\",\"sourceVersion\":2,\"en\":\"Pixel Loom Online Mini-Course — registration policy\\nThis creative pixel-art mini-course takes place entirely online. Registration is open to everyone aged 18 or older whose registration is submitted from 2027-08-01T09:00:00.000Z through 2027-08-03T09:00:00.000Z, including both endpoints. These are exact UTC instants.\\nApplicants who do not meet these admission requirements are rejected and have no fee. Accepted applicants pay a standard fee of USD 24.00. Members qualify for a rate of USD 9.00; students qualify for a rate of USD 13.00. Only one rate may be applied to a registration.\",\"es\":\"Minicurso en línea Pixel Loom — política de inscripción\\nEste minicurso creativo de arte de píxeles se realiza completamente en línea. La inscripción está abierta a todas las personas de 18 años o más cuya inscripción se envíe desde 2027-08-01T09:00:00.000Z hasta 2027-08-03T09:00:00.000Z, ambos extremos incluidos. Son instantes exactos en UTC.\\nQuienes no cumplan estos requisitos de admisión son rechazados y no tienen tarifa. Las personas admitidas pagan una tarifa general de USD 24,00. Los miembros califican para una tarifa de USD 9,00; los estudiantes califican para una tarifa de USD 13,00. Solo se puede aplicar una tarifa a cada inscripción.\",\"rules\":null,\"issues\":[\"Fee overlap is ambiguous and not deterministically representable: an admitted applicant who is both member and student qualifies for both USD 9.00 and USD 13.00, but the policy states \\\"Only one rate may be applied to a registration\\\" without specifying priority or selection. Clarify which rate applies when member && student is true, or confirm the two categories are mutually exclusive.\"]},{\"id\":\"studio-review-3-bob\",\"editor\":\"bob\",\"sourceVersion\":2,\"en\":\"Pixel Loom Virtual Mini-Course — registration rules\\nThis creative pixel-art mini-course takes place entirely online. Registration is open to all persons aged 18 or older whose registration is submitted from 2027-08-01T09:00:00.000Z to 2027-08-03T09:00:00.000Z, including both endpoints. These are exact instants in UTC.\\nThose who do not meet these admission requirements are rejected and have no fee. Admitted persons pay a general fee of USD 24.00. Members may access a fee of USD 9.00; students may access a fee of USD 13.00. Only one fee may be applied to each registration.\",\"es\":\"Minicurso virtual Pixel Loom — normas de inscripción\\nEste minicurso creativo de arte con píxeles se realiza completamente en línea. La inscripción está abierta a todas las personas de 18 años o más cuya inscripción se envíe desde 2027-08-01T09:00:00.000Z hasta 2027-08-03T09:00:00.000Z, ambos extremos incluidos. Son instantes exactos en UTC.\\nQuienes no cumplan estos requisitos de admisión son rechazados y no tienen tarifa. Las personas admitidas pagan una tarifa general de USD 24,00. Los miembros pueden acceder a una tarifa de USD 9,00; los estudiantes pueden acceder a una tarifa de USD 13,00. Solo se puede aplicar una tarifa a cada inscripción.\",\"rules\":null,\"issues\":[\"Fee overlap is ambiguous and not deterministically representable: an admitted applicant who is both member and student qualifies for both USD 9.00 and USD 13.00, but the policy states only one fee may be applied to each registration without specifying priority or selection. Clarify which fee applies when member && student is true, or confirm the two categories are mutually exclusive.\"]}],\"votes\":{},\"status\":\"open\",\"provenance\":\"meta-model\",\"discovery\":{\"status\":\"unresolved\",\"witnesses\":[],\"checkedCases\":0,\"issues\":[\"At least one draft needs clarification; no complete comparison is possible.\"],\"coverage\":{\"ageValues\":121,\"agePartitions\":0,\"flagCombinations\":32,\"timePartitions\":0,\"scope\":\"Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language.\"}},\"createdAt\":\"2026-10-27T04:42:29.556Z\"},\"registrations\":[],\"modelCallCount\":1,\"automaticReview\":{\"requestId\":\"2b006344-8d99-4813-886f-70b97e882ac4\",\"jobId\":\"studio-review-3\",\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"protocol\":\"expression-v3\",\"reasoningEffort\":\"low\",\"requestedEditors\":[\"alice\",\"bob\"],\"reusedEditors\":[],\"source\":\"meta\",\"status\":\"completed\",\"startedAt\":\"2026-10-27T04:42:18.025Z\",\"leaseExpiresAt\":\"2026-10-27T04:43:48.025Z\",\"finishedAt\":\"2026-10-27T04:42:29.556Z\",\"durationMs\":11531,\"metrics\":{\"providerDurationMs\":11401,\"requestBytes\":6541,\"responseContentBytes\":2189,\"promptTokens\":1383,\"completionTokens\":2495,\"totalTokens\":3878,\"reasoningTokens\":1977,\"cachedInputTokens\":0,\"finishReason\":\"stop\",\"maxCompletionTokens\":8192}}},\"model\":{\"provider\":\"Meta\",\"model\":\"muse-spark-1.3\",\"ready\":true,\"mode\":\"automatic\",\"maxCalls\":5,\"protocol\":\"expression-v3\",\"reasoningEffort\":\"low\",\"reuseUnchanged\":false,\"maxCompletionTokens\":8192}}",
+  "json": {
+    "room": {
+      "kind": "samepage-studio-v1",
+      "id": "studio-c579c8ea-37bd-42ec-9060-c758c4480ac1",
+      "revision": 4,
+      "createdAt": "2026-10-27T04:42:17.532Z",
+      "updatedAt": "2026-10-27T04:42:29.556Z",
+      "mode": "automatic-model",
+      "published": {
+        "version": 1,
+        "en": "Everyone is eligible. Registration has no deadline. Admission is free.",
+        "es": "Todas las personas pueden participar. La inscripción no tiene fecha límite. La entrada es gratuita.",
+        "rules": {
+          "eligibility": {
+            "op": "always"
+          },
+          "fee": {
+            "currency": "USD",
+            "defaultCents": 0,
+            "overrides": []
+          }
+        },
+        "publishedAt": "2026-10-27T04:42:17.532Z",
+        "reviewId": null,
+        "candidateId": null
+      },
+      "drafts": {
+        "alice": {
+          "editor": "alice",
+          "language": "en",
+          "version": 2,
+          "text": "Pixel Loom Online Mini-Course — registration policy\nThis creative pixel-art mini-course takes place entirely online. Registration is open to everyone aged 18 or older whose registration is submitted from 2027-08-01T09:00:00.000Z through 2027-08-03T09:00:00.000Z, including both endpoints. These are exact UTC instants.\nApplicants who do not meet these admission requirements are rejected and have no fee. Accepted applicants pay a standard fee of USD 24.00. Members qualify for a rate of USD 9.00; students qualify for a rate of USD 13.00. Only one rate may be applied to a registration."
+        },
+        "bob": {
+          "editor": "bob",
+          "language": "es",
+          "version": 2,
+          "text": "Minicurso virtual Pixel Loom — normas de inscripción\nEste minicurso creativo de arte con píxeles se realiza completamente en línea. La inscripción está abierta a todas las personas de 18 años o más cuya inscripción se envíe desde 2027-08-01T09:00:00.000Z hasta 2027-08-03T09:00:00.000Z, ambos extremos incluidos. Son instantes exactos en UTC.\nQuienes no cumplan estos requisitos de admisión son rechazados y no tienen tarifa. Las personas admitidas pagan una tarifa general de USD 24,00. Los miembros pueden acceder a una tarifa de USD 9,00; los estudiantes pueden acceder a una tarifa de USD 13,00. Solo se puede aplicar una tarifa a cada inscripción."
+        }
+      },
+      "activeJob": null,
+      "review": {
+        "id": "studio-review-3",
+        "basePolicyVersion": 1,
+        "candidates": [
+          {
+            "id": "studio-review-3-alice",
+            "editor": "alice",
+            "sourceVersion": 2,
+            "en": "Pixel Loom Online Mini-Course — registration policy\nThis creative pixel-art mini-course takes place entirely online. Registration is open to everyone aged 18 or older whose registration is submitted from 2027-08-01T09:00:00.000Z through 2027-08-03T09:00:00.000Z, including both endpoints. These are exact UTC instants.\nApplicants who do not meet these admission requirements are rejected and have no fee. Accepted applicants pay a standard fee of USD 24.00. Members qualify for a rate of USD 9.00; students qualify for a rate of USD 13.00. Only one rate may be applied to a registration.",
+            "es": "Minicurso en línea Pixel Loom — política de inscripción\nEste minicurso creativo de arte de píxeles se realiza completamente en línea. La inscripción está abierta a todas las personas de 18 años o más cuya inscripción se envíe desde 2027-08-01T09:00:00.000Z hasta 2027-08-03T09:00:00.000Z, ambos extremos incluidos. Son instantes exactos en UTC.\nQuienes no cumplan estos requisitos de admisión son rechazados y no tienen tarifa. Las personas admitidas pagan una tarifa general de USD 24,00. Los miembros califican para una tarifa de USD 9,00; los estudiantes califican para una tarifa de USD 13,00. Solo se puede aplicar una tarifa a cada inscripción.",
+            "rules": null,
+            "issues": [
+              "Fee overlap is ambiguous and not deterministically representable: an admitted applicant who is both member and student qualifies for both USD 9.00 and USD 13.00, but the policy states \"Only one rate may be applied to a registration\" without specifying priority or selection. Clarify which rate applies when member && student is true, or confirm the two categories are mutually exclusive."
+            ]
+          },
+          {
+            "id": "studio-review-3-bob",
+            "editor": "bob",
+            "sourceVersion": 2,
+            "en": "Pixel Loom Virtual Mini-Course — registration rules\nThis creative pixel-art mini-course takes place entirely online. Registration is open to all persons aged 18 or older whose registration is submitted from 2027-08-01T09:00:00.000Z to 2027-08-03T09:00:00.000Z, including both endpoints. These are exact instants in UTC.\nThose who do not meet these admission requirements are rejected and have no fee. Admitted persons pay a general fee of USD 24.00. Members may access a fee of USD 9.00; students may access a fee of USD 13.00. Only one fee may be applied to each registration.",
+            "es": "Minicurso virtual Pixel Loom — normas de inscripción\nEste minicurso creativo de arte con píxeles se realiza completamente en línea. La inscripción está abierta a todas las personas de 18 años o más cuya inscripción se envíe desde 2027-08-01T09:00:00.000Z hasta 2027-08-03T09:00:00.000Z, ambos extremos incluidos. Son instantes exactos en UTC.\nQuienes no cumplan estos requisitos de admisión son rechazados y no tienen tarifa. Las personas admitidas pagan una tarifa general de USD 24,00. Los miembros pueden acceder a una tarifa de USD 9,00; los estudiantes pueden acceder a una tarifa de USD 13,00. Solo se puede aplicar una tarifa a cada inscripción.",
+            "rules": null,
+            "issues": [
+              "Fee overlap is ambiguous and not deterministically representable: an admitted applicant who is both member and student qualifies for both USD 9.00 and USD 13.00, but the policy states only one fee may be applied to each registration without specifying priority or selection. Clarify which fee applies when member && student is true, or confirm the two categories are mutually exclusive."
+            ]
+          }
+        ],
+        "votes": {},
+        "status": "open",
+        "provenance": "meta-model",
+        "discovery": {
+          "status": "unresolved",
+          "witnesses": [],
+          "checkedCases": 0,
+          "issues": [
+            "At least one draft needs clarification; no complete comparison is possible."
+          ],
+          "coverage": {
+            "ageValues": 121,
+            "agePartitions": 0,
+            "flagCombinations": 32,
+            "timePartitions": 0,
+            "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+          }
+        },
+        "createdAt": "2026-10-27T04:42:29.556Z"
+      },
+      "registrations": [],
+      "modelCallCount": 1,
+      "automaticReview": {
+        "requestId": "2b006344-8d99-4813-886f-70b97e882ac4",
+        "jobId": "studio-review-3",
+        "provider": "Meta",
+        "model": "muse-spark-1.3",
+        "protocol": "expression-v3",
+        "reasoningEffort": "low",
+        "requestedEditors": [
+          "alice",
+          "bob"
+        ],
+        "reusedEditors": [],
+        "source": "meta",
+        "status": "completed",
+        "startedAt": "2026-10-27T04:42:18.025Z",
+        "leaseExpiresAt": "2026-10-27T04:43:48.025Z",
+        "finishedAt": "2026-10-27T04:42:29.556Z",
+        "durationMs": 11531,
+        "metrics": {
+          "providerDurationMs": 11401,
+          "requestBytes": 6541,
+          "responseContentBytes": 2189,
+          "promptTokens": 1383,
+          "completionTokens": 2495,
+          "totalTokens": 3878,
+          "reasoningTokens": 1977,
+          "cachedInputTokens": 0,
+          "finishReason": "stop",
+          "maxCompletionTokens": 8192
+        }
+      }
+    },
+    "model": {
+      "provider": "Meta",
+      "model": "muse-spark-1.3",
+      "ready": true,
+      "mode": "automatic",
+      "maxCalls": 5,
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reuseUnchanged": false,
+      "maxCompletionTokens": 8192
+    }
+  }
+}

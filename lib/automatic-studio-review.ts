@@ -1,4 +1,5 @@
 import { applyStudioAction } from "./studio.ts";
+import { encodeStudioExpressionRules } from "./studio-expression.ts";
 import { studioDemoFixture } from "./studio-demo.ts";
 import { PolicyModelError, type PolicyModelMetrics } from "./policy-model.ts";
 import { createStudioInterpretationCache, encodeStudioRules, interpretStudioJob, MAX_STUDIO_MODEL_CALLS, prepareStudioRequest, requireStudioModel, type StudioModelConfig, type StudioModelRequestOptions } from "./studio-model.ts";
@@ -36,7 +37,7 @@ function requireSimulation(room: StudioRoom) {
 async function simulate(job: StudioJob, config: StudioModelConfig): Promise<unknown> {
   if (job.drafts.alice.text !== studioDemoFixture.en || job.drafts.bob.text !== studioDemoFixture.es) throw new PolicyModelError("MODEL_SIMULATION_UNAVAILABLE", "The saved policies no longer match the controlled offline example.", 409);
   const protocol = config.protocol ?? "compact-v2";
-  const response = { jobId: job.id, candidates: studioDemoFixture.candidates.map(c => ({ ...(protocol === "full-v1" ? { ...c, sourceVersion: job.drafts[c.editor].version } : { editor: c.editor, translation: c.editor === "alice" ? c.es : c.en, issues: c.issues }), rules: c.rules === null ? null : encodeStudioRules(c.rules) })) };
+  const response = { jobId: job.id, candidates: studioDemoFixture.candidates.map(c => ({ ...(protocol === "full-v1" ? { ...c, sourceVersion: job.drafts[c.editor].version } : { editor: c.editor, translation: c.editor === "alice" ? c.es : c.en, issues: c.issues }), rules: c.rules === null ? null : protocol === "expression-v3" ? encodeStudioExpressionRules(c.rules) : encodeStudioRules(c.rules) })) };
   return interpretStudioJob(job, { apiKey: "offline-simulation-not-a-credential", model: config.model, enabled: true, protocol, reasoningEffort: config.reasoningEffort ?? "medium" }, {
     fetch: async () => Response.json({ choices: [{ finish_reason: "stop", message: { content: JSON.stringify(response) } }] }),
   });

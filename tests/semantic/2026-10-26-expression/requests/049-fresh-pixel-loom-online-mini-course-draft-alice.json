@@ -1,0 +1,14 @@
+{
+  "sequence": 49,
+  "method": "POST",
+  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-64bc43ff-f244-4c6e-9335-a024d3a4576d",
+  "body": {
+    "type": "draft",
+    "editor": "alice",
+    "baseVersion": 1,
+    "text": "Pixel Loom Online Mini-Course — registration policy\nThis creative pixel-art mini-course takes place entirely online. Registration is open to everyone aged 18 or older whose registration is submitted from 2027-08-01T09:00:00.000Z through 2027-08-03T09:00:00.000Z, including both endpoints. These are exact UTC instants.\nApplicants who do not meet these admission requirements are rejected and have no fee. Accepted applicants pay a standard fee of USD 24.00. Members qualify for a rate of USD 9.00; students qualify for a rate of USD 13.00. Only one rate may be applied to a registration."
+  },
+  "credentialHeaderPresent": true,
+  "headerName": "OAI-Sites-Authorization",
+  "startedAt": "2026-10-27T04:36:41.056Z"
+}

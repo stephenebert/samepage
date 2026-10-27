@@ -63,13 +63,14 @@ export interface StudioRegistration extends StudioAttendee {
 }
 export interface AutomaticStudioReview {
   requestId: string; jobId: string; provider: "Meta"; model: string;
-  protocol?: "compact-v2" | "full-v1";
+  protocol?: "compact-v2" | "full-v1" | "expression-v3";
   reasoningEffort?: "low" | "medium";
   requestedEditors?: StudioEditor[]; reusedEditors?: StudioEditor[];
   metrics?: {
     providerDurationMs: number; requestBytes: number; responseContentBytes: number;
     promptTokens: number | null; completionTokens: number | null; totalTokens: number | null;
     reasoningTokens: number | null; cachedInputTokens: number | null;
+    maxCompletionTokens?: 8192 | 12288;
     finishReason?: "stop" | "length" | "content_filter" | "tool_calls" | "function_call" | null;
   };
   source: "meta" | "simulation";

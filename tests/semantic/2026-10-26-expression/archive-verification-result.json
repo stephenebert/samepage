@@ -1,0 +1,17 @@
+{
+  "status": "archive-verified",
+  "verifiedFiles": 273,
+  "reviewAttempts": 10,
+  "concreteChecks": 404,
+  "unresolvedChecks": 4,
+  "independentSourceChecks": 170368,
+  "savedRegistrations": 8,
+  "translatedInstancesReviewed": 20,
+  "promptTokens": 15090,
+  "completionTokens": 45758,
+  "uncachedTokenRateEstimateUsd": 0.213334,
+  "conservativeEstimatedMaxUsd": 0.59577925,
+  "networkCalls": 0,
+  "filesWritten": 0,
+  "actualBilledCostUsd": null
+}

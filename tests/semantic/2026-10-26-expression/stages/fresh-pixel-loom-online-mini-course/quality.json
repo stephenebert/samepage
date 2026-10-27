@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "failures": [],
+  "scenarioResults": [
+    {
+      "scenarioId": "ambiguous-overlapping-rates",
+      "editor": "alice",
+      "attendee": {
+        "age": 26,
+        "resident": false,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-08-02T09:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "scenarioId": "ambiguous-overlapping-rates",
+      "editor": "bob",
+      "attendee": {
+        "age": 26,
+        "resident": false,
+        "student": true,
+        "member": true,
+        "guardianConsent": false,
+        "scholarship": false,
+        "submittedAt": "2027-08-02T09:00:00.000Z"
+      },
+      "expected": null,
+      "actual": null,
+      "passed": true
+    }
+  ],
+  "semanticOracleChecks": [],
+  "issueTopicChecks": [
+    {
+      "editor": "alice",
+      "issues": [
+        "For an applicant who is both a member and a student, which fee applies: USD 9.00 or USD 13.00? The policy states only one rate may be applied but provides no unambiguous priority or tie-breaker."
+      ],
+      "addressesFees": true,
+      "addressesPriority": true,
+      "method": "Conservative bilingual topic-keyword check; does not prove full natural-language fidelity."
+    },
+    {
+      "editor": "bob",
+      "issues": [
+        "For an applicant who is both a member and a student, which fee applies: USD 9.00 or USD 13.00? The policy states only one fee may be applied to each registration but provides no unambiguous priority or tie-breaker."
+      ],
+      "addressesFees": true,
+      "addressesPriority": true,
+      "method": "Conservative bilingual topic-keyword check; does not prove full natural-language fidelity."
+    }
+  ],
+  "discovery": {
+    "status": "unresolved",
+    "witnesses": [],
+    "checkedCases": 0,
+    "issues": [
+      "At least one draft needs clarification; no complete comparison is possible."
+    ],
+    "coverage": {
+      "ageValues": 121,
+      "agePartitions": 0,
+      "flagCombinations": 32,
+      "timePartitions": 0,
+      "scope": "Complete over integer ages 0–120, five independent boolean flags, and explicit UTC millisecond instants in years 0000–9999, for these parsed rules only. This does not prove faithful interpretation of the original language."
+    }
+  }
+}

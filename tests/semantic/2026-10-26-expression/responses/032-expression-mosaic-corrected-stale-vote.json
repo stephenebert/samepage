@@ -1,0 +1,10 @@
+{
+  "status": 409,
+  "ok": false,
+  "durationMs": 88,
+  "rawText": "{\"error\":\"This review is no longer current.\",\"code\":\"STALE_REVIEW\"}",
+  "json": {
+    "error": "This review is no longer current.",
+    "code": "STALE_REVIEW"
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Independent Codex AI subagent /root/fresh_policy_cases; fresh holdout author, separate from compiler implementation and provider execution",
+  "humanAudit": false,
+  "method": "Read all eight complete opposite-language translations and their exact author-language drafts in the low-expression artifacts. Check semantic scope rather than keyword presence. Bind conclusions to source, translation and artifact SHA-256 hashes. Re-run the frozen independent direct oracle against the two Nightjar ASTs and confirm Pixel clarification behavior.",
+  "substantiveFidelityPass": true,
+  "adoptionRecommendation": {
+    "decision": "GO",
+    "scope": "The four observed low expression-v3 policy stages pass this independent semantic and bilingual fidelity audit. This is sample-based adoption evidence, not a claim of general translation or compiler correctness.",
+    "substantiveErrorsFound": 0
+  },
+  "stagesReviewed": 4,
+  "translatedCandidateInstancesReviewed": 8,
+  "uniqueTranslatedTextsReviewed": 8,
+  "sourceCopiesExact": true,
+  "sourcesUnchangedFromMediumRun": true,
+  "freshRuleAudit": "low-fresh-rule-audit.json",
+  "scopeLimitations": [
+    "This is an AI audit, not a human bilingual review.",
+    "Four sample policy stages cannot establish general low-reasoning accuracy.",
+    "The independent direct AST oracle covers the fresh Nightjar pair; Mosaic AST testing remains with the parent runner."
+  ],
+  "nonBlockingFindings": [
+    {
+      "stage": "fresh-nightjar-online-sound-jam",
+      "severity": "low",
+      "finding": "Spanish feeReason appends English labels such as Members and Students early. Full policy translations and numeric decisions are faithful. The neutral Students early label does not introduce the medium run truncated-date claim.",
+      "recommendation": "Localize rule labels for a fully Spanish explanation."
+    },
+    {
+      "stage": "fresh-pixel-loom-online-mini-course",
+      "severity": "low",
+      "finding": "Both issues correctly identify overlap and return rules:null, but propose confirming that member and student categories are mutually exclusive as an alternative clarification. The evaluation domain explicitly treats those flags as independent. No exclusivity assumption was applied to executable rules.",
+      "recommendation": "Within this fixed domain, ask which fee takes precedence for an attendee with both flags. Do not silently change the domain to make categories exclusive."
+    }
+  ],
+  "results": [
+    {
+      "stage": "expression-mosaic-priority",
+      "artifact": "/Users/steph/Documents/Playground/output/meta-hackathon/samepage-compiler-evidence/low-expression/stages/expression-mosaic-priority/review-state.json",
+      "artifactSHA256": "608f186ff2b87731643a174957a6789a7759dca735f84748fcb03e49cf2bc7f6",
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reusedEditors": [],
+      "candidates": [
+        {
+          "editor": "alice",
+          "sourceLanguage": "en",
+          "translatedLanguage": "es",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "c23909b526b4c0e9b9418dbe5e2b2e1f2a7a963bd0a0dc250a2e6dd5ffe5ac8c",
+          "translationSHA256": "589e7fc74e089eb00bbfaf9fb6e01d5e275568c119b38c75819eaf2c1bf623e1",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "The inclusive 16 through 80 age range is preserved; adult consent is not required for admission, while applicants under 18 still need it.",
+            "Resident, student and member remain alternatives: at least one is required. The corrected English negative construction is rendered as an outer negation of having none of those statuses, not as requiring every status.",
+            "The exact leap-day opening 2032-02-29T09:00:00.000Z is inclusive; the exact closing 2032-03-01T09:00:00.000Z is exclusive.",
+            "Fees apply only after admission; the member price still requires guardian consent even for adults, independently of whether consent was required for their admission.",
+            "First-applicable priority and no combination are preserved. Scholarship never waives admission; no additional eligibility condition or deadline is introduced."
+          ],
+          "priorityReview": "Member AND guardian consent: USD9, then resident: USD16, then student: USD14, then scholarship: USD0, then default: USD31. The translated scholarship sentence explicitly prevents a later free rate from overriding any earlier match.",
+          "evidence": {
+            "source": "Scholarship status never overrides an earlier matching price and never waives admission requirements.",
+            "translation": "La beca nunca prevalece sobre un precio anterior coincidente y nunca exime de los requisitos de admisión."
+          },
+          "oracleScope": "No additional Mosaic oracle was run by this audit; the parent runner owns its behavioral checks.",
+          "sourceUnchangedFromMediumRun": true
+        },
+        {
+          "editor": "bob",
+          "sourceLanguage": "es",
+          "translatedLanguage": "en",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "9f8fa69a8d82f711bfbd05adfc32df6380f38924872960a8161c52e116b9618f",
+          "translationSHA256": "6de26eaa0f3a2ee5d53607b5f489907d7364f88a3274da81144548421d0c3a9a",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "The inclusive 16 through 80 age range is preserved; adult consent is not required for admission, while applicants under 18 still need it.",
+            "Resident, student and member remain alternatives: at least one is required. The corrected English negative construction is rendered as an outer negation of having none of those statuses, not as requiring every status.",
+            "The exact leap-day opening 2032-02-29T09:00:00.000Z is inclusive; the exact closing 2032-03-01T09:00:00.000Z is exclusive.",
+            "Fees apply only after admission; the member price still requires guardian consent even for adults, independently of whether consent was required for their admission.",
+            "First-applicable priority and no combination are preserved. Scholarship never waives admission; no additional eligibility condition or deadline is introduced."
+          ],
+          "priorityReview": "Scholarship: USD0, then student: USD14, then member AND guardian consent: USD9, then resident: USD16, then default: USD31. The corrected Alice remaining-people scope and Bob explicit priority chain have the same sequence.",
+          "evidence": {
+            "source": "si es miembro y tiene consentimiento del tutor, $9 USD",
+            "translation": "if they are a member with guardian consent, $9 USD"
+          },
+          "oracleScope": "No additional Mosaic oracle was run by this audit; the parent runner owns its behavioral checks.",
+          "sourceUnchangedFromMediumRun": true
+        }
+      ]
+    },
+    {
+      "stage": "expression-mosaic-corrected",
+      "artifact": "/Users/steph/Documents/Playground/output/meta-hackathon/samepage-compiler-evidence/low-expression/stages/expression-mosaic-corrected/review-state.json",
+      "artifactSHA256": "8589f5c0062ab3d61a2153ab92a3ebab77da84e7540100431d43c0eb734c1d64",
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reusedEditors": [],
+      "candidates": [
+        {
+          "editor": "alice",
+          "sourceLanguage": "en",
+          "translatedLanguage": "es",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "965af2293b66796179dc65f7f3d9f441f993713783f9a0161bc977a9eb66e4b5",
+          "translationSHA256": "adbeb9262222f431533d417fbdda2ae6f6fce57ae8c0b6549ab14fba61effe67",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "The inclusive 16 through 80 age range is preserved; adult consent is not required for admission, while applicants under 18 still need it.",
+            "Resident, student and member remain alternatives: at least one is required. The corrected English negative construction is rendered as an outer negation of having none of those statuses, not as requiring every status.",
+            "The exact leap-day opening 2032-02-29T09:00:00.000Z is inclusive; the exact closing 2032-03-01T09:00:00.000Z is exclusive.",
+            "Fees apply only after admission; the member price still requires guardian consent even for adults, independently of whether consent was required for their admission.",
+            "First-applicable priority and no combination are preserved. Scholarship never waives admission; no additional eligibility condition or deadline is introduced."
+          ],
+          "priorityReview": "Scholarship: USD0, then student: USD14, then member AND guardian consent: USD9, then resident: USD16, then default: USD31. The corrected Alice remaining-people scope and Bob explicit priority chain have the same sequence.",
+          "evidence": {
+            "source": "they are not someone who is none of a resident, a student, and a member",
+            "translation": "no es alguien que no sea ni residente, ni estudiante, ni miembro"
+          },
+          "oracleScope": "No additional Mosaic oracle was run by this audit; the parent runner owns its behavioral checks.",
+          "sourceUnchangedFromMediumRun": true,
+          "negationReview": "The Spanish outer no es alguien negates the entire no sea ni...ni...ni group. It therefore requires at least one status, matching the source; it does not require all three."
+        },
+        {
+          "editor": "bob",
+          "sourceLanguage": "es",
+          "translatedLanguage": "en",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "9f8fa69a8d82f711bfbd05adfc32df6380f38924872960a8161c52e116b9618f",
+          "translationSHA256": "ba8dd37f8061af2308098224edcee9ac4b19c8d972cdd6315c5aa7b9b5dab39d",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "The inclusive 16 through 80 age range is preserved; adult consent is not required for admission, while applicants under 18 still need it.",
+            "Resident, student and member remain alternatives: at least one is required. The corrected English negative construction is rendered as an outer negation of having none of those statuses, not as requiring every status.",
+            "The exact leap-day opening 2032-02-29T09:00:00.000Z is inclusive; the exact closing 2032-03-01T09:00:00.000Z is exclusive.",
+            "Fees apply only after admission; the member price still requires guardian consent even for adults, independently of whether consent was required for their admission.",
+            "First-applicable priority and no combination are preserved. Scholarship never waives admission; no additional eligibility condition or deadline is introduced."
+          ],
+          "priorityReview": "Scholarship: USD0, then student: USD14, then member AND guardian consent: USD9, then resident: USD16, then default: USD31. The corrected Alice remaining-people scope and Bob explicit priority chain have the same sequence.",
+          "evidence": {
+            "source": "si es miembro y tiene consentimiento del tutor, $9 USD",
+            "translation": "if they are a member with guardian consent, $9 USD"
+          },
+          "oracleScope": "No additional Mosaic oracle was run by this audit; the parent runner owns its behavioral checks.",
+          "sourceUnchangedFromMediumRun": true
+        }
+      ]
+    },
+    {
+      "stage": "fresh-nightjar-online-sound-jam",
+      "artifact": "/Users/steph/Documents/Playground/output/meta-hackathon/samepage-compiler-evidence/low-expression/stages/fresh-nightjar-online-sound-jam/review-state.json",
+      "artifactSHA256": "59dd8201bb4ec043b0f9c047a304b610be840a395b53278a8073846c908320e2",
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reusedEditors": [],
+      "candidates": [
+        {
+          "editor": "alice",
+          "sourceLanguage": "en",
+          "translatedLanguage": "es",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "38f8bfe9a39b60fda8e658196b6f328eb47941be47d38f528b036ce422507ddc",
+          "translationSHA256": "16bcc8a7fd715688f70a5b2e9abfce72e02f11883b6b2702fb1fa8c64b4d99a0",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "Minimum age 14 and guardian consent below 18 are preserved; membership and scholarship do not waive consent.",
+            "The resident/member exception applies only to students and does not remove the minimum age, consent, or registration-window requirements.",
+            "Registration opens inclusively at 2027-04-08T16:00:00.000Z; the source-specific closing operator at 2027-04-10T16:00:00.000Z is preserved.",
+            "The early-student cutoff is strictly before 2027-04-09T16:00:00.000Z, with UTC millisecond precision preserved.",
+            "Admission precedes fees, rejection has no fee, rates do not combine, scholarship is first, resident is fourth, and the default is USD28."
+          ],
+          "negationReview": "Spanish a la vez inside the negated clause explicitly preserves the conjunction of lacking scholarship AND being under21. The exception is student AND (scholarship OR age at least21), subject to all other eligibility gates.",
+          "closingReview": "English strictly-before closure is translated as estrictamente antes; exact closing instant remains excluded.",
+          "priorityReview": "Scholarship0, member7.50, early student12, resident17, default28; member remains ahead of early student.",
+          "evidence": {
+            "source": "it is not true that they both lack a scholarship and are younger than 21",
+            "translation": "no sea cierto que a la vez carecen de beca y tienen menos de 21 años"
+          },
+          "oracleScope": "Independently checked against frozen source-level oracle; see low-fresh-rule-audit.json.",
+          "sourceUnchangedFromMediumRun": true
+        },
+        {
+          "editor": "bob",
+          "sourceLanguage": "es",
+          "translatedLanguage": "en",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "486b0e24804e5815a3cee6d6c25c781744d7405bb45c800ed9a6c644edf1ede9",
+          "translationSHA256": "fe9a59f3dbd2ff64b1d155585d89896da65cf596a44e9ba48a3d4e6289a00d7e",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "Minimum age 14 and guardian consent below 18 are preserved; membership and scholarship do not waive consent.",
+            "The resident/member exception applies only to students and does not remove the minimum age, consent, or registration-window requirements.",
+            "Registration opens inclusively at 2027-04-08T16:00:00.000Z; the source-specific closing operator at 2027-04-10T16:00:00.000Z is preserved.",
+            "The early-student cutoff is strictly before 2027-04-09T16:00:00.000Z, with UTC millisecond precision preserved.",
+            "Admission precedes fees, rejection has no fee, rates do not combine, scholarship is first, resident is fourth, and the default is USD28."
+          ],
+          "negationReview": "English retains negation of the disjunction (lack scholarship OR age below21). Therefore this exception requires BOTH scholarship and age at least21, in addition to student status and other gates.",
+          "closingReview": "Spanish ambos instantes incluidos is translated as both instants inclusive; exact closing instant remains included.",
+          "priorityReview": "Scholarship0, early student12, member7.50, resident17, default28; early student remains ahead of member even though it costs more.",
+          "evidence": {
+            "source": "no sea cierto que carecen de beca o que tienen menos de 21 años",
+            "translation": "it is not true that they lack a scholarship or are under 21 years old"
+          },
+          "oracleScope": "Independently checked against frozen source-level oracle; see low-fresh-rule-audit.json.",
+          "sourceUnchangedFromMediumRun": true
+        }
+      ]
+    },
+    {
+      "stage": "fresh-pixel-loom-online-mini-course",
+      "artifact": "/Users/steph/Documents/Playground/output/meta-hackathon/samepage-compiler-evidence/low-expression/stages/fresh-pixel-loom-online-mini-course/review-state.json",
+      "artifactSHA256": "54c4fc7c1032acfcbde5128046f4c8caad38ad45c765324f365562b0622d3e19",
+      "protocol": "expression-v3",
+      "reasoningEffort": "low",
+      "reusedEditors": [],
+      "candidates": [
+        {
+          "editor": "alice",
+          "sourceLanguage": "en",
+          "translatedLanguage": "es",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "40977b9aa2c69fcc6f36218894ed43333ac3757dba8face89ee4630ca94f8f44",
+          "translationSHA256": "196646f88e7861db3578217915ae8778f0555da437bb74546349bae30133293e",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "Admission still requires age18 or older and submission within the exact UTC August1 through August3 window, with both endpoints included.",
+            "The translated policy preserves rejection without a fee and the standard USD24 fee for admitted applicants.",
+            "Member USD9 and student USD13 rates, plus only one rate per registration, are retained without inventing precedence or selecting the cheaper amount.",
+            "Both candidates return null executable rules and explicitly ask which rate applies when member and student statuses overlap. The reported issue matches the actual source ambiguity."
+          ],
+          "evidence": {
+            "source": "Only one rate may be applied to a registration.",
+            "translation": "Solo se puede aplicar una tarifa a cada inscripción."
+          },
+          "sourceUnchangedFromMediumRun": true,
+          "diagnosticReview": "The issue correctly identifies the admitted member+student overlap and leaves rules null. Its alternative suggestion to confirm mutual exclusivity is unnecessary under the fixed independent-flag domain; fee-priority clarification is the appropriate resolution within this task."
+        },
+        {
+          "editor": "bob",
+          "sourceLanguage": "es",
+          "translatedLanguage": "en",
+          "authorLanguageMatchesDraftExactly": true,
+          "sourceSHA256": "cc72a9bbd8792efce68a3d2260c2e0e635bb7dc983fb7c85575d1c8a852077f7",
+          "translationSHA256": "473aa78159a679cc932024c72ac1ef7110f4aa25bc34a6db9f7e0e4a612fb9f1",
+          "substantiveFidelity": "pass",
+          "assessmentBasis": "Full low-run source and translated prose independently reread by the AI audit agent. Reused rubric descriptions record the same required scope; the low translation was not accepted merely because medium passed.",
+          "scopeChecks": [
+            "Admission still requires age18 or older and submission within the exact UTC August1 through August3 window, with both endpoints included.",
+            "The translated policy preserves rejection without a fee and the standard USD24 fee for admitted applicants.",
+            "Member USD9 and student USD13 rates, plus only one rate per registration, are retained without inventing precedence or selecting the cheaper amount.",
+            "Both candidates return null executable rules and explicitly ask which rate applies when member and student statuses overlap. The reported issue matches the actual source ambiguity."
+          ],
+          "evidence": {
+            "source": "Solo se puede aplicar una tarifa a cada inscripción.",
+            "translation": "Only one fee may be applied to each registration."
+          },
+          "sourceUnchangedFromMediumRun": true,
+          "diagnosticReview": "The issue correctly identifies the admitted member+student overlap and leaves rules null. Its alternative suggestion to confirm mutual exclusivity is unnecessary under the fixed independent-flag domain; fee-priority clarification is the appropriate resolution within this task."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "runId": "37b48dc6-db85-4cbe-8229-de63f7540f2f",
+  "startedAt": "2026-10-27T04:33:25.650Z",
+  "corpusSha256": "817bd242e25dadc62c9a6d37ce8e890436713e35327c00b34d9a465cacb95385",
+  "maxReviewPosts": 6,
+  "reviewPostAttempts": [
+    {
+      "sequence": 1,
+      "tag": "baseline-mosaic-priority-review",
+      "route": "/api/studio/studio-8937eedc-82c6-4511-8a42-e5428f42acdc/review",
+      "dispatchedAt": "2026-10-27T04:33:26.620Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/005-baseline-mosaic-priority-review.json"
+    },
+    {
+      "sequence": 2,
+      "tag": "baseline-mosaic-corrected-review",
+      "route": "/api/studio/studio-8937eedc-82c6-4511-8a42-e5428f42acdc/review",
+      "dispatchedAt": "2026-10-27T04:33:59.517Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/015-baseline-mosaic-corrected-review.json"
+    },
+    {
+      "sequence": 3,
+      "tag": "expression-mosaic-priority-review",
+      "route": "/api/studio/studio-024383bf-c37c-43e3-b37a-f5140b85025f/review",
+      "dispatchedAt": "2026-10-27T04:34:56.436Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/024-expression-mosaic-priority-review.json"
+    },
+    {
+      "sequence": 4,
+      "tag": "expression-mosaic-corrected-review",
+      "route": "/api/studio/studio-024383bf-c37c-43e3-b37a-f5140b85025f/review",
+      "dispatchedAt": "2026-10-27T04:35:23.030Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/034-expression-mosaic-corrected-review.json"
+    },
+    {
+      "sequence": 5,
+      "tag": "fresh-nightjar-online-sound-jam-review",
+      "route": "/api/studio/studio-04f69645-ae3f-4244-b625-910eb024f970/review",
+      "dispatchedAt": "2026-10-27T04:36:04.201Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/043-fresh-nightjar-online-sound-jam-review.json"
+    },
+    {
+      "sequence": 6,
+      "tag": "fresh-pixel-loom-online-mini-course-review",
+      "route": "/api/studio/studio-64bc43ff-f244-4c6e-9335-a024d3a4576d/review",
+      "dispatchedAt": "2026-10-27T04:36:41.498Z",
+      "outcome": "response-received",
+      "httpStatus": 200,
+      "responseEvidence": "responses/052-fresh-pixel-loom-online-mini-course-review.json"
+    }
+  ],
+  "status": "completed",
+  "completedAt": "2026-10-27T04:36:54.199Z"
+}

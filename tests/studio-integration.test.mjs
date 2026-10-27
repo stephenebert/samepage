@@ -54,11 +54,19 @@ function wireRules(allScholars = false, inclusive = false) {
     { when: nodes.length - 1, cents: 4000, label: 'Student fee' },
   ] } };
 }
+function expressionRules(allScholars = false, inclusive = false) {
+  return { eligibility: `age >= 16 && (resident || member) && (age >= 18 || guardianConsent) && submittedAt ${inclusive ? '<=' : '<'} "${deadline}"`,
+    fee: { currency: 'USD', defaultCents: 8500, overrides: [
+      { when: allScholars ? 'scholarship' : 'scholarship && !member', cents: 0, label: 'Scholarship waiver' },
+      { when: 'member', cents: 2500, label: 'Member fee' },
+      { when: 'student', cents: 4000, label: 'Student fee' },
+    ] } };
+}
 function wireResponse(job, protocol = 'compact-v2') {
   const response = interpreted(job);
-  response.candidates[0].rules = wireRules(job.drafts.alice.text === fixedA);
-  response.candidates[1].rules = wireRules(true);
-  if (protocol === 'compact-v2') response.candidates = response.candidates.map(c => ({ editor: c.editor, translation: c.editor === 'alice' ? c.es : c.en, rules: c.rules, issues: c.issues }));
+  response.candidates[0].rules = (protocol === 'expression-v3' ? expressionRules : wireRules)(job.drafts.alice.text === fixedA);
+  response.candidates[1].rules = (protocol === 'expression-v3' ? expressionRules : wireRules)(true);
+  if (protocol !== 'full-v1') response.candidates = response.candidates.map(c => ({ editor: c.editor, translation: c.editor === 'alice' ? c.es : c.en, rules: c.rules, issues: c.issues }));
   return response;
 }
 const providerResponse = value => Response.json({ choices: [{ finish_reason: 'stop', message: { content: JSON.stringify(value) } }] });
@@ -69,7 +77,7 @@ function mockedAdapter(onRequest = () => {}) {
     const body = JSON.parse(init.body);
     const requested = body.response_format.json_schema.schema.properties.candidates.items.properties.editor.enum;
     for (const editor of requested) assert.ok(body.messages[1].content.includes(JSON.stringify(job.drafts[editor].text)), `exact ${editor} source reaches the provider`);
-    assert.match(body.messages[1].content, /flat condition nodes/);
+    assert.match(body.messages[1].content, cfg.protocol === 'expression-v3' ? /submittedAt/ : /flat condition nodes/);
     assert.equal(body.stream, false);
     assert.equal(body.response_format.type, 'json_schema'); assert.equal(body.response_format.json_schema.strict, true);
     assert.doesNotMatch(JSON.stringify(body.response_format.json_schema.schema), /\"\$ref\"/, 'provider schema must not require recursive references');
@@ -195,7 +203,7 @@ test('the real adapter preserves source identity and rejects incomplete provider
     () => Response.json({ choices: [{ finish_reason: 'length', message: { content: JSON.stringify(wireResponse(job)) } }] }),
     () => Response.json({ choices: [{ finish_reason: 'stop', message: { refusal: 'No', content: JSON.stringify(wireResponse(job)) } }] }),
   ];
-  for (const factory of factories) await assert.rejects(interpretStudioJob(job, config, { fetch: async () => factory() }), error => /^MODEL_(RESPONSE|REVIEW)_INVALID$/.test(error.code));
+  for (const [i, factory] of factories.entries()) await assert.rejects(interpretStudioJob(job, config, { fetch: async () => factory() }), { code: ['MODEL_REVIEW_INVALID', 'MODEL_RESPONSE_INVALID', 'MODEL_OUTPUT_LIMIT', 'MODEL_REFUSED'][i] });
 });
 
 test('one ambiguous interpretation blocks both editors from approving the executable candidate', async () => {
@@ -461,8 +469,9 @@ test('unchanged-editor reuse is experimental opt-in, including for legacy config
 
 test('incomplete and refused provider responses retain safe diagnostics without review, votes or publication', async () => {
   for (const variant of [
-    { finish: 'length', content: '{partial', expected: 'length' },
-    { finish: 'stop', refusal: 'private-refusal-do-not-store', content: '{content', expected: 'stop' },
+    { finish: 'length', content: '{partial', expected: 'length', code: 'MODEL_OUTPUT_LIMIT' },
+    { finish: 'stop', refusal: 'private-refusal-do-not-store', content: '{content', expected: 'stop', code: 'MODEL_REFUSED' },
+    { finish: 'content_filter', content: null, expected: 'content_filter', code: 'MODEL_REFUSED' },
     { finish: 'unknown-private-finish-do-not-store', content: null, expected: null },
   ]) {
     const store = await prepared(), published = structuredClone(store.room.published);
@@ -470,7 +479,7 @@ test('incomplete and refused provider responses retain safe diagnostics without 
       choices: [{ finish_reason: variant.finish, message: { content: variant.content, refusal: variant.refusal, reasoning_content: 'private-thought-do-not-store' } }],
       usage: { prompt_tokens: 1500, completion_tokens: 8192, total_tokens: 9692, completion_tokens_details: { reasoning_tokens: 7800 }, privateField: 'private-usage-do-not-store' },
     }) }) });
-    assert.equal(result.automatic.status, 'failed'); assert.equal(store.room.automaticReview.error.code, 'MODEL_RESPONSE_INVALID');
+    assert.equal(result.automatic.status, 'failed'); assert.equal(store.room.automaticReview.error.code, variant.code ?? 'MODEL_RESPONSE_INVALID');
     assert.equal(store.room.automaticReview.metrics.finishReason, variant.expected);
     assert.equal(store.room.automaticReview.metrics.completionTokens, 8192); assert.equal(store.room.automaticReview.metrics.reasoningTokens, 7800);
     assert.equal(store.room.automaticReview.metrics.responseContentBytes, Buffer.byteLength(variant.content ?? ''));
@@ -528,4 +537,70 @@ test('one-candidate reuse rejects extra cached output or stale job and never app
   const saved = structuredClone(delayed.room); gate.resolve(); const result = await pending;
   assert.equal(result.automatic.status, 'superseded'); assert.deepEqual(delayed.room, saved);
   assert.equal(delayed.room.review, null); assert.equal(delayed.room.published.version, 1);
+});
+
+
+test('expression protocol preserves the full two-editor correction and versioned receipt flow', async () => {
+  const store = await prepared(), cfg = { ...config, protocol: 'expression-v3', maxCompletionTokens: 8192 };
+  let attempts = 0;
+  const adapter = mockedAdapter((_job, body) => {
+    attempts++; assert.equal(body.reasoning_effort, 'medium'); assert.equal(body.max_completion_tokens, 8192);
+    assert.equal(body.response_format.json_schema.name, 'samepage_studio_expression');
+    assert.equal(body.response_format.json_schema.schema.properties.candidates.items.properties.rules.anyOf[0].properties.eligibility.type, 'string');
+  });
+  await run(store, { interpret: adapter }, {}, cfg);
+  assert.equal(store.room.review.discovery.status, 'different');
+  assert.equal(store.room.interpretationCache, undefined);
+  for (const c of store.room.review.candidates) {
+    for (const age of [15,16,17,18,120]) for (let bits = 0; bits < 32; bits++) for (const time of ['2026-11-04T17:59:59.999Z', deadline]) {
+      const attendee = { age, resident: !!(bits&1), student: !!(bits&2), member: !!(bits&4), guardianConsent: !!(bits&8), scholarship: !!(bits&16), submittedAt: time };
+      const actual = evaluateStudioPolicy(c.rules, attendee), expected = evaluateStudioPolicy(rules(c.editor === 'bob'), attendee);
+      assert.deepEqual([actual.accepted, actual.feeCents], [expected.accepted, expected.feeCents]);
+    }
+  }
+  const oldReview = structuredClone(store.room.review);
+  await vote(store, 'alice'); assert.equal(store.room.published.version, 1);
+  await vote(store, 'bob', 'bob'); assert.equal(store.room.published.version, 1);
+  await vote(store, 'bob'); await register(store, 'expression-before');
+  assert.equal(store.room.registrations[0].decision.feeCents, 2500);
+  const oldReceipt = structuredClone(store.room.registrations[0]);
+  await store.save('alice', fixedA);
+  await assert.rejects(store.action({ type: 'vote', editor: 'alice', reviewId: oldReview.id, candidateId: oldReview.candidates[0].id }));
+  await run(store, { interpret: adapter }, {}, cfg);
+  assert.equal(store.room.review.discovery.status, 'equivalent'); assert.deepEqual(store.room.review.votes, {});
+  assert.deepEqual(store.room.automaticReview.requestedEditors, ['alice','bob']);
+  assert.deepEqual(store.room.automaticReview.reusedEditors, []);
+  await vote(store, 'alice'); assert.equal(store.room.published.version, 2);
+  await vote(store, 'bob'); await register(store, 'expression-after');
+  assert.equal(store.room.published.version, 3); assert.equal(store.room.registrations[1].decision.feeCents, 0);
+  assert.deepEqual(store.room.registrations[0], oldReceipt); assert.equal(attempts, 2);
+});
+
+test('malformed expression never creates a partial review or bypasses joint approval', async () => {
+  for (const expression of ['resident || member()', 'age >= 16; true', 'scholarship.constructor', 'resident &&']) {
+    const store = await prepared(), before = structuredClone(store.room.published);
+    const cfg = { ...config, protocol: 'expression-v3' };
+    const result = await run(store, { interpret: (job, c, options) => interpretStudioJob(job, c, { ...options, fetch: async () => {
+      const response = wireResponse(job, 'expression-v3'); response.candidates[1].rules.eligibility = expression;
+      return providerResponse(response);
+    } }) }, {}, cfg);
+    assert.equal(result.automatic.status, 'failed'); assert.equal(result.automatic.error.code, 'MODEL_REVIEW_INVALID');
+    assert.equal(store.room.review, null); assert.deepEqual(store.room.published, before);
+  }
+});
+
+test('output headroom requires an explicit bounded server setting and keeps medium reasoning', async () => {
+  for (const value of [undefined, '8192', '0', '999999', 12288, 'unexpected']) assert.equal(studioModelConfig({ SAMEPAGE_STUDIO_OUTPUT_TOKENS: value }).maxCompletionTokens, 8192);
+  const cfg = studioModelConfig({ MODEL_API_KEY: config.apiKey, SAMEPAGE_STUDIO_META_ENABLED: 'true', SAMEPAGE_STUDIO_PROTOCOL: 'expression-v3', SAMEPAGE_STUDIO_OUTPUT_TOKENS: '12288' });
+  assert.equal(publicStudioModel(cfg).maxCompletionTokens, 12288); assert.equal(publicStudioModel(cfg).protocol, 'expression-v3');
+  const store = await prepared();
+  await run(store, { interpret: mockedAdapter((_job, body) => { assert.equal(body.max_completion_tokens, 12288); assert.equal(body.reasoning_effort, 'medium'); }) }, {}, cfg);
+  assert.equal(store.room.automaticReview.metrics.maxCompletionTokens, 12288);
+});
+
+test('the offline demonstration uses the expression adapter without external calls', async () => {
+  const store = memory(createStudioSimulationRoom('expression-simulation', start, studioDemoFixture));
+  await run(store, {}, { simulation: true }, { ...config, protocol: 'expression-v3' });
+  assert.equal(store.room.review.provenance, 'simulated-model'); assert.equal(store.room.modelCallCount, 0);
+  assert.equal(store.room.review.discovery.status, 'different');
 });
