@@ -1,157 +1,74 @@
 # SamePage
 
-A bilingual collaboration prototype: two people edit one shared document in English and Spanish, see when their meanings disagree, and resolve the disagreement together.
+SamePage helps teams review English and Spanish registration policies, find people affected by a difference, and approve checked wording before a registration form uses it.
 
-The current `/studio` demo finds realistic admission and fee differences between bilingual workshop policies, including scholarship scope, guardian exceptions, and ordered discounts. It leads from a discovered attendee to joint approval and a working form. The earlier `/consequences` experiment automatically finds an attendee or deadline instant where two simpler policy interpretations disagree. It can find both directions of an age/deadline tradeoff: a younger person accepted only by one rule, and a later applicant accepted only by the other. The user can transfer either discovered attendee into a working registration form, while the published rule stays unchanged until both simulated editors approve the same interpretation.
+[Live workspace](https://samepage-demo.stephenmebert.chatgpt.site/) · [Demo video](https://youtu.be/UmtQLiURgIM)
 
-[Project brief and build plan (private Google Doc)](https://docs.google.com/document/d/1SovcRW_BpJU2tisT57L3vq3POAh3rn0wzOC077BCYIY/edit)
+## What it does
 
-Latest update: explicit English/Spanish time-boundary guidance is shared by review and repair, with old interpretation caches invalidated. The fresh comparison completed 24 calls (estimated $0.18387475) and verified the targeted before/after behavior. Frozen scores were **11/12 SamePage versus 12/12 plain Meta**, but the sole difference is a disputed Spanish grouping item that preflight missed. The other 11 cases matched for both arms; this is a post-hoc sensitivity view, not a replacement score or accuracy-win claim. Nine simulated joint publications produced 27 correct receipts. Both model-call gates are paused. See [the fix, fresh results and disputed test](docs/TEMPORAL-COMPARISON.txt).
+1. Start with a blank workspace and paste both policy drafts. An optional sample fills the inputs only.
+2. Request a live Meta review. SamePage compares the interpreted executable rules and finds an example applicant whose eligibility or fee differs.
+3. Open the separate English and Spanish reviewer links. Both reviewers must approve the same interpretation before it becomes the baseline.
+4. Check a rewrite against that baseline. An unsafe or unresolved rewrite cannot publish. Meta can propose a repair, which is checked again.
+5. Both reviewers approve the checked wording. The registration checker then uses the published version and saves versioned decision receipts.
 
-Previous evaluation: a frozen 12-pair comparison scored **SamePage 11/12 vs plain Meta 12/12**. Both found all six differences with valid examples; SamePage unnecessarily withheld one clear Spanish policy. Plain Meta was faster and cheaper. The 24 calls used an estimated $0.19050225; actual billing is unconfirmed. Nineteen compiled policies matched 294,272 reference outcomes; nine simulated joint approvals produced 27 correct receipts. The separate finite benchmark gate is disabled, and normal Studio calls remain paused. This provides no evidence of superior review accuracy. See [the full comparison and limitations](docs/COMPARISON-BENCHMARK.txt).
-
-Previous demo update: **Try the full demo** starts an isolated Beacon repair replay from the blocked $27-to-$31 nonstudent fee change. The saved Meta correction is rechecked, both new approvals start empty, Alice alone keeps v2/$14, and Bob’s approval publishes v3/$19 for the same student. **Why did this change?** derives English/Spanish explanations from the actual first matching rules. All 207 mechanical tests, TypeScript and production build pass. Local and hosted browser rehearsals use separate simulated editors; no new Meta calls were made. The site remains private and Studio live calls remain paused. See [the full-demo guide and verification](docs/FULL-DEMO.md).
-
-Previous update: newly approved English/Spanish policies now publish the exact explicitly grouped wording shown to both editors, with original source/model prose retained separately. The fix passes 187 mechanical tests, TypeScript and production build. Two fresh harder policies passed 240 concrete outcomes and 402,688 compiled-rule comparisons, and independent AI wording reviews found no operative defect. A third policy with an unspecified fee correctly required clarification. Seven Meta calls cost an estimated $0.10448875; actual credit deduction is unconfirmed. Private version 18 is deployed and Studio calls paused again. See [the grouping fix and fresh evidence](docs/GROUPED-WORDING.md).
-
-Earlier demo update: the baseline selector now restores a remotely received checked request without clearing the selection, while preserving local edits. The impact card and receipt comparison share the same validated attendee, correctly showing the Open Bench attendee's $18.50-to-$32.50 fee increase. The source passes 180 mechanical tests, TypeScript checking and the production build. Two local Chrome editors verified synchronization, approval holds, publication and receipt preservation using frozen responses; no new model-provider calls were made. Private Site version 17 is deployed and both hosted editor views are verified; Studio model calls remain paused. See [the fixes, replay and verification scope](docs/DEMO-ALIGNMENT.md).
-
-Earlier live evaluation: two harder unseen policies completed six Meta calls on unchanged source. All 240 concrete outcomes and 573,056 compiled-rule comparisons passed; unsafe edits were blocked and both approvals required. Separate AI review found an age-scope ambiguity in the second policy’s generated Spanish, despite correct executable rules. This is an open wording issue, not an unqualified bilingual pass. The remaining clarification test was skipped, Studio calls were paused, and token cost is estimated at $0.09129550 (actual credit deduction unconfirmed). See [the complete evidence and limitation](docs/HARD-UNSEEN-20261027.md).
-
-Earlier live evaluation: one independently authored, frozen policy completed the full flow on the unchanged source at that point in three Meta requests. All 120 concrete and 185,856 independent-oracle comparisons passed. The checker caught an initial bilingual consent difference, blocked an authored 30-minute deadline extension, and allowed a generated fixed-student-fee repair only after both simulated editors approved. The same attendee’s fee changed from $18.50 to the requested $32.50, preserving both receipts. Total token-rate estimate: $0.037673; actual credit deduction is unconfirmed. Studio calls are paused again. See [the fresh challenge, exact timings and frozen evidence](docs/FRESH-UNSEEN.md).
-
-Earlier demo update: the checked repair now leads the saved-room walkthrough, with the earlier blocked proposal visible and a readable bilingual policy derived from the checked rules. Complete outcome comparison removes one redundant fee clause from each saved policy’s reading view; original wording, approvals and receipts remain intact. Recomputed examples use the saved 20-year-old Lumen attendee and 16-year-old Orbit attendee. The working form starts with those facts, never submits automatically, and preserves later edits. The source passes 169 mechanical tests and TypeScript checking. No new Meta calls were made for this polish; Studio calls remain paused. At that point, the simplified-target generation prompt had not yet been live retested; the fresh run above now evaluates it on one new policy. See [the 60–90 second demo sequence and its scope](docs/DEMO-POLISH.md).
-
-The preceding six-request repair evaluation included a genuine generated scope error: Meta kept an age limit on a requested all-scholarship waiver, and the checker blocked publication. After a prompt revision, a known-case correction and a fresh second policy passed their checks and were jointly published, preserving $21-to-$0 and $14-to-$0 versioned receipts. That evaluated source passed 156 mechanical tests, TypeScript and production build. See [the repair results, retained failure and frozen evidence](docs/AUTOMATIC-REPAIR.md).
-
-Earlier that day, a bounded expression protocol removed numbered-node bookkeeping while preserving the existing rule validator and joint approval. Ten live requests completed; all 404 concrete checks and four unresolved-result checks passed. Low reasoning with the new protocol reduced total HTTP wait by about 40% across four matched requests, with individual waits of 10.038–27.707 seconds. The private deployment explicitly selects that tested configuration; Studio live calls are paused, reuse is disabled, and the 8,192-token cap is unchanged. That source passed 133 mechanical tests, TypeScript and production build. See [expression interpretation, timing limits and frozen evidence](docs/EXPRESSION-INTERPRETATION.md).
-
-The preceding 12-request latency evaluation did **not** demonstrate a safe speedup: compact graph output was smaller, low reasoning on that graph protocol lost admission conditions, and experimental unchanged-editor reuse returned an incomplete response. Those failures remain preserved in [the previous latency report](docs/LATENCY-DEMO.md). The new run did not reproduce the incomplete response, so its original cause remains unknown; current diagnostics distinguish token-limit stops, refusal and other incomplete replies.
-
-## Current prototype
-
-- **Fresh full-flow verification:** three live requests on one independently authored, frozen policy passed 120 concrete and 185,856 independent-oracle comparisons without tuning or retries. The deadline bait was an authored challenge; the generated repair was correct on this test. See [the fresh evaluation](docs/FRESH-UNSEEN.md).
-- **Bounded automatic repair:** the new implementation proposes a bilingual fee change or checks an editor's rewrite against a chosen baseline. It verifies admission and outside-group fee outcomes before either editor can approve; earlier receipts remain versioned. The six-request evaluation retained one correctly blocked generated error and two successful revised proposals. See [the repair contract, safeguards and evaluation results](docs/AUTOMATIC-REPAIR.md).
-- **Realistic policy studio at `/studio`:** nested boolean conditions, age ranges, five attendee flags, explicit UTC boundaries, and ordered USD fee overrides. The richer studio now connects to the server-side Meta adapter with a nonrecursive wire schema, exact-source validation, durable request leases and joint approval. The earlier expression evaluation completed ten live requests; the later repair evaluation is documented separately above. **Test with simulated editors** exercises the adapter with a clearly labeled fixed response and no external calls. Manual review and the earlier recorded demo remain available. See [studio Meta integration and activation](docs/STUDIO-META.md).
-- **Earlier verification:** 113 mechanical tests, TypeScript and production build pass. Eighteen new integration tests use independent HTTP fixtures, including a $25-to-$0 policy correction. Local HTTP clients verified concurrent editor saves, split-vote holds, and $80-to-$0 registrations with preserved receipts. Separate Chrome editor tabs verified simulation, voting and registration. A separate hosted run made four fresh Meta `muse-spark-1.3` review requests: all 120 concrete checks and four unresolved checks matched frozen expectations, with $17.25-to-$0 versioned receipts preserved. An independent AI audit reviewed all eight translations and 185,856 rule comparisons. Review HTTP durations were 12.705–23.752 seconds; the conservative cost estimate was $0.20911025, not measured billing. See [live evidence and limits](docs/META-LIVE-EVALUATION.md). Historical studio results remain in [the earlier studio runbook](docs/REALISTIC-POLICY-STUDIO.md).
-
-- **Automatic model integration at `/consequences`:** **Find consequences** sends both saved policy drafts to a server-side Meta integration, validates the returned bilingual rules, and starts counterexample discovery. This earlier workspace shares the server-side Meta transport, but its own live workflow was not part of the four-review studio evaluation. See [activation, failure handling and verification scope](docs/AUTOMATIC-MODEL.md).
-- **Automatic counterexample discovery at `/consequences`:** bilingual policy drafts become proposed executable rules. SamePage automatically finds a concrete attendee with different outcomes, including exact millisecond deadline boundaries. It exposes both acceptance directions when they exist, and distinguishes equivalent supported rules from unresolved interpretations. See [discovery design, evidence and demo flow](docs/COUNTEREXAMPLE-DISCOVERY.md).
-- **Working registration form:** transfer a found attendee without submitting, obtain two matching approvals, then save a synthetic registration. The server evaluates the published rule; receipts retain the exact timestamp and policy version. The [original consequences runbook](docs/CONSEQUENCES-DEMO.md) remains available.
-- The consequences experiment supports only minimum age, neighborhood residency, AND/OR eligibility, and an explicit UTC deadline. Unsupported or ambiguous clauses must remain unresolved. The original document lab remains available at `/`.
-- Real shared rooms persisted in Cloudflare D1, with polling updates between editor tabs.
-- English-speaking Alice and Spanish-speaking Bob are simulated personas. One person can operate both editors or use their separate links.
-- Versioned proposals, strict JSON validation, atomic room updates, stale-draft protection, and joint conflict resolution.
-- Explicit compatible merges with per-editor provenance and deliberate deletion handling.
-- Every review snapshots all six sections; contradictions or cross-section uncertainty hold the whole batch. Matching votes queue a new review of the exact selected bilingual candidate.
-- Corrections preserve the other editor’s unresolved proposal. Held drafts remain recoverable; pending edits can be withdrawn without losing newer local typing.
-- **Manual agent relay** remains available in collapsed **Advanced review tools** for the consequences workspace and in the original document lab. A facilitator gives the exact generated prompt to an independent AI agent and pastes its untouched JSON response back into the app.
-- Counterexample discovery is deterministic and automatic after either interpretation path is validated. Existing demo reviews were manually relayed and are labeled accordingly. Automatic review metadata reports the model request duration; historical relay duration includes operator time.
-
-The hosted prototype uses an owner-private Sites access boundary. The simulated editor IDs are not authentication identities; the app does not yet implement independent user authorization or room membership. Keep local development on loopback and deployments private while that remains true.
+The video follows a free community workshop. A rewrite unexpectedly excludes a resident who belongs to a club; SamePage catches that consequence and keeps the approved policy active. After a checked repair and both approvals, the same applicant is eligible in the working form.
 
 ## Run locally
 
-Prerequisites: Git and Node.js 22.13 or later with npm. Node.js 24 was used for the current reducer tests. No model API key is required for the manual relay. Automatic interpretation requires server-side Meta access; follow [the activation instructions](docs/AUTOMATIC-MODEL.md).
+Use **Node.js 24 LTS** and npm. Tests were verified with Node 24.22.1. No Meta key or Cloudflare account is required to run the offline tests, build the application, or save local drafts.
 
 ```sh
-git clone https://github.com/stephenebert/samepage.git
-cd samepage
-npm run install:ci
-npm run build
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_graceful_amazoness.sql
+npm ci
+npm run db:migrate:local
 npm run dev
 ```
 
-Open the local URL printed by the server (normally `http://127.0.0.1:5173`). Apply the SQL migration once to a fresh local database; do not replay it against a database that already has the table. Development and built previews share the ignored `.wrangler/state` directory. To preview the built Worker instead of the development server, run `npm start` and use its printed loopback URL.
+Open `http://localhost:5173`. The local D1 database is stored in ignored `.wrangler/state`; the committed migration contains schema only. `wrangler.json` uses a generic local database name and a placeholder ID, with no hosted database identity.
 
-The repository includes the nonsecret Sites binding configuration and build tooling. See [Sites runtime details](docs/SITES-RUNTIME.md) for profiles, local sign-in simulation, and deployment integration. The existing hosting project ID identifies the original private deployment; it is not an API credential. Publishing is a separate step and requires access to that hosting project or configuration for a new one.
-
-## Try the consequences workflow
-
-For the current studio, open `/studio`, choose **Test with simulated editors**, and select **Run simulated review**. Inspect the discovered attendee, make matching choices from both editor roles, then use the attendee in the working form. The fixed simulation cannot interpret arbitrary edits. Fresh policies require manual review or explicitly enabled Meta access; see [activation and limits](docs/STUDIO-META.md).
-
-1. Open `/consequences`, create a room and use the combined view or separate Alice/Bob editor links.
-2. Save both full policy drafts. Local unsaved text is preserved and excluded from review.
-3. Once Meta access is configured, select **Find consequences**. While unconfigured, this action is disabled and the advanced manual fallback remains available.
-4. Inspect any automatically discovered attendee, both language versions and the structured rules. Unsupported or ambiguous policies must remain unresolved.
-5. Transfer the attendee to the registration form if useful. The form continues to enforce the previously published rule until both editors confirm the same interpretation.
-6. Submit the synthetic registration to save the outcome against that published policy version.
-
-Model configuration is checked on the server. A missing key returns HTTP 503 without mutating the room or attempting a provider call. Failed model requests require an explicit retry; editing either draft invalidates the pending interpretation. Configured readiness means a key exists, not that Meta access has been verified.
-
-## Try the original document lab
-
-1. Create a shared room and open Alice’s and Bob’s editor links in separate tabs, or use the combined view.
-2. Propose an English edit and a Spanish edit to the same section before processing them.
-3. Open **Facilitator controls**, claim the queued edits, and give the exact generated prompt to an independent AI agent.
-4. Paste its complete JSON response into the facilitator panel and select **Validate and apply response**.
-5. For a conflict, inspect the concrete example and have both editors choose the same proposal. A single vote, differing choices, and matching votes all leave the agreed text unchanged initially.
-6. Select **Review shared choice**, relay the new prompt, and apply the fresh response. Only a clear whole-document review commits the exact selected candidate. If held, inspect the quoted passages and use **Edit saved proposal** to correct the draft; another editor’s unresolved intent remains in the next review.
-
-Agent responses must match the generated schema exactly. Invalid or outdated responses are rejected; schema validation does not establish that the model's semantic judgment is correct.
-
-## Verification and known gaps
-
-Run the existing reducer suite without installing application dependencies:
+To enable fresh inference locally:
 
 ```sh
-node --experimental-strip-types --test tests/*.test.mjs
+cp .env.example .dev.vars
 ```
 
-The 25 reducer tests cover full-document snapshots, atomic holds, exact selected-candidate review, provenance, deletions, stale context, concurrent corrections, legacy job recovery, and draft preservation. They pass for this iteration. TypeScript checking and the production build are separate checks.
+Set your own `MODEL_API_KEY` in `.dev.vars`, change `SAMEPAGE_JUDGE_META_ENABLED` to `true`, and restart the server. This file is ignored by Git. Model requests use that provider account; loading a sample, approvals, and registration checks do not call Meta. The live flow has no saved-response fallback.
 
-The preceding consequences iteration added 18 passing mechanical tests (43 total at that point). Six frozen bilingual draft pairs received fresh interpretations from one isolated agent: 10 executable interpretations and two unresolved holds matched expectations. An independent evaluator recomputed all 50 outcomes (44 boolean and six unresolved) and verified 25 persisted registrations. Separate Chrome editor tabs demonstrated a version-1 rejection, one-vote and mismatched-vote holds, joint approval, and a version-2 acceptance for the same attendee. These are simulated tests, not real-user research. See [consequences evaluation](docs/CONSEQUENCES-EVALUATION.md).
+To check the production build locally:
 
-The preceding automatic discovery iteration added 10 tests, bringing the mechanical total to **53 passing tests at that point**. The discovery suite includes every integer age threshold, strict/inclusive and adjacent millisecond boundaries, null/invalid rules, deterministic output, and 1,500 seeded rule-pair comparisons against an independent oracle. TypeScript checking also passed.
+```sh
+npm run build
+npm start
+```
 
-A separate agent authored eight frozen bilingual policy pairs before interpretation. One isolated interpreter received only the eight production prompts and returned eight untouched responses: 13 executable drafts and three unresolved drafts matched expected semantics. All **62 scenario outcomes** matched (53 boolean results and nine abstentions). The search found six witnesses across five differing pairs, correctly treated one pair as equivalent within the supported rules, and held two pairs unresolved. Each witness also produced a verified server registration under one selected interpretation: **six persisted receipts**. Two simulated browser editors additionally exercised both directions of the age/deadline tradeoff, and an exact `.375`-second witness survived transfer into the form and its saved receipt. See [discovery evidence and limitations](docs/COUNTEREXAMPLE-DISCOVERY.md); these counts do not measure real-user benefit or broad semantic accuracy.
+The preview uses the same local database and binds to `127.0.0.1:8787`. This repository does not include the hosted Site's deployment identity, credentials, or stored workspaces. Deploying a separate instance requires its own database, migration, and server-side secrets.
 
-On 20 October, eight fresh independent-agent responses covered seven frozen cases and their joint-vote continuation. All raw responses passed the production parser unchanged, and the tested semantic outcomes matched the expected facts. A separate browser session operated two editor tabs through a compatible merge, a concrete disagreement, matching votes, and a correctly blocked cross-document contradiction. See [evaluation notes](docs/EVALUATION.md) and the [demo runbook](docs/DEMO.md).
+## Verify
 
-The automatic model integration adds **23 passing tests**, bringing that iteration’s mechanical total to **76 passing tests**. Controlled provider fixtures cover the HTTP contract, exact source validation, malformed or oversized output, provider errors, timeouts, duplicate requests, CAS retries, expired leases, late responses, draft supersession and manual fallback. Missing credentials return HTTP 503 without room mutation or a provider call. No actual Meta API calls were made in that earlier integration test iteration; those tests established request handling and state transitions. The later [four-review hosted studio evaluation](docs/META-LIVE-EVALUATION.md) supplies a separate, narrowly scoped live result. See [automatic model integration](docs/AUTOMATIC-MODEL.md).
+```sh
+npm test
+npm run typecheck
+npm run build
+```
 
-A subsequent six-pair hard unseen-policy evaluation passed **64 scenario checks**, found four witnesses, correctly recognized a non-obvious equivalent pair, and held two unsupported/ambiguous candidates. Separate author, blind interpreter and auditor agents were used, with no paid provider API calls. Two browser editors then jointly published each side of one disagreement: an identical attendee and timestamp changed from accepted to rejected solely because residency became required. See [the hard-policy evaluation and its limits](docs/HARD-UNSEEN-EVALUATION.md). This used the manual relay; its results are distinct from the later hosted Meta evaluation.
+The current **27 tests** cover publication gates, distinct reviewer roles, stale approvals, owner isolation, invitation revocation, durable request accounting, and versioned registration. They use synthetic model responses and in-memory SQLite; provider requests are blocked during these tests. Some retained judge fixtures exercise legacy state transitions; the public HTTP interface is `/api/workspace`, not a recorded demo endpoint.
 
-Next build priorities:
+## How Meta is used
 
-1. Keep Studio live calls paused after the fresh three-request evaluation. Expand the frozen sample only within newly authorized credit use, measure latency across repeated runs, and obtain confirmed billing; current token estimates are not a bill.
-2. Record the verified full-demo flow, then rehearse judge access. Baseline selection, attendee alignment, and rule explanations have been addressed; broader semantic reliability remains unproven.
-3. Evaluate the `/studio` demo with independent bilingual people and improve confusing explanations using their feedback.
-4. Add actual editor identity, room membership and permissions before expanding access.
+The server calls Meta Model API using `muse-spark-1.3` to interpret submitted policy wording and propose bilingual repairs. SamePage validates the returned rules, searches their supported input space for changed outcomes, and enforces approval and publication rules. Model settings remain server-controlled; the API key never reaches the browser.
 
-This is a feasibility prototype, not a validated production collaboration system. English and Spanish are the only implemented languages. The experiments do not establish a probability of winning a competition or general bilingual reliability.
+The current allowance is ten provider attempts per browser session and thirty across an instance, including failures. Environment settings can reduce those limits. Creating a new workspace does not replenish them. These are request limits, not a provider billing balance.
 
-## Source map
+## Scope and limitations
 
-- `app/studio/`, `app/api/studio/`, `lib/studio*.ts`, `lib/automatic-studio-review.ts`: rich policy interpretation, flat or bounded-expression provider schema, explicitly enabled Meta adapter, controlled simulation, bounded comparison, joint approval, and receipts.
-- `lib/studio-presentation.ts`, `lib/studio-witness.ts`, `app/studio/policy-summary.tsx`, `docs/DEMO-POLISH.md`: outcome-verified reading views, recomputed realistic examples and a saved-evidence walkthrough.
-- `lib/studio-repair.ts`, `lib/studio-repair-model.ts`, `lib/automatic-studio-repair.ts`, `app/studio/repair-panel.tsx`, `tests/semantic/2026-10-26-repair/`, `docs/AUTOMATIC-REPAIR.md`: bounded fee repair, authored-rewrite interpretation, semantic impact gates, exact-proposal joint approval, and the retained live failure plus revised continuation.
-- `lib/studio-expression.ts`, `tests/studio-expression.test.mjs`, `tests/semantic/2026-10-26-expression/`, `docs/EXPRESSION-INTERPRETATION.md`: bounded expression parsing, ten live reviews, matched medium/low timing, semantic checks and pause verification.
-- `tests/studio-integration.test.mjs`, `tests/semantic/2026-10-26-studio-meta/`: historical controlled transport, concurrency, clarification, quota and full-flow evidence.
-- `tests/semantic/2026-10-26-meta-live/`, `docs/META-LIVE-EVALUATION.md`: four actual hosted Meta reviews, frozen expectations, sanitized responses, independent audit, cost limits and pause verification.
-- `tests/studio*.test.mjs`, `tests/semantic/2026-10-20-studio/`: mechanics, original frozen source/expectations, untouched agent outputs, separate clarification rounds, audit, HTTP checks, and two-browser evidence.
+Supported rules cover age, residency, student and membership status, guardian consent, scholarships, explicit application deadlines, and ordered USD admission fees, including free admission. Unsupported or ambiguous policies require clarification. Agreement between executable rules does not prove that natural-language interpretation is correct, so reviewers still inspect the wording.
 
-- `app/consequences/`, `app/api/consequences/`, `lib/consequences*.ts`: policy interpretation, consequence comparison, joint approval and versioned registration.
-- `lib/automatic-policy-review.ts`: durable model-request leases, explicit retries, stale-response rejection and atomic proposal application.
-- `lib/policy-model.ts`, `lib/policy-model-env.ts`: fixed Meta endpoint, strict output schema, bounded response handling and server-only configuration.
-- `app/api/consequences/model/route.ts`, `app/api/consequences/[id]/review/route.ts`: safe readiness metadata and automatic review endpoints.
-- `tests/automatic-policy-review.test.mjs`: controlled provider and concurrency fixtures; no live model claims.
-- `docs/AUTOMATIC-MODEL.md`, `.env.example`: activation instructions and nonsecret configuration names.
-- `lib/counterexamples.ts`: bounded complete comparison of the two executable policy interpretations and selection of concrete witnesses.
-- `tests/counterexamples.test.mjs`, `tests/semantic/2026-10-20-discovery/`: discovery mechanics, frozen unseen policies, raw prompts/responses and recorded outcomes.
-- `tests/consequences.test.mjs`, `tests/semantic/2026-10-20-consequences/`: earlier consequences mechanics and synthetic semantic evidence.
-- `app/page.tsx`: editor views, conflict explanations, voting, and facilitator controls.
-- `app/api/rooms/`: room creation, actions, and relay endpoints.
-- `lib/room.ts`: pure proposal/reconciliation state machine, prompt construction, and response validation.
-- `lib/store.ts`: D1 persistence with compare-and-swap revisions.
-- `lib/types.ts`: shared types and model response contract.
-- `tests/room.test.mjs`: reducer tests.
-- `drizzle/`: database migration and schema metadata.
-- `build/`, `scripts/`, and `.openai/hosting.json`: runtime and Sites deployment support.
+Reviewer links grant access to one workspace and one role; they are not identity verification. The recording uses two simulated reviewer roles and synthetic attendees. Owner sessions expire after seven days, and replacing a workspace invalidates its reviewer links. The form is an **owner-operated registration decision checker**, not a public attendee intake portal.
 
-## Snapshot provenance
+The recorded flow made three real Meta requests. The video compresses waiting and navigation for a 2:45 demonstration; the original spoken narration is preserved. No claim is made that SamePage outperforms plain Meta on interpretation accuracy or that simulated editors establish real-user validation.
 
-This repository starts with the prototype source from Sites commit `92d804df209fd9c7cc90453a1a6934013a1d69ff`, captured on 14 October 2026. That initial snapshot is retained in Git history. The 20 October iteration updates application code and tests for document consistency, explicit merging, and safer correction flows. Dependency inputs and runtime configuration are preserved. Generated `tsconfig.tsbuildinfo` caches remain excluded. The original local checkout and history remain intact.
+## Source and provenance
 
-Source, summarized technical evidence and sanitized synthetic evaluation artifacts are included. Runtime databases, secret environment files, dependencies, build output, application/CV materials, and personal model-chat transcripts are excluded. The tracked `.env.example` contains only nonsecret configuration placeholders. Third-party license notices remain with their bundled files.
+The application uses React, Vinext/Vite, a Cloudflare Worker and D1 storage. Start with `app/page.tsx`, `app/api/workspace/route.ts`, `lib/workspace-service.ts`, and `lib/studio-engine.ts`.
+
+This release brings the November 3 live workspace into the existing repository, preserving earlier commits. Core policy reasoning originated in the earlier prototype; the editable workspace, separate reviewer capabilities, and current interface were added later. [Provenance and release verification](docs/RELEASE.md) distinguish that work from earlier experiments and describe the small portability changes made for this source release.

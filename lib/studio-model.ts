@@ -4,9 +4,12 @@ import { decodeStudioExpressionRules, STUDIO_EXPRESSION_GRAMMAR } from "./studio
 import { parseStudioReview } from "./studio.ts";
 import { parseStudioRules, studioInteger, studioKeys, studioObject, studioText, STUDIO_FLAGS } from "./studio-engine.ts";
 import { policyModelConfig, PolicyModelError, requestStructuredPolicy, type PolicyModelConfig, type PolicyModelRequestOptions } from "./policy-model.ts";
-import type { StudioCandidate, StudioCondition, StudioEditor, StudioInterpretationCache, StudioJob, StudioRules } from "./studio-types";
+import type { StudioCandidate, StudioCondition, StudioEditor, StudioInterpretationCache, StudioJob, StudioRoom, StudioRules } from "./studio-types";
 
 export const MAX_STUDIO_MODEL_CALLS = 5;
+export function studioModelCallLimit(room: Pick<StudioRoom, "liveDemo">): number {
+  return room.liveDemo ? room.liveDemo.kind === "cobalt-live-v1" ? 1 : 3 : MAX_STUDIO_MODEL_CALLS;
+}
 export type StudioModelProtocol = "compact-v2" | "full-v1" | "expression-v3";
 export interface StudioModelConfig extends PolicyModelConfig { enabled: boolean; protocol?: StudioModelProtocol; reasoningEffort?: "low" | "medium"; reuseUnchanged?: boolean; maxCompletionTokens?: 8192 | 12288 }
 export function studioModelConfig(values: { MODEL_API_KEY?: unknown; SAMEPAGE_MODEL?: unknown; SAMEPAGE_STUDIO_META_ENABLED?: unknown; SAMEPAGE_STUDIO_PROTOCOL?: unknown; SAMEPAGE_STUDIO_REASONING_EFFORT?: unknown; SAMEPAGE_STUDIO_REUSE_UNCHANGED?: unknown; SAMEPAGE_STUDIO_OUTPUT_TOKENS?: unknown }): StudioModelConfig {

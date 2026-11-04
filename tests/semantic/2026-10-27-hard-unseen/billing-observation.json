@@ -1,8 +1,0 @@
-{
-  "observedAtUtc": "2026-10-27T17:09:48.714503+00:00",
-  "source": "Authenticated Meta billing UI",
-  "freeCreditsUsd": 149.23,
-  "outstandingBalanceUsd": 0,
-  "activityMayLagUpToHour": true,
-  "notABillingReceipt": true
-}

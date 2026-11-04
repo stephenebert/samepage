@@ -1,8 +1,0 @@
-{
-  "deploymentId": "appgdep_6ae0dd29f54c81918c34f9277068c2fd",
-  "status": "succeeded",
-  "envRevision": 23,
-  "updatedAt": "2026-10-27T17:19:43.791880+00:00",
-  "studioEnabled": "false",
-  "scope": "Studio Meta gate only; existing secret retained, no account-wide API-key revocation."
-}

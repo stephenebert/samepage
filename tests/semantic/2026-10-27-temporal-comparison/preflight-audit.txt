@@ -1,3 +1,0 @@
-Preflight passed for12 fresh policy pairs (6 different,4 equivalent,2 unresolved).
-Independent reviewer checked 534336 reference outcomes and 178 literal outcome assertions. No discrepancies or source corrections.
-AI review, not human validation. No provider calls or live outputs.

@@ -85,6 +85,8 @@ export interface AutomaticStudioReview {
 }
 export interface StudioRepairIntent {
   baselineCandidateId: string; scopeFlag: StudioFlag; feeCents: number;
+  /** Wording-only repair: scopeFlag/feeCents are inert compatibility fields. */
+  mode?: "preserve-outcomes";
 }
 export interface StudioRepairProposal extends StudioText {
   rules: StudioRules | null; issues: string[];
@@ -121,7 +123,9 @@ export interface StudioRoom {
   interpretationCache?: StudioInterpretationCache;
   simulation?: "studio-fee-v1";
   /** Recorded full-flow demo. Its baseline is pre-agreed setup; new votes are live. */
-  fullDemo?: { kind: "beacon-repair-v1"; recordedAt: string; model: string; unsafeRepairId: string; correctedRepairId: string };
+  fullDemo?: { kind: "beacon-repair-v1" | "harbor-repair-v1" | "cobalt-clarification-v1"; exampleId?: "beacon" | "harbor" | "cobalt"; recordedAt: string; model: string; unsafeRepairId?: string; correctedRepairId?: string };
+  /** Source-only example; all interpretations and repairs require fresh provider requests. */
+  liveDemo?: { kind: "beacon-live-v1" | "harbor-live-v1" | "cobalt-live-v1" | "consent-live-v1" | "interaction-live-v1"; exampleId?: "beacon" | "harbor" | "cobalt" | "consent" | "interaction"; maxCalls: 1 | 3 };
   published: StudioPublished; drafts: Record<StudioEditor, StudioDraft>;
   activeJob: StudioJob | null; review: StudioReview | null;
   registrations: StudioRegistration[];

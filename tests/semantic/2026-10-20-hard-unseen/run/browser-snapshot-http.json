@@ -1,9 +1,0 @@
-[
-  {
-    "method": "GET",
-    "path": "/api/consequences/consequence-0d124fd8-5ec2-4306-93a2-ce0d0a3282b9",
-    "action": null,
-    "status": 200,
-    "durationMs": 185.2930409999999
-  }
-]

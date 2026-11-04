@@ -1,16 +1,54 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "67a1c915-d7cc-495b-bfc6-091ee5a9ff9f",
+  "id": "a9530c6e-a87a-40c1-81f5-665fdcbd04cc",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "samepage_rooms": {
-      "name": "samepage_rooms",
+    "judge_ledger": {
+      "name": "judge_ledger",
       "columns": {
         "id": {
           "name": "id",
           "type": "text",
           "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "revision": {
+          "name": "revision",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "state": {
+          "name": "state",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "judge_rooms": {
+      "name": "judge_rooms",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "owner_hash": {
+          "name": "owner_hash",
+          "type": "text",
+          "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },

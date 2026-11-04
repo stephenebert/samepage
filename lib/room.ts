@@ -115,7 +115,7 @@ export function applyAction(room: Room, input: RoomAction, now: string): Room {
     const stale = segment.version !== a.baseVersion;
     r.proposals.push({ id: a.id, clientId: a.clientId, language: lang(a.clientId), segmentId: a.segmentId, baseVersion: a.baseVersion,
       text: a.text, createdAt: now, status: stale ? "stale" : "pending", ...(stale ? { note: "The agreed text changed after this draft began. Refresh it and submit a new proposal." } : {}) });
-    activity(r, stale ? "stale" : "proposed", `${a.clientId === "alice" ? "Alice" : "Bob"} ${stale ? "submitted an outdated draft" : a.text === "" ? "proposed a section deletion" : "proposed an edit"} · ${segment.label.en}`, now);
+    activity(r, stale ? "stale" : "proposed", `${a.clientId === "alice" ? "Alice" : "Bob"} ${stale ? "submitted an outdated draft" : a.text === "" ? "proposed a section deletion" : "proposed an edit"}, ${segment.label.en}`, now);
   } else if (a.type === "cancel") {
     const proposal = r.proposals.find(p => p.id === a.proposalId);
     if (!proposal || proposal.clientId !== a.clientId) fail("Proposal not found.", "NOT_FOUND", 404);
@@ -139,10 +139,10 @@ export function applyAction(room: Room, input: RoomAction, now: string): Room {
     issue.votes[a.clientId] = a.candidateEventId;
     if (issue.votes.alice && issue.votes.alice === issue.votes.bob) {
       issue.resolutionStatus = "queued"; issue.selectedEventId = candidate.eventId;
-      activity(r, "resolution-queued", `Both editors selected a candidate · whole-document review required · ${segment.label.en}`, now);
+      activity(r, "resolution-queued", `Both editors selected a candidate, whole-document review required, ${segment.label.en}`, now);
     } else {
       delete issue.resolutionStatus; delete issue.selectedEventId;
-      activity(r, "vote", `${a.clientId === "alice" ? "Alice" : "Bob"} chose a proposal · waiting for shared agreement`, now);
+      activity(r, "vote", `${a.clientId === "alice" ? "Alice" : "Bob"} chose a proposal, waiting for shared agreement`, now);
     }
   }
   return changed(r, now);
@@ -201,7 +201,7 @@ export function claimJob(room: Room, jobId: string, now: string): { room: Room; 
   for (const p of proposals) { p.status = "processing"; p.jobId = job.id; }
   if (queued) { queued.resolutionStatus = "processing"; queued.resolutionJobId = job.id; }
   r.jobs.push(job); r.activeJobId = job.id;
-  activity(r, "relay", `Review claimed · ${resolution ? "selected resolution" : `${proposals.length} edit${proposals.length === 1 ? "" : "s"}`} · all ${r.segments.length} sections included`, now);
+  activity(r, "relay", `Review claimed, ${resolution ? "selected resolution" : `${proposals.length} edit${proposals.length === 1 ? "" : "s"}`}, all ${r.segments.length} sections included`, now);
   return { room: changed(r, now), job };
 }
 
@@ -329,7 +329,7 @@ export function completeJob(room: Room, jobId: string, raw: string, now: string)
     const prior = job.resolution ? r.issues.find(i => i.id === job.resolution!.issueId) : undefined;
     if (isAccepted(d) && !documentHeld) {
       segment.en = d.canonical!.en; segment.es = d.canonical!.es; segment.version++;
-      activity(r, d.status, `${d.status === "merge" ? "Compatible changes merged" : d.status === "agree" ? "Equivalent proposals agreed" : "Edit translated and applied"} · document check clear · ${segment.label.en}`, now);
+      activity(r, d.status, `${d.status === "merge" ? "Compatible changes merged" : d.status === "agree" ? "Equivalent proposals agreed" : "Edit translated and applied"}, document check clear, ${segment.label.en}`, now);
       if (prior) {
         prior.status = "resolved"; prior.resolvedAt = now; delete prior.resolutionStatus; delete prior.resolutionJobId;
         for (const p of r.proposals.filter(p => prior.eventIds.includes(p.id))) p.status = p.id === job.resolution!.selectedEventId ? "applied" : "cancelled";
@@ -350,7 +350,7 @@ export function completeJob(room: Room, jobId: string, raw: string, now: string)
         p.status = p.id === job.resolution!.selectedEventId ? "clarify" : "cancelled";
         if (p.status === "cancelled") p.note = "Both editors selected the other candidate; its document review remains held.";
       }
-      activity(r, kind, `${documentHeld ? "Whole-document issue held entire batch" : kind === "conflict" ? "Meaning conflict held for both editors" : "Clarification requested"} · ${segment.label.en}`, now);
+      activity(r, kind, `${documentHeld ? "Whole-document issue held entire batch" : kind === "conflict" ? "Meaning conflict held for both editors" : "Clarification requested"}, ${segment.label.en}`, now);
     }
     for (const p of r.proposals.filter(p => d.eventIds.includes(p.id))) {
       p.status = documentHeld ? "clarify" : isAccepted(d) ? "applied" : d.status as "conflict" | "clarify";
@@ -380,6 +380,6 @@ export function abandonJob(room: Room, jobId: string, now: string): { room: Room
   if (issue) { delete issue.resolutionStatus; delete issue.resolutionJobId; delete issue.selectedEventId; issue.votes = {}; }
   job.status = "abandoned"; job.completedAt = now; job.note = "Abandoned without changing the agreed document. Drafts preserved.";
   r.activeJobId = null;
-  activity(r, "abandoned", "Relay abandoned safely · claim again for a fresh full-document snapshot", now);
+  activity(r, "abandoned", "Relay abandoned safely, claim again for a fresh full-document snapshot", now);
   return { room: changed(r, now), job };
 }

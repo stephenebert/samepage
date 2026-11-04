@@ -2,7 +2,7 @@ import { completeStudioRepair, parseStudioRepairIntent, repairJobIsCurrent, star
 import { interpretStudioRepair } from "./studio-repair-model.ts";
 import { studioKeys, studioObject, studioText } from "./studio-engine.ts";
 import { PolicyModelError, type PolicyModelMetrics, type PolicyModelRequestOptions } from "./policy-model.ts";
-import { MAX_STUDIO_MODEL_CALLS, requireStudioModel, type StudioModelConfig } from "./studio-model.ts";
+import { studioModelCallLimit, requireStudioModel, type StudioModelConfig } from "./studio-model.ts";
 import { STUDIO_MODEL_LEASE_MS } from "./automatic-studio-review.ts";
 import type { AutomaticStudioReview, StudioRepairIntent, StudioRepairJob, StudioRepairProposal, StudioRoom, StudioText } from "./studio-types";
 
@@ -50,7 +50,8 @@ export async function runAutomaticStudioRepair(id: string, config: StudioModelCo
     const sameInput = repair && repairJobIsCurrent(before, repair.job) && same(repair.job.intent, input.intent) && same(repair.job.proposalText, input.proposalText);
     if (sameInput && !input.retry && ["ready", "blocked", "failed"].includes(repair.status)) return before;
     const count = before.modelCallCount ?? 0;
-    if (!Number.isInteger(count) || count < 0 || count >= MAX_STUDIO_MODEL_CALLS) throw new PolicyModelError("MODEL_CALL_LIMIT", "This room has reached its shared five interpretation/repair attempts. No request was made.", 429);
+    const limit = studioModelCallLimit(before);
+    if (!Number.isInteger(count) || count < 0 || count >= limit) throw new PolicyModelError("MODEL_CALL_LIMIT", `This room has reached its shared ${limit} interpretation/repair attempts. No request was made.`, 429);
     const room = startStudioRepair(before, input.intent, at, `repair-${requestId}`, input.proposalText);
     room.mode = "automatic-model"; room.modelCallCount = count + 1;
     room.automaticRepair = { requestId, jobId: room.repair!.id, provider: "Meta", model: config.model, protocol: "expression-v3", reasoningEffort: config.reasoningEffort ?? "medium", requestedEditors: ["alice", "bob"], reusedEditors: [], source: "meta", status: "running", startedAt: at, leaseExpiresAt: new Date(Date.parse(at) + STUDIO_MODEL_LEASE_MS).toISOString() };

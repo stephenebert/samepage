@@ -6,6 +6,7 @@ export function json(value: unknown, status = 200): Response {
 export function errorResponse(error: unknown): Response {
   if (error instanceof RoomError) return json({ error: error.message, code: error.code }, error.status);
   console.error("SamePage request failed", error instanceof Error ? error.message : "Unknown error");
+  if (error instanceof Error && error.message.startsWith("D1_ERROR:")) return json({ error: "Workspace storage is unavailable. Please try again later.", code: "STORAGE_UNAVAILABLE" }, 503);
   return json({ error: "The room could not be updated. Please try again.", code: "SERVER_ERROR" }, 500);
 }
 export async function readAction(request: Request): Promise<unknown> {

@@ -1,5 +1,0 @@
-import fs from 'node:fs/promises';
-if(process.stdin.isTTY)process.stdin.setRawMode(true);console.log('Ready for Site service credential on hidden stdin.');
-let token=await new Promise((resolve,reject)=>{let b='';process.stdin.setEncoding('utf8');process.stdin.resume();const f=c=>{b+=c;const i=b.indexOf('\n');if(i>=0){process.stdin.off('data',f);process.stdin.pause();if(process.stdin.isTTY)process.stdin.setRawMode(false);try{resolve(JSON.parse(b.slice(0,i)).token);}catch{reject(Error('Invalid input'));}}};process.stdin.on('data',f);});
-const res=await fetch('https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio-benchmark',{headers:{'OAI-Sites-Authorization':'Bearer '+token},redirect:'error'}),json=await res.json();
-await fs.writeFile(new URL('./live-inspection.json',import.meta.url),JSON.stringify({httpStatus:res.status,json},null,2));token='';console.log(JSON.stringify({httpStatus:res.status,runId:json.runId,ready:json.ready,caseIds:json.plans?.filter(p=>p.arm==='samepage').map(p=>p.caseId),ledgerAttempts:json.ledger?Object.keys(json.ledger.attempts).length:0}));

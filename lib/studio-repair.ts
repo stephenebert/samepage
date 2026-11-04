@@ -9,9 +9,18 @@ function fail(message: string, code = "INVALID_REPAIR", status = 400): never { t
 const changed = (room: StudioRoom, now: string) => { room.revision++; room.updatedAt = now; return room; };
 
 export function parseStudioRepairIntent(value: unknown): StudioRepairIntent {
-  const intent = studioObject(value, "repair intent"); studioKeys(intent, ["baselineCandidateId", "scopeFlag", "feeCents"], "repair intent");
+  const intent = studioObject(value, "repair intent");
   const baselineCandidateId = studioText(intent.baselineCandidateId, "baselineCandidateId", 100);
   if (!/^[a-zA-Z0-9_-]+$/.test(baselineCandidateId)) fail("Invalid baseline candidate ID.");
+  if (intent.mode === "preserve-outcomes") {
+    const canonical = Object.hasOwn(intent, "scopeFlag") || Object.hasOwn(intent, "feeCents");
+    studioKeys(intent, canonical ? ["baselineCandidateId", "mode", "scopeFlag", "feeCents"] : ["baselineCandidateId", "mode"], "repair intent");
+    if (canonical && (intent.scopeFlag !== "student" || intent.feeCents !== 0)) fail("A wording-only repair cannot request a fee change.");
+    // Keep old consumers structurally compatible; these fields never drive the
+    // target rules or model instructions for a preserve-outcomes request.
+    return { baselineCandidateId, scopeFlag: "student", feeCents: 0, mode: "preserve-outcomes" };
+  }
+  studioKeys(intent, ["baselineCandidateId", "scopeFlag", "feeCents"], "repair intent");
   if (!STUDIO_FLAGS.includes(intent.scopeFlag as StudioRepairIntent["scopeFlag"])) fail("Choose a supported attendee group.");
   return { baselineCandidateId, scopeFlag: intent.scopeFlag as StudioRepairIntent["scopeFlag"], feeCents: studioInteger(intent.feeCents, "repair fee", 0, 1000000) };
 }
@@ -26,9 +35,10 @@ export function parseStudioRepairProposal(value: unknown): StudioRepairProposal 
   return { en, es, rules, issues };
 }
 
-/** The intent is a fee-only change. It never waives eligibility or time rules. */
+/** Derive the entire authorized policy; wording-only edits preserve every outcome. */
 export function buildExpectedRepairRules(baselineValue: StudioRules, intentValue: StudioRepairIntent): StudioRules {
   const baseline = parseStudioRules(baselineValue), intent = parseStudioRepairIntent(intentValue);
+  if (intent.mode === "preserve-outcomes") return baseline;
   return parseStudioRules({ eligibility: copy(baseline.eligibility), fee: { ...copy(baseline.fee), overrides: [
     { when: { op: "flag", field: intent.scopeFlag, value: true }, cents: intent.feeCents, label: `Agreed ${intent.scopeFlag} fee` },
     ...copy(baseline.fee.overrides),
@@ -75,7 +85,9 @@ export function checkStudioRepairImpact(baselineValue: StudioRules, intent: Stud
   const changes = discoverStudioConsequences(baseline, proposalRules, maxCases);
   const status = verification.status === "unresolved" || changes.status === "unresolved" ? "unresolved" : verification.status === "equivalent" ? "pass" : "blocked";
   const issues = status === "unresolved" ? [...new Set([...verification.issues, ...changes.issues])]
-    : status === "blocked" ? ["The proposal changes outcomes beyond the agreed fee-only intent or fails to make the requested fee change. It cannot be published."] : [];
+    : status === "blocked" ? [intent.mode === "preserve-outcomes"
+      ? "This is a wording-only repair. The proposal changes an admission or fee outcome from the agreed baseline and cannot be published."
+      : "The proposal changes outcomes beyond the agreed fee-only intent or fails to make the requested fee change. It cannot be published."] : [];
   return { status, expectedRules, verification, changes, issues };
 }
 

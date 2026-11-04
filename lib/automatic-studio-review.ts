@@ -2,7 +2,7 @@ import { applyStudioAction } from "./studio.ts";
 import { encodeStudioExpressionRules } from "./studio-expression.ts";
 import { studioDemoFixture } from "./studio-demo.ts";
 import { PolicyModelError, type PolicyModelMetrics } from "./policy-model.ts";
-import { createStudioInterpretationCache, encodeStudioRules, interpretStudioJob, MAX_STUDIO_MODEL_CALLS, prepareStudioRequest, requireStudioModel, type StudioModelConfig, type StudioModelRequestOptions } from "./studio-model.ts";
+import { createStudioInterpretationCache, encodeStudioRules, interpretStudioJob, studioModelCallLimit, prepareStudioRequest, requireStudioModel, type StudioModelConfig, type StudioModelRequestOptions } from "./studio-model.ts";
 import type { AutomaticStudioReview, StudioJob, StudioRoom } from "./studio-types";
 
 export const STUDIO_MODEL_LEASE_MS = 90_000;
@@ -64,7 +64,8 @@ export async function runAutomaticStudioReview(id: string, config: StudioModelCo
     }
     const count = before.modelCallCount ?? 0;
     if (!Number.isInteger(count) || count < 0) throw new PolicyModelError("MODEL_CALL_LIMIT", "This room's model attempt counter is invalid; no request was made.", 429);
-    if (!simulation && count >= MAX_STUDIO_MODEL_CALLS) throw new PolicyModelError("MODEL_CALL_LIMIT", "This room has reached its five external model attempts. No further request was made. This is a per-room request limit, not an account spending cap.", 429);
+    const limit = studioModelCallLimit(before);
+    if (!simulation && count >= limit) throw new PolicyModelError("MODEL_CALL_LIMIT", `This room has reached its ${limit} external model attempts. No further request was made. This is a per-room request limit, not an account spending cap.`, 429);
     const room = clone(applyStudioAction(before, { type: "requestReview" }, claimedAt));
     if (!room.activeJob) return before;
     const plan = prepareStudioRequest(room.activeJob, config, simulation ? undefined : room.interpretationCache);

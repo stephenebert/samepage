@@ -37,7 +37,7 @@ const scopeText: Record<StudioFlag, [StudioText, StudioText]> = {
 };
 const money = (cents: number, es = false) => es ? `${(cents / 100).toFixed(cents % 100 ? 2 : 0).replace(".", ",")} USD` : `$${(cents / 100).toFixed(cents % 100 ? 2 : 0)}`;
 function resultText(decision: StudioDecision): StudioText {
-  return decision.accepted ? { en: `${money(decision.feeCents!)} fee`, es: `Tarifa de ${money(decision.feeCents!, true)}` } : { en: "Not eligible · no fee", es: "No cumple los requisitos · sin tarifa" };
+  return decision.accepted ? { en: `${money(decision.feeCents!)} fee`, es: `Tarifa de ${money(decision.feeCents!, true)}` } : { en: "Not eligible, no fee", es: "No cumple los requisitos, sin tarifa" };
 }
 function sameOutcome(a: StudioDecision, b: StudioDecision): boolean { return a.accepted === b.accepted && a.feeCents === b.feeCents; }
 

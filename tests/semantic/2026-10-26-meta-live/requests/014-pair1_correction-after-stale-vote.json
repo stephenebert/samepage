@@ -1,9 +1,0 @@
-{
-  "sequence": 14,
-  "method": "GET",
-  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-2b4e9c58-8a38-4a59-9afd-3c4896a7da50",
-  "body": null,
-  "credentialHeaderPresent": true,
-  "headerName": "OAI-Sites-Authorization",
-  "startedAt": "2026-10-27T03:37:55.018Z"
-}

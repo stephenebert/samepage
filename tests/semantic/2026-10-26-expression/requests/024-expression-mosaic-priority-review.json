@@ -1,9 +1,0 @@
-{
-  "sequence": 24,
-  "method": "POST",
-  "url": "https://samepage-language-lab.ampleboar17.chatgpt.site/api/studio/studio-024383bf-c37c-43e3-b37a-f5140b85025f/review",
-  "body": {},
-  "credentialHeaderPresent": true,
-  "headerName": "OAI-Sites-Authorization",
-  "startedAt": "2026-10-27T04:34:56.436Z"
-}

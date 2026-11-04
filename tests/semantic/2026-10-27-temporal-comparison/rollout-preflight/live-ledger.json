@@ -1,9 +1,0 @@
-{
-  "runId": "comparison-20261027-v2",
-  "startedAt": "2026-10-27T21:36:55.872Z",
-  "status": "stopped",
-  "freezeSha256": "5fec87572c943a864225ad61f7d8bfa3aa60c87b1607de0edc708c1c0ee6d67e",
-  "attempts": [],
-  "actualBilledCostUsd": null,
-  "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'comparison-20261027-v1'\n- 'comparison-20261027-v2'\n                        ^\n"
-}

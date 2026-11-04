@@ -31,12 +31,14 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 !.env.example
+.dev.vars*
 
 # vercel
 .vercel
 
 # typescript
 next-env.d.ts
+*.tsbuildinfo
 
 # Maintained Vite plugin and worker sources.
 !/build/
@@ -56,7 +58,11 @@ next-env.d.ts
 /outputs/
 /work/
 
-# Incremental compiler caches and local credentials
-*.tsbuildinfo
-.dev.vars*
+# Deployment identity and source-release tooling are never public inputs.
+/.openai/
+
+# Local key files and database snapshots.
 *.key
+*.sqlite
+*.sqlite-*
+*.db
